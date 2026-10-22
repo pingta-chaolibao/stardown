@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-22T10:03:08.258019+00:00",
+  "time_utc": "2026-10-22T10:23:54.082571+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,67 +7,79 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.019
+      "seconds": 0.018
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 7.237
+      "seconds": 7.044
     },
     {
       "name": "02_parse_00_grid_state",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.147
     },
     {
       "name": "02_parse_01_level_data",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.142
     },
     {
       "name": "02_parse_02_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.14
     },
     {
       "name": "02_parse_03_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.141
     },
     {
       "name": "02_parse_04_board_view",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.141
     },
     {
-      "name": "02_parse_05_north_01_regression",
+      "name": "02_parse_05_chain_push_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.141
     },
     {
-      "name": "02_parse_06_run_tests",
+      "name": "02_parse_06_north_01_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.279
     },
     {
-      "name": "02_parse_07_scene_smoke",
+      "name": "02_parse_07_run_tests",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.147
+    },
+    {
+      "name": "02_parse_08_scene_smoke",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15
     },
     {
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.156
+    },
+    {
+      "name": "03_chain_push",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.141
     },
     {
       "name": "03_north_01",
@@ -85,13 +97,13 @@
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.983
+      "seconds": 4.446
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.18
+      "seconds": 12.197
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -102,17 +114,22 @@
       "checks": 4662,
       "failures": 0
     },
+    "chain_push": {
+      "cases": 6,
+      "checks": 701,
+      "failures": 0
+    },
     "north_01": {
       "cases": 6,
       "checks": 344,
       "failures": 0
     },
     "headless_scene": {
-      "checks": 173,
+      "checks": 204,
       "failures": 0
     },
     "rendered_scene": {
-      "checks": 183,
+      "checks": 214,
       "failures": 0
     }
   },
@@ -158,6 +175,27 @@
     "objective": "player_on_exit",
     "solution_moves": 12,
     "solution_pushes": 4,
-    "pixel_exact_recreation": false
+    "pixel_exact_recreation": false,
+    "unchanged_from": "7daf0b1579eacaad67350f6d1adc59d367d8db09"
+  },
+  "push_rule": {
+    "whole_contiguous_line": true,
+    "cells_per_input": 1,
+    "fixed_crystal_count_limit": null,
+    "blocked_operation_is_atomic": true,
+    "undo_steps_per_push": 1,
+    "tested_lengths": [
+      2,
+      3,
+      4,
+      8,
+      60
+    ],
+    "tested_directions": [
+      "right",
+      "left",
+      "up",
+      "down"
+    ]
   }
 }

@@ -71,8 +71,8 @@ func _test_blocked_push() -> void:
 	data["crates"] = [[2, 2], [3, 2]]
 	game = _game(data)
 	before = game.snapshot()
-	_check(game.try_move(Vector2i.RIGHT) == &"crate_blocked", "second crate blocks; no chain pushing")
-	_check(game.snapshot() == before and game.history_size() == 0, "no part of blocked crate chain moves")
+	_check(game.try_move(Vector2i.RIGHT) == &"pushed", "two adjacent crates push together when line ends on floor")
+	_check(game.player == Vector2i(2, 2) and game.crate_id(Vector2i(3, 2)) == 0 and game.crate_id(Vector2i(4, 2)) == 1 and game.history_size() == 1, "whole two-crate line moves exactly once")
 	data["terrain"] = ["...."]
 	data["player"] = [2, 0]
 	data["crates"] = [[3, 0]]

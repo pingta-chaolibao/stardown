@@ -31,20 +31,28 @@ func try_move(direction: Vector2i) -> StringName:
 	var next := player + direction
 	if not level.is_floor(next):
 		return &"wall"
-	var pushing := _crates.has(next)
-	var destination := next + direction
-	if pushing and (not level.is_floor(destination) or _crates.has(destination)):
-		# A second crate always blocks the push; never move a chain of crates.
+	var chain: Array[Vector2i] = []
+	var destination := next
+	while _crates.has(destination):
+		chain.append(destination)
+		destination += direction
+	# Validate the entire contiguous line before recording or mutating anything.
+	# Its length is determined by occupancy, with no fixed push-count limit.
+	if not chain.is_empty() and not level.is_floor(destination):
 		return &"crate_blocked"
 	_history.append(snapshot())
-	if pushing:
-		var identity: int = _crates[next]
-		_crates.erase(next)
-		_crates[destination] = identity
+	if not chain.is_empty():
+		# Move the far end first so no crystal overwrites the next one's identity.
+		for index in range(chain.size() - 1, -1, -1):
+			var cell := chain[index]
+			var identity: int = _crates[cell]
+			_crates.erase(cell)
+			_crates[cell + direction] = identity
+		# Count pushing actions, regardless of the number of crystals in the line.
 		pushes += 1
 	player = next
 	moves += 1
-	return &"pushed" if pushing else &"moved"
+	return &"pushed" if not chain.is_empty() else &"moved"
 
 
 func undo() -> bool:

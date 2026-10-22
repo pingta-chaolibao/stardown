@@ -89,6 +89,7 @@ def main():
                 relative = script.relative_to(ROOT).as_posix()
                 run(f"02_parse_{index:02}_{script.stem}", ["--check-only", "--script", "res://" + relative])
             run("03_logic", ["--script", "res://tests/run_tests.gd"])
+            run("03_chain_push", ["--script", "res://tests/chain_push_regression.gd"])
             run("03_north_01", ["--script", "res://tests/north_01_regression.gd"])
             run("04_main_scene", ["--quit-after", "10", "--audio-driver", "Dummy"])
             run("05_scene_input", ["--script", "res://tests/scene_smoke.gd"])

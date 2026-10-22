@@ -1,6 +1,8 @@
 extends SceneTree
 ## Exercises the real scene, keyboard dispatch, GUI mouse clicks, and screenshots.
 
+const Level = preload("res://scripts/core/level_data.gd")
+
 var checks: int = 0
 var failures: int = 0
 var game: Control
@@ -69,6 +71,7 @@ func _run() -> void:
 	_check(game.model.crate_id(Vector2i(3, 2)) == 0 and game.model.crate_id(Vector2i(7, 0)) == 1, "restart restores both colored crystals")
 	await _capture("04_restarted.png")
 	_check_layout(game)
+	await _check_chain_scene()
 	root.size = Vector2i(960, 615)
 	await _settle()
 	_check_layout(game)
@@ -77,6 +80,38 @@ func _run() -> void:
 	game.queue_free()
 	await process_frame
 	quit(0 if failures == 0 else 1)
+
+
+func _check_chain_scene() -> void:
+	var original = game.model.level
+	for count in [2, 3, 4]:
+		var row := ".".repeat(count + 4)
+		var crystals: Array = []
+		for i in count:
+			crystals.append([i + 2, 1])
+		var level := Level.from_dictionary({"schema_version": 1, "id": "chain_scene_fixture",
+			"title": "Input regression fixture", "is_temporary": true, "source_note": "Tests only",
+			"terrain": [row, row, row], "player": [1, 1], "crates": crystals,
+			"targets": [], "objective": "none"})
+		_check(level.error.is_empty() and game.model.load_level(level), "scene line fixture loads")
+		game.apply_command({"action": &"restart"})
+		var initial: Dictionary = game.model.snapshot()
+		await _key(KEY_D)
+		await _key(KEY_D, true, true)
+		await _key(KEY_D)
+		await _key(KEY_D, false)
+		_check(game.model.player == Vector2i(2, 1) and game.model.moves == 1 and game.model.pushes == 1, "real keyboard advances %d-crystal line only once" % count)
+		for i in count:
+			_check(game.model.crate_id(Vector2i(i + 3, 1)) == i, "scene push preserves every crystal position and identity")
+		_check(game.moves_label.text == "01" and game.pushes_label.text == "01", "scene counts whole line as one push action")
+		await _click("Undo")
+		_check(game.model.snapshot() == initial and game.model.history_size() == 0, "GUI undo restores entire line in one action")
+		await _press(KEY_D)
+		await _click("Restart")
+		_check(game.model.snapshot() == initial and game.undo_button.disabled, "GUI restart restores entire line")
+	_check(game.model.load_level(original), "restore unchanged first level after input fixtures")
+	game.apply_command({"action": &"restart"})
+	await _settle()
 
 
 func _press(code: int) -> void:

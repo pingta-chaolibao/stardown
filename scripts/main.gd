@@ -68,9 +68,9 @@ func apply_command(command: Dictionary) -> void:
 					_refresh("前方是墙，换个方向试试。", GOLD)
 				&"crate_blocked":
 					board.blocked = true
-					_refresh("水晶前方被挡住了，无法推动。", GOLD)
+					_refresh("整列水晶末端被挡住了，无法推动。", GOLD)
 				&"pushed":
-					_refresh("水晶向前一格。英雄只能推，不能拉。")
+					_refresh("相邻水晶整列前进一格。英雄只能推，不能拉。")
 				&"moved":
 					_refresh("每次按下移动一格；松开后可再次移动。")
 				&"complete":
@@ -189,7 +189,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	intro.add_child(_label("北部英雄  /  第一关", 12, MINT))
 	intro.add_child(_label("推之英雄", 30, TEXT))
 	intro.add_child(_label("红色小人 · 只能推，不能拉", 16, Board.CORAL))
-	var instructions := _label("走向相邻水晶，将它向前推动一格。\n前方是墙或另一枚水晶时，推动受阻。", 14, MUTED)
+	var instructions := _label("可推动紧密排成直线的整列水晶。\n每次前进一格，列末受阻则整列不动。", 14, MUTED)
 	intro.add_child(instructions)
 	var stats := _hbox(12)
 	sidebar.add_child(stats)
