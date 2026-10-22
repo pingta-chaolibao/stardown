@@ -66,6 +66,8 @@ Xvfb `:97`、Godot GL Compatibility、OpenGL 4.5 / Mesa 25.0.7-2+deb13u1 / llvmp
 
 第一 / 二关视频已保存在 `video/chapter_01/level_01.mp4` 和 `level_02.mp4`，分别 12.2 秒 / 366 帧 / 155,369 字节和 21.2 秒 / 636 帧 / 286,661 字节。两份由真实 Godot Movie Maker 和合法按下 / 释放输入生成；H.264 High、yuv420p、1280 × 820、30 fps、MP4 fast-start，首尾已查看，完整解码与独立回放再次通过。
 
-第三关遵循先提交关卡实现、再录制并提交视频的约定。最终媒体与逐步证据见 [video/README.md](../video/README.md) 和 [章节验证清单](../video/chapter_01/verification.json)。
+第三关实现先提交并推送于 `77b208c53142e3b310f4ed2093bc23afb5e7367b`，之后才制作 `video/chapter_01/level_03.mp4`：17.6 秒、528 帧、247,444 字节，21 步 / 4 推。已完整解码，检查 H.264 High / yuv420p / 1280 × 820 / 30 fps 与 fast-start；实际查看编码后的初始、英雄压板、水晶压板和最终胜利画面。
+
+`python3 tools/check_walkthroughs.py` 对三份媒体的哈希、元数据、帧数、时长、完整解码、MP4 结构和独立合法输入回放全部通过；第三关还逐步核对压力、屏障和存活状态，未触及未定义交互。媒体与逐步证据见 [video/README.md](../video/README.md) 和 [章节验证清单](../video/chapter_01/verification.json)。
 
 未测试其他 Godot 版本、操作系统、硬件 GPU 或长时间性能，未导出独立程序。GitHub CI 只按远端可见记录报告，本地通过不等于 CI 通过。不强推、不创建 PR、不发布游戏。

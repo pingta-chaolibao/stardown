@@ -1,6 +1,5 @@
 {
   "chapter": 1,
-  "game_implementation_commit": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9",
   "capture": "actual Godot Movie Maker viewport with legal press/release input",
   "videos": [
     {
@@ -35,7 +34,8 @@
       "initial_and_final_frames_reviewed": true,
       "replay_report": "level_01_replay.json",
       "level_file": "levels/north_01.json",
-      "solution_file": "levels/solutions/north_01.json"
+      "solution_file": "levels/solutions/north_01.json",
+      "game_implementation_commit": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9"
     },
     {
       "file": "video/chapter_01/level_02.mp4",
@@ -69,7 +69,49 @@
       "initial_and_final_frames_reviewed": true,
       "replay_report": "level_02_replay.json",
       "level_file": "levels/north_02.json",
-      "solution_file": "levels/solutions/north_02.json"
+      "solution_file": "levels/solutions/north_02.json",
+      "game_implementation_commit": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9"
+    },
+    {
+      "file": "video/chapter_01/level_03.mp4",
+      "level": 3,
+      "bytes": 247444,
+      "sha256": "1d8ff6fb9d25fcfbe04d1f1499cb4aabebdaa5f0c59320130f9649f3fcf99e55",
+      "distinct_sampled_frames": 77,
+      "full_decode_passed": true,
+      "game_implementation_commit": "77b208c53142e3b310f4ed2093bc23afb5e7367b",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 528,
+      "duration_seconds": 17.6,
+      "mp4_fast_start": true,
+      "moves": 21,
+      "pushes": 4,
+      "initial_player": [
+        0,
+        1
+      ],
+      "victory_player": [
+        9,
+        1
+      ],
+      "legal_input_trace_verified": true,
+      "initial_and_final_frames_reviewed": true,
+      "hero_and_crystal_pressure_frames_reviewed": true,
+      "replay_report": "level_03_replay.json",
+      "level_file": "levels/north_03.json",
+      "solution_file": "levels/solutions/north_03.json"
     }
-  ]
+  ],
+  "game_implementation_commits": {
+    "level_01": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9",
+    "level_02": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9",
+    "level_03": "77b208c53142e3b310f4ed2093bc23afb5e7367b"
+  }
 }

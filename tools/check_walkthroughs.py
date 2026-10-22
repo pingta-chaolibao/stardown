@@ -22,6 +22,8 @@ def check_replay(item, directory):
     initial = evidence["initial_state"]
     assert initial["player"] == level["player"] and initial["moves"] == 0
     assert not initial["completed"] and evidence["path"] == solution["path"]
+    assert initial["level_id"] == level["id"] == solution["level_id"]
+    assert evidence["game_implementation_commit"] == item["game_implementation_commit"]
     assert evidence["display"] == "X11"
     assert len(evidence["trace"]) == solution["moves"]
 
