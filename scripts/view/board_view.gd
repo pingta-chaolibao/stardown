@@ -37,11 +37,35 @@ func _draw() -> void:
 				_wall(rect)
 	for cell in level.targets:
 		_target(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
+	for link in level.energy_links:
+		var center := origin + (Vector2(link["plate"]) + Vector2.ONE * 0.5) * tile
+		_pressure_plate(center, tile, model.pressure_is_active(link["id"]))
+	for cell: Vector2i in model.barrier_states():
+		if model.barrier_is_active(cell):
+			_energy_block(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
 	if level.exit_cell != Vector2i(-1, -1):
 		_exit_marker(origin + (Vector2(level.exit_cell) + Vector2.ONE * 0.5) * tile, tile)
 	for cell in model.crates():
 		_crystal(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile, level.crystal_colors[model.crate_id(cell)])
 	_hero(origin + (Vector2(model.player) + Vector2.ONE * 0.5) * tile, tile)
+	if not model.alive:
+		var center := origin + (Vector2(model.player) + Vector2.ONE * 0.5) * tile
+		draw_line(center + Vector2(-0.3, -0.3) * tile, center + Vector2(0.3, 0.3) * tile, Color("fff0cc"), 3, true)
+		draw_line(center + Vector2(-0.3, 0.3) * tile, center + Vector2(0.3, -0.3) * tile, Color("fff0cc"), 3, true)
+
+
+func _pressure_plate(center: Vector2, tile: float, pressed: bool) -> void:
+	_box(Rect2(center - Vector2.ONE * tile * 0.4, Vector2.ONE * tile * 0.8), Color("c7a34d") if pressed else Color("74613c"), 5)
+	draw_arc(center, tile * 0.24, 0, TAU, 32, Color("ffe6a0"), 2, true)
+	if pressed:
+		draw_circle(center, tile * 0.15, Color("ffe6a0"))
+
+
+func _energy_block(center: Vector2, tile: float) -> void:
+	_box(Rect2(center - Vector2.ONE * tile * 0.43, Vector2.ONE * tile * 0.86), Color("ba923c"), 5)
+	_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), Color("f2ce6d"), 3)
+	for offset in [-0.20, 0.0, 0.20]:
+		draw_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("fff0b5"), tile * 0.035, true)
 
 
 func _floor(rect: Rect2, cell: Vector2i) -> void:

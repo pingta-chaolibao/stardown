@@ -1,6 +1,6 @@
-# 沉星之序 · 第一章前两关（Godot 4 / 2D）
+# 沉星之序 · 第一章前三关（Godot 4 / 2D）
 
-第一章前两关按确认的文字网格实现。只有红色推之英雄；蓝 / 紫水晶均可整列推动。第一关是 11 × 3、黄色终点；第二关是 11 × 7、10 枚水晶、绿色终点。玩家走到该关终点才判胜，水晶不需要停在终点。绿色终点绘制为绿色圆形标记。画面使用原创 2D 几何图形，不声称逐像素复刻。
+第一章前三关按确认的文字网格实现。只有红色推之英雄；蓝 / 紫水晶均可整列推动。第一关是 11 × 3、黄色终点；第二关是 11 × 7、10 枚水晶、绿色终点；第三关是 11 × 3，加入黄色压力板与能量屏障。玩家走到该关终点才判胜，水晶不需要停在终点。绿色终点绘制为绿色圆形标记。画面使用原创 2D 几何图形，不声称逐像素复刻。
 
 开发、测试与 Git 操作均在选定云端 `/workspace/stardown` 完成，没有读取、迁移或操作用户电脑。交付分支为 `develop`；不发布游戏、不创建 PR。
 
@@ -23,6 +23,8 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 ```
 
 实际画面：[初始状态](docs/screenshots/initial.png)、[通关状态](docs/screenshots/completed.png)、[960 × 615 窗口](docs/screenshots/compact.png)。第二关画面：[初始状态](docs/screenshots/level_02_initial.png)、[通关状态](docs/screenshots/level_02_completed.png)、[小窗口](docs/screenshots/level_02_compact.png)。这些是本工程的 Godot 渲染结果。
+
+第三关画面：[初始状态](docs/screenshots/level_03_initial.png)、[英雄踩板后](docs/screenshots/level_03_plate_pressed.png)、[通关状态](docs/screenshots/level_03_completed.png)、[小窗口](docs/screenshots/level_03_compact.png)。
 
 ## 通关演示视频
 
@@ -75,28 +77,45 @@ R..VB....BV
 
 第二关的实际规则验证路径为 `RRRRURRDRRDRDDLDLLULLDLLULD`，其中 U/D/L/R 是上/下/左/右。共 **27 步、12 次推动**，包含多水晶连推；先由独立状态搜索找到，再由 Godot 模型和实际键盘入口逐步验证。路径不宣称步数最优。
 
+### 第三关
+
+11 列 × 3 行，地图外不可走；下列布局来自用户分别确认的坐标与机关规则：
+
+```text
+...#...#...
+RY...V.#.G.
+...#...X...
+```
+
+`R` 红色玩家 `(0,1)`；`Y` 黄色压力板 `(1,1)`；`V` 紫水晶 `(5,1)`；`G` 绿色终点 `(9,1)`；`X` 黄色能量块 `(7,2)`。固定墙是 `(3,0)/(3,2)/(7,0)/(7,1)`，其他内部格为地板。
+
+英雄或水晶压住黄板时，相连能量块消失，移动与视线均可穿过；离板后恢复，同时阻挡移动与视线。若恢复格有英雄，英雄死亡，只能撤销上一步复活；死亡时不能移动、重开或切关。一次动作统一结算全部位置、压力、屏障和生死，撤销整体恢复。
+
+实际验证路线：`RRRRURRDLLLLRRRRDRRUR`，**21 步、4 次推动**。先绕到水晶右侧，将其向左推到黄板，再穿过打开的能量格进入绿色终点。初次踩板、离板、持续压板均在正常路线中出现。详见 [机关规则与未定义边界](docs/ENERGY_RULES.md)；屏障恢复格有水晶的行为尚未确认，已穷举本关 352 个合法状态，证明本关不会触发该边界。
+
 ## 操作与通关
 
 | 操作 | 按键 / 界面 |
-| 切换第一 / 第二关 | 顶部“第一关”“第二关”按钮；从该关初始状态开始，清空撤销历史 |
 | --- | --- |
+| 切换第一 / 第二 / 第三关 | 顶部关卡按钮；存活时可切换，从该关初始状态开始，清空撤销历史 |
 | 移动一格 | 方向键或 WASD；也可点击方向按钮 |
 | 撤销最近一次有效移动 | Z、U、Backspace，或“撤销”按钮 |
-| 恢复关卡初始状态 | R，或“重开”按钮 |
+| 恢复关卡初始状态 | 存活时按 R，或“重开”按钮；死亡时只能撤销 |
 
 每次输入让英雄前进一格；相邻水晶紧密排成直线时，可以将整列一起向前推动一格。水晶数量没有 3 或 4 枚的硬上限，受地图空间限制。先扫描整列，只有列末是可走空地才一次移动英雄与全部水晶；列末为墙、地图边界或不可移动障碍时，整次操作不移动、不计步、不写撤销历史。空格会截断水晶列，旁边不在直线上的水晶不会被带动。英雄不能拉水晶。
 
 松开再按可连续操作；长按的系统回声和未松开的重复事件不会多走。步数与推动次数均按成功输入计数，一次推动多枚水晶仍算一步、一次推动。撤销一次恢复上一次整列推动前的全部位置和颜色身份，重开恢复初始状态。
 
-玩家进入当前关卡的终点才判胜（第一关黄色、第二关绿色）。通关后可以撤销最后一步，或重开；撤销恢复玩家、水晶、颜色身份、步数、推动次数和通关状态，重开清空历史并恢复全部初始状态。
+存活玩家进入当前关卡的终点才判胜（第一关黄色、第二 / 三关绿色）。通关后可以撤销最后一步，或重开；撤销恢复玩家、水晶、颜色身份、步数、推动次数、压力、屏障、生死和通关状态，重开清空历史并恢复全部初始状态。
 
 第一关已验证、两枚水晶均参与的通关路径：**下，右 × 3，上 × 2，右 × 4，下，右**。结果为 **12 步、4 次推动**；蓝水晶最终在 `(5,2)`，紫水晶最终在 `(9,0)`，玩家在 `(9,1)`。这是一条验证路径，不宣称最优解。
 
 ## 工程结构与数据
 
-- `levels/north_01.json`、`levels/north_02.json`：两关数据，默认进入第一关。
-- `levels/solutions/`：逐输入验证的两关通关路径，供测试与演示回放使用。
+- `levels/north_01.json`、`levels/north_02.json`、`levels/north_03.json`：三关数据，默认进入第一关。
+- `levels/solutions/`：逐输入验证的三关通关路径，供测试与演示回放使用。
 - `scripts/core/level_data.gd`：JSON 解析与坐标校验。
+- `scripts/core/energy_rules.gd`：纯占用谓词和机关结算，提供可配置压力来源。
 - `scripts/core/grid_state.gd`：不依赖节点、渲染、计时器或物理的独立网格规则及撤销历史。
 - `scripts/input/step_input.gd`：按键去重与释放处理。
 - `scripts/view/board_view.gd`：只读网格状态的原创几何绘制；适配横向长廊。
@@ -104,11 +123,13 @@ R..VB....BV
 - `tests/run_tests.gd`：保留的通用逻辑 / 输入回归；早期沙盒仅作为 `tests/fixtures/` 下的测试数据，不作为当前关卡。
 - `tests/north_01_regression.gd`：确认坐标、两枚水晶受阻、通关路径、撤销重开与连续输入回归。
 - `tests/north_02_regression.gd`、`tests/north_02_scene.gd`：第二关 77 格地形 / 10 枚水晶、实际通关、阻挡、胜利后撤销重开、切关隔离与界面回归。
+- `tests/energy_regression.gd`：压力保持 / 解除、移动与视线、死亡只能撤销复活、未确认边界的独立测试。
+- `tests/north_03_regression.gd`、`tests/north_03_scene.gd`：第三关解法、352 状态可达性、完整状态撤销重开、切关隔离、真实输入与画面适配。
 - `tests/chain_push_regression.gd`：2 / 3 / 4 / 8 / 60 枚水晶的四方向连推、原子阻挡、边界、空格截断、旁侧水晶、撤销重开和输入去重。
 - `tests/scene_smoke.gd`：真实场景键鼠、通关状态与两种窗口尺寸检查。
 - `tools/verify.py`：一键验证。
 
-地图使用 schema 1。`terrain` 中 `#` 是墙、`.` 是地板，行宽相同，宽高各为 1 至 64。`player`、`crates`、`exit` 使用 `[x,y]` 整数坐标；`crystal_colors` 按水晶身份指定 `blue` / `purple`。两关均为 `is_temporary=false`、`objective=player_on_exit`、`targets=[]`。`exit_color` 可为 `yellow` 或 `green`，默认 yellow。非法、重复、墙内或越界坐标会被拒绝。
+地图使用 schema 1。`terrain` 中 `#` 是墙、`.` 是地板，行宽相同，宽高各为 1 至 64。`player`、`crates`、`exit` 使用 `[x,y]` 整数坐标；`crystal_colors` 按水晶身份指定 `blue` / `purple`。三关均为 `is_temporary=false`、`objective=player_on_exit`、`targets=[]`。`exit_color` 可为 `yellow` 或 `green`，默认 yellow。非法、重复、墙内或越界坐标会被拒绝。第三关额外用 `energy_links` 显式定义黄板、关联屏障和压力来源；前两关没有机关数据。
 
 ## 验证
 
@@ -117,7 +138,7 @@ cd /workspace/stardown
 python3 tools/verify.py
 ```
 
-该命令执行资源导入、所有脚本解析、通用逻辑测试、连推回归、两关回归、默认主场景启动、关卡切换和键鼠场景检查。已有 X11 显示时加上真实渲染与截图：
+该命令执行资源导入、所有脚本解析、通用逻辑测试、连推与机关回归、三关回归、默认主场景启动、关卡切换和键鼠场景检查。已有 X11 显示时加上真实渲染与截图：
 
 ```bash
 python3 tools/verify.py --visual --display :97
@@ -129,6 +150,6 @@ python3 tools/verify.py --visual --display :97
 /tmp/stardown-tools/xvfb/usr/bin/Xvfb :97 -screen 0 1280x820x24 -nolisten tcp -noreset
 ```
 
-运行生成的日志与截图在 `artifacts/`，缓存与完整生成目录不纳入 Git；必要的验证摘要和两关画面证据保留在 `docs/`。详见[验证记录](docs/VERIFICATION.md)和[结构化摘要](docs/verification-summary.json)。无头模式使用虚拟渲染器，只能证明逻辑 / 场景运行，画面结论来自实际 X11 / Mesa 渲染。
+运行生成的日志与截图在 `artifacts/`，缓存与完整生成目录不纳入 Git；必要的验证摘要和三关画面证据保留在 `docs/`。详见[验证记录](docs/VERIFICATION.md)和[结构化摘要](docs/verification-summary.json)。无头模式使用虚拟渲染器，只能证明逻辑 / 场景运行，画面结论来自实际 X11 / Mesa 渲染。
 
 中文字体已随工程附带，来自本云端 Debian 包内的 [Noto CJK](https://github.com/notofonts/noto-cjk)，授权见 [OFL.txt](assets/fonts/OFL.txt)。英雄、水晶、墙、地板、终点和图标均为原创几何图形，没有将原作截图打包进工程。命令行参数参考 [Godot 官方文档](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html)。

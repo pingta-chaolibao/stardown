@@ -10,7 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -22,6 +23,7 @@ var pushes_label: Label
 var progress_label: Label
 var status_label: Label
 var undo_button: Button
+var restart_button: Button
 var current_level_index: int = 0
 var ui_root: Control
 
@@ -35,7 +37,7 @@ func _ready() -> void:
 	get_window().focus_exited.connect(key_steps.clear)
 	var level := Level.from_file(level_path)
 	if not model.load_level(level):
-		_show_error(level.error)
+		_show_error(level.error if not level.error.is_empty() else model.last_mechanism_error)
 		return
 	current_level_index = LEVEL_PATHS.find(level_path)
 	_build_ui()
@@ -43,6 +45,9 @@ func _ready() -> void:
 
 
 func select_level(index: int) -> bool:
+	if not model.alive:
+		_refresh("英雄已死亡，仅可撤销恢复。", Board.CORAL)
+		return false
 	if index < 0 or index >= LEVEL_PATHS.size():
 		return false
 	var definition := Level.from_file(LEVEL_PATHS[index])
@@ -89,12 +94,19 @@ func apply_command(command: Dictionary) -> void:
 		&"move":
 			var direction: Vector2i = command.get("direction", Vector2i.ZERO)
 			var result := model.try_move(direction)
-			if result in [&"moved", &"pushed", &"wall", &"crate_blocked"]:
+			if result in [&"moved", &"pushed", &"wall", &"crate_blocked", &"energy_blocked", &"died"]:
 				board.facing = direction
 			match result:
 				&"wall":
 					board.blocked = true
 					_refresh("前方是墙，换个方向试试。", GOLD)
+				&"energy_blocked":
+					board.blocked = true
+					_refresh("能量屏障阻挡通行，需要压住相连的黄色地块。", GOLD)
+				&"rule_unresolved":
+					_refresh(model.last_mechanism_error, GOLD)
+				&"dead", &"died":
+					_refresh("英雄已死亡，仅可撤销恢复。", Board.CORAL)
 				&"crate_blocked":
 					board.blocked = true
 					_refresh("整列水晶末端被挡住了，无法推动。", GOLD)
@@ -108,9 +120,11 @@ func apply_command(command: Dictionary) -> void:
 			var undone := model.undo()
 			_refresh("已撤销最近一步。" if undone else "当前没有可撤销的步骤。")
 		&"restart":
-			model.restart()
-			board.facing = Vector2i.DOWN
-			_refresh("已重开%s。" % model.level.title)
+			if model.restart():
+				board.facing = Vector2i.DOWN
+				_refresh("已重开%s。" % model.level.title)
+			else:
+				_refresh("英雄已死亡，仅可撤销恢复。", Board.CORAL)
 
 
 func _refresh(message: String, color: Color = MINT) -> void:
@@ -123,7 +137,20 @@ func _refresh(message: String, color: Color = MINT) -> void:
 	else:
 		progress_label.text = "未设置胜利判定"
 	undo_button.disabled = model.history_size() == 0
-	if model.is_complete():
+	restart_button.disabled = not model.alive
+	for node_name in ["MoveLeft", "MoveRight", "MoveUp", "MoveDown"]:
+		var button := find_child(node_name, true, false) as Button
+		if button != null:
+			button.disabled = not model.alive
+	for index in LEVEL_PATHS.size():
+		var button := find_child("Level%02d" % (index + 1), true, false) as Button
+		if button != null:
+			button.disabled = not model.alive or index == current_level_index
+	if not model.alive:
+		progress_label.text = "英雄已死亡"
+		status_label.text = "英雄已死亡。\n只能撤销到屏障恢复前的状态复活。"
+		status_label.add_theme_color_override("font_color", Board.CORAL)
+	elif model.is_complete():
 		status_label.text = "已抵达终点！\n可撤销最后一步，或重新开始。"
 		if model.level.is_temporary:
 			status_label.text = "临时目标已达成！\n这是测试布局。"
@@ -165,7 +192,7 @@ func _build_header(parent: VBoxContainer) -> void:
 	titles.add_child(_label("沉星之序", 34, TEXT))
 	_spacer(row)
 	for index in LEVEL_PATHS.size():
-		var button := _button("第一关" if index == 0 else "第二关", "Level01" if index == 0 else "Level02")
+		var button := _button(LEVEL_TITLES[index], "Level%02d" % (index + 1))
 		button.disabled = index == current_level_index
 		button.custom_minimum_size.x = 84
 		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
@@ -209,6 +236,9 @@ func _build_board(parent: HBoxContainer) -> void:
 	legend.add_child(_label("● 英雄", 13, Board.CORAL))
 	legend.add_child(_label("◆ 水晶", 13, Color("9cc5f5")))
 	legend.add_child(_label("◇ 终点", 13, _goal_color()))
+	if not model.level.energy_links.is_empty():
+		legend.add_child(_label("▣ 压力板", 13, GOLD))
+		legend.add_child(_label("▤ 能量块", 13, GOLD))
 	_spacer(legend)
 	for entry in [["←", Vector2i.LEFT, "Left"], ["↑", Vector2i.UP, "Up"], ["↓", Vector2i.DOWN, "Down"], ["→", Vector2i.RIGHT, "Right"]]:
 		var button := _button(entry[0], "Move" + entry[2])
@@ -219,16 +249,18 @@ func _build_board(parent: HBoxContainer) -> void:
 
 
 func _build_sidebar(parent: HBoxContainer) -> void:
-	var sidebar := _vbox(16)
+	var sidebar := _vbox(12 if not model.level.energy_links.is_empty() else 16)
 	sidebar.custom_minimum_size.x = 300
 	parent.add_child(sidebar)
 	var intro := _vbox(6)
 	sidebar.add_child(intro)
-	intro.add_child(_label("北部英雄  /  第二关" if current_level_index == 1 else "北部英雄  /  第一关", 12, MINT))
+	intro.add_child(_label("北部英雄  /  %s" % LEVEL_TITLES[maxi(0, current_level_index)], 12, MINT))
 	intro.add_child(_label("推之英雄", 30, TEXT))
 	intro.add_child(_label("红色小人 · 只能推，不能拉", 16, Board.CORAL))
 	var instructions := _label("可推动紧密排成直线的整列水晶。\n每次前进一格，列末受阻则整列不动。", 14, MUTED)
 	intro.add_child(instructions)
+	if not model.level.energy_links.is_empty():
+		intro.add_child(_label("英雄或水晶压住黄板时，能量块消失。\n压力解除后恢复，格内英雄会死亡。", 13, GOLD))
 	var stats := _hbox(12)
 	sidebar.add_child(stats)
 	moves_label = _stat(stats, "步数", "Moves")
@@ -260,7 +292,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	undo_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	undo_button.pressed.connect(apply_command.bind({"action": &"undo"}))
 	actions.add_child(undo_button)
-	var restart_button := _button("重开   R", "Restart")
+	restart_button = _button("重开   R", "Restart")
 	restart_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	restart_button.pressed.connect(apply_command.bind({"action": &"restart"}))
 	actions.add_child(restart_button)

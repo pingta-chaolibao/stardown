@@ -16,6 +16,7 @@ var targets: Array[Vector2i] = []
 var exit_cell := Vector2i(-1, -1)
 var exit_color: String = "yellow"
 var objective: String = "none"
+var energy_links: Array[Dictionary] = []
 var error: String = ""
 
 
@@ -99,11 +100,55 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	if level.objective == "all_crates_on_targets":
 		if level.initial_crates.is_empty() or level.initial_crates.size() != level.targets.size():
 			return _invalid("测试目标要求至少一个箱体，且箱体与落点数量相等。")
+	var link_error := level._read_energy_links(data.get("energy_links", []))
+	if not link_error.is_empty():
+		return _invalid(link_error)
 	level.id = data["id"]
 	level.title = data["title"]
 	level.is_temporary = data["is_temporary"]
 	level.source_note = data["source_note"]
 	return level
+
+
+func _read_energy_links(value: Variant) -> String:
+	if not value is Array:
+		return "energy_links 必须是数组。"
+	var ids: Dictionary = {}
+	var plates: Dictionary = {}
+	var barriers: Dictionary = {}
+	for entry in value:
+		if not entry is Dictionary or not entry.get("id") is String or entry["id"].is_empty():
+			return "每组能量机关需要非空 id。"
+		if ids.has(entry["id"]):
+			return "能量机关 id 不得重复。"
+		ids[entry["id"]] = true
+		var plate: Variant = _parse_cell(entry.get("plate"))
+		if plate == null or not is_floor(plate) or plates.has(plate):
+			return "压力板必须是独立且可通行的地图内坐标。"
+		plates[plate] = true
+		var source_list: Variant = entry.get("pressure_sources")
+		if not source_list is Array or source_list.is_empty():
+			return "pressure_sources 必须显式指定 hero、crystal 或两者。"
+		var sources: Array = []
+		for source in source_list:
+			if source not in ["hero", "crystal"] or source in sources:
+				return "压力来源无效或重复。"
+			sources.append(source)
+		var entries: Variant = entry.get("barriers")
+		if not entries is Array or entries.is_empty():
+			return "每块压力板需要明确关联至少一个能量格。"
+		var cells: Array[Vector2i] = []
+		for item in entries:
+			var cell: Variant = _parse_cell(item)
+			if cell == null or not is_floor(cell) or barriers.has(cell):
+				return "能量格必须在地板内，且不能重复或由多组机关同时控制。"
+			barriers[cell] = true
+			cells.append(cell)
+		energy_links.append({"id": entry["id"], "plate": plate, "barriers": cells, "pressure_sources": sources})
+	for cell in plates:
+		if barriers.has(cell):
+			return "压力板与能量格不能重叠。"
+	return ""
 
 
 func is_floor(cell: Vector2i) -> bool:

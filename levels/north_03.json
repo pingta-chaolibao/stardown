@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_03",
+  "title": "北部英雄 · 第三关",
+  "is_temporary": false,
+  "source_note": "依据用户分别确认的第三关 11×3 布局与触发规则。玩家 (0,1)，黄色压力板 (1,1)，紫水晶 (5,1)，绿色终点 (9,1)；墙 (3,0)/(3,2)/(7,0)/(7,1)，能量块 (7,2)。英雄或水晶均可压板。",
+  "terrain": ["...#...#...", ".......#...", "...#......."],
+  "player": [0, 1],
+  "crates": [[5, 1]],
+  "crystal_colors": ["purple"],
+  "targets": [],
+  "exit": [9, 1],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "energy_links": [
+    {"id": "yellow_01", "plate": [1, 1], "barriers": [[7, 2]], "pressure_sources": ["hero", "crystal"]}
+  ]
+}

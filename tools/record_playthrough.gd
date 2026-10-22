@@ -21,8 +21,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number not in [1, 2] or report_path.is_empty():
-		_fail("Pass --level=1 or 2 and an absolute --report path.")
+	if level_number not in [1, 2, 3] or report_path.is_empty():
+		_fail("Pass --level=1, 2 or 3 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -50,7 +50,7 @@ func _run() -> void:
 		await _frames(1)
 		var current := _state()
 		var distance: int = absi(current["player"][0] - previous["player"][0]) + absi(current["player"][1] - previous["player"][1])
-		if current["moves"] != i + 1 or distance != 1 or current["pushes"] < previous["pushes"] or current["pushes"] > previous["pushes"] + 1:
+		if not current["alive"] or current["moves"] != i + 1 or distance != 1 or current["pushes"] < previous["pushes"] or current["pushes"] > previous["pushes"] + 1:
 			_fail("Input %d did not make exactly one legal grid step." % (i + 1))
 			return
 		current["input"] = symbol
@@ -87,10 +87,14 @@ func _state() -> Dictionary:
 		for cell in game.model.crates():
 			if game.model.crate_id(cell) == identity:
 				crystals.append({"id": identity, "position": [cell.x, cell.y], "color": game.model.level.crystal_colors[identity]})
+	var barriers: Array[Dictionary] = []
+	for cell: Vector2i in game.model.barrier_states():
+		barriers.append({"position": [cell.x, cell.y], "active": game.model.barrier_is_active(cell)})
 	return {"level_id": game.model.level.id, "player": [game.model.player.x, game.model.player.y],
 		"crystals": crystals, "moves": game.model.moves, "pushes": game.model.pushes,
 		"completed": game.model.is_complete(), "exit": [game.model.level.exit_cell.x, game.model.level.exit_cell.y],
-		"exit_color": game.model.level.exit_color}
+		"exit_color": game.model.level.exit_color, "alive": game.model.alive,
+		"pressure": game.model.pressure_states(), "barriers": barriers}
 
 
 func _send_key(code: int, pressed: bool) -> void:

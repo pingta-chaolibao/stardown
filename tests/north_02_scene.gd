@@ -23,7 +23,7 @@ func _run() -> void:
 	await _press(KEY_D)
 	_check(game.model.moves == 1, "first-level progress before switching")
 	var before_invalid: Dictionary = game.model.snapshot()
-	_check(not game.select_level(-1) and not game.select_level(2) and game.model.snapshot() == before_invalid, "invalid selection preserves active session")
+	_check(not game.select_level(-1) and not game.select_level(3) and game.model.snapshot() == before_invalid, "invalid selection preserves active session")
 	await _click("Level02")
 	_check(game.current_level_index == 1 and game.model.level.id == "north_hero_02", "GUI enters second level")
 	_check(game.model.player == Vector2i(0, 1) and game.model.crates().size() == 10, "GUI second-level initial coordinates")
@@ -127,7 +127,7 @@ func _capture(filename: String) -> void:
 func _check_layout(node: Node) -> void:
 	if node is Control and node.is_visible_in_tree():
 		var rect: Rect2 = node.get_global_rect()
-		_check(rect.position.x >= -1 and rect.position.y >= -1 and rect.end.x <= root.get_visible_rect().size.x + 1 and rect.end.y <= root.get_visible_rect().size.y + 1, "visible control fits viewport: " + str(node.get_path()))
+		_check(rect.position.x >= -1 and rect.position.y >= -1 and rect.end.x <= root.get_visible_rect().size.x + 1 and rect.end.y <= root.get_visible_rect().size.y + 1, "visible control fits viewport: %s %s within %s" % [node.get_path(), rect, root.get_visible_rect()])
 	for child in node.get_children():
 		_check_layout(child)
 

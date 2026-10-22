@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-22T15:05:23.485535+00:00",
+  "time_utc": "2026-10-22T18:15:51.939708+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,85 +7,109 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.018
+      "seconds": 0.015
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.847
+      "seconds": 6.697
     },
     {
-      "name": "02_parse_00_grid_state",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.15
-    },
-    {
-      "name": "02_parse_01_level_data",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.152
-    },
-    {
-      "name": "02_parse_02_step_input",
+      "name": "02_parse_00_energy_rules",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.147
     },
     {
-      "name": "02_parse_03_main",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.147
-    },
-    {
-      "name": "02_parse_04_board_view",
+      "name": "02_parse_01_grid_state",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145
     },
     {
-      "name": "02_parse_05_chain_push_regression",
+      "name": "02_parse_02_level_data",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.149
     },
     {
-      "name": "02_parse_06_north_01_regression",
+      "name": "02_parse_03_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.148
     },
     {
-      "name": "02_parse_07_north_02_regression",
+      "name": "02_parse_04_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.243
     },
     {
-      "name": "02_parse_08_north_02_scene",
+      "name": "02_parse_05_board_view",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.147
     },
     {
-      "name": "02_parse_09_run_tests",
+      "name": "02_parse_06_chain_push_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.151
+      "seconds": 3.143
     },
     {
-      "name": "02_parse_10_scene_smoke",
+      "name": "02_parse_07_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.155
+      "seconds": 3.142
+    },
+    {
+      "name": "02_parse_08_north_01_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_parse_09_north_02_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "02_parse_10_north_02_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "02_parse_11_north_03_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_12_north_03_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.173
+    },
+    {
+      "name": "02_parse_13_run_tests",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_parse_14_scene_smoke",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
     },
     {
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.152
+      "seconds": 3.147
     },
     {
       "name": "03_chain_push",
@@ -94,85 +118,127 @@
       "seconds": 3.143
     },
     {
+      "name": "03_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
       "name": "03_north_01",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.143
     },
     {
       "name": "03_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.143
+    },
+    {
+      "name": "03_north_03",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238
     },
     {
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.33
+      "seconds": 3.332
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.446
+      "seconds": 4.45
     },
     {
       "name": "05_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.167
+      "seconds": 4.261
+    },
+    {
+      "name": "05_north_03_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 4.169
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.656
+      "seconds": 12.191
     },
     {
       "name": "06_render_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.312
+      "seconds": 12.184
+    },
+    {
+      "name": "06_render_north_03",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.164
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
   "passed": true,
   "test_results": {
     "original_logic": {
-      "cases": 13,
       "checks": 4662,
-      "failures": 0
+      "failures": 0,
+      "cases": 13
     },
     "chain_push": {
-      "cases": 6,
       "checks": 701,
-      "failures": 0
+      "failures": 0,
+      "cases": 6
+    },
+    "energy": {
+      "checks": 77,
+      "failures": 0,
+      "cases": 9
     },
     "north_01": {
-      "cases": 6,
       "checks": 344,
-      "failures": 0
+      "failures": 0,
+      "cases": 6
     },
     "north_02": {
-      "cases": 5,
       "checks": 239,
-      "failures": 0
+      "failures": 0,
+      "cases": 5
+    },
+    "north_03": {
+      "checks": 1084,
+      "failures": 0,
+      "cases": 3
     },
     "headless_scene": {
-      "checks": 208,
+      "checks": 210,
       "failures": 0
     },
     "headless_north_02_scene": {
-      "checks": 172,
+      "checks": 174,
+      "failures": 0
+    },
+    "headless_north_03_scene": {
+      "checks": 177,
       "failures": 0
     },
     "rendered_scene": {
-      "checks": 218,
+      "checks": 220,
       "failures": 0
     },
     "rendered_north_02_scene": {
-      "checks": 178,
+      "checks": 180,
+      "failures": 0
+    },
+    "rendered_north_03_scene": {
+      "checks": 185,
       "failures": 0
     }
   },
@@ -224,7 +290,37 @@
         "pushes": 12,
         "note": "U/D/L/R 表示上/下/左/右。先由独立推状态搜索找到，再由 Godot 实际规则回放验证；不宣称最少步数。"
       }
+    },
+    {
+      "id": "north_hero_03",
+      "size": [
+        11,
+        3
+      ],
+      "player": [
+        0,
+        1
+      ],
+      "crystal_count": 1,
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "green",
+      "solution": {
+        "level_id": "north_hero_03",
+        "path": "RRRRURRDLLLLRRRRDRRUR",
+        "moves": 21,
+        "pushes": 4,
+        "note": "U/D/L/R 为上/下/左/右。将紫水晶推到黄色压力板并保持占用，再从下方能量格通过，到达绿色终点。"
+      }
     }
   ],
-  "level_01_map_unchanged_from": "cdc672f77f673b29725b75905439b89f8dea1988"
+  "north_03_reachability": {
+    "legal_states_exhausted": 352,
+    "crystal_enters_barrier": false,
+    "unconfirmed_interaction_reachable": false,
+    "test": "tests/north_03_regression.gd"
+  },
+  "previous_maps_and_videos_unchanged_from": "ef9b4078be6f84af9892aa39779a7571abf51f19"
 }

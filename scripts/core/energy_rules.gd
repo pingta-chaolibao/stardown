@@ -1,0 +1,27 @@
+class_name EnergyRules
+extends RefCounted
+## Pure post-action settlement. Callers commit only a fully defined result.
+
+
+static func pressure_matches(cell: Vector2i, sources: Array, hero: Vector2i, crystals: Dictionary) -> bool:
+	return ("hero" in sources and hero == cell) or ("crystal" in sources and crystals.has(cell))
+
+
+static func settle(links: Array[Dictionary], hero: Vector2i, crystals: Dictionary, previous_barriers: Dictionary) -> Dictionary:
+	var pressure: Dictionary = {}
+	var barriers: Dictionary = {}
+	var alive := true
+	for link in links:
+		var pressed := pressure_matches(link["plate"], link["pressure_sources"], hero, crystals)
+		pressure[link["id"]] = pressed
+		for cell: Vector2i in link["barriers"]:
+			barriers[cell] = not pressed
+	# All occupancy and pressure are computed before evaluating consequences.
+	for cell: Vector2i in barriers:
+		if not barriers[cell]:
+			continue
+		if crystals.has(cell):
+			return {"error": "能量屏障恢复格 %s 有水晶：该行为尚未确认，动作未提交。" % str(cell)}
+		if not previous_barriers.get(cell, false) and hero == cell:
+			alive = false
+	return {"error": "", "pressure": pressure, "barriers": barriers, "alive": alive}

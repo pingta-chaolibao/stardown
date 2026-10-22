@@ -32,6 +32,35 @@ def check_replay(item, directory):
     def plus(cell, delta):
         return cell[0] + delta[0], cell[1] + delta[1]
 
+    def settle(previous_barriers):
+        pressure, barriers = {}, {}
+        for link in level.get("energy_links", []):
+            plate = tuple(link["plate"])
+            sources = link["pressure_sources"]
+            pressed = ("hero" in sources and player == plate) or ("crystal" in sources and plate in crystals)
+            pressure[link["id"]] = pressed
+            barriers.update({tuple(cell): not pressed for cell in link["barriers"]})
+        alive = True
+        for cell, active in barriers.items():
+            if active:
+                # This interaction is undefined; no published walkthrough may use it.
+                assert cell not in crystals, "Unconfirmed crystal/barrier interaction"
+                if not previous_barriers.get(cell, False) and cell == player:
+                    alive = False
+        return pressure, barriers, alive
+
+    pressure, barriers, alive = settle({})
+
+    def walkable(cell):
+        return floor(cell) and not barriers.get(cell, False)
+
+    def check_mechanisms(state):
+        assert alive and state.get("alive", True)
+        if level.get("energy_links") or "pressure" in state:
+            assert state["pressure"] == pressure
+            actual = {tuple(entry["position"]): entry["active"] for entry in state["barriers"]}
+            assert actual == barriers
+
     def check_crystals(state):
         actual = {tuple(entry["position"]): entry["id"] for entry in state["crystals"]}
         assert actual == crystals
@@ -39,30 +68,34 @@ def check_replay(item, directory):
             assert entry["color"] == level["crystal_colors"][entry["id"]]
 
     check_crystals(initial)
+    check_mechanisms(initial)
     pushes = 0
     for index, (symbol, state) in enumerate(zip(solution["path"], evidence["trace"]), 1):
         assert state["input"] == symbol
         direction = DIRECTIONS[symbol]
         target = plus(player, direction)
-        assert floor(target)
+        assert walkable(target)
         chain = []
         terminal = target
         while terminal in crystals:
             chain.append(terminal)
             terminal = plus(terminal, direction)
-        assert floor(terminal)
+        assert walkable(terminal)
         for cell in reversed(chain):
             crystals[plus(cell, direction)] = crystals.pop(cell)
         pushes += bool(chain)
         player = target
+        pressure, barriers, alive = settle(barriers)
         assert state["player"] == list(player)
         assert state["moves"] == index and state["pushes"] == pushes
         assert state["completed"] == (player == tuple(level["exit"])) == (index == solution["moves"])
         check_crystals(state)
+        check_mechanisms(state)
     final = evidence["final_state"]
     assert final["player"] == level["exit"] and final["completed"]
     assert final["moves"] == solution["moves"] and final["pushes"] == solution["pushes"]
     check_crystals(final)
+    check_mechanisms(final)
     return evidence
 
 
