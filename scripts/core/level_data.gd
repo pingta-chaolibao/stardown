@@ -77,7 +77,7 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 				level.targets.append(cell)
 	level.objective = data["objective"]
 	if level.objective not in ["none", "all_crates_on_targets", "player_on_exit"]:
-		return _invalid("未知 objective；正式胜利条件需要截图核实后再实现。")
+		return _invalid("未知 objective；请使用 none、player_on_exit 或基础测试落点规则。")
 	if data.has("exit") or level.objective == "player_on_exit":
 		var destination: Variant = _parse_cell(data.get("exit"))
 		if destination == null or not level.is_floor(destination):

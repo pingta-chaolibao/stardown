@@ -21,7 +21,7 @@ func _draw() -> void:
 	if model == null or model.level == null:
 		return
 	var level := model.level
-	var tile := minf(58.0, minf((size.x - 32) / level.width, (size.y - 24) / level.height))
+	var tile := minf(72.0, minf((size.x - 32) / level.width, (size.y - 24) / level.height))
 	if tile <= 0:
 		return
 	var extent := Vector2(level.width, level.height) * tile

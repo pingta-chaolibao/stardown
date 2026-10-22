@@ -11,7 +11,7 @@ const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
 
-@export_file("*.json") var level_path: String = "res://levels/temporary_test.json"
+@export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
 var model := State.new()
 var key_steps := KeySteps.new()
@@ -74,14 +74,14 @@ func apply_command(command: Dictionary) -> void:
 				&"moved":
 					_refresh("每次按下移动一格；松开后可再次移动。")
 				&"complete":
-					_refresh("临时目标已达成，可撤销或重开。", GOLD)
+					_refresh("已抵达终点，可撤销或重开。", GOLD)
 		&"undo":
 			var undone := model.undo()
 			_refresh("已撤销最近一步。" if undone else "当前没有可撤销的步骤。")
 		&"restart":
 			model.restart()
 			board.facing = Vector2i.DOWN
-			_refresh("已重开临时测试地图。")
+			_refresh("已重开%s。" % model.level.title)
 
 
 func _refresh(message: String, color: Color = MINT) -> void:
@@ -95,7 +95,9 @@ func _refresh(message: String, color: Color = MINT) -> void:
 		progress_label.text = "未设置胜利判定"
 	undo_button.disabled = model.history_size() == 0
 	if model.is_complete():
-		status_label.text = "临时目标已达成！\n这是测试布局，非原关还原。"
+		status_label.text = "已抵达终点！\n可撤销最后一步，或重新开始。"
+		if model.level.is_temporary:
+			status_label.text = "临时目标已达成！\n这是测试布局。"
 		status_label.add_theme_color_override("font_color", GOLD)
 	else:
 		status_label.text = message
@@ -129,12 +131,12 @@ func _build_header(parent: VBoxContainer) -> void:
 	row.add_child(emblem)
 	var titles := _vbox(0)
 	row.add_child(titles)
-	titles.add_child(_label("STARDOWN  /  2D PROTOTYPE", 12, MINT))
+	titles.add_child(_label("STARDOWN  /  NORTHERN REALM", 12, MINT))
 	titles.add_child(_label("沉星之序", 34, TEXT))
 	_spacer(row)
 	var badge := _panel(Color("1b2a33"), Color("394c54"), 10)
 	badge.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	badge.add_child(_label("基础框架  /  原关待核实", 13, GOLD))
+	badge.add_child(_label("用户确认布局  /  原创 2D" if not model.level.is_temporary else "临时测试布局", 13, GOLD))
 	row.add_child(badge)
 
 
@@ -149,11 +151,14 @@ func _build_board(parent: HBoxContainer) -> void:
 	var title := _vbox(2)
 	header.add_child(title)
 	title.add_child(_label(model.level.title, 20, TEXT))
-	title.add_child(_label("SANDBOX / 01     ·     自编基础机制测试", 12, MUTED))
+	var caption := "NORTHERN REALM / 01     ·     %d × %d" % [model.level.width, model.level.height]
+	if model.level.is_temporary:
+		caption = "SANDBOX     ·     自编机制测试"
+	title.add_child(_label(caption, 12, MUTED))
 	_spacer(header)
 	var badge := _panel(Color("2d302d"), Color("665d43"), 7)
 	badge.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	badge.add_child(_label("临时", 12, GOLD))
+	badge.add_child(_label("布局已确认" if not model.level.is_temporary else "临时", 12, GOLD))
 	header.add_child(badge)
 	board = Board.new()
 	board.name = "Board"
@@ -181,7 +186,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	parent.add_child(sidebar)
 	var intro := _vbox(6)
 	sidebar.add_child(intro)
-	intro.add_child(_label("北部英雄  /  机制原型", 12, MINT))
+	intro.add_child(_label("北部英雄  /  第一关", 12, MINT))
 	intro.add_child(_label("推之英雄", 30, TEXT))
 	intro.add_child(_label("红色小人 · 只能推，不能拉", 16, Board.CORAL))
 	var instructions := _label("走向相邻水晶，将它向前推动一格。\n前方是墙或另一枚水晶时，推动受阻。", 14, MUTED)
@@ -194,7 +199,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	sidebar.add_child(goal_card)
 	var goal := _vbox(5)
 	goal_card.add_child(goal)
-	goal.add_child(_label("◇  临时目标", 14, GOLD))
+	goal.add_child(_label("◇  通关目标" if not model.level.is_temporary else "◇  临时目标", 14, GOLD))
 	var objective_text := "走到黄色终点" if model.level.objective == "player_on_exit" else "将水晶推至测试落点"
 	if model.level.objective == "none":
 		objective_text = "自由验证移动与推动"
@@ -202,7 +207,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	progress_label = _label("", 13, GOLD)
 	progress_label.name = "TargetProgress"
 	goal.add_child(progress_label)
-	goal.add_child(_label("临时布局；水晶不需要停在终点", 12, MUTED))
+	goal.add_child(_label("水晶不需要停在终点", 12, MUTED))
 	status_label = _label("", 14, MINT)
 	status_label.name = "Status"
 	status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -225,7 +230,10 @@ func _build_footer(parent: VBoxContainer) -> void:
 	var footer := _vbox(5)
 	parent.add_child(footer)
 	footer.add_child(_label("方向键 / WASD  移动     ·     Z / U / Backspace  撤销     ·     R  重开     ·     长按不连走", 14, TEXT))
-	footer.add_child(_label("临时测试地图 · 非原作第一关。到达终点的规则已确认；原关布局、起点与障碍坐标尚待截图核对。", 13, MUTED))
+	var note := "依据用户确认的北部第一关坐标制作 · 原创 2D 几何图形"
+	if model.level.is_temporary:
+		note = "临时测试布局"
+	footer.add_child(_label(note, 13, MUTED))
 
 
 func _stat(parent: HBoxContainer, caption: String, node_name: String) -> Label:

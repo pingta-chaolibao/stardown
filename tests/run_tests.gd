@@ -251,7 +251,7 @@ func _test_random_history() -> void:
 
 
 func _test_temporary_map_solution() -> void:
-	var level := Level.from_file("res://levels/temporary_test.json")
+	var level := Level.from_file("res://tests/fixtures/temporary_test.json")
 	_check(level.error.is_empty() and level.is_temporary, "bundled map is valid and explicitly temporary")
 	_check(level.initial_crates.size() == 2 and level.crystal_colors == PackedStringArray(["blue", "purple"]), "two independently colored temporary crystals")
 	_check(level.objective == "player_on_exit", "bundled map uses the user-confirmed player exit rule")

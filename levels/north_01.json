@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_01",
+  "title": "北部英雄 · 第一关",
+  "is_temporary": false,
+  "source_note": "依据用户确认的 11 列 × 3 行、0 起算文字坐标制作；红色玩家 (1,1)，墙 (3,0)/(3,1)/(7,1)/(7,2)，蓝水晶 (3,2)，紫水晶 (7,0)，黄色终点 (9,1)。原创 2D 几何表现，非逐像素复刻。",
+  "terrain": [
+    "...#.......",
+    "...#...#...",
+    ".......#..."
+  ],
+  "player": [1, 1],
+  "crates": [[3, 2], [7, 0]],
+  "crystal_colors": ["blue", "purple"],
+  "targets": [],
+  "exit": [9, 1],
+  "objective": "player_on_exit"
+}

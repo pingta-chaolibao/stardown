@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-22T09:45:22.047785+00:00",
+  "time_utc": "2026-10-22T10:03:08.258019+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,52 +7,58 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.016
+      "seconds": 0.019
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.874
+      "seconds": 7.237
     },
     {
       "name": "02_parse_00_grid_state",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "02_parse_01_level_data",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.143
     },
     {
       "name": "02_parse_02_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "02_parse_03_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "02_parse_04_board_view",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.144
     },
     {
-      "name": "02_parse_05_run_tests",
+      "name": "02_parse_05_north_01_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143
     },
     {
-      "name": "02_parse_06_scene_smoke",
+      "name": "02_parse_06_run_tests",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "02_parse_07_scene_smoke",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.142
@@ -61,48 +67,97 @@
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.143
+    },
+    {
+      "name": "03_north_01",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
     },
     {
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.332
+      "seconds": 3.333
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.795
+      "seconds": 3.983
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.179
+      "seconds": 12.18
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
   "passed": true,
   "test_results": {
-    "logic": {
+    "original_logic": {
       "cases": 13,
       "checks": 4662,
       "failures": 0
     },
+    "north_01": {
+      "cases": 6,
+      "checks": 344,
+      "failures": 0
+    },
     "headless_scene": {
-      "checks": 84,
+      "checks": 173,
       "failures": 0
     },
     "rendered_scene": {
-      "checks": 92,
+      "checks": 183,
       "failures": 0
     }
   },
   "map_status": {
-    "layout": "temporary_test",
-    "original_screenshot_pixels_verified": false,
-    "confirmed_victory_rule": "player_on_exit",
-    "crystal_count": 2
+    "layout": "user_confirmed_coordinates",
+    "level": "north_hero_01",
+    "width": 11,
+    "height": 3,
+    "player": [
+      1,
+      1
+    ],
+    "walls": [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        2
+      ]
+    ],
+    "blue_crystal": [
+      3,
+      2
+    ],
+    "purple_crystal": [
+      7,
+      0
+    ],
+    "exit": [
+      9,
+      1
+    ],
+    "objective": "player_on_exit",
+    "solution_moves": 12,
+    "solution_pushes": 4,
+    "pixel_exact_recreation": false
   }
 }
