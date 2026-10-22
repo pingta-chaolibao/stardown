@@ -2,8 +2,8 @@
 config_version=5
 
 [application]
-config/name="沉星之序 · 北部英雄第一关"
-config/description="依据用户确认坐标制作的北部第一关 2D 布局。原创几何图形，非逐像素复刻。"
+config/name="沉星之序 · 北部英雄"
+config/description="第一章前两关，依据确认网格制作。红色推之英雄与原创 2D 几何图形。"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/icon.svg"

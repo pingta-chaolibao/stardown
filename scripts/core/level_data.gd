@@ -14,6 +14,7 @@ var initial_crates: Array[Vector2i] = []
 var crystal_colors: PackedStringArray = []
 var targets: Array[Vector2i] = []
 var exit_cell := Vector2i(-1, -1)
+var exit_color: String = "yellow"
 var objective: String = "none"
 var error: String = ""
 
@@ -83,6 +84,10 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 		if destination == null or not level.is_floor(destination):
 			return _invalid("exit 必须是地图内可通行的整数坐标。")
 		level.exit_cell = destination
+	var goal_color: Variant = data.get("exit_color", "yellow")
+	if goal_color not in ["yellow", "green"]:
+		return _invalid("exit_color 仅支持 yellow 或 green。")
+	level.exit_color = goal_color
 	var colors: Variant = data.get("crystal_colors", [])
 	if not colors is Array or (not colors.is_empty() and colors.size() != level.initial_crates.size()):
 		return _invalid("crystal_colors 必须为空数组或与水晶数量相同的颜色数组。")

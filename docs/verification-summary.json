@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-22T10:23:54.082571+00:00",
+  "time_utc": "2026-10-22T15:05:23.485535+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -13,85 +13,103 @@
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 7.044
+      "seconds": 6.847
     },
     {
       "name": "02_parse_00_grid_state",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.15
     },
     {
       "name": "02_parse_01_level_data",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.152
     },
     {
       "name": "02_parse_02_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.14
+      "seconds": 3.147
     },
     {
       "name": "02_parse_03_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.147
     },
     {
       "name": "02_parse_04_board_view",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.145
     },
     {
       "name": "02_parse_05_chain_push_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.144
     },
     {
       "name": "02_parse_06_north_01_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.279
+      "seconds": 3.143
     },
     {
-      "name": "02_parse_07_run_tests",
+      "name": "02_parse_07_north_02_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_08_north_02_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.147
     },
     {
-      "name": "02_parse_08_scene_smoke",
+      "name": "02_parse_09_run_tests",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.15
+      "seconds": 3.151
+    },
+    {
+      "name": "02_parse_10_scene_smoke",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.155
     },
     {
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.156
+      "seconds": 3.152
     },
     {
       "name": "03_chain_push",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.143
     },
     {
       "name": "03_north_01",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.142
+    },
+    {
+      "name": "03_north_02",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.141
     },
     {
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.333
+      "seconds": 3.33
     },
     {
       "name": "05_scene_input",
@@ -100,10 +118,22 @@
       "seconds": 4.446
     },
     {
+      "name": "05_north_02_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 4.167
+    },
+    {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.197
+      "seconds": 14.656
+    },
+    {
+      "name": "06_render_north_02",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 14.312
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -124,78 +154,77 @@
       "checks": 344,
       "failures": 0
     },
+    "north_02": {
+      "cases": 5,
+      "checks": 239,
+      "failures": 0
+    },
     "headless_scene": {
-      "checks": 204,
+      "checks": 208,
+      "failures": 0
+    },
+    "headless_north_02_scene": {
+      "checks": 172,
       "failures": 0
     },
     "rendered_scene": {
-      "checks": 214,
+      "checks": 218,
+      "failures": 0
+    },
+    "rendered_north_02_scene": {
+      "checks": 178,
       "failures": 0
     }
   },
-  "map_status": {
-    "layout": "user_confirmed_coordinates",
-    "level": "north_hero_01",
-    "width": 11,
-    "height": 3,
-    "player": [
-      1,
-      1
-    ],
-    "walls": [
-      [
-        3,
-        0
+  "levels": [
+    {
+      "id": "north_hero_01",
+      "size": [
+        11,
+        3
       ],
-      [
-        3,
+      "player": [
+        1,
         1
       ],
-      [
-        7,
+      "crystal_count": 2,
+      "exit": [
+        9,
         1
       ],
-      [
-        7,
-        2
-      ]
-    ],
-    "blue_crystal": [
-      3,
-      2
-    ],
-    "purple_crystal": [
-      7,
-      0
-    ],
-    "exit": [
-      9,
-      1
-    ],
-    "objective": "player_on_exit",
-    "solution_moves": 12,
-    "solution_pushes": 4,
-    "pixel_exact_recreation": false,
-    "unchanged_from": "7daf0b1579eacaad67350f6d1adc59d367d8db09"
-  },
-  "push_rule": {
-    "whole_contiguous_line": true,
-    "cells_per_input": 1,
-    "fixed_crystal_count_limit": null,
-    "blocked_operation_is_atomic": true,
-    "undo_steps_per_push": 1,
-    "tested_lengths": [
-      2,
-      3,
-      4,
-      8,
-      60
-    ],
-    "tested_directions": [
-      "right",
-      "left",
-      "up",
-      "down"
-    ]
-  }
+      "exit_color": "yellow",
+      "solution": {
+        "level_id": "north_hero_01",
+        "path": "DRRRUURRRRDR",
+        "moves": 12,
+        "pushes": 4,
+        "note": "U/D/L/R 表示上/下/左/右。合法验证路径，不宣称最优。"
+      }
+    },
+    {
+      "id": "north_hero_02",
+      "size": [
+        11,
+        7
+      ],
+      "player": [
+        0,
+        1
+      ],
+      "crystal_count": 10,
+      "exit": [
+        1,
+        5
+      ],
+      "exit_color": "green",
+      "solution": {
+        "level_id": "north_hero_02",
+        "path": "RRRRURRDRRDRDDLDLLULLDLLULD",
+        "moves": 27,
+        "pushes": 12,
+        "note": "U/D/L/R 表示上/下/左/右。先由独立推状态搜索找到，再由 Godot 实际规则回放验证；不宣称最少步数。"
+      }
+    }
+  ],
+  "level_01_map_unchanged_from": "cdc672f77f673b29725b75905439b89f8dea1988"
 }

@@ -1,0 +1,7 @@
+{
+  "level_id": "north_hero_02",
+  "path": "RRRRURRDRRDRDDLDLLULLDLLULD",
+  "moves": 27,
+  "pushes": 12,
+  "note": "U/D/L/R 表示上/下/左/右。先由独立推状态搜索找到，再由 Godot 实际规则回放验证；不宣称最少步数。"
+}

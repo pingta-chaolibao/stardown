@@ -78,6 +78,12 @@ func _target(center: Vector2, tile: float) -> void:
 
 func _exit_marker(center: Vector2, tile: float) -> void:
 	var rect := Rect2(center - Vector2.ONE * tile * 0.4, Vector2.ONE * tile * 0.8)
+	if model.level.exit_color == "green":
+		_box(rect, Color("286447"), 5)
+		_box(rect.grow(-tile * 0.05), Color("4ba66e"), 3)
+		draw_circle(center, tile * 0.22, Color("c6ffd5"))
+		draw_circle(center, tile * 0.12, Color("78dd99"))
+		return
 	_box(rect, Color("95783d"), 5)
 	_box(rect.grow(-tile * 0.05), Color("d8b45f"), 3)
 	var points := PackedVector2Array([

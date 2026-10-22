@@ -10,6 +10,7 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -21,6 +22,8 @@ var pushes_label: Label
 var progress_label: Label
 var status_label: Label
 var undo_button: Button
+var current_level_index: int = 0
+var ui_root: Control
 
 
 func _ready() -> void:
@@ -34,8 +37,34 @@ func _ready() -> void:
 	if not model.load_level(level):
 		_show_error(level.error)
 		return
+	current_level_index = LEVEL_PATHS.find(level_path)
 	_build_ui()
-	_refresh("推动水晶腾出道路，再走到黄色终点。")
+	_refresh("推动水晶腾出道路，再走到%s。" % _goal_name())
+
+
+func select_level(index: int) -> bool:
+	if index < 0 or index >= LEVEL_PATHS.size():
+		return false
+	var definition := Level.from_file(LEVEL_PATHS[index])
+	if not model.load_level(definition):
+		return false
+	current_level_index = index
+	level_path = LEVEL_PATHS[index]
+	key_steps.clear()
+	if ui_root != null:
+		remove_child(ui_root)
+		ui_root.queue_free()
+	_build_ui()
+	_refresh("已进入%s，走到%s即可完成。" % [model.level.title, _goal_name()])
+	return true
+
+
+func _goal_name() -> String:
+	return "绿色终点" if model.level.exit_color == "green" else "黄色终点"
+
+
+func _goal_color() -> Color:
+	return Color("78dd99") if model.level.exit_color == "green" else GOLD
 
 
 func _draw() -> void:
@@ -98,7 +127,7 @@ func _refresh(message: String, color: Color = MINT) -> void:
 		status_label.text = "已抵达终点！\n可撤销最后一步，或重新开始。"
 		if model.level.is_temporary:
 			status_label.text = "临时目标已达成！\n这是测试布局。"
-		status_label.add_theme_color_override("font_color", GOLD)
+		status_label.add_theme_color_override("font_color", _goal_color())
 	else:
 		status_label.text = message
 		status_label.add_theme_color_override("font_color", color)
@@ -107,6 +136,7 @@ func _refresh(message: String, color: Color = MINT) -> void:
 
 func _build_ui() -> void:
 	var margin := MarginContainer.new()
+	ui_root = margin
 	add_child(margin)
 	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	for side in ["left", "right", "top", "bottom"]:
@@ -134,6 +164,14 @@ func _build_header(parent: VBoxContainer) -> void:
 	titles.add_child(_label("STARDOWN  /  NORTHERN REALM", 12, MINT))
 	titles.add_child(_label("沉星之序", 34, TEXT))
 	_spacer(row)
+	for index in LEVEL_PATHS.size():
+		var button := _button("第一关" if index == 0 else "第二关", "Level01" if index == 0 else "Level02")
+		button.disabled = index == current_level_index
+		button.custom_minimum_size.x = 84
+		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		button.tooltip_text = "切换关卡并从初始状态开始"
+		button.pressed.connect(select_level.bind(index))
+		row.add_child(button)
 	var badge := _panel(Color("1b2a33"), Color("394c54"), 10)
 	badge.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	badge.add_child(_label("用户确认布局  /  原创 2D" if not model.level.is_temporary else "临时测试布局", 13, GOLD))
@@ -151,7 +189,7 @@ func _build_board(parent: HBoxContainer) -> void:
 	var title := _vbox(2)
 	header.add_child(title)
 	title.add_child(_label(model.level.title, 20, TEXT))
-	var caption := "NORTHERN REALM / 01     ·     %d × %d" % [model.level.width, model.level.height]
+	var caption := "NORTHERN REALM / %02d     ·     %d × %d" % [current_level_index + 1, model.level.width, model.level.height]
 	if model.level.is_temporary:
 		caption = "SANDBOX     ·     自编机制测试"
 	title.add_child(_label(caption, 12, MUTED))
@@ -170,7 +208,7 @@ func _build_board(parent: HBoxContainer) -> void:
 	content.add_child(legend)
 	legend.add_child(_label("● 英雄", 13, Board.CORAL))
 	legend.add_child(_label("◆ 水晶", 13, Color("9cc5f5")))
-	legend.add_child(_label("◇ 终点", 13, GOLD))
+	legend.add_child(_label("◇ 终点", 13, _goal_color()))
 	_spacer(legend)
 	for entry in [["←", Vector2i.LEFT, "Left"], ["↑", Vector2i.UP, "Up"], ["↓", Vector2i.DOWN, "Down"], ["→", Vector2i.RIGHT, "Right"]]:
 		var button := _button(entry[0], "Move" + entry[2])
@@ -186,7 +224,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	parent.add_child(sidebar)
 	var intro := _vbox(6)
 	sidebar.add_child(intro)
-	intro.add_child(_label("北部英雄  /  第一关", 12, MINT))
+	intro.add_child(_label("北部英雄  /  第二关" if current_level_index == 1 else "北部英雄  /  第一关", 12, MINT))
 	intro.add_child(_label("推之英雄", 30, TEXT))
 	intro.add_child(_label("红色小人 · 只能推，不能拉", 16, Board.CORAL))
 	var instructions := _label("可推动紧密排成直线的整列水晶。\n每次前进一格，列末受阻则整列不动。", 14, MUTED)
@@ -199,12 +237,14 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	sidebar.add_child(goal_card)
 	var goal := _vbox(5)
 	goal_card.add_child(goal)
-	goal.add_child(_label("◇  通关目标" if not model.level.is_temporary else "◇  临时目标", 14, GOLD))
-	var objective_text := "走到黄色终点" if model.level.objective == "player_on_exit" else "将水晶推至测试落点"
+	goal.add_child(_label("◇  通关目标" if not model.level.is_temporary else "◇  临时目标", 14, _goal_color()))
+	var objective_text := "走到%s" % _goal_name() if model.level.objective == "player_on_exit" else "将水晶推至测试落点"
 	if model.level.objective == "none":
 		objective_text = "自由验证移动与推动"
-	goal.add_child(_label(objective_text, 18, TEXT))
-	progress_label = _label("", 13, GOLD)
+	var objective_label := _label(objective_text, 18, TEXT)
+	objective_label.name = "Objective"
+	goal.add_child(objective_label)
+	progress_label = _label("", 13, _goal_color())
 	progress_label.name = "TargetProgress"
 	goal.add_child(progress_label)
 	goal.add_child(_label("水晶不需要停在终点", 12, MUTED))
@@ -230,7 +270,7 @@ func _build_footer(parent: VBoxContainer) -> void:
 	var footer := _vbox(5)
 	parent.add_child(footer)
 	footer.add_child(_label("方向键 / WASD  移动     ·     Z / U / Backspace  撤销     ·     R  重开     ·     长按不连走", 14, TEXT))
-	var note := "依据用户确认的北部第一关坐标制作 · 原创 2D 几何图形"
+	var note := "依据确认的北部关卡网格制作 · 原创 2D 几何图形"
 	if model.level.is_temporary:
 		note = "临时测试布局"
 	footer.add_child(_label(note, 13, MUTED))

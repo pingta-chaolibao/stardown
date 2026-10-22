@@ -1,0 +1,7 @@
+{
+  "level_id": "north_hero_01",
+  "path": "DRRRUURRRRDR",
+  "moves": 12,
+  "pushes": 4,
+  "note": "U/D/L/R 表示上/下/左/右。合法验证路径，不宣称最优。"
+}

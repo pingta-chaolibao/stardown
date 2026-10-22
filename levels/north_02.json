@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_02",
+  "title": "北部英雄 · 第二关",
+  "is_temporary": false,
+  "source_note": "依据主对话识别且关键遮挡格由用户明确确认的 11×7 文字网格；(10,3) 为墙，(10,2) 为地板。红色玩家 (0,1)，绿色终点 (1,5)，4 枚蓝水晶和 6 枚紫水晶；不包含绿色或紫色英雄。原创 2D 表现。",
+  "terrain": [
+    "...#...#...",
+    "...........",
+    "...#...#...",
+    "#########.#",
+    "...#...#...",
+    "...........",
+    "...#...#..."
+  ],
+  "player": [0, 1],
+  "crates": [[4, 1], [9, 1], [2, 5], [6, 5], [3, 1], [10, 1], [9, 3], [5, 5], [7, 5], [8, 5]],
+  "crystal_colors": ["blue", "blue", "blue", "blue", "purple", "purple", "purple", "purple", "purple", "purple"],
+  "targets": [],
+  "exit": [1, 5],
+  "exit_color": "green",
+  "objective": "player_on_exit"
+}
