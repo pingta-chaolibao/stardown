@@ -1,0 +1,6 @@
+.godot/
+.cache/
+artifacts/
+*.tmp
+*.log
+__pycache__/

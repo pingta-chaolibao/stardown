@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "temporary_push_sandbox",
+  "title": "临时测试地图",
+  "is_temporary": true,
+  "source_note": "自编临时布局，非原作第一关；玩家走到黄色终点的胜利规则已由用户确认，原关截图尚未在此云端完成像素核对。",
+  "terrain": [
+    "############",
+    "#....#.....#",
+    "#..........#",
+    "#......#...#",
+    "#..........#",
+    "#..#.......#",
+    "#..........#",
+    "############"
+  ],
+  "player": [2, 4],
+  "crates": [[4, 4], [9, 5]],
+  "crystal_colors": ["blue", "purple"],
+  "targets": [],
+  "exit": [8, 2],
+  "objective": "player_on_exit"
+}

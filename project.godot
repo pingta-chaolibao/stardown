@@ -1,0 +1,50 @@
+; Open this file with Godot 4.6.3 or a compatible Godot 4 editor.
+config_version=5
+
+[application]
+config/name="沉星之序 · 推之英雄（基础原型）"
+config/description="2D 基础框架。当前为自编临时测试地图，非原作第一关。"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://assets/icon.svg"
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=820
+window/size/window_width_override=1280
+window/size/window_height_override=820
+window/size/min_width=960
+window/size/min_height=615
+window/stretch/mode="canvas_items"
+
+[input]
+move_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194320), Object(InputEventKey,"physical_keycode":87)]
+}
+move_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194322), Object(InputEventKey,"physical_keycode":83)]
+}
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194319), Object(InputEventKey,"physical_keycode":65)]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194321), Object(InputEventKey,"physical_keycode":68)]
+}
+undo={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":90), Object(InputEventKey,"physical_keycode":85), Object(InputEventKey,"physical_keycode":4194308)]
+}
+restart={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":82)]
+}
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.0353, 0.0627, 0.0941, 1)
