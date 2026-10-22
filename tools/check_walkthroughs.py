@@ -1,0 +1,116 @@
+#!/usr/bin/env python3
+"""Check committed walkthrough media and independently replay their input evidence."""
+
+from pathlib import Path
+from fractions import Fraction
+import hashlib
+import json
+import struct
+import subprocess
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DIRECTIONS = {"U": (0, -1), "D": (0, 1), "L": (-1, 0), "R": (1, 0)}
+
+
+def check_replay(item, directory):
+    evidence = json.loads((directory / item["replay_report"]).read_text())
+    level = json.loads((ROOT / item["level_file"]).read_text())
+    solution = json.loads((ROOT / item["solution_file"]).read_text())
+    player = tuple(level["player"])
+    crystals = {tuple(cell): identity for identity, cell in enumerate(level["crates"])}
+    initial = evidence["initial_state"]
+    assert initial["player"] == level["player"] and initial["moves"] == 0
+    assert not initial["completed"] and evidence["path"] == solution["path"]
+    assert evidence["display"] == "X11"
+    assert len(evidence["trace"]) == solution["moves"]
+
+    def floor(cell):
+        x, y = cell
+        return 0 <= y < len(level["terrain"]) and 0 <= x < len(level["terrain"][0]) and level["terrain"][y][x] == "."
+
+    def plus(cell, delta):
+        return cell[0] + delta[0], cell[1] + delta[1]
+
+    def check_crystals(state):
+        actual = {tuple(entry["position"]): entry["id"] for entry in state["crystals"]}
+        assert actual == crystals
+        for entry in state["crystals"]:
+            assert entry["color"] == level["crystal_colors"][entry["id"]]
+
+    check_crystals(initial)
+    pushes = 0
+    for index, (symbol, state) in enumerate(zip(solution["path"], evidence["trace"]), 1):
+        assert state["input"] == symbol
+        direction = DIRECTIONS[symbol]
+        target = plus(player, direction)
+        assert floor(target)
+        chain = []
+        terminal = target
+        while terminal in crystals:
+            chain.append(terminal)
+            terminal = plus(terminal, direction)
+        assert floor(terminal)
+        for cell in reversed(chain):
+            crystals[plus(cell, direction)] = crystals.pop(cell)
+        pushes += bool(chain)
+        player = target
+        assert state["player"] == list(player)
+        assert state["moves"] == index and state["pushes"] == pushes
+        assert state["completed"] == (player == tuple(level["exit"])) == (index == solution["moves"])
+        check_crystals(state)
+    final = evidence["final_state"]
+    assert final["player"] == level["exit"] and final["completed"]
+    assert final["moves"] == solution["moves"] and final["pushes"] == solution["pushes"]
+    check_crystals(final)
+    return evidence
+
+
+def check_media(item, evidence):
+    path = ROOT / item["file"]
+    data = path.read_bytes()
+    assert len(data) == item["bytes"] and hashlib.sha256(data).hexdigest() == item["sha256"]
+    probe = json.loads(subprocess.check_output([
+        "ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+        "stream=codec_name,pix_fmt,width,height,avg_frame_rate,nb_frames:format=duration", "-of", "json", str(path)
+    ]))
+    stream = probe["streams"][0]
+    assert stream["codec_name"] == "h264" and stream["pix_fmt"] == "yuv420p"
+    assert [stream["width"], stream["height"]] == item["dimensions"]
+    assert Fraction(stream["avg_frame_rate"]) == item["fps"] == evidence["fps"]
+    expected = evidence["initial_pause_frames"] + len(evidence["path"]) * evidence["frames_per_input"] + evidence["victory_pause_frames"]
+    assert int(stream["nb_frames"]) == item["frames"] == expected
+    assert abs(float(probe["format"]["duration"]) - expected / evidence["fps"]) < 0.05
+    assert item["initial_and_final_frames_reviewed"]
+    atoms = []
+    offset = 0
+    while offset + 8 <= len(data):
+        size, kind = struct.unpack(">I4s", data[offset:offset + 8])
+        if size == 1:
+            size = struct.unpack(">Q", data[offset + 8:offset + 16])[0]
+        if size == 0:
+            size = len(data) - offset
+        assert size >= 8
+        atoms.append(kind)
+        offset += size
+    assert atoms.index(b"moov") < atoms.index(b"mdat")
+    subprocess.run(["ffmpeg", "-v", "error", "-xerror", "-i", str(path), "-f", "null", "-"],
+                   check=True, stdout=subprocess.DEVNULL)
+
+
+def main():
+    manifests = sorted((ROOT / "video").glob("chapter_*/verification.json"))
+    assert manifests, "No chapter video verification manifest found"
+    checked = 0
+    for manifest in manifests:
+        report = json.loads(manifest.read_text())
+        for item in report["videos"]:
+            evidence = check_replay(item, manifest.parent)
+            check_media(item, evidence)
+            checked += 1
+            print(f"PASS {item['file']}: {item['duration_seconds']}s, {item['frames']} frames, full decode and legal input replay", flush=True)
+    print(f"WALKTHROUGH RESULT: {checked} videos passed", flush=True)
+
+
+if __name__ == "__main__":
+    main()

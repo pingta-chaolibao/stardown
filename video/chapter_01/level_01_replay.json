@@ -1,0 +1,500 @@
+{
+  "capture": "Godot Movie Maker viewport; actual Input.parse_input_event press/release",
+  "chapter": 1,
+  "display": "X11",
+  "engine": {
+    "build": "official",
+    "hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+    "hex": 263683,
+    "major": 4,
+    "minor": 6,
+    "patch": 3,
+    "status": "stable",
+    "string": "4.6.3-stable (official)",
+    "timestamp": 0
+  },
+  "final_state": {
+    "completed": true,
+    "crystals": [
+      {
+        "color": "blue",
+        "id": 0,
+        "position": [
+          5,
+          2
+        ]
+      },
+      {
+        "color": "purple",
+        "id": 1,
+        "position": [
+          9,
+          0
+        ]
+      }
+    ],
+    "exit": [
+      9,
+      1
+    ],
+    "exit_color": "yellow",
+    "level_id": "north_hero_01",
+    "moves": 12,
+    "player": [
+      9,
+      1
+    ],
+    "pushes": 4
+  },
+  "fps": 30,
+  "frames_per_input": 18,
+  "game_implementation_commit": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9",
+  "initial_pause_frames": 60,
+  "initial_state": {
+    "completed": false,
+    "crystals": [
+      {
+        "color": "blue",
+        "id": 0,
+        "position": [
+          3,
+          2
+        ]
+      },
+      {
+        "color": "purple",
+        "id": 1,
+        "position": [
+          7,
+          0
+        ]
+      }
+    ],
+    "exit": [
+      9,
+      1
+    ],
+    "exit_color": "yellow",
+    "level_id": "north_hero_01",
+    "moves": 0,
+    "player": [
+      1,
+      1
+    ],
+    "pushes": 0
+  },
+  "level": 1,
+  "movie_file": "level_01.avi",
+  "path": "DRRRUURRRRDR",
+  "trace": [
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            3,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            7,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "D",
+      "level_id": "north_hero_01",
+      "moves": 1,
+      "player": [
+        1,
+        2
+      ],
+      "pushes": 0
+    },
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            3,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            7,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "R",
+      "level_id": "north_hero_01",
+      "moves": 2,
+      "player": [
+        2,
+        2
+      ],
+      "pushes": 0
+    },
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            4,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            7,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "R",
+      "level_id": "north_hero_01",
+      "moves": 3,
+      "player": [
+        3,
+        2
+      ],
+      "pushes": 1
+    },
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            7,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "R",
+      "level_id": "north_hero_01",
+      "moves": 4,
+      "player": [
+        4,
+        2
+      ],
+      "pushes": 2
+    },
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            7,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "U",
+      "level_id": "north_hero_01",
+      "moves": 5,
+      "player": [
+        4,
+        1
+      ],
+      "pushes": 2
+    },
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            7,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "U",
+      "level_id": "north_hero_01",
+      "moves": 6,
+      "player": [
+        4,
+        0
+      ],
+      "pushes": 2
+    },
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            7,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "R",
+      "level_id": "north_hero_01",
+      "moves": 7,
+      "player": [
+        5,
+        0
+      ],
+      "pushes": 2
+    },
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            7,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "R",
+      "level_id": "north_hero_01",
+      "moves": 8,
+      "player": [
+        6,
+        0
+      ],
+      "pushes": 2
+    },
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            8,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "R",
+      "level_id": "north_hero_01",
+      "moves": 9,
+      "player": [
+        7,
+        0
+      ],
+      "pushes": 3
+    },
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "R",
+      "level_id": "north_hero_01",
+      "moves": 10,
+      "player": [
+        8,
+        0
+      ],
+      "pushes": 4
+    },
+    {
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "D",
+      "level_id": "north_hero_01",
+      "moves": 11,
+      "player": [
+        8,
+        1
+      ],
+      "pushes": 4
+    },
+    {
+      "completed": true,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "yellow",
+      "input": "R",
+      "level_id": "north_hero_01",
+      "moves": 12,
+      "player": [
+        9,
+        1
+      ],
+      "pushes": 4
+    }
+  ],
+  "victory_pause_frames": 90
+}

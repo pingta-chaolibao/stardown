@@ -1,0 +1,75 @@
+{
+  "chapter": 1,
+  "game_implementation_commit": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9",
+  "capture": "actual Godot Movie Maker viewport with legal press/release input",
+  "videos": [
+    {
+      "file": "video/chapter_01/level_01.mp4",
+      "level": 1,
+      "bytes": 155369,
+      "sha256": "7bc924b31150e53bd609605ddc05a8f127bfd885368892b7cf59b158d8590358",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 366,
+      "duration_seconds": 12.2,
+      "mp4_fast_start": true,
+      "full_decode_passed": true,
+      "distinct_sampled_frames": 51,
+      "moves": 12,
+      "pushes": 4,
+      "initial_player": [
+        1,
+        1
+      ],
+      "victory_player": [
+        9,
+        1
+      ],
+      "legal_input_trace_verified": true,
+      "initial_and_final_frames_reviewed": true,
+      "replay_report": "level_01_replay.json",
+      "level_file": "levels/north_01.json",
+      "solution_file": "levels/solutions/north_01.json"
+    },
+    {
+      "file": "video/chapter_01/level_02.mp4",
+      "level": 2,
+      "bytes": 286661,
+      "sha256": "5f01ec7e8d3c8c39a26e6648cf4fc1e8e5aaf6d5847a81ecb7b19352138dece7",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 636,
+      "duration_seconds": 21.2,
+      "mp4_fast_start": true,
+      "full_decode_passed": true,
+      "distinct_sampled_frames": 95,
+      "moves": 27,
+      "pushes": 12,
+      "initial_player": [
+        0,
+        1
+      ],
+      "victory_player": [
+        1,
+        5
+      ],
+      "legal_input_trace_verified": true,
+      "initial_and_final_frames_reviewed": true,
+      "replay_report": "level_02_replay.json",
+      "level_file": "levels/north_02.json",
+      "solution_file": "levels/solutions/north_02.json"
+    }
+  ]
+}

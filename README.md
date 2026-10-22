@@ -24,6 +24,17 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 
 实际画面：[初始状态](docs/screenshots/initial.png)、[通关状态](docs/screenshots/completed.png)、[960 × 615 窗口](docs/screenshots/compact.png)。第二关画面：[初始状态](docs/screenshots/level_02_initial.png)、[通关状态](docs/screenshots/level_02_completed.png)、[小窗口](docs/screenshots/level_02_compact.png)。这些是本工程的 Godot 渲染结果。
 
+## 通关演示视频
+
+| 第一章关卡 | 实际运行视频 | 时长 |
+| --- | --- | --- |
+| 第一关 | [观看 / 下载 MP4](video/chapter_01/level_01.mp4) | 12.2 秒 |
+| 第二关 | [观看 / 下载 MP4](video/chapter_01/level_02.mp4) | 21.2 秒 |
+
+视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
+
+**今后每完成一关，都须先提交关卡实现，再制作并提交对应通关视频，按章节保存在仓库根目录 `video/chapter_XX/level_YY.mp4`。** 项目工作约定也已写入 [AGENTS.md](AGENTS.md)。
+
 ## 确认的地图
 
 ### 第一关
