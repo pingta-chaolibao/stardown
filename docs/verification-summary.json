@@ -1514,7 +1514,7 @@
     "modifier_keys_used": [],
     "user_example_13_to_24_then_24_swaps_with_26": true
   },
-  "all_chapter_one_walkthroughs_checked": 12,
+  "all_chapter_one_walkthroughs_checked": 13,
   "previous_nine_maps_solutions_videos_replays_unchanged_from": "9c879b28bd093773d6af2a9dcf2aa6dccc3c205b",
   "north_10_independent_search": {
     "living_identity_states_exhausted": 2560,
@@ -4414,5 +4414,103 @@
   },
   "previous_twelve_maps_solutions_videos_replays_unchanged_from": "133f20836428f503a8ac6a7be1e579688c1f663f",
   "previous_twelve_deliverable_files_compared": 48,
-  "previous_twelve_video_checker_preflight": "all12 complete decode and independently recomputed legal input replay passed after checker generalization"
+  "previous_twelve_video_checker_preflight": "all12 complete decode and independently recomputed legal input replay passed after checker generalization",
+  "north_13_walkthrough": {
+    "file": "video/chapter_01/level_13.mp4",
+    "level": 13,
+    "bytes": 335239,
+    "sha256": "5979fa7689493a41f88e81cdb249f45579ed8a7895e88cc62e0fe0443680f930",
+    "distinct_sampled_frames": 96,
+    "sampled_action_states": 28,
+    "distinct_action_state_frames": 28,
+    "full_decode_passed": true,
+    "game_implementation_commit": "c3b2ca0d789b4d770d7afc43689b0fc3cb288108",
+    "hero_kinds": [
+      "red",
+      "blue"
+    ],
+    "codec": "h264",
+    "profile": "High",
+    "pixel_format": "yuv420p",
+    "dimensions": [
+      1280,
+      820
+    ],
+    "fps": 30,
+    "frames": 636,
+    "duration_seconds": 21.2,
+    "mp4_fast_start": true,
+    "moves": 27,
+    "directions": 24,
+    "walks": 22,
+    "switches": 3,
+    "pushes": 0,
+    "pulls": 0,
+    "swaps": 2,
+    "counts_are_operations": true,
+    "action_notation": "UDLR acts on selected hero; C cycles identity without moving. All 27 successful inputs count once; direction alone decides blue first-target swap.",
+    "modifier_keys_used": [],
+    "keys_used": [
+      "W",
+      "A",
+      "S",
+      "D",
+      "C"
+    ],
+    "initial_hero_positions": {
+      "red": [
+        2,
+        2
+      ],
+      "blue": [
+        2,
+        4
+      ]
+    },
+    "victory_hero_positions": {
+      "red": [
+        0,
+        5
+      ],
+      "blue": [
+        0,
+        2
+      ]
+    },
+    "initial_active_hero": "blue",
+    "victory_active_hero": "red",
+    "legal_input_trace_verified": true,
+    "initial_and_final_frames_reviewed": true,
+    "all_three_switch_highlights_reviewed": true,
+    "inactive_heroes_retain_hue_reviewed": true,
+    "hero_exchange_across_open_gate_reviewed": true,
+    "two_distinct_hero_goals_reviewed": true,
+    "switch_action_numbers": [
+      5,
+      10,
+      20
+    ],
+    "swap_action_numbers": [
+      11,
+      18
+    ],
+    "all_plates_action": 9,
+    "first_hero_goal_action": 19,
+    "victory_action": 27,
+    "reviewed_encoded_frames": [
+      0,
+      142,
+      214,
+      232,
+      250,
+      376,
+      394,
+      412,
+      635
+    ],
+    "replay_report": "level_13_replay.json",
+    "level_file": "levels/north_13.json",
+    "solution_file": "levels/solutions/north_13.json"
+  },
+  "previous_twelve_video_manifest_entries_unchanged": true
 }

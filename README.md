@@ -52,7 +52,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十关 | [观看 / 下载 MP4](video/chapter_01/level_10.mp4) | 37.4 秒 |
 | 第十一关 | [观看 / 下载 MP4](video/chapter_01/level_11.mp4) | 16.4 秒 |
 | 第十二关 | [观看 / 下载 MP4](video/chapter_01/level_12.mp4) | 20.6 秒 |
-| 第十三关 | 实现已完成，通关视频在实现提交后录制 | 待录制 |
+| 第十三关 | [观看 / 下载 MP4](video/chapter_01/level_13.mp4) | 21.2 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -416,3 +416,8 @@ C 循环切换当前英雄，屏幕下方也有「切换 C」。当前英雄有�
 ```
 
 `heroes` 不与旧 `player` / `hero_kind` 混用，`exit` 不与 `exits` 混用。英雄 ID、坐标和目标须唯一且合法，全部英雄目标数量须等于英雄数。原十二关仍直接加载旧 JSON，同一 `GridState` 内规范化为单英雄，不复制引擎。测试见 `multi_hero_regression.gd`、`north_13_regression.gd`、`north_13_scene.gd`；独立合法路线检查 `python3 tools/check_north_13.py`。
+
+
+第十三关实际画面：[初始蓝高亮](docs/screenshots/level_13_initial.png)、[切换红高亮](docs/screenshots/level_13_selected_red.png)、[双板开放](docs/screenshots/level_13_both_plates.png)、[英雄互换](docs/screenshots/level_13_hero_exchange.png)、[第一名英雄到目标](docs/screenshots/level_13_first_goal.png)、[双英雄胜利](docs/screenshots/level_13_completed.png)、[小窗口蓝](docs/screenshots/level_13_compact_blue.png)、[小窗口红](docs/screenshots/level_13_compact_red.png)。
+
+[第十三关实际通关视频](video/chapter_01/level_13.mp4)为21.2秒 / 636帧，从蓝英雄初始选中到两个英雄同时抵达不同红圆终点，包含全部27次输入和三次C切换。全部十三段视频已完整解码与独立合法回放，详见[视频验证记录](video/README.md)。
