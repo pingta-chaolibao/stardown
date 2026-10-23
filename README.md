@@ -547,3 +547,10 @@ URRRRDLULLRULDCUCUUUDDCUDCCUUURRRRRRRLCCUUUCLLLLLLDCCLLLLLLLCDDCUDCRRRCUUURRRCLU
 第十七关实际画面：[初始](docs/screenshots/level_17_initial.png)、[两晶留在能量格](docs/screenshots/level_17_crystals_on_energy.png)、[首次同时毁两晶](docs/screenshots/level_17_first_destruction.png)、[第二次毁晶](docs/screenshots/level_17_second_destruction.png)、[三英雄胜利](docs/screenshots/level_17_completed.png)、[小窗口绿高亮](docs/screenshots/level_17_compact_green.png)。
 
 [第十七关正式通关视频](video/chapter_01/level_17.mp4)：53.6秒 / 1608帧，66实际行动+15免费C，2推11拉3换，两次再现共毁三晶；全部十七段视频完整解码与独立合法回放通过。
+
+
+## 能量消失时的地面标记
+
+消失的能量格保留淡色虚线边框和浅地纹：黄色机关用淡黄色，绿色机关保留绿色；地板仍可通行、视线仍可穿过。外沿在英雄或水晶上方绘制，站上去也能辨认位置；实体恢复仍是原有实心能量块。玩法、地图、毁晶/死亡和撤销均未变。
+
+[实际Godot截图：两枚水晶站在消失能量格上](docs/screenshots/energy_block_visibility.png)，[绿色机关示例](docs/screenshots/energy_green_visibility.png)。表现专项及开关对比记录见[能量格显示验证](docs/ENERGY_VISIBILITY.md)。17段历史通关视频保持原字节。

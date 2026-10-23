@@ -50,6 +50,8 @@ func _draw() -> void:
 	for cell: Vector2i in model.barrier_states():
 		if model.barrier_is_active(cell):
 			_energy_block(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
+		else:
+			_inactive_energy_floor(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
 	for cell in level.exit_cells:
 		_exit_marker(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
 	for cell in model.crates():
@@ -60,6 +62,11 @@ func _draw() -> void:
 		if not hero["alive"]:
 			draw_line(center+Vector2(-0.3,-0.3)*tile,center+Vector2(0.3,0.3)*tile,Color("fff0cc"),3,true)
 			draw_line(center+Vector2(-0.3,0.3)*tile,center+Vector2(0.3,-0.3)*tile,Color("fff0cc"),3,true)
+	# The footprint stays flat beneath occupants; only its outer dashes sit above
+	# them, so a selection ring/shadow cannot hide a passable energy cell.
+	for cell: Vector2i in model.barrier_states():
+		if not model.barrier_is_active(cell):
+			_inactive_energy_border(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
 
 
 func _bush(center: Vector2, tile: float) -> void:
@@ -88,6 +95,28 @@ func _energy_block(center: Vector2, tile: float) -> void:
 	_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), MECHANISM_GREEN if green else Color("f2ce6d"), 3)
 	for offset in [-0.20, 0.0, 0.20]:
 		draw_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("dbffe6") if green else Color("fff0b5"), tile * 0.035, true)
+
+
+func _inactive_energy_floor(center: Vector2, tile: float) -> void:
+	var tint := MECHANISM_GREEN if model.level.mechanism_color == "green" else GOLD
+	draw_rect(Rect2(center - Vector2.ONE * tile * 0.38, Vector2.ONE * tile * 0.76), Color(tint, 0.045))
+	for offset in [-0.24, -0.12, 0.0, 0.12, 0.24]:
+		draw_line(center + Vector2(offset - 0.09, -0.17) * tile, center + Vector2(offset + 0.09, 0.17) * tile, Color(tint, 0.16), 1.0, true)
+
+
+func _inactive_energy_border(center: Vector2, tile: float) -> void:
+	var tint := MECHANISM_GREEN if model.level.mechanism_color == "green" else GOLD
+	var corners := PackedVector2Array([
+		center + Vector2(-0.43, -0.43) * tile, center + Vector2(0.43, -0.43) * tile,
+		center + Vector2(0.43, 0.43) * tile, center + Vector2(-0.43, 0.43) * tile,
+	])
+	for side in 4:
+		var start := corners[side]
+		var edge := corners[(side + 1) % 4] - start
+		for dash in 5:
+			var a := start + edge * ((dash + 0.12) / 5.0)
+			var b := start + edge * ((dash + 0.68) / 5.0)
+			draw_line(a, b, Color(tint, 0.66), clampf(tile * 0.025, 1.25, 2.0), true)
 
 
 func _floor(rect: Rect2, cell: Vector2i) -> void:

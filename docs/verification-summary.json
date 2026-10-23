@@ -5992,5 +5992,33 @@
     "replay_report": "level_17_replay.json",
     "level_file": "levels/north_17.json",
     "solution_file": "levels/solutions/north_17.json"
+  },
+  "energy_visibility": {
+    "baseline": "8cc3bf09f700ce4071dd59c53b2b8d8cedf3e254",
+    "gameplay_data_input_files_byte_identical": 48,
+    "old_walkthroughs_and_replays_byte_identical": 34,
+    "core_rules_changed": false,
+    "map_or_input_changed": false,
+    "original_energy_block_function_changed": false,
+    "active_energy_pixel_comparison_passed": true,
+    "real_render_checks": 186,
+    "headless_visibility_checks": 150,
+    "north17_model_checks": 448,
+    "energy_model_checks": 21,
+    "existing_north17_real_input_render_checks": 613,
+    "historical_walkthroughs_decoded_and_replayed": 17,
+    "window_sizes": [
+      [
+        1280,
+        820
+      ],
+      [
+        960,
+        615
+      ]
+    ],
+    "yellow_and_green_markers": true,
+    "active_inactive_hero_and_crystal_overlays": true,
+    "demo_pending": true
   }
 }

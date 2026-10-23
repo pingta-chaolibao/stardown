@@ -132,6 +132,7 @@ def main():
             run("05_north_15_scene", ["--script", "res://tests/north_15_scene.gd"])
             run("05_north_16_scene", ["--script", "res://tests/north_16_scene.gd"])
             run("05_north_17_scene", ["--script", "res://tests/north_17_scene.gd"])
+            run("05_energy_visibility", ["--script", "res://tests/energy_visibility_scene.gd"])
             if args.visual:
                 run("06_render", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                   "--audio-driver", "Dummy", "--script", "res://tests/scene_smoke.gd",
@@ -189,6 +190,9 @@ def main():
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_17", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_17_scene.gd",
+                                          "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+                run("06_energy_visibility", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
+                                          "--audio-driver", "Dummy", "--script", "res://tests/energy_visibility_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
 
         except (RuntimeError, OSError) as exc:
