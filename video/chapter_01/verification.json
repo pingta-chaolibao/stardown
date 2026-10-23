@@ -1090,6 +1090,137 @@
       "replay_report": "level_15_replay.json",
       "level_file": "levels/north_15.json",
       "solution_file": "levels/solutions/north_15.json"
+    },
+    {
+      "file": "video/chapter_01/level_16.mp4",
+      "level": 16,
+      "bytes": 234029,
+      "sha256": "e1d6de5471a1518766bd4c5e359f2c51906e20570b1b5c15c0c3adb0ba4c0932",
+      "distinct_sampled_frames": 68,
+      "sampled_action_states": 19,
+      "distinct_action_state_frames": 19,
+      "full_decode_passed": true,
+      "game_implementation_commit": "f86a27452145b7cd7926f93290a7be4cdff138bf",
+      "hero_kinds": [
+        "red",
+        "blue"
+      ],
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 474,
+      "duration_seconds": 15.8,
+      "mp4_fast_start": true,
+      "moves": 15,
+      "directions": 15,
+      "input_events": 18,
+      "selection_events": 3,
+      "walks_without_push_pull_or_swap": 12,
+      "pushes": 0,
+      "pulls": 0,
+      "swaps": 3,
+      "counts_are_actual_actions": true,
+      "selection_counts_as_operation": false,
+      "selection_is_undoable": false,
+      "undo_keeps_current_selection": true,
+      "action_notation": "UDLR counts actual movement or first-visible-target blue exchange. C only selects, never counts or creates undo history. Red mixed pushing is covered by legal side-path tests; this formal route has no pushes.",
+      "modifier_keys_used": [],
+      "keys_used": [
+        "W",
+        "A",
+        "S",
+        "D",
+        "C"
+      ],
+      "initial_hero_positions": {
+        "red": [
+          5,
+          1
+        ],
+        "blue": [
+          5,
+          2
+        ]
+      },
+      "victory_hero_positions": {
+        "red": [
+          9,
+          2
+        ],
+        "blue": [
+          9,
+          0
+        ]
+      },
+      "initial_active_hero": "blue",
+      "victory_active_hero": "red",
+      "legal_input_trace_verified": true,
+      "initial_and_final_frames_reviewed": true,
+      "all_three_free_selection_highlights_reviewed": true,
+      "inactive_heroes_retain_hue_reviewed": true,
+      "all_three_exchanges_reviewed": true,
+      "purple_disc_goals_are_ordinary_no_teleport": true,
+      "marker33_wall_reviewed": true,
+      "two_distinct_hero_goals_reviewed": true,
+      "crystal_plate_handoff_reviewed": true,
+      "selection_input_events": [
+        7,
+        13,
+        16
+      ],
+      "selection_unchanged_action_counts": [
+        6,
+        11,
+        13
+      ],
+      "swap_action_numbers": [
+        1,
+        6,
+        12
+      ],
+      "hero_swap_action_numbers": [
+        1,
+        12
+      ],
+      "crystal_swap_action": 6,
+      "blue_plate_action": 5,
+      "crystal_handoff_action": 6,
+      "red_gate_action": 9,
+      "blue_goal_action": 13,
+      "victory_action": 15,
+      "victory_input_event": 18,
+      "reviewed_encoded_frames": [
+        0,
+        70,
+        142,
+        160,
+        178,
+        232,
+        286,
+        304,
+        322,
+        340,
+        376,
+        473
+      ],
+      "reviewed_exchange_frames": [
+        70,
+        160,
+        304
+      ],
+      "reviewed_selection_frames": [
+        178,
+        286,
+        340
+      ],
+      "replay_report": "level_16_replay.json",
+      "level_file": "levels/north_16.json",
+      "solution_file": "levels/solutions/north_16.json"
     }
   ],
   "game_implementation_commits": {
@@ -1107,6 +1238,7 @@
     "level_12": "ec35efa0d643a0cfd686a12a7bc798e78b27715c",
     "level_13": "b24f14750cf2902b37c99a1b48a746deb1cf5383",
     "level_14": "265d4f898acef1c48d41348835a32fb6af24d662",
-    "level_15": "4fa7ea61c8beba80269ab4db9c0bf33ccb43a362"
+    "level_15": "4fa7ea61c8beba80269ab4db9c0bf33ccb43a362",
+    "level_16": "f86a27452145b7cd7926f93290a7be4cdff138bf"
   }
 }

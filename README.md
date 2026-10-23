@@ -55,7 +55,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十三关 | [观看 / 下载 MP4](video/chapter_01/level_13.mp4) | 21.2 秒 |
 | 第十四关 | [观看 / 下载 MP4](video/chapter_01/level_14.mp4) | 35.0 秒 |
 | 第十五关 | [观看 / 下载 MP4](video/chapter_01/level_15.mp4) | 53.6 秒 |
-| 第十六关 | 实现提交后录制 | 待验证 |
+| 第十六关 | [观看 / 下载 MP4](video/chapter_01/level_16.mp4) | 15.8 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -508,6 +508,8 @@ G.#........
 
 另用本关合法侧路验证红推混合列及死亡：`ULLLLRCURRRRCLLCLLLLLLLL`为21次行动 / 8推 / 4换，末步同时推水晶与蓝人到左端，再推被边界原子阻挡；一次Undo恢复整列。正式路线行动9之后 `CLLCLLLC` 将红留在开门格、蓝留在黄板；蓝向下离板会压死未选中红，C / 移动 / 重开 / 切关均锁定，Undo复活红且保留蓝选择。这些是测试侧路，不混入正式通关录像。
 
-配置 `levels/north_16.json`、解法 `levels/solutions/north_16.json`、独立搜索 `python3 tools/search_north_16.py`，模型 / 真实输入测试 `north_16_regression.gd` / `north_16_scene.gd`。关卡入口改为每行8个的两行按钮，1280×820与960×615仍清晰可见。复用全部游戏核心，仅扩展已校验的 `exit_color=purple` 显示枚举与普通圆盘绘制。前十五关地图、解法、MP4、回放保持原字节；第十六关须在实现提交后才录制。
+配置 `levels/north_16.json`、解法 `levels/solutions/north_16.json`、独立搜索 `python3 tools/search_north_16.py`，模型 / 真实输入测试 `north_16_regression.gd` / `north_16_scene.gd`。关卡入口改为每行8个的两行按钮，1280×820与960×615仍清晰可见。复用全部游戏核心，仅扩展已校验的 `exit_color=purple` 显示枚举与普通圆盘绘制。前十五关地图、解法、MP4、回放保持原字节；第十六关已在实现提交后用实际Godot视口及合法按键录制。
 
 第十六关实际画面：[初始蓝选中](docs/screenshots/level_16_initial.png)、[红选中](docs/screenshots/level_16_selected_red.png)、[蓝压板](docs/screenshots/level_16_blue_plate.png)、[水晶接替](docs/screenshots/level_16_crystal_handoff.png)、[红过门](docs/screenshots/level_16_red_gate.png)、[双目标胜利](docs/screenshots/level_16_completed.png)、[合法混合连推](docs/screenshots/level_16_mixed_push.png)、[未选中红死亡](docs/screenshots/level_16_death_inactive_red.png)、[撤销复活](docs/screenshots/level_16_revived_red.png)、[小窗口蓝](docs/screenshots/level_16_compact_blue.png)、[小窗口红](docs/screenshots/level_16_compact_red.png)。
+
+[第十六关完整通关视频](video/chapter_01/level_16.mp4)：15.8秒 / 474帧，15实际行动、3免费切换、3自动交换，红蓝分别到紫色双目标。十六段视频完整解码与独立合法回放通过，详细证据见[视频记录](video/README.md)。
