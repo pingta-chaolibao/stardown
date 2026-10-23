@@ -113,7 +113,7 @@ func _test_solution_undo_restart() -> void:
 
 func _test_exit_color_data() -> void:
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://levels/north_02.json"))
-	for invalid in ["blue", true, ""]:
+	for invalid in ["cyan", true, ""]:
 		data["exit_color"] = invalid
 		_check(not Level.from_dictionary(data).error.is_empty(), "invalid exit color is rejected")
 

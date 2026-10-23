@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -80,12 +80,14 @@ func _has_hero_kind(kind: String) -> bool:
 func _goal_name() -> String:
 	if model.level.exit_color=="red":return "红色终点"
 	if model.level.exit_color=="purple":return "紫色终点"
+	if model.level.exit_color=="blue":return "蓝色终点"
 	return "绿色终点" if model.level.exit_color == "green" else "黄色终点"
 
 
 func _goal_color() -> Color:
 	if model.level.exit_color=="red":return Board.CORAL
 	if model.level.exit_color=="purple":return Board.GOAL_PURPLE
+	if model.level.exit_color=="blue":return Board.GOAL_BLUE
 	return Color("78dd99") if model.level.exit_color == "green" else GOLD
 
 

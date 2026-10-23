@@ -1,0 +1,13 @@
+{
+  "level_id": "north_hero_18",
+  "path": "CCDCCRDCCLDCDDDCCRCDLCUCCRRRRCCDCRCUCCRUUUUUCCUULCCDCRRRRRRDCCDDDDCDCCDDDDCLCCDCRUCCLCCULCCDLCLLCUCCLCUCCLCCDCLUUCRCCULUCCUCRRCDCCRCDLCDCRD",
+  "moves": 78,
+  "directions": 78,
+  "input_events": 139,
+  "selection_events": 61,
+  "pushes": 26,
+  "pulls": 8,
+  "swaps": 10,
+  "destroyed_crystals": 0,
+  "note": "独立红绿蓝身份占用BFS含能量再现毁晶状态，首次存活胜利停止，再按身份回放；不宣称穷举或最优。C免费选择不进撤销，蓝色圆盘仅为终点配色。18号可走、12号墙、19号单格能量不变。"
+}

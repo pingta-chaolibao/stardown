@@ -1,26 +1,30 @@
-# 第一章前十七关 · 云端验证记录
+# 第一章前十八关 · 云端验证记录
 
-Godot `4.6.3.stable.official.7d41c59c4`，仅选定云端 `/workspace/stardown`。Git develop交付，用户不需要ZIP。
+仅选定云端 `/workspace/stardown`。Godot `4.6.3.stable.official.7d41c59c4`，Git develop交付，无ZIP。
 
-## 确认地图与统一底层机制
+## 独立交付的能量显示优化
 
-9×5全部45格核验，30地板；32=(4,3)地板，23=(4,2)/41=(4,4)不可走，所有墙/绿篱仍挡移动与视线。绿(0,4)、蓝(2,4)、红(8,4)，初始蓝；4晶(0,0)/(8,0)/(8,3)/(6,4)，3目标(3,0)/(4,0)/(2,2)，板(3,3)/(5,3)，能量(0,2)/(8,2)。没有为解法开墙、透明障碍或新增通路。
+实现4fa554befe2f5835339dbf0f8e9e8de517b0e032、短片2ed1f9f611cd4ab6a88c3ddea25ed0c1e75d907f已独立推送并核对图片/MP4实际HTTP200下载、字节与全解码。黄色/绿色消失格使用虚线和浅地纹，实体绘制像素与旧图一致。渲染186、无头150、17模型448、机关21、17实际场景613通过；34合法输入的22.2秒对比短片逐状态回放一致。该短片及17段历史视频不重录；[显示验证](ENERGY_VISIBILITY.md)。
 
-用户最新确认的全局底层规则：能量消失时可放晶，再现时杀死格内英雄/怪物、摧毁格内水晶。公共EnergyRules返回剩余水晶与生死，GridState原子提交；只在消失→实体的边沿摧毁，不在持续消失/激活或初始化任意销毁。多个能量块同时结算，Undo恢复被毁晶ID/颜色、全体英雄生死和板门，保留当前选择。板/门不重叠，所以删除能量格水晶不影响板占用。怪物只有killed类别语义声明，当前没有怪物玩法/生命周期测试。
+## 第十八关确认配置
 
-原42状态外围诊断没有晶体删除状态，把门永久开会取消销毁能力，因此并非有效无解证明；不再质疑已确认布局。先前临时只读透明障碍假设未被采纳、未进入实现。
+7×8全部56格核验，共34地板。15红(0,2)、16绿(1,2)、17蓝(2,2)，初始蓝；紫粉晶1=(0,0)，压板51=(1,7)，能量19=(4,2)。18=(3,2)可走、12=(4,1)墙；三个蓝圆盘目标26/32/33=(4,3)/(3,4)/(4,4)，仅显示颜色，不传送、不匹配英雄。人物头顶1/2/3不是格号。
 
-## 合法路线与原子撤销
+保持全部红推混合整列、绿自动单晶拉、蓝本方向首目标交换、免费C/Undo保留选择、全局能量杀英雄/毁晶规则。仅新增JSON/入口/蓝色目标显示和测试，五个共享玩法/输入核心与2ed1f9f逐字节相同。已交付的消失能量标记继续可见，18按钮两行9+9，角色高亮/保色。
 
-`URRRRDLULLRULDCUCUUUDDCUDCCUUURRRRRRRLCCUUUCLLLLLLDCCLLLLLLLCDDCUDCRRRCUUURRRCLUL`：66实际行动+15免费C=81输入，2推11拉3换。构造后独立按所有英雄/晶ID与能量再现删除逐步验证，不宣称最优或穷举。14蓝/内晶压满双板，20左右晶留在消失能量格，21离板同时销毁ID0/2；绿上顶排拉右上晶向左，红推到(0,0)，绿拉入左能量，53离板销毁ID1。57红到(4,0)，63绿到(3,0)，66蓝到(2,2)，唯一剩晶ID3在(5,3)。
+## 独立合法路线
 
-模型/真实输入在两次销毁后额外C再Undo，验证恢复所有被毁晶和压力且保持新选择，再合法重做得到同一世界。全部66次逆向Undo恢复初始4晶/3英雄，重开初始蓝；3英雄不同目标、非当前不触发能力、C不计操作/历史、按键回声去重、屏幕按钮和切关隔离均覆盖。
+`CCDCCRDCCLDCDDDCCRCDLCUCCRRRRCCDCRCUCCRUUUUUCCUULCCDCRRRRRRDCCDDDDCDCCDDDDCLCCDCRUCCLCCULCCDLCLLCUCCLCUCCLCCDCLUUCRCCULUCCUCRRCDCCRCDLCDCRD`：78实际行动+61免费C=139输入，26推8拉10换，0毁晶。身份占用BFS含销毁状态，扩展741565、访问760589、余19024，3.127秒首次存活胜利停止，不宣称穷举或最优。
 
-合法死亡支路：正式前缀15后让绿走UU到左开放能量，再选蓝上移离板；同次恢复杀死未选中绿、摧毁右晶2。C/方向/R/切关锁定，单次Undo复活绿并恢复右晶、全部压力/能量且保留蓝。该支路只作专项验证，不混入正式通关视频。独立夹具另覆盖三门同时恢复、两晶毁灭+另一英雄死亡、跨数据组AND和初始/持续状态不误销毁。
+8红推两英雄令绿暂压底板，12绿离板恢复；28蓝交换顶排晶到右端；52红推动绿人与晶混合链；61蓝暂压底板，69交换晶接替压力连续保持。71/73/77绿/蓝/红占开放能量格，虚线边缘在当前/非当前角色叠加时仍可见。72绿进首目标，76蓝进第二个，78红推蓝进最后一个，自身进被空出的目标同时胜利；最终晶ID0持续压(1,7)。
 
-## 完整检查
+全部78Undo按实际行动恢复英雄/晶身份、压力/门/生死，保持最终红选择；61C不计数/不入历史，重开才恢复蓝。额外验证晶交接后切换再Undo保留绿，再合法重做得到同一世界；混合推边界原子拒绝、重复方向/C回声与屏幕按钮、切关隔离。
 
-`python3 tools/verify.py --visual --display :97`：115步骤全部通过，含52脚本解析、全部共享规则与十七关模型/实际键鼠/X11渲染。录制器另解析，支持1–17；全部17段视频已用新底层完整解码和独立合法回放。
+合法死亡支路：正式前缀8后选蓝R让路，选红UUURRR到能量，选绿U离板，恢复能量压死未选中红；C/方向/R/切关锁定，唯一Undo复活红且保留绿选择。死亡侧路只测试，不混入正式录像。
+
+## 完整回归
+
+`python3 tools/verify.py --visual --display :97`：123步骤全部通过，含55脚本解析、18关模型/真实输入/X11渲染与能量显示像素专项。录制器另解析。原17视频全解码和独立合法回放通过；第18视频须先提交实现后录制。
 
 | 检查 | 结果 |
 | --- | --- |
@@ -38,6 +42,7 @@ Godot `4.6.3.stable.official.7d41c59c4`，仅选定云端 `/workspace/stardown`�
 | 03_north_16 | 4组 / 209项，0失败 |
 | 03_energy_destruction | 3组 / 21项，0失败 |
 | 03_north_17 | 4组 / 448项，0失败 |
+| 03_north_18 | 4组 / 855项，0失败 |
 | 03_north_01 | 6组 / 344项，0失败 |
 | 03_north_02 | 5组 / 239项，0失败 |
 | 03_north_03 | 3组 / 1084项，0失败 |
@@ -50,70 +55,73 @@ Godot `4.6.3.stable.official.7d41c59c4`，仅选定云端 `/workspace/stardown`�
 | 03_north_10 | 5组 / 344项，0失败 |
 | 03_north_11 | 6组 / 754项，0失败 |
 | 03_north_12 | 5组 / 223项，0失败 |
-| 05_scene_input | 239项，0失败 |
-| 05_north_02_scene | 204项，0失败 |
-| 05_north_03_scene | 207项，0失败 |
-| 05_north_04_scene | 221项，0失败 |
-| 05_north_05_scene | 209项，0失败 |
-| 05_north_06_scene | 260项，0失败 |
-| 05_north_07_scene | 352项，0失败 |
-| 05_north_08_scene | 255项，0失败 |
-| 05_north_09_scene | 216项，0失败 |
-| 05_north_10_scene | 314项，0失败 |
-| 05_north_11_scene | 248项，0失败 |
-| 05_north_12_scene | 264项，0失败 |
-| 05_north_13_scene | 538项，0失败 |
-| 05_north_14_scene | 585项，0失败 |
-| 05_north_15_scene | 574项，0失败 |
-| 05_north_16_scene | 429项，0失败 |
-| 05_north_17_scene | 577项，0失败 |
-| 06_render | 249项，0失败 |
-| 06_render_north_02 | 210项，0失败 |
-| 06_render_north_03 | 215项，0失败 |
-| 06_render_north_04 | 229项，0失败 |
-| 06_render_north_05 | 217项，0失败 |
-| 06_render_north_06 | 274项，0失败 |
-| 06_render_north_07 | 372项，0失败 |
-| 06_render_north_08 | 271项，0失败 |
-| 06_render_north_09 | 226项，0失败 |
-| 06_render_north_10 | 328项，0失败 |
-| 06_render_north_11 | 264项，0失败 |
-| 06_render_north_12 | 284项，0失败 |
-| 06_render_north_13 | 554项，0失败 |
-| 06_render_north_14 | 609项，0失败 |
-| 06_render_north_15 | 606项，0失败 |
-| 06_render_north_16 | 457项，0失败 |
-| 06_render_north_17 | 613项，0失败 |
+| 05_scene_input | 241项，0失败 |
+| 05_north_02_scene | 206项，0失败 |
+| 05_north_03_scene | 209项，0失败 |
+| 05_north_04_scene | 223项，0失败 |
+| 05_north_05_scene | 211项，0失败 |
+| 05_north_06_scene | 262项，0失败 |
+| 05_north_07_scene | 354项，0失败 |
+| 05_north_08_scene | 257项，0失败 |
+| 05_north_09_scene | 218项，0失败 |
+| 05_north_10_scene | 316项，0失败 |
+| 05_north_11_scene | 250项，0失败 |
+| 05_north_12_scene | 266项，0失败 |
+| 05_north_13_scene | 543项，0失败 |
+| 05_north_14_scene | 590项，0失败 |
+| 05_north_15_scene | 578项，0失败 |
+| 05_north_16_scene | 433项，0失败 |
+| 05_north_17_scene | 581项，0失败 |
+| 05_north_18_scene | 907项，0失败 |
+| 05_energy_visibility | 151项，0失败 |
+| 06_render | 251项，0失败 |
+| 06_render_north_02 | 212项，0失败 |
+| 06_render_north_03 | 217项，0失败 |
+| 06_render_north_04 | 231项，0失败 |
+| 06_render_north_05 | 219项，0失败 |
+| 06_render_north_06 | 276项，0失败 |
+| 06_render_north_07 | 374项，0失败 |
+| 06_render_north_08 | 273项，0失败 |
+| 06_render_north_09 | 228项，0失败 |
+| 06_render_north_10 | 330项，0失败 |
+| 06_render_north_11 | 266项，0失败 |
+| 06_render_north_12 | 286项，0失败 |
+| 06_render_north_13 | 559项，0失败 |
+| 06_render_north_14 | 614项，0失败 |
+| 06_render_north_15 | 610项，0失败 |
+| 06_render_north_16 | 461项，0失败 |
+| 06_render_north_17 | 617项，0失败 |
+| 06_render_north_18 | 949项，0失败 |
+| 06_energy_visibility | 187项，0失败 |
 
 ## 实际画面与保留文件
 
-实际查看960×615绿选中及第一次再现销毁两晶画面：三英雄保色/当前脚圈描边、四统计、17导航两行9+8、2板2能量、目标和不可走装饰位置均核对。两尺寸1280×820/960×615无溢出，X11 :97 / Mesa llvmpipe / GL Compatibility。前16关地图/解法/视频/回放64份文件与7f03ee639eadfc5ac74ac35721bae54b809cd2cb逐字节相同，旧16媒体清单条目保留。
+实际查看18关非当前绿人在开放能量格的原图渲染，虚线边缘清楚、蓝色三目标普通圆盘和三角色本色正确。1280×820与960×615真实输入/按钮/高亮及全部导航适配；X11 :97/Mesa llvmpipe/GL Compatibility。前17关地图/解法/视频/回放68文件与8cc3bf09逐字节相同，原17媒体条目不变；能量显示短片/证据与2ed1f9f保持字节。
 
-- [all_plates](screenshots/level_17_all_plates.png)
-- [compact_blue](screenshots/level_17_compact_blue.png)
-- [compact_green](screenshots/level_17_compact_green.png)
-- [compact_red](screenshots/level_17_compact_red.png)
-- [completed](screenshots/level_17_completed.png)
-- [crystals_on_energy](screenshots/level_17_crystals_on_energy.png)
-- [death_and_destruction](screenshots/level_17_death_and_destruction.png)
-- [first_destruction](screenshots/level_17_first_destruction.png)
-- [first_goal](screenshots/level_17_first_goal.png)
-- [green_escape](screenshots/level_17_green_escape.png)
-- [initial](screenshots/level_17_initial.png)
-- [revived_and_restored](screenshots/level_17_revived_and_restored.png)
-- [second_crystal_on_energy](screenshots/level_17_second_crystal_on_energy.png)
-- [second_destruction](screenshots/level_17_second_destruction.png)
-- [selected_green](screenshots/level_17_selected_green.png)
-- [selected_red](screenshots/level_17_selected_red.png)
-- [top_crystal_pull](screenshots/level_17_top_crystal_pull.png)
-- [two_goals](screenshots/level_17_two_goals.png)
+- [blue_plate](screenshots/level_18_blue_plate.png)
+- [compact_blue](screenshots/level_18_compact_blue.png)
+- [compact_energy_active](screenshots/level_18_compact_energy_active.png)
+- [compact_energy_inactive](screenshots/level_18_compact_energy_inactive.png)
+- [compact_green](screenshots/level_18_compact_green.png)
+- [compact_red](screenshots/level_18_compact_red.png)
+- [completed](screenshots/level_18_completed.png)
+- [crystal_handoff](screenshots/level_18_crystal_handoff.png)
+- [death_inactive_red](screenshots/level_18_death_inactive_red.png)
+- [first_goal](screenshots/level_18_first_goal.png)
+- [first_hero_exchange](screenshots/level_18_first_hero_exchange.png)
+- [green_energy](screenshots/level_18_green_energy.png)
+- [initial](screenshots/level_18_initial.png)
+- [mixed_push](screenshots/level_18_mixed_push.png)
+- [multi_hero_push](screenshots/level_18_multi_hero_push.png)
+- [red_energy](screenshots/level_18_red_energy.png)
+- [revived_red](screenshots/level_18_revived_red.png)
+- [selected_green](screenshots/level_18_selected_green.png)
+- [selected_red](screenshots/level_18_selected_red.png)
+- [top_crystal](screenshots/level_18_top_crystal.png)
+- [two_goals](screenshots/level_18_two_goals.png)
 
-## 实际正式通关视频
+## 视频交付状态
 
-实现先提交并推送于 `e639fc242ba534b7def99a0724c0ee4e99905717`，核对远端才录制实际Godot Movie Maker视口。正常WASD/C完成81输入：66实际行动（50普通走/2推/11拉/3换）+15免费选择，最终历史66条，全程存活、三目标明确胜利。录制后源码/关卡/测试/界面未变。
+先提交实现，再录制实际Godot从初始到三英雄胜利，包含新消失能量标记。此实现提交不声称正式第18视频已完成。
 
-编码MP4为922037字节、53.6秒/1608帧，H.264 High、yuv420p、1280×820、30fps、fast-start、无音轨。实际查看编码后0/304/448/484/592/736/1132/1186/1222/1312/1438/1607帧及全部15次C结果，核对双晶入能量、21/53再现销毁三晶、顶排拉推合作与三英雄胜利，65再现时无能量格水晶就不删除。初始/输入后82状态画面均不同，5fps采样260个不同画面；初始2秒/每输入0.6秒/胜利3秒。
-
-17段视频完整解码、哈希/元数据/帧数/时长/fast-start与独立合法回放均通过。独立校验器逐事件重算三英雄、全部晶身份及删除、能量边沿、压力、生死、选择/66行动与三目标。原16媒体和条目保留；合法死亡+毁晶支路及Undo测试未混入正式录像。推送后另实际下载验证字节与完整解码。
-
-临时日志/原始AVI/编码帧/缓存不提交。没有验证其他平台、引擎、硬件GPU或导出程序；CI仅按可见证据报告。
+未验证其他引擎/平台/硬件GPU/导出程序；临时AVI/帧/缓存不提交。CI仅按可见证据报告。

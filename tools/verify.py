@@ -102,6 +102,7 @@ def main():
             run("03_north_16", ["--script", "res://tests/north_16_regression.gd"])
             run("03_energy_destruction", ["--script", "res://tests/energy_destruction_regression.gd"])
             run("03_north_17", ["--script", "res://tests/north_17_regression.gd"])
+            run("03_north_18", ["--script", "res://tests/north_18_regression.gd"])
             run("03_north_01", ["--script", "res://tests/north_01_regression.gd"])
             run("03_north_02", ["--script", "res://tests/north_02_regression.gd"])
             run("03_north_03", ["--script", "res://tests/north_03_regression.gd"])
@@ -132,6 +133,7 @@ def main():
             run("05_north_15_scene", ["--script", "res://tests/north_15_scene.gd"])
             run("05_north_16_scene", ["--script", "res://tests/north_16_scene.gd"])
             run("05_north_17_scene", ["--script", "res://tests/north_17_scene.gd"])
+            run("05_north_18_scene", ["--script", "res://tests/north_18_scene.gd"])
             run("05_energy_visibility", ["--script", "res://tests/energy_visibility_scene.gd"])
             if args.visual:
                 run("06_render", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
@@ -190,6 +192,9 @@ def main():
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_17", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_17_scene.gd",
+                                          "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+                run("06_render_north_18", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
+                                          "--audio-driver", "Dummy", "--script", "res://tests/north_18_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_energy_visibility", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/energy_visibility_scene.gd",

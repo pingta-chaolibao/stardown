@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_18",
+  "title": "北部英雄 · 第十八关",
+  "is_temporary": false,
+  "source_note": "用户确认7×8原图编号与二维格图；18号(3,2)可走，12号(4,1)为墙，19号(4,2)是按底部占格的能量。角色头顶1/2/3非格号。蓝色圆盘仅为普通终点显示，原创2D几何图形。",
+  "terrain": [
+    ".......",
+    "######.",
+    ".....#.",
+    "..##.#.",
+    "..#..#.",
+    "#.####.",
+    ".......",
+    "#.####."
+  ],
+  "heroes": [
+    {
+      "id": "red",
+      "kind": "red",
+      "position": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "green",
+      "kind": "green",
+      "position": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "blue",
+      "kind": "blue",
+      "position": [
+        2,
+        2
+      ]
+    }
+  ],
+  "active_hero": "blue",
+  "crates": [
+    [
+      0,
+      0
+    ]
+  ],
+  "crystal_colors": [
+    "purple_pink"
+  ],
+  "targets": [],
+  "exits": [
+    [
+      4,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      4
+    ]
+  ],
+  "exit_color": "blue",
+  "objective": "all_heroes_on_exits",
+  "energy_links": [
+    {
+      "id": "yellow_01",
+      "plate": [
+        1,
+        7
+      ],
+      "barriers": [
+        [
+          4,
+          2
+        ]
+      ],
+      "pressure_sources": [
+        "hero",
+        "crystal"
+      ]
+    }
+  ]
+}
