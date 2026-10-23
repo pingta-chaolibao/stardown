@@ -14,7 +14,7 @@ The user requires this workflow for future maps:
 3. Send the annotated original image to the user, apply their corrections, and obtain confirmation before encoding the final playable map.
 4. The first annotated level-07 image was an incomplete communication draft and must never be used as the final map. The user confirmed the corrected numbered layout: (8,1) is floor, (8,2) is wall, energy 9 stands at (12,1), and (12,0) is the building boundary. After inspecting the 2D conversion, the user corrected (0,2) to floor, directly below original marker 14 at (0,1); keep the explicitly confirmed walls (4,6)/(6,8). This single correction resolves the conversion: independent search and Godot validate 152 moves / 56 single pulls. Original marker 70=(5,9), 129=(5,10). Do not reopen these confirmations or infer extra openings.
 
-## Confirmed global yellow mechanism rule
+## Confirmed global pressure and energy rule
 
 The user clarified on 2026-10-23 that all yellow pressure cells in a level form one global AND condition. Only while every yellow cell is occupied do all yellow energy blocks disappear together, allowing movement and sight. Releasing any yellow cell restores all yellow energy blocks. Do not interpret `energy_links` identifiers as independent activation groups.
 
@@ -42,3 +42,9 @@ The user requires one complete gameplay demonstration video for every level. Thi
 ## Confirmed tenth map
 
 Level 10 is the user-confirmed 11x7 blue-hero map in north_10.json. Original marker 4=(3,0) is explicitly corrected to floor; all other cells including earlier question-mark cells are confirmed. Hero=(0,1), single purple crystal=(1,1), exit=(1,5), plate=(10,6), energy=(3,5); middle row y=3 has floor only at x=5 and x=9. No bushes or new rules. Keep the first nine maps, solutions, videos and replay reports byte-for-byte unchanged from 9c879b28bd093773d6af2a9dcf2aa6dccc3c205b. Use the existing blue direction-first target priority and global yellow settlement.
+
+## Confirmed eleventh map and delivery
+
+Level 11 is the confirmed 11x7 blue-hero map. Main platform x=0..6/y=0..6 is floor; x=7 is wall except green gate (7,1); right platform x=8..10/y=0..2 is floor, and the twelve lower-right cells are impassable void, displayed differently from walls. Hero=(5,0), exit=(9,1), eight main crystals occupy every odd-coordinate plate except (1,5); orange crystal=(10,1). All nine plates globally AND together; hero or crystal can hold any plate. Mechanism/crystal colors are presentation only, with no matching or separate color groups. The constructed route LLLLLDDDDRDRRUURULD is independently checked, not an exhaustive or shortest-path claim. Keep all previous ten maps, solutions, MP4s and replay reports byte-for-byte from b709b04fc1b9276f50e4546be518813c7434a4f0.
+
+The user now gets the project via Git and explicitly does not need a project ZIP. Deliver the new video, short commit information and test results; do not generate, verify or offer another project ZIP unless the user later changes this request. The implementation-before-recording and separate video commit workflow still applies.

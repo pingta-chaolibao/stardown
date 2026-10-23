@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -74,6 +74,14 @@ func _goal_color() -> Color:
 	return Color("78dd99") if model.level.exit_color == "green" else GOLD
 
 
+func _plate_name() -> String:
+	return "绿板" if model.level.mechanism_color=="green" else "黄板"
+
+
+func _mechanism_tint() -> Color:
+	return Board.MECHANISM_GREEN if model.level.mechanism_color=="green" else GOLD
+
+
 func _draw() -> void:
 	draw_rect(Rect2(Vector2.ZERO, size), Color("0b1520"))
 	for i in 64:
@@ -114,7 +122,7 @@ func apply_command(command: Dictionary) -> void:
 					_refresh("前方是墙，换个方向试试。", GOLD)
 				&"energy_blocked":
 					board.blocked = true
-					_refresh("能量屏障阻挡通行，需要压住相连的黄色地块。", GOLD)
+					_refresh("能量屏障阻挡通行，需要压住全部%s。" % _plate_name(), _mechanism_tint())
 				&"rule_unresolved":
 					_refresh(model.last_mechanism_error, GOLD)
 				&"dead", &"died":
@@ -156,7 +164,7 @@ func _refresh(message: String, color: Color = MINT) -> void:
 	for link in model.level.energy_links:
 		if link["plates"].size() > 1:
 			var count := model.pressure_progress(link["id"])
-			progress_label.text = "%s · 黄板 %d / %d" % ["已抵达终点" if model.is_complete() else "玩家到终点完成", count.x, count.y]
+			progress_label.text = "%s · %s %d / %d" % ["已抵达终点" if model.is_complete() else "玩家到终点完成", _plate_name(), count.x, count.y]
 	undo_button.disabled = model.history_size() == 0
 	restart_button.disabled = not model.alive
 	for node_name in ["MoveLeft", "MoveRight", "MoveUp", "MoveDown"]:
@@ -215,7 +223,7 @@ func _build_header(parent: VBoxContainer) -> void:
 	for index in LEVEL_PATHS.size():
 		var button := _button(LEVEL_TITLES[index], "Level%02d" % (index + 1))
 		button.disabled = index == current_level_index
-		button.custom_minimum_size.x = 76
+		button.custom_minimum_size.x = 68 if LEVEL_PATHS.size() > 10 else 76
 		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		button.tooltip_text = "切换关卡并从初始状态开始"
 		button.pressed.connect(select_level.bind(index))
@@ -260,8 +268,8 @@ func _build_board(parent: HBoxContainer) -> void:
 	legend.add_child(_label("◆ 水晶", 13, Color("9cc5f5")))
 	legend.add_child(_label("◇ 终点", 13, _goal_color()))
 	if not model.level.energy_links.is_empty():
-		legend.add_child(_label("▣ 压力板", 13, GOLD))
-		legend.add_child(_label("▤ 能量块", 13, GOLD))
+		legend.add_child(_label("▣ 压力板", 13, _mechanism_tint()))
+		legend.add_child(_label("▤ 能量块", 13, _mechanism_tint()))
 	if not model.level.bushes.is_empty():
 		legend.add_child(_label("♣ 草丛", 13, Color("a1b76a")))
 	_spacer(legend)
@@ -295,10 +303,12 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 		instructions.text = "整列水晶每次推一格，末端受阻则不动。\n草丛挡通行与视线，不能推动或交换。"
 	intro.add_child(instructions)
 	if not model.level.energy_links.is_empty():
-		var rules := "英雄或水晶压住黄板时，能量块消失。\n压力解除后恢复，格内英雄会死亡。"
+		var rules := "英雄或水晶压住%s时，能量块消失。\n压力解除后恢复，格内英雄会死亡。" % _plate_name()
 		if model.level.energy_links[0]["plates"].size() > 1:
-			rules = "三块黄板同时受压才开门。\n压力解除后恢复，格内英雄会死亡。"
-		intro.add_child(_label(rules, 13, GOLD))
+			var count: int = model.level.energy_links[0]["plates"].size()
+			var number: String = {3:"三",9:"九"}.get(count,str(count))
+			rules = "%s块%s同时受压才开门。\n压力解除后恢复，格内英雄会死亡。" % [number,_plate_name()]
+		intro.add_child(_label(rules, 13, _mechanism_tint()))
 	var stats := _hbox(12)
 	sidebar.add_child(stats)
 	moves_label = _stat(stats, "操作" if blue else "步数", "Moves")

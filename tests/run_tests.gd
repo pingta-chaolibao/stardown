@@ -175,7 +175,7 @@ func _test_validation() -> void:
 		["targets", [[1, 1], [1, 1]]], ["targets", [[0, 0]]],
 		["objective", "unverified_exit_rule"], ["objective", "all_crates_on_targets"],
 		["objective", "player_on_exit"], ["exit", [0, 0]], ["exit", [99, 1]],
-		["crystal_colors", ["blue", "purple"]], ["crystal_colors", ["orange"]],
+		["crystal_colors", ["blue", "purple"]], ["crystal_colors", ["red"]],
 		["crystal_colors", "blue"], ["is_temporary", "true"], ["title", 42],
 	]
 	for entry in invalid_entries:

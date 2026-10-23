@@ -105,6 +105,7 @@ def main():
             run("03_north_08", ["--script", "res://tests/north_08_regression.gd"])
             run("03_north_09", ["--script", "res://tests/north_09_regression.gd"])
             run("03_north_10", ["--script", "res://tests/north_10_regression.gd"])
+            run("03_north_11", ["--script", "res://tests/north_11_regression.gd"])
             run("04_main_scene", ["--quit-after", "10", "--audio-driver", "Dummy"])
             run("05_scene_input", ["--script", "res://tests/scene_smoke.gd"])
             run("05_north_02_scene", ["--script", "res://tests/north_02_scene.gd"])
@@ -116,6 +117,7 @@ def main():
             run("05_north_08_scene", ["--script", "res://tests/north_08_scene.gd"])
             run("05_north_09_scene", ["--script", "res://tests/north_09_scene.gd"])
             run("05_north_10_scene", ["--script", "res://tests/north_10_scene.gd"])
+            run("05_north_11_scene", ["--script", "res://tests/north_11_scene.gd"])
             if args.visual:
                 run("06_render", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                   "--audio-driver", "Dummy", "--script", "res://tests/scene_smoke.gd",
@@ -146,6 +148,10 @@ def main():
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_10", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_10_scene.gd",
+                                          "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+
+                run("06_render_north_11", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
+                                          "--audio-driver", "Dummy", "--script", "res://tests/north_11_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
 
         except (RuntimeError, OSError) as exc:

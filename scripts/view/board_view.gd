@@ -6,6 +6,7 @@ const State = preload("res://scripts/core/grid_state.gd")
 const CORAL := Color("f5787b")
 const HERO_GREEN := Color("72ce95")
 const HERO_BLUE := Color("78aff0")
+const MECHANISM_GREEN := Color("78d799")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
 
@@ -35,7 +36,7 @@ func _draw() -> void:
 			var rect := Rect2(origin + Vector2(cell) * tile + Vector2(2, 2), Vector2.ONE * (tile - 4))
 			if level.is_floor(cell):
 				_floor(rect, cell)
-			else:
+			elif not level.is_void(cell):
 				_wall(rect)
 	for cell in level.targets:
 		_target(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
@@ -70,17 +71,21 @@ func _bush(center: Vector2, tile: float) -> void:
 
 
 func _pressure_plate(center: Vector2, tile: float, pressed: bool) -> void:
-	_box(Rect2(center - Vector2.ONE * tile * 0.4, Vector2.ONE * tile * 0.8), Color("c7a34d") if pressed else Color("74613c"), 5)
-	draw_arc(center, tile * 0.24, 0, TAU, 32, Color("ffe6a0"), 2, true)
+	var green := model.level.mechanism_color == "green"
+	var base := (Color("4da66e") if pressed else Color("315a47")) if green else (Color("c7a34d") if pressed else Color("74613c"))
+	var light := Color("c6ffd5") if green else Color("ffe6a0")
+	_box(Rect2(center - Vector2.ONE * tile * 0.4, Vector2.ONE * tile * 0.8), base, 5)
+	draw_arc(center, tile * 0.24, 0, TAU, 32, light, 2, true)
 	if pressed:
-		draw_circle(center, tile * 0.15, Color("ffe6a0"))
+		draw_circle(center, tile * 0.15, light)
 
 
 func _energy_block(center: Vector2, tile: float) -> void:
-	_box(Rect2(center - Vector2.ONE * tile * 0.43, Vector2.ONE * tile * 0.86), Color("ba923c"), 5)
-	_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), Color("f2ce6d"), 3)
+	var green := model.level.mechanism_color == "green"
+	_box(Rect2(center - Vector2.ONE * tile * 0.43, Vector2.ONE * tile * 0.86), Color("3e845b") if green else Color("ba923c"), 5)
+	_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), MECHANISM_GREEN if green else Color("f2ce6d"), 3)
 	for offset in [-0.20, 0.0, 0.20]:
-		draw_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("fff0b5"), tile * 0.035, true)
+		draw_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("dbffe6") if green else Color("fff0b5"), tile * 0.035, true)
 
 
 func _floor(rect: Rect2, cell: Vector2i) -> void:
@@ -140,6 +145,10 @@ func _crystal(center: Vector2, tile: float, variant: String) -> void:
 		base=Color("8e9fee")
 		dark=Color("515fb3")
 		light=Color("dbe2ff")
+	elif variant=="orange":
+		base=Color("ffba74")
+		dark=Color("aa6034")
+		light=Color("ffe1b7")
 	draw_ellipse_shadow(center + Vector2(0, tile * 0.27), Vector2(tile * 0.29, tile * 0.10))
 	var top := center + Vector2(0.02, -0.37) * tile
 	var left := center + Vector2(-0.27, -0.08) * tile

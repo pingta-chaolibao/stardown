@@ -19,7 +19,7 @@ static func settle(links: Array[Dictionary], hero: Vector2i, crystals: Dictionar
 		pressure[link["id"]] = pressed
 		all_pressed = all_pressed and pressed
 	# Link IDs describe data and local occupancy, never independent doors.
-	# Every yellow barrier uses the same all-yellow-plates AND result.
+	# Every energy barrier uses the same all-pressure-plates AND result.
 	for link in links:
 		for cell: Vector2i in link["barriers"]:
 			barriers[cell] = not all_pressed

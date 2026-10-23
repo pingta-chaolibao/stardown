@@ -1,0 +1,9 @@
+{
+  "level_id": "north_hero_11",
+  "path": "LLLLLDDDDRDRRUURULD",
+  "moves": 19,
+  "pushes": 0,
+  "pulls": 0,
+  "swaps": 5,
+  "note": "构造后由独立规则与Godot实际规则/键盘校验的合法路线，不宣称最优或穷举。UDLR为方向输入，本方向首目标优先自动交换。"
+}

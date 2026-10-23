@@ -1,14 +1,14 @@
-# 沉星之序 · 第一章前十关（Godot 4 / 2D）
+# 沉星之序 · 第一章前十一关（Godot 4 / 2D）
 
-第一章前十关按确认的文字网格实现。前四关是红色推之英雄，可整列推水晶；第五至八关是绿色拉之英雄，只能自动拉最近一枚；第九、十关是蓝色交换英雄，能走路但不能推拉。第一关是 11 × 3、黄色终点；第二关是 11 × 7、10 枚水晶；第三关加入压力板与能量屏障；第四关加入独立草丛与三板联动；第五关沿用第一关布局，改变英雄能力；第六关结合绿色单拉和单板屏障；第七关是一枚紫晶与单板双屏障的城堡通道；第八关结合绿色单拉、三紫晶、草丛与三板联动；第九关加入方向输入被动交换，第十关结合蓝英雄与单板屏障。第二至十关使用绿色终点，玩家抵达才判胜。画面为原创 2D 几何图形，不声称逐像素复刻。
+第一章前十一关按确认的文字网格实现。前四关是红色推之英雄，可整列推水晶；第五至八关是绿色拉之英雄，只能自动拉最近一枚；第九至十一关是蓝色交换英雄，能走路但不能推拉。第一关是 11 × 3、黄色终点；第二关是 11 × 7、10 枚水晶；第三关加入压力板与能量屏障；第四关加入独立草丛与三板联动；第五关沿用第一关布局，改变英雄能力；第六关结合绿色单拉和单板屏障；第七关是一枚紫晶与单板双屏障的城堡通道；第八关结合绿色单拉、三紫晶、草丛与三板联动；第九关加入方向输入被动交换，第十关结合蓝英雄与单板屏障；第十一关是九绿板联动与隔门橙晶交换。第二至十一关使用绿色终点，玩家抵达才判胜。画面为原创 2D 几何图形，不声称逐像素复刻。
 
 开发、测试与 Git 操作均在选定云端 `/workspace/stardown` 完成，没有读取、迁移或操作用户电脑。交付分支为 `develop`；不发布游戏、不创建 PR。
 
-黄色机关遵循用户确认的底层全局 AND：**所有黄色压力板同时被英雄或水晶占住，所有黄色能量块才一起消失**；任一解除就全部恢复。数据组标识只用于占用诊断，不代表独立开门。第七关复用该规则，用户对二维图补正 `(0,2)` 为地板后，152 步 / 56 次单拉路线已验证；没有为解法改动其他确认格或规则。
+压力机关遵循用户确认的底层全局 AND：**所有压力板同时被英雄或水晶占住，所有能量块才一起消失**；黄色 / 绿色仅为关卡显示配色；任一解除就全部恢复。数据组标识只用于占用诊断，不代表独立开门。第七关复用该规则，用户对二维图补正 `(0,2)` 为地板后，152 步 / 56 次单拉路线已验证；没有为解法改动其他确认格或规则。
 
 ## 获取与运行
 
-打开 [develop 分支](https://github.com/pingta-chaolibao/stardown/tree/develop)，或[下载工程 ZIP](https://github.com/pingta-chaolibao/stardown/archive/refs/heads/develop.zip)。在所选云端环境解压，使用 Godot 导入其中的 `project.godot`，按 **F5** 运行。
+通过 Git 获取 [develop 分支](https://github.com/pingta-chaolibao/stardown/tree/develop)，在所选云端环境使用 Godot 导入 `project.godot`，按 **F5** 运行。用户已选择通过 Git 获取工程，交付提供逐关通关视频。
 
 已验证的精确版本：`4.6.3.stable.official.7d41c59c4`（标准版）。不需要 C#、插件、在线字体或导出模板。有图形显示时，终端最简运行方式：
 
@@ -50,6 +50,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第八关 | [观看 / 下载 MP4](video/chapter_01/level_08.mp4) | 38.6 秒 |
 | 第九关 | [观看 / 下载 MP4](video/chapter_01/level_09.mp4) | 10.4 秒 |
 | 第十关 | [观看 / 下载 MP4](video/chapter_01/level_10.mp4) | 37.4 秒 |
+| 第十一关 | 实现提交后录制，媒体另行提交 | 待制作 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -255,11 +256,31 @@ HV.#.......
 
 实际画面：[初始](docs/screenshots/level_10_initial.png)、[更正地板](docs/screenshots/level_10_corrected_floor.png)、[英雄压板](docs/screenshots/level_10_hero_plate.png)、[水晶接替](docs/screenshots/level_10_crystal_plate.png)、[过门](docs/screenshots/level_10_crossing.png)、[胜利](docs/screenshots/level_10_completed.png)、[小窗口](docs/screenshots/level_10_compact.png)。
 
+### 第十一关：九绿板与隔门交换
+
+用户确认了原图编号、二维布局和全部机制。11×7，蓝英雄 `(5,0)`，绿色终点 `(9,1)`；主平台 x=0..6、y=0..6 全地板；隔墙 x=7 只有 `(7,1)` 是绿色能量门所在的地板；右平台 x=8..10、y=0..2 全地板，右下12格是界外并留空显示。
+
+```text
+.....H.#...
+.C.C.C.X.GO
+.......#...
+.C.C.C.#~~~
+.......#~~~
+.Y.C.C.#~~~
+.......#~~~
+```
+
+`C` 为八枚主平台水晶，其下各有一块绿板；`Y` 是唯一空绿板 `(1,5)`，九板为 x=1/3/5 与 y=1/3/5 的全部组合。`O` 是第九枚橙水晶 `(10,1)`；`X` 是能量门，`~` 仅在这张说明图中表示界外，JSON仍以不可通行地形加 `void_cells` 显示注解表达。所有九块板同时被英雄或水晶占住才开门，任意一块松开就关门。颜色不匹配、不分组，不改变压板或交换规则。
+
+构造并独立校验的合法路线 `LLLLLDDDDRDRRUURULD`，**19次方向输入、5次自动交换、0推拉**。第11步英雄进入 `(1,5)` 压满九板；之后依次交换到 `(3,5)`、`(5,5)`、`(5,3)`、`(5,1)`，压力连续保持。第16步沿右方向穿过已开放的视线，与 `(10,1)` 橙晶交换；橙晶接替 `(5,1)` 压板，英雄到右平台，再上、左、下进入终点。路线不是穷举或最优性证明。全部512种九板占用组合及颜色不影响规则均有模型回归。
+
+实际画面：[初始](docs/screenshots/level_11_initial.png)、[压满九板](docs/screenshots/level_11_all_plates.png)、[与橙晶对齐](docs/screenshots/level_11_aligned.png)、[隔门交换](docs/screenshots/level_11_orange_exchange.png)、[通关](docs/screenshots/level_11_completed.png)、[离板关门](docs/screenshots/level_11_released.png)、[界外受阻](docs/screenshots/level_11_void.png)、[小窗口](docs/screenshots/level_11_compact.png)。后两张是规则验证的侧路，未拼接进正式通关录像。
+
 ## 操作与通关
 
 | 操作 | 按键 / 界面 |
 | --- | --- |
-| 切换第一至第十关 | 顶部关卡按钮；存活时可切换，从该关初始状态开始，清空撤销历史 |
+| 切换第一至第十一关 | 顶部关卡按钮；存活时可切换，从该关初始状态开始，清空撤销历史 |
 | 方向输入 | 方向键或 WASD；也可点击方向按钮；蓝英雄优先交换本方向可见目标 |
 | 蓝色被动交换 | 方向键 / WASD / 屏幕方向：有可见目标优先交换，否则走一格 |
 | 撤销最近一次有效移动 | Z、U、Backspace，或“撤销”按钮 |
@@ -269,14 +290,14 @@ HV.#.......
 
 松开再按可连续操作；长按回声和未松开的重复事件不会多走。步数（蓝色为有效操作数）、推动、拉动、交换分别计数；整列推或交换均只算一次有效操作，另记一次对应技能。撤销一次恢复上次推、拉或行走前的全部位置、颜色身份、统计与机关生死状态，重开恢复初始状态。
 
-存活玩家进入当前关卡的终点才判胜（第一关黄色、第二至十关绿色）。通关后可以撤销最后一步，或重开；撤销恢复玩家、水晶、颜色身份、有效操作数、推动 / 拉动 / 交换次数、压力、屏障、生死和通关状态，重开清空历史并恢复全部初始状态。
+存活玩家进入当前关卡的终点才判胜（第一关黄色、第二至十一关绿色）。通关后可以撤销最后一步，或重开；撤销恢复玩家、水晶、颜色身份、有效操作数、推动 / 拉动 / 交换次数、压力、屏障、生死和通关状态，重开清空历史并恢复全部初始状态。
 
 第一关已验证、两枚水晶均参与的通关路径：**下，右 × 3，上 × 2，右 × 4，下，右**。结果为 **12 步、4 次推动**；蓝水晶最终在 `(5,2)`，紫水晶最终在 `(9,0)`，玩家在 `(9,1)`。这是一条验证路径，不宣称最优解。
 
 ## 工程结构与数据
 
-- `levels/north_01.json` 至 `levels/north_10.json`：十关数据，默认进入第一关。
-- `levels/solutions/`：逐输入验证的十关通关路径，供测试与演示回放使用。
+- `levels/north_01.json` 至 `levels/north_11.json`：十一关数据，默认进入第一关。
+- `levels/solutions/`：逐输入验证的十一关通关路径，供测试与演示回放使用。
 - `scripts/core/level_data.gd`：JSON 解析与坐标校验。
 - `scripts/core/energy_rules.gd`：纯占用谓词和机关结算，提供可配置压力来源。
 - `scripts/core/bush_obstacle.gd`：独立静态草丛类型，明确不可移动 / 交换与阻挡能力。
@@ -303,11 +324,13 @@ HV.#.......
 - `tests/north_09_regression.gd`、`tests/north_09_scene.gd`：确认坐标、9 次操作通关、真实方向键 / WASD / 屏幕方向被动交换、重复输入、胜利撤销重开和切关隔离。
 - `tests/north_10_regression.gd`、`tests/north_10_scene.gd`：77格确认布局与4号更正、54次方向输入通关、首目标交换、闭门阻挡、压板接替、撤销重开及切关隔离。
 - `tools/search_north_10.py`：保留水晶身份、考虑视线与机关结算的独立可达性搜索。
+- `tests/north_11_regression.gd`、`tests/north_11_scene.gd`：77格地板 / 墙 / 界外、九板512种AND组合、19次方向通关、绿色显示 / 橙晶交换、色彩无规则影响、撤销重开和历史隔离。
+- `tools/check_north_11.py`：独立校验构造路线的方向首目标、占用与九板联动，不宣称穷举或最优。
 - `tests/chain_push_regression.gd`：2 / 3 / 4 / 8 / 60 枚水晶的四方向连推、原子阻挡、边界、空格截断、旁侧水晶、撤销重开和输入去重。
 - `tests/scene_smoke.gd`：真实场景键鼠、通关状态与两种窗口尺寸检查。
 - `tools/verify.py`：一键验证。
 
-地图使用 schema 1。`terrain` 以 `#` / `.` 表示墙 / 地板，宽高各 1 至 64；`player`、`crates`、`exit` 使用 `[x,y]` 整数坐标。`hero_kind` 为 `red` / `green` / `blue`，省略默认红色；`crystal_colors` 按身份指定 `blue` / `purple` / `blue_purple`。十关均为 `is_temporary=false`、`objective=player_on_exit`、`targets=[]`。`exit_color` 为 `yellow` / `green`，默认 yellow；非法、重复、墙内或越界坐标会被拒绝。`bushes` 定义独立草丛，`energy_links` 定义压力板与屏障。第三 / 六 / 七 / 十关用单板 `plate`，第四 / 八关用 `plates` 与 `activation=all`。
+地图使用 schema 1。`terrain` 以 `#` / `.` 表示墙 / 地板，宽高各 1 至 64；`player`、`crates`、`exit` 使用 `[x,y]` 整数坐标。`hero_kind` 为 `red` / `green` / `blue`，省略默认红色；`crystal_colors` 按身份指定 `blue` / `purple` / `blue_purple` / `orange`，颜色仅影响显示。十一关均为 `is_temporary=false`、`objective=player_on_exit`、`targets=[]`。`exit_color` 为 `yellow` / `green`，默认 yellow；非法、重复、墙内或越界坐标会被拒绝。`bushes` 定义独立草丛，`energy_links` 定义压力板与屏障。第三 / 六 / 七 / 十关用单板 `plate`，第四 / 八 / 十一关用 `plates` 与 `activation=all`。`mechanism_color` 可为 `yellow`（默认）或 `green`，仅为机关显示配色；`void_cells` 可标记地图内不可通行地形为留空的界外，不改变碰撞 / 视线。
 
 ## 验证
 
@@ -316,7 +339,7 @@ cd /workspace/stardown
 python3 tools/verify.py
 ```
 
-该命令执行资源导入、所有脚本解析、通用逻辑、红推 / 绿拉 / 蓝色交换与机关回归、十关回归、默认场景启动、切关和键鼠检查。已有 X11 显示时加上真实渲染与截图：
+该命令执行资源导入、所有脚本解析、通用逻辑、红推 / 绿拉 / 蓝色交换与机关回归、十一关回归、默认场景启动、切关和键鼠检查。已有 X11 显示时加上真实渲染与截图：
 
 ```bash
 python3 tools/verify.py --visual --display :97
@@ -328,6 +351,6 @@ python3 tools/verify.py --visual --display :97
 /tmp/stardown-tools/xvfb/usr/bin/Xvfb :97 -screen 0 1280x820x24 -nolisten tcp -noreset
 ```
 
-运行日志与截图在 `artifacts/`，缓存与完整生成目录不纳入 Git；必要的验证摘要和十关画面保留在 `docs/`。详见[验证记录](docs/VERIFICATION.md)和[结构化摘要](docs/verification-summary.json)。无头模式只能证明逻辑 / 场景运行，画面结论来自实际 X11 / Mesa 渲染。
+运行日志与截图在 `artifacts/`，缓存与完整生成目录不纳入 Git；必要的验证摘要和十一关画面保留在 `docs/`。详见[验证记录](docs/VERIFICATION.md)和[结构化摘要](docs/verification-summary.json)。无头模式只能证明逻辑 / 场景运行，画面结论来自实际 X11 / Mesa 渲染。
 
 中文字体已随工程附带，来自本云端 Debian 包内的 [Noto CJK](https://github.com/notofonts/noto-cjk)，授权见 [OFL.txt](assets/fonts/OFL.txt)。英雄、水晶、墙、地板、终点和图标均为原创几何图形，没有将原作截图打包进工程。命令行参数参考 [Godot 官方文档](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html)。

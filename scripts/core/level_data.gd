@@ -10,6 +10,8 @@ var title: String = ""
 var is_temporary: bool = true
 var source_note: String = ""
 var terrain: PackedStringArray = []
+var void_cells: Array[Vector2i] = []
+var _void_by_cell: Dictionary = {}
 var width: int = 0
 var height: int = 0
 var start: Vector2i = Vector2i.ZERO
@@ -19,6 +21,7 @@ var crystal_colors: PackedStringArray = []
 var targets: Array[Vector2i] = []
 var exit_cell := Vector2i(-1, -1)
 var exit_color: String = "yellow"
+var mechanism_color: String = "yellow"
 var objective: String = "none"
 var energy_links: Array[Dictionary] = []
 var bushes: Array[Bush] = []
@@ -65,6 +68,16 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 			if tile != "." and tile != "#":
 				return _invalid("terrain 仅允许 .（地面）与 #（墙）。")
 		level.terrain.append(row)
+	# Void is a display annotation on blocked terrain, never an extra floor type.
+	var void_entries: Variant = data.get("void_cells", [])
+	if not void_entries is Array:
+		return _invalid("void_cells 必须是不可通行地形上的坐标数组。")
+	for entry in void_entries:
+		var cell: Variant = _parse_cell(entry)
+		if cell == null or cell.x >= level.width or cell.y >= level.height or level.is_floor(cell) or level._void_by_cell.has(cell):
+			return _invalid("界外显示格必须是地图内独立的不可通行坐标。")
+		level.void_cells.append(cell)
+		level._void_by_cell[cell] = true
 	var spawn: Variant = _parse_cell(data.get("player"))
 	if spawn == null or not level.is_floor(spawn):
 		return _invalid("player 必须是地图内可通行的整数坐标。")
@@ -99,13 +112,17 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	if goal_color not in ["yellow", "green"]:
 		return _invalid("exit_color 仅支持 yellow 或 green。")
 	level.exit_color = goal_color
+	var mechanism_tint: Variant = data.get("mechanism_color", "yellow")
+	if mechanism_tint not in ["yellow", "green"]:
+		return _invalid("mechanism_color 仅支持 yellow 或 green，且只影响显示。")
+	level.mechanism_color = mechanism_tint
 	var colors: Variant = data.get("crystal_colors", [])
 	if not colors is Array or (not colors.is_empty() and colors.size() != level.initial_crates.size()):
 		return _invalid("crystal_colors 必须为空数组或与水晶数量相同的颜色数组。")
 	for i in level.initial_crates.size():
 		var variant: Variant = colors[i] if not colors.is_empty() else ("blue" if i % 2 == 0 else "purple")
-		if variant not in ["blue", "purple", "blue_purple"]:
-			return _invalid("水晶颜色仅支持 blue、purple 和 blue_purple。")
+		if variant not in ["blue", "purple", "blue_purple", "orange"]:
+			return _invalid("水晶颜色仅支持 blue、purple、blue_purple 和 orange。")
 		level.crystal_colors.append(variant)
 	if level.objective == "all_crates_on_targets":
 		if level.initial_crates.is_empty() or level.initial_crates.size() != level.targets.size():
@@ -199,6 +216,10 @@ func _read_energy_links(value: Variant) -> String:
 func is_floor(cell: Vector2i) -> bool:
 	return cell.x >= 0 and cell.y >= 0 and cell.x < width and cell.y < height \
 		and terrain[cell.y][cell.x] == "."
+
+
+func is_void(cell: Vector2i) -> bool:
+	return _void_by_cell.has(cell)
 
 
 static func _parse_cell(value: Variant) -> Variant:
