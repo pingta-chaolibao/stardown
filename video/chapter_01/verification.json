@@ -335,11 +335,11 @@
     {
       "file": "video/chapter_01/level_09.mp4",
       "level": 9,
-      "bytes": 163210,
-      "sha256": "519a8fdddc8c4fec027989839afa6151d1fe52fe1524f90d59c3f39ca4bb04be",
-      "distinct_sampled_frames": 44,
+      "bytes": 160530,
+      "sha256": "53828710a5710b19c23f738b6aa48694b233ad6cd859ea338437f915aee3084f",
+      "distinct_sampled_frames": 43,
       "full_decode_passed": true,
-      "game_implementation_commit": "7d9df0e76e37af397954fd355416cbb7b4dc62d6",
+      "game_implementation_commit": "1cd028588159c8410176ead9d8e1d793e919bc35",
       "hero_kind": "blue",
       "codec": "h264",
       "profile": "High",
@@ -358,7 +358,7 @@
       "pulls": 0,
       "swaps": 2,
       "counts_are_operations": true,
-      "action_notation": "UDLR walks; udlr explicit Shift+direction swaps",
+      "action_notation": "UDLR ordinary direction inputs; first visible target swaps automatically, otherwise walk one cell",
       "initial_player": [
         1,
         1
@@ -385,7 +385,10 @@
       ],
       "replay_report": "level_09_replay.json",
       "level_file": "levels/north_09.json",
-      "solution_file": "levels/solutions/north_09.json"
+      "solution_file": "levels/solutions/north_09.json",
+      "direction_triggered_passive_swap": true,
+      "modifier_keys_used": [],
+      "user_example_13_to_24_then_24_swaps_with_26": true
     }
   ],
   "game_implementation_commits": {
@@ -397,6 +400,6 @@
     "level_06": "6f2061e7e9f3fea5ea5117d981f7798266d9df78",
     "level_07": "1612e5d5c321e4d61015c485cb425366443ad241",
     "level_08": "5c4e25bc6cd1324a75cc04ca625fec04d8668e41",
-    "level_09": "7d9df0e76e37af397954fd355416cbb7b4dc62d6"
+    "level_09": "1cd028588159c8410176ead9d8e1d793e919bc35"
   }
 }

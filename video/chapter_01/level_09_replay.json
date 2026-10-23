@@ -58,7 +58,7 @@
   },
   "fps": 30,
   "frames_per_input": 18,
-  "game_implementation_commit": "7d9df0e76e37af397954fd355416cbb7b4dc62d6",
+  "game_implementation_commit": "1cd028588159c8410176ead9d8e1d793e919bc35",
   "initial_pause_frames": 60,
   "initial_state": {
     "alive": true,
@@ -104,8 +104,8 @@
     "swaps": 0
   },
   "level": 9,
-  "movie_file": "level_09.avi",
-  "path": "DrRUUrRDR",
+  "movie_file": "level_09_passive.avi",
+  "path": "DRRUURRDR",
   "trace": [
     {
       "action": "move",
@@ -182,7 +182,7 @@
       ],
       "exit_color": "green",
       "hero_kind": "blue",
-      "input": "r",
+      "input": "R",
       "level_id": "north_hero_09",
       "moves": 2,
       "plates": [],
@@ -362,7 +362,7 @@
       ],
       "exit_color": "green",
       "hero_kind": "blue",
-      "input": "r",
+      "input": "R",
       "level_id": "north_hero_09",
       "moves": 6,
       "plates": [],
