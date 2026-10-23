@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -209,7 +209,7 @@ func _build_ui() -> void:
 
 
 func _build_header(parent: VBoxContainer) -> void:
-	var row := _hbox(10)
+	var row := _hbox(6 if LEVEL_PATHS.size() > 11 else 10)
 	row.custom_minimum_size.y = 76
 	parent.add_child(row)
 	var emblem := _label("✦", 52, GOLD)
@@ -223,7 +223,7 @@ func _build_header(parent: VBoxContainer) -> void:
 	for index in LEVEL_PATHS.size():
 		var button := _button(LEVEL_TITLES[index], "Level%02d" % (index + 1))
 		button.disabled = index == current_level_index
-		button.custom_minimum_size.x = 68 if LEVEL_PATHS.size() > 10 else 76
+		button.custom_minimum_size.x = 60 if LEVEL_PATHS.size() > 11 else (68 if LEVEL_PATHS.size() > 10 else 76)
 		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		button.tooltip_text = "切换关卡并从初始状态开始"
 		button.pressed.connect(select_level.bind(index))

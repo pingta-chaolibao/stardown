@@ -121,8 +121,8 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 		return _invalid("crystal_colors 必须为空数组或与水晶数量相同的颜色数组。")
 	for i in level.initial_crates.size():
 		var variant: Variant = colors[i] if not colors.is_empty() else ("blue" if i % 2 == 0 else "purple")
-		if variant not in ["blue", "purple", "blue_purple", "orange"]:
-			return _invalid("水晶颜色仅支持 blue、purple、blue_purple 和 orange。")
+		if variant not in ["blue", "purple", "blue_purple", "orange", "pink"]:
+			return _invalid("水晶颜色仅支持 blue、purple、blue_purple、orange 和 pink。")
 		level.crystal_colors.append(variant)
 	if level.objective == "all_crates_on_targets":
 		if level.initial_crates.is_empty() or level.initial_crates.size() != level.targets.size():

@@ -1,0 +1,9 @@
+{
+  "level_id": "north_hero_12",
+  "path": "DDDURRDRRLDDRLURRRDDDRURUU",
+  "moves": 26,
+  "pushes": 0,
+  "pulls": 0,
+  "swaps": 7,
+  "note": "独立占用状态搜索在首次胜利停止，颜色身份排列只在搜索去重时忽略；实际路线另按身份与Godot规则/键盘校验。UDLR为方向输入，首目标优先自动交换；不宣称穷举或最优。"
+}

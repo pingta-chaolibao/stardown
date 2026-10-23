@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_12",
+  "title": "北部英雄 · 第十二关",
+  "is_temporary": false,
+  "source_note": "用户确认编号原图与7×6二维图无误：蓝英雄9号(1,1)，橙晶10号(2,1)、紫晶16号(1,2)、粉红晶17号(2,2)；草25/39号(3,3)/(3,5)，黄板30/32/34号，墙6/13号，黄色能量14号(6,1)，终点7号(6,0)。最上与最下排均完整格，其余内部地板，界外阻挡。复用被动交换、草丛与全局三板AND，不新增机制。",
+  "hero_kind": "blue",
+  "terrain": [
+    ".....#.",
+    ".....#.",
+    ".......",
+    ".......",
+    ".......",
+    "......."
+  ],
+  "player": [
+    1,
+    1
+  ],
+  "crates": [
+    [
+      2,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "crystal_colors": [
+    "orange",
+    "purple",
+    "pink"
+  ],
+  "bushes": [
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      5
+    ]
+  ],
+  "targets": [],
+  "exit": [
+    6,
+    0
+  ],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "mechanism_color": "yellow",
+  "energy_links": [
+    {
+      "id": "yellow_01",
+      "plates": [
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "activation": "all",
+      "barriers": [
+        [
+          6,
+          1
+        ]
+      ],
+      "pressure_sources": [
+        "hero",
+        "crystal"
+      ]
+    }
+  ]
+}

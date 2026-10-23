@@ -149,6 +149,10 @@ func _crystal(center: Vector2, tile: float, variant: String) -> void:
 		base=Color("ffba74")
 		dark=Color("aa6034")
 		light=Color("ffe1b7")
+	elif variant=="pink":
+		base=Color("e99cc7")
+		dark=Color("9d527f")
+		light=Color("ffdaed")
 	draw_ellipse_shadow(center + Vector2(0, tile * 0.27), Vector2(tile * 0.29, tile * 0.10))
 	var top := center + Vector2(0.02, -0.37) * tile
 	var left := center + Vector2(-0.27, -0.08) * tile
