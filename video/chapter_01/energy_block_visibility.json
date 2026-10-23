@@ -1,0 +1,38 @@
+{
+  "purpose": "Non-winning energy visibility comparison",
+  "file": "video/chapter_01/energy_block_visibility.mp4",
+  "bytes": 428006,
+  "sha256": "b2ff64e0992e7de90ba9ce820775af8e95eb8e1b2a5cbbb14f64665ba41ee08c",
+  "game_implementation_commit": "4fa554befe2f5835339dbf0f8e9e8de517b0e032",
+  "frames": 666,
+  "duration_seconds": 22.2,
+  "fps": 30,
+  "codec": "h264",
+  "profile": "High",
+  "pixel_format": "yuv420p",
+  "dimensions": [
+    1280,
+    820
+  ],
+  "mp4_fast_start": true,
+  "full_decode_passed": true,
+  "actual_legal_inputs_replayed": 34,
+  "direction_inputs": 24,
+  "free_selections": 9,
+  "undo_inputs": 1,
+  "net_actions": 23,
+  "review_frames": [
+    0,
+    223,
+    295,
+    331,
+    487,
+    547,
+    589,
+    631
+  ],
+  "replay_report": "energy_block_visibility_replay.json",
+  "historical_walkthrough_files_changed": false,
+  "key_frames_reviewed": true,
+  "replay_check": "34 legal events and complete model-state comparisons passed; JSON numeric normalization affects validation only"
+}

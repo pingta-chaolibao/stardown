@@ -56,7 +56,7 @@ func _frames(count:int) -> void:
 func _verify_demo() -> void:
 	var r:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(verify_path));game=load("res://scenes/main.tscn").instantiate();game.level_path="res://levels/north_17.json";root.add_child(game);await _frames(2)
 	var checks:=0
-	if _state()!=r["initial_state"]:_fail("Demo initial world differs");return
+	if _normalized(_state())!=_normalized(r["initial_state"]):_fail("Demo initial world differs");return
 	for expected in r["trace"]:
 		var symbol:String=expected["input"]
 		if symbol=="C":game.model.switch_hero();selection_events+=1
@@ -66,7 +66,21 @@ func _verify_demo() -> void:
 			var result:StringName=game.model.try_move(DEMO_DIRS[symbol])
 			if result not in [&"moved",&"pushed",&"pulled",&"swapped"]:_fail("Replay direction illegal");return
 		var state:Dictionary=expected.duplicate(true);state.erase("input");state.erase("event_index")
-		if _state()!=state:_fail("Demo replay state differs");return
+		if _normalized(_state())!=_normalized(state):_fail("Demo replay state differs");return
 		checks+=1
-	if _state()!=r["final_state"] or r["frames"]!=666 or r["input_events"]!=34:_fail("Demo final state/timing differs");return
+	if _normalized(_state())!=_normalized(r["final_state"]) or r["frames"]!=666 or r["input_events"]!=34:_fail("Demo final state/timing differs");return
 	print("ENERGY VISIBILITY REPLAY RESULT: %d legal events,34 state comparisons,666frames expected" % checks);quit(0)
+
+# Godot JSON parses integral grid coordinates as floats; normalize comparison
+# values only, never any actual model or recorded world state.
+func _normalized(value:Variant) -> Variant:
+	if value is float and value==floor(value):return int(value)
+	if value is Array:
+		var result:Array=[]
+		for entry in value:result.append(_normalized(entry))
+		return result
+	if value is Dictionary:
+		var result:Dictionary={}
+		for key in value:result[key]=_normalized(value[key])
+		return result
+	return value

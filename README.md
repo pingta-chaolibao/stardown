@@ -554,3 +554,5 @@ URRRRDLULLRULDCUCUUUDDCUDCCUUURRRRRRRLCCUUUCLLLLLLDCCLLLLLLLCDDCUDCRRRCUUURRRCLU
 消失的能量格保留淡色虚线边框和浅地纹：黄色机关用淡黄色，绿色机关保留绿色；地板仍可通行、视线仍可穿过。外沿在英雄或水晶上方绘制，站上去也能辨认位置；实体恢复仍是原有实心能量块。玩法、地图、毁晶/死亡和撤销均未变。
 
 [实际Godot截图：两枚水晶站在消失能量格上](docs/screenshots/energy_block_visibility.png)，[绿色机关示例](docs/screenshots/energy_green_visibility.png)。表现专项及开关对比记录见[能量格显示验证](docs/ENERGY_VISIBILITY.md)。17段历史通关视频保持原字节。
+
+[22.2秒实际Godot能量开关对比](video/chapter_01/energy_block_visibility.mp4)，展示消失标记、英雄/水晶占格、实体恢复和撤销；这是表现演示，不替代历史通关视频。
