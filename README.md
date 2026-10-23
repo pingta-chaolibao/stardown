@@ -54,7 +54,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十二关 | [观看 / 下载 MP4](video/chapter_01/level_12.mp4) | 20.6 秒 |
 | 第十三关 | [观看 / 下载 MP4](video/chapter_01/level_13.mp4) | 21.2 秒 |
 | 第十四关 | [观看 / 下载 MP4](video/chapter_01/level_14.mp4) | 35.0 秒 |
-| 第十五关 | 实现提交后录制真实通关视频 | 待录制 |
+| 第十五关 | [观看 / 下载 MP4](video/chapter_01/level_15.mp4) | 53.6 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -482,4 +482,9 @@ G.#........
 
 本关还可用合法侧路验证死亡：走到行动52蓝人位于开放能量格，C选绿后向下离开近板，能量恢复压死未选中蓝人；方向、C、R和切关全部被锁住，唯Undo复活蓝人并保留绿选中。此侧路只作机制测试，不混入正式通关视频。
 
-数据 `levels/north_15.json`，解法 `levels/solutions/north_15.json`，独立搜索与身份回放 `python3 tools/search_north_15.py`，模型 / 实际输入测试 `north_15_regression.gd` / `north_15_scene.gd`。复用既有核心规则，只为蓝绿阵容补齐说明与交换 / 拉动统计，15关导航在1280×820及960×615适配。实现提交后录制 `video/chapter_01/level_15.mp4`，前十四关及其视频保持。
+数据 `levels/north_15.json`，解法 `levels/solutions/north_15.json`，独立搜索与身份回放 `python3 tools/search_north_15.py`，模型 / 实际输入测试 `north_15_regression.gd` / `north_15_scene.gd`。复用既有核心规则，只为蓝绿阵容补齐说明与交换 / 拉动统计，15关导航在1280×820及960×615适配。已在实现提交后录制 `video/chapter_01/level_15.mp4`，前十四关及其视频保持。
+
+
+第十五关实际画面：[初始](docs/screenshots/level_15_initial.png)、[绿选中](docs/screenshots/level_15_selected_green.png)、[首次英雄交换](docs/screenshots/level_15_first_hero_exchange.png)、[粉晶单拉](docs/screenshots/level_15_pink_pull.png)、[近晶优先](docs/screenshots/level_15_nearest_crystal.png)、[底部晶交换](docs/screenshots/level_15_lower_crystal.png)、[双板开门](docs/screenshots/level_15_all_plates.png)、[蓝过门](docs/screenshots/level_15_blue_gate.png)、[蓝紫晶接替](docs/screenshots/level_15_crystal_handoff.png)、[隔门英雄换位](docs/screenshots/level_15_gate_hero_exchange.png)、[首目标](docs/screenshots/level_15_first_goal.png)、[通关](docs/screenshots/level_15_completed.png)、[侧路死亡](docs/screenshots/level_15_death_inactive_blue.png)、[撤销复活](docs/screenshots/level_15_revived_blue.png)、[小窗口蓝](docs/screenshots/level_15_compact_blue.png)、[小窗口绿](docs/screenshots/level_15_compact_green.png)。死亡 / 复活是本关合法侧路验证，不混入正式录像。
+
+[第十五关完整通关视频](video/chapter_01/level_15.mp4)：53.6秒 / 1608帧，61实际行动、20免费选择、11拉7换0推，七次交换（其中三次英雄互换）与两枚水晶全部参与。十五段视频已完整解码与独立合法回放，详见[视频记录](video/README.md)。

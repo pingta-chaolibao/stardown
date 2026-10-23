@@ -1699,7 +1699,7 @@
     "modifier_keys_used": [],
     "user_example_13_to_24_then_24_swaps_with_26": true
   },
-  "all_chapter_one_walkthroughs_checked": 14,
+  "all_chapter_one_walkthroughs_checked": 15,
   "previous_nine_maps_solutions_videos_replays_unchanged_from": "9c879b28bd093773d6af2a9dcf2aa6dccc3c205b",
   "north_10_independent_search": {
     "living_identity_states_exhausted": 2560,
@@ -5043,5 +5043,213 @@
     "statistics": "actual actions plus only the capabilities present: pushing/exchange/pulling; no selection statistic",
     "inactive_heroes_preserve_hue": true
   },
-  "north_15_walkthrough_pending": true
+  "north_15_walkthrough": {
+    "file": "video/chapter_01/level_15.mp4",
+    "level": 15,
+    "bytes": 903187,
+    "sha256": "c5a819128aa5d90e887fc8c0f4b02366457de4b6b069a3f98a03968ba16b05ff",
+    "distinct_sampled_frames": 257,
+    "sampled_action_states": 82,
+    "distinct_action_state_frames": 82,
+    "full_decode_passed": true,
+    "game_implementation_commit": "4fa7ea61c8beba80269ab4db9c0bf33ccb43a362",
+    "hero_kinds": [
+      "blue",
+      "green"
+    ],
+    "codec": "h264",
+    "profile": "High",
+    "pixel_format": "yuv420p",
+    "dimensions": [
+      1280,
+      820
+    ],
+    "fps": 30,
+    "frames": 1608,
+    "duration_seconds": 53.6,
+    "mp4_fast_start": true,
+    "moves": 61,
+    "directions": 61,
+    "input_events": 81,
+    "selection_events": 20,
+    "walks_without_pull_or_swap": 43,
+    "pushes": 0,
+    "pulls": 11,
+    "swaps": 7,
+    "counts_are_actual_actions": true,
+    "selection_counts_as_operation": false,
+    "selection_is_undoable": false,
+    "undo_keeps_current_selection": true,
+    "action_notation": "UDLR counts actual walk,first-visible-target blue exchange or nearest-single-crystal green pull. C only selects, never counts or creates undo history.",
+    "modifier_keys_used": [],
+    "keys_used": [
+      "W",
+      "A",
+      "S",
+      "D",
+      "C"
+    ],
+    "initial_hero_positions": {
+      "blue": [
+        4,
+        0
+      ],
+      "green": [
+        3,
+        3
+      ]
+    },
+    "victory_hero_positions": {
+      "blue": [
+        0,
+        4
+      ],
+      "green": [
+        0,
+        2
+      ]
+    },
+    "initial_active_hero": "blue",
+    "victory_active_hero": "blue",
+    "legal_input_trace_verified": true,
+    "initial_and_final_frames_reviewed": true,
+    "all_twenty_free_selection_highlights_reviewed": true,
+    "inactive_heroes_retain_hue_reviewed": true,
+    "all_seven_exchanges_reviewed": true,
+    "both_colored_crystals_reviewed": true,
+    "open_gate_hero_exchange_reviewed": true,
+    "green_single_pull_handoff_reviewed": true,
+    "two_distinct_hero_goals_reviewed": true,
+    "marker25_and47_walls_reviewed": true,
+    "selection_input_events": [
+      1,
+      8,
+      11,
+      14,
+      17,
+      19,
+      22,
+      27,
+      30,
+      33,
+      35,
+      37,
+      45,
+      53,
+      55,
+      61,
+      71,
+      73,
+      75,
+      77
+    ],
+    "selection_unchanged_action_counts": [
+      0,
+      6,
+      8,
+      10,
+      12,
+      13,
+      15,
+      19,
+      21,
+      23,
+      24,
+      25,
+      32,
+      39,
+      40,
+      45,
+      54,
+      55,
+      56,
+      57
+    ],
+    "pull_action_numbers": [
+      13,
+      16,
+      19,
+      22,
+      23,
+      33,
+      39,
+      41,
+      42,
+      45,
+      55
+    ],
+    "swap_action_numbers": [
+      7,
+      11,
+      12,
+      24,
+      27,
+      32,
+      56
+    ],
+    "hero_swap_action_numbers": [
+      7,
+      11,
+      56
+    ],
+    "all_plates_action": 45,
+    "blue_gate_actions": [
+      52,
+      58
+    ],
+    "crystal_handoff_action": 55,
+    "gate_hero_exchange_action": 56,
+    "green_goal_action": 57,
+    "victory_action": 61,
+    "victory_input_event": 81,
+    "reviewed_encoded_frames": [
+      0,
+      70,
+      214,
+      376,
+      664,
+      844,
+      1132,
+      1276,
+      1348,
+      1384,
+      1420,
+      1607
+    ],
+    "reviewed_exchange_frames": [
+      214,
+      322,
+      340,
+      664,
+      754,
+      844,
+      1384
+    ],
+    "reviewed_selection_frames": [
+      70,
+      196,
+      250,
+      304,
+      358,
+      394,
+      448,
+      538,
+      592,
+      646,
+      682,
+      718,
+      862,
+      1006,
+      1042,
+      1150,
+      1330,
+      1366,
+      1402,
+      1438
+    ],
+    "replay_report": "level_15_replay.json",
+    "level_file": "levels/north_15.json",
+    "solution_file": "levels/solutions/north_15.json"
+  },
+  "previous_fourteen_manifest_entries_unchanged": true
 }
