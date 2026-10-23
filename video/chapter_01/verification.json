@@ -107,11 +107,50 @@
       "replay_report": "level_03_replay.json",
       "level_file": "levels/north_03.json",
       "solution_file": "levels/solutions/north_03.json"
+    },
+    {
+      "file": "video/chapter_01/level_04.mp4",
+      "level": 4,
+      "bytes": 391274,
+      "sha256": "5a2c7568f3501d29a60d065ea80002a753ebdbe83553a0f35b6b6e679dbe1864",
+      "distinct_sampled_frames": 114,
+      "full_decode_passed": true,
+      "game_implementation_commit": "50ef07db450b134169c9f60d1cab5d5218960789",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 762,
+      "duration_seconds": 25.4,
+      "mp4_fast_start": true,
+      "moves": 34,
+      "pushes": 13,
+      "initial_player": [
+        1,
+        1
+      ],
+      "victory_player": [
+        6,
+        0
+      ],
+      "legal_input_trace_verified": true,
+      "initial_and_final_frames_reviewed": true,
+      "all_plates_and_gate_crossing_reviewed": true,
+      "all_crystals_hold_plates_step": 26,
+      "gate_crossing_step": 33,
+      "replay_report": "level_04_replay.json",
+      "level_file": "levels/north_04.json",
+      "solution_file": "levels/solutions/north_04.json"
     }
   ],
   "game_implementation_commits": {
     "level_01": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9",
     "level_02": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9",
-    "level_03": "77b208c53142e3b310f4ed2093bc23afb5e7367b"
+    "level_03": "77b208c53142e3b310f4ed2093bc23afb5e7367b",
+    "level_04": "50ef07db450b134169c9f60d1cab5d5218960789"
   }
 }

@@ -70,4 +70,8 @@ Xvfb `:97`、Godot GL Compatibility、OpenGL 4.5 / Mesa 25.0.7-2+deb13u1 / llvmp
 
 前三关已交付视频保持原字节。第四关按约定先提交关卡实现，再制作与提交 `video/chapter_01/level_04.mp4`，仅录实际 Godot 视口与合法完整通关过程。最终媒体、逐步输入和状态见 [video/README.md](../video/README.md) 与 [章节验证清单](../video/chapter_01/verification.json)。
 
+第四关对应实现提交 `50ef07db450b134169c9f60d1cab5d5218960789`。视频为 25.4 秒、762 帧、391,274 字节；H.264 High、yuv420p、1280 × 820、30 fps、MP4 fast-start。已完整解码并实际查看初始、三板压满、过门和最后胜利画面；独立输入回放核对 34 步 / 13 推、每枚水晶身份、两处静态草丛、各板与 AND 屏障、全程存活及最终胜利。
+
+`python3 tools/check_walkthroughs.py` 对四份视频全部通过，含文件哈希、元数据、帧数时长、MP4 fast-start、完整解码和独立规则回放。录制以后没有修改游戏规则、关卡或界面。
+
 未测试其他 Godot 版本、操作系统、硬件 GPU 或长时间性能，未导出独立程序。GitHub CI 仅按可见远端证据报告，云端验证通过不等于 CI 通过。不强推、不创建 PR、不发布游戏。
