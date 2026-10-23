@@ -8,7 +8,18 @@ const Heroes = preload("res://scripts/core/hero_rules.gd")
 const Swaps = preload("res://scripts/core/swap_rules.gd")
 
 var level: Level
-var player: Vector2i = Vector2i.ZERO
+var player: Vector2i:
+	get:
+		return _hero_positions[active_hero_index] if not _hero_positions.is_empty() else Vector2i.ZERO
+	set(value):
+		if _hero_positions.is_empty():
+			_hero_positions.append(value)
+		else:
+			_hero_positions[active_hero_index] = value
+var active_hero_index: int = 0
+var switches: int = 0
+var _hero_positions: Array[Vector2i] = []
+var _hero_alive: Array[bool] = []
 var moves: int = 0
 var pushes: int = 0
 var pulls: int = 0
@@ -23,13 +34,15 @@ var _initial_state: Dictionary = {}
 
 
 func load_level(definition: Level) -> bool:
-	# Invalid data must not replace a running session.
 	if not alive or definition == null or not definition.error.is_empty():
 		return false
 	var initial_crystals: Dictionary = {}
 	for i in definition.initial_crates.size():
 		initial_crystals[definition.initial_crates[i]] = i
-	var settled := Energy.settle(definition.energy_links, definition.start, initial_crystals, {})
+	var positions: Array[Vector2i] = []
+	for hero in definition.hero_definitions:
+		positions.append(hero["start"])
+	var settled := Energy.settle(definition.energy_links, positions, initial_crystals, {})
 	last_mechanism_error = settled["error"]
 	if not last_mechanism_error.is_empty():
 		return false
@@ -40,6 +53,9 @@ func load_level(definition: Level) -> bool:
 	_initial_state = {"player": definition.start, "crates": initial_crystals,
 		"moves": 0, "pushes": 0, "pulls": 0, "swaps": 0, "alive": true,
 		"pressure": settled["pressure"], "barriers": settled["barriers"]}
+	if positions.size() > 1:
+		_initial_state.merge({"hero_positions":positions,"hero_alive":settled["hero_alive"],
+			"active_hero":definition.initial_active_hero,"switches":0})
 	_restore(_initial_state)
 	_history.clear()
 	return true
@@ -55,8 +71,7 @@ func try_move(direction: Vector2i) -> StringName:
 		return &"invalid_direction"
 	if is_complete():
 		return &"complete"
-	# Each direction input resolves only its own ray before any ordinary step.
-	if Heroes.can_swap(level.hero_kind):
+	if Heroes.can_swap(active_kind()):
 		var target := swap_target(direction)
 		if target["result"] == &"target":
 			return _exchange_target(target)
@@ -65,54 +80,61 @@ func try_move(direction: Vector2i) -> StringName:
 		if level.bush_at(next) != null:
 			return &"bush_blocked"
 		return &"energy_blocked" if barrier_is_active(next) else &"wall"
-	if _crates.has(next) and not Heroes.can_push(level.hero_kind):
+	if _occupied(next) and not Heroes.can_push(active_kind()):
 		return &"cannot_push"
 	var chain: Array[Vector2i] = []
 	var destination := next
-	while _crates.has(destination):
+	while _occupied(destination):
 		chain.append(destination)
 		destination += direction
-	# Validate the entire contiguous line before recording or mutating anything.
-	# Its length is determined by occupancy, with no fixed push-count limit.
 	if not chain.is_empty() and not is_walkable(destination):
 		return &"crate_blocked"
 	var candidate := _crates.duplicate()
-	var pulled := false
-	if not chain.is_empty():
-		# Move the far end first so no crystal overwrites the next one's identity.
-		for index in range(chain.size() - 1, -1, -1):
-			var cell := chain[index]
-			var identity: int = candidate[cell]
+	var positions: Array[Vector2i] = _hero_positions.duplicate()
+	for index in range(chain.size() - 1, -1, -1):
+		var cell := chain[index]
+		if _crates.has(cell):
+			var identity: int = _crates[cell]
 			candidate.erase(cell)
 			candidate[cell + direction] = identity
-	if Heroes.can_pull(level.hero_kind):
+		else:
+			positions[hero_at(cell)] = cell + direction
+	var pulled := false
+	if Heroes.can_pull(active_kind()):
 		var behind := player - direction
 		if candidate.has(behind):
-			# Only the nearest rear crystal enters the hero's old cell.
-			# Further crystals and side neighbours keep their positions.
 			var identity: int = candidate[behind]
 			candidate.erase(behind)
 			candidate[player] = identity
 			pulled = true
-	var settled := Energy.settle(level.energy_links, next, candidate, _barriers)
-	last_mechanism_error = settled["error"]
-	if not last_mechanism_error.is_empty():
-		return &"rule_unresolved"
-	# Commit movement, pressure, barriers and death as one undoable action.
-	_history.append(snapshot())
-	_crates = candidate
-	player = next
-	moves += 1
-	pushes += 0 if chain.is_empty() else 1
-	pulls += 1 if pulled else 0
-	alive = settled["alive"]
-	_pressure = settled["pressure"]
-	_barriers = settled["barriers"]
-	if not alive:
-		return &"died"
+	positions[active_hero_index] = next
+	var result := _commit(positions, candidate, 0 if chain.is_empty() else 1, 1 if pulled else 0, 0)
+	if result != &"committed":
+		return result
 	if pulled:
 		return &"pulled"
 	return &"pushed" if not chain.is_empty() else &"moved"
+
+
+func switch_hero() -> StringName:
+	if level == null:
+		return &"no_level"
+	if not alive:
+		return &"dead"
+	if is_complete():
+		return &"complete"
+	if _hero_positions.size() < 2:
+		return &"single_hero"
+	_history.append(snapshot())
+	active_hero_index = (active_hero_index + 1) % _hero_positions.size()
+	moves += 1
+	switches += 1
+	last_mechanism_error = ""
+	return &"switched"
+
+
+func _occupied(cell: Vector2i) -> bool:
+	return _crates.has(cell) or hero_at(cell) >= 0
 
 
 func swap_target(direction: Vector2i) -> Dictionary:
@@ -122,30 +144,44 @@ func swap_target(direction: Vector2i) -> Dictionary:
 
 
 func _swap_occupant(cell: Vector2i) -> Dictionary:
-	# The current world has one hero. The reusable sight/plan layer also classifies
-	# hero targets, without introducing unrequested multi-hero level state here.
+	var hero := hero_at(cell)
+	if hero >= 0:
+		return {"kind":&"hero","id":hero}
 	return {"kind": &"crystal", "id":_crates[cell]} if _crates.has(cell) else {}
 
 
 func _exchange_target(target: Dictionary) -> StringName:
-	var plan:=Swaps.exchange_plan(player,target)
-	var next: Vector2i=plan["player"]
-	var candidate:=_crates.duplicate()
-	candidate.erase(next)
-	candidate[plan["target_cell"]]=plan["target_id"]
-	var settled:=Energy.settle(level.energy_links,next,candidate,_barriers)
-	last_mechanism_error=settled["error"]
+	var plan := Swaps.exchange_plan(player,target)
+	var positions: Array[Vector2i] = _hero_positions.duplicate()
+	var candidate := _crates.duplicate()
+	if plan["target_kind"] == &"hero":
+		positions[plan["target_id"]] = player
+	else:
+		candidate.erase(plan["player"])
+		candidate[player] = plan["target_id"]
+	positions[active_hero_index] = plan["player"]
+	var result := _commit(positions,candidate,0,0,1)
+	return &"swapped" if result == &"committed" else result
+
+
+func _commit(positions: Array[Vector2i], candidate: Dictionary, pushed: int, pulled: int, swapped: int) -> StringName:
+	var settled := Energy.settle(level.energy_links,positions,candidate,_barriers)
+	last_mechanism_error = settled["error"]
 	if not last_mechanism_error.is_empty():
 		return &"rule_unresolved"
+	# Validate the entire candidate, then record and commit all objects once.
 	_history.append(snapshot())
-	player=next
-	_crates=candidate
-	moves+=1
-	swaps+=1
-	alive=settled["alive"]
-	_pressure=settled["pressure"]
-	_barriers=settled["barriers"]
-	return &"swapped" if alive else &"died"
+	_hero_positions = positions
+	_crates = candidate
+	moves += 1
+	pushes += pushed
+	pulls += pulled
+	swaps += swapped
+	alive = settled["alive"]
+	_hero_alive.assign(settled["hero_alive"])
+	_pressure = settled["pressure"]
+	_barriers = settled["barriers"]
+	return &"committed" if alive else &"died"
 
 
 func undo() -> bool:
@@ -169,6 +205,8 @@ func restart() -> bool:
 func is_complete() -> bool:
 	if level == null or not alive:
 		return false
+	if level.objective == "all_heroes_on_exits":
+		return occupied_exits() == _hero_positions.size()
 	if level.objective == "player_on_exit":
 		return player == level.exit_cell
 	if level.objective != "all_crates_on_targets":
@@ -177,6 +215,48 @@ func is_complete() -> bool:
 		if not _crates.has(target):
 			return false
 	return true
+
+
+func hero_count() -> int:
+	return _hero_positions.size()
+
+
+func active_kind() -> String:
+	return level.hero_definitions[active_hero_index]["kind"] if level != null else ""
+
+
+func active_hero_id() -> String:
+	return level.hero_definitions[active_hero_index]["id"] if level != null else ""
+
+
+func hero_at(cell: Vector2i) -> int:
+	return _hero_positions.find(cell)
+
+
+func hero_position(index: int) -> Vector2i:
+	return _hero_positions[index]
+
+
+func hero_is_alive(index: int) -> bool:
+	return _hero_alive[index]
+
+
+func heroes() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	if level != null:
+		for index in _hero_positions.size():
+			result.append({"id":level.hero_definitions[index]["id"],"kind":level.hero_definitions[index]["kind"],
+				"position":_hero_positions[index],"alive":_hero_alive[index],"selected":index==active_hero_index})
+	return result
+
+
+func occupied_exits() -> int:
+	var count := 0
+	if level != null:
+		for index in _hero_positions.size():
+			if _hero_alive[index] and _hero_positions[index] in level.exit_cells:
+				count += 1
+	return count
 
 
 func crates() -> Array[Vector2i]:
@@ -224,7 +304,7 @@ func pressure_cell_is_active(id: String, cell: Vector2i) -> bool:
 		return false
 	for link in level.energy_links:
 		if link["id"] == id and cell in link["plates"]:
-			return Energy.pressure_matches(cell, link["pressure_sources"], player, _crates)
+			return Energy.pressure_matches(cell, link["pressure_sources"], _hero_positions, _crates)
 	return false
 
 
@@ -263,19 +343,26 @@ func sight_path_is_clear(cells: Array[Vector2i]) -> bool:
 
 
 func _restore(state: Dictionary) -> void:
-	player = state["player"]
+	_hero_positions.assign(state.get("hero_positions",[state["player"]]))
+	active_hero_index = state.get("active_hero",0)
+	switches = state.get("switches",0)
 	_crates = state["crates"].duplicate()
 	moves = state["moves"]
 	pushes = state["pushes"]
 	pulls = state["pulls"]
 	swaps = state.get("swaps",0)
 	alive = state["alive"]
+	_hero_alive.assign(state.get("hero_alive",[alive]))
 	_pressure = state["pressure"].duplicate()
 	_barriers = state["barriers"].duplicate()
 	last_mechanism_error = ""
 
 
 func snapshot() -> Dictionary:
-	# Copies prevent external callers and later moves from altering undo history.
-	return {"player": player, "crates": _crates.duplicate(), "moves": moves, "pushes": pushes, "pulls": pulls, "swaps":swaps,
-		"alive": alive, "pressure": _pressure.duplicate(), "barriers": _barriers.duplicate()}
+	var result := {"player":player,"crates":_crates.duplicate(),"moves":moves,"pushes":pushes,"pulls":pulls,"swaps":swaps,
+		"alive":alive,"pressure":_pressure.duplicate(),"barriers":_barriers.duplicate()}
+	# Legacy single-hero snapshots retain their original shape.
+	if _hero_positions.size() > 1:
+		result.merge({"hero_positions":_hero_positions.duplicate(),"hero_alive":_hero_alive.duplicate(),
+			"active_hero":active_hero_index,"switches":switches})
+	return result

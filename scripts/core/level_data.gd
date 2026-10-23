@@ -16,10 +16,13 @@ var width: int = 0
 var height: int = 0
 var start: Vector2i = Vector2i.ZERO
 var hero_kind: String = "red"
+var hero_definitions: Array[Dictionary] = []
+var initial_active_hero: int = 0
 var initial_crates: Array[Vector2i] = []
 var crystal_colors: PackedStringArray = []
 var targets: Array[Vector2i] = []
 var exit_cell := Vector2i(-1, -1)
+var exit_cells: Array[Vector2i] = []
 var exit_color: String = "yellow"
 var mechanism_color: String = "yellow"
 var objective: String = "none"
@@ -55,10 +58,6 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	if not rows[0] is String or rows[0].is_empty() or rows[0].length() > 64:
 		return _invalid("地图宽度必须为 1 至 64 格。")
 	var level := PuzzleLevel.new()
-	var kind: Variant = data.get("hero_kind", "red")
-	if not Heroes.is_supported(kind):
-		return _invalid("hero_kind 只支持 red（推）、green（拉）或 blue（交换）。")
-	level.hero_kind = kind
 	level.width = rows[0].length()
 	level.height = rows.size()
 	for row in rows:
@@ -78,10 +77,22 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 			return _invalid("界外显示格必须是地图内独立的不可通行坐标。")
 		level.void_cells.append(cell)
 		level._void_by_cell[cell] = true
-	var spawn: Variant = _parse_cell(data.get("player"))
-	if spawn == null or not level.is_floor(spawn):
-		return _invalid("player 必须是地图内可通行的整数坐标。")
-	level.start = spawn
+	if data.has("heroes"):
+		if data.has("player") or data.has("hero_kind"):
+			return _invalid("heroes 与旧版 player/hero_kind 不能同时指定。")
+		var hero_error := level._read_heroes(data["heroes"], data.get("active_hero"))
+		if not hero_error.is_empty():
+			return _invalid(hero_error)
+	else:
+		var kind: Variant = data.get("hero_kind", "red")
+		if not Heroes.is_supported(kind):
+			return _invalid("hero_kind 只支持 red（推）、green（拉）或 blue（交换）。")
+		var spawn: Variant = _parse_cell(data.get("player"))
+		if spawn == null or not level.is_floor(spawn):
+			return _invalid("player 必须是地图内可通行的整数坐标。")
+		level.hero_definitions.append({"id":"hero_01","kind":kind,"start":spawn})
+	level.start = level.hero_definitions[level.initial_active_hero]["start"]
+	level.hero_kind = level.hero_definitions[level.initial_active_hero]["kind"]
 	for field in ["crates", "targets"]:
 		var entries: Variant = data.get(field)
 		if not entries is Array:
@@ -95,22 +106,36 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 				return _invalid("%s 不允许重复坐标。" % field)
 			seen[cell] = true
 			if field == "crates":
-				if cell == level.start:
+				if level.hero_start_at(cell) >= 0:
 					return _invalid("英雄起点不能与箱体重叠。")
 				level.initial_crates.append(cell)
 			else:
 				level.targets.append(cell)
 	level.objective = data["objective"]
-	if level.objective not in ["none", "all_crates_on_targets", "player_on_exit"]:
-		return _invalid("未知 objective；请使用 none、player_on_exit 或基础测试落点规则。")
+	if level.objective not in ["none", "all_crates_on_targets", "player_on_exit", "all_heroes_on_exits"]:
+		return _invalid("未知 objective；支持 none、player_on_exit、all_heroes_on_exits 或基础测试落点规则。")
 	if data.has("exit") or level.objective == "player_on_exit":
 		var destination: Variant = _parse_cell(data.get("exit"))
 		if destination == null or not level.is_floor(destination):
 			return _invalid("exit 必须是地图内可通行的整数坐标。")
 		level.exit_cell = destination
+		level.exit_cells.append(destination)
+	if data.has("exits") or level.objective == "all_heroes_on_exits":
+		if data.has("exit"):
+			return _invalid("exit 与 exits 不能同时指定。")
+		var exits: Variant = data.get("exits")
+		if not exits is Array or exits.is_empty():
+			return _invalid("exits 必须是非空坐标数组。")
+		for entry in exits:
+			var cell: Variant = _parse_cell(entry)
+			if cell == null or not level.is_floor(cell) or cell in level.exit_cells:
+				return _invalid("英雄终点必须是独立可走的地图内坐标。")
+			level.exit_cells.append(cell)
+		if level.objective == "all_heroes_on_exits" and level.exit_cells.size() != level.hero_definitions.size():
+			return _invalid("全部英雄目标要求终点数量与英雄数量相等。")
 	var goal_color: Variant = data.get("exit_color", "yellow")
-	if goal_color not in ["yellow", "green"]:
-		return _invalid("exit_color 仅支持 yellow 或 green。")
+	if goal_color not in ["yellow", "green", "red"]:
+		return _invalid("exit_color 仅支持 yellow、green 或 red。")
 	level.exit_color = goal_color
 	var mechanism_tint: Variant = data.get("mechanism_color", "yellow")
 	if mechanism_tint not in ["yellow", "green"]:
@@ -121,8 +146,8 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 		return _invalid("crystal_colors 必须为空数组或与水晶数量相同的颜色数组。")
 	for i in level.initial_crates.size():
 		var variant: Variant = colors[i] if not colors.is_empty() else ("blue" if i % 2 == 0 else "purple")
-		if variant not in ["blue", "purple", "blue_purple", "orange", "pink"]:
-			return _invalid("水晶颜色仅支持 blue、purple、blue_purple、orange 和 pink。")
+		if variant not in ["blue", "purple", "blue_purple", "orange", "pink", "purple_pink"]:
+			return _invalid("未知水晶显示颜色。")
 		level.crystal_colors.append(variant)
 	if level.objective == "all_crates_on_targets":
 		if level.initial_crates.is_empty() or level.initial_crates.size() != level.targets.size():
@@ -140,6 +165,35 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	return level
 
 
+func _read_heroes(value: Variant, selected: Variant) -> String:
+	if not value is Array or value.is_empty():
+		return "heroes 必须是非空英雄数组。"
+	var ids: Dictionary = {}
+	var occupied: Dictionary = {}
+	for entry in value:
+		if not entry is Dictionary or not entry.get("id") is String or entry["id"].is_empty() or ids.has(entry["id"]):
+			return "英雄需要唯一非空 id。"
+		if not Heroes.is_supported(entry.get("kind")):
+			return "英雄类型只支持 red、green、blue。"
+		var cell: Variant = _parse_cell(entry.get("position"))
+		if cell == null or not is_floor(cell) or occupied.has(cell):
+			return "英雄起点必须是独立可走的地图内坐标。"
+		ids[entry["id"]] = hero_definitions.size()
+		occupied[cell] = true
+		hero_definitions.append({"id":entry["id"],"kind":entry["kind"],"start":cell})
+	if not selected is String or not ids.has(selected):
+		return "active_hero 必须指定 heroes 中的英雄 id。"
+	initial_active_hero = ids[selected]
+	return ""
+
+
+func hero_start_at(cell: Vector2i) -> int:
+	for index in hero_definitions.size():
+		if hero_definitions[index]["start"] == cell:
+			return index
+	return -1
+
+
 func _read_bushes(value: Variant) -> String:
 	if not value is Array:
 		return "bushes 必须是独立的草丛坐标数组。"
@@ -147,7 +201,7 @@ func _read_bushes(value: Variant) -> String:
 		var cell: Variant = _parse_cell(entry)
 		if cell == null or not is_floor(cell) or _bush_by_cell.has(cell):
 			return "草丛必须是地图内独立的地板坐标。"
-		if cell == start or cell in initial_crates or cell == exit_cell or cell in targets:
+		if hero_start_at(cell) >= 0 or cell in initial_crates or cell in exit_cells or cell in targets:
 			return "草丛不能与英雄、水晶或目标重叠。"
 		var bush := Bush.new(cell)
 		bushes.append(bush)

@@ -49,15 +49,16 @@ func _draw() -> void:
 	for cell: Vector2i in model.barrier_states():
 		if model.barrier_is_active(cell):
 			_energy_block(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
-	if level.exit_cell != Vector2i(-1, -1):
-		_exit_marker(origin + (Vector2(level.exit_cell) + Vector2.ONE * 0.5) * tile, tile)
+	for cell in level.exit_cells:
+		_exit_marker(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
 	for cell in model.crates():
 		_crystal(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile, level.crystal_colors[model.crate_id(cell)])
-	_hero(origin + (Vector2(model.player) + Vector2.ONE * 0.5) * tile, tile)
-	if not model.alive:
-		var center := origin + (Vector2(model.player) + Vector2.ONE * 0.5) * tile
-		draw_line(center + Vector2(-0.3, -0.3) * tile, center + Vector2(0.3, 0.3) * tile, Color("fff0cc"), 3, true)
-		draw_line(center + Vector2(-0.3, 0.3) * tile, center + Vector2(0.3, -0.3) * tile, Color("fff0cc"), 3, true)
+	for hero in model.heroes():
+		var center:=origin+(Vector2(hero["position"])+Vector2.ONE*0.5)*tile
+		_hero(center,tile,hero["kind"],hero["selected"])
+		if not hero["alive"]:
+			draw_line(center+Vector2(-0.3,-0.3)*tile,center+Vector2(0.3,0.3)*tile,Color("fff0cc"),3,true)
+			draw_line(center+Vector2(-0.3,0.3)*tile,center+Vector2(0.3,-0.3)*tile,Color("fff0cc"),3,true)
 
 
 func _bush(center: Vector2, tile: float) -> void:
@@ -122,6 +123,11 @@ func _target(center: Vector2, tile: float) -> void:
 
 func _exit_marker(center: Vector2, tile: float) -> void:
 	var rect := Rect2(center - Vector2.ONE * tile * 0.4, Vector2.ONE * tile * 0.8)
+	if model.level.exit_color=="red":
+		draw_circle(center,tile*0.36,Color("733f4d"))
+		draw_arc(center,tile*0.31,0,TAU,48,CORAL,3,true)
+		draw_circle(center,tile*0.14,Color("ef9ba2"))
+		return
 	if model.level.exit_color == "green":
 		_box(rect, Color("286447"), 5)
 		_box(rect.grow(-tile * 0.05), Color("4ba66e"), 3)
@@ -153,6 +159,10 @@ func _crystal(center: Vector2, tile: float, variant: String) -> void:
 		base=Color("e99cc7")
 		dark=Color("9d527f")
 		light=Color("ffdaed")
+	elif variant=="purple_pink":
+		base=Color("c79cdd")
+		dark=Color("83528e")
+		light=Color("f7d7f4")
 	draw_ellipse_shadow(center + Vector2(0, tile * 0.27), Vector2(tile * 0.29, tile * 0.10))
 	var top := center + Vector2(0.02, -0.37) * tile
 	var left := center + Vector2(-0.27, -0.08) * tile
@@ -167,28 +177,43 @@ func _crystal(center: Vector2, tile: float, variant: String) -> void:
 	draw_line(middle, bottom, Color(light, 0.65), tile * 0.02, true)
 
 
-func _hero(center: Vector2, tile: float) -> void:
-	var green := model.level.hero_kind == "green"
+func _hero(center: Vector2, tile: float, kind: String, selected: bool) -> void:
+	var green := kind == "green"
 	var tint := HERO_GREEN if green else CORAL
 	var shade := Color("3e9967") if green else Color("d45568")
-	if model.level.hero_kind=="blue":
+	if kind=="blue":
 		tint=HERO_BLUE
 		shade=Color("416fae")
+	var multi:=model.hero_count()>1
+	if multi and not selected:
+		tint=tint.darkened(0.35)
+		shade=shade.darkened(0.35)
+	elif multi:
+		var ring:=PackedVector2Array()
+		for i in 49:
+			var angle:=float(i)/48*TAU
+			ring.append(center+Vector2(cos(angle)*0.39,sin(angle)*0.12+0.32)*tile)
+		draw_polyline(ring,Color("f4e2b5"),2.5,true)
 	draw_ellipse_shadow(center + Vector2(0, tile * 0.29), Vector2(tile * 0.25, tile * 0.09))
-	if blocked:
+	if blocked and selected:
 		draw_arc(center, tile * 0.41, 0, TAU, 40, Color(GOLD, 0.55), 1.5, true)
 	var body := PackedVector2Array([
 		center + Vector2(-0.12, -0.05) * tile, center + Vector2(0.12, -0.05) * tile,
 		center + Vector2(0.19, 0.24) * tile, center + Vector2(-0.19, 0.24) * tile,
 	])
+	if multi and selected:
+		var outline:=body.duplicate()
+		outline.append(body[0])
+		draw_polyline(outline,Color("fff1cb"),3.5,true)
+		draw_arc(center+Vector2(0,-0.21)*tile,tile*0.15,0,TAU,32,Color("fff1cb"),2,true)
 	draw_colored_polygon(body, tint)
 	draw_line(center + Vector2(-0.10, 0.18) * tile, center + Vector2(-0.12, 0.32) * tile, shade, tile * 0.08, true)
 	draw_line(center + Vector2(0.10, 0.18) * tile, center + Vector2(0.12, 0.32) * tile, shade, tile * 0.08, true)
 	draw_line(center + Vector2(-0.13, 0) * tile, center + Vector2(-0.23, 0.12) * tile, tint, tile * 0.075, true)
 	draw_line(center + Vector2(0.13, 0) * tile, center + Vector2(0.23, 0.12) * tile, tint, tile * 0.075, true)
 	draw_circle(center + Vector2(0, -0.21) * tile, tile * 0.13, tint)
-	draw_circle(center + Vector2(0, -0.21) * tile + Vector2(facing) * tile * 0.05, tile * 0.025, Color("ffe2c6"))
-	draw_line(center + Vector2(-0.11, 0.04) * tile, center + Vector2(0.11, 0.04) * tile, Color("d8ecff") if model.level.hero_kind=="blue" else (Color("c5efbb") if green else Color("ffc3a1")), tile * 0.035, true)
+	draw_circle(center + Vector2(0, -0.21) * tile + Vector2(facing if selected else Vector2i.DOWN) * tile * 0.05, tile * 0.025, Color("ffe2c6"))
+	draw_line(center + Vector2(-0.11, 0.04) * tile, center + Vector2(0.11, 0.04) * tile, Color("d8ecff") if kind=="blue" else (Color("c5efbb") if green else Color("ffc3a1")), tile * 0.035, true)
 
 
 func draw_ellipse_shadow(center: Vector2, radius: Vector2) -> void:

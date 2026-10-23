@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_13",
+  "title": "北部英雄 · 第十三关",
+  "is_temporary": false,
+  "source_note": "用户确认7×7编号原图、二维布局与多英雄规则：红英雄17号(2,2)，蓝英雄31号(2,4)，初始选蓝；水晶8号(0,1)蓝紫、29号(0,4)紫粉；红圆终点15/36号(0,2)/(0,5)；黄板13/41号(5,1)/(5,5)，能量27号(5,3)。2/11号为空地，46号墙/家具，其余按确认地形。按C切换，红推英雄/水晶混合列，蓝只沿当前方向被动换首目标。",
+  "terrain": [
+    "...#...",
+    ".#.....",
+    ".#.#...",
+    "#####.#",
+    ".#.#...",
+    ".#.....",
+    "...#..."
+  ],
+  "heroes": [
+    {
+      "id": "red",
+      "kind": "red",
+      "position": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "blue",
+      "kind": "blue",
+      "position": [
+        2,
+        4
+      ]
+    }
+  ],
+  "active_hero": "blue",
+  "crates": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      4
+    ]
+  ],
+  "crystal_colors": [
+    "blue_purple",
+    "purple_pink"
+  ],
+  "targets": [],
+  "exits": [
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      5
+    ]
+  ],
+  "exit_color": "red",
+  "objective": "all_heroes_on_exits",
+  "energy_links": [
+    {
+      "id": "yellow_01",
+      "plates": [
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "activation": "all",
+      "barriers": [
+        [
+          5,
+          3
+        ]
+      ],
+      "pressure_sources": [
+        "hero",
+        "crystal"
+      ]
+    }
+  ]
+}

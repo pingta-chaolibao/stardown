@@ -1,0 +1,11 @@
+{
+  "level_id": "north_hero_13",
+  "path": "DRRRCURRRCULLLULLDDCLLLDLLU",
+  "moves": 27,
+  "directions": 24,
+  "switches": 3,
+  "pushes": 0,
+  "pulls": 0,
+  "swaps": 2,
+  "note": "UDLR为当前英雄方向输入，C为可撤销切换；每次成功方向或C均计一次操作。构造后独立校验，不宣称最优或穷举；不要求水晶移动或对应特定英雄终点。"
+}

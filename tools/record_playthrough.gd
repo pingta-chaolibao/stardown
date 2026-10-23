@@ -1,7 +1,7 @@
 extends SceneTree
 ## Godot Movie Maker capture driven exclusively by normal keyboard events.
 
-const KEYS := {"U": KEY_W, "D": KEY_S, "L": KEY_A, "R": KEY_D}
+const KEYS := {"U": KEY_W, "D": KEY_S, "L": KEY_A, "R": KEY_D, "C":KEY_C}
 const DIRECTIONS := {"U":Vector2i.UP,"D":Vector2i.DOWN,"L":Vector2i.LEFT,"R":Vector2i.RIGHT}
 const STEP_FRAMES := 18
 const INITIAL_FRAMES := 60
@@ -22,8 +22,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number not in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] or report_path.is_empty():
-		_fail("Pass --level=1 through 12 and an absolute --report path.")
+	if level_number<1 or level_number>13 or report_path.is_empty():
+		_fail("Pass --level=1 through 13 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -46,7 +46,7 @@ func _run() -> void:
 	for i in solution["path"].length():
 		var symbol: String = solution["path"][i]
 		var target: Dictionary={}
-		if game.model.level.hero_kind=="blue":
+		if symbol!="C" and game.model.active_kind()=="blue":
 			target=game.model.swap_target(DIRECTIONS[symbol])
 		var use_swap: bool=target.get("result")==&"target"
 		_send_key(KEYS[symbol], true)
@@ -56,22 +56,30 @@ func _run() -> void:
 		var current := _state()
 		var distance: int = absi(current["player"][0] - previous["player"][0]) + absi(current["player"][1] - previous["player"][1])
 		var position_valid:=distance==1
-		if use_swap:
+		if symbol=="C":
+			position_valid=current["switches"]==previous["switches"]+1 and current["crystals"]==previous["crystals"] and current["pressure"]==previous["pressure"] and current["barriers"]==previous["barriers"]
+			for identity in current["heroes"].size():
+				position_valid=position_valid and current["heroes"][identity]["position"]==previous["heroes"][identity]["position"] and current["heroes"][identity]["alive"]==previous["heroes"][identity]["alive"]
+			position_valid=position_valid and current["active_hero_index"]==(previous["active_hero_index"]+1)%current["heroes"].size()
+		elif use_swap:
 			position_valid=current["player"]==[target["cell"].x,target["cell"].y] and current["swaps"]==previous["swaps"]+1
-			for crystal in current["crystals"]:
-				if crystal["id"]==target["id"]:position_valid=position_valid and crystal["position"]==previous["player"]
+			if target["kind"]==&"hero":
+				position_valid=position_valid and current["heroes"][target["id"]]["position"]==previous["player"]
+			else:
+				for crystal in current["crystals"]:
+					if crystal["id"]==target["id"]:position_valid=position_valid and crystal["position"]==previous["player"]
 		else:
 			position_valid=position_valid and current["swaps"]==previous["swaps"]
 		if not current["alive"] or current["moves"] != i + 1 or not position_valid or current["pushes"] < previous["pushes"] or current["pushes"] > previous["pushes"] + 1 or current["pulls"] < previous["pulls"] or current["pulls"] > previous["pulls"] + 1:
 			_fail("Input %d did not make exactly one legal direction-triggered walk or exchange." % (i + 1))
 			return
 		current["input"] = symbol
-		current["action"]="swap" if use_swap else "move"
+		current["action"]="switch" if symbol=="C" else ("swap" if use_swap else "move")
 		trace.append(current)
 		previous = current
 		await _frames(STEP_FRAMES - 2)
 	var final := _state()
-	if not final["completed"] or final["moves"] != solution["moves"] or final["pushes"] != solution["pushes"] or final["pulls"] != solution.get("pulls", 0) or final["swaps"]!=solution.get("swaps",0):
+	if not final["completed"] or final["moves"] != solution["moves"] or final["pushes"] != solution["pushes"] or final["pulls"] != solution.get("pulls", 0) or final["swaps"]!=solution.get("swaps",0) or final.get("switches",0)!=solution.get("switches",0):
 		_fail("Playback did not finish at the expected victory state.")
 		return
 	await _frames(VICTORY_FRAMES)
@@ -110,11 +118,21 @@ func _state() -> Dictionary:
 	for link in game.model.level.energy_links:
 		for cell: Vector2i in link["plates"]:
 			plates.append({"group": link["id"], "position": [cell.x, cell.y], "pressed": game.model.pressure_cell_is_active(link["id"], cell)})
-	return {"level_id": game.model.level.id, "player": [game.model.player.x, game.model.player.y],
-		"crystals": crystals, "moves": game.model.moves, "pushes": game.model.pushes, "pulls": game.model.pulls,"swaps":game.model.swaps, "hero_kind": game.model.level.hero_kind,
+	var result: Dictionary={"level_id": game.model.level.id, "player": [game.model.player.x, game.model.player.y],
+		"crystals": crystals, "moves": game.model.moves, "pushes": game.model.pushes, "pulls": game.model.pulls,"swaps":game.model.swaps, "hero_kind": game.model.active_kind(),
 		"completed": game.model.is_complete(), "exit": [game.model.level.exit_cell.x, game.model.level.exit_cell.y],
 		"exit_color": game.model.level.exit_color, "alive": game.model.alive,
 		"pressure": game.model.pressure_states(), "barriers": barriers, "bushes": bushes, "plates": plates}
+
+	if game.model.hero_count()>1:
+		var heroes: Array[Dictionary]=[]
+		for hero in game.model.heroes():
+			heroes.append({"id":hero["id"],"kind":hero["kind"],"position":[hero["position"].x,hero["position"].y],"alive":hero["alive"],"selected":hero["selected"]})
+		var exits: Array=[]
+		for cell in game.model.level.exit_cells:exits.append([cell.x,cell.y])
+		result.erase("exit")
+		result.merge({"heroes":heroes,"active_hero_index":game.model.active_hero_index,"active_hero":game.model.active_hero_id(),"switches":game.model.switches,"exits":exits,"occupied_exits":game.model.occupied_exits()})
+	return result
 
 
 func _send_key(code: int, pressed: bool) -> void:

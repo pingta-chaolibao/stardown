@@ -95,6 +95,8 @@ def main():
             run("03_bush_group", ["--script", "res://tests/bush_and_group_regression.gd"])
             run("03_green_pull", ["--script", "res://tests/green_pull_regression.gd"])
             run("03_blue_swap", ["--script", "res://tests/blue_swap_regression.gd"])
+            run("03_multi_hero", ["--script", "res://tests/multi_hero_regression.gd"])
+            run("03_north_13", ["--script", "res://tests/north_13_regression.gd"])
             run("03_north_01", ["--script", "res://tests/north_01_regression.gd"])
             run("03_north_02", ["--script", "res://tests/north_02_regression.gd"])
             run("03_north_03", ["--script", "res://tests/north_03_regression.gd"])
@@ -120,6 +122,7 @@ def main():
             run("05_north_10_scene", ["--script", "res://tests/north_10_scene.gd"])
             run("05_north_11_scene", ["--script", "res://tests/north_11_scene.gd"])
             run("05_north_12_scene", ["--script", "res://tests/north_12_scene.gd"])
+            run("05_north_13_scene", ["--script", "res://tests/north_13_scene.gd"])
             if args.visual:
                 run("06_render", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                   "--audio-driver", "Dummy", "--script", "res://tests/scene_smoke.gd",
@@ -158,6 +161,10 @@ def main():
 
                 run("06_render_north_12", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_12_scene.gd",
+                                          "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+
+                run("06_render_north_13", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
+                                          "--audio-driver", "Dummy", "--script", "res://tests/north_13_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
 
         except (RuntimeError, OSError) as exc:

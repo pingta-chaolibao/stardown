@@ -17,18 +17,21 @@ def check_replay(item, directory):
     evidence = json.loads((directory / item["replay_report"]).read_text())
     level = json.loads((ROOT / item["level_file"]).read_text())
     solution = json.loads((ROOT / item["solution_file"]).read_text())
-    player = tuple(level["player"])
-    hero_kind = level.get("hero_kind", "red")
-    assert hero_kind in ("red", "green", "blue")
+    definitions = level.get("heroes", [{"id": "hero_01", "kind": level.get("hero_kind", "red"), "position": level.get("player")}])
+    heroes = [tuple(hero["position"]) for hero in definitions]
+    selected = next((i for i, hero in enumerate(definitions) if hero["id"] == level.get("active_hero")), 0)
+    assert all(hero["kind"] in ("red", "green", "blue") for hero in definitions)
+    multi = len(heroes) > 1
     crystals = {tuple(cell): identity for identity, cell in enumerate(level["crates"])}
     bushes = {tuple(cell) for cell in level.get("bushes", [])}
+    exits = {tuple(cell) for cell in level.get("exits", [level["exit"]] if "exit" in level else [])}
     initial = evidence["initial_state"]
-    assert initial["player"] == level["player"] and initial["moves"] == 0
+    assert initial["player"] == list(heroes[selected]) and initial["moves"] == 0
     assert not initial["completed"] and evidence["path"] == solution["path"]
     assert initial["level_id"] == level["id"] == solution["level_id"]
     assert evidence["game_implementation_commit"] == item["game_implementation_commit"]
     assert evidence["display"] == "X11"
-    assert len(evidence["trace"]) == solution["moves"]
+    assert len(evidence["trace"]) == len(solution["path"]) == solution["moves"]
 
     def floor(cell):
         x, y = cell
@@ -43,28 +46,48 @@ def check_replay(item, directory):
             sources = link["pressure_sources"]
             plates = [tuple(cell) for cell in link.get("plates", [link["plate"]] if "plate" in link else [])]
             assert plates and link.get("activation", "all") == "all"
-            pressed = all(("hero" in sources and player == plate) or ("crystal" in sources and plate in crystals) for plate in plates)
-            pressure[link["id"]] = pressed
+            pressure[link["id"]] = all(("hero" in sources and plate in heroes) or ("crystal" in sources and plate in crystals) for plate in plates)
         all_pressed = all(pressure.values())
         for link in level.get("energy_links", []):
             barriers.update({tuple(cell): not all_pressed for cell in link["barriers"]})
-        alive = True
+        living = [True] * len(heroes)
         for cell, active in barriers.items():
             if active:
-                # This interaction is undefined; no published walkthrough may use it.
                 assert cell not in crystals, "Unconfirmed crystal/barrier interaction"
-                if not previous_barriers.get(cell, False) and cell == player:
-                    alive = False
-        return pressure, barriers, alive
+                if not previous_barriers.get(cell, False) and cell in heroes:
+                    living[heroes.index(cell)] = False
+        return pressure, barriers, living
 
-    pressure, barriers, alive = settle({})
+    pressure, barriers, living = settle({})
 
     def walkable(cell):
         return floor(cell) and cell not in bushes and not barriers.get(cell, False)
 
-    def check_mechanisms(state):
-        assert alive and state.get("alive", True)
-        assert state.get("hero_kind", "red") == hero_kind
+    def completed():
+        if level["objective"] == "all_heroes_on_exits":
+            return all(living) and set(heroes) == exits
+        return all(living) and heroes[selected] in exits
+
+    pushes, pulls, swaps, switches = 0, 0, 0, 0
+
+    def check_state(state, moves):
+        assert all(living) and state.get("alive", True), "Walkthrough must never use a dead hero"
+        assert len(set(heroes)) == len(heroes) and not set(heroes).intersection(crystals)
+        assert state["player"] == list(heroes[selected])
+        assert state.get("hero_kind", "red") == definitions[selected]["kind"]
+        assert state["moves"] == moves and state["pushes"] == pushes
+        assert state.get("pulls", 0) == pulls and state.get("swaps", 0) == swaps
+        assert state.get("switches", 0) == switches
+        assert state["completed"] == completed()
+        if multi:
+            assert state["active_hero"] == definitions[selected]["id"] and state["active_hero_index"] == selected
+            assert state["heroes"] == [{"id": hero["id"], "kind": hero["kind"], "position": list(heroes[i]), "alive": living[i], "selected": i == selected} for i, hero in enumerate(definitions)]
+            assert {tuple(cell) for cell in state["exits"]} == exits
+            assert state["occupied_exits"] == sum(cell in exits for cell in heroes)
+        actual = {tuple(entry["position"]): entry["id"] for entry in state["crystals"]}
+        assert actual == crystals
+        for entry in state["crystals"]:
+            assert entry["color"] == level["crystal_colors"][entry["id"]]
         if bushes or "bushes" in state:
             assert {tuple(cell) for cell in state["bushes"]} == bushes
         if "plates" in state:
@@ -73,71 +96,69 @@ def check_replay(item, directory):
             for link in level.get("energy_links", []):
                 for cell in link.get("plates", [link["plate"]] if "plate" in link else []):
                     plate = tuple(cell)
-                    expected_plates[(link["id"], plate)] = (("hero" in link["pressure_sources"] and player == plate)
+                    expected_plates[(link["id"], plate)] = (("hero" in link["pressure_sources"] and plate in heroes)
                         or ("crystal" in link["pressure_sources"] and plate in crystals))
             assert actual_plates == expected_plates
         if level.get("energy_links") or "pressure" in state:
             assert state["pressure"] == pressure
-            actual = {tuple(entry["position"]): entry["active"] for entry in state["barriers"]}
-            assert actual == barriers
+            assert {tuple(entry["position"]): entry["active"] for entry in state["barriers"]} == barriers
 
-    def check_crystals(state):
-        actual = {tuple(entry["position"]): entry["id"] for entry in state["crystals"]}
-        assert actual == crystals
-        for entry in state["crystals"]:
-            assert entry["color"] == level["crystal_colors"][entry["id"]]
-
-    check_crystals(initial)
-    check_mechanisms(initial)
-    pushes, pulls, swaps = 0, 0, 0
+    check_state(initial, 0)
     for index, (symbol, state) in enumerate(zip(solution["path"], evidence["trace"]), 1):
-        assert state["input"] == symbol
-        direction = DIRECTIONS[symbol]
-        target = plus(player, direction)
-        visible = target
-        if hero_kind == "blue":
-            while walkable(visible) and visible not in crystals:
-                visible = plus(visible, direction)
-        automatic_swap = hero_kind == "blue" and walkable(visible) and visible in crystals
-        assert state.get("action", "move") == ("swap" if automatic_swap else "move")
-        if automatic_swap:
-            target = visible
-            crystals[player] = crystals.pop(target)
-            swaps += 1
+        assert state["input"] == symbol and not completed()
+        player = heroes[selected]
+        if symbol == "C":
+            assert multi and state["action"] == "switch"
+            selected = (selected + 1) % len(heroes)
+            switches += 1
         else:
-            assert walkable(target)
-            assert hero_kind == "red" or target not in crystals, "Green/blue cannot push"
-            chain = []
-            terminal = target
-            while terminal in crystals:
-                chain.append(terminal)
-                terminal = plus(terminal, direction)
-            assert walkable(terminal)
-            for cell in reversed(chain):
-                crystals[plus(cell, direction)] = crystals.pop(cell)
-            pushes += bool(chain)
-            behind = (player[0] - direction[0], player[1] - direction[1])
-            if hero_kind == "green" and behind in crystals:
-                crystals[player] = crystals.pop(behind)
-                pulls += 1
-        player = target
-        pressure, barriers, alive = settle(barriers)
-        assert state["player"] == list(player)
-        assert state["moves"] == index and state["pushes"] == pushes
-        assert state.get("pulls", 0) == pulls
-        assert state.get("swaps", 0) == swaps
-        assert state["completed"] == (player == tuple(level["exit"])) == (index == solution["moves"])
-        check_crystals(state)
-        check_mechanisms(state)
+            direction = DIRECTIONS[symbol]
+            hero_kind = definitions[selected]["kind"]
+            target = plus(player, direction)
+            visible = target
+            if hero_kind == "blue":
+                while walkable(visible) and visible not in crystals and visible not in heroes:
+                    visible = plus(visible, direction)
+            automatic_swap = hero_kind == "blue" and walkable(visible) and (visible in crystals or visible in heroes)
+            assert state.get("action", "move") == ("swap" if automatic_swap else "move")
+            if automatic_swap:
+                target = visible
+                if target in crystals:
+                    crystals[player] = crystals.pop(target)
+                else:
+                    heroes[heroes.index(target)] = player
+                swaps += 1
+            else:
+                assert walkable(target)
+                assert hero_kind == "red" or (target not in crystals and target not in heroes), "Green/blue cannot push"
+                chain = []
+                terminal = target
+                while terminal in crystals or terminal in heroes:
+                    chain.append(terminal)
+                    terminal = plus(terminal, direction)
+                assert walkable(terminal)
+                for cell in reversed(chain):
+                    if cell in crystals:
+                        crystals[plus(cell, direction)] = crystals.pop(cell)
+                    else:
+                        heroes[heroes.index(cell)] = plus(cell, direction)
+                pushes += bool(chain)
+                behind = (player[0] - direction[0], player[1] - direction[1])
+                if hero_kind == "green" and behind in crystals:
+                    crystals[player] = crystals.pop(behind)
+                    pulls += 1
+            heroes[selected] = target
+            pressure, barriers, living = settle(barriers)
+        check_state(state, index)
+        assert completed() == (index == solution["moves"])
     final = evidence["final_state"]
-    assert final["player"] == level["exit"] and final["completed"]
-    assert final["moves"] == solution["moves"] and final["pushes"] == solution["pushes"]
-    assert final.get("pulls", 0) == solution.get("pulls", 0) == pulls
-    assert final.get("swaps", 0) == solution.get("swaps", 0) == swaps
-    check_crystals(final)
-    check_mechanisms(final)
+    check_state(final, solution["moves"])
+    assert final["completed"] and pushes == solution["pushes"]
+    assert pulls == solution.get("pulls", 0) and swaps == solution.get("swaps", 0)
+    assert switches == solution.get("switches", 0)
+    if multi:
+        assert sum(symbol in DIRECTIONS for symbol in solution["path"]) == solution["directions"]
     return evidence
-
 
 def check_media(item, evidence):
     path = ROOT / item["file"]

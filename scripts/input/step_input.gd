@@ -30,6 +30,8 @@ func command_for_event(event: InputEvent) -> Dictionary:
 	for action: StringName in DIRECTIONS:
 		if mapped_event.is_action(action):
 			return {"action": &"move", "direction": DIRECTIONS[action]}
+	if mapped_event.is_action(&"switch_hero"):
+		return {"action": &"switch_hero"}
 	if mapped_event.is_action(&"undo"):
 		return {"action": &"undo"}
 	if mapped_event.is_action(&"restart"):

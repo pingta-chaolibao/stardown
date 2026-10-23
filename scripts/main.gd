@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -21,6 +21,7 @@ var board: Board
 var moves_label: Label
 var pushes_label: Label
 var pulls_label: Label
+var switches_label: Label
 var swaps_label: Label
 var progress_label: Label
 var status_label: Label
@@ -43,7 +44,7 @@ func _ready() -> void:
 		return
 	current_level_index = LEVEL_PATHS.find(level_path)
 	_build_ui()
-	_refresh("按方向：有可见目标就交换，否则走一格。" if model.level.hero_kind=="blue" else "%s水晶腾出道路，再走到%s。" % ["拉动" if model.level.hero_kind == "green" else "推动", _goal_name()])
+	_refresh("C 切换英雄，两名英雄分占不同终点。" if model.hero_count()>1 else "按方向：有可见目标就交换，否则走一格。" if model.active_kind()=="blue" else "%s水晶腾出道路，再走到%s。" % ["拉动" if model.active_kind() == "green" else "推动", _goal_name()])
 
 
 func select_level(index: int) -> bool:
@@ -58,19 +59,26 @@ func select_level(index: int) -> bool:
 	current_level_index = index
 	level_path = LEVEL_PATHS[index]
 	key_steps.clear()
+	_rebuild_ui()
+	_refresh("C 切换英雄，两名英雄分占不同终点。" if model.hero_count()>1 else "已进入%s，走到%s即可完成。" % [model.level.title, _goal_name()])
+	return true
+
+
+func _rebuild_ui() -> void:
+	# Rebuilding selection-dependent labels must not release held keyboard keys.
 	if ui_root != null:
 		remove_child(ui_root)
 		ui_root.queue_free()
 	_build_ui()
-	_refresh("已进入%s，走到%s即可完成。" % [model.level.title, _goal_name()])
-	return true
 
 
 func _goal_name() -> String:
+	if model.level.exit_color=="red":return "红色终点"
 	return "绿色终点" if model.level.exit_color == "green" else "黄色终点"
 
 
 func _goal_color() -> Color:
+	if model.level.exit_color=="red":return Board.CORAL
 	return Color("78dd99") if model.level.exit_color == "green" else GOLD
 
 
@@ -99,6 +107,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 func apply_command(command: Dictionary) -> void:
 	if model.level == null:
 		return
+	var before_selection:=model.active_hero_index
 	board.blocked = false
 	match command.get("action"):
 		&"move":
@@ -109,7 +118,7 @@ func apply_command(command: Dictionary) -> void:
 			match result:
 				&"cannot_push":
 					board.blocked = true
-					_refresh("蓝色英雄不能推拉；按方向自动交换可见目标。" if model.level.hero_kind=="blue" else "绿色英雄只能拉，不能推；请绕到水晶前方再背离它移动。", GOLD)
+					_refresh("蓝色英雄不能推拉；按方向自动交换可见目标。" if model.active_kind()=="blue" else "绿色英雄只能拉，不能推；请绕到水晶前方再背离它移动。", GOLD)
 				&"swapped":
 					_refresh("已与本次输入方向的第一个可见目标交换。")
 				&"pulled":
@@ -129,13 +138,16 @@ func apply_command(command: Dictionary) -> void:
 					_refresh("英雄已死亡，仅可撤销恢复。", Board.CORAL)
 				&"crate_blocked":
 					board.blocked = true
-					_refresh("整列水晶末端被挡住了，无法推动。", GOLD)
+					_refresh("整列对象末端被挡住了，无法推动。", GOLD)
 				&"pushed":
-					_refresh("相邻水晶整列前进一格。英雄只能推，不能拉。")
+					_refresh("相邻英雄和水晶整列前进一格。" if model.hero_count()>1 else "相邻水晶整列前进一格。英雄只能推，不能拉。")
 				&"moved":
 					_refresh("每次按下移动一格；松开后可再次移动。")
 				&"complete":
 					_refresh("已抵达终点，可撤销或重开。", GOLD)
+		&"switch_hero":
+			var result:=model.switch_hero()
+			_refresh("已切换操作英雄。C 计一次操作，可以撤销。" if result==&"switched" else ("任一英雄死亡后，仅可撤销恢复。" if result==&"dead" else "当前无法切换英雄。"))
 		&"undo":
 			var undone := model.undo()
 			_refresh("已撤销最近一步。" if undone else "当前没有可撤销的步骤。")
@@ -146,6 +158,11 @@ func apply_command(command: Dictionary) -> void:
 			else:
 				_refresh("英雄已死亡，仅可撤销恢复。", Board.CORAL)
 
+	if before_selection!=model.active_hero_index:
+		var message:=status_label.text
+		_rebuild_ui()
+		_refresh(message)
+
 
 func _refresh(message: String, color: Color = MINT) -> void:
 	moves_label.text = "%02d" % model.moves
@@ -155,7 +172,11 @@ func _refresh(message: String, color: Color = MINT) -> void:
 		pulls_label.text = "%02d" % model.pulls
 	if swaps_label!=null:
 		swaps_label.text="%02d" % model.swaps
-	if model.level.objective == "player_on_exit":
+	if switches_label!=null:
+		switches_label.text="%02d" % model.switches
+	if model.level.objective=="all_heroes_on_exits":
+		progress_label.text="英雄终点 %d / %d" % [model.occupied_exits(),model.hero_count()]
+	elif model.level.objective == "player_on_exit":
 		progress_label.text = "已抵达终点" if model.is_complete() else "玩家抵达即可完成"
 	elif model.level.objective == "all_crates_on_targets":
 		progress_label.text = "%d / %d 测试落点" % [model.occupied_targets(), model.level.targets.size()]
@@ -164,13 +185,17 @@ func _refresh(message: String, color: Color = MINT) -> void:
 	for link in model.level.energy_links:
 		if link["plates"].size() > 1:
 			var count := model.pressure_progress(link["id"])
-			progress_label.text = "%s · %s %d / %d" % ["已抵达终点" if model.is_complete() else "玩家到终点完成", _plate_name(), count.x, count.y]
+			var objective_progress:=progress_label.text if model.hero_count()>1 else ("已抵达终点" if model.is_complete() else "玩家到终点完成")
+			progress_label.text = "%s · %s %d / %d" % [objective_progress, _plate_name(), count.x, count.y]
 	undo_button.disabled = model.history_size() == 0
 	restart_button.disabled = not model.alive
 	for node_name in ["MoveLeft", "MoveRight", "MoveUp", "MoveDown"]:
 		var button := find_child(node_name, true, false) as Button
 		if button != null:
 			button.disabled = not model.alive
+	var switch_button:=find_child("SwitchHero",true,false) as Button
+	if switch_button!=null:
+		switch_button.disabled=not model.alive or model.is_complete()
 	for index in LEVEL_PATHS.size():
 		var button := find_child("Level%02d" % (index + 1), true, false) as Button
 		if button != null:
@@ -180,7 +205,7 @@ func _refresh(message: String, color: Color = MINT) -> void:
 		status_label.text = "英雄已死亡。\n只能撤销到屏障恢复前的状态复活。"
 		status_label.add_theme_color_override("font_color", Board.CORAL)
 	elif model.is_complete():
-		status_label.text = "已抵达终点！\n可撤销最后一步，或重新开始。"
+		status_label.text = "双英雄已抵达终点！\n可撤销最后一步，或重新开始。" if model.hero_count()>1 else "已抵达终点！\n可撤销最后一步，或重新开始。"
 		if model.level.is_temporary:
 			status_label.text = "临时目标已达成！\n这是测试布局。"
 		status_label.add_theme_color_override("font_color", _goal_color())
@@ -209,7 +234,7 @@ func _build_ui() -> void:
 
 
 func _build_header(parent: VBoxContainer) -> void:
-	var row := _hbox(6 if LEVEL_PATHS.size() > 11 else 10)
+	var row := _hbox(4 if LEVEL_PATHS.size()>12 else (6 if LEVEL_PATHS.size() > 11 else 10))
 	row.custom_minimum_size.y = 76
 	parent.add_child(row)
 	var emblem := _label("✦", 52, GOLD)
@@ -223,7 +248,8 @@ func _build_header(parent: VBoxContainer) -> void:
 	for index in LEVEL_PATHS.size():
 		var button := _button(LEVEL_TITLES[index], "Level%02d" % (index + 1))
 		button.disabled = index == current_level_index
-		button.custom_minimum_size.x = 60 if LEVEL_PATHS.size() > 11 else (68 if LEVEL_PATHS.size() > 10 else 76)
+		button.custom_minimum_size.x = 56 if LEVEL_PATHS.size()>12 else (60 if LEVEL_PATHS.size() > 11 else (68 if LEVEL_PATHS.size() > 10 else 76))
+		if LEVEL_PATHS.size()>12:button.add_theme_font_size_override("font_size",14)
 		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		button.tooltip_text = "切换关卡并从初始状态开始"
 		button.pressed.connect(select_level.bind(index))
@@ -262,9 +288,9 @@ func _build_board(parent: HBoxContainer) -> void:
 	board.custom_minimum_size = Vector2(560, 350)
 	board.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	content.add_child(board)
-	var legend := _hbox(12)
+	var legend := _hbox(8 if model.hero_count()>1 else 12)
 	content.add_child(legend)
-	legend.add_child(_label("● 英雄", 13, Board.HERO_BLUE if model.level.hero_kind=="blue" else (Board.HERO_GREEN if model.level.hero_kind == "green" else Board.CORAL)))
+	legend.add_child(_label("● 当前蓝人" if model.hero_count()>1 and model.active_kind()=="blue" else ("● 当前红人" if model.hero_count()>1 else "● 英雄"), 13, Board.HERO_BLUE if model.active_kind()=="blue" else (Board.HERO_GREEN if model.active_kind() == "green" else Board.CORAL)))
 	legend.add_child(_label("◆ 水晶", 13, Color("9cc5f5")))
 	legend.add_child(_label("◇ 终点", 13, _goal_color()))
 	if not model.level.energy_links.is_empty():
@@ -273,10 +299,16 @@ func _build_board(parent: HBoxContainer) -> void:
 	if not model.level.bushes.is_empty():
 		legend.add_child(_label("♣ 草丛", 13, Color("a1b76a")))
 	_spacer(legend)
+	if model.hero_count()>1:
+		var switch_button:=_button("切换 C","SwitchHero")
+		switch_button.custom_minimum_size=Vector2(66,36)
+		switch_button.tooltip_text="循环操作英雄；计一次可撤销操作，不移动或发动能力"
+		switch_button.pressed.connect(apply_command.bind({"action":&"switch_hero"}))
+		legend.add_child(switch_button)
 	for entry in [["←", Vector2i.LEFT, "Left"], ["↑", Vector2i.UP, "Up"], ["↓", Vector2i.DOWN, "Down"], ["→", Vector2i.RIGHT, "Right"]]:
 		var button := _button(entry[0], "Move" + entry[2])
 		button.custom_minimum_size = Vector2(36, 36)
-		button.tooltip_text = "本方向有可见目标就交换，否则走一格" if model.level.hero_kind=="blue" else "移动一格"
+		button.tooltip_text = "本方向有可见目标就交换，否则走一格" if model.active_kind()=="blue" else "移动一格"
 		button.pressed.connect(apply_command.bind({"action": &"move", "direction": entry[1]}))
 		legend.add_child(button)
 
@@ -288,10 +320,13 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	var intro := _vbox(6)
 	sidebar.add_child(intro)
 	intro.add_child(_label("北部英雄  /  %s" % LEVEL_TITLES[maxi(0, current_level_index)], 12, MINT))
-	var green := model.level.hero_kind == "green"
-	var blue:=model.level.hero_kind=="blue"
-	intro.add_child(_label("交换之英雄" if blue else ("拉之英雄" if green else "推之英雄"), 30, TEXT))
-	intro.add_child(_label("蓝色小人 · 能走路，不能推拉" if blue else ("绿色小人 · 只能拉，不能推" if green else "红色小人 · 只能推，不能拉"), 16, Board.HERO_BLUE if blue else (Board.HERO_GREEN if green else Board.CORAL)))
+	var multi:=model.hero_count()>1
+	var green := model.active_kind() == "green"
+	var blue:=model.active_kind()=="blue"
+	intro.add_child(_label("双英雄协作" if multi else ("交换之英雄" if blue else ("拉之英雄" if green else "推之英雄")), 30, TEXT))
+	var selected_label:=_label(("当前操作：蓝色英雄" if blue else "当前操作：红色英雄") if multi else ("蓝色小人 · 能走路，不能推拉" if blue else ("绿色小人 · 只能拉，不能推" if green else "红色小人 · 只能推，不能拉")), 16, Board.HERO_BLUE if blue else (Board.HERO_GREEN if green else Board.CORAL))
+	selected_label.name="SelectedHero"
+	intro.add_child(selected_label)
 	var instructions := _label("可推动紧密排成直线的整列水晶。\n每次前进一格，列末受阻则整列不动。", 14, MUTED)
 	if blue:
 		instructions.text="按方向键 / WASD：只查看该方向。\n有可见英雄或水晶就与第一个交换；\n没有目标才走一格，不能推拉。"
@@ -301,6 +336,8 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 		instructions.text = "背离相邻水晶移动，自动拉一枚。\n后面的水晶不跟随，不能推水晶。"
 	elif not model.level.bushes.is_empty():
 		instructions.text = "整列水晶每次推一格，末端受阻则不动。\n草丛挡通行与视线，不能推动或交换。"
+	if multi:
+		instructions.text="蓝人：方向首个可见对象交换，否则走。\n红人：混合整列推。C 切换，可撤销。"
 	intro.add_child(instructions)
 	if not model.level.energy_links.is_empty():
 		var rules := "英雄或水晶压住%s时，能量块消失。\n压力解除后恢复，格内英雄会死亡。" % _plate_name()
@@ -309,13 +346,18 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 			var number: String = {3:"三",9:"九"}.get(count,str(count))
 			rules = "%s块%s同时受压才开门。\n压力解除后恢复，格内英雄会死亡。" % [number,_plate_name()]
 		intro.add_child(_label(rules, 13, _mechanism_tint()))
-	var stats := _hbox(12)
+	var stats := _hbox(6 if multi else 12)
 	sidebar.add_child(stats)
-	moves_label = _stat(stats, "操作" if blue else "步数", "Moves")
+	moves_label = _stat(stats, "操作" if multi or blue else "步数", "Moves")
 	pushes_label = null
 	pulls_label = null
 	swaps_label=null
-	if blue:
+	switches_label=null
+	if multi:
+		pushes_label=_stat(stats,"推动","Pushes")
+		swaps_label=_stat(stats,"交换","Swaps")
+		switches_label=_stat(stats,"切换","Switches")
+	elif blue:
 		swaps_label=_stat(stats,"交换","Swaps")
 	elif green:
 		pulls_label = _stat(stats, "拉动", "Pulls")
@@ -327,6 +369,8 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	goal_card.add_child(goal)
 	goal.add_child(_label("◇  通关目标" if not model.level.is_temporary else "◇  临时目标", 14, _goal_color()))
 	var objective_text := "走到%s" % _goal_name() if model.level.objective == "player_on_exit" else "将水晶推至测试落点"
+	if multi:
+		objective_text="两名英雄分占不同终点"
 	if model.level.objective == "none":
 		objective_text = "自由验证移动与推动"
 	var objective_label := _label(objective_text, 18, TEXT)
@@ -335,7 +379,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	progress_label = _label("", 13, _goal_color())
 	progress_label.name = "TargetProgress"
 	goal.add_child(progress_label)
-	goal.add_child(_label("水晶不需要停在终点", 12, MUTED))
+	goal.add_child(_label("不限定英雄对应；水晶不计入" if multi else "水晶不需要停在终点", 12, MUTED))
 	status_label = _label("", 14, MINT)
 	status_label.name = "Status"
 	status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -358,8 +402,10 @@ func _build_footer(parent: VBoxContainer) -> void:
 	var footer := _vbox(5)
 	parent.add_child(footer)
 	var controls:="方向键 / WASD  移动     ·     Z / U / Backspace  撤销     ·     R  重开     ·     长按不连走"
-	if model.level.hero_kind=="blue":
+	if model.active_kind()=="blue":
 		controls="方向键 / WASD  有目标交换，否则走一格     ·     Z / U / Backspace  撤销     ·     R  重开     ·     长按不连动"
+	if model.hero_count()>1:
+		controls="方向键 / WASD  操作高亮英雄     ·     C  切换     ·     Z / U / Backspace  撤销     ·     R  重开     ·     长按不连动"
 	footer.add_child(_label(controls,14,TEXT))
 	var note := "依据确认的北部关卡网格制作 · 原创 2D 几何图形"
 	if model.level.is_temporary:
