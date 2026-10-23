@@ -91,6 +91,7 @@ def main():
             run("03_logic", ["--script", "res://tests/run_tests.gd"])
             run("03_chain_push", ["--script", "res://tests/chain_push_regression.gd"])
             run("03_energy", ["--script", "res://tests/energy_regression.gd"])
+            run("03_global_energy", ["--script", "res://tests/global_energy_regression.gd"])
             run("03_bush_group", ["--script", "res://tests/bush_and_group_regression.gd"])
             run("03_green_pull", ["--script", "res://tests/green_pull_regression.gd"])
             run("03_north_01", ["--script", "res://tests/north_01_regression.gd"])

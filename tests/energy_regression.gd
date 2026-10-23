@@ -16,7 +16,7 @@ func _run() -> void:
 	var cases: Array[Callable] = [_test_hero_pressure_and_sight, _test_crystal_pressure,
 		_test_source_predicate, _test_atomic_handoff, _test_blocked_push,
 		_test_death_and_atomic_undo, _test_unknown_crystal_reactivation,
-		_test_independent_links, _test_data_validation]
+		_test_global_links, _test_data_validation]
 	for test in cases:
 		var previous := failures
 		test.call()
@@ -135,21 +135,31 @@ func _test_unknown_crystal_reactivation() -> void:
 	_check(game.undo() and game.alive, "last valid step remains undoable")
 
 
-func _test_independent_links() -> void:
+func _test_global_links() -> void:
 	var data := _data()
 	data["energy_links"].append({"id": "other", "plate": [1, 0], "barriers": [[4, 1]], "pressure_sources": ["hero", "crystal"]})
 	var game := _game(data)
 	game.try_move(Vector2i.RIGHT)
-	_check(game.pressure_is_active("yellow") and not game.pressure_is_active("other"), "unrelated links do not share pressure")
+	_check(game.pressure_is_active("yellow") and not game.pressure_is_active("other"), "local pressure reports individual occupied plates")
+	_check(game.barrier_is_active(Vector2i(3, 1)) and game.barrier_is_active(Vector2i(4, 1)), "one occupied group cannot open any yellow barrier")
 	var first := game.snapshot()
 	game.try_move(Vector2i.UP)
 	_check(not game.pressure_is_active("yellow") and game.pressure_is_active("other"), "post-action occupancy settles all links together")
-	_check(game.barrier_is_active(Vector2i(3, 1)) and not game.barrier_is_active(Vector2i(4, 1)), "independent barrier states")
+	_check(game.barrier_is_active(Vector2i(3, 1)) and game.barrier_is_active(Vector2i(4, 1)), "different occupied group still cannot open either barrier")
 	_check(game.undo() and game.snapshot() == first, "multi-link undo is complete")
 	var exposed := game.snapshot()
 	exposed["pressure"].clear()
 	exposed["barriers"].clear()
 	_check(game.snapshot() == first, "external snapshot cannot mutate mechanism state")
+	data["crates"] = [[1, 1]]
+	game = _game(data)
+	game.try_move(Vector2i.UP)
+	game.try_move(Vector2i.RIGHT)
+	var all_held := game.snapshot()
+	_check(game.pressure_is_active("yellow") and game.pressure_is_active("other") and not game.barrier_is_active(Vector2i(3, 1)) and not game.barrier_is_active(Vector2i(4, 1)), "all yellow plates across IDs open every barrier together")
+	game.try_move(Vector2i.LEFT)
+	_check(game.barrier_is_active(Vector2i(3, 1)) and game.barrier_is_active(Vector2i(4, 1)), "releasing any group restores every yellow barrier")
+	_check(game.undo() and game.snapshot() == all_held, "undo restores global all-open state atomically")
 
 
 func _test_data_validation() -> void:

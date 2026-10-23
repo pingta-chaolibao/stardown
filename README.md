@@ -4,6 +4,8 @@
 
 开发、测试与 Git 操作均在选定云端 `/workspace/stardown` 完成，没有读取、迁移或操作用户电脑。交付分支为 `develop`；不发布游戏、不创建 PR。
 
+黄色机关遵循用户确认的底层全局 AND：**所有黄色压力板同时被英雄或水晶占住，所有黄色能量块才一起消失**；任一解除就全部恢复。数据组标识只用于占用诊断，不代表独立开门。该修正与前六关全部回归通过；第七关整数格图转换尚未通过可解性检查，未加入入口或视频，具体阻点见[验证记录](docs/VERIFICATION.md)。
+
 ## 获取与运行
 
 打开 [develop 分支](https://github.com/pingta-chaolibao/stardown/tree/develop)，或[下载工程 ZIP](https://github.com/pingta-chaolibao/stardown/archive/refs/heads/develop.zip)。在所选云端环境解压，使用 Godot 导入其中的 `project.godot`，按 **F5** 运行。
@@ -189,6 +191,7 @@ H..V...#.B.
 - `tests/north_01_regression.gd`：确认坐标、两枚水晶受阻、通关路径、撤销重开与连续输入回归。
 - `tests/north_02_regression.gd`、`tests/north_02_scene.gd`：第二关 77 格地形 / 10 枚水晶、实际通关、阻挡、胜利后撤销重开、切关隔离与界面回归。
 - `tests/energy_regression.gd`：压力保持 / 解除、移动与视线、死亡只能撤销复活、未确认边界的独立测试。
+- `tests/global_energy_regression.gd`：全局 AND 在不同数据分组下的一致性、跨组交接 / 关门死亡、原子撤销和未定义恢复保护。
 - `tests/north_03_regression.gd`、`tests/north_03_scene.gd`：第三关解法、352 状态可达性、完整状态撤销重开、切关隔离、真实输入与画面适配。
 - `tests/bush_and_group_regression.gd`：草丛阻挡、全部 8 种三板组合、混合压力来源、原子交接、死亡撤销与数据校验。
 - `tests/north_04_regression.gd`、`tests/north_04_scene.gd`：第四关 42 格布局、实际通关、草丛受阻、三板开门、撤销重开、切关与重复输入。

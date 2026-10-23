@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-23T01:41:40.617543+00:00",
+  "time_utc": "2026-10-23T03:22:45.917524+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,13 +7,13 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.014
+      "seconds": 0.016
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.821
+      "seconds": 6.755
     },
     {
       "name": "02_parse_00_bush_obstacle",
@@ -25,7 +25,7 @@
       "name": "02_parse_01_energy_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.144
     },
     {
       "name": "02_parse_02_grid_state",
@@ -37,157 +37,169 @@
       "name": "02_parse_03_hero_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.144
     },
     {
       "name": "02_parse_04_level_data",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.147
     },
     {
       "name": "02_parse_05_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.14
+      "seconds": 3.145
     },
     {
       "name": "02_parse_06_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.238
     },
     {
       "name": "02_parse_07_board_view",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.146
     },
     {
       "name": "02_parse_08_bush_and_group_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.148
     },
     {
       "name": "02_parse_09_chain_push_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.149
     },
     {
       "name": "02_parse_10_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
-    },
-    {
-      "name": "02_parse_11_green_pull_regression",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.142
-    },
-    {
-      "name": "02_parse_12_north_01_regression",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.142
-    },
-    {
-      "name": "02_parse_13_north_02_regression",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.144
-    },
-    {
-      "name": "02_parse_14_north_02_scene",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.141
-    },
-    {
-      "name": "02_parse_15_north_03_regression",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.142
-    },
-    {
-      "name": "02_parse_16_north_03_scene",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.144
-    },
-    {
-      "name": "02_parse_17_north_04_regression",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.154
-    },
-    {
-      "name": "02_parse_18_north_04_scene",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.15
-    },
-    {
-      "name": "02_parse_19_north_05_regression",
-      "passed": true,
-      "exit_code": 0,
       "seconds": 3.146
     },
     {
-      "name": "02_parse_20_north_05_scene",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.144
-    },
-    {
-      "name": "02_parse_21_north_06_regression",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.146
-    },
-    {
-      "name": "02_parse_22_north_06_scene",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.144
-    },
-    {
-      "name": "02_parse_23_run_tests",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.146
-    },
-    {
-      "name": "02_parse_24_scene_smoke",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.149
-    },
-    {
-      "name": "03_logic",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.161
-    },
-    {
-      "name": "03_chain_push",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.152
-    },
-    {
-      "name": "03_energy",
+      "name": "02_parse_11_global_energy_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143
     },
     {
-      "name": "03_bush_group",
+      "name": "02_parse_12_green_pull_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_13_north_01_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "02_parse_14_north_02_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.141
+    },
+    {
+      "name": "02_parse_15_north_02_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_16_north_03_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_parse_17_north_03_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "02_parse_18_north_04_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148
+    },
+    {
+      "name": "02_parse_19_north_04_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "02_parse_20_north_05_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_parse_21_north_05_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15
+    },
+    {
+      "name": "02_parse_22_north_06_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.159
+    },
+    {
+      "name": "02_parse_23_north_06_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149
+    },
+    {
+      "name": "02_parse_24_run_tests",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_25_scene_smoke",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_logic",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "03_chain_push",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145
+    },
+    {
+      "name": "03_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_global_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_bush_group",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148
     },
     {
       "name": "03_green_pull",
@@ -199,25 +211,25 @@
       "name": "03_north_01",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "03_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.149
     },
     {
       "name": "03_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.241
     },
     {
       "name": "03_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.148
     },
     {
       "name": "03_north_05",
@@ -235,79 +247,79 @@
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.338
+      "seconds": 3.341
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.448
+      "seconds": 4.461
     },
     {
       "name": "05_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.261
+      "seconds": 4.265
     },
     {
       "name": "05_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.169
+      "seconds": 4.173
     },
     {
       "name": "05_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.263
+      "seconds": 4.36
     },
     {
       "name": "05_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.354
+      "seconds": 4.366
     },
     {
       "name": "05_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.006
+      "seconds": 5.012
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.949
+      "seconds": 14.951
     },
     {
       "name": "06_render_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.185
+      "seconds": 12.175
     },
     {
       "name": "06_render_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.168
+      "seconds": 12.183
     },
     {
       "name": "06_render_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.166
+      "seconds": 14.373
     },
     {
       "name": "06_render_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.172
+      "seconds": 14.376
     },
     {
       "name": "06_render_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 16.145
+      "seconds": 16.352
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -324,7 +336,7 @@
       "cases": 6
     },
     "energy": {
-      "checks": 77,
+      "checks": 83,
       "failures": 0,
       "cases": 9
     },
@@ -414,6 +426,11 @@
     },
     "rendered_north_06_scene": {
       "checks": 250,
+      "failures": 0
+    },
+    "global_energy": {
+      "cases": 6,
+      "checks": 168,
       "failures": 0
     }
   },
@@ -581,16 +598,37 @@
     "crystal_handoff_step": 30,
     "gate_crossing_step": 36
   },
-  "previous_maps_solutions_and_videos_unchanged_from": "42624efdd0a70cb080e6fd7500ffb3be60b88864",
+  "previous_maps_solutions_and_videos_unchanged_from": "0662abe9a649252687d8346b3f6dc55a5cea5789",
   "core_rules_and_view_unchanged_from": {
-    "commit": "42624efdd0a70cb080e6fd7500ffb3be60b88864",
+    "commit": "0662abe9a649252687d8346b3f6dc55a5cea5789",
     "files": [
       "scripts/core/grid_state.gd",
-      "scripts/core/energy_rules.gd",
       "scripts/core/level_data.gd",
       "scripts/core/hero_rules.gd",
       "scripts/core/bush_obstacle.gd",
       "scripts/view/board_view.gd"
     ]
+  },
+  "global_energy_change": {
+    "rule": "All yellow plates AND -> all yellow barriers together; link IDs remain local occupancy diagnostics only",
+    "test": "tests/global_energy_regression.gd",
+    "cases": 6,
+    "checks": 168,
+    "failures": 0
+  },
+  "level_07_conversion": {
+    "status": "blocked_not_in_playable_navigation",
+    "last_user_corrections": {
+      "8,1": "floor",
+      "8,2": "wall",
+      "12,1": "energy",
+      "12,0": "wall"
+    },
+    "python_living_states": 1574,
+    "godot_living_states": 1574,
+    "crystal_on_plate_states": 0,
+    "victory_states": 0,
+    "undefined_transitions": 0,
+    "maps_not_changed_to_force_solution": true
   }
 }

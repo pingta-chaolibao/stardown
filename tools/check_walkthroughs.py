@@ -45,7 +45,9 @@ def check_replay(item, directory):
             assert plates and link.get("activation", "all") == "all"
             pressed = all(("hero" in sources and player == plate) or ("crystal" in sources and plate in crystals) for plate in plates)
             pressure[link["id"]] = pressed
-            barriers.update({tuple(cell): not pressed for cell in link["barriers"]})
+        all_pressed = all(pressure.values())
+        for link in level.get("energy_links", []):
+            barriers.update({tuple(cell): not all_pressed for cell in link["barriers"]})
         alive = True
         for cell, active in barriers.items():
             if active:

@@ -11,13 +11,18 @@ static func settle(links: Array[Dictionary], hero: Vector2i, crystals: Dictionar
 	var pressure: Dictionary = {}
 	var barriers: Dictionary = {}
 	var alive := true
+	var all_pressed := true
 	for link in links:
 		var pressed := true
 		for plate: Vector2i in link["plates"]:
 			pressed = pressed and pressure_matches(plate, link["pressure_sources"], hero, crystals)
 		pressure[link["id"]] = pressed
+		all_pressed = all_pressed and pressed
+	# Link IDs describe data and local occupancy, never independent doors.
+	# Every yellow barrier uses the same all-yellow-plates AND result.
+	for link in links:
 		for cell: Vector2i in link["barriers"]:
-			barriers[cell] = not pressed
+			barriers[cell] = not all_pressed
 	# All occupancy and pressure are computed before evaluating consequences.
 	for cell: Vector2i in barriers:
 		if not barriers[cell]:
