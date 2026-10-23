@@ -53,7 +53,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十一关 | [观看 / 下载 MP4](video/chapter_01/level_11.mp4) | 16.4 秒 |
 | 第十二关 | [观看 / 下载 MP4](video/chapter_01/level_12.mp4) | 20.6 秒 |
 | 第十三关 | [观看 / 下载 MP4](video/chapter_01/level_13.mp4) | 21.2 秒 |
-| 第十四关 | 实现提交后录制真实通关视频 | 待录制 |
+| 第十四关 | [观看 / 下载 MP4](video/chapter_01/level_14.mp4) | 35.0 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -451,4 +451,9 @@ C 循环切换当前英雄，屏幕下方也有「切换 C」。当前英雄有�
 
 实际行动15红人推动水晶与绿人混合列，非当前绿人不多拉；行动24绿人占板双门开放；行动26红人过上门，29到上目标；行动30绿人自动拉紫晶接替压板，32过下门，35到下目标通关。不按英雄颜色匹配终点。普通几何配色用于可读性，无颜色匹配条件。
 
-新数据 `levels/north_14.json`、解法 `levels/solutions/north_14.json`，独立搜索 / 回放 `python3 tools/search_north_14.py`，模型与实际输入测试 `tests/north_14_regression.gd` / `tests/north_14_scene.gd`。顶部14关入口在1280×820与960×615适配；鼠标测试将逻辑坐标按视口最终变换转换到实际窗口坐标，小窗口也以真实按钮事件验证绿色选中。第十四关实现提交后再录制 `video/chapter_01/level_14.mp4`，第十三关修正版保留。
+新数据 `levels/north_14.json`、解法 `levels/solutions/north_14.json`，独立搜索 / 回放 `python3 tools/search_north_14.py`，模型与实际输入测试 `tests/north_14_regression.gd` / `tests/north_14_scene.gd`。顶部14关入口在1280×820与960×615适配；鼠标测试将逻辑坐标按视口最终变换转换到实际窗口坐标，小窗口也以真实按钮事件验证绿色选中。第十四关已在实现提交后录制 `video/chapter_01/level_14.mp4`，第十三关修正版保留。
+
+
+第十四关实际画面：[初始](docs/screenshots/level_14_initial.png)、[绿选中](docs/screenshots/level_14_selected_green.png)、[混合连推](docs/screenshots/level_14_mixed_push.png)、[绿占板](docs/screenshots/level_14_hero_plate.png)、[红过上门](docs/screenshots/level_14_red_gate.png)、[首目标](docs/screenshots/level_14_first_goal.png)、[紫晶接替](docs/screenshots/level_14_crystal_plate.png)、[绿过下门](docs/screenshots/level_14_green_gate.png)、[通关](docs/screenshots/level_14_completed.png)、[离板恢复](docs/screenshots/level_14_released.png)、[小窗口红](docs/screenshots/level_14_compact_red.png)、[小窗口绿](docs/screenshots/level_14_compact_green.png)。离板是合法规则侧路，未混入正式通关录像。
+
+[第十四关完整通关视频](video/chapter_01/level_14.mp4)为35秒 / 1050帧，包含35次实际行动、15次不计数切换、6推4拉；红 / 绿均走过对应能量门，再同时分占两目标。十四段视频已完整解码、独立合法回放并核对编码与时长，详见[视频记录](video/README.md)。
