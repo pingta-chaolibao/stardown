@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_15",
+  "title": "北部英雄 · 第十五关",
+  "is_temporary": false,
+  "source_note": "依据用户确认的11×7编号图与二维格图；最新更正25号(2,2)不可走，47号(2,4)也不可走。蓝绿双英雄，无新机制，C只切换、不计步、不入撤销。原创2D几何图形，不声称逐像素复刻。",
+  "terrain": [
+    "####.....##",
+    "######.####",
+    "..#........",
+    ".........#.",
+    "..#........",
+    "#####..####",
+    "######..###"
+  ],
+  "heroes": [
+    {"id":"blue", "kind":"blue", "position":[4,0]},
+    {"id":"green", "kind":"green", "position":[3,3]}
+  ],
+  "active_hero": "blue",
+  "crates": [[8,0],[7,6]],
+  "crystal_colors": ["pink","blue_purple"],
+  "targets": [],
+  "exits": [[0,2],[0,4]],
+  "exit_color": "green",
+  "objective": "all_heroes_on_exits",
+  "energy_links": [
+    {"id":"yellow_01", "plates":[[4,3],[10,3]], "activation":"all", "barriers":[[2,3]], "pressure_sources":["hero","crystal"]}
+  ]
+}

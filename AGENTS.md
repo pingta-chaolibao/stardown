@@ -75,3 +75,12 @@ The user's latest instruction is “切换不算操作不用撤销”. C and the
 Level 14 is the user-confirmed 10x7 red/green map in north_14.json. Latest correction wins: marker6=(5,0) is wall, not floor; keep 8/9/29/50 floor and 64–66 walls. Red=(1,1),green=(1,5),one purple crystal=(3,1),exits=(6,0)/(6,6),yellow plate=(9,3),two barriers=(8,1)/(8,5). Initially select red. Use the same red mixed-line pushing, green automatic nearest-single crystal pulling (never hero pulling), free C selection and undo retaining current choice, both-hero goals and global pressure/death rules. No new mechanism or hero.
 
 Independent search stops at its first victory: 35 actual direction actions,15 uncounted selection events,6 pushes,4 pulls. Red and green both cross their respective open energy cells; green hands pressure to the purple crystal with an automatic single pull. Do not claim shortest/exhaustive. Keep prior 13 maps/solutions/videos/replays byte-identical from 8b00eb9b54574300968c7fa7af5bd493d880dafa. Implementation commit first, then actual video/chapter_01/level_14.mp4 and separate video commit. No ZIP.
+
+
+## Confirmed fifteenth map
+
+Level 15 is the confirmed 11x7 blue/green map in north_15.json. Latest correction: 25=(2,2) is blocked, and 47=(2,4) remains blocked. Blue=(4,0),green=(3,3),pink crystal=(8,0),blue-purple=(7,6),exits=(0,2)/(0,4),yellow plates=(4,3)/(10,3),energy=(2,3). Initial selection blue. Only (6,1) connects the upper platform; bottom corridor(5,5)/(6,5)/(6,6)/(7,6) stays exact. Do not widen terrain or change sight to solve it.
+
+Reuse passive direction-first blue exchange with first hero/crystal, green automatic nearest-single crystal pull, free C and undo retaining selection, global all-pressure AND, both-hero goals and undo-only revival. No pushing or new mechanism. Independent identity-aware BFS stops at first living victory: 61 actual actions+20free selections,11pulls/7swaps. Actual route uses both crystals and three hero exchanges including across open energy. Legitimate side route:blue inside gate at action52, select green and move down off plate; restored energy kills inactive blue, C/R/load cannot bypass, one undo revives while green remains selected. Do not splice this test into walkthrough.
+
+Preserve previous 14 maps/solutions/MP4s/replays byte-for-byte from 1efc54dbdbe41013cee7fb6136a03b635daf1e87. Commit implementation before recording actual video/chapter_01/level_15.mp4, then separate media commit, normal develop push and verified download. No ZIP.

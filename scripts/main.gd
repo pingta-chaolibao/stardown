@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -237,7 +237,7 @@ func _build_ui() -> void:
 
 
 func _build_header(parent: VBoxContainer) -> void:
-	var row := _hbox(2 if LEVEL_PATHS.size()>13 else (4 if LEVEL_PATHS.size()>12 else (6 if LEVEL_PATHS.size() > 11 else 10)))
+	var row := _hbox(1 if LEVEL_PATHS.size()>14 else (2 if LEVEL_PATHS.size()>13 else (4 if LEVEL_PATHS.size()>12 else (6 if LEVEL_PATHS.size() > 11 else 10))))
 	row.custom_minimum_size.y = 76
 	parent.add_child(row)
 	var emblem := _label("✦", 52, GOLD)
@@ -251,8 +251,8 @@ func _build_header(parent: VBoxContainer) -> void:
 	for index in LEVEL_PATHS.size():
 		var button := _button(LEVEL_TITLES[index], "Level%02d" % (index + 1))
 		button.disabled = index == current_level_index
-		button.custom_minimum_size.x = 50 if LEVEL_PATHS.size()>13 else (56 if LEVEL_PATHS.size()>12 else (60 if LEVEL_PATHS.size() > 11 else (68 if LEVEL_PATHS.size() > 10 else 76)))
-		if LEVEL_PATHS.size()>12:button.add_theme_font_size_override("font_size",13 if LEVEL_PATHS.size()>13 else 14)
+		button.custom_minimum_size.x = 48 if LEVEL_PATHS.size()>14 else (50 if LEVEL_PATHS.size()>13 else (56 if LEVEL_PATHS.size()>12 else (60 if LEVEL_PATHS.size() > 11 else (68 if LEVEL_PATHS.size() > 10 else 76))))
+		if LEVEL_PATHS.size()>12:button.add_theme_font_size_override("font_size",12 if LEVEL_PATHS.size()>14 else (13 if LEVEL_PATHS.size()>13 else 14))
 		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		button.tooltip_text = "切换关卡并从初始状态开始"
 		button.pressed.connect(select_level.bind(index))
@@ -326,6 +326,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	intro.add_child(_label("北部英雄  /  %s" % LEVEL_TITLES[maxi(0, current_level_index)], 12, MINT))
 	var multi:=model.hero_count()>1
 	var green_party:=multi and _has_hero_kind("green")
+	var blue_party:=multi and _has_hero_kind("blue")
 	var green := model.active_kind() == "green"
 	var blue:=model.active_kind()=="blue"
 	intro.add_child(_label("双英雄协作" if multi else ("交换之英雄" if blue else ("拉之英雄" if green else "推之英雄")), 30, TEXT))
@@ -343,6 +344,8 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 		instructions.text = "整列水晶每次推一格，末端受阻则不动。\n草丛挡通行与视线，不能推动或交换。"
 	if multi:
 		instructions.text="红人：混合整列推。C 切换不计步。\n绿人：背离相邻水晶，只自动拉一枚。" if green_party else "蓝人：方向首个可见对象交换，否则走。\n红人：混合整列推。C 切换，不计步。"
+		if blue_party and green_party:
+			instructions.text="蓝人：首个可见目标交换，否则走一步。\n绿人：背离相邻晶单拉；C 切换不计步。"
 	intro.add_child(instructions)
 	if not model.level.energy_links.is_empty():
 		var rules := "英雄或水晶压住%s时，能量块消失。\n压力解除后恢复，格内英雄会死亡。" % _plate_name()
@@ -358,9 +361,9 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	pulls_label = null
 	swaps_label=null
 	if multi:
-		pushes_label=_stat(stats,"推动","Pushes")
+		if _has_hero_kind("red"):pushes_label=_stat(stats,"推动","Pushes")
+		if blue_party:swaps_label=_stat(stats,"交换","Swaps")
 		if green_party:pulls_label=_stat(stats,"拉动","Pulls")
-		else:swaps_label=_stat(stats,"交换","Swaps")
 	elif blue:
 		swaps_label=_stat(stats,"交换","Swaps")
 	elif green:

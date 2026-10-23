@@ -1,0 +1,12 @@
+{
+  "level_id": "north_hero_15",
+  "path": "CURRRUUCRDCRRCURCDCLLCDRURCDDCRRCRCDCRLDDDDRCDLLLLDUCLCUULDLCUULLLULLLCLCRCUCLLDL",
+  "moves": 61,
+  "directions": 61,
+  "input_events": 81,
+  "selection_events": 20,
+  "pushes": 0,
+  "pulls": 11,
+  "swaps": 7,
+  "note": "UDLR计实际行动，C仅免费切换选择、不进撤销。独立蓝绿身份占用BFS首次胜利停止，再按英雄/水晶身份回放；不宣称穷举或最优。25号(2,2)及47号(2,4)保持不可走。"
+}

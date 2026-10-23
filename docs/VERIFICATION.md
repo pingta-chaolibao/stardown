@@ -1,32 +1,28 @@
-# 第一章前十四关 · 云端验证记录
+# 第一章前十五关 · 云端验证记录
 
-工程仅在选定云端 `/workspace/stardown` 开发、Git、测试与录制。Godot `4.6.3.stable.official.7d41c59c4`。用户通过Git获取工程，无额外ZIP。
+仅在选定云端 `/workspace/stardown` 开发、Git、测试与录制，Godot `4.6.3.stable.official.7d41c59c4`。用户经Git获取工程，无额外ZIP。
 
-## 第十三关修正已单独交付
+## 第十五关确认布局与实现
 
-C不计操作、不进撤销、Undo保留当前选择已实现于b24f147，视频与验证已推送8b00eb9。21.2秒 / 636帧、24实际行动+3免费选择。93步检查与全部十三视频合法回放通过，实际下载HTTP200、332454字节，哈希与完整解码一致；交付完成后才开始第十四关，两关提交分开。
+11×7，最新更正25号(2,2)不可走，47号(2,4)也不可走，全部77格逐项核验，共40地板。蓝=(4,0)，绿=(3,3)，粉晶=(8,0)，蓝紫=(7,6)，目标=(0,2)/(0,4)，两黄板=(4,3)/(10,3)，能量=(2,3)。上平台仅(6,1)通主平台，下通道(5,5)/(6,5)/(6,6)/(7,6)严格保留，未扩路或改视线求解。初始选蓝。
 
-## 第十四关确认地图与实现
+新增独立north_15.json、入口、解法和测试。蓝按本方向首个可见英雄 / 水晶被动交换，否则走一步；绿只自动拉最近相邻水晶，不推、不拉英雄。全局双板AND、双英雄不同目标、免费C和Undo保留当前选择均复用同一核心。只为蓝绿阵容补齐角色说明、交换 / 拉动统计及十五关导航；两尺寸高亮保色、屏幕按钮与真实键盘一致，无新机制或英雄。
 
-10×7，最新更正6号(5,0)是墙，覆盖核对图旧标记。8/9/29/50为空地，64–66墙，全部70格逐项核验。红=(1,1)，绿=(1,5)，唯一紫晶=(3,1)，双目标=(6,0)/(6,6)，单黄板=(9,3)，双门=(8,1)/(8,5)，无草丛。初始选红。
+前十四关地图 / 解法 / 视频 / 回放56份文件与1efc54d逐字节一致，原十四媒体条目保留。GridState / EnergyRules / HeroRules / SwapRules / LevelData / StepInput六核心脚本与该基线字节相同。
 
-独立north_14.json与入口、解法和测试；红混合整列推、绿自动单晶拉、单板双门移动 / 视线、双英雄不同目标和死亡仅Undo全部复用同一引擎，没有新增机制。C和屏幕选择免费且不写历史，Undo保留当前选择；重开恢复初始红。
+## 独立合法路线
 
-界面根据阵容显示推动 / 拉动，选择绿色时正确显示绿色角色与高亮，非当前英雄保留原色压暗。14关中文导航在1280×820和960×615适配。发现测试鼠标原来未换算窗口缩放，已使用视口final_transform生成实际窗口输入坐标，并增加小窗口真实点击确实选绿的断言；没有改动游戏规则来迁就测试。
+`CURRRUUCRDCRRCURCDCLLCDRURCDDCRRCRCDCRLDDDDRCDLLLLDUCLCUULDLCUULLLULLLCLCRCUCLLDL`：61实际行动+20免费选择，共81输入；11拉7换0推，包含3次英雄互换和两枚水晶。独立四对象身份占用BFS扩展1019474、访问1044508状态，首次存活胜利停止，尚余25034排队；不宣称穷举或最优。
 
-前十三关地图 / 解法 / 视频 / 回放52份文件与8b00eb9逐字节一致，原十三份媒体条目保留。GridState / EnergyRules / HeroRules / SwapRules / LevelData / StepInput六个核心脚本与该基线字节相同。
+行动7蓝人优先交换近绿人而非远粉晶，11再次英雄交换，12粉晶交换至上通道，13绿单拉粉晶下行；24先交换近粉晶而非远绿人，32交换底部蓝紫晶；45绿与粉晶压满板。52蓝过能量，55绿拉蓝紫晶接替近板，56蓝绿隔透明能量互换，57绿到上目标，58蓝再过能量，61蓝到下目标，最终粉 / 蓝紫晶占(10,3)/(4,3)。非当前英雄不发动能力，C不记行动 / 撤销；完整61步Undo保持最终蓝选择并恢复世界，重开恢复初始蓝。
 
-## 独立合法路线与Godot验证
+## 本关合法死亡与撤销
 
-`RRCRRRUUUDCRCRCDCRCDRCUCRDRCRCUCRCUCDCRUULLCDLDDLL`：35次实际方向行动、15次免费选择，共50个输入事件；6推、4拉、0换。独立身份占用BFS扩展20282、访问22496状态，首次胜利停止，尚余2214排队；选择不计费，红绿 / 水晶身份保留，不宣称最短或穷举。
-
-行动15红人原子推动紫晶与绿人混合列，非当前绿人不增加拉动；24绿占板双门开放，26红过上门，29红到上目标；30绿自动单拉紫晶接替压板，不发生中间闭门；32绿过下门，35绿到下目标，双英雄同时胜利。全部C不改变世界 / 压力 / 行动计数 / 历史。35次逆序Undo恢复世界并保留最终绿选中，重开才恢复红。
-
-合法侧路验证绿在水晶接替前离板，两门同时恢复移动 / 视线阻挡，一次Undo同步恢复。绿正面对晶不能推；背离自动拉一枚。切换后Undo直接恢复上一真实行动且保持当前英雄。死亡锁定 / 仅撤销复活由共用多英雄和机关专项回归，未伪造本关死亡情节。
+走至实际行动52蓝位于开放能量格，C选绿再向下离板，能量恢复压死未选中蓝。模型和实际键鼠均验证C / 方向 / R / 切关无法绕过，唯一次Undo恢复全体对象 / 压力 / 生死 / 门且保留绿选择；再次Undo撤蓝刚才真实移动而非C。此处使用本关合法前缀与侧路，没有伪造测试夹具或混入正式录像。另验证25墙、关闭能量挡视线 / 移动、离板再撤销恢复、空历史C后Undo、胜利Undo / 重开和跨关隔离。
 
 ## 完整检查
 
-`python3 tools/verify.py --visual --display :97`：98步全部通过，含45脚本解析、角色 / 机关 / 多英雄专项、十四关模型、十四关真实键鼠与X11渲染。录制脚本范围扩至14，另解析检查。十四段视频已完整解码与独立合法回放。详见结构化摘要。
+`python3 tools/verify.py --visual --display :97`：103步全部通过，含47脚本解析、全部角色 / 机关 / 多英雄专项、十五关模型 / 真实键鼠 / X11渲染。录制脚本范围扩至15并另解析。原十四段视频完整解码和独立合法回放通过。详情见结构化摘要。
 
 | 检查 | 结果 |
 | --- | --- |
@@ -40,6 +36,7 @@ C不计操作、不进撤销、Undo保留当前选择已实现于b24f147，视�
 | 03_multi_hero | 7组 / 159项，0失败 |
 | 03_north_13 | 3组 / 209项，0失败 |
 | 03_north_14 | 4组 / 351项，0失败 |
+| 03_north_15 | 4组 / 483项，0失败 |
 | 03_north_01 | 6组 / 344项，0失败 |
 | 03_north_02 | 5组 / 239项，0失败 |
 | 03_north_03 | 3组 / 1084项，0失败 |
@@ -52,56 +49,56 @@ C不计操作、不进撤销、Undo保留当前选择已实现于b24f147，视�
 | 03_north_10 | 5组 / 344项，0失败 |
 | 03_north_11 | 6组 / 754项，0失败 |
 | 03_north_12 | 5组 / 223项，0失败 |
-| 05_scene_input | 227项，0失败 |
-| 05_north_02_scene | 192项，0失败 |
-| 05_north_03_scene | 195项，0失败 |
-| 05_north_04_scene | 209项，0失败 |
-| 05_north_05_scene | 197项，0失败 |
-| 05_north_06_scene | 248项，0失败 |
-| 05_north_07_scene | 340项，0失败 |
-| 05_north_08_scene | 243项，0失败 |
-| 05_north_09_scene | 204项，0失败 |
-| 05_north_10_scene | 302项，0失败 |
-| 05_north_11_scene | 236项，0失败 |
-| 05_north_12_scene | 252项，0失败 |
-| 05_north_13_scene | 508项，0失败 |
-| 05_north_14_scene | 555项，0失败 |
-| 06_render | 237项，0失败 |
-| 06_render_north_02 | 198项，0失败 |
-| 06_render_north_03 | 203项，0失败 |
-| 06_render_north_04 | 217项，0失败 |
-| 06_render_north_05 | 205项，0失败 |
-| 06_render_north_06 | 262项，0失败 |
-| 06_render_north_07 | 360项，0失败 |
-| 06_render_north_08 | 259项，0失败 |
-| 06_render_north_09 | 214项，0失败 |
-| 06_render_north_10 | 316项，0失败 |
-| 06_render_north_11 | 252项，0失败 |
-| 06_render_north_12 | 272项，0失败 |
-| 06_render_north_13 | 524项，0失败 |
-| 06_render_north_14 | 579项，0失败 |
+| 05_scene_input | 229项，0失败 |
+| 05_north_02_scene | 194项，0失败 |
+| 05_north_03_scene | 197项，0失败 |
+| 05_north_04_scene | 211项，0失败 |
+| 05_north_05_scene | 199项，0失败 |
+| 05_north_06_scene | 250项，0失败 |
+| 05_north_07_scene | 342项，0失败 |
+| 05_north_08_scene | 245项，0失败 |
+| 05_north_09_scene | 206项，0失败 |
+| 05_north_10_scene | 304项，0失败 |
+| 05_north_11_scene | 238项，0失败 |
+| 05_north_12_scene | 254项，0失败 |
+| 05_north_13_scene | 513项，0失败 |
+| 05_north_14_scene | 560项，0失败 |
+| 05_north_15_scene | 554项，0失败 |
+| 06_render | 239项，0失败 |
+| 06_render_north_02 | 200项，0失败 |
+| 06_render_north_03 | 205项，0失败 |
+| 06_render_north_04 | 219项，0失败 |
+| 06_render_north_05 | 207项，0失败 |
+| 06_render_north_06 | 264项，0失败 |
+| 06_render_north_07 | 362项，0失败 |
+| 06_render_north_08 | 261项，0失败 |
+| 06_render_north_09 | 216项，0失败 |
+| 06_render_north_10 | 318项，0失败 |
+| 06_render_north_11 | 254项，0失败 |
+| 06_render_north_12 | 274项，0失败 |
+| 06_render_north_13 | 529项，0失败 |
+| 06_render_north_14 | 584项，0失败 |
+| 06_render_north_15 | 586项，0失败 |
 
-## 实际画面与正式通关视频
+## 实际画面与录像阶段
 
-已实际查看初始与小窗口绿选中，核对6号墙、红 / 绿 / 紫晶位置、单板双门及目标。X11 :97、Mesa llvmpipe、GL Compatibility，原十三关截图保留；真实录制只捕获Godot视口。
+实际查看初始、960×615绿选中及能量恢复压死未选中蓝的侧路画面，角色本色 / 当前描边脚圈、粉 / 蓝紫晶、双板单门、25/47墙与窄通路均核对。X11 :97 / Mesa llvmpipe / GL Compatibility，两窗口1280×820和960×615全部入口与统计适配；旧十四关截图保留。
 
-- [初始](screenshots/level_14_initial.png)
-- [绿选中](screenshots/level_14_selected_green.png)
-- [混合连推](screenshots/level_14_mixed_push.png)
-- [绿占板](screenshots/level_14_hero_plate.png)
-- [红过上门](screenshots/level_14_red_gate.png)
-- [首目标](screenshots/level_14_first_goal.png)
-- [紫晶接替](screenshots/level_14_crystal_plate.png)
-- [绿过下门](screenshots/level_14_green_gate.png)
-- [双英雄胜利](screenshots/level_14_completed.png)
-- [离板双门恢复](screenshots/level_14_released.png)
-- [小窗口红](screenshots/level_14_compact_red.png)
-- [小窗口绿真实鼠标选择](screenshots/level_14_compact_green.png)
+- [初始](screenshots/level_15_initial.png)
+- [绿选中](screenshots/level_15_selected_green.png)
+- [首次英雄交换](screenshots/level_15_first_hero_exchange.png)
+- [粉晶单拉](screenshots/level_15_pink_pull.png)
+- [近水晶优先](screenshots/level_15_nearest_crystal.png)
+- [底部水晶](screenshots/level_15_lower_crystal.png)
+- [双板开放](screenshots/level_15_all_plates.png)
+- [蓝过门](screenshots/level_15_blue_gate.png)
+- [紫晶接替](screenshots/level_15_crystal_handoff.png)
+- [隔门英雄互换](screenshots/level_15_gate_hero_exchange.png)
+- [首目标](screenshots/level_15_first_goal.png)
+- [双英雄胜利](screenshots/level_15_completed.png)
+- [实际侧路死亡](screenshots/level_15_death_inactive_blue.png)
+- [撤销复活](screenshots/level_15_revived_blue.png)
+- [小窗口蓝](screenshots/level_15_compact_blue.png)
+- [小窗口绿](screenshots/level_15_compact_green.png)
 
-实现先提交并推送于 `265d4f898acef1c48d41348835a32fb6af24d662`，核对远端后以Godot Movie Maker实际视口和正常WASD / C按下释放录制。录像后未更改源码、关卡、界面或测试。MP4为639226字节、35秒 / 1050帧，1280×820、30fps、H.264 High、yuv420p、fast-start、无音轨。
-
-35次实际行动、15次免费选择，共50个输入，6推4拉。编码后0 / 106 / 430 / 718 / 772 / 826 / 862 / 898 / 1049帧已实际查看，涵盖正确起点与6号墙、选择保色高亮、混合连推、英雄压板双门开放、上门 / 下门通过、紫晶接替和双目标胜利。十五次C之后的画面另全部查看，操作计数不增加。初始及每次输入后51个采样帧均不同，5fps另采样163个不同画面；初始停留2秒，每输入0.6秒，胜利停留3秒。
-
-十四段视频均通过完整解码、哈希、帧数 / 时长 / 编码 / fast-start和独立合法回放。独立Python按确认JSON逐步重算全部英雄 / 选中 / 水晶身份、混合推动与单拉、压力 / 双门 / 生死、35条实际撤销历史与目标，C单独统计不混入操作。前十三份媒体、回放与条目保留。推送后另核对新视频实际HTTP下载、字节和完整解码。离板截图是合法侧路，未混入正式录像。
-
-临时日志、截图帧、原始AVI和生成缓存不提交。未验证其他平台 / 引擎 / 硬件GPU / 导出程序。屏障恢复遇水晶仍未确认，现有候选动作保护保留；通关路径不使用该边界，不声称整个状态空间穷举。CI按可见远端结果报告。
+实现先提交推送，再实际录制初始至胜利video/chapter_01/level_15.mp4并另提交。此实现提交不声称第十五段已完成。死亡 / 复活图片仅作合法侧路验证，不混入正式通关。临时日志 / 帧 / 原始AVI / 缓存不提交；未验证其他平台、引擎、硬件GPU或导出程序。屏障恢复遇水晶仍是既有未定义边界，保护保留且通关不用该交互，不宣称全状态空间无此边界。CI仅按远端可见证据报告。
