@@ -53,7 +53,9 @@ def check_replay(item, directory):
         living = [True] * len(heroes)
         for cell, active in barriers.items():
             if active:
-                assert cell not in crystals, "Unconfirmed crystal/barrier interaction"
+                if cell in crystals:
+                    assert cell in previous_barriers and not previous_barriers[cell], "Crystal cannot occupy an already-active energy cell"
+                    del crystals[cell]
                 if not previous_barriers.get(cell, False) and cell in heroes:
                     living[heroes.index(cell)] = False
         return pressure, barriers, living

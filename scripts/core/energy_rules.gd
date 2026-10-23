@@ -1,6 +1,8 @@
 class_name EnergyRules
 extends RefCounted
-## Pure post-action settlement. Callers commit only a fully defined result.
+## Pure post-action settlement. Callers atomically commit returned occupancy and life.
+## Monster is a future entity category: semantics only, no monster gameplay here.
+const RESTORATION_EFFECTS := {&"hero": &"killed", &"monster": &"killed", &"crystal": &"destroyed"}
 
 
 static func pressure_matches(cell: Vector2i, sources: Array, hero: Variant, crystals: Dictionary) -> bool:
@@ -12,6 +14,8 @@ static func settle(links: Array[Dictionary], hero: Variant, crystals: Dictionary
 	var pressure: Dictionary = {}
 	var barriers: Dictionary = {}
 	var alive := true
+	var remaining := crystals.duplicate()
+	var destroyed: Dictionary = {}
 	var positions: Array = hero if hero is Array else [hero]
 	var hero_alive: Array[bool] = []
 	for _cell in positions:
@@ -33,10 +37,15 @@ static func settle(links: Array[Dictionary], hero: Variant, crystals: Dictionary
 		if not barriers[cell]:
 			continue
 		if crystals.has(cell):
-			return {"error": "能量屏障恢复格 %s 有水晶：该行为尚未确认，动作未提交。" % str(cell)}
+			# A disappearance->reappearance edge destroys crystals, never a cold
+			# initialization or a barrier that was already active.
+			if not previous_barriers.has(cell) or previous_barriers[cell]:
+				return {"error": "水晶不能位于已激活的能量格 %s。" % str(cell)}
+			destroyed[cell] = remaining[cell]
+			remaining.erase(cell)
 		if not previous_barriers.get(cell, false):
 			for index in positions.size():
 				if positions[index] == cell:
 					hero_alive[index] = false
 					alive = false
-	return {"error": "", "pressure": pressure, "barriers": barriers, "alive": alive, "hero_alive":hero_alive}
+	return {"error": "", "pressure": pressure, "barriers": barriers, "alive": alive, "hero_alive":hero_alive, "crystals":remaining, "destroyed_crystals":destroyed}

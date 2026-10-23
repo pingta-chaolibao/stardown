@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_17",
+  "title": "北部英雄 · 第十七关",
+  "is_temporary": false,
+  "source_note": "依据用户确认的9×5原图编号与二维格图；32号可走，23号雕像与41号花坛不可走。三英雄三目标，无颜色匹配；障碍仍挡通行与视线。能量再现摧毁格内水晶为已确认底层规则。原创2D几何配色，不声称逐像素复刻。",
+  "terrain": [
+    ".........",
+    ".#######.",
+    ".#..#..#.",
+    ".#.....#.",
+    ".#..#..#."
+  ],
+  "heroes": [
+    {
+      "id": "green",
+      "kind": "green",
+      "position": [
+        0,
+        4
+      ]
+    },
+    {
+      "id": "blue",
+      "kind": "blue",
+      "position": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "red",
+      "kind": "red",
+      "position": [
+        8,
+        4
+      ]
+    }
+  ],
+  "active_hero": "blue",
+  "crates": [
+    [
+      0,
+      0
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      6,
+      4
+    ]
+  ],
+  "crystal_colors": [
+    "blue",
+    "purple",
+    "purple_pink",
+    "purple"
+  ],
+  "targets": [],
+  "exits": [
+    [
+      3,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "exit_color": "green",
+  "objective": "all_heroes_on_exits",
+  "energy_links": [
+    {
+      "id": "yellow_all",
+      "plates": [
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "activation": "all",
+      "barriers": [
+        [
+          0,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "pressure_sources": [
+        "hero",
+        "crystal"
+      ]
+    }
+  ]
+}

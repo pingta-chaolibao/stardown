@@ -1,0 +1,13 @@
+{
+  "level_id": "north_hero_17",
+  "path": "URRRRDLULLRULDCUCUUUDDCUDCCUUURRRRRRRLCCUUUCLLLLLLDCCLLLLLLLCDDCUDCRRRCUUURRRCLUL",
+  "moves": 66,
+  "directions": 66,
+  "input_events": 81,
+  "selection_events": 15,
+  "pushes": 2,
+  "pulls": 11,
+  "swaps": 3,
+  "destroyed_crystals": 3,
+  "note": "构造后逐对象身份独立验证的合法路线，不宣称最优或穷举。UDLR为实际行动，C只免费选择、不进撤销。两次能量再现共摧毁外围三枚水晶，三英雄分占不同目标；地图与障碍视线不变。"
+}

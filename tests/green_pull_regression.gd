@@ -10,7 +10,7 @@ var failures := 0
 
 func _init() -> void:
 	var cases := [_test_single_and_line, _test_blocked_destinations, _test_sideways,
-		_test_role_isolation, _test_pressure_handoff, _test_pull_death, _test_undefined_crystal_edge, _test_random_undo]
+		_test_role_isolation, _test_pressure_handoff, _test_pull_death, _test_crystal_destruction_edge, _test_random_undo]
 	for test: Callable in cases:
 		var before := failures
 		test.call()
@@ -103,12 +103,13 @@ func _test_pull_death() -> void:
 	_check(game.undo() and game.alive and game.snapshot() == before and game.pulls == 0, "one undo restores life, pressure, crystal and pull counter")
 
 
-func _test_undefined_crystal_edge() -> void:
+func _test_crystal_destruction_edge() -> void:
 	var data := _mechanism_data()
 	data["energy_links"][0]["barriers"] = [[2, 1]]
 	var game := _game(data)
 	var before := game.snapshot()
-	_check(game.try_move(Vector2i.RIGHT) == &"rule_unresolved" and game.snapshot() == before and game.history_size() == 0, "unconfirmed barrier restoration on pulled crystal is diagnosed without inventing a result")
+	_check(game.try_move(Vector2i.RIGHT) == &"pulled" and game.crates().is_empty() and game.history_size() == 1 and game.pulls == 1, "pulled crystal on reappearing energy is destroyed in the same action")
+	_check(game.undo() and game.snapshot() == before, "undo restores pulled destroyed crystal, hero and pressure")
 
 
 func _test_random_undo() -> void:

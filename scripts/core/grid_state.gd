@@ -50,7 +50,7 @@ func load_level(definition: Level) -> bool:
 		return false
 	level = definition
 	active_hero_index = definition.initial_active_hero
-	_initial_state = {"player": definition.start, "crates": initial_crystals,
+	_initial_state = {"player": definition.start, "crates": settled["crystals"],
 		"moves": 0, "pushes": 0, "pulls": 0, "swaps": 0, "alive": true,
 		"pressure": settled["pressure"], "barriers": settled["barriers"]}
 	if positions.size() > 1:
@@ -170,7 +170,7 @@ func _commit(positions: Array[Vector2i], candidate: Dictionary, pushed: int, pul
 	# Validate the entire candidate, then record and commit all objects once.
 	_history.append(snapshot())
 	_hero_positions = positions
-	_crates = candidate
+	_crates = settled["crystals"]
 	moves += 1
 	pushes += pushed
 	pulls += pulled

@@ -15,7 +15,7 @@ func _init() -> void:
 func _run() -> void:
 	var cases: Array[Callable] = [_test_hero_pressure_and_sight, _test_crystal_pressure,
 		_test_source_predicate, _test_atomic_handoff, _test_blocked_push,
-		_test_death_and_atomic_undo, _test_unknown_crystal_reactivation,
+		_test_death_and_atomic_undo, _test_crystal_reactivation_destruction,
 		_test_global_links, _test_data_validation]
 	for test in cases:
 		var previous := failures
@@ -120,7 +120,7 @@ func _test_death_and_atomic_undo() -> void:
 	_check(game.try_move(Vector2i.RIGHT) == &"died", "repeated action has deterministic death")
 
 
-func _test_unknown_crystal_reactivation() -> void:
+func _test_crystal_reactivation_destruction() -> void:
 	var data := _data()
 	data["player"] = [1, 1]
 	data["crates"] = [[2, 1]]
@@ -129,10 +129,10 @@ func _test_unknown_crystal_reactivation() -> void:
 	game.try_move(Vector2i.RIGHT)
 	var before := game.snapshot()
 	var depth := game.history_size()
-	_check(game.try_move(Vector2i.UP) == &"rule_unresolved", "unconfirmed restoration on crystal is explicitly reported")
-	_check(not game.last_mechanism_error.is_empty() and game.snapshot() == before and game.history_size() == depth, "undefined consequence commits no partial occupancy or pressure")
-	_check(game.crate_id(Vector2i(3, 1)) == 0, "unconfirmed rule never destroys crystal")
-	_check(game.undo() and game.alive, "last valid step remains undoable")
+	_check(game.try_move(Vector2i.UP) == &"moved", "leaving plate restores energy and destroys crystal on that cell")
+	_check(game.last_mechanism_error.is_empty() and game.crates().is_empty() and game.moves == before["moves"] + 1 and game.history_size() == depth + 1, "crystal destruction commits with movement and pressure as one action")
+	_check(game.undo() and game.snapshot() == before and game.crate_id(Vector2i(3,1)) == 0, "one undo restores destroyed crystal identity and open energy")
+	_check(game.undo() and game.alive, "preceding push remains independently undoable")
 
 
 func _test_global_links() -> void:

@@ -9,7 +9,7 @@ var failures := 0
 
 func _init() -> void:
 	var cases := [_test_partition_invariance, _test_cross_group_handoff, _test_cross_group_release_death,
-		_test_global_block_before_pull, _test_undefined_crystal_restoration, _test_no_mechanisms]
+		_test_global_block_before_pull, _test_crystal_destruction, _test_no_mechanisms]
 	for test: Callable in cases:
 		var before := failures
 		test.call()
@@ -79,15 +79,15 @@ func _test_global_block_before_pull() -> void:
 	_check(game.try_move(Vector2i.RIGHT) == &"energy_blocked" and game.snapshot() == before and game.history_size() == 0, "a barrier stays blocked until b is occupied; rear crystal is not pulled")
 
 
-func _test_undefined_crystal_restoration() -> void:
+func _test_crystal_destruction() -> void:
 	var data := _data()
 	data["player"] = [2, 1]
 	data["crates"] = [[1, 1], [5, 1]]
 	data["energy_links"] = [_link("a", [[1, 1]], [[6, 0]]), _link("b", [[5, 1]], [[2, 1]])]
 	var game := _game(data)
 	var before := game.snapshot()
-	_check(game.try_move(Vector2i.RIGHT) == &"rule_unresolved" and game.snapshot() == before and game.history_size() == 0, "undefined global restoration onto crystal commits no partial action")
-	_check(not game.last_mechanism_error.is_empty() and game.alive and game.crate_id(Vector2i(1, 1)) == 0, "no destruction or invented crystal restoration rule")
+	_check(game.try_move(Vector2i.RIGHT) == &"pulled" and game.history_size() == 1 and game.crate_id(Vector2i(2,1)) == -1 and game.crates().size() == 1, "global restoration destroys pulled crystal and commits entire action")
+	_check(game.last_mechanism_error.is_empty() and game.alive and game.undo() and game.snapshot() == before, "undo restores crystal, both pressure groups and all barriers")
 
 
 func _test_no_mechanisms() -> void:

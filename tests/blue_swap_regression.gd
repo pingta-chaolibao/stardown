@@ -8,7 +8,7 @@ var checks:=0
 var failures:=0
 
 func _init() -> void:
-	var cases:=[_test_four_directions,_test_plain_walk,_test_blockers_and_open_gate,_test_target_classes,_test_death_and_undo,_test_undefined_restoration,_test_victory_and_roles,_test_direction_input]
+	var cases:=[_test_four_directions,_test_plain_walk,_test_blockers_and_open_gate,_test_target_classes,_test_death_and_undo,_test_crystal_destruction,_test_victory_and_roles,_test_direction_input]
 	for test: Callable in cases:
 		var before:=failures
 		test.call()
@@ -93,14 +93,14 @@ func _test_death_and_undo() -> void:
 	_check(game.try_move(Vector2i.LEFT)==&"dead" and not game.restart() and not game.load_level(Level.from_dictionary(_data())) and game.snapshot()==dead,"dead blue can neither walk, swap, restart nor switch")
 	_check(game.undo() and game.alive and game.snapshot()==initial and game.swaps==0,"one undo revives and restores identity, pressure, every barrier and counter")
 
-func _test_undefined_restoration() -> void:
+func _test_crystal_destruction() -> void:
 	var data:=_data()
 	data["crates"]=[[3,1]]
 	data["energy_links"]=[_link("a",[3,1],[[1,1]],["crystal"])]
 	var game:=_game(data)
 	var before:=game.snapshot()
-	_check(game.try_move(Vector2i.RIGHT)==&"rule_unresolved" and game.snapshot()==before and game.history_size()==0 and game.swaps==0,"unconfirmed crystal restoration commits no part of an exchange")
-	_check(not game.last_mechanism_error.is_empty(),"undefined case retains explicit diagnostic, not an invented rule")
+	_check(game.try_move(Vector2i.RIGHT)==&"swapped" and game.crates().is_empty() and game.history_size()==1 and game.swaps==1 and game.player==Vector2i(3,1),"exchange destroys crystal at restored energy in the same action")
+	_check(game.last_mechanism_error.is_empty() and game.undo() and game.snapshot()==before,"one undo restores exchange, crystal identity and configured pressure")
 
 func _test_victory_and_roles() -> void:
 	var data:=_data()

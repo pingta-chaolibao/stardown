@@ -24,8 +24,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number<1 or level_number>16 or report_path.is_empty():
-		_fail("Pass --level=1 through 16 and an absolute --report path.")
+	if level_number<1 or level_number>17 or report_path.is_empty():
+		_fail("Pass --level=1 through 17 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -87,6 +87,9 @@ func _run() -> void:
 	var final := _state()
 	if not final["completed"] or final["moves"] != solution["moves"] or final["pushes"] != solution["pushes"] or final["pulls"] != solution.get("pulls", 0) or final["swaps"]!=solution.get("swaps",0) or selection_events!=solution.get("selection_events",0) or solution["path"].length()!=solution.get("input_events",solution["moves"]):
 		_fail("Playback did not finish at the expected victory state.")
+		return
+	if solution.has("destroyed_crystals") and game.model.crates().size()!=game.model.level.initial_crates.size()-int(solution["destroyed_crystals"]):
+		_fail("Final surviving crystal count does not match confirmed destruction route.")
 		return
 	await _frames(VICTORY_FRAMES)
 	var report := {"input_events":solution["path"].length(),"direction_actions":actual_actions,"selection_events":selection_events,"chapter": 1, "level": level_number,

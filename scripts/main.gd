@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -43,7 +43,7 @@ func _ready() -> void:
 		return
 	current_level_index = LEVEL_PATHS.find(level_path)
 	_build_ui()
-	_refresh("C 切换英雄，两名英雄分占不同终点。" if model.hero_count()>1 else "按方向：有可见目标就交换，否则走一格。" if model.active_kind()=="blue" else "%s水晶腾出道路，再走到%s。" % ["拉动" if model.active_kind() == "green" else "推动", _goal_name()])
+	_refresh("C 切换英雄，%s名英雄分占不同终点。" % ("三" if model.hero_count()==3 else "两") if model.hero_count()>1 else "按方向：有可见目标就交换，否则走一格。" if model.active_kind()=="blue" else "%s水晶腾出道路，再走到%s。" % ["拉动" if model.active_kind() == "green" else "推动", _goal_name()])
 
 
 func select_level(index: int) -> bool:
@@ -59,7 +59,7 @@ func select_level(index: int) -> bool:
 	level_path = LEVEL_PATHS[index]
 	key_steps.clear()
 	_rebuild_ui()
-	_refresh("C 切换英雄，两名英雄分占不同终点。" if model.hero_count()>1 else "已进入%s，走到%s即可完成。" % [model.level.title, _goal_name()])
+	_refresh("C 切换英雄，%s名英雄分占不同终点。" % ("三" if model.hero_count()==3 else "两") if model.hero_count()>1 else "已进入%s，走到%s即可完成。" % [model.level.title, _goal_name()])
 	return true
 
 
@@ -115,6 +115,7 @@ func apply_command(command: Dictionary) -> void:
 	if model.level == null:
 		return
 	var before_selection:=model.active_hero_index
+	var before_crystals:=model.crates().size()
 	board.blocked = false
 	match command.get("action"):
 		&"move":
@@ -165,6 +166,8 @@ func apply_command(command: Dictionary) -> void:
 			else:
 				_refresh("英雄已死亡，仅可撤销恢复。", Board.CORAL)
 
+	if model.alive and model.crates().size()<before_crystals:
+		_refresh("能量再现，摧毁%d枚水晶；可撤销整步恢复。" % (before_crystals-model.crates().size()),GOLD)
 	if before_selection!=model.active_hero_index:
 		var message:=status_label.text
 		_rebuild_ui()
@@ -210,7 +213,7 @@ func _refresh(message: String, color: Color = MINT) -> void:
 		status_label.text = "英雄已死亡。\n只能撤销到屏障恢复前的状态复活。"
 		status_label.add_theme_color_override("font_color", Board.CORAL)
 	elif model.is_complete():
-		status_label.text = "双英雄已抵达终点！\n可撤销最后一步，或重新开始。" if model.hero_count()>1 else "已抵达终点！\n可撤销最后一步，或重新开始。"
+		status_label.text = ("三英雄已抵达终点！\n可撤销最后一步，或重新开始。" if model.hero_count()==3 else "双英雄已抵达终点！\n可撤销最后一步，或重新开始。") if model.hero_count()>1 else "已抵达终点！\n可撤销最后一步，或重新开始。"
 		if model.level.is_temporary:
 			status_label.text = "临时目标已达成！\n这是测试布局。"
 		status_label.add_theme_color_override("font_color", _goal_color())
@@ -250,14 +253,15 @@ func _build_header(parent: VBoxContainer) -> void:
 	titles.add_child(_label("STARDOWN  /  NORTHERN REALM",12,MINT))
 	titles.add_child(_label("沉星之序",34,TEXT))
 	_spacer(row)
-	# Two compact rows retain readable titles as chapter one grows to16 levels.
+	# Two compact rows retain readable titles as chapter one grows beyond16 levels.
 	var navigation:=_vbox(2)
 	navigation.size_flags_vertical=Control.SIZE_SHRINK_CENTER
 	row.add_child(navigation)
-	for start in range(0,LEVEL_PATHS.size(),8):
+	var per_row:=9 if LEVEL_PATHS.size()>16 else 8
+	for start in range(0,LEVEL_PATHS.size(),per_row):
 		var line:=_hbox(4)
 		navigation.add_child(line)
-		for index in range(start,mini(start+8,LEVEL_PATHS.size())):
+		for index in range(start,mini(start+per_row,LEVEL_PATHS.size())):
 			var button:=_button(LEVEL_TITLES[index],"Level%02d" % (index+1))
 			button.disabled=index==current_level_index
 			button.custom_minimum_size=Vector2(68,34)
@@ -320,10 +324,10 @@ func _build_board(parent: HBoxContainer) -> void:
 
 
 func _build_sidebar(parent: HBoxContainer) -> void:
-	var sidebar := _vbox(12 if not model.level.energy_links.is_empty() else 16)
+	var sidebar := _vbox(8 if model.hero_count()>2 else (12 if not model.level.energy_links.is_empty() else 16))
 	sidebar.custom_minimum_size.x = 300
 	parent.add_child(sidebar)
-	var intro := _vbox(6)
+	var intro := _vbox(4 if model.hero_count()>2 else 6)
 	sidebar.add_child(intro)
 	intro.add_child(_label("北部英雄  /  %s" % LEVEL_TITLES[maxi(0, current_level_index)], 12, MINT))
 	var multi:=model.hero_count()>1
@@ -331,7 +335,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	var blue_party:=multi and _has_hero_kind("blue")
 	var green := model.active_kind() == "green"
 	var blue:=model.active_kind()=="blue"
-	intro.add_child(_label("双英雄协作" if multi else ("交换之英雄" if blue else ("拉之英雄" if green else "推之英雄")), 30, TEXT))
+	intro.add_child(_label(("三英雄协作" if model.hero_count()==3 else "双英雄协作") if multi else ("交换之英雄" if blue else ("拉之英雄" if green else "推之英雄")), 30, TEXT))
 	var selected_label:=_label(("当前操作：%s色英雄" % {"red":"红","green":"绿","blue":"蓝"}[model.active_kind()]) if multi else ("蓝色小人 · 能走路，不能推拉" if blue else ("绿色小人 · 只能拉，不能推" if green else "红色小人 · 只能推，不能拉")), 16, Board.HERO_BLUE if blue else (Board.HERO_GREEN if green else Board.CORAL))
 	selected_label.name="SelectedHero"
 	intro.add_child(selected_label)
@@ -348,13 +352,15 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 		instructions.text="红人：混合整列推。C 切换不计步。\n绿人：背离相邻水晶，只自动拉一枚。" if green_party else "蓝人：方向首个可见对象交换，否则走。\n红人：混合整列推。C 切换，不计步。"
 		if blue_party and green_party:
 			instructions.text="蓝人：首个可见目标交换，否则走一步。\n绿人：背离相邻晶单拉；C 切换不计步。"
+		if _has_hero_kind("red") and blue_party and green_party:
+			instructions.text="红：混合整列推；绿：自动单晶拉。\n蓝：方向首目标交换，否则走一步。\nC 免费选择，撤销保留当前选择。"
 	intro.add_child(instructions)
 	if not model.level.energy_links.is_empty():
-		var rules := "英雄或水晶压住%s时，能量块消失。\n压力解除后恢复，格内英雄会死亡。" % _plate_name()
+		var rules := "英雄或水晶压住%s时，能量块消失。\n再现：格内英雄死亡、水晶摧毁。" % _plate_name()
 		if model.level.energy_links[0]["plates"].size() > 1:
 			var count: int = model.level.energy_links[0]["plates"].size()
-			var number: String = {3:"三",9:"九"}.get(count,str(count))
-			rules = "%s块%s同时受压才开门。\n压力解除后恢复，格内英雄会死亡。" % [number,_plate_name()]
+			var number: String = {2:"两",3:"三",9:"九"}.get(count,str(count))
+			rules = "%s块%s同时受压才开门。\n再现：格内英雄死亡、水晶摧毁。" % [number,_plate_name()]
 		intro.add_child(_label(rules, 13, _mechanism_tint()))
 	var stats := _hbox(6 if multi else 12)
 	sidebar.add_child(stats)
@@ -379,7 +385,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	goal.add_child(_label("◇  通关目标" if not model.level.is_temporary else "◇  临时目标", 14, _goal_color()))
 	var objective_text := "走到%s" % _goal_name() if model.level.objective == "player_on_exit" else "将水晶推至测试落点"
 	if multi:
-		objective_text="两名英雄分占不同终点"
+		objective_text="三名英雄分占不同终点" if model.hero_count()==3 else "两名英雄分占不同终点"
 	if model.level.objective == "none":
 		objective_text = "自由验证移动与推动"
 	var objective_label := _label(objective_text, 18, TEXT)
