@@ -461,6 +461,76 @@
       "replay_report": "level_10_replay.json",
       "level_file": "levels/north_10.json",
       "solution_file": "levels/solutions/north_10.json"
+    },
+    {
+      "file": "video/chapter_01/level_11.mp4",
+      "level": 11,
+      "bytes": 212875,
+      "sha256": "9d8b5386963d86794927e0021f811be14fe213deaa2e1d910025a7643e706544",
+      "distinct_sampled_frames": 68,
+      "sampled_action_states": 20,
+      "distinct_action_state_frames": 20,
+      "full_decode_passed": true,
+      "game_implementation_commit": "9d32847f26c4f3801b8467c364d8fbcfce8915db",
+      "hero_kind": "blue",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 492,
+      "duration_seconds": 16.4,
+      "mp4_fast_start": true,
+      "moves": 19,
+      "walks": 14,
+      "pushes": 0,
+      "pulls": 0,
+      "swaps": 5,
+      "counts_are_operations": true,
+      "action_notation": "UDLR direction inputs; first visible target swaps automatically, otherwise walk one cell",
+      "modifier_keys_used": [],
+      "initial_player": [
+        5,
+        0
+      ],
+      "victory_player": [
+        9,
+        1
+      ],
+      "legal_input_trace_verified": true,
+      "initial_and_final_frames_reviewed": true,
+      "five_exchange_results_reviewed": true,
+      "nine_plate_setup_reviewed": true,
+      "green_mechanism_and_void_reviewed": true,
+      "orange_handoff_reviewed": true,
+      "color_matching_rule": false,
+      "swap_action_numbers": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "all_pressed_action": 11,
+      "hero_aligned_action": 15,
+      "orange_exchange_action": 16,
+      "victory_action": 19,
+      "reviewed_encoded_frames": [
+        0,
+        250,
+        268,
+        286,
+        304,
+        322,
+        340,
+        491
+      ],
+      "replay_report": "level_11_replay.json",
+      "level_file": "levels/north_11.json",
+      "solution_file": "levels/solutions/north_11.json"
     }
   ],
   "game_implementation_commits": {
@@ -473,6 +543,7 @@
     "level_07": "1612e5d5c321e4d61015c485cb425366443ad241",
     "level_08": "5c4e25bc6cd1324a75cc04ca625fec04d8668e41",
     "level_09": "1cd028588159c8410176ead9d8e1d793e919bc35",
-    "level_10": "af2c3cd20a1f478f114d05e1e3e90d231aca67a5"
+    "level_10": "af2c3cd20a1f478f114d05e1e3e90d231aca67a5",
+    "level_11": "9d32847f26c4f3801b8467c364d8fbcfce8915db"
   }
 }
