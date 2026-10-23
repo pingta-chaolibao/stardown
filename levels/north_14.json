@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_14",
+  "title": "北部英雄 · 第十四关",
+  "is_temporary": false,
+  "source_note": "依据用户确认的10×7原图编号和二维坐标；用户最新更正6号(5,0)不可走。红绿双英雄，C只切换选择、不计步、不写撤销。原创2D几何图形，不声称逐像素复刻。",
+  "terrain": [
+    "...###...#",
+    ".....###.#",
+    "####.#....",
+    "####....#.",
+    "...#.#....",
+    ".....###.#",
+    "...###...#"
+  ],
+  "heroes": [
+    {"id":"red", "kind":"red", "position":[1,1]},
+    {"id":"green", "kind":"green", "position":[1,5]}
+  ],
+  "active_hero": "red",
+  "crates": [[3,1]],
+  "crystal_colors": ["purple"],
+  "targets": [],
+  "exits": [[6,0],[6,6]],
+  "exit_color": "green",
+  "objective": "all_heroes_on_exits",
+  "energy_links": [
+    {"id":"yellow_01", "plate":[9,3], "barriers":[[8,1],[8,5]], "pressure_sources":["hero","crystal"]}
+  ]
+}

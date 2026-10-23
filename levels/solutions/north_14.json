@@ -1,0 +1,12 @@
+{
+  "level_id": "north_hero_14",
+  "path": "RRCRRRUUUDCRCRCDCRCDRCUCRDRCRCUCRCUCDCRUULLCDLDDLL",
+  "moves": 35,
+  "directions": 35,
+  "input_events": 50,
+  "selection_events": 15,
+  "pushes": 6,
+  "pulls": 4,
+  "swaps": 0,
+  "note": "UDLR为实际方向行动，C仅切换选择，不计步、不进撤销。独立世界占用搜索在首次胜利停止，再按英雄/水晶身份回放，不宣称穷举或最优。6号(5,0)保持墙。"
+}

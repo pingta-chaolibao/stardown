@@ -68,3 +68,10 @@ The independently revalidated route has 24 counted direction actions, 3 uncounte
 ## User correction: switching is not an action
 
 The user's latest instruction is “切换不算操作不用撤销”. C and the screen switch button change only active selection, with no move count, gameplay switch statistic or undo snapshot. Undo skips intervening selection changes and restores the most recent actual movement/push/swap while retaining current selection. With no history, switching then undo leaves the selection unchanged. Repeat/echo guards and any-hero death lock still apply. Keep actual actions and control selection events separate in solutions, recorder evidence and independent replay: level13 has moves=24, input_events=27, selection_events=3. Re-record its formal video after the fix implementation commit; preserve the old recording in Git history, not as evidence for the corrected behavior. No new map, rule or ZIP work.
+
+
+## Confirmed fourteenth map
+
+Level 14 is the user-confirmed 10x7 red/green map in north_14.json. Latest correction wins: marker6=(5,0) is wall, not floor; keep 8/9/29/50 floor and 64–66 walls. Red=(1,1),green=(1,5),one purple crystal=(3,1),exits=(6,0)/(6,6),yellow plate=(9,3),two barriers=(8,1)/(8,5). Initially select red. Use the same red mixed-line pushing, green automatic nearest-single crystal pulling (never hero pulling), free C selection and undo retaining current choice, both-hero goals and global pressure/death rules. No new mechanism or hero.
+
+Independent search stops at its first victory: 35 actual direction actions,15 uncounted selection events,6 pushes,4 pulls. Red and green both cross their respective open energy cells; green hands pressure to the purple crystal with an automatic single pull. Do not claim shortest/exhaustive. Keep prior 13 maps/solutions/videos/replays byte-identical from 8b00eb9b54574300968c7fa7af5bd493d880dafa. Implementation commit first, then actual video/chapter_01/level_14.mp4 and separate video commit. No ZIP.

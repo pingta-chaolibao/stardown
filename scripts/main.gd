@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -69,6 +69,12 @@ func _rebuild_ui() -> void:
 		remove_child(ui_root)
 		ui_root.queue_free()
 	_build_ui()
+
+
+func _has_hero_kind(kind: String) -> bool:
+	for hero in model.level.hero_definitions:
+		if hero["kind"]==kind:return true
+	return false
 
 
 func _goal_name() -> String:
@@ -180,7 +186,7 @@ func _refresh(message: String, color: Color = MINT) -> void:
 	else:
 		progress_label.text = "未设置胜利判定"
 	for link in model.level.energy_links:
-		if link["plates"].size() > 1:
+		if link["plates"].size() > 1 or model.hero_count()>1:
 			var count := model.pressure_progress(link["id"])
 			var objective_progress:=progress_label.text if model.hero_count()>1 else ("已抵达终点" if model.is_complete() else "玩家到终点完成")
 			progress_label.text = "%s · %s %d / %d" % [objective_progress, _plate_name(), count.x, count.y]
@@ -231,7 +237,7 @@ func _build_ui() -> void:
 
 
 func _build_header(parent: VBoxContainer) -> void:
-	var row := _hbox(4 if LEVEL_PATHS.size()>12 else (6 if LEVEL_PATHS.size() > 11 else 10))
+	var row := _hbox(2 if LEVEL_PATHS.size()>13 else (4 if LEVEL_PATHS.size()>12 else (6 if LEVEL_PATHS.size() > 11 else 10)))
 	row.custom_minimum_size.y = 76
 	parent.add_child(row)
 	var emblem := _label("✦", 52, GOLD)
@@ -245,8 +251,8 @@ func _build_header(parent: VBoxContainer) -> void:
 	for index in LEVEL_PATHS.size():
 		var button := _button(LEVEL_TITLES[index], "Level%02d" % (index + 1))
 		button.disabled = index == current_level_index
-		button.custom_minimum_size.x = 56 if LEVEL_PATHS.size()>12 else (60 if LEVEL_PATHS.size() > 11 else (68 if LEVEL_PATHS.size() > 10 else 76))
-		if LEVEL_PATHS.size()>12:button.add_theme_font_size_override("font_size",14)
+		button.custom_minimum_size.x = 50 if LEVEL_PATHS.size()>13 else (56 if LEVEL_PATHS.size()>12 else (60 if LEVEL_PATHS.size() > 11 else (68 if LEVEL_PATHS.size() > 10 else 76)))
+		if LEVEL_PATHS.size()>12:button.add_theme_font_size_override("font_size",13 if LEVEL_PATHS.size()>13 else 14)
 		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		button.tooltip_text = "切换关卡并从初始状态开始"
 		button.pressed.connect(select_level.bind(index))
@@ -287,7 +293,8 @@ func _build_board(parent: HBoxContainer) -> void:
 	content.add_child(board)
 	var legend := _hbox(8 if model.hero_count()>1 else 12)
 	content.add_child(legend)
-	legend.add_child(_label("● 当前蓝人" if model.hero_count()>1 and model.active_kind()=="blue" else ("● 当前红人" if model.hero_count()>1 else "● 英雄"), 13, Board.HERO_BLUE if model.active_kind()=="blue" else (Board.HERO_GREEN if model.active_kind() == "green" else Board.CORAL)))
+	var active_name: String={"red":"红","green":"绿","blue":"蓝"}[model.active_kind()]
+	legend.add_child(_label("● 当前%s人" % active_name if model.hero_count()>1 else "● 英雄", 13, Board.HERO_BLUE if model.active_kind()=="blue" else (Board.HERO_GREEN if model.active_kind() == "green" else Board.CORAL)))
 	legend.add_child(_label("◆ 水晶", 13, Color("9cc5f5")))
 	legend.add_child(_label("◇ 终点", 13, _goal_color()))
 	if not model.level.energy_links.is_empty():
@@ -318,10 +325,11 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	sidebar.add_child(intro)
 	intro.add_child(_label("北部英雄  /  %s" % LEVEL_TITLES[maxi(0, current_level_index)], 12, MINT))
 	var multi:=model.hero_count()>1
+	var green_party:=multi and _has_hero_kind("green")
 	var green := model.active_kind() == "green"
 	var blue:=model.active_kind()=="blue"
 	intro.add_child(_label("双英雄协作" if multi else ("交换之英雄" if blue else ("拉之英雄" if green else "推之英雄")), 30, TEXT))
-	var selected_label:=_label(("当前操作：蓝色英雄" if blue else "当前操作：红色英雄") if multi else ("蓝色小人 · 能走路，不能推拉" if blue else ("绿色小人 · 只能拉，不能推" if green else "红色小人 · 只能推，不能拉")), 16, Board.HERO_BLUE if blue else (Board.HERO_GREEN if green else Board.CORAL))
+	var selected_label:=_label(("当前操作：%s色英雄" % {"red":"红","green":"绿","blue":"蓝"}[model.active_kind()]) if multi else ("蓝色小人 · 能走路，不能推拉" if blue else ("绿色小人 · 只能拉，不能推" if green else "红色小人 · 只能推，不能拉")), 16, Board.HERO_BLUE if blue else (Board.HERO_GREEN if green else Board.CORAL))
 	selected_label.name="SelectedHero"
 	intro.add_child(selected_label)
 	var instructions := _label("可推动紧密排成直线的整列水晶。\n每次前进一格，列末受阻则整列不动。", 14, MUTED)
@@ -334,7 +342,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	elif not model.level.bushes.is_empty():
 		instructions.text = "整列水晶每次推一格，末端受阻则不动。\n草丛挡通行与视线，不能推动或交换。"
 	if multi:
-		instructions.text="蓝人：方向首个可见对象交换，否则走。\n红人：混合整列推。C 切换，不计步。"
+		instructions.text="红人：混合整列推。C 切换不计步。\n绿人：背离相邻水晶，只自动拉一枚。" if green_party else "蓝人：方向首个可见对象交换，否则走。\n红人：混合整列推。C 切换，不计步。"
 	intro.add_child(instructions)
 	if not model.level.energy_links.is_empty():
 		var rules := "英雄或水晶压住%s时，能量块消失。\n压力解除后恢复，格内英雄会死亡。" % _plate_name()
@@ -351,7 +359,8 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	swaps_label=null
 	if multi:
 		pushes_label=_stat(stats,"推动","Pushes")
-		swaps_label=_stat(stats,"交换","Swaps")
+		if green_party:pulls_label=_stat(stats,"拉动","Pulls")
+		else:swaps_label=_stat(stats,"交换","Swaps")
 	elif blue:
 		swaps_label=_stat(stats,"交换","Swaps")
 	elif green:
