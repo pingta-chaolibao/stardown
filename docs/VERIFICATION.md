@@ -67,3 +67,5 @@ Xvfb `:97`、Godot GL Compatibility、OpenGL 4.5 / Mesa / llvmpipe 实际渲染�
 按用户约定先提交实现，再制作 `video/chapter_01/level_06.mp4`，最后单独提交视频及证据。只录实际 Godot 视口，由普通按键事件从初始到明确胜利，不编辑位置或机关。最终媒体见 [video/README.md](../video/README.md) 与 [章节验证清单](../video/chapter_01/verification.json)。
 
 未测试其他 Godot 版本、操作系统、硬件 GPU 或长时性能，未导出独立程序。CI 只按远端可见记录报告；云端通过不等于 CI 通过。不强推、不创建 PR、不发布游戏。
+
+第六关实现提交 `6f2061e7e9f3fea5ea5117d981f7798266d9df78` 推送后才录制通关。MP4 为 44 秒 / 1,320 帧 / 637,871 字节，H.264 High、yuv420p、1280 × 820、30 fps、fast-start；首尾、英雄踩板、紫晶接替和过门编码画面均已实际查看。`python3 tools/check_walkthroughs.py` 对六份视频完整解码、哈希、元数据、MP4 结构及独立合法输入回放全部通过。录制后未修改游戏规则、地图或界面。

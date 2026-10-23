@@ -41,6 +41,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第三关 | [观看 / 下载 MP4](video/chapter_01/level_03.mp4) | 17.6 秒 |
 | 第四关 | [观看 / 下载 MP4](video/chapter_01/level_04.mp4) | 25.4 秒 |
 | 第五关 | [观看 / 下载 MP4](video/chapter_01/level_05.mp4) | 19.4 秒 |
+| 第六关 | [观看 / 下载 MP4](video/chapter_01/level_06.mp4) | 44.0 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
