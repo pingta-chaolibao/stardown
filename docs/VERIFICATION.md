@@ -71,4 +71,8 @@ Xvfb `:97`、Godot GL Compatibility、OpenGL 4.5 / Mesa 25.0.7-2+deb13u1 / llvmp
 
 按约定先提交实现，再制作 `video/chapter_01/level_05.mp4`。仅录真实 Godot 视口，由普通键盘按下 / 释放事件从初始完整走到胜利，不直接修改坐标、机关或胜利状态。前四份媒体保留原字节；最终媒体和逐步证据见 [video/README.md](../video/README.md) 与 [章节验证清单](../video/chapter_01/verification.json)。
 
+第五关实现提交 `878fbb16d02f2acd02b873b118efdd7daec3fcbc` 推送完成后录制。成片 19.4 秒、582 帧、253,447 字节，H.264 High / yuv420p / 1280 × 820 / 30 fps / MP4 fast-start。已完整解码并实际查看初始、蓝晶拉动、紫晶拉动和最后胜利画面；全程绿色英雄，24 步 / 8 拉 / 0 推。
+
+`python3 tools/check_walkthroughs.py` 对五份媒体的哈希、元数据、MP4 结构、完整解码和独立合法输入回放全部通过。第五关逐步核对角色、只拉相邻最近一枚、后续水晶不动、身份和拉动计数。录制后没有改动游戏逻辑、地图或界面。
+
 未测试其他 Godot 版本、操作系统、硬件 GPU 或长时间性能，未导出独立程序。CI 仅按可见远端证据报告；云端通过不等于 CI 通过。不强推、不创建 PR、不发布游戏。

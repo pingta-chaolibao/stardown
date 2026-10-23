@@ -145,12 +145,51 @@
       "replay_report": "level_04_replay.json",
       "level_file": "levels/north_04.json",
       "solution_file": "levels/solutions/north_04.json"
+    },
+    {
+      "file": "video/chapter_01/level_05.mp4",
+      "level": 5,
+      "bytes": 253447,
+      "sha256": "94d1a1cd7ea048a7e0546b1225631d07537e1f407a63671790b3d7b1fd598d6b",
+      "distinct_sampled_frames": 90,
+      "full_decode_passed": true,
+      "game_implementation_commit": "878fbb16d02f2acd02b873b118efdd7daec3fcbc",
+      "hero_kind": "green",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 582,
+      "duration_seconds": 19.4,
+      "mp4_fast_start": true,
+      "moves": 24,
+      "pushes": 0,
+      "pulls": 8,
+      "initial_player": [
+        1,
+        1
+      ],
+      "victory_player": [
+        9,
+        1
+      ],
+      "legal_input_trace_verified": true,
+      "initial_and_final_frames_reviewed": true,
+      "blue_and_purple_pulls_reviewed": true,
+      "replay_report": "level_05_replay.json",
+      "level_file": "levels/north_05.json",
+      "solution_file": "levels/solutions/north_05.json"
     }
   ],
   "game_implementation_commits": {
     "level_01": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9",
     "level_02": "e8b88cc2d4e2e6fd32a1a8712af2bd61654237e9",
     "level_03": "77b208c53142e3b310f4ed2093bc23afb5e7367b",
-    "level_04": "50ef07db450b134169c9f60d1cab5d5218960789"
+    "level_04": "50ef07db450b134169c9f60d1cab5d5218960789",
+    "level_05": "878fbb16d02f2acd02b873b118efdd7daec3fcbc"
   }
 }
