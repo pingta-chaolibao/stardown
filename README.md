@@ -61,7 +61,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十五关 | [观看 / 下载 MP4](video/chapter_01/level_15.mp4) | 53.6 秒 |
 | 第十六关 | [观看 / 下载 MP4](video/chapter_01/level_16.mp4) | 15.8 秒 |
 | 第十七关 | [观看 / 下载 MP4](video/chapter_01/level_17.mp4) | 53.6 秒 |
-| 第十八关 | 实现提交后录制 | 待验证 |
+| 第十八关 | [观看 / 下载 MP4](video/chapter_01/level_18.mp4) | 88.4 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -586,4 +586,6 @@ CCDCCRDCCLDCDDDCCRCDLCUCCRRRRCCDCRCUCCRUUUUUCCUULCCDCRRRRRRDCCDDDDCDCCDDDDCLCCDC
 
 本关合法死亡支路：路线前8行动后，蓝向右离开底通道，红从(1,5)沿UUURRR站到开放能量(4,2)，绿从(1,7)上移离板；再现杀死未选中红，C/R/方向/切关全部锁定，一次Undo复活红且保持绿选择。这是专项测试，不混入正式视频。
 
-数据`levels/north_18.json`、解法`levels/solutions/north_18.json`、独立求解与回放`python3 tools/search_north_18.py`，模型/真实输入测试`north_18_regression.gd`/`north_18_scene.gd`。先验证实现提交，再录制真实Godot通关；前17关68份数据/解法/媒体/回放及能量显示对比短片保持原字节。
+数据`levels/north_18.json`、解法`levels/solutions/north_18.json`、独立求解与回放`python3 tools/search_north_18.py`，模型/真实输入测试`north_18_regression.gd`/`north_18_scene.gd`。实现先提交并推送`3d79feb4478a929a1babefbe494126a608d8aea3`，随后才录制真实Godot通关；前17关68份数据/解法/媒体/回放及能量显示对比短片保持原字节。
+
+[第十八关通关视频](video/chapter_01/level_18.mp4)：88.4秒/2652帧，78实际行动与61次不计步C，26推8拉10换；三英雄始终存活，晶体最终压住底板，三目标同时达成。18段视频完整解码与独立合法回放通过；首尾、十次交换和61次切换高亮已查看。实际画面：[初始](docs/screenshots/level_18_initial.png)、[绿人在消失能量格](docs/screenshots/level_18_green_energy.png)、[三英雄胜利](docs/screenshots/level_18_completed.png)、[小窗口选中能量格](docs/screenshots/level_18_compact_energy_active.png)。
