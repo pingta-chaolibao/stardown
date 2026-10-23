@@ -1406,7 +1406,7 @@
     "modifier_keys_used": [],
     "user_example_13_to_24_then_24_swaps_with_26": true
   },
-  "all_chapter_one_walkthroughs_checked": 11,
+  "all_chapter_one_walkthroughs_checked": 12,
   "previous_nine_maps_solutions_videos_replays_unchanged_from": "9c879b28bd093773d6af2a9dcf2aa6dccc3c205b",
   "north_10_independent_search": {
     "living_identity_states_exhausted": 2560,
@@ -4160,6 +4160,78 @@
     "death_undo_regression": "existing independent blue/energy fixtures; search stopped at first victory, not a full state-space proof"
   },
   "north_12_walkthrough": {
-    "status": "pending actual recording after implementation commit"
+    "file": "video/chapter_01/level_12.mp4",
+    "level": 12,
+    "bytes": 311069,
+    "sha256": "3c20b247fe5977124fac93dd79c08d8ddc4ce31cd9585ddc6d8c5a1b1182a3c9",
+    "distinct_sampled_frames": 90,
+    "sampled_action_states": 27,
+    "distinct_action_state_frames": 27,
+    "full_decode_passed": true,
+    "game_implementation_commit": "ec35efa0d643a0cfd686a12a7bc798e78b27715c",
+    "hero_kind": "blue",
+    "codec": "h264",
+    "profile": "High",
+    "pixel_format": "yuv420p",
+    "dimensions": [
+      1280,
+      820
+    ],
+    "fps": 30,
+    "frames": 618,
+    "duration_seconds": 20.6,
+    "mp4_fast_start": true,
+    "moves": 26,
+    "walks": 19,
+    "pushes": 0,
+    "pulls": 0,
+    "swaps": 7,
+    "counts_are_operations": true,
+    "action_notation": "UDLR direction inputs; first visible target swaps automatically, otherwise walk one cell",
+    "modifier_keys_used": [],
+    "initial_player": [
+      1,
+      1
+    ],
+    "victory_player": [
+      6,
+      0
+    ],
+    "legal_input_trace_verified": true,
+    "initial_and_final_frames_reviewed": true,
+    "seven_exchange_results_reviewed": true,
+    "pink_handoff_reviewed": true,
+    "gate_crossing_reviewed": true,
+    "two_bushes_unchanged_reviewed": true,
+    "color_matching_rule": false,
+    "swap_action_numbers": [
+      1,
+      4,
+      5,
+      10,
+      14,
+      15,
+      23
+    ],
+    "all_three_press_action": 22,
+    "pink_handoff_action": 23,
+    "gate_crossing_action": 25,
+    "victory_action": 26,
+    "reviewed_encoded_frames": [
+      0,
+      70,
+      124,
+      142,
+      232,
+      304,
+      322,
+      448,
+      466,
+      502,
+      617
+    ],
+    "replay_report": "level_12_replay.json",
+    "level_file": "levels/north_12.json",
+    "solution_file": "levels/solutions/north_12.json"
   }
 }
