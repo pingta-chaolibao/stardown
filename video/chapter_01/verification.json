@@ -1221,6 +1221,196 @@
       "replay_report": "level_16_replay.json",
       "level_file": "levels/north_16.json",
       "solution_file": "levels/solutions/north_16.json"
+    },
+    {
+      "file": "video/chapter_01/level_17.mp4",
+      "level": 17,
+      "bytes": 922037,
+      "sha256": "82032a65d89e9834b9c998d851f1cfbd9b16175dd9247cdab105b255434f61ec",
+      "distinct_sampled_frames": 260,
+      "sampled_action_states": 82,
+      "distinct_action_state_frames": 82,
+      "full_decode_passed": true,
+      "game_implementation_commit": "e639fc242ba534b7def99a0724c0ee4e99905717",
+      "hero_kinds": [
+        "green",
+        "blue",
+        "red"
+      ],
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 1608,
+      "duration_seconds": 53.6,
+      "mp4_fast_start": true,
+      "moves": 66,
+      "directions": 66,
+      "input_events": 81,
+      "selection_events": 15,
+      "walks_without_push_pull_or_swap": 50,
+      "pushes": 2,
+      "pulls": 11,
+      "swaps": 3,
+      "destroyed_crystals": 3,
+      "destroyed_ids_by_action": [
+        {
+          "action": 21,
+          "event": 24,
+          "ids": [
+            0,
+            2
+          ]
+        },
+        {
+          "action": 53,
+          "event": 65,
+          "ids": [
+            1
+          ]
+        }
+      ],
+      "energy_restoration_actions": [
+        21,
+        53,
+        65
+      ],
+      "surviving_crystal_id": 3,
+      "counts_are_actual_actions": true,
+      "selection_counts_as_operation": false,
+      "selection_is_undoable": false,
+      "undo_keeps_current_selection": true,
+      "action_notation": "UDLR are actual directions using existing red push,green single pull,blue first-target exchange. C only selects. Global restoring energy destroys crystals on the restoring cells atomically; no frame-based destruction or new hero ability.",
+      "modifier_keys_used": [],
+      "keys_used": [
+        "W",
+        "A",
+        "S",
+        "D",
+        "C"
+      ],
+      "initial_hero_positions": {
+        "green": [
+          0,
+          4
+        ],
+        "blue": [
+          2,
+          4
+        ],
+        "red": [
+          8,
+          4
+        ]
+      },
+      "victory_hero_positions": {
+        "green": [
+          3,
+          0
+        ],
+        "blue": [
+          2,
+          2
+        ],
+        "red": [
+          4,
+          0
+        ]
+      },
+      "initial_active_hero": "blue",
+      "victory_active_hero": "blue",
+      "legal_input_trace_verified": true,
+      "initial_and_final_frames_reviewed": true,
+      "all_fifteen_free_selection_highlights_reviewed": true,
+      "inactive_heroes_retain_hue_reviewed": true,
+      "both_crystal_destruction_events_reviewed": true,
+      "top_crystal_pull_and_push_reviewed": true,
+      "three_distinct_hero_goals_reviewed": true,
+      "opaque_hedges_and_confirmed_map_unchanged": true,
+      "selection_input_events": [
+        15,
+        17,
+        23,
+        26,
+        27,
+        39,
+        40,
+        44,
+        52,
+        53,
+        61,
+        64,
+        67,
+        71,
+        78
+      ],
+      "selection_unchanged_action_counts": [
+        14,
+        15,
+        20,
+        22,
+        22,
+        33,
+        33,
+        36,
+        43,
+        43,
+        50,
+        52,
+        54,
+        57,
+        63
+      ],
+      "first_all_plates_action": 14,
+      "two_crystals_on_energy_action": 20,
+      "first_destruction_action": 21,
+      "green_top_escape_action": 25,
+      "top_crystal_pull_action": 33,
+      "red_top_crystal_push_action": 50,
+      "second_crystal_on_energy_action": 52,
+      "second_destruction_action": 53,
+      "first_goal_action": 57,
+      "second_goal_action": 63,
+      "victory_action": 66,
+      "victory_input_event": 81,
+      "reviewed_encoded_frames": [
+        0,
+        304,
+        448,
+        484,
+        592,
+        736,
+        1132,
+        1186,
+        1222,
+        1312,
+        1438,
+        1607
+      ],
+      "reviewed_selection_frames": [
+        322,
+        358,
+        466,
+        520,
+        538,
+        754,
+        772,
+        844,
+        988,
+        1006,
+        1150,
+        1204,
+        1258,
+        1330,
+        1456
+      ],
+      "replay_report": "level_17_replay.json",
+      "level_file": "levels/north_17.json",
+      "solution_file": "levels/solutions/north_17.json"
     }
   ],
   "game_implementation_commits": {
@@ -1239,6 +1429,7 @@
     "level_13": "b24f14750cf2902b37c99a1b48a746deb1cf5383",
     "level_14": "265d4f898acef1c48d41348835a32fb6af24d662",
     "level_15": "4fa7ea61c8beba80269ab4db9c0bf33ccb43a362",
-    "level_16": "f86a27452145b7cd7926f93290a7be4cdff138bf"
+    "level_16": "f86a27452145b7cd7926f93290a7be4cdff138bf",
+    "level_17": "e639fc242ba534b7def99a0724c0ee4e99905717"
   }
 }

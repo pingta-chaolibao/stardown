@@ -60,7 +60,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十四关 | [观看 / 下载 MP4](video/chapter_01/level_14.mp4) | 35.0 秒 |
 | 第十五关 | [观看 / 下载 MP4](video/chapter_01/level_15.mp4) | 53.6 秒 |
 | 第十六关 | [观看 / 下载 MP4](video/chapter_01/level_16.mp4) | 15.8 秒 |
-| 第十七关 | 实现提交后录制 | 待验证 |
+| 第十七关 | [观看 / 下载 MP4](video/chapter_01/level_17.mp4) | 53.6 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -542,4 +542,8 @@ URRRRDLULLRULDCUCUUUDDCUDCCUUURRRRRRRLCCUUUCLLLLLLDCCLLLLLLLCDDCUDCRRRCUUURRRCLU
 
 **66实际行动+15免费C=81输入，2推11拉3换，三晶被摧毁**；不宣称最优或穷举。14蓝/内晶压满双板；20左右两晶留在消失能量格；21蓝离板使两门再现，销毁ID0/2。绿到顶排拉右上晶到左端，红推入(0,0)，绿再拉入左能量；53蓝再次离板销毁ID1。57红到(4,0)，63绿到(3,0)，66蓝到(2,2)，仅留内晶ID3。此前42状态证明遗漏水晶删除机制，不能据此判原布局无解；没有为通关改图或透墙。
 
-数据 `levels/north_17.json`、解法 `levels/solutions/north_17.json`，独立复核 `python3 tools/check_north_17.py`；公共毁晶专项 `tests/energy_destruction_regression.gd`，本关模型/真实输入 `north_17_regression.gd` / `north_17_scene.gd`。三英雄四统计、高亮/保色、17关入口（两行9+8）在1280×820和960×615验证。正式录像须在实现提交后制作。前16关地图/解法/视频/回放64份文件保持字节不变。
+数据 `levels/north_17.json`、解法 `levels/solutions/north_17.json`，独立复核 `python3 tools/check_north_17.py`；公共毁晶专项 `tests/energy_destruction_regression.gd`，本关模型/真实输入 `north_17_regression.gd` / `north_17_scene.gd`。三英雄四统计、高亮/保色、17关入口（两行9+8）在1280×820和960×615验证。正式录像已在实现提交后通过实际Godot视口与正常按键制作。前16关地图/解法/视频/回放64份文件保持字节不变。
+
+第十七关实际画面：[初始](docs/screenshots/level_17_initial.png)、[两晶留在能量格](docs/screenshots/level_17_crystals_on_energy.png)、[首次同时毁两晶](docs/screenshots/level_17_first_destruction.png)、[第二次毁晶](docs/screenshots/level_17_second_destruction.png)、[三英雄胜利](docs/screenshots/level_17_completed.png)、[小窗口绿高亮](docs/screenshots/level_17_compact_green.png)。
+
+[第十七关正式通关视频](video/chapter_01/level_17.mp4)：53.6秒 / 1608帧，66实际行动+15免费C，2推11拉3换，两次再现共毁三晶；全部十七段视频完整解码与独立合法回放通过。
