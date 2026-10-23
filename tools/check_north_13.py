@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independently replay a constructed multi-hero route, with C as an undoable operation."""
+"""Independently replay a constructed multi-hero route, with selection events separate from counted direction actions."""
 from pathlib import Path
 import argparse
 import json
@@ -21,7 +21,7 @@ def main():
     goals=set(map(tuple,level["exits"]))
     plates=set(map(tuple,level["energy_links"][0]["plates"]))
     gate=tuple(level["energy_links"][0]["barriers"][0])
-    trace=[];pushes=swaps=switches=0
+    trace=[];pushes=swaps=selection_events=moves=0
     plus=lambda c,d:(c[0]+d[0],c[1]+d[1])
     for index,symbol in enumerate(PATH,1):
         old_selected=selected
@@ -31,9 +31,10 @@ def main():
         def clear(c):return c in floor and not (active and c==gate)
         def occupied(c):return c in crystals or c in heroes
         if symbol=="C":
-            selected=(selected+1)%len(heroes);switches+=1;action="switch"
+            selected=(selected+1)%len(heroes);selection_events+=1;action="switch"
             assert heroes==old_heroes
         else:
+            moves+=1
             direction=DIRS[symbol];origin=heroes[selected];target=plus(origin,direction)
             kind=level["heroes"][selected]["kind"]
             seen=target
@@ -61,24 +62,24 @@ def main():
         assert len(set(heroes)|set(crystals))==len(heroes)+len(crystals)
         complete=set(heroes)==goals
         assert complete==(index==len(PATH)),"Both distinct hero goals must complete only on final action"
-        trace.append({"number":index,"input":symbol,"action":action,
+        trace.append({"event_index":index,"moves":moves,"selection_events":selection_events,"input":symbol,"action":action,
                       "selected":level["heroes"][selected]["id"],"heroes":[list(c) for c in heroes],
                       "crystals_by_identity":{str(i):list(c) for c,i in crystals.items()},
                       "all_plates_held":held,"gate_active":not held,"completed":complete})
-    assert len(PATH)==27 and switches==3 and swaps==2 and pushes==0
-    solution={"level_id":level["id"],"path":PATH,"moves":len(PATH),"directions":len(PATH)-switches,
-              "switches":switches,"pushes":pushes,"pulls":0,"swaps":swaps,
-              "note":"UDLR为当前英雄方向输入，C为可撤销切换；每次成功方向或C均计一次操作。构造后独立校验，不宣称最优或穷举；不要求水晶移动或对应特定英雄终点。"}
+    assert len(PATH)==27 and selection_events==3 and moves==24 and swaps==2 and pushes==0
+    solution={"level_id":level["id"],"path":PATH,"moves":moves,"directions":moves,"input_events":len(PATH),
+              "selection_events":selection_events,"pushes":pushes,"pulls":0,"swaps":swaps,
+              "note":"UDLR为当前英雄方向输入，C仅切换选中英雄，不计操作、不写撤销历史；撤销最近实际行动并保持当前选择。24次实际方向操作与3次选择事件分开记录。构造后独立校验，不宣称最优或穷举；不要求水晶移动或对应特定英雄终点。"}
     dest=ROOT/"levels/solutions/north_13.json"
     if args.write_solution:dest.write_text(json.dumps(solution,ensure_ascii=False,indent=2)+"\n")
     else:assert json.loads(dest.read_text())==solution
     report={"method":"constructed route independently replayed; no exhaustive/optimality claim",
-            "solution":solution,"all_plates_action":9,"hero_exchange_action":11,
-            "blue_goal_action":19,"both_goals_action":27,"trace":trace}
+            "solution":solution,"all_plates_event":9,"all_plates_move":8,"hero_exchange_event":11,"hero_exchange_move":9,
+            "blue_goal_event":19,"blue_goal_move":17,"both_goals_event":27,"both_goals_move":24,"trace":trace}
     out=ROOT/"artifacts/verification/north_13_route.json";out.parent.mkdir(parents=True,exist_ok=True)
     out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n")
     print(json.dumps({k:v for k,v in report.items() if k!="trace"},ensure_ascii=False,indent=2))
-    print("ROUTE RESULT: 27 operations = 24 directions + 3 C switches; 2 swaps, both heroes on different goals")
+    print("ROUTE RESULT: 24 counted actions + 3 uncounted C selection events (27 inputs); 2 swaps, both heroes on different goals")
 
 
 if __name__=="__main__":main()

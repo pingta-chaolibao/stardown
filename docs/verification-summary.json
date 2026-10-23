@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-23T08:49:27.953637+00:00",
+  "time_utc": "2026-10-23T09:13:32.965769+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -13,19 +13,19 @@
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 7.877
+      "seconds": 7.839
     },
     {
       "name": "02_parse_00_bush_obstacle",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.157
     },
     {
       "name": "02_parse_01_energy_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.151
     },
     {
       "name": "02_parse_02_grid_state",
@@ -37,7 +37,7 @@
       "name": "02_parse_03_hero_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.144
     },
     {
       "name": "02_parse_04_level_data",
@@ -55,91 +55,91 @@
       "name": "02_parse_06_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.151
+      "seconds": 3.143
     },
     {
       "name": "02_parse_07_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.244
+      "seconds": 3.239
     },
     {
       "name": "02_parse_08_board_view",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.151
+      "seconds": 3.149
     },
     {
       "name": "02_parse_09_blue_swap_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.153
+      "seconds": 3.142
     },
     {
       "name": "02_parse_10_bush_and_group_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.15
+      "seconds": 3.143
     },
     {
       "name": "02_parse_11_chain_push_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.154
+      "seconds": 3.142
     },
     {
       "name": "02_parse_12_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.151
+      "seconds": 3.142
     },
     {
       "name": "02_parse_13_global_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.143
     },
     {
       "name": "02_parse_14_green_pull_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.146
     },
     {
       "name": "02_parse_15_multi_hero_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.143
     },
     {
       "name": "02_parse_16_north_01_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.142
     },
     {
       "name": "02_parse_17_north_02_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.15
+      "seconds": 3.144
     },
     {
       "name": "02_parse_18_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.172
+      "seconds": 3.146
     },
     {
       "name": "02_parse_19_north_03_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.158
+      "seconds": 3.146
     },
     {
       "name": "02_parse_20_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.156
+      "seconds": 3.147
     },
     {
       "name": "02_parse_21_north_04_regression",
@@ -151,19 +151,19 @@
       "name": "02_parse_22_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.145
     },
     {
       "name": "02_parse_23_north_05_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "02_parse_24_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "02_parse_25_north_06_regression",
@@ -175,13 +175,13 @@
       "name": "02_parse_26_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "02_parse_27_north_07_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.151
     },
     {
       "name": "02_parse_28_north_07_scene",
@@ -193,235 +193,235 @@
       "name": "02_parse_29_north_08_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.143
     },
     {
       "name": "02_parse_30_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.141
     },
     {
       "name": "02_parse_31_north_09_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.143
     },
     {
       "name": "02_parse_32_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.142
     },
     {
       "name": "02_parse_33_north_10_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.143
     },
     {
       "name": "02_parse_34_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.145
     },
     {
       "name": "02_parse_35_north_11_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.143
     },
     {
       "name": "02_parse_36_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.144
     },
     {
       "name": "02_parse_37_north_12_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.146
     },
     {
       "name": "02_parse_38_north_12_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.148
     },
     {
       "name": "02_parse_39_north_13_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "02_parse_40_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.155
     },
     {
       "name": "02_parse_41_run_tests",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.159
     },
     {
       "name": "02_parse_42_scene_smoke",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.173
     },
     {
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.248
     },
     {
       "name": "03_chain_push",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.148
     },
     {
       "name": "03_energy",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.15
     },
     {
       "name": "03_global_energy",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.15
     },
     {
       "name": "03_bush_group",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.154
     },
     {
       "name": "03_green_pull",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.241
+      "seconds": 3.148
     },
     {
       "name": "03_blue_swap",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.146
     },
     {
       "name": "03_multi_hero",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "03_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.149
     },
     {
       "name": "03_north_01",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.156
     },
     {
       "name": "03_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.148
     },
     {
       "name": "03_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.239
+      "seconds": 3.246
     },
     {
       "name": "03_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "03_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "03_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.151
     },
     {
       "name": "03_north_07",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.151
+      "seconds": 3.145
     },
     {
       "name": "03_north_08",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.143
     },
     {
       "name": "03_north_09",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.144
     },
     {
       "name": "03_north_10",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.145
     },
     {
       "name": "03_north_11",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.246
+      "seconds": 3.144
     },
     {
       "name": "03_north_12",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.142
     },
     {
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.335
+      "seconds": 3.332
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.45
+      "seconds": 4.448
     },
     {
       "name": "05_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.264
+      "seconds": 4.262
     },
     {
       "name": "05_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.169
+      "seconds": 4.168
     },
     {
       "name": "05_north_04_scene",
@@ -439,49 +439,49 @@
       "name": "05_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.008
+      "seconds": 5.006
     },
     {
       "name": "05_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.12
+      "seconds": 6.122
     },
     {
       "name": "05_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.824
+      "seconds": 4.82
     },
     {
       "name": "05_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.725
+      "seconds": 4.728
     },
     {
       "name": "05_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.376
+      "seconds": 5.381
     },
     {
       "name": "05_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.912
+      "seconds": 4.91
     },
     {
       "name": "05_north_12_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.47
+      "seconds": 5.469
     },
     {
       "name": "05_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.29
+      "seconds": 5.562
     },
     {
       "name": "06_render",
@@ -493,73 +493,73 @@
       "name": "06_render_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.212
+      "seconds": 12.171
     },
     {
       "name": "06_render_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.173
+      "seconds": 12.17
     },
     {
       "name": "06_render_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.17
+      "seconds": 12.186
     },
     {
       "name": "06_render_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.44
+      "seconds": 12.191
     },
     {
       "name": "06_render_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.601
+      "seconds": 16.058
     },
     {
       "name": "06_render_north_07",
       "passed": true,
       "exit_code": 0,
-      "seconds": 22.315
+      "seconds": 18.925
     },
     {
       "name": "06_render_north_08",
       "passed": true,
       "exit_code": 0,
-      "seconds": 15.724
+      "seconds": 12.875
     },
     {
       "name": "06_render_north_09",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.175
+      "seconds": 12.194
     },
     {
       "name": "06_render_north_10",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.148
+      "seconds": 13.984
     },
     {
       "name": "06_render_north_11",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.036
+      "seconds": 12.941
     },
     {
       "name": "06_render_north_12",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.595
+      "seconds": 13.951
     },
     {
       "name": "06_render_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 15.938
+      "seconds": 13.811
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -601,7 +601,7 @@
       "cases": 8
     },
     "03_multi_hero": {
-      "checks": 147,
+      "checks": 159,
       "failures": 0,
       "cases": 7
     },
@@ -719,7 +719,7 @@
       "failures": 0
     },
     "05_north_13_scene": {
-      "checks": 508,
+      "checks": 503,
       "failures": 0
     },
     "06_render": {
@@ -771,7 +771,7 @@
       "failures": 0
     },
     "06_render_north_13": {
-      "checks": 524,
+      "checks": 519,
       "failures": 0
     }
   },
@@ -1181,13 +1181,14 @@
       "solution": {
         "level_id": "north_hero_13",
         "path": "DRRRCURRRCULLLULLDDCLLLDLLU",
-        "moves": 27,
+        "moves": 24,
         "directions": 24,
-        "switches": 3,
+        "input_events": 27,
+        "selection_events": 3,
         "pushes": 0,
         "pulls": 0,
         "swaps": 2,
-        "note": "UDLR为当前英雄方向输入，C为可撤销切换；每次成功方向或C均计一次操作。构造后独立校验，不宣称最优或穷举；不要求水晶移动或对应特定英雄终点。"
+        "note": "UDLR为当前英雄方向输入，C仅切换选中英雄，不计操作、不写撤销历史；撤销最近实际行动并保持当前选择。24次实际方向操作与3次选择事件分开记录。构造后独立校验，不宣称最优或穷举；不要求水晶移动或对应特定英雄终点。"
       }
     }
   ],
@@ -1514,7 +1515,7 @@
     "modifier_keys_used": [],
     "user_example_13_to_24_then_24_swaps_with_26": true
   },
-  "all_chapter_one_walkthroughs_checked": 13,
+  "all_chapter_one_walkthroughs_checked": 12,
   "previous_nine_maps_solutions_videos_replays_unchanged_from": "9c879b28bd093773d6af2a9dcf2aa6dccc3c205b",
   "north_10_independent_search": {
     "living_identity_states_exhausted": 2560,
@@ -4355,7 +4356,7 @@
   },
   "shared_gameplay_extension": {
     "engine": "same GridState; old player normalized to one stable hero; no copied campaign engine",
-    "snapshots": "legacy single-hero shape retained; multi adds all hero positions/life/selection/switches",
+    "snapshots": "legacy single-hero shape retained; multi stores all hero positions/life but excludes selected identity and any selection telemetry; undo keeps selection",
     "pressure": "all hero positions including inactive; global AND unchanged",
     "death": "any hero death globally blocks direction/C/restart/load until undo",
     "red_pushes": "arbitrarily long contiguous mixed heroes/crystals atomically; moved heroes do not activate abilities"
@@ -4365,36 +4366,45 @@
       "C",
       "screen SwitchHero"
     ],
-    "switch_counts_as_operation": true,
-    "switch_is_undoable": true,
+    "switch_counts_as_operation": false,
+    "switch_is_undoable": false,
+    "selection_in_world_snapshot": false,
+    "undo_keeps_current_selection": true,
+    "restart_resets_initial_selection": true,
     "switch_moves_or_settles": false,
     "single_hero_switch_is_noop": true,
+    "selection_event_telemetry_outside_model": true,
     "selected_identity_preserved_during_displacement": true,
     "inactive_heroes_retain_color_hue": true,
-    "model_checks": 147
+    "model_checks": 159
   },
   "north_13_independent_route": {
     "method": "constructed route independently replayed; no exhaustive/optimality claim",
     "solution": {
       "level_id": "north_hero_13",
       "path": "DRRRCURRRCULLLULLDDCLLLDLLU",
-      "moves": 27,
+      "moves": 24,
       "directions": 24,
-      "switches": 3,
+      "input_events": 27,
+      "selection_events": 3,
       "pushes": 0,
       "pulls": 0,
       "swaps": 2,
-      "note": "UDLR为当前英雄方向输入，C为可撤销切换；每次成功方向或C均计一次操作。构造后独立校验，不宣称最优或穷举；不要求水晶移动或对应特定英雄终点。"
+      "note": "UDLR为当前英雄方向输入，C仅切换选中英雄，不计操作、不写撤销历史；撤销最近实际行动并保持当前选择。24次实际方向操作与3次选择事件分开记录。构造后独立校验，不宣称最优或穷举；不要求水晶移动或对应特定英雄终点。"
     },
-    "all_plates_action": 9,
-    "hero_exchange_action": 11,
-    "blue_goal_action": 19,
-    "both_goals_action": 27
+    "all_plates_event": 9,
+    "all_plates_move": 8,
+    "hero_exchange_event": 11,
+    "hero_exchange_move": 9,
+    "blue_goal_event": 19,
+    "blue_goal_move": 17,
+    "both_goals_event": 27,
+    "both_goals_move": 24
   },
   "north_13_support": {
     "model_checks": 209,
-    "headless_ui_checks": 508,
-    "rendered_ui_checks": 524,
+    "headless_ui_checks": 503,
+    "rendered_ui_checks": 519,
     "window_sizes": [
       [
         1280,
@@ -4410,107 +4420,18 @@
     "objective": "all heroes simultaneously on different exits; no fixed assignment; crystals never count",
     "source_numbering": "row-major 1-49; 2/11 floor,46 wall confirmed",
     "only_upper_crystal_moves_in_legal_route": true,
-    "no_exhaustive_or_optimality_claim": true
+    "no_exhaustive_or_optimality_claim": true,
+    "actual_actions": 24,
+    "input_events": 27,
+    "selection_events": 3,
+    "selection_undoable": false,
+    "undo_keeps_current_selection": true
   },
-  "previous_twelve_maps_solutions_videos_replays_unchanged_from": "133f20836428f503a8ac6a7be1e579688c1f663f",
+  "previous_twelve_maps_solutions_videos_replays_unchanged_from": "36f832d7f72bbd537c39e1e23eb3e358ed6be050",
   "previous_twelve_deliverable_files_compared": 48,
   "previous_twelve_video_checker_preflight": "all12 complete decode and independently recomputed legal input replay passed after checker generalization",
-  "north_13_walkthrough": {
-    "file": "video/chapter_01/level_13.mp4",
-    "level": 13,
-    "bytes": 335239,
-    "sha256": "5979fa7689493a41f88e81cdb249f45579ed8a7895e88cc62e0fe0443680f930",
-    "distinct_sampled_frames": 96,
-    "sampled_action_states": 28,
-    "distinct_action_state_frames": 28,
-    "full_decode_passed": true,
-    "game_implementation_commit": "c3b2ca0d789b4d770d7afc43689b0fc3cb288108",
-    "hero_kinds": [
-      "red",
-      "blue"
-    ],
-    "codec": "h264",
-    "profile": "High",
-    "pixel_format": "yuv420p",
-    "dimensions": [
-      1280,
-      820
-    ],
-    "fps": 30,
-    "frames": 636,
-    "duration_seconds": 21.2,
-    "mp4_fast_start": true,
-    "moves": 27,
-    "directions": 24,
-    "walks": 22,
-    "switches": 3,
-    "pushes": 0,
-    "pulls": 0,
-    "swaps": 2,
-    "counts_are_operations": true,
-    "action_notation": "UDLR acts on selected hero; C cycles identity without moving. All 27 successful inputs count once; direction alone decides blue first-target swap.",
-    "modifier_keys_used": [],
-    "keys_used": [
-      "W",
-      "A",
-      "S",
-      "D",
-      "C"
-    ],
-    "initial_hero_positions": {
-      "red": [
-        2,
-        2
-      ],
-      "blue": [
-        2,
-        4
-      ]
-    },
-    "victory_hero_positions": {
-      "red": [
-        0,
-        5
-      ],
-      "blue": [
-        0,
-        2
-      ]
-    },
-    "initial_active_hero": "blue",
-    "victory_active_hero": "red",
-    "legal_input_trace_verified": true,
-    "initial_and_final_frames_reviewed": true,
-    "all_three_switch_highlights_reviewed": true,
-    "inactive_heroes_retain_hue_reviewed": true,
-    "hero_exchange_across_open_gate_reviewed": true,
-    "two_distinct_hero_goals_reviewed": true,
-    "switch_action_numbers": [
-      5,
-      10,
-      20
-    ],
-    "swap_action_numbers": [
-      11,
-      18
-    ],
-    "all_plates_action": 9,
-    "first_hero_goal_action": 19,
-    "victory_action": 27,
-    "reviewed_encoded_frames": [
-      0,
-      142,
-      214,
-      232,
-      250,
-      376,
-      394,
-      412,
-      635
-    ],
-    "replay_report": "level_13_replay.json",
-    "level_file": "levels/north_13.json",
-    "solution_file": "levels/solutions/north_13.json"
-  },
-  "previous_twelve_video_manifest_entries_unchanged": true
+  "previous_twelve_video_manifest_entries_unchanged": true,
+  "thirteenth_map_unchanged_from": "36f832d7f72bbd537c39e1e23eb3e358ed6be050",
+  "north_13_walkthrough_pending": true,
+  "north_13_selection_correction": "User: 切换不算操作不用撤销; 24 actual actions,3 uncounted selection events; undo latest actual action and keep current selection"
 }

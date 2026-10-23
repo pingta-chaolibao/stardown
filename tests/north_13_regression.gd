@@ -29,29 +29,37 @@ func _solution() -> void:
 	var initial:=game.snapshot()
 	var solution: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://levels/solutions/north_13.json"))
 	var history: Array[Dictionary]=[]
+	var actions:=0
+	var selections:=0
 	for index in solution["path"].length():
 		var symbol: String=solution["path"][index]
-		history.append(game.snapshot())
+		var before:=game.snapshot()
 		var selected:=game.active_hero_id()
+		if symbol=="C":selections+=1
+		else:
+			history.append(before)
+			actions+=1
 		var result:=game.switch_hero() if symbol=="C" else game.try_move(DIRS[symbol])
-		_check(result in [&"moved",&"swapped",&"switched"] and game.moves==index+1 and game.alive and game.last_mechanism_error.is_empty(),"legal Godot route operation %d" % (index+1))
+		_check(result in [&"moved",&"swapped",&"switched"] and game.moves==actions and game.history_size()==actions and game.alive and game.last_mechanism_error.is_empty(),"legal Godot input event %d, counted actions %d" % [index+1,actions])
 		_check((game.active_hero_id()!=selected)==(symbol=="C"),"only explicit C changes selected identity")
-		_check(game.is_complete()==(index==26),"dual victory only at final operation")
-		if symbol=="C":
-			_check(game.snapshot()["hero_positions"]==history[-1]["hero_positions"] and game.snapshot()["crates"]==history[-1]["crates"] and game.barrier_states()==history[-1]["barriers"],"C leaves positions, crystals and energy untouched")
-		if index in [8,9,10]:_check(game.pressure_progress("yellow_01")==Vector2i(2,2) and not game.barrier_is_active(GATE) and not game.blocks_sight(GATE) and game.is_walkable(GATE),"inactive hero plus selected hero hold both plates")
-		if index==10:_check(game.hero_position(0)==Vector2i(5,5) and game.hero_position(1)==Vector2i(5,1) and game.swaps==1 and game.active_hero_id()=="blue","blue exchanges red across open gate once with stable selection")
+		_check(game.is_complete()==(index==26),"dual victory only at final input")
+		if symbol=="C":_check(game.snapshot()==before,"C leaves entire world snapshot, counters and undo history unchanged")
+		if index in [8,9,10]:_check(game.pressure_progress("yellow_01")==Vector2i(2,2) and not game.barrier_is_active(GATE) and not game.blocks_sight(GATE) and game.is_walkable(GATE),"both heroes keep the open gate, including during uncounted C")
+		if index==10:_check(game.hero_position(0)==Vector2i(5,5) and game.hero_position(1)==Vector2i(5,1) and game.swaps==1 and game.active_hero_id()=="blue" and game.moves==9,"counted action9 exchanges heroes across open gate with stable selection")
 		if index==11:_check(game.barrier_is_active(GATE) and game.blocks_sight(GATE) and game.alive,"leaving either plate restores gate with both heroes safely outside")
-		if index==18:_check(game.hero_position(1)==Vector2i(0,2) and game.occupied_exits()==1 and not game.is_complete(),"blue reaches first exit without ending game")
-	_check(game.hero_position(0)==Vector2i(0,5) and game.hero_position(1)==Vector2i(0,2) and game.moves==27 and game.switches==3 and game.swaps==2 and game.pushes==0 and game.pulls==0,"constructed 27-operation victory, not an optimality or all-crystals claim")
-	_check(game.crate_id(Vector2i(0,0))==0 and game.crate_id(Vector2i(0,4))==1,"only upper crystal is used; lower crystal remains unchanged legally")
-	while not history.is_empty():_check(game.undo() and game.snapshot()==history.pop_back(),"each undo restores all heroes, selection, life, objects and mechanism state")
-	_check(game.snapshot()==initial and game.history_size()==0,"entire route undo returns exact initial state")
+		if index==18:_check(game.hero_position(1)==Vector2i(0,2) and game.occupied_exits()==1 and not game.is_complete() and game.moves==17,"counted action17 reaches first exit without ending game")
+	_check(game.hero_position(0)==Vector2i(0,5) and game.hero_position(1)==Vector2i(0,2) and game.moves==24 and selections==3 and game.swaps==2 and game.pushes==0 and game.pulls==0,"validated 24 actual actions and3 uncounted selection events, not optimality claim")
+	_check(solution["moves"]==24 and solution["directions"]==24 and solution["input_events"]==27 and solution["selection_events"]==3,"solution separates actual actions from input and selection event totals")
+	_check(game.crate_id(Vector2i(0,0))==0 and game.crate_id(Vector2i(0,4))==1,"only upper crystal moves legally")
+	while not history.is_empty():_check(game.undo() and game.snapshot()==history.pop_back() and game.active_hero_id()=="red","each undo restores one actual action while preserving final user-selected red")
+	_check(game.snapshot()==initial and game.history_size()==0 and game.active_hero_id()=="red","24 undos restore initial world but do not undo user selection")
+	_check(not game.undo() and game.active_hero_id()=="red","no remaining history cannot revert C")
+	_check(game.restart() and game.active_hero_id()=="blue" and game.snapshot()==initial,"explicit restart restores initial blue before replay")
 	for symbol in solution["path"]:
 		if symbol=="C":game.switch_hero()
 		else:game.try_move(DIRS[symbol])
-	_check(game.restart() and game.snapshot()==initial and game.history_size()==0,"victory restart returns initial blue selection and both actors")
-	print("NORTH 13 SOLUTION: %s; 24 directions + 3 C, 2 swaps" % solution["path"])
+	_check(game.restart() and game.snapshot()==initial and game.active_hero_id()=="blue" and game.history_size()==0,"victory restart restores blue selection and both actors")
+	print("NORTH 13 SOLUTION: %s; 24 counted actions + 3 uncounted C, 2 swaps" % solution["path"])
 
 func _boundaries_and_isolation() -> void:
 	var game:=_game()
@@ -59,11 +67,11 @@ func _boundaries_and_isolation() -> void:
 	_check(game.try_move(Vector2i.LEFT)==&"wall" and game.snapshot()==initial and game.history_size()==0,"confirmed wall left of blue blocks without history")
 	_check(game.try_move(Vector2i.UP)==&"wall" and game.snapshot()==initial,"central full wall row blocks initial blue")
 	game.switch_hero()
-	_check(game.try_move(Vector2i.RIGHT)==&"wall" and game.moves==1 and game.switches==1,"red wall does not undo or count extra switch")
-	_check(game.undo() and game.snapshot()==initial,"wall does not contaminate undoable selection")
+	_check(game.try_move(Vector2i.RIGHT)==&"wall" and game.moves==0 and game.history_size()==0,"red wall and preceding C do not count or write history")
+	_check(not game.undo() and game.snapshot()==initial and game.active_hero_id()=="red","blocked movement and C never create undoable selection")
 	for number in range(1,13):
 		game.switch_hero()
-		_check(game.load_level(Level.from_file("res://levels/north_%02d.json" % number)) and game.hero_count()==1 and game.switches==0 and game.history_size()==0 and game.moves==0,"multi history and selection cannot leak into old level %d" % number)
+		_check(game.load_level(Level.from_file("res://levels/north_%02d.json" % number)) and game.hero_count()==1 and game.history_size()==0 and game.moves==0,"multi history and selection cannot leak into old level %d" % number)
 		_check(game.load_level(Level.from_file("res://levels/north_13.json")) and game.snapshot()==initial,"old level %d cannot leak into thirteenth" % number)
 
 func _game() -> State:

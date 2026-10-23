@@ -21,7 +21,6 @@ var board: Board
 var moves_label: Label
 var pushes_label: Label
 var pulls_label: Label
-var switches_label: Label
 var swaps_label: Label
 var progress_label: Label
 var status_label: Label
@@ -147,7 +146,7 @@ func apply_command(command: Dictionary) -> void:
 					_refresh("已抵达终点，可撤销或重开。", GOLD)
 		&"switch_hero":
 			var result:=model.switch_hero()
-			_refresh("已切换操作英雄。C 计一次操作，可以撤销。" if result==&"switched" else ("任一英雄死亡后，仅可撤销恢复。" if result==&"dead" else "当前无法切换英雄。"))
+			_refresh("已切换操作英雄；不计步，不写撤销历史。" if result==&"switched" else ("任一英雄死亡后，仅可撤销恢复。" if result==&"dead" else "当前无法切换英雄。"))
 		&"undo":
 			var undone := model.undo()
 			_refresh("已撤销最近一步。" if undone else "当前没有可撤销的步骤。")
@@ -172,8 +171,6 @@ func _refresh(message: String, color: Color = MINT) -> void:
 		pulls_label.text = "%02d" % model.pulls
 	if swaps_label!=null:
 		swaps_label.text="%02d" % model.swaps
-	if switches_label!=null:
-		switches_label.text="%02d" % model.switches
 	if model.level.objective=="all_heroes_on_exits":
 		progress_label.text="英雄终点 %d / %d" % [model.occupied_exits(),model.hero_count()]
 	elif model.level.objective == "player_on_exit":
@@ -302,7 +299,7 @@ func _build_board(parent: HBoxContainer) -> void:
 	if model.hero_count()>1:
 		var switch_button:=_button("切换 C","SwitchHero")
 		switch_button.custom_minimum_size=Vector2(66,36)
-		switch_button.tooltip_text="循环操作英雄；计一次可撤销操作，不移动或发动能力"
+		switch_button.tooltip_text="循环操作英雄；不计步、不写撤销历史，不移动或发动能力"
 		switch_button.pressed.connect(apply_command.bind({"action":&"switch_hero"}))
 		legend.add_child(switch_button)
 	for entry in [["←", Vector2i.LEFT, "Left"], ["↑", Vector2i.UP, "Up"], ["↓", Vector2i.DOWN, "Down"], ["→", Vector2i.RIGHT, "Right"]]:
@@ -337,7 +334,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	elif not model.level.bushes.is_empty():
 		instructions.text = "整列水晶每次推一格，末端受阻则不动。\n草丛挡通行与视线，不能推动或交换。"
 	if multi:
-		instructions.text="蓝人：方向首个可见对象交换，否则走。\n红人：混合整列推。C 切换，可撤销。"
+		instructions.text="蓝人：方向首个可见对象交换，否则走。\n红人：混合整列推。C 切换，不计步。"
 	intro.add_child(instructions)
 	if not model.level.energy_links.is_empty():
 		var rules := "英雄或水晶压住%s时，能量块消失。\n压力解除后恢复，格内英雄会死亡。" % _plate_name()
@@ -352,11 +349,9 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	pushes_label = null
 	pulls_label = null
 	swaps_label=null
-	switches_label=null
 	if multi:
 		pushes_label=_stat(stats,"推动","Pushes")
 		swaps_label=_stat(stats,"交换","Swaps")
-		switches_label=_stat(stats,"切换","Switches")
 	elif blue:
 		swaps_label=_stat(stats,"交换","Swaps")
 	elif green:

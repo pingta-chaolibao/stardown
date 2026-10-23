@@ -10,6 +10,8 @@ const VICTORY_FRAMES := 90
 var level_number: int = 1
 var report_path: String = ""
 var game: Control
+# Recording telemetry only; never part of GridState or its undo history.
+var selection_events: int=0
 
 
 func _init() -> void:
@@ -43,6 +45,7 @@ func _run() -> void:
 	var trace: Array[Dictionary] = []
 	print("REPLAY START: chapter 01, level %02d, %s" % [level_number, solution["path"]])
 	var previous := initial
+	var actual_actions:=0
 	for i in solution["path"].length():
 		var symbol: String = solution["path"][i]
 		var target: Dictionary={}
@@ -53,11 +56,13 @@ func _run() -> void:
 		await _frames(1)
 		_send_key(KEYS[symbol], false)
 		await _frames(1)
+		if symbol=="C":selection_events+=1
+		else:actual_actions+=1
 		var current := _state()
 		var distance: int = absi(current["player"][0] - previous["player"][0]) + absi(current["player"][1] - previous["player"][1])
 		var position_valid:=distance==1
 		if symbol=="C":
-			position_valid=current["switches"]==previous["switches"]+1 and current["crystals"]==previous["crystals"] and current["pressure"]==previous["pressure"] and current["barriers"]==previous["barriers"]
+			position_valid=current["selection_events"]==previous["selection_events"]+1 and current["moves"]==previous["moves"] and current["history_size"]==previous["history_size"] and current["crystals"]==previous["crystals"] and current["pressure"]==previous["pressure"] and current["barriers"]==previous["barriers"]
 			for identity in current["heroes"].size():
 				position_valid=position_valid and current["heroes"][identity]["position"]==previous["heroes"][identity]["position"] and current["heroes"][identity]["alive"]==previous["heroes"][identity]["alive"]
 			position_valid=position_valid and current["active_hero_index"]==(previous["active_hero_index"]+1)%current["heroes"].size()
@@ -70,20 +75,21 @@ func _run() -> void:
 					if crystal["id"]==target["id"]:position_valid=position_valid and crystal["position"]==previous["player"]
 		else:
 			position_valid=position_valid and current["swaps"]==previous["swaps"]
-		if not current["alive"] or current["moves"] != i + 1 or not position_valid or current["pushes"] < previous["pushes"] or current["pushes"] > previous["pushes"] + 1 or current["pulls"] < previous["pulls"] or current["pulls"] > previous["pulls"] + 1:
-			_fail("Input %d did not make exactly one legal direction-triggered walk or exchange." % (i + 1))
+		if not current["alive"] or current["moves"] != actual_actions or not position_valid or current["pushes"] < previous["pushes"] or current["pushes"] > previous["pushes"] + 1 or current["pulls"] < previous["pulls"] or current["pulls"] > previous["pulls"] + 1:
+			_fail("Input %d failed: counted movement or uncounted selection did not match." % (i + 1))
 			return
+		current["event_index"]=i+1
 		current["input"] = symbol
 		current["action"]="switch" if symbol=="C" else ("swap" if use_swap else "move")
 		trace.append(current)
 		previous = current
 		await _frames(STEP_FRAMES - 2)
 	var final := _state()
-	if not final["completed"] or final["moves"] != solution["moves"] or final["pushes"] != solution["pushes"] or final["pulls"] != solution.get("pulls", 0) or final["swaps"]!=solution.get("swaps",0) or final.get("switches",0)!=solution.get("switches",0):
+	if not final["completed"] or final["moves"] != solution["moves"] or final["pushes"] != solution["pushes"] or final["pulls"] != solution.get("pulls", 0) or final["swaps"]!=solution.get("swaps",0) or selection_events!=solution.get("selection_events",0) or solution["path"].length()!=solution.get("input_events",solution["moves"]):
 		_fail("Playback did not finish at the expected victory state.")
 		return
 	await _frames(VICTORY_FRAMES)
-	var report := {"chapter": 1, "level": level_number,
+	var report := {"input_events":solution["path"].length(),"direction_actions":actual_actions,"selection_events":selection_events,"chapter": 1, "level": level_number,
 		"game_implementation_commit": OS.get_environment("STARDOWN_RECORDING_COMMIT"),
 		"engine": Engine.get_version_info(), "display": DisplayServer.get_name(),
 		"capture": "Godot Movie Maker viewport; actual Input.parse_input_event press/release",
@@ -98,7 +104,7 @@ func _run() -> void:
 		return
 	file.store_string(JSON.stringify(report, "  ") + "\n")
 	file.close()
-	print("REPLAY RESULT: level %02d; %d legal actions, %d pushes, %d pulls, %d swaps, victory=true" % [level_number, final["moves"], final["pushes"], final["pulls"],final["swaps"]])
+	print("REPLAY RESULT: level %02d; %d actual actions, %d uncounted selection events, %d pushes, %d pulls, %d swaps, victory=true" % [level_number, final["moves"],selection_events, final["pushes"], final["pulls"],final["swaps"]])
 	quit(0)
 
 
@@ -131,7 +137,7 @@ func _state() -> Dictionary:
 		var exits: Array=[]
 		for cell in game.model.level.exit_cells:exits.append([cell.x,cell.y])
 		result.erase("exit")
-		result.merge({"heroes":heroes,"active_hero_index":game.model.active_hero_index,"active_hero":game.model.active_hero_id(),"switches":game.model.switches,"exits":exits,"occupied_exits":game.model.occupied_exits()})
+		result.merge({"heroes":heroes,"active_hero_index":game.model.active_hero_index,"active_hero":game.model.active_hero_id(),"selection_events":selection_events,"history_size":game.model.history_size(),"exits":exits,"occupied_exits":game.model.occupied_exits()})
 	return result
 
 

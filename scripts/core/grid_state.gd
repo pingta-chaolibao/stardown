@@ -17,7 +17,6 @@ var player: Vector2i:
 		else:
 			_hero_positions[active_hero_index] = value
 var active_hero_index: int = 0
-var switches: int = 0
 var _hero_positions: Array[Vector2i] = []
 var _hero_alive: Array[bool] = []
 var moves: int = 0
@@ -50,12 +49,13 @@ func load_level(definition: Level) -> bool:
 		last_mechanism_error = "英雄不能从已激活的能量格内开始。"
 		return false
 	level = definition
+	active_hero_index = definition.initial_active_hero
 	_initial_state = {"player": definition.start, "crates": initial_crystals,
 		"moves": 0, "pushes": 0, "pulls": 0, "swaps": 0, "alive": true,
 		"pressure": settled["pressure"], "barriers": settled["barriers"]}
 	if positions.size() > 1:
-		_initial_state.merge({"hero_positions":positions,"hero_alive":settled["hero_alive"],
-			"active_hero":definition.initial_active_hero,"switches":0})
+		_initial_state.erase("player")
+		_initial_state.merge({"hero_positions":positions,"hero_alive":settled["hero_alive"]})
 	_restore(_initial_state)
 	_history.clear()
 	return true
@@ -125,10 +125,8 @@ func switch_hero() -> StringName:
 		return &"complete"
 	if _hero_positions.size() < 2:
 		return &"single_hero"
-	_history.append(snapshot())
+	# Selection is control state, not an action or an undoable world change.
 	active_hero_index = (active_hero_index + 1) % _hero_positions.size()
-	moves += 1
-	switches += 1
 	last_mechanism_error = ""
 	return &"switched"
 
@@ -198,6 +196,7 @@ func restart() -> bool:
 	_history.clear()
 	if level == null:
 		return true
+	active_hero_index = level.initial_active_hero
 	_restore(_initial_state)
 	return true
 
@@ -343,9 +342,11 @@ func sight_path_is_clear(cells: Array[Vector2i]) -> bool:
 
 
 func _restore(state: Dictionary) -> void:
-	_hero_positions.assign(state.get("hero_positions",[state["player"]]))
-	active_hero_index = state.get("active_hero",0)
-	switches = state.get("switches",0)
+	# Undo restores the world while retaining the user's current selection.
+	if state.has("hero_positions"):
+		_hero_positions.assign(state["hero_positions"])
+	else:
+		_hero_positions.assign([state["player"]])
 	_crates = state["crates"].duplicate()
 	moves = state["moves"]
 	pushes = state["pushes"]
@@ -359,10 +360,11 @@ func _restore(state: Dictionary) -> void:
 
 
 func snapshot() -> Dictionary:
-	var result := {"player":player,"crates":_crates.duplicate(),"moves":moves,"pushes":pushes,"pulls":pulls,"swaps":swaps,
+	var result := {"crates":_crates.duplicate(),"moves":moves,"pushes":pushes,"pulls":pulls,"swaps":swaps,
 		"alive":alive,"pressure":_pressure.duplicate(),"barriers":_barriers.duplicate()}
 	# Legacy single-hero snapshots retain their original shape.
 	if _hero_positions.size() > 1:
-		result.merge({"hero_positions":_hero_positions.duplicate(),"hero_alive":_hero_alive.duplicate(),
-			"active_hero":active_hero_index,"switches":switches})
+		result.merge({"hero_positions":_hero_positions.duplicate(),"hero_alive":_hero_alive.duplicate()})
+	else:
+		result["player"] = player
 	return result

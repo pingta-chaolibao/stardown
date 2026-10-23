@@ -31,7 +31,7 @@ def check_replay(item, directory):
     assert initial["level_id"] == level["id"] == solution["level_id"]
     assert evidence["game_implementation_commit"] == item["game_implementation_commit"]
     assert evidence["display"] == "X11"
-    assert len(evidence["trace"]) == len(solution["path"]) == solution["moves"]
+    assert len(evidence["trace"]) == len(solution["path"]) == solution.get("input_events",solution["moves"])
 
     def floor(cell):
         x, y = cell
@@ -68,7 +68,7 @@ def check_replay(item, directory):
             return all(living) and set(heroes) == exits
         return all(living) and heroes[selected] in exits
 
-    pushes, pulls, swaps, switches = 0, 0, 0, 0
+    pushes, pulls, swaps, selection_events, actual_actions = 0, 0, 0, 0, 0
 
     def check_state(state, moves):
         assert all(living) and state.get("alive", True), "Walkthrough must never use a dead hero"
@@ -77,7 +77,9 @@ def check_replay(item, directory):
         assert state.get("hero_kind", "red") == definitions[selected]["kind"]
         assert state["moves"] == moves and state["pushes"] == pushes
         assert state.get("pulls", 0) == pulls and state.get("swaps", 0) == swaps
-        assert state.get("switches", 0) == switches
+        assert state.get("selection_events", 0) == selection_events
+        if multi:
+            assert state["history_size"] == moves and "switches" not in state
         assert state["completed"] == completed()
         if multi:
             assert state["active_hero"] == definitions[selected]["id"] and state["active_hero_index"] == selected
@@ -110,8 +112,9 @@ def check_replay(item, directory):
         if symbol == "C":
             assert multi and state["action"] == "switch"
             selected = (selected + 1) % len(heroes)
-            switches += 1
+            selection_events += 1
         else:
+            actual_actions += 1
             direction = DIRECTIONS[symbol]
             hero_kind = definitions[selected]["kind"]
             target = plus(player, direction)
@@ -149,14 +152,17 @@ def check_replay(item, directory):
                     pulls += 1
             heroes[selected] = target
             pressure, barriers, living = settle(barriers)
-        check_state(state, index)
-        assert completed() == (index == solution["moves"])
+        check_state(state, actual_actions)
+        if multi:assert state["event_index"]==index
+        assert completed() == (index == len(solution["path"]))
     final = evidence["final_state"]
     check_state(final, solution["moves"])
     assert final["completed"] and pushes == solution["pushes"]
     assert pulls == solution.get("pulls", 0) and swaps == solution.get("swaps", 0)
-    assert switches == solution.get("switches", 0)
+    assert actual_actions == solution["moves"]
+    assert selection_events == solution.get("selection_events", 0)
     if multi:
+        assert evidence["input_events"]==solution["input_events"] and evidence["direction_actions"]==actual_actions and evidence["selection_events"]==selection_events
         assert sum(symbol in DIRECTIONS for symbol in solution["path"]) == solution["directions"]
     return evidence
 
