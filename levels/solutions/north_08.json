@@ -1,0 +1,8 @@
+{
+  "level_id": "north_hero_08",
+  "path": "URRDDDLDDLULUURRDDDLLUUURRURDLDRURRRDDLLUULDDRUDDRURUUUU",
+  "moves": 56,
+  "pushes": 0,
+  "pulls": 17,
+  "note": "U/D/L/R为上/下/左/右。独立搜索所得绿色单枚自动拉动合法路线，不宣称最优；由Godot模型和正常键盘另行验证。"
+}

@@ -3,7 +3,7 @@ config_version=5
 
 [application]
 config/name="沉星之序 · 北部英雄"
-config/description="第一章前七关，依据确认网格制作。红色整列推与绿色单枚拉、草丛和全局能量屏障，原创 2D 几何图形。"
+config/description="第一章前八关，依据确认网格制作。红色整列推与绿色单枚拉、草丛和全局能量屏障，原创 2D 几何图形。"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/icon.svg"

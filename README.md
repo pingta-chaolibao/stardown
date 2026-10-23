@@ -1,6 +1,6 @@
-# 沉星之序 · 第一章前七关（Godot 4 / 2D）
+# 沉星之序 · 第一章前八关（Godot 4 / 2D）
 
-第一章前七关按确认的文字网格实现。前四关是红色推之英雄，可整列推水晶；第五至七关是绿色拉之英雄，只能自动拉最近一枚。第一关是 11 × 3、黄色终点；第二关是 11 × 7、10 枚水晶；第三关加入压力板与能量屏障；第四关加入独立草丛与三板联动；第五关沿用第一关布局，改变英雄能力；第六关结合绿色单拉和单板屏障；第七关是一枚紫晶与单板双屏障的城堡通道。第二至七关使用绿色终点，玩家抵达才判胜。画面为原创 2D 几何图形，不声称逐像素复刻。
+第一章前八关按确认的文字网格实现。前四关是红色推之英雄，可整列推水晶；第五至八关是绿色拉之英雄，只能自动拉最近一枚。第一关是 11 × 3、黄色终点；第二关是 11 × 7、10 枚水晶；第三关加入压力板与能量屏障；第四关加入独立草丛与三板联动；第五关沿用第一关布局，改变英雄能力；第六关结合绿色单拉和单板屏障；第七关是一枚紫晶与单板双屏障的城堡通道；第八关结合绿色单拉、三紫晶、草丛与三板联动。第二至八关使用绿色终点，玩家抵达才判胜。画面为原创 2D 几何图形，不声称逐像素复刻。
 
 开发、测试与 Git 操作均在选定云端 `/workspace/stardown` 完成，没有读取、迁移或操作用户电脑。交付分支为 `develop`；不发布游戏、不创建 PR。
 
@@ -189,11 +189,36 @@ DLDDDLLLLLUUUURRUUUURRDRURULLDLLLDRDDDDLULLLLLURUUULDLURRDDLDDDRURRRRDLDDDDLULDR
 
 共 **152 步、56 次单枚拉动、0 次推动**，不宣称最优。`python3 tools/search_north_07.py` 可复现独立搜索；Python 与 Godot 都遍历 2,853 个存活位置状态，未出现未定义屏障恢复。初版非通关诊断片段只用于定位转换，不替代正式通关视频。
 
+### 第八关：绿色单拉、草丛与三板联动
+
+7 × 6，原图编号与平面图均经用户确认，按逐行 1–42 编号：绿英雄 9，三紫晶 10 / 16 / 17，墙 6 / 13，目标 7，能量 14，草 23 / 27 / 39，黄板 30 / 32 / 34。`H` 英雄、`V` 紫晶、`T` 草、`Y` 黄板、`X` 能量格、`G` 目的地：
+
+```text
+.....#G
+.HV..#X
+.VV....
+.T...T.
+.Y.Y.Y.
+...T...
+```
+
+英雄 `(1,1)`；三紫晶 `(2,1)/(1,2)/(2,2)`；墙 `(5,0)/(5,1)`；草 `(1,3)/(5,3)/(3,5)`；黄板 `(1,4)/(3,4)/(5,4)`；目标 `(6,0)`、能量 `(6,1)`。其余内部地板，边界外不可走。完全复用绿色自动单拉不推、静态草丛、全局三板 AND 和死亡只能撤销复活；没有新增英雄或迁移 JSON 配置格式。
+
+独立搜索与 Godot 验证的合法路线：
+
+```text
+URRDDDLDDLULUURRDDDLLUUURRURDLDRURRRDDLLUULDDRUDDRURUUUU
+```
+
+**56 步、17 拉、0 推**，三枚紫晶均参与，不宣称最优。51 步英雄与两枚水晶压满三板，52 步拉第三枚紫晶接替并持续开门，55 步过能量格，56 步进入目标。独立 Python 与 Godot 均穷举 21,291 个存活位置状态，没有未定义恢复转移；`python3 tools/search_north_08.py` 可复现。
+
+第八关画面：[初始](docs/screenshots/level_08_initial.png)、[草丛阻挡](docs/screenshots/level_08_bush_blocked.png)、[三晶压板](docs/screenshots/level_08_all_plates.png)、[过门](docs/screenshots/level_08_crossing.png)、[胜利](docs/screenshots/level_08_completed.png)、[小窗口](docs/screenshots/level_08_compact.png)。
+
 ## 操作与通关
 
 | 操作 | 按键 / 界面 |
 | --- | --- |
-| 切换第一至第七关 | 顶部关卡按钮；存活时可切换，从该关初始状态开始，清空撤销历史 |
+| 切换第一至第八关 | 顶部关卡按钮；存活时可切换，从该关初始状态开始，清空撤销历史 |
 | 移动一格 | 方向键或 WASD；也可点击方向按钮 |
 | 撤销最近一次有效移动 | Z、U、Backspace，或“撤销”按钮 |
 | 恢复关卡初始状态 | 存活时按 R，或“重开”按钮；死亡时只能撤销 |
@@ -202,14 +227,14 @@ DLDDDLLLLLUUUURRUUUURRDRURULLDLLLDRDDDDLULLLLLURUUULDLURRDDLDDDRURRRRDLDDDDLULDR
 
 松开再按可连续操作；长按回声和未松开的重复事件不会多走。步数、推动、拉动分别计数，一次整列推仍只算一步 / 一推。撤销一次恢复上次推、拉或行走前的全部位置、颜色身份、统计与机关生死状态，重开恢复初始状态。
 
-存活玩家进入当前关卡的终点才判胜（第一关黄色、第二至七关绿色）。通关后可以撤销最后一步，或重开；撤销恢复玩家、水晶、颜色身份、步数、推动 / 拉动次数、压力、屏障、生死和通关状态，重开清空历史并恢复全部初始状态。
+存活玩家进入当前关卡的终点才判胜（第一关黄色、第二至八关绿色）。通关后可以撤销最后一步，或重开；撤销恢复玩家、水晶、颜色身份、步数、推动 / 拉动次数、压力、屏障、生死和通关状态，重开清空历史并恢复全部初始状态。
 
 第一关已验证、两枚水晶均参与的通关路径：**下，右 × 3，上 × 2，右 × 4，下，右**。结果为 **12 步、4 次推动**；蓝水晶最终在 `(5,2)`，紫水晶最终在 `(9,0)`，玩家在 `(9,1)`。这是一条验证路径，不宣称最优解。
 
 ## 工程结构与数据
 
-- `levels/north_01.json` 至 `levels/north_07.json`：七关数据，默认进入第一关。
-- `levels/solutions/`：逐输入验证的七关通关路径，供测试与演示回放使用。
+- `levels/north_01.json` 至 `levels/north_08.json`：八关数据，默认进入第一关。
+- `levels/solutions/`：逐输入验证的八关通关路径，供测试与演示回放使用。
 - `scripts/core/level_data.gd`：JSON 解析与坐标校验。
 - `scripts/core/energy_rules.gd`：纯占用谓词和机关结算，提供可配置压力来源。
 - `scripts/core/bush_obstacle.gd`：独立静态草丛类型，明确不可移动 / 交换与阻挡能力。
@@ -230,11 +255,12 @@ DLDDDLLLLLUUUURRUUUURRDRURULLDLLLDRDDDDLULLLLLURUUULDLURRDDLDDDRURRRRDLDDDDLULDR
 - `tests/north_05_regression.gd`、`tests/north_05_scene.gd`：第五关解法、实际输入、绿色形象 / 拉动统计、切关与两种窗口尺寸。
 - `tests/north_06_regression.gd`、`tests/north_06_scene.gd`：第六关 77 格 / 七水晶、单板开闭、受阻拉动、压力接替、过门、通关和完整撤销；复用既有绿色死亡夹具。
 - `tests/north_07_regression.gd`、`tests/north_07_scene.gd`：187 格确认布局、补正地板、152 步合法通关、两门同步、闭门受阻、完整撤销重开、切关与真实渲染。
+- `tests/north_08_regression.gd`、`tests/north_08_scene.gd`：42 格确认布局、三紫晶 / 三草 / 三板、56 步通关、压力交接、三处草阻挡、撤销重开和历史隔离。
 - `tests/chain_push_regression.gd`：2 / 3 / 4 / 8 / 60 枚水晶的四方向连推、原子阻挡、边界、空格截断、旁侧水晶、撤销重开和输入去重。
 - `tests/scene_smoke.gd`：真实场景键鼠、通关状态与两种窗口尺寸检查。
 - `tools/verify.py`：一键验证。
 
-地图使用 schema 1。`terrain` 以 `#` / `.` 表示墙 / 地板，宽高各 1 至 64；`player`、`crates`、`exit` 使用 `[x,y]` 整数坐标。`hero_kind` 为 `red` / `green`，省略默认红色；`crystal_colors` 按身份指定 `blue` / `purple`。七关均为 `is_temporary=false`、`objective=player_on_exit`、`targets=[]`。`exit_color` 为 `yellow` / `green`，默认 yellow；非法、重复、墙内或越界坐标会被拒绝。`bushes` 定义独立草丛，`energy_links` 定义压力板与屏障。第三 / 六 / 七关用单板 `plate`，第四关用 `plates` 与 `activation=all`。
+地图使用 schema 1。`terrain` 以 `#` / `.` 表示墙 / 地板，宽高各 1 至 64；`player`、`crates`、`exit` 使用 `[x,y]` 整数坐标。`hero_kind` 为 `red` / `green`，省略默认红色；`crystal_colors` 按身份指定 `blue` / `purple`。八关均为 `is_temporary=false`、`objective=player_on_exit`、`targets=[]`。`exit_color` 为 `yellow` / `green`，默认 yellow；非法、重复、墙内或越界坐标会被拒绝。`bushes` 定义独立草丛，`energy_links` 定义压力板与屏障。第三 / 六 / 七关用单板 `plate`，第四 / 八关用 `plates` 与 `activation=all`。
 
 ## 验证
 
@@ -243,7 +269,7 @@ cd /workspace/stardown
 python3 tools/verify.py
 ```
 
-该命令执行资源导入、所有脚本解析、通用逻辑、红推 / 绿拉与机关回归、七关回归、默认场景启动、切关和键鼠检查。已有 X11 显示时加上真实渲染与截图：
+该命令执行资源导入、所有脚本解析、通用逻辑、红推 / 绿拉与机关回归、八关回归、默认场景启动、切关和键鼠检查。已有 X11 显示时加上真实渲染与截图：
 
 ```bash
 python3 tools/verify.py --visual --display :97
@@ -255,6 +281,6 @@ python3 tools/verify.py --visual --display :97
 /tmp/stardown-tools/xvfb/usr/bin/Xvfb :97 -screen 0 1280x820x24 -nolisten tcp -noreset
 ```
 
-运行日志与截图在 `artifacts/`，缓存与完整生成目录不纳入 Git；必要的验证摘要和七关画面保留在 `docs/`。详见[验证记录](docs/VERIFICATION.md)和[结构化摘要](docs/verification-summary.json)。无头模式只能证明逻辑 / 场景运行，画面结论来自实际 X11 / Mesa 渲染。
+运行日志与截图在 `artifacts/`，缓存与完整生成目录不纳入 Git；必要的验证摘要和八关画面保留在 `docs/`。详见[验证记录](docs/VERIFICATION.md)和[结构化摘要](docs/verification-summary.json)。无头模式只能证明逻辑 / 场景运行，画面结论来自实际 X11 / Mesa 渲染。
 
 中文字体已随工程附带，来自本云端 Debian 包内的 [Noto CJK](https://github.com/notofonts/noto-cjk)，授权见 [OFL.txt](assets/fonts/OFL.txt)。英雄、水晶、墙、地板、终点和图标均为原创几何图形，没有将原作截图打包进工程。命令行参数参考 [Godot 官方文档](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html)。

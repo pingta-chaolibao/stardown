@@ -101,6 +101,7 @@ def main():
             run("03_north_05", ["--script", "res://tests/north_05_regression.gd"])
             run("03_north_06", ["--script", "res://tests/north_06_regression.gd"])
             run("03_north_07", ["--script", "res://tests/north_07_regression.gd"])
+            run("03_north_08", ["--script", "res://tests/north_08_regression.gd"])
             run("04_main_scene", ["--quit-after", "10", "--audio-driver", "Dummy"])
             run("05_scene_input", ["--script", "res://tests/scene_smoke.gd"])
             run("05_north_02_scene", ["--script", "res://tests/north_02_scene.gd"])
@@ -109,6 +110,7 @@ def main():
             run("05_north_05_scene", ["--script", "res://tests/north_05_scene.gd"])
             run("05_north_06_scene", ["--script", "res://tests/north_06_scene.gd"])
             run("05_north_07_scene", ["--script", "res://tests/north_07_scene.gd"])
+            run("05_north_08_scene", ["--script", "res://tests/north_08_scene.gd"])
             if args.visual:
                 run("06_render", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                   "--audio-driver", "Dummy", "--script", "res://tests/scene_smoke.gd",
@@ -130,6 +132,9 @@ def main():
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_07", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_07_scene.gd",
+                                          "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+                run("06_render_north_08", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
+                                          "--audio-driver", "Dummy", "--script", "res://tests/north_08_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
         except (RuntimeError, OSError) as exc:
             report["error"] = str(exc)

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_08",
+  "title": "北部英雄 · 第八关",
+  "is_temporary": false,
+  "source_note": "依据父线程实际看图核对、用户确认原图编号与二维格图后的7×6文本坐标。编号为逐行1至42：英雄9，三紫晶10/16/17，墙6/13，目标7，能量14，草23/27/39，黄板30/32/34。其余内部地板、外部不可走。沿用绿色自动单拉、静态草丛和全局黄板AND，不新增英雄或规则。",
+  "hero_kind": "green",
+  "terrain": [".....#.", ".....#.", ".......", ".......", ".......", "......."],
+  "player": [1, 1],
+  "crates": [[2, 1], [1, 2], [2, 2]],
+  "crystal_colors": ["purple", "purple", "purple"],
+  "bushes": [[1, 3], [5, 3], [3, 5]],
+  "targets": [],
+  "exit": [6, 0],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "energy_links": [
+    {"id": "yellow_01", "plates": [[1, 4], [3, 4], [5, 4]], "activation": "all", "barriers": [[6, 1]], "pressure_sources": ["hero", "crystal"]}
+  ]
+}
