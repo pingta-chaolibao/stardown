@@ -834,5 +834,56 @@
     "gate_crossing_step": 55,
     "victory_step": 56,
     "source_numbering": "row-major 1-42; confirmed original numbered screenshot and matching 2D grid"
+  },
+  "north_08_walkthrough": {
+    "file": "video/chapter_01/level_08.mp4",
+    "level": 8,
+    "bytes": 554811,
+    "sha256": "806fbca4e46c6ca70fc35e8c3cd587229ab742a9de8a1cf3744c0e791d981558",
+    "distinct_sampled_frames": 182,
+    "full_decode_passed": true,
+    "game_implementation_commit": "5c4e25bc6cd1324a75cc04ca625fec04d8668e41",
+    "hero_kind": "green",
+    "codec": "h264",
+    "profile": "High",
+    "pixel_format": "yuv420p",
+    "dimensions": [
+      1280,
+      820
+    ],
+    "fps": 30,
+    "frames": 1158,
+    "duration_seconds": 38.6,
+    "mp4_fast_start": true,
+    "moves": 56,
+    "pushes": 0,
+    "pulls": 17,
+    "initial_player": [
+      1,
+      1
+    ],
+    "victory_player": [
+      6,
+      0
+    ],
+    "legal_input_trace_verified": true,
+    "initial_and_final_frames_reviewed": true,
+    "hero_and_crystal_pressure_reviewed": true,
+    "gate_crossing_reviewed": true,
+    "all_three_crystals_moved": true,
+    "hero_all_plates_step": 51,
+    "final_crystal_handoff_step": 52,
+    "gate_crossing_step": 55,
+    "reviewed_encoded_frames": [
+      0,
+      70,
+      970,
+      988,
+      1042,
+      1157
+    ],
+    "replay_report": "level_08_replay.json",
+    "level_file": "levels/north_08.json",
+    "solution_file": "levels/solutions/north_08.json"
   }
 }
