@@ -52,7 +52,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十关 | [观看 / 下载 MP4](video/chapter_01/level_10.mp4) | 37.4 秒 |
 | 第十一关 | [观看 / 下载 MP4](video/chapter_01/level_11.mp4) | 16.4 秒 |
 | 第十二关 | [观看 / 下载 MP4](video/chapter_01/level_12.mp4) | 20.6 秒 |
-| 第十三关 | 旧录像待替换：切换改为不计数且不进入撤销 | 实现提交后重录 |
+| 第十三关 | [观看 / 下载 MP4](video/chapter_01/level_13.mp4) | 21.2 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -420,7 +420,7 @@ C 循环切换当前英雄，屏幕下方也有「切换 C」。当前英雄有�
 
 第十三关实际画面：[初始蓝高亮](docs/screenshots/level_13_initial.png)、[切换红高亮](docs/screenshots/level_13_selected_red.png)、[双板开放](docs/screenshots/level_13_both_plates.png)、[英雄互换](docs/screenshots/level_13_hero_exchange.png)、[第一名英雄到目标](docs/screenshots/level_13_first_goal.png)、[双英雄胜利](docs/screenshots/level_13_completed.png)、[小窗口蓝](docs/screenshots/level_13_compact_blue.png)、[小窗口红](docs/screenshots/level_13_compact_red.png)。
 
-第十三关旧录像中的切换计数约定已被用户纠正，本实现提交后会重新录制并替换 `video/chapter_01/level_13.mp4`。前十二段视频的字节与合法回放保留。
+[第十三关修正版通关视频](video/chapter_01/level_13.mp4)已从实际Godot初始到双英雄胜利重新录制：21.2秒 / 636帧，24次实际行动、3次不计数选择事件。三次C保持当时4/8/17的操作数，最终显示24。全部十三段视频完整解码与独立合法回放通过，原十二份媒体保持。
 
 
 ### 切换与撤销的最新约定

@@ -610,13 +610,13 @@
     {
       "file": "video/chapter_01/level_13.mp4",
       "level": 13,
-      "bytes": 335239,
-      "sha256": "5979fa7689493a41f88e81cdb249f45579ed8a7895e88cc62e0fe0443680f930",
+      "bytes": 332454,
+      "sha256": "7342b7fc5dcbd6b37f2e915ee11d6003fecb11377d39ce94ef68f3e83417c47d",
       "distinct_sampled_frames": 96,
       "sampled_action_states": 28,
       "distinct_action_state_frames": 28,
       "full_decode_passed": true,
-      "game_implementation_commit": "c3b2ca0d789b4d770d7afc43689b0fc3cb288108",
+      "game_implementation_commit": "b24f14750cf2902b37c99a1b48a746deb1cf5383",
       "hero_kinds": [
         "red",
         "blue"
@@ -632,15 +632,19 @@
       "frames": 636,
       "duration_seconds": 21.2,
       "mp4_fast_start": true,
-      "moves": 27,
+      "moves": 24,
       "directions": 24,
+      "input_events": 27,
+      "selection_events": 3,
       "walks": 22,
-      "switches": 3,
       "pushes": 0,
       "pulls": 0,
       "swaps": 2,
-      "counts_are_operations": true,
-      "action_notation": "UDLR acts on selected hero; C cycles identity without moving. All 27 successful inputs count once; direction alone decides blue first-target swap.",
+      "counts_are_actual_actions": true,
+      "selection_counts_as_operation": false,
+      "selection_is_undoable": false,
+      "undo_keeps_current_selection": true,
+      "action_notation": "UDLR counts one actual action; C is a separate uncounted selection event and never creates undo history. Blue first-target exchange is triggered only by the current direction.",
       "modifier_keys_used": [],
       "keys_used": [
         "W",
@@ -673,22 +677,32 @@
       "victory_active_hero": "red",
       "legal_input_trace_verified": true,
       "initial_and_final_frames_reviewed": true,
-      "all_three_switch_highlights_reviewed": true,
+      "all_three_uncounted_switch_highlights_reviewed": true,
       "inactive_heroes_retain_hue_reviewed": true,
       "hero_exchange_across_open_gate_reviewed": true,
       "two_distinct_hero_goals_reviewed": true,
-      "switch_action_numbers": [
+      "selection_input_events": [
         5,
         10,
         20
       ],
+      "selection_unchanged_action_counts": [
+        4,
+        8,
+        17
+      ],
       "swap_action_numbers": [
+        9,
+        16
+      ],
+      "swap_input_events": [
         11,
         18
       ],
-      "all_plates_action": 9,
-      "first_hero_goal_action": 19,
-      "victory_action": 27,
+      "all_plates_action": 8,
+      "first_hero_goal_action": 17,
+      "victory_action": 24,
+      "victory_input_event": 27,
       "reviewed_encoded_frames": [
         0,
         142,
@@ -718,6 +732,6 @@
     "level_10": "af2c3cd20a1f478f114d05e1e3e90d231aca67a5",
     "level_11": "9d32847f26c4f3801b8467c364d8fbcfce8915db",
     "level_12": "ec35efa0d643a0cfd686a12a7bc798e78b27715c",
-    "level_13": "c3b2ca0d789b4d770d7afc43689b0fc3cb288108"
+    "level_13": "b24f14750cf2902b37c99a1b48a746deb1cf5383"
   }
 }

@@ -1515,7 +1515,7 @@
     "modifier_keys_used": [],
     "user_example_13_to_24_then_24_swaps_with_26": true
   },
-  "all_chapter_one_walkthroughs_checked": 12,
+  "all_chapter_one_walkthroughs_checked": 13,
   "previous_nine_maps_solutions_videos_replays_unchanged_from": "9c879b28bd093773d6af2a9dcf2aa6dccc3c205b",
   "north_10_independent_search": {
     "living_identity_states_exhausted": 2560,
@@ -4432,6 +4432,116 @@
   "previous_twelve_video_checker_preflight": "all12 complete decode and independently recomputed legal input replay passed after checker generalization",
   "previous_twelve_video_manifest_entries_unchanged": true,
   "thirteenth_map_unchanged_from": "36f832d7f72bbd537c39e1e23eb3e358ed6be050",
-  "north_13_walkthrough_pending": true,
-  "north_13_selection_correction": "User: 切换不算操作不用撤销; 24 actual actions,3 uncounted selection events; undo latest actual action and keep current selection"
+  "north_13_selection_correction": "User: 切换不算操作不用撤销; 24 actual actions,3 uncounted selection events; undo latest actual action and keep current selection",
+  "north_13_walkthrough": {
+    "file": "video/chapter_01/level_13.mp4",
+    "level": 13,
+    "bytes": 332454,
+    "sha256": "7342b7fc5dcbd6b37f2e915ee11d6003fecb11377d39ce94ef68f3e83417c47d",
+    "distinct_sampled_frames": 96,
+    "sampled_action_states": 28,
+    "distinct_action_state_frames": 28,
+    "full_decode_passed": true,
+    "game_implementation_commit": "b24f14750cf2902b37c99a1b48a746deb1cf5383",
+    "hero_kinds": [
+      "red",
+      "blue"
+    ],
+    "codec": "h264",
+    "profile": "High",
+    "pixel_format": "yuv420p",
+    "dimensions": [
+      1280,
+      820
+    ],
+    "fps": 30,
+    "frames": 636,
+    "duration_seconds": 21.2,
+    "mp4_fast_start": true,
+    "moves": 24,
+    "directions": 24,
+    "input_events": 27,
+    "selection_events": 3,
+    "walks": 22,
+    "pushes": 0,
+    "pulls": 0,
+    "swaps": 2,
+    "counts_are_actual_actions": true,
+    "selection_counts_as_operation": false,
+    "selection_is_undoable": false,
+    "undo_keeps_current_selection": true,
+    "action_notation": "UDLR counts one actual action; C is a separate uncounted selection event and never creates undo history. Blue first-target exchange is triggered only by the current direction.",
+    "modifier_keys_used": [],
+    "keys_used": [
+      "W",
+      "A",
+      "S",
+      "D",
+      "C"
+    ],
+    "initial_hero_positions": {
+      "red": [
+        2,
+        2
+      ],
+      "blue": [
+        2,
+        4
+      ]
+    },
+    "victory_hero_positions": {
+      "red": [
+        0,
+        5
+      ],
+      "blue": [
+        0,
+        2
+      ]
+    },
+    "initial_active_hero": "blue",
+    "victory_active_hero": "red",
+    "legal_input_trace_verified": true,
+    "initial_and_final_frames_reviewed": true,
+    "all_three_uncounted_switch_highlights_reviewed": true,
+    "inactive_heroes_retain_hue_reviewed": true,
+    "hero_exchange_across_open_gate_reviewed": true,
+    "two_distinct_hero_goals_reviewed": true,
+    "selection_input_events": [
+      5,
+      10,
+      20
+    ],
+    "selection_unchanged_action_counts": [
+      4,
+      8,
+      17
+    ],
+    "swap_action_numbers": [
+      9,
+      16
+    ],
+    "swap_input_events": [
+      11,
+      18
+    ],
+    "all_plates_action": 8,
+    "first_hero_goal_action": 17,
+    "victory_action": 24,
+    "victory_input_event": 27,
+    "reviewed_encoded_frames": [
+      0,
+      142,
+      214,
+      232,
+      250,
+      376,
+      394,
+      412,
+      635
+    ],
+    "replay_report": "level_13_replay.json",
+    "level_file": "levels/north_13.json",
+    "solution_file": "levels/solutions/north_13.json"
+  }
 }

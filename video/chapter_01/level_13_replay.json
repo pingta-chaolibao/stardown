@@ -1,6 +1,7 @@
 {
   "capture": "Godot Movie Maker viewport; actual Input.parse_input_event press/release",
   "chapter": 1,
+  "direction_actions": 24,
   "display": "X11",
   "engine": {
     "build": "official",
@@ -80,8 +81,9 @@
         "selected": false
       }
     ],
+    "history_size": 24,
     "level_id": "north_hero_13",
-    "moves": 27,
+    "moves": 24,
     "occupied_exits": 2,
     "plates": [
       {
@@ -110,12 +112,12 @@
     },
     "pulls": 0,
     "pushes": 0,
-    "swaps": 2,
-    "switches": 3
+    "selection_events": 3,
+    "swaps": 2
   },
   "fps": 30,
   "frames_per_input": 18,
-  "game_implementation_commit": "c3b2ca0d789b4d770d7afc43689b0fc3cb288108",
+  "game_implementation_commit": "b24f14750cf2902b37c99a1b48a746deb1cf5383",
   "initial_pause_frames": 60,
   "initial_state": {
     "active_hero": "blue",
@@ -184,6 +186,7 @@
         "selected": true
       }
     ],
+    "history_size": 0,
     "level_id": "north_hero_13",
     "moves": 0,
     "occupied_exits": 0,
@@ -214,12 +217,14 @@
     },
     "pulls": 0,
     "pushes": 0,
-    "swaps": 0,
-    "switches": 0
+    "selection_events": 0,
+    "swaps": 0
   },
+  "input_events": 27,
   "level": 13,
-  "movie_file": "level_13.avi",
+  "movie_file": "level_13_selection_fix.avi",
   "path": "DRRRCURRRCULLLULLDDCLLLDLLU",
+  "selection_events": 3,
   "trace": [
     {
       "action": "move",
@@ -255,6 +260,7 @@
           ]
         }
       ],
+      "event_index": 1,
       "exit_color": "red",
       "exits": [
         [
@@ -289,6 +295,7 @@
           "selected": true
         }
       ],
+      "history_size": 1,
       "input": "D",
       "level_id": "north_hero_13",
       "moves": 1,
@@ -320,8 +327,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 0,
-      "switches": 0
+      "selection_events": 0,
+      "swaps": 0
     },
     {
       "action": "move",
@@ -357,6 +364,7 @@
           ]
         }
       ],
+      "event_index": 2,
       "exit_color": "red",
       "exits": [
         [
@@ -391,6 +399,7 @@
           "selected": true
         }
       ],
+      "history_size": 2,
       "input": "R",
       "level_id": "north_hero_13",
       "moves": 2,
@@ -422,8 +431,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 0,
-      "switches": 0
+      "selection_events": 0,
+      "swaps": 0
     },
     {
       "action": "move",
@@ -459,6 +468,7 @@
           ]
         }
       ],
+      "event_index": 3,
       "exit_color": "red",
       "exits": [
         [
@@ -493,6 +503,7 @@
           "selected": true
         }
       ],
+      "history_size": 3,
       "input": "R",
       "level_id": "north_hero_13",
       "moves": 3,
@@ -524,8 +535,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 0,
-      "switches": 0
+      "selection_events": 0,
+      "swaps": 0
     },
     {
       "action": "move",
@@ -561,6 +572,7 @@
           ]
         }
       ],
+      "event_index": 4,
       "exit_color": "red",
       "exits": [
         [
@@ -595,6 +607,7 @@
           "selected": true
         }
       ],
+      "history_size": 4,
       "input": "R",
       "level_id": "north_hero_13",
       "moves": 4,
@@ -626,8 +639,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 0,
-      "switches": 0
+      "selection_events": 0,
+      "swaps": 0
     },
     {
       "action": "switch",
@@ -663,6 +676,7 @@
           ]
         }
       ],
+      "event_index": 5,
       "exit_color": "red",
       "exits": [
         [
@@ -697,9 +711,10 @@
           "selected": false
         }
       ],
+      "history_size": 4,
       "input": "C",
       "level_id": "north_hero_13",
-      "moves": 5,
+      "moves": 4,
       "occupied_exits": 0,
       "plates": [
         {
@@ -728,8 +743,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 0,
-      "switches": 1
+      "selection_events": 1,
+      "swaps": 0
     },
     {
       "action": "move",
@@ -765,6 +780,7 @@
           ]
         }
       ],
+      "event_index": 6,
       "exit_color": "red",
       "exits": [
         [
@@ -799,9 +815,10 @@
           "selected": false
         }
       ],
+      "history_size": 5,
       "input": "U",
       "level_id": "north_hero_13",
-      "moves": 6,
+      "moves": 5,
       "occupied_exits": 0,
       "plates": [
         {
@@ -830,8 +847,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 0,
-      "switches": 1
+      "selection_events": 1,
+      "swaps": 0
     },
     {
       "action": "move",
@@ -867,6 +884,7 @@
           ]
         }
       ],
+      "event_index": 7,
       "exit_color": "red",
       "exits": [
         [
@@ -901,9 +919,10 @@
           "selected": false
         }
       ],
+      "history_size": 6,
       "input": "R",
       "level_id": "north_hero_13",
-      "moves": 7,
+      "moves": 6,
       "occupied_exits": 0,
       "plates": [
         {
@@ -932,8 +951,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 0,
-      "switches": 1
+      "selection_events": 1,
+      "swaps": 0
     },
     {
       "action": "move",
@@ -969,6 +988,7 @@
           ]
         }
       ],
+      "event_index": 8,
       "exit_color": "red",
       "exits": [
         [
@@ -1003,9 +1023,10 @@
           "selected": false
         }
       ],
+      "history_size": 7,
       "input": "R",
       "level_id": "north_hero_13",
-      "moves": 8,
+      "moves": 7,
       "occupied_exits": 0,
       "plates": [
         {
@@ -1034,8 +1055,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 0,
-      "switches": 1
+      "selection_events": 1,
+      "swaps": 0
     },
     {
       "action": "move",
@@ -1071,6 +1092,7 @@
           ]
         }
       ],
+      "event_index": 9,
       "exit_color": "red",
       "exits": [
         [
@@ -1105,7 +1127,216 @@
           "selected": false
         }
       ],
+      "history_size": 8,
       "input": "R",
+      "level_id": "north_hero_13",
+      "moves": 8,
+      "occupied_exits": 0,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            5,
+            1
+          ],
+          "pressed": true
+        },
+        {
+          "group": "yellow_01",
+          "position": [
+            5,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        5,
+        1
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "selection_events": 1,
+      "swaps": 0
+    },
+    {
+      "action": "switch",
+      "active_hero": "blue",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            5,
+            3
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue_purple",
+          "id": 0,
+          "position": [
+            0,
+            1
+          ]
+        },
+        {
+          "color": "purple_pink",
+          "id": 1,
+          "position": [
+            0,
+            4
+          ]
+        }
+      ],
+      "event_index": 10,
+      "exit_color": "red",
+      "exits": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            5,
+            1
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            5,
+            5
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 8,
+      "input": "C",
+      "level_id": "north_hero_13",
+      "moves": 8,
+      "occupied_exits": 0,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            5,
+            1
+          ],
+          "pressed": true
+        },
+        {
+          "group": "yellow_01",
+          "position": [
+            5,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        5,
+        5
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "selection_events": 2,
+      "swaps": 0
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            5,
+            3
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue_purple",
+          "id": 0,
+          "position": [
+            0,
+            1
+          ]
+        },
+        {
+          "color": "purple_pink",
+          "id": 1,
+          "position": [
+            0,
+            4
+          ]
+        }
+      ],
+      "event_index": 11,
+      "exit_color": "red",
+      "exits": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            5,
+            5
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            5,
+            1
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 9,
+      "input": "U",
       "level_id": "north_hero_13",
       "moves": 9,
       "occupied_exits": 0,
@@ -1136,212 +1367,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 0,
-      "switches": 1
-    },
-    {
-      "action": "switch",
-      "active_hero": "blue",
-      "active_hero_index": 1,
-      "alive": true,
-      "barriers": [
-        {
-          "active": false,
-          "position": [
-            5,
-            3
-          ]
-        }
-      ],
-      "bushes": [],
-      "completed": false,
-      "crystals": [
-        {
-          "color": "blue_purple",
-          "id": 0,
-          "position": [
-            0,
-            1
-          ]
-        },
-        {
-          "color": "purple_pink",
-          "id": 1,
-          "position": [
-            0,
-            4
-          ]
-        }
-      ],
-      "exit_color": "red",
-      "exits": [
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          5
-        ]
-      ],
-      "hero_kind": "blue",
-      "heroes": [
-        {
-          "alive": true,
-          "id": "red",
-          "kind": "red",
-          "position": [
-            5,
-            1
-          ],
-          "selected": false
-        },
-        {
-          "alive": true,
-          "id": "blue",
-          "kind": "blue",
-          "position": [
-            5,
-            5
-          ],
-          "selected": true
-        }
-      ],
-      "input": "C",
-      "level_id": "north_hero_13",
-      "moves": 10,
-      "occupied_exits": 0,
-      "plates": [
-        {
-          "group": "yellow_01",
-          "position": [
-            5,
-            1
-          ],
-          "pressed": true
-        },
-        {
-          "group": "yellow_01",
-          "position": [
-            5,
-            5
-          ],
-          "pressed": true
-        }
-      ],
-      "player": [
-        5,
-        5
-      ],
-      "pressure": {
-        "yellow_01": true
-      },
-      "pulls": 0,
-      "pushes": 0,
-      "swaps": 0,
-      "switches": 2
-    },
-    {
-      "action": "swap",
-      "active_hero": "blue",
-      "active_hero_index": 1,
-      "alive": true,
-      "barriers": [
-        {
-          "active": false,
-          "position": [
-            5,
-            3
-          ]
-        }
-      ],
-      "bushes": [],
-      "completed": false,
-      "crystals": [
-        {
-          "color": "blue_purple",
-          "id": 0,
-          "position": [
-            0,
-            1
-          ]
-        },
-        {
-          "color": "purple_pink",
-          "id": 1,
-          "position": [
-            0,
-            4
-          ]
-        }
-      ],
-      "exit_color": "red",
-      "exits": [
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          5
-        ]
-      ],
-      "hero_kind": "blue",
-      "heroes": [
-        {
-          "alive": true,
-          "id": "red",
-          "kind": "red",
-          "position": [
-            5,
-            5
-          ],
-          "selected": false
-        },
-        {
-          "alive": true,
-          "id": "blue",
-          "kind": "blue",
-          "position": [
-            5,
-            1
-          ],
-          "selected": true
-        }
-      ],
-      "input": "U",
-      "level_id": "north_hero_13",
-      "moves": 11,
-      "occupied_exits": 0,
-      "plates": [
-        {
-          "group": "yellow_01",
-          "position": [
-            5,
-            1
-          ],
-          "pressed": true
-        },
-        {
-          "group": "yellow_01",
-          "position": [
-            5,
-            5
-          ],
-          "pressed": true
-        }
-      ],
-      "player": [
-        5,
-        1
-      ],
-      "pressure": {
-        "yellow_01": true
-      },
-      "pulls": 0,
-      "pushes": 0,
-      "swaps": 1,
-      "switches": 2
+      "selection_events": 2,
+      "swaps": 1
     },
     {
       "action": "move",
@@ -1377,6 +1404,7 @@
           ]
         }
       ],
+      "event_index": 12,
       "exit_color": "red",
       "exits": [
         [
@@ -1411,9 +1439,10 @@
           "selected": true
         }
       ],
+      "history_size": 10,
       "input": "L",
       "level_id": "north_hero_13",
-      "moves": 12,
+      "moves": 10,
       "occupied_exits": 0,
       "plates": [
         {
@@ -1442,8 +1471,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 1,
-      "switches": 2
+      "selection_events": 2,
+      "swaps": 1
     },
     {
       "action": "move",
@@ -1479,6 +1508,7 @@
           ]
         }
       ],
+      "event_index": 13,
       "exit_color": "red",
       "exits": [
         [
@@ -1513,9 +1543,10 @@
           "selected": true
         }
       ],
+      "history_size": 11,
       "input": "L",
       "level_id": "north_hero_13",
-      "moves": 13,
+      "moves": 11,
       "occupied_exits": 0,
       "plates": [
         {
@@ -1544,8 +1575,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 1,
-      "switches": 2
+      "selection_events": 2,
+      "swaps": 1
     },
     {
       "action": "move",
@@ -1581,6 +1612,7 @@
           ]
         }
       ],
+      "event_index": 14,
       "exit_color": "red",
       "exits": [
         [
@@ -1615,9 +1647,10 @@
           "selected": true
         }
       ],
+      "history_size": 12,
       "input": "L",
       "level_id": "north_hero_13",
-      "moves": 14,
+      "moves": 12,
       "occupied_exits": 0,
       "plates": [
         {
@@ -1646,8 +1679,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 1,
-      "switches": 2
+      "selection_events": 2,
+      "swaps": 1
     },
     {
       "action": "move",
@@ -1683,6 +1716,7 @@
           ]
         }
       ],
+      "event_index": 15,
       "exit_color": "red",
       "exits": [
         [
@@ -1717,9 +1751,10 @@
           "selected": true
         }
       ],
+      "history_size": 13,
       "input": "U",
       "level_id": "north_hero_13",
-      "moves": 15,
+      "moves": 13,
       "occupied_exits": 0,
       "plates": [
         {
@@ -1748,8 +1783,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 1,
-      "switches": 2
+      "selection_events": 2,
+      "swaps": 1
     },
     {
       "action": "move",
@@ -1785,6 +1820,7 @@
           ]
         }
       ],
+      "event_index": 16,
       "exit_color": "red",
       "exits": [
         [
@@ -1819,9 +1855,10 @@
           "selected": true
         }
       ],
+      "history_size": 14,
       "input": "L",
       "level_id": "north_hero_13",
-      "moves": 16,
+      "moves": 14,
       "occupied_exits": 0,
       "plates": [
         {
@@ -1850,8 +1887,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 1,
-      "switches": 2
+      "selection_events": 2,
+      "swaps": 1
     },
     {
       "action": "move",
@@ -1887,6 +1924,7 @@
           ]
         }
       ],
+      "event_index": 17,
       "exit_color": "red",
       "exits": [
         [
@@ -1921,9 +1959,10 @@
           "selected": true
         }
       ],
+      "history_size": 15,
       "input": "L",
       "level_id": "north_hero_13",
-      "moves": 17,
+      "moves": 15,
       "occupied_exits": 0,
       "plates": [
         {
@@ -1952,8 +1991,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 1,
-      "switches": 2
+      "selection_events": 2,
+      "swaps": 1
     },
     {
       "action": "swap",
@@ -1989,6 +2028,7 @@
           ]
         }
       ],
+      "event_index": 18,
       "exit_color": "red",
       "exits": [
         [
@@ -2023,9 +2063,10 @@
           "selected": true
         }
       ],
+      "history_size": 16,
       "input": "D",
       "level_id": "north_hero_13",
-      "moves": 18,
+      "moves": 16,
       "occupied_exits": 0,
       "plates": [
         {
@@ -2054,8 +2095,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 2,
-      "switches": 2
+      "selection_events": 2,
+      "swaps": 2
     },
     {
       "action": "move",
@@ -2091,6 +2132,7 @@
           ]
         }
       ],
+      "event_index": 19,
       "exit_color": "red",
       "exits": [
         [
@@ -2125,9 +2167,10 @@
           "selected": true
         }
       ],
+      "history_size": 17,
       "input": "D",
       "level_id": "north_hero_13",
-      "moves": 19,
+      "moves": 17,
       "occupied_exits": 1,
       "plates": [
         {
@@ -2156,8 +2199,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 2,
-      "switches": 2
+      "selection_events": 2,
+      "swaps": 2
     },
     {
       "action": "switch",
@@ -2193,6 +2236,7 @@
           ]
         }
       ],
+      "event_index": 20,
       "exit_color": "red",
       "exits": [
         [
@@ -2227,9 +2271,10 @@
           "selected": false
         }
       ],
+      "history_size": 17,
       "input": "C",
       "level_id": "north_hero_13",
-      "moves": 20,
+      "moves": 17,
       "occupied_exits": 1,
       "plates": [
         {
@@ -2258,8 +2303,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 2,
-      "switches": 3
+      "selection_events": 3,
+      "swaps": 2
     },
     {
       "action": "move",
@@ -2295,6 +2340,7 @@
           ]
         }
       ],
+      "event_index": 21,
       "exit_color": "red",
       "exits": [
         [
@@ -2329,9 +2375,10 @@
           "selected": false
         }
       ],
+      "history_size": 18,
       "input": "L",
       "level_id": "north_hero_13",
-      "moves": 21,
+      "moves": 18,
       "occupied_exits": 1,
       "plates": [
         {
@@ -2360,8 +2407,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 2,
-      "switches": 3
+      "selection_events": 3,
+      "swaps": 2
     },
     {
       "action": "move",
@@ -2397,6 +2444,7 @@
           ]
         }
       ],
+      "event_index": 22,
       "exit_color": "red",
       "exits": [
         [
@@ -2431,9 +2479,10 @@
           "selected": false
         }
       ],
+      "history_size": 19,
       "input": "L",
       "level_id": "north_hero_13",
-      "moves": 22,
+      "moves": 19,
       "occupied_exits": 1,
       "plates": [
         {
@@ -2462,8 +2511,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 2,
-      "switches": 3
+      "selection_events": 3,
+      "swaps": 2
     },
     {
       "action": "move",
@@ -2499,6 +2548,7 @@
           ]
         }
       ],
+      "event_index": 23,
       "exit_color": "red",
       "exits": [
         [
@@ -2533,9 +2583,10 @@
           "selected": false
         }
       ],
+      "history_size": 20,
       "input": "L",
       "level_id": "north_hero_13",
-      "moves": 23,
+      "moves": 20,
       "occupied_exits": 1,
       "plates": [
         {
@@ -2564,8 +2615,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 2,
-      "switches": 3
+      "selection_events": 3,
+      "swaps": 2
     },
     {
       "action": "move",
@@ -2601,6 +2652,7 @@
           ]
         }
       ],
+      "event_index": 24,
       "exit_color": "red",
       "exits": [
         [
@@ -2635,9 +2687,10 @@
           "selected": false
         }
       ],
+      "history_size": 21,
       "input": "D",
       "level_id": "north_hero_13",
-      "moves": 24,
+      "moves": 21,
       "occupied_exits": 1,
       "plates": [
         {
@@ -2666,8 +2719,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 2,
-      "switches": 3
+      "selection_events": 3,
+      "swaps": 2
     },
     {
       "action": "move",
@@ -2703,6 +2756,7 @@
           ]
         }
       ],
+      "event_index": 25,
       "exit_color": "red",
       "exits": [
         [
@@ -2737,9 +2791,10 @@
           "selected": false
         }
       ],
+      "history_size": 22,
       "input": "L",
       "level_id": "north_hero_13",
-      "moves": 25,
+      "moves": 22,
       "occupied_exits": 1,
       "plates": [
         {
@@ -2768,8 +2823,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 2,
-      "switches": 3
+      "selection_events": 3,
+      "swaps": 2
     },
     {
       "action": "move",
@@ -2805,6 +2860,7 @@
           ]
         }
       ],
+      "event_index": 26,
       "exit_color": "red",
       "exits": [
         [
@@ -2839,9 +2895,10 @@
           "selected": false
         }
       ],
+      "history_size": 23,
       "input": "L",
       "level_id": "north_hero_13",
-      "moves": 26,
+      "moves": 23,
       "occupied_exits": 1,
       "plates": [
         {
@@ -2870,8 +2927,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 2,
-      "switches": 3
+      "selection_events": 3,
+      "swaps": 2
     },
     {
       "action": "move",
@@ -2907,6 +2964,7 @@
           ]
         }
       ],
+      "event_index": 27,
       "exit_color": "red",
       "exits": [
         [
@@ -2941,9 +2999,10 @@
           "selected": false
         }
       ],
+      "history_size": 24,
       "input": "U",
       "level_id": "north_hero_13",
-      "moves": 27,
+      "moves": 24,
       "occupied_exits": 2,
       "plates": [
         {
@@ -2972,8 +3031,8 @@
       },
       "pulls": 0,
       "pushes": 0,
-      "swaps": 2,
-      "switches": 3
+      "selection_events": 3,
+      "swaps": 2
     }
   ],
   "victory_pause_frames": 90
