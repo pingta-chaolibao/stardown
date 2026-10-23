@@ -38,3 +38,7 @@ The user requires one complete gameplay demonstration video for every level. Thi
 6. Commit the videos and updated documentation afterward, push normally, and verify the final remote SHA. Report implementation and video commits and the actual repository video links.
 
 `tools/record_playthrough.gd` uses normal press/release events and checked paths from `levels/solutions/`. Run it with Godot Movie Maker, a real display, and `--fixed-fps 30`; it waits 18 frames per input, with initial and victory pauses. Extend the checked paths and recording coverage as new levels are added.
+
+## Confirmed tenth map
+
+Level 10 is the user-confirmed 11x7 blue-hero map in north_10.json. Original marker 4=(3,0) is explicitly corrected to floor; all other cells including earlier question-mark cells are confirmed. Hero=(0,1), single purple crystal=(1,1), exit=(1,5), plate=(10,6), energy=(3,5); middle row y=3 has floor only at x=5 and x=9. No bushes or new rules. Keep the first nine maps, solutions, videos and replay reports byte-for-byte unchanged from 9c879b28bd093773d6af2a9dcf2aa6dccc3c205b. Use the existing blue direction-first target priority and global yellow settlement.

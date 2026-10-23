@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_10",
+  "title": "北部英雄 · 第十关",
+  "is_temporary": false,
+  "source_note": "依据用户确认的11×7原图编号与二维图，用户明确更正4号(3,0)为空地，其余格（含此前问号）确认正确。蓝英雄12号(0,1)，唯一紫水晶13号(1,1)，绿色终点57号(1,5)，黄色能量59号(3,5)，黄色压板77号(10,6)。沿用方向输入触发被动交换与单板机关，原创2D几何表现。",
+  "hero_kind": "blue",
+  "terrain": [
+    ".......#...",
+    "...#.......",
+    ".......#...",
+    "#####.###.#",
+    "...#...#...",
+    "...........",
+    "...#...#..."
+  ],
+  "player": [
+    0,
+    1
+  ],
+  "crates": [
+    [
+      1,
+      1
+    ]
+  ],
+  "crystal_colors": [
+    "purple"
+  ],
+  "targets": [],
+  "exit": [
+    1,
+    5
+  ],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "energy_links": [
+    {
+      "id": "yellow_01",
+      "plate": [
+        10,
+        6
+      ],
+      "barriers": [
+        [
+          3,
+          5
+        ]
+      ],
+      "pressure_sources": [
+        "hero",
+        "crystal"
+      ]
+    }
+  ]
+}

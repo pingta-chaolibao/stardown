@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-23T06:17:46.405864+00:00",
+  "time_utc": "2026-10-23T06:45:16.804435+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,337 +7,355 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.016
+      "seconds": 0.015
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 7.812
+      "seconds": 6.918
     },
     {
       "name": "02_parse_00_bush_obstacle",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.142
     },
     {
       "name": "02_parse_01_energy_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.146
     },
     {
       "name": "02_parse_02_grid_state",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.149
     },
     {
       "name": "02_parse_03_hero_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.146
     },
     {
       "name": "02_parse_04_level_data",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "02_parse_05_swap_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.153
+      "seconds": 3.143
     },
     {
       "name": "02_parse_06_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.142
     },
     {
       "name": "02_parse_07_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.24
     },
     {
       "name": "02_parse_08_board_view",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.146
     },
     {
       "name": "02_parse_09_blue_swap_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.151
     },
     {
       "name": "02_parse_10_bush_and_group_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.151
     },
     {
       "name": "02_parse_11_chain_push_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.143
     },
     {
       "name": "02_parse_12_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.149
     },
     {
       "name": "02_parse_13_global_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.24
+      "seconds": 3.151
     },
     {
       "name": "02_parse_14_green_pull_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.156
     },
     {
       "name": "02_parse_15_north_01_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.164
     },
     {
       "name": "02_parse_16_north_02_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.149
     },
     {
       "name": "02_parse_17_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.148
     },
     {
       "name": "02_parse_18_north_03_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.151
+      "seconds": 3.149
     },
     {
       "name": "02_parse_19_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.156
     },
     {
       "name": "02_parse_20_north_04_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.155
+      "seconds": 3.149
     },
     {
       "name": "02_parse_21_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.267
     },
     {
       "name": "02_parse_22_north_05_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.155
     },
     {
       "name": "02_parse_23_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.144
     },
     {
       "name": "02_parse_24_north_06_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.151
+      "seconds": 3.142
     },
     {
       "name": "02_parse_25_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.147
     },
     {
       "name": "02_parse_26_north_07_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.159
     },
     {
       "name": "02_parse_27_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.153
+      "seconds": 3.145
     },
     {
       "name": "02_parse_28_north_08_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.154
+      "seconds": 3.144
     },
     {
       "name": "02_parse_29_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.147
     },
     {
       "name": "02_parse_30_north_09_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.147
     },
     {
       "name": "02_parse_31_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.146
     },
     {
-      "name": "02_parse_32_run_tests",
+      "name": "02_parse_32_north_10_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.153
     },
     {
-      "name": "02_parse_33_scene_smoke",
+      "name": "02_parse_33_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.152
+      "seconds": 3.144
     },
     {
-      "name": "03_logic",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.244
-    },
-    {
-      "name": "03_chain_push",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.145
-    },
-    {
-      "name": "03_energy",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.143
-    },
-    {
-      "name": "03_global_energy",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.143
-    },
-    {
-      "name": "03_bush_group",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.143
-    },
-    {
-      "name": "03_green_pull",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.15
-    },
-    {
-      "name": "03_blue_swap",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.254
-    },
-    {
-      "name": "03_north_01",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.152
-    },
-    {
-      "name": "03_north_02",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.148
-    },
-    {
-      "name": "03_north_03",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.255
-    },
-    {
-      "name": "03_north_04",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.154
-    },
-    {
-      "name": "03_north_05",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.156
-    },
-    {
-      "name": "03_north_06",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.152
-    },
-    {
-      "name": "03_north_07",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.154
-    },
-    {
-      "name": "03_north_08",
+      "name": "02_parse_34_run_tests",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.147
     },
     {
-      "name": "03_north_09",
+      "name": "02_parse_35_scene_smoke",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146
     },
     {
+      "name": "03_logic",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.158
+    },
+    {
+      "name": "03_chain_push",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_global_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_bush_group",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148
+    },
+    {
+      "name": "03_green_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "03_blue_swap",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_01",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_north_02",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_03",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241
+    },
+    {
+      "name": "03_north_04",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148
+    },
+    {
+      "name": "03_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "03_north_06",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_07",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_08",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_09",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_10",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148
+    },
+    {
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.359
+      "seconds": 3.333
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.45
+      "seconds": 4.449
     },
     {
       "name": "05_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.288
+      "seconds": 4.278
     },
     {
       "name": "05_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.175
+      "seconds": 4.174
     },
     {
       "name": "05_north_04_scene",
@@ -349,85 +367,97 @@
       "name": "05_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.355
+      "seconds": 4.358
     },
     {
       "name": "05_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.004
+      "seconds": 5.01
     },
     {
       "name": "05_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.03
+      "seconds": 6.029
     },
     {
       "name": "05_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.817
+      "seconds": 4.818
     },
     {
       "name": "05_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.729
+      "seconds": 4.726
+    },
+    {
+      "name": "05_north_10_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 5.376
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.173
+      "seconds": 14.736
     },
     {
       "name": "06_render_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.183
+      "seconds": 12.176
     },
     {
       "name": "06_render_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.176
+      "seconds": 12.169
     },
     {
       "name": "06_render_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.242
+      "seconds": 12.171
     },
     {
       "name": "06_render_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.279
+      "seconds": 12.172
     },
     {
       "name": "06_render_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.427
+      "seconds": 13.269
     },
     {
       "name": "06_render_north_07",
       "passed": true,
       "exit_code": 0,
-      "seconds": 18.999
+      "seconds": 22.109
     },
     {
       "name": "06_render_north_08",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.889
+      "seconds": 12.848
     },
     {
       "name": "06_render_north_09",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.17
+      "seconds": 12.172
+    },
+    {
+      "name": "06_render_north_10",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 13.804
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -513,76 +543,89 @@
       "checks": 82,
       "failures": 0
     },
+    "03_north_10": {
+      "cases": 5,
+      "checks": 344,
+      "failures": 0
+    },
     "05_scene_input": {
-      "checks": 217,
+      "checks": 219,
       "failures": 0
     },
     "05_north_02_scene": {
-      "checks": 182,
+      "checks": 184,
       "failures": 0
     },
     "05_north_03_scene": {
-      "checks": 185,
-      "failures": 0
-    },
-    "05_north_04_scene": {
-      "checks": 199,
-      "failures": 0
-    },
-    "05_north_05_scene": {
       "checks": 187,
       "failures": 0
     },
+    "05_north_04_scene": {
+      "checks": 201,
+      "failures": 0
+    },
+    "05_north_05_scene": {
+      "checks": 189,
+      "failures": 0
+    },
     "05_north_06_scene": {
-      "checks": 238,
+      "checks": 240,
       "failures": 0
     },
     "05_north_07_scene": {
-      "checks": 330,
+      "checks": 332,
       "failures": 0
     },
     "05_north_08_scene": {
-      "checks": 233,
+      "checks": 235,
       "failures": 0
     },
     "05_north_09_scene": {
-      "checks": 194,
+      "checks": 196,
+      "failures": 0
+    },
+    "05_north_10_scene": {
+      "checks": 294,
       "failures": 0
     },
     "06_render": {
-      "checks": 227,
+      "checks": 229,
       "failures": 0
     },
     "06_render_north_02": {
-      "checks": 188,
+      "checks": 190,
       "failures": 0
     },
     "06_render_north_03": {
-      "checks": 193,
-      "failures": 0
-    },
-    "06_render_north_04": {
-      "checks": 207,
-      "failures": 0
-    },
-    "06_render_north_05": {
       "checks": 195,
       "failures": 0
     },
+    "06_render_north_04": {
+      "checks": 209,
+      "failures": 0
+    },
+    "06_render_north_05": {
+      "checks": 197,
+      "failures": 0
+    },
     "06_render_north_06": {
-      "checks": 252,
+      "checks": 254,
       "failures": 0
     },
     "06_render_north_07": {
-      "checks": 350,
+      "checks": 352,
       "failures": 0
     },
     "06_render_north_08": {
-      "checks": 249,
+      "checks": 251,
       "failures": 0
     },
     "06_render_north_09": {
-      "checks": 204,
+      "checks": 206,
+      "failures": 0
+    },
+    "06_render_north_10": {
+      "checks": 308,
       "failures": 0
     }
   },
@@ -808,6 +851,32 @@
         "swaps": 2,
         "note": "UDLR均为普通方向输入：只检查本方向，优先与第一个可见目标交换，否则走一格；moves计有效操作。独立合法路线，不宣称最优。"
       }
+    },
+    {
+      "id": "north_hero_10",
+      "hero_kind": "blue",
+      "size": [
+        11,
+        7
+      ],
+      "player": [
+        0,
+        1
+      ],
+      "crystal_count": 1,
+      "exit": [
+        1,
+        5
+      ],
+      "solution": {
+        "level_id": "north_hero_10",
+        "path": "URDRURRRLDDRRRRDDDURDRRDRDDDRLUUUURRRDRDDDDRULLLLLLLLL",
+        "moves": 54,
+        "pushes": 0,
+        "pulls": 0,
+        "swaps": 5,
+        "note": "UDLR为普通方向输入；有本方向合法首目标就自动交换，否则走一格。独立搜索后由Godot实际规则与键盘验证，不宣称最优。"
+      }
     }
   ],
   "north_07_independent_search": {
@@ -1003,8 +1072,8 @@
     "core_cases": 8,
     "core_checks": 129,
     "model_checks": 82,
-    "headless_ui_checks": 194,
-    "rendered_ui_checks": 204,
+    "headless_ui_checks": 196,
+    "rendered_ui_checks": 206,
     "trigger": "fresh direction input only; no idle-frame or held/echo repetition",
     "user_acceptance": {
       "down_from_13_to_24": true,
@@ -1133,5 +1202,855 @@
     "modifier_keys_used": [],
     "user_example_13_to_24_then_24_swaps_with_26": true
   },
-  "all_chapter_one_walkthroughs_checked": 9
+  "all_chapter_one_walkthroughs_checked": 9,
+  "previous_nine_maps_solutions_videos_replays_unchanged_from": "9c879b28bd093773d6af2a9dcf2aa6dccc3c205b",
+  "shared_core_input_view_unchanged_from": "9c879b28bd093773d6af2a9dcf2aa6dccc3c205b",
+  "north_10_independent_search": {
+    "living_identity_states_exhausted": 2560,
+    "victory_states": 1,
+    "death_transitions": 0,
+    "undefined_restoration_transitions": 0,
+    "crystal_on_gate_states": 0,
+    "user_corrected_floor": [
+      3,
+      0
+    ],
+    "solution": {
+      "level_id": "north_hero_10",
+      "path": "URDRURRRLDDRRRRDDDURDRRDRDDDRLUUUURRRDRDDDDRULLLLLLLLL",
+      "moves": 54,
+      "pushes": 0,
+      "pulls": 0,
+      "swaps": 5,
+      "note": "UDLR为普通方向输入；有本方向合法首目标就自动交换，否则走一格。独立搜索后由Godot实际规则与键盘验证，不宣称最优。"
+    },
+    "trace": [
+      {
+        "number": 1,
+        "input": "U",
+        "action": "move",
+        "player": [
+          0,
+          0
+        ],
+        "crystal": [
+          1,
+          1
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 2,
+        "input": "R",
+        "action": "move",
+        "player": [
+          1,
+          0
+        ],
+        "crystal": [
+          1,
+          1
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 3,
+        "input": "D",
+        "action": "swap",
+        "player": [
+          1,
+          1
+        ],
+        "crystal": [
+          1,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 4,
+        "input": "R",
+        "action": "move",
+        "player": [
+          2,
+          1
+        ],
+        "crystal": [
+          1,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 5,
+        "input": "U",
+        "action": "move",
+        "player": [
+          2,
+          0
+        ],
+        "crystal": [
+          1,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 6,
+        "input": "R",
+        "action": "move",
+        "player": [
+          3,
+          0
+        ],
+        "crystal": [
+          1,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 7,
+        "input": "R",
+        "action": "move",
+        "player": [
+          4,
+          0
+        ],
+        "crystal": [
+          1,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 8,
+        "input": "R",
+        "action": "move",
+        "player": [
+          5,
+          0
+        ],
+        "crystal": [
+          1,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 9,
+        "input": "L",
+        "action": "swap",
+        "player": [
+          1,
+          0
+        ],
+        "crystal": [
+          5,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 10,
+        "input": "D",
+        "action": "move",
+        "player": [
+          1,
+          1
+        ],
+        "crystal": [
+          5,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 11,
+        "input": "D",
+        "action": "move",
+        "player": [
+          1,
+          2
+        ],
+        "crystal": [
+          5,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 12,
+        "input": "R",
+        "action": "move",
+        "player": [
+          2,
+          2
+        ],
+        "crystal": [
+          5,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 13,
+        "input": "R",
+        "action": "move",
+        "player": [
+          3,
+          2
+        ],
+        "crystal": [
+          5,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 14,
+        "input": "R",
+        "action": "move",
+        "player": [
+          4,
+          2
+        ],
+        "crystal": [
+          5,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 15,
+        "input": "R",
+        "action": "move",
+        "player": [
+          5,
+          2
+        ],
+        "crystal": [
+          5,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 16,
+        "input": "D",
+        "action": "move",
+        "player": [
+          5,
+          3
+        ],
+        "crystal": [
+          5,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 17,
+        "input": "D",
+        "action": "move",
+        "player": [
+          5,
+          4
+        ],
+        "crystal": [
+          5,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 18,
+        "input": "D",
+        "action": "move",
+        "player": [
+          5,
+          5
+        ],
+        "crystal": [
+          5,
+          0
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 19,
+        "input": "U",
+        "action": "swap",
+        "player": [
+          5,
+          0
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 20,
+        "input": "R",
+        "action": "move",
+        "player": [
+          6,
+          0
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 21,
+        "input": "D",
+        "action": "move",
+        "player": [
+          6,
+          1
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 22,
+        "input": "R",
+        "action": "move",
+        "player": [
+          7,
+          1
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 23,
+        "input": "R",
+        "action": "move",
+        "player": [
+          8,
+          1
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 24,
+        "input": "D",
+        "action": "move",
+        "player": [
+          8,
+          2
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 25,
+        "input": "R",
+        "action": "move",
+        "player": [
+          9,
+          2
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 26,
+        "input": "D",
+        "action": "move",
+        "player": [
+          9,
+          3
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 27,
+        "input": "D",
+        "action": "move",
+        "player": [
+          9,
+          4
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 28,
+        "input": "D",
+        "action": "move",
+        "player": [
+          9,
+          5
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 29,
+        "input": "R",
+        "action": "move",
+        "player": [
+          10,
+          5
+        ],
+        "crystal": [
+          5,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 30,
+        "input": "L",
+        "action": "swap",
+        "player": [
+          5,
+          5
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 31,
+        "input": "U",
+        "action": "move",
+        "player": [
+          5,
+          4
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 32,
+        "input": "U",
+        "action": "move",
+        "player": [
+          5,
+          3
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 33,
+        "input": "U",
+        "action": "move",
+        "player": [
+          5,
+          2
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 34,
+        "input": "U",
+        "action": "move",
+        "player": [
+          5,
+          1
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 35,
+        "input": "R",
+        "action": "move",
+        "player": [
+          6,
+          1
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 36,
+        "input": "R",
+        "action": "move",
+        "player": [
+          7,
+          1
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 37,
+        "input": "R",
+        "action": "move",
+        "player": [
+          8,
+          1
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 38,
+        "input": "D",
+        "action": "move",
+        "player": [
+          8,
+          2
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 39,
+        "input": "R",
+        "action": "move",
+        "player": [
+          9,
+          2
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 40,
+        "input": "D",
+        "action": "move",
+        "player": [
+          9,
+          3
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 41,
+        "input": "D",
+        "action": "move",
+        "player": [
+          9,
+          4
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 42,
+        "input": "D",
+        "action": "move",
+        "player": [
+          9,
+          5
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 43,
+        "input": "D",
+        "action": "move",
+        "player": [
+          9,
+          6
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": false,
+        "gate_active": true
+      },
+      {
+        "number": 44,
+        "input": "R",
+        "action": "move",
+        "player": [
+          10,
+          6
+        ],
+        "crystal": [
+          10,
+          5
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      },
+      {
+        "number": 45,
+        "input": "U",
+        "action": "swap",
+        "player": [
+          10,
+          5
+        ],
+        "crystal": [
+          10,
+          6
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      },
+      {
+        "number": 46,
+        "input": "L",
+        "action": "move",
+        "player": [
+          9,
+          5
+        ],
+        "crystal": [
+          10,
+          6
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      },
+      {
+        "number": 47,
+        "input": "L",
+        "action": "move",
+        "player": [
+          8,
+          5
+        ],
+        "crystal": [
+          10,
+          6
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      },
+      {
+        "number": 48,
+        "input": "L",
+        "action": "move",
+        "player": [
+          7,
+          5
+        ],
+        "crystal": [
+          10,
+          6
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      },
+      {
+        "number": 49,
+        "input": "L",
+        "action": "move",
+        "player": [
+          6,
+          5
+        ],
+        "crystal": [
+          10,
+          6
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      },
+      {
+        "number": 50,
+        "input": "L",
+        "action": "move",
+        "player": [
+          5,
+          5
+        ],
+        "crystal": [
+          10,
+          6
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      },
+      {
+        "number": 51,
+        "input": "L",
+        "action": "move",
+        "player": [
+          4,
+          5
+        ],
+        "crystal": [
+          10,
+          6
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      },
+      {
+        "number": 52,
+        "input": "L",
+        "action": "move",
+        "player": [
+          3,
+          5
+        ],
+        "crystal": [
+          10,
+          6
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      },
+      {
+        "number": 53,
+        "input": "L",
+        "action": "move",
+        "player": [
+          2,
+          5
+        ],
+        "crystal": [
+          10,
+          6
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      },
+      {
+        "number": 54,
+        "input": "L",
+        "action": "move",
+        "player": [
+          1,
+          5
+        ],
+        "crystal": [
+          10,
+          6
+        ],
+        "plate_pressed": true,
+        "gate_active": false
+      }
+    ]
+  },
+  "north_10_support": {
+    "model_cases": 5,
+    "model_checks": 344,
+    "headless_ui_checks": 294,
+    "rendered_ui_checks": 308,
+    "source_numbering": "row-major 1-77; user correction 4=(3,0) floor; all remaining cells confirmed",
+    "hero_press_action": 44,
+    "crystal_handoff_action": 45,
+    "gate_crossing_action": 52,
+    "victory_action": 54,
+    "death_undo_regression": "Existing blue_swap_regression and north_09_scene isolated fixtures; death unreachable in the level-ten living-state search",
+    "new_mechanics": false
+  },
+  "north_10_walkthrough": {
+    "status": "pending recording after implementation commit"
+  }
 }

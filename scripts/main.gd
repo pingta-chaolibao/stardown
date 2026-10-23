@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -220,7 +220,7 @@ func _build_header(parent: VBoxContainer) -> void:
 		button.tooltip_text = "切换关卡并从初始状态开始"
 		button.pressed.connect(select_level.bind(index))
 		row.add_child(button)
-	# The board already labels its source; keep header space for nine levels.
+	# The board already labels its source; keep header space for level navigation.
 	if LEVEL_PATHS.size()<=8:
 		var badge := _panel(Color("1b2a33"), Color("394c54"), 10)
 		badge.size_flags_vertical = Control.SIZE_SHRINK_CENTER
@@ -287,6 +287,8 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	var instructions := _label("可推动紧密排成直线的整列水晶。\n每次前进一格，列末受阻则整列不动。", 14, MUTED)
 	if blue:
 		instructions.text="按方向键 / WASD：只查看该方向。\n有可见英雄或水晶就与第一个交换；\n没有目标才走一格，不能推拉。"
+		if not model.level.energy_links.is_empty():
+			instructions.text="按方向：有可见目标就与第一个交换。\n没有目标才走一格，不能推拉。"
 	elif green:
 		instructions.text = "背离相邻水晶移动，自动拉一枚。\n后面的水晶不跟随，不能推水晶。"
 	elif not model.level.bushes.is_empty():
