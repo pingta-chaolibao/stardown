@@ -331,6 +331,61 @@
       "replay_report": "level_08_replay.json",
       "level_file": "levels/north_08.json",
       "solution_file": "levels/solutions/north_08.json"
+    },
+    {
+      "file": "video/chapter_01/level_09.mp4",
+      "level": 9,
+      "bytes": 163210,
+      "sha256": "519a8fdddc8c4fec027989839afa6151d1fe52fe1524f90d59c3f39ca4bb04be",
+      "distinct_sampled_frames": 44,
+      "full_decode_passed": true,
+      "game_implementation_commit": "7d9df0e76e37af397954fd355416cbb7b4dc62d6",
+      "hero_kind": "blue",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 312,
+      "duration_seconds": 10.4,
+      "mp4_fast_start": true,
+      "moves": 9,
+      "walks": 7,
+      "pushes": 0,
+      "pulls": 0,
+      "swaps": 2,
+      "counts_are_operations": true,
+      "action_notation": "UDLR walks; udlr explicit Shift+direction swaps",
+      "initial_player": [
+        1,
+        1
+      ],
+      "victory_player": [
+        9,
+        1
+      ],
+      "legal_input_trace_verified": true,
+      "initial_and_final_frames_reviewed": true,
+      "both_swap_endpoints_reviewed": true,
+      "all_two_crystals_swapped": true,
+      "swap_action_numbers": [
+        2,
+        6
+      ],
+      "reviewed_encoded_frames": [
+        0,
+        70,
+        88,
+        142,
+        160,
+        311
+      ],
+      "replay_report": "level_09_replay.json",
+      "level_file": "levels/north_09.json",
+      "solution_file": "levels/solutions/north_09.json"
     }
   ],
   "game_implementation_commits": {
@@ -341,6 +396,7 @@
     "level_05": "878fbb16d02f2acd02b873b118efdd7daec3fcbc",
     "level_06": "6f2061e7e9f3fea5ea5117d981f7798266d9df78",
     "level_07": "1612e5d5c321e4d61015c485cb425366443ad241",
-    "level_08": "5c4e25bc6cd1324a75cc04ca625fec04d8668e41"
+    "level_08": "5c4e25bc6cd1324a75cc04ca625fec04d8668e41",
+    "level_09": "7d9df0e76e37af397954fd355416cbb7b4dc62d6"
   }
 }
