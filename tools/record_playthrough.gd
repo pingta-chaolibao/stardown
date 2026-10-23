@@ -45,18 +45,13 @@ func _run() -> void:
 	var previous := initial
 	for i in solution["path"].length():
 		var symbol: String = solution["path"][i]
-		var use_swap:=symbol!=symbol.to_upper()
 		var target: Dictionary={}
-		if use_swap:
-			target=game.model.swap_target(DIRECTIONS[symbol.to_upper()])
-			if target.get("result")!=&"target":
-				_fail("Ability input %d has no legal first visible target." % (i+1))
-				return
-			_send_key(KEY_SHIFT,true)
-		_send_key(KEYS[symbol.to_upper()], true,use_swap)
+		if game.model.level.hero_kind=="blue":
+			target=game.model.swap_target(DIRECTIONS[symbol])
+		var use_swap: bool=target.get("result")==&"target"
+		_send_key(KEYS[symbol], true)
 		await _frames(1)
-		_send_key(KEYS[symbol.to_upper()], false,use_swap)
-		if use_swap:_send_key(KEY_SHIFT,false)
+		_send_key(KEYS[symbol], false)
 		await _frames(1)
 		var current := _state()
 		var distance: int = absi(current["player"][0] - previous["player"][0]) + absi(current["player"][1] - previous["player"][1])
@@ -68,7 +63,7 @@ func _run() -> void:
 		else:
 			position_valid=position_valid and current["swaps"]==previous["swaps"]
 		if not current["alive"] or current["moves"] != i + 1 or not position_valid or current["pushes"] < previous["pushes"] or current["pushes"] > previous["pushes"] + 1 or current["pulls"] < previous["pulls"] or current["pulls"] > previous["pulls"] + 1:
-			_fail("Input %d did not make exactly one legal walk or explicit exchange." % (i + 1))
+			_fail("Input %d did not make exactly one legal direction-triggered walk or exchange." % (i + 1))
 			return
 		current["input"] = symbol
 		current["action"]="swap" if use_swap else "move"
@@ -122,12 +117,11 @@ func _state() -> Dictionary:
 		"pressure": game.model.pressure_states(), "barriers": barriers, "bushes": bushes, "plates": plates}
 
 
-func _send_key(code: int, pressed: bool, shift: bool=false) -> void:
+func _send_key(code: int, pressed: bool) -> void:
 	var event := InputEventKey.new()
 	event.keycode = code
 	event.physical_keycode = code
 	event.pressed = pressed
-	event.shift_pressed=shift
 	Input.parse_input_event(event)
 
 

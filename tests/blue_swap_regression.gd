@@ -1,5 +1,5 @@
 extends SceneTree
-## Explicit ability, nearest sight targets, atomic world settlement and role isolation.
+## Direction-triggered passive exchange, nearest sight targets, atomic world settlement and role isolation.
 const Level=preload("res://scripts/core/level_data.gd")
 const State=preload("res://scripts/core/grid_state.gd")
 const Swap=preload("res://scripts/core/swap_rules.gd")
@@ -8,7 +8,7 @@ var checks:=0
 var failures:=0
 
 func _init() -> void:
-	var cases:=[_test_four_directions,_test_plain_walk,_test_blockers_and_open_gate,_test_target_classes,_test_death_and_undo,_test_undefined_restoration,_test_victory_and_roles,_test_manual_input]
+	var cases:=[_test_four_directions,_test_plain_walk,_test_blockers_and_open_gate,_test_target_classes,_test_death_and_undo,_test_undefined_restoration,_test_victory_and_roles,_test_direction_input]
 	for test: Callable in cases:
 		var before:=failures
 		test.call()
@@ -26,25 +26,27 @@ func _test_four_directions() -> void:
 		data["crates"]=[_array(nearest),_array(farther)]
 		var game:=_game(data)
 		var initial:=game.snapshot()
-		_check(game.try_swap(direction)==&"swapped" and game.player==nearest and game.crate_id(Vector2i(4,4))==0 and game.crate_id(farther)==1,"cardinal ability swaps first target only across empty space")
+		_check(game.try_move(direction)==&"swapped" and game.player==nearest and game.crate_id(Vector2i(4,4))==0 and game.crate_id(farther)==1,"cardinal direction swaps first target only across empty space")
 		_check(game.moves==1 and game.swaps==1 and game.pulls==0 and game.pushes==0 and game.history_size()==1,"exchange is one action and one atomic undo entry")
 		_check(game.undo() and game.snapshot()==initial,"one undo restores hero, both crystal identities and all counters")
-		game.try_swap(direction)
+		game.try_move(direction)
 		_check(game.restart() and game.snapshot()==initial and game.history_size()==0,"restart restores full pre-exchange state")
 
 func _test_plain_walk() -> void:
 	var game:=_game(_data())
-	_check(game.try_move(Vector2i.RIGHT)==&"moved" and game.player==Vector2i(2,1) and game.crate_id(Vector2i(4,1))==0 and game.swaps==0,"ordinary walk along sightline never auto-swaps")
-	game.try_move(Vector2i.RIGHT)
-	var before:=game.snapshot()
-	_check(game.try_move(Vector2i.RIGHT)==&"cannot_push" and game.snapshot()==before,"blue cannot push even when there is room behind crystal")
-	_check(game.try_move(Vector2i.LEFT)==&"moved" and game.crate_id(Vector2i(4,1))==0 and game.pulls==0,"blue walking away never pulls adjacent rear crystal")
+	_check(game.try_move(Vector2i.RIGHT)==&"swapped" and game.player==Vector2i(4,1) and game.crate_id(Vector2i(1,1))==0 and game.swaps==1,"direction input prioritizes visible target across empty intervening cells")
+	_check(game.try_move(Vector2i.RIGHT)==&"moved" and game.player==Vector2i(5,1) and game.crate_id(Vector2i(1,1))==0 and game.pulls==0,"ray without target walks exactly one cell and never pulls rear crystal")
 	for direction in [Vector2i.ZERO,Vector2i(1,1),Vector2i(2,0)]:
-		before=game.snapshot()
-		_check(game.try_swap(direction)==&"invalid_direction" and game.snapshot()==before,"exchange rejects non-cardinal or multi-cell direction")
+		var before:=game.snapshot()
+		_check(game.try_move(direction)==&"invalid_direction" and game.snapshot()==before,"direction rejects non-cardinal or multi-cell input")
 	game=_game(_data())
-	before=game.snapshot()
-	_check(game.try_swap(Vector2i.UP)==&"no_target" and game.snapshot()==before and game.history_size()==0,"empty ray to boundary is a no-op")
+	_check(game.try_move(Vector2i.UP)==&"moved" and game.player==Vector2i(1,0) and game.swaps==0,"only input ray is checked: side crystal does not trigger")
+	var before:=game.snapshot()
+	_check(game.try_move(Vector2i.UP)==&"wall" and game.snapshot()==before,"no target plus boundary prevents ordinary step")
+	var data:=_data()
+	data["crates"]=[[2,1],[3,1]]
+	game=_game(data)
+	_check(game.try_move(Vector2i.RIGHT)==&"swapped" and game.player==Vector2i(2,1) and game.crate_id(Vector2i(1,1))==0 and game.crate_id(Vector2i(3,1))==1 and game.pushes==0,"adjacent line exchanges nearest only, never pushes the line")
 
 func _test_blockers_and_open_gate() -> void:
 	for blocker in ["wall","bush","energy"]:
@@ -54,14 +56,15 @@ func _test_blockers_and_open_gate() -> void:
 			"bush":data["bushes"]=[[3,1]]
 			"energy":data["energy_links"]=[_link("a",[8,0],[[3,1]],["hero","crystal"])]
 		var game:=_game(data)
-		var before:=game.snapshot()
 		_check(game.swap_target(Vector2i.RIGHT)["cell"]==Vector2i(3,1),"sight stops at exact blocking cell")
-		_check(game.try_swap(Vector2i.RIGHT)==&"swap_blocked" and game.snapshot()==before and game.history_size()==0,"wall/bush/active energy blocks exchange atomically")
+		_check(game.try_move(Vector2i.RIGHT)==&"moved" and game.player==Vector2i(2,1) and game.swaps==0,"distant wall/bush/active energy hides target; adjacent empty floor is still walkable")
+		var before:=game.snapshot()
+		_check(game.try_move(Vector2i.RIGHT) in [&"wall",&"bush_blocked",&"energy_blocked"] and game.snapshot()==before and game.history_size()==1,"adjacent opaque blocker prevents step with no partial action")
 	var data:=_data()
 	data["crates"].append([8,0])
 	data["energy_links"]=[_link("a",[8,0],[[3,1]],["hero","crystal"])]
 	var game:=_game(data)
-	_check(not game.blocks_sight(Vector2i(3,1)) and game.try_swap(Vector2i.RIGHT)==&"swapped" and game.player==Vector2i(4,1),"inactive energy allows sight and exchange through its cell")
+	_check(not game.blocks_sight(Vector2i(3,1)) and game.try_move(Vector2i.RIGHT)==&"swapped" and game.player==Vector2i(4,1),"inactive energy allows sight and exchange through its cell")
 
 func _test_target_classes() -> void:
 	for kind in [&"hero",&"crystal"]:_check(Swap.is_interactable(kind),"heroes and crystals are classified as exchange targets")
@@ -84,10 +87,10 @@ func _test_death_and_undo() -> void:
 	data["energy_links"]=[_link("hero_plate",[1,1],[[3,1]],["hero"]),_link("crystal_plate",[8,0],[[7,2]],["crystal"])]
 	var game:=_game(data)
 	var initial:=game.snapshot()
-	_check(game.try_swap(Vector2i.RIGHT)==&"died" and not game.alive and game.player==Vector2i(3,1) and game.crate_id(Vector2i(1,1))==0,"exchange releases configured hero-only pressure and restores barrier on hero")
+	_check(game.try_move(Vector2i.RIGHT)==&"died" and not game.alive and game.player==Vector2i(3,1) and game.crate_id(Vector2i(1,1))==0,"exchange releases configured hero-only pressure and restores barrier on hero")
 	_check(game.moves==1 and game.swaps==1 and game.history_size()==1 and game.barrier_is_active(Vector2i(3,1)) and game.barrier_is_active(Vector2i(7,2)),"all global barriers and death settle in the same single exchange action")
 	var dead:=game.snapshot()
-	_check(game.try_move(Vector2i.LEFT)==&"dead" and game.try_swap(Vector2i.LEFT)==&"dead" and not game.restart() and not game.load_level(Level.from_dictionary(_data())) and game.snapshot()==dead,"dead blue can neither walk, swap, restart nor switch")
+	_check(game.try_move(Vector2i.LEFT)==&"dead" and not game.restart() and not game.load_level(Level.from_dictionary(_data())) and game.snapshot()==dead,"dead blue can neither walk, swap, restart nor switch")
 	_check(game.undo() and game.alive and game.snapshot()==initial and game.swaps==0,"one undo revives and restores identity, pressure, every barrier and counter")
 
 func _test_undefined_restoration() -> void:
@@ -96,7 +99,7 @@ func _test_undefined_restoration() -> void:
 	data["energy_links"]=[_link("a",[3,1],[[1,1]],["crystal"])]
 	var game:=_game(data)
 	var before:=game.snapshot()
-	_check(game.try_swap(Vector2i.RIGHT)==&"rule_unresolved" and game.snapshot()==before and game.history_size()==0 and game.swaps==0,"unconfirmed crystal restoration commits no part of an exchange")
+	_check(game.try_move(Vector2i.RIGHT)==&"rule_unresolved" and game.snapshot()==before and game.history_size()==0 and game.swaps==0,"unconfirmed crystal restoration commits no part of an exchange")
 	_check(not game.last_mechanism_error.is_empty(),"undefined case retains explicit diagnostic, not an invented rule")
 
 func _test_victory_and_roles() -> void:
@@ -105,38 +108,38 @@ func _test_victory_and_roles() -> void:
 	data["exit"]=[4,1]
 	var game:=_game(data)
 	var initial:=game.snapshot()
-	_check(game.try_swap(Vector2i.RIGHT)==&"swapped" and game.is_complete(),"legal swap onto crystal at goal wins")
+	_check(game.try_move(Vector2i.RIGHT)==&"swapped" and game.is_complete(),"legal swap onto crystal at goal wins")
 	var won:=game.snapshot()
-	_check(game.try_swap(Vector2i.LEFT)==&"complete" and game.try_move(Vector2i.LEFT)==&"complete" and game.snapshot()==won,"completed world accepts no further movement or exchange")
+	_check(game.try_move(Vector2i.LEFT)==&"complete" and game.snapshot()==won,"completed world accepts no further movement or exchange")
 	_check(game.undo() and game.snapshot()==initial and not game.is_complete(),"victory swap can be atomically undone")
 	for kind in ["red","green"]:
 		data=_data()
 		data["hero_kind"]=kind
 		game=_game(data)
 		initial=game.snapshot()
-		_check(game.try_swap(Vector2i.RIGHT)==&"cannot_swap" and game.snapshot()==initial and game.history_size()==0,"red and green cannot cast blue ability")
+		_check(game.try_move(Vector2i.RIGHT)==&"moved" and game.player==Vector2i(2,1) and game.swaps==0 and game.crate_id(Vector2i(4,1))==0,"red and green keep ordinary walking toward a distant crystal, without blue exchange")
 
-func _test_manual_input() -> void:
+func _test_direction_input() -> void:
 	for key in [KEY_W,KEY_A,KEY_S,KEY_D,KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT]:
 		var input:=Steps.new()
 		var event:=InputEventKey.new()
 		event.keycode=key
 		event.physical_keycode=key
 		event.pressed=true
-		_check(input.command_for_event(event,true).get("action")==&"move","plain blue direction stays ordinary walk")
+		_check(input.command_for_event(event).get("action")==&"move","all direction keys use the same movement command")
 		event.pressed=false
-		input.command_for_event(event,true)
+		input.command_for_event(event)
 		event.pressed=true
 		event.shift_pressed=true
-		_check(input.command_for_event(event,true).get("action")==&"swap","Shift plus direction explicitly casts exchange")
+		_check(input.command_for_event(event).get("action")==&"move","Shift has no separate skill mode or bypass")
 		for echo in [true,false]:
 			event.echo=echo
-			_check(input.command_for_event(event,true).is_empty(),"echo or duplicate cannot repeat an exchange")
+			_check(input.command_for_event(event).is_empty(),"echo or duplicate cannot repeat an exchange")
 		event.pressed=false
-		input.command_for_event(event,true)
+		input.command_for_event(event)
 		event.pressed=true
 		event.echo=false
-		_check(input.command_for_event(event).get("action")==&"move","legacy heroes retain their existing Shift-direction movement")
+		_check(input.command_for_event(event).get("action")==&"move","release allows one new direction input")
 
 func _data() -> Dictionary:
 	return {"schema_version":1,"id":"blue_swap_fixture","title":"Independent blue swap fixture","is_temporary":true,"source_note":"Tests only; not a reconstructed level or walkthrough","hero_kind":"blue","terrain":[".........",".........","........."],"player":[1,1],"crates":[[4,1]],"targets":[],"objective":"none"}

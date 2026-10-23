@@ -1,9 +1,9 @@
 {
   "level_id": "north_hero_09",
-  "path": "DrRUUrRDR",
+  "path": "DRRUURRDR",
   "moves": 9,
   "pushes": 0,
   "pulls": 0,
   "swaps": 2,
-  "note": "大写UDLR为正常行走，小写udlr为Shift+对应方向主动交换。moves计有效操作，行走/交换各一次；独立合法路线，不宣称最优。"
+  "note": "UDLR均为普通方向输入：只检查本方向，优先与第一个可见目标交换，否则走一格；moves计有效操作。独立合法路线，不宣称最优。"
 }

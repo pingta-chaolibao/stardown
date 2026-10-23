@@ -43,7 +43,7 @@ func _ready() -> void:
 		return
 	current_level_index = LEVEL_PATHS.find(level_path)
 	_build_ui()
-	_refresh("Shift＋方向键主动交换；普通方向键走路。" if model.level.hero_kind=="blue" else "%s水晶腾出道路，再走到%s。" % ["拉动" if model.level.hero_kind == "green" else "推动", _goal_name()])
+	_refresh("按方向：有可见目标就交换，否则走一格。" if model.level.hero_kind=="blue" else "%s水晶腾出道路，再走到%s。" % ["拉动" if model.level.hero_kind == "green" else "推动", _goal_name()])
 
 
 func select_level(index: int) -> bool:
@@ -82,7 +82,7 @@ func _draw() -> void:
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
-	var command := key_steps.command_for_event(event,model.level!=null and model.level.hero_kind=="blue")
+	var command := key_steps.command_for_event(event)
 	if not command.is_empty() and model.level != null:
 		apply_command(command)
 		get_viewport().set_input_as_handled()
@@ -96,12 +96,14 @@ func apply_command(command: Dictionary) -> void:
 		&"move":
 			var direction: Vector2i = command.get("direction", Vector2i.ZERO)
 			var result := model.try_move(direction)
-			if result in [&"moved", &"pushed", &"pulled", &"cannot_push", &"wall", &"crate_blocked", &"energy_blocked", &"bush_blocked", &"died"]:
+			if result in [&"moved", &"pushed", &"pulled", &"swapped", &"cannot_push", &"wall", &"crate_blocked", &"energy_blocked", &"bush_blocked", &"died"]:
 				board.facing = direction
 			match result:
 				&"cannot_push":
 					board.blocked = true
-					_refresh("蓝色英雄不能推拉；使用 Shift＋方向键主动交换。" if model.level.hero_kind=="blue" else "绿色英雄只能拉，不能推；请绕到水晶前方再背离它移动。", GOLD)
+					_refresh("蓝色英雄不能推拉；按方向自动交换可见目标。" if model.level.hero_kind=="blue" else "绿色英雄只能拉，不能推；请绕到水晶前方再背离它移动。", GOLD)
+				&"swapped":
+					_refresh("已与本次输入方向的第一个可见目标交换。")
 				&"pulled":
 					_refresh("最近一枚水晶跟到英雄原位置，后面的水晶保持不动。")
 				&"bush_blocked":
@@ -126,27 +128,6 @@ func apply_command(command: Dictionary) -> void:
 					_refresh("每次按下移动一格；松开后可再次移动。")
 				&"complete":
 					_refresh("已抵达终点，可撤销或重开。", GOLD)
-		&"swap":
-			var direction: Vector2i=command.get("direction",Vector2i.ZERO)
-			var result:=model.try_swap(direction)
-			board.facing=direction
-			match result:
-				&"swapped":
-					_refresh("已与该方向第一个可见目标交换位置。")
-				&"swap_blocked":
-					board.blocked=true
-					_refresh("视线被墙、草丛或能量屏障挡住了。",GOLD)
-				&"no_target":
-					board.blocked=true
-					_refresh("这个方向没有可见的交换目标。",GOLD)
-				&"cannot_swap":
-					_refresh("当前英雄没有交换能力。",GOLD)
-				&"dead",&"died":
-					_refresh("英雄已死亡，仅可撤销恢复。",Board.CORAL)
-				&"rule_unresolved":
-					_refresh(model.last_mechanism_error,GOLD)
-				&"complete":
-					_refresh("已抵达终点，可撤销或重开。",GOLD)
 		&"undo":
 			var undone := model.undo()
 			_refresh("已撤销最近一步。" if undone else "当前没有可撤销的步骤。")
@@ -178,7 +159,7 @@ func _refresh(message: String, color: Color = MINT) -> void:
 			progress_label.text = "%s · 黄板 %d / %d" % ["已抵达终点" if model.is_complete() else "玩家到终点完成", count.x, count.y]
 	undo_button.disabled = model.history_size() == 0
 	restart_button.disabled = not model.alive
-	for node_name in ["MoveLeft", "MoveRight", "MoveUp", "MoveDown", "SwapLeft", "SwapRight", "SwapUp", "SwapDown"]:
+	for node_name in ["MoveLeft", "MoveRight", "MoveUp", "MoveDown"]:
 		var button := find_child(node_name, true, false) as Button
 		if button != null:
 			button.disabled = not model.alive
@@ -287,17 +268,9 @@ func _build_board(parent: HBoxContainer) -> void:
 	for entry in [["←", Vector2i.LEFT, "Left"], ["↑", Vector2i.UP, "Up"], ["↓", Vector2i.DOWN, "Down"], ["→", Vector2i.RIGHT, "Right"]]:
 		var button := _button(entry[0], "Move" + entry[2])
 		button.custom_minimum_size = Vector2(36, 36)
-		button.tooltip_text = "移动一格"
+		button.tooltip_text = "本方向有可见目标就交换，否则走一格" if model.level.hero_kind=="blue" else "移动一格"
 		button.pressed.connect(apply_command.bind({"action": &"move", "direction": entry[1]}))
 		legend.add_child(button)
-	if model.level.hero_kind=="blue":
-		legend.add_child(_label("交换",13,Board.HERO_BLUE))
-		for entry in [["←",Vector2i.LEFT,"Left"],["↑",Vector2i.UP,"Up"],["↓",Vector2i.DOWN,"Down"],["→",Vector2i.RIGHT,"Right"]]:
-			var button:=_button(entry[0],"Swap"+entry[2])
-			button.custom_minimum_size=Vector2(36,36)
-			button.tooltip_text="主动交换：该方向第一个可见英雄或水晶"
-			button.pressed.connect(apply_command.bind({"action":&"swap","direction":entry[1]}))
-			legend.add_child(button)
 
 
 func _build_sidebar(parent: HBoxContainer) -> void:
@@ -313,7 +286,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	intro.add_child(_label("蓝色小人 · 能走路，不能推拉" if blue else ("绿色小人 · 只能拉，不能推" if green else "红色小人 · 只能推，不能拉"), 16, Board.HERO_BLUE if blue else (Board.HERO_GREEN if green else Board.CORAL)))
 	var instructions := _label("可推动紧密排成直线的整列水晶。\n每次前进一格，列末受阻则整列不动。", 14, MUTED)
 	if blue:
-		instructions.text="方向键 / WASD 走路。\nShift＋方向键 / WASD 主动交换。\n只换该方向第一个可见英雄或水晶。"
+		instructions.text="按方向键 / WASD：只查看该方向。\n有可见英雄或水晶就与第一个交换；\n没有目标才走一格，不能推拉。"
 	elif green:
 		instructions.text = "背离相邻水晶移动，自动拉一枚。\n后面的水晶不跟随，不能推水晶。"
 	elif not model.level.bushes.is_empty():
@@ -374,7 +347,7 @@ func _build_footer(parent: VBoxContainer) -> void:
 	parent.add_child(footer)
 	var controls:="方向键 / WASD  移动     ·     Z / U / Backspace  撤销     ·     R  重开     ·     长按不连走"
 	if model.level.hero_kind=="blue":
-		controls="方向键 / WASD  走路     ·     Shift＋方向键 / WASD  主动交换     ·     Z / U / Backspace  撤销     ·     R  重开"
+		controls="方向键 / WASD  有目标交换，否则走一格     ·     Z / U / Backspace  撤销     ·     R  重开     ·     长按不连动"
 	footer.add_child(_label(controls,14,TEXT))
 	var note := "依据确认的北部关卡网格制作 · 原创 2D 几何图形"
 	if model.level.is_temporary:

@@ -92,15 +92,16 @@ def check_replay(item, directory):
     pushes, pulls, swaps = 0, 0, 0
     for index, (symbol, state) in enumerate(zip(solution["path"], evidence["trace"]), 1):
         assert state["input"] == symbol
-        direction = DIRECTIONS[symbol.upper()]
+        direction = DIRECTIONS[symbol]
         target = plus(player, direction)
-        ability = symbol.islower()
-        assert state.get("action", "move") == ("swap" if ability else "move")
-        if ability:
-            assert hero_kind == "blue", "Only blue can explicitly exchange"
-            while walkable(target) and target not in crystals:
-                target = plus(target, direction)
-            assert walkable(target) and target in crystals, "Ability must hit first visible crystal before any blocker"
+        visible = target
+        if hero_kind == "blue":
+            while walkable(visible) and visible not in crystals:
+                visible = plus(visible, direction)
+        automatic_swap = hero_kind == "blue" and walkable(visible) and visible in crystals
+        assert state.get("action", "move") == ("swap" if automatic_swap else "move")
+        if automatic_swap:
+            target = visible
             crystals[player] = crystals.pop(target)
             swaps += 1
         else:

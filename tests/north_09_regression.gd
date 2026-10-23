@@ -34,39 +34,37 @@ func _test_solution() -> void:
 		var direction: Vector2i=DIRS[symbol.to_upper()]
 		var before:=game.snapshot()
 		history.append(before)
-		if symbol==symbol.to_lower():
-			var target:=game.swap_target(direction)
-			_check(game.try_swap(direction)==&"swapped" and game.player==target["cell"] and game.crate_id(before["player"])==target["id"],"explicit action exchanges exact first visible crystal with hero")
+		var target:=game.swap_target(direction)
+		if target["result"]==&"target":
+			_check(game.try_move(direction)==&"swapped" and game.player==target["cell"] and game.crate_id(before["player"])==target["id"],"direction automatically exchanges exact first visible crystal with hero")
 			used[target["id"]]=true
 		else:
-			_check(game.try_move(direction)==&"moved" and game.player==before["player"]+direction,"ordinary action is exactly one walk, no exchange")
+			_check(game.try_move(direction)==&"moved" and game.player==before["player"]+direction,"no visible target falls back to exactly one walk")
 		_check(game.moves==index+1 and game.alive and game.pushes==0 and game.pulls==0 and game.is_complete()==(index==8),"ninth legal operation counters and final-only victory")
-	_check(used.size()==2 and game.moves==9 and game.swaps==2 and game.is_complete(),"both crystals participate: seven walks plus two explicit swaps")
+	_check(used.size()==2 and game.moves==9 and game.swaps==2 and game.is_complete(),"both crystals participate: seven walks plus two automatic swaps")
 	_check(game.undo() and game.snapshot()==history.pop_back() and not game.is_complete(),"victory undo restores full preceding state")
 	while not history.is_empty():_check(game.undo() and game.snapshot()==history.pop_back(),"entire history restores each walk and exchange atomically")
 	_check(game.snapshot()==initial and game.history_size()==0,"full undo returns exact initial identities and swap counter")
-	for symbol in solution["path"]:
-		if symbol==symbol.to_lower():game.try_swap(DIRS[symbol.to_upper()])
-		else:game.try_move(DIRS[symbol])
+	for symbol in solution["path"]:game.try_move(DIRS[symbol])
 	_check(game.restart() and game.snapshot()==initial,"restart after blue victory restores original actors and all counters")
 	print("NORTH 09 SOLUTION: %s; 9 actions, 2 swaps, 0 pushes/pulls" % solution["path"])
 
 func _test_walk_and_sight() -> void:
 	var game:=_game()
+	_check(game.swap_target(Vector2i.RIGHT)["result"]==&"swap_blocked","initial right ray stops at wall")
+	_check(game.try_move(Vector2i.RIGHT)==&"moved" and game.player==Vector2i(2,1),"occluded target allows normal one-cell step")
 	var before:=game.snapshot()
-	_check(game.try_swap(Vector2i.RIGHT)==&"swap_blocked" and game.snapshot()==before and game.history_size()==0,"initial wall blocks sight toward distant crystal")
-	game.try_move(Vector2i.DOWN)
-	_check(game.try_move(Vector2i.RIGHT)==&"moved" and game.player==Vector2i(2,2) and game.swaps==0,"normal walking toward lower crystal does not auto-swap")
-	before=game.snapshot()
-	_check(game.try_move(Vector2i.RIGHT)==&"cannot_push" and game.snapshot()==before,"normal blue walk cannot push adjacent lower crystal")
-	_check(game.try_move(Vector2i.LEFT)==&"moved" and game.crate_id(Vector2i(3,2))==1 and game.pulls==0,"walking away cannot pull lower crystal")
-	_check(game.try_swap(Vector2i.RIGHT)==&"swapped" and game.player==Vector2i(3,2) and game.crate_id(Vector2i(1,2))==1,"only deliberate skill crosses the lower gap")
+	_check(game.try_move(Vector2i.RIGHT)==&"wall" and game.snapshot()==before,"adjacent wall blocks fallback movement")
+	game.restart()
+	_check(game.try_move(Vector2i.DOWN)==&"moved" and game.player==Vector2i(1,2) and game.swaps==0 and game.crate_id(Vector2i(3,2))==1,"user example 13 down reaches 24: side target 26 cannot trigger")
+	_check(game.try_move(Vector2i.RIGHT)==&"swapped" and game.player==Vector2i(3,2) and game.crate_id(Vector2i(1,2))==1 and game.moves==2,"user example 24 right directly exchanges with 26, never steps onto 25")
+	_check(game.try_move(Vector2i.RIGHT)==&"moved" and game.player==Vector2i(4,2) and game.swaps==1 and game.pulls==0,"moving away without visible forward target cannot pull")
 
 func _test_switch() -> void:
 	var game:=_game()
 	var initial:=game.snapshot()
 	game.try_move(Vector2i.DOWN)
-	game.try_swap(Vector2i.RIGHT)
+	game.try_move(Vector2i.RIGHT)
 	_check(game.load_level(Level.from_file("res://levels/north_08.json")) and game.level.hero_kind=="green" and game.swaps==0 and game.history_size()==0,"blue ability history/counter do not leak into eighth")
 	_check(game.load_level(Level.from_file("res://levels/north_09.json")) and game.snapshot()==initial and game.history_size()==0,"ninth reload restores independent initial state")
 

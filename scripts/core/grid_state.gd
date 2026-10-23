@@ -55,6 +55,11 @@ func try_move(direction: Vector2i) -> StringName:
 		return &"invalid_direction"
 	if is_complete():
 		return &"complete"
+	# Each direction input resolves only its own ray before any ordinary step.
+	if Heroes.can_swap(level.hero_kind):
+		var target := swap_target(direction)
+		if target["result"] == &"target":
+			return _exchange_target(target)
 	var next := player + direction
 	if not is_walkable(next):
 		if level.bush_at(next) != null:
@@ -122,21 +127,7 @@ func _swap_occupant(cell: Vector2i) -> Dictionary:
 	return {"kind": &"crystal", "id":_crates[cell]} if _crates.has(cell) else {}
 
 
-func try_swap(direction: Vector2i) -> StringName:
-	if level==null:
-		return &"no_level"
-	if not alive:
-		return &"dead"
-	last_mechanism_error=""
-	if absi(direction.x)+absi(direction.y)!=1:
-		return &"invalid_direction"
-	if is_complete():
-		return &"complete"
-	if not Heroes.can_swap(level.hero_kind):
-		return &"cannot_swap"
-	var target:=swap_target(direction)
-	if target["result"]!=&"target":
-		return target["result"]
+func _exchange_target(target: Dictionary) -> StringName:
 	var plan:=Swaps.exchange_plan(player,target)
 	var next: Vector2i=plan["player"]
 	var candidate:=_crates.duplicate()
