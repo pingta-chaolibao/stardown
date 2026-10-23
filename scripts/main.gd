@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -210,7 +210,7 @@ func _build_header(parent: VBoxContainer) -> void:
 	for index in LEVEL_PATHS.size():
 		var button := _button(LEVEL_TITLES[index], "Level%02d" % (index + 1))
 		button.disabled = index == current_level_index
-		button.custom_minimum_size.x = 84
+		button.custom_minimum_size.x = 76
 		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		button.tooltip_text = "切换关卡并从初始状态开始"
 		button.pressed.connect(select_level.bind(index))

@@ -1,0 +1,8 @@
+{
+  "level_id": "north_hero_07",
+  "path": "DLDDDLLLLLUUUURRUUUURRDRURULLDLLLDRDDDDLULLLLLURUUULDLURRDDLDDDRURRRRDLDDDDLULDRRURRRRRRRRRRULLDLLLLURUUUULDDRRURRRRRDLLULLLDLDDDLLLLLUUUURRUUUURRRRRRDR",
+  "moves": 152,
+  "pushes": 0,
+  "pulls": 56,
+  "note": "U/D/L/R 为上/下/左/右。独立搜索所得合法单拉路线，供 Godot 模型、实际输入及录制验证；不宣称最优。"
+}
