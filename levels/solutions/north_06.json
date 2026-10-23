@@ -1,0 +1,8 @@
+{
+  "level_id": "north_hero_06",
+  "path": "RRLLURRDRRDRUURDULDDRRRRDDRDLURDDLLLLULLURDLDRURULLLRRRDDLLUULLDL",
+  "moves": 65,
+  "pushes": 0,
+  "pulls": 17,
+  "note": "U/D/L/R 为上/下/左/右。构造的 65 步、17 拉、0 推合法路线，独立回放、Godot 模型及正常键盘入口均已验证；不宣称最优。"
+}
