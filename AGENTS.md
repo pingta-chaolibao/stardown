@@ -84,3 +84,12 @@ Level 15 is the confirmed 11x7 blue/green map in north_15.json. Latest correctio
 Reuse passive direction-first blue exchange with first hero/crystal, green automatic nearest-single crystal pull, free C and undo retaining selection, global all-pressure AND, both-hero goals and undo-only revival. No pushing or new mechanism. Independent identity-aware BFS stops at first living victory: 61 actual actions+20free selections,11pulls/7swaps. Actual route uses both crystals and three hero exchanges including across open energy. Legitimate side route:blue inside gate at action52, select green and move down off plate; restored energy kills inactive blue, C/R/load cannot bypass, one undo revives while green remains selected. Do not splice this test into walkthrough.
 
 Preserve previous 14 maps/solutions/MP4s/replays byte-for-byte from 1efc54dbdbe41013cee7fb6136a03b635daf1e87. Commit implementation before recording actual video/chapter_01/level_15.mp4, then separate media commit, normal develop push and verified download. No ZIP.
+
+
+## Confirmed sixteenth map
+
+Level 16 is the confirmed 11x3 red/blue map in north_16.json: terrain ...##.##..# / ........... / ...##.##..#. Red=(5,1),blue=(5,2),one purple-pink crystal=(10,1),yellow plate=(1,1),energy=(7,1),purple disc goals=(9,0)/(9,2). Third row is complete;33=(10,2) remains blocked. Initially select blue. Purple is goal presentation only, no portal/teleport or new rule. Reuse red mixed pushing, blue direction-first passive exchange, free C, undo retaining selection, global pressure/death and distinct hero goals.
+
+Independent BFS first victory: 15actual actions+3free selections,3swaps,0pushes. Do not claim exhaustive/optimality. Mixed pushing and death tested separately through legal campaign side paths, never spliced into formal walkthrough: ULLLLRCURRRRCLLCLLLLLLLL produces21actions/8pushes including crystal+blue, then a boundary blocks the mixed line. Prefix9 of formal solution plus CLLCLLLC leaves red in open gate and blue on plate;blue down restores energy and kills inactive red, onlyUndo revives while blue remains selected.
+
+Preserve prior 15 maps/solutions/videos/replays byte-identically from f3caa746724876d1eb80a2b30a106d7328832ad2. Keep all gameplay core scripts except the validated exit_color enum unchanged;purple only extends rendering/data presentation.16 readable navigation buttons use two rows. Commit implementation first, then real video/chapter_01/level_16.mp4 and separate media commit, normal develop push and download check. No ZIP.

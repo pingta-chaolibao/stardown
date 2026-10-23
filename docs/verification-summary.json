@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-23T10:26:25.878456+00:00",
+  "time_utc": "2026-10-23T11:15:44.299489+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,13 +7,13 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.015
+      "seconds": 0.022
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 8.675
+      "seconds": 8.866
     },
     {
       "name": "02_parse_00_bush_obstacle",
@@ -25,7 +25,7 @@
       "name": "02_parse_01_energy_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.145
     },
     {
       "name": "02_parse_02_grid_state",
@@ -43,31 +43,31 @@
       "name": "02_parse_04_level_data",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.143
     },
     {
       "name": "02_parse_05_swap_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.15
     },
     {
       "name": "02_parse_06_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "02_parse_07_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.238
+      "seconds": 3.242
     },
     {
       "name": "02_parse_08_board_view",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.144
     },
     {
       "name": "02_parse_09_blue_swap_regression",
@@ -79,229 +79,241 @@
       "name": "02_parse_10_bush_and_group_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.152
+      "seconds": 3.143
     },
     {
       "name": "02_parse_11_chain_push_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.159
+      "seconds": 3.144
     },
     {
       "name": "02_parse_12_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.147
     },
     {
       "name": "02_parse_13_global_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.143
     },
     {
       "name": "02_parse_14_green_pull_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.146
     },
     {
       "name": "02_parse_15_multi_hero_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.145
     },
     {
       "name": "02_parse_16_north_01_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.143
     },
     {
       "name": "02_parse_17_north_02_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.144
     },
     {
       "name": "02_parse_18_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.175
+      "seconds": 3.145
     },
     {
       "name": "02_parse_19_north_03_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.16
+      "seconds": 3.145
     },
     {
       "name": "02_parse_20_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.148
     },
     {
       "name": "02_parse_21_north_04_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.151
     },
     {
       "name": "02_parse_22_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.158
     },
     {
       "name": "02_parse_23_north_05_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.152
     },
     {
       "name": "02_parse_24_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.141
     },
     {
       "name": "02_parse_25_north_06_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.145
     },
     {
       "name": "02_parse_26_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.153
+      "seconds": 3.144
     },
     {
       "name": "02_parse_27_north_07_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.15
+      "seconds": 3.143
     },
     {
       "name": "02_parse_28_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.15
+      "seconds": 3.144
     },
     {
       "name": "02_parse_29_north_08_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.154
+      "seconds": 3.143
     },
     {
       "name": "02_parse_30_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.159
+      "seconds": 3.143
     },
     {
       "name": "02_parse_31_north_09_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.158
+      "seconds": 3.143
     },
     {
       "name": "02_parse_32_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.142
     },
     {
       "name": "02_parse_33_north_10_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.144
     },
     {
       "name": "02_parse_34_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.155
+      "seconds": 3.146
     },
     {
       "name": "02_parse_35_north_11_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.156
+      "seconds": 3.145
     },
     {
       "name": "02_parse_36_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.148
     },
     {
       "name": "02_parse_37_north_12_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.15
+      "seconds": 3.143
     },
     {
       "name": "02_parse_38_north_12_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.155
+      "seconds": 3.146
     },
     {
       "name": "02_parse_39_north_13_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.155
+      "seconds": 3.153
     },
     {
       "name": "02_parse_40_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.159
+      "seconds": 3.151
     },
     {
       "name": "02_parse_41_north_14_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.155
+      "seconds": 3.144
     },
     {
       "name": "02_parse_42_north_14_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.146
     },
     {
       "name": "02_parse_43_north_15_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.146
     },
     {
       "name": "02_parse_44_north_15_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.15
     },
     {
-      "name": "02_parse_45_run_tests",
+      "name": "02_parse_45_north_16_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "02_parse_46_north_16_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_47_run_tests",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_parse_48_scene_smoke",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146
     },
     {
-      "name": "02_parse_46_scene_smoke",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.144
-    },
-    {
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.239
     },
     {
       "name": "03_chain_push",
@@ -313,49 +325,49 @@
       "name": "03_energy",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "03_global_energy",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.148
     },
     {
       "name": "03_bush_group",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.145
     },
     {
       "name": "03_green_pull",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.245
     },
     {
       "name": "03_blue_swap",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.15
     },
     {
       "name": "03_multi_hero",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.152
+      "seconds": 3.153
     },
     {
       "name": "03_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "03_north_14",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.148
     },
     {
       "name": "03_north_15",
@@ -364,262 +376,280 @@
       "seconds": 3.146
     },
     {
+      "name": "03_north_16",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
       "name": "03_north_01",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.141
     },
     {
       "name": "03_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.143
     },
     {
       "name": "03_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.237
     },
     {
       "name": "03_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "03_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.143
     },
     {
       "name": "03_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.142
     },
     {
       "name": "03_north_07",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "03_north_08",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.146
     },
     {
       "name": "03_north_09",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "03_north_10",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.143
     },
     {
       "name": "03_north_11",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.149
     },
     {
       "name": "03_north_12",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.154
     },
     {
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.333
+      "seconds": 3.334
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.45
+      "seconds": 4.549
     },
     {
       "name": "05_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.264
+      "seconds": 4.265
     },
     {
       "name": "05_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.168
+      "seconds": 4.263
     },
     {
       "name": "05_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.354
+      "seconds": 4.36
     },
     {
       "name": "05_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.354
+      "seconds": 4.452
     },
     {
       "name": "05_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.007
+      "seconds": 5.011
     },
     {
       "name": "05_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.133
+      "seconds": 6.128
     },
     {
       "name": "05_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.917
+      "seconds": 4.916
     },
     {
       "name": "05_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.727
+      "seconds": 4.73
     },
     {
       "name": "05_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.378
+      "seconds": 5.406
     },
     {
       "name": "05_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.911
+      "seconds": 4.913
     },
     {
       "name": "05_north_12_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.565
+      "seconds": 5.469
     },
     {
       "name": "05_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.657
+      "seconds": 5.654
     },
     {
       "name": "05_north_14_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.676
+      "seconds": 6.679
     },
     {
       "name": "05_north_15_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 7.986
+      "seconds": 7.98
+    },
+    {
+      "name": "05_north_16_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 5.839
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.197
+      "seconds": 12.185
     },
     {
       "name": "06_render_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.18
+      "seconds": 12.199
     },
     {
       "name": "06_render_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.167
+      "seconds": 12.173
     },
     {
       "name": "06_render_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.219
+      "seconds": 12.177
     },
     {
       "name": "06_render_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.162
+      "seconds": 12.173
     },
     {
       "name": "06_render_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 16.307
+      "seconds": 16.269
     },
     {
       "name": "06_render_north_07",
       "passed": true,
       "exit_code": 0,
-      "seconds": 18.622
+      "seconds": 19.5
     },
     {
       "name": "06_render_north_08",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.747
+      "seconds": 12.741
     },
     {
       "name": "06_render_north_09",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.206
+      "seconds": 12.177
     },
     {
       "name": "06_render_north_10",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.911
+      "seconds": 14.244
     },
     {
       "name": "06_render_north_11",
       "passed": true,
       "exit_code": 0,
-      "seconds": 16.42
+      "seconds": 16.165
     },
     {
       "name": "06_render_north_12",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.907
+      "seconds": 14.055
     },
     {
       "name": "06_render_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.17
+      "seconds": 13.954
     },
     {
       "name": "06_render_north_14",
       "passed": true,
       "exit_code": 0,
-      "seconds": 17.162
+      "seconds": 17.152
     },
     {
       "name": "06_render_north_15",
       "passed": true,
       "exit_code": 0,
-      "seconds": 20.3
+      "seconds": 23.608
+    },
+    {
+      "name": "06_render_north_16",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 14.935
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -677,6 +707,11 @@
     },
     "03_north_15": {
       "checks": 483,
+      "failures": 0,
+      "cases": 4
+    },
+    "03_north_16": {
+      "checks": 209,
       "failures": 0,
       "cases": 4
     },
@@ -741,123 +776,131 @@
       "cases": 5
     },
     "05_scene_input": {
-      "checks": 229,
+      "checks": 237,
       "failures": 0
     },
     "05_north_02_scene": {
-      "checks": 194,
+      "checks": 202,
       "failures": 0
     },
     "05_north_03_scene": {
-      "checks": 197,
-      "failures": 0
-    },
-    "05_north_04_scene": {
-      "checks": 211,
-      "failures": 0
-    },
-    "05_north_05_scene": {
-      "checks": 199,
-      "failures": 0
-    },
-    "05_north_06_scene": {
-      "checks": 250,
-      "failures": 0
-    },
-    "05_north_07_scene": {
-      "checks": 342,
-      "failures": 0
-    },
-    "05_north_08_scene": {
-      "checks": 245,
-      "failures": 0
-    },
-    "05_north_09_scene": {
-      "checks": 206,
-      "failures": 0
-    },
-    "05_north_10_scene": {
-      "checks": 304,
-      "failures": 0
-    },
-    "05_north_11_scene": {
-      "checks": 238,
-      "failures": 0
-    },
-    "05_north_12_scene": {
-      "checks": 254,
-      "failures": 0
-    },
-    "05_north_13_scene": {
-      "checks": 513,
-      "failures": 0
-    },
-    "05_north_14_scene": {
-      "checks": 560,
-      "failures": 0
-    },
-    "05_north_15_scene": {
-      "checks": 554,
-      "failures": 0
-    },
-    "06_render": {
-      "checks": 239,
-      "failures": 0
-    },
-    "06_render_north_02": {
-      "checks": 200,
-      "failures": 0
-    },
-    "06_render_north_03": {
       "checks": 205,
       "failures": 0
     },
-    "06_render_north_04": {
+    "05_north_04_scene": {
       "checks": 219,
       "failures": 0
     },
-    "06_render_north_05": {
+    "05_north_05_scene": {
       "checks": 207,
       "failures": 0
     },
+    "05_north_06_scene": {
+      "checks": 258,
+      "failures": 0
+    },
+    "05_north_07_scene": {
+      "checks": 350,
+      "failures": 0
+    },
+    "05_north_08_scene": {
+      "checks": 253,
+      "failures": 0
+    },
+    "05_north_09_scene": {
+      "checks": 214,
+      "failures": 0
+    },
+    "05_north_10_scene": {
+      "checks": 312,
+      "failures": 0
+    },
+    "05_north_11_scene": {
+      "checks": 246,
+      "failures": 0
+    },
+    "05_north_12_scene": {
+      "checks": 262,
+      "failures": 0
+    },
+    "05_north_13_scene": {
+      "checks": 533,
+      "failures": 0
+    },
+    "05_north_14_scene": {
+      "checks": 580,
+      "failures": 0
+    },
+    "05_north_15_scene": {
+      "checks": 570,
+      "failures": 0
+    },
+    "05_north_16_scene": {
+      "checks": 425,
+      "failures": 0
+    },
+    "06_render": {
+      "checks": 247,
+      "failures": 0
+    },
+    "06_render_north_02": {
+      "checks": 208,
+      "failures": 0
+    },
+    "06_render_north_03": {
+      "checks": 213,
+      "failures": 0
+    },
+    "06_render_north_04": {
+      "checks": 227,
+      "failures": 0
+    },
+    "06_render_north_05": {
+      "checks": 215,
+      "failures": 0
+    },
     "06_render_north_06": {
-      "checks": 264,
+      "checks": 272,
       "failures": 0
     },
     "06_render_north_07": {
-      "checks": 362,
+      "checks": 370,
       "failures": 0
     },
     "06_render_north_08": {
-      "checks": 261,
+      "checks": 269,
       "failures": 0
     },
     "06_render_north_09": {
-      "checks": 216,
+      "checks": 224,
       "failures": 0
     },
     "06_render_north_10": {
-      "checks": 318,
+      "checks": 326,
       "failures": 0
     },
     "06_render_north_11": {
-      "checks": 254,
+      "checks": 262,
       "failures": 0
     },
     "06_render_north_12": {
-      "checks": 274,
+      "checks": 282,
       "failures": 0
     },
     "06_render_north_13": {
-      "checks": 529,
+      "checks": 549,
       "failures": 0
     },
     "06_render_north_14": {
-      "checks": 584,
+      "checks": 604,
       "failures": 0
     },
     "06_render_north_15": {
-      "checks": 586,
+      "checks": 602,
+      "failures": 0
+    },
+    "06_render_north_16": {
+      "checks": 453,
       "failures": 0
     }
   },
@@ -1373,6 +1416,59 @@
         "pulls": 11,
         "swaps": 7,
         "note": "UDLR计实际行动，C仅免费切换选择、不进撤销。独立蓝绿身份占用BFS首次胜利停止，再按英雄/水晶身份回放；不宣称穷举或最优。25号(2,2)及47号(2,4)保持不可走。"
+      }
+    },
+    {
+      "id": "north_hero_16",
+      "size": [
+        11,
+        3
+      ],
+      "heroes": [
+        {
+          "id": "red",
+          "kind": "red",
+          "position": [
+            5,
+            1
+          ]
+        },
+        {
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            5,
+            2
+          ]
+        }
+      ],
+      "active_hero": "blue",
+      "crystal_count": 1,
+      "crystal_colors": [
+        "purple_pink"
+      ],
+      "exits": [
+        [
+          9,
+          0
+        ],
+        [
+          9,
+          2
+        ]
+      ],
+      "exit_color": "purple",
+      "solution": {
+        "level_id": "north_hero_16",
+        "path": "ULLLLRCURRRRCLUCLD",
+        "moves": 15,
+        "directions": 15,
+        "input_events": 18,
+        "selection_events": 3,
+        "pushes": 0,
+        "pulls": 0,
+        "swaps": 3,
+        "note": "UDLR计真实行动，C仅免费选择、不进撤销。独立红蓝身份占用BFS首次存活胜利停止，再按身份回放；不宣称穷举或最优。紫色圆盘只为终点显示，33号保持不可走。"
       }
     }
   ],
@@ -2644,7 +2740,8 @@
     "exit_colors": [
       "yellow",
       "green",
-      "red"
+      "red",
+      "purple"
     ]
   },
   "north_11_independent_route": {
@@ -4782,13 +4879,12 @@
   },
   "previous_thirteen_maps_solutions_videos_replays_unchanged_from": "8b00eb9b54574300968c7fa7af5bd493d880dafa",
   "previous_thirteen_deliverable_files_compared": 52,
-  "core_rules_byte_identical_from": "1efc54dbdbe41013cee7fb6136a03b635daf1e87",
+  "core_rules_byte_identical_from": "f3caa746724876d1eb80a2b30a106d7328832ad2",
   "core_rules_files_compared": [
     "scripts/core/grid_state.gd",
     "scripts/core/energy_rules.gd",
     "scripts/core/hero_rules.gd",
     "scripts/core/swap_rules.gd",
-    "scripts/core/level_data.gd",
     "scripts/input/step_input.gd"
   ],
   "north_14_walkthrough": {
@@ -5251,5 +5347,82 @@
     "level_file": "levels/north_15.json",
     "solution_file": "levels/solutions/north_15.json"
   },
-  "previous_fourteen_manifest_entries_unchanged": true
+  "previous_fourteen_manifest_entries_unchanged": true,
+  "north_16_independent_search": {
+    "method": "identity-aware occupancy BFS with free selection; first living victory; no exhaustive/optimality claim",
+    "floor_cells": 23,
+    "expanded_states": 2298,
+    "visited_states": 2757,
+    "pending_states": 459,
+    "solution": {
+      "level_id": "north_hero_16",
+      "path": "ULLLLRCURRRRCLUCLD",
+      "moves": 15,
+      "directions": 15,
+      "input_events": 18,
+      "selection_events": 3,
+      "pushes": 0,
+      "pulls": 0,
+      "swaps": 3,
+      "note": "UDLR计真实行动，C仅免费选择、不进撤销。独立红蓝身份占用BFS首次存活胜利停止，再按身份回放；不宣称穷举或最优。紫色圆盘只为终点显示，33号保持不可走。"
+    }
+  },
+  "north_16_support": {
+    "model_cases": 4,
+    "model_checks": 209,
+    "headless_ui_checks": 425,
+    "rendered_ui_checks": 453,
+    "terrain_cells_checked": 33,
+    "floor_cells": 23,
+    "marker33_wall": [
+      10,
+      2
+    ],
+    "purple_goals_presentation_only": true,
+    "no_portal_or_teleport": true,
+    "first_hero_exchange_action": 1,
+    "blue_plate_action": 5,
+    "crystal_handoff_action": 6,
+    "red_gate_action": 9,
+    "near_hero_exchange_action": 12,
+    "blue_goal_action": 13,
+    "victory_action": 15,
+    "actual_actions": 15,
+    "selection_events": 3,
+    "input_events": 18,
+    "swaps": 3,
+    "pushes": 0,
+    "pulls": 0,
+    "window_sizes": [
+      [
+        1280,
+        820
+      ],
+      [
+        960,
+        615
+      ]
+    ],
+    "navigation_rows": 2,
+    "buttons_per_row": 8,
+    "compact_mouse_and_color_highlight_tested": true,
+    "legal_mixed_push_side_path": {
+      "path": "ULLLLRCURRRRCLLCLLLLLLLL",
+      "moves": 21,
+      "selection_events": 3,
+      "pushes": 8,
+      "swaps": 4,
+      "boundary_block_atomic": true,
+      "undo_entire_line": true
+    },
+    "legitimate_inactive_red_death_test": "legal formal prefix9 plus CLLCLLLC,blue down off plate;inactive red dies,C/R/load/move blocked,undo revives and retains blue",
+    "shared_gameplay_rules_changed": false,
+    "new_mechanism": false,
+    "display_data_extension": "exit_color accepts purple; ordinary goal renderer only, recolor-state equivalence tested"
+  },
+  "previous_fifteen_maps_solutions_videos_replays_unchanged_from": "f3caa746724876d1eb80a2b30a106d7328832ad2",
+  "previous_fifteen_deliverable_files_compared": 60,
+  "previous_fifteen_manifest_entries_unchanged": true,
+  "previous_fifteen_video_checker_preflight": "15 videos,full decode and independent replay passed",
+  "north_16_walkthrough_pending": true
 }

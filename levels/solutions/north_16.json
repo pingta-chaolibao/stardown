@@ -1,0 +1,12 @@
+{
+  "level_id": "north_hero_16",
+  "path": "ULLLLRCURRRRCLUCLD",
+  "moves": 15,
+  "directions": 15,
+  "input_events": 18,
+  "selection_events": 3,
+  "pushes": 0,
+  "pulls": 0,
+  "swaps": 3,
+  "note": "UDLR计真实行动，C仅免费选择、不进撤销。独立红蓝身份占用BFS首次存活胜利停止，再按身份回放；不宣称穷举或最优。紫色圆盘只为终点显示，33号保持不可走。"
+}

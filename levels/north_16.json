@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_16",
+  "title": "北部英雄 · 第十六关",
+  "is_temporary": false,
+  "source_note": "依据用户确认的11×3原图编号与二维格图；第三排完整，33号(10,2)不可走。红蓝双英雄，紫色圆盘仅为终点显示，没有传送或新机制。原创2D几何图形，不声称逐像素复刻。",
+  "terrain": ["...##.##..#","...........","...##.##..#"],
+  "heroes": [
+    {"id":"red", "kind":"red", "position":[5,1]},
+    {"id":"blue", "kind":"blue", "position":[5,2]}
+  ],
+  "active_hero": "blue",
+  "crates": [[10,1]],
+  "crystal_colors": ["purple_pink"],
+  "targets": [],
+  "exits": [[9,0],[9,2]],
+  "exit_color": "purple",
+  "objective": "all_heroes_on_exits",
+  "energy_links": [
+    {"id":"yellow_01", "plate":[1,1], "barriers":[[7,1]], "pressure_sources":["hero","crystal"]}
+  ]
+}

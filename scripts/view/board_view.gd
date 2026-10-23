@@ -8,6 +8,7 @@ const HERO_GREEN := Color("72ce95")
 const HERO_BLUE := Color("78aff0")
 const MECHANISM_GREEN := Color("78d799")
 const GOLD := Color("dfbb78")
+const GOAL_PURPLE := Color("c4a0f3")
 const MINT := Color("9bc9c1")
 
 var model: State
@@ -127,6 +128,11 @@ func _exit_marker(center: Vector2, tile: float) -> void:
 		draw_circle(center,tile*0.36,Color("733f4d"))
 		draw_arc(center,tile*0.31,0,TAU,48,CORAL,3,true)
 		draw_circle(center,tile*0.14,Color("ef9ba2"))
+		return
+	if model.level.exit_color=="purple":
+		draw_circle(center,tile*0.36,Color("51406d"))
+		draw_arc(center,tile*0.30,0,TAU,48,GOAL_PURPLE,3,true)
+		draw_circle(center,tile*0.16,Color("e8d8ff"))
 		return
 	if model.level.exit_color == "green":
 		_box(rect, Color("286447"), 5)

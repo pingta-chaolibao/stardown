@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -79,11 +79,13 @@ func _has_hero_kind(kind: String) -> bool:
 
 func _goal_name() -> String:
 	if model.level.exit_color=="red":return "红色终点"
+	if model.level.exit_color=="purple":return "紫色终点"
 	return "绿色终点" if model.level.exit_color == "green" else "黄色终点"
 
 
 func _goal_color() -> Color:
 	if model.level.exit_color=="red":return Board.CORAL
+	if model.level.exit_color=="purple":return Board.GOAL_PURPLE
 	return Color("78dd99") if model.level.exit_color == "green" else GOLD
 
 
@@ -237,32 +239,32 @@ func _build_ui() -> void:
 
 
 func _build_header(parent: VBoxContainer) -> void:
-	var row := _hbox(1 if LEVEL_PATHS.size()>14 else (2 if LEVEL_PATHS.size()>13 else (4 if LEVEL_PATHS.size()>12 else (6 if LEVEL_PATHS.size() > 11 else 10))))
-	row.custom_minimum_size.y = 76
+	var row:=_hbox(10)
+	row.custom_minimum_size.y=76
 	parent.add_child(row)
-	var emblem := _label("✦", 52, GOLD)
-	emblem.custom_minimum_size.x = 58
+	var emblem:=_label("✦",52,GOLD)
+	emblem.custom_minimum_size.x=58
 	row.add_child(emblem)
-	var titles := _vbox(0)
+	var titles:=_vbox(0)
 	row.add_child(titles)
-	titles.add_child(_label("STARDOWN  /  NORTHERN REALM", 12, MINT))
-	titles.add_child(_label("沉星之序", 34, TEXT))
+	titles.add_child(_label("STARDOWN  /  NORTHERN REALM",12,MINT))
+	titles.add_child(_label("沉星之序",34,TEXT))
 	_spacer(row)
-	for index in LEVEL_PATHS.size():
-		var button := _button(LEVEL_TITLES[index], "Level%02d" % (index + 1))
-		button.disabled = index == current_level_index
-		button.custom_minimum_size.x = 48 if LEVEL_PATHS.size()>14 else (50 if LEVEL_PATHS.size()>13 else (56 if LEVEL_PATHS.size()>12 else (60 if LEVEL_PATHS.size() > 11 else (68 if LEVEL_PATHS.size() > 10 else 76))))
-		if LEVEL_PATHS.size()>12:button.add_theme_font_size_override("font_size",12 if LEVEL_PATHS.size()>14 else (13 if LEVEL_PATHS.size()>13 else 14))
-		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		button.tooltip_text = "切换关卡并从初始状态开始"
-		button.pressed.connect(select_level.bind(index))
-		row.add_child(button)
-	# The board already labels its source; keep header space for level navigation.
-	if LEVEL_PATHS.size()<=8:
-		var badge := _panel(Color("1b2a33"), Color("394c54"), 10)
-		badge.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		badge.add_child(_label("用户确认布局  /  原创 2D" if not model.level.is_temporary else "临时测试布局", 13, GOLD))
-		row.add_child(badge)
+	# Two compact rows retain readable titles as chapter one grows to16 levels.
+	var navigation:=_vbox(2)
+	navigation.size_flags_vertical=Control.SIZE_SHRINK_CENTER
+	row.add_child(navigation)
+	for start in range(0,LEVEL_PATHS.size(),8):
+		var line:=_hbox(4)
+		navigation.add_child(line)
+		for index in range(start,mini(start+8,LEVEL_PATHS.size())):
+			var button:=_button(LEVEL_TITLES[index],"Level%02d" % (index+1))
+			button.disabled=index==current_level_index
+			button.custom_minimum_size=Vector2(68,34)
+			button.add_theme_font_size_override("font_size",14)
+			button.tooltip_text="切换关卡并从初始状态开始"
+			button.pressed.connect(select_level.bind(index))
+			line.add_child(button)
 
 
 func _build_board(parent: HBoxContainer) -> void:
