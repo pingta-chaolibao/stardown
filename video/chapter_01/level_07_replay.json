@@ -1,0 +1,9110 @@
+{
+  "capture": "Godot Movie Maker viewport; actual Input.parse_input_event press/release",
+  "chapter": 1,
+  "display": "X11",
+  "engine": {
+    "build": "official",
+    "hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+    "hex": 263683,
+    "major": 4,
+    "minor": 6,
+    "patch": 3,
+    "status": "stable",
+    "string": "4.6.3-stable (official)",
+    "timestamp": 0
+  },
+  "final_state": {
+    "alive": true,
+    "barriers": [
+      {
+        "active": false,
+        "position": [
+          12,
+          1
+        ]
+      },
+      {
+        "active": false,
+        "position": [
+          15,
+          4
+        ]
+      }
+    ],
+    "bushes": [],
+    "completed": true,
+    "crystals": [
+      {
+        "color": "purple",
+        "id": 0,
+        "position": [
+          12,
+          5
+        ]
+      }
+    ],
+    "exit": [
+      14,
+      2
+    ],
+    "exit_color": "green",
+    "hero_kind": "green",
+    "level_id": "north_hero_07",
+    "moves": 152,
+    "plates": [
+      {
+        "group": "yellow_01",
+        "position": [
+          12,
+          5
+        ],
+        "pressed": true
+      }
+    ],
+    "player": [
+      14,
+      2
+    ],
+    "pressure": {
+      "yellow_01": true
+    },
+    "pulls": 56,
+    "pushes": 0
+  },
+  "fps": 30,
+  "frames_per_input": 18,
+  "game_implementation_commit": "1612e5d5c321e4d61015c485cb425366443ad241",
+  "initial_pause_frames": 60,
+  "initial_state": {
+    "alive": true,
+    "barriers": [
+      {
+        "active": true,
+        "position": [
+          12,
+          1
+        ]
+      },
+      {
+        "active": true,
+        "position": [
+          15,
+          4
+        ]
+      }
+    ],
+    "bushes": [],
+    "completed": false,
+    "crystals": [
+      {
+        "color": "purple",
+        "id": 0,
+        "position": [
+          9,
+          0
+        ]
+      }
+    ],
+    "exit": [
+      14,
+      2
+    ],
+    "exit_color": "green",
+    "hero_kind": "green",
+    "level_id": "north_hero_07",
+    "moves": 0,
+    "plates": [
+      {
+        "group": "yellow_01",
+        "position": [
+          12,
+          5
+        ],
+        "pressed": false
+      }
+    ],
+    "player": [
+      11,
+      5
+    ],
+    "pressure": {
+      "yellow_01": false
+    },
+    "pulls": 0,
+    "pushes": 0
+  },
+  "level": 7,
+  "movie_file": "level_07.avi",
+  "path": "DLDDDLLLLLUUUURRUUUURRDRURULLDLLLDRDDDDLULLLLLURUUULDLURRDDLDDDRURRRRDLDDDDLULDRRURRRRRRRRRRULLDLLLLURUUUULDDRRURRRRRDLLULLLDLDDDLLLLLUUUURRUUUURRRRRRDR",
+  "trace": [
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 1,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        11,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 2,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 3,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        7
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 4,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        8
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 5,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 6,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 7,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        8,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 8,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 9,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        6,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 10,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 11,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        8
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 12,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        7
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 13,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 14,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 15,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        6,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 16,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 17,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        4
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 18,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        3
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 19,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        2
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 20,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 21,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        8,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            0
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 22,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 0,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 23,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        2
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 1,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 24,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        2
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 1,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 25,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 1,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 26,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        11,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 2,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 27,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        11,
+        0
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 2,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 28,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        0
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 2,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 29,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        0
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 2,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 30,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 2,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 31,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        8,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 3,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            8,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 32,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 4,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 33,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        6,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 5,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 34,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        6,
+        2
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 5,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            1
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 35,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        2
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 5,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 36,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        3
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 6,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            3
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 37,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        4
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 7,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            4
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 38,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 8,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 39,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 9,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 40,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        6,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 9,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 41,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        6,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 9,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            6,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 42,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 10,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 43,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        4,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 11,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            4,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 44,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        3,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 12,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            3,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 45,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        2,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 13,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            2,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 46,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        1,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 14,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            2,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 47,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        1,
+        4
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 14,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            2,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 48,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        2,
+        4
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 14,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            2,
+            4
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 49,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        2,
+        3
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 15,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            2,
+            3
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 50,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        2,
+        2
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 16,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            2,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 51,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        2,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 17,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            2,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 52,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        1,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 17,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            2,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 53,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        1,
+        2
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 17,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 54,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        0,
+        2
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 18,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 55,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        0,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 18,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 56,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        1,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 18,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 57,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        2,
+        1
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 18,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 58,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        2,
+        2
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 18,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 59,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        2,
+        3
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 18,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 60,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        1,
+        3
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 18,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            3
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 61,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        1,
+        4
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 19,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            4
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 62,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        1,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 20,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 63,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        1,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 21,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 64,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        2,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 21,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            1,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 65,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        2,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 21,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            2,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 66,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        3,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 22,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            3,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 67,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        4,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 23,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            4,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 68,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 24,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 69,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        6,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 25,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 70,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        6,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 25,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 71,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 25,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            6
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 72,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        7
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 26,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            7
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 73,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        8
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 27,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            8
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 74,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 28,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 75,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        10
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 29,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 76,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        4,
+        10
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 29,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 77,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        4,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 29,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            4,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 78,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        3,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 30,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            4,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 79,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        3,
+        10
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 30,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            4,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 80,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        4,
+        10
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 30,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            4,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 81,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        10
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 30,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            4,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 82,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        5,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 30,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            5,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 83,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        6,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 31,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            6,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 84,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        7,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 32,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 85,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        8,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 33,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            8,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 86,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 34,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            9,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 87,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 35,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 88,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        11,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 36,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            11,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 89,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        12,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 37,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 90,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        13,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 38,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            13,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 91,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        14,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 39,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            14,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 92,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        15,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 40,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            14,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 93,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        15,
+        8
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 40,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            14,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 94,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        14,
+        8
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 40,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            14,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 95,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        13,
+        8
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 40,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            14,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 96,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        13,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 40,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            13,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 97,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        12,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 41,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 98,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        11,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 42,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            11,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 99,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 43,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 100,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        9
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 44,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 101,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        8
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 44,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            9
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 102,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        8
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 44,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            8
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 103,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        7
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 45,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            7
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 104,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 46,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            6
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 105,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 47,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 106,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        4
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 48,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 107,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        4
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 48,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 108,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 48,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 109,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        9,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 48,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 110,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        10,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 48,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 111,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        11,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 48,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            10,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 112,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        11,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 48,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            11,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 113,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        12,
+        5
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 49,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 114,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        13,
+        5
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 50,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            13,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 115,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        14,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 51,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            14,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 116,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        15,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 52,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            15,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 117,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        16,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 53,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            15,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 118,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        16,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 53,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            15,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 119,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        15,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 53,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            15,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 120,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        14,
+        6
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 53,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            15,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 121,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        14,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 53,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": true,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": true,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            14,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 122,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": false
+        }
+      ],
+      "player": [
+        13,
+        5
+      ],
+      "pressure": {
+        "yellow_01": false
+      },
+      "pulls": 54,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            13,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 123,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        12,
+        5
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 55,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 124,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        11,
+        5
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 125,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        11,
+        6
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 126,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        10,
+        6
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 127,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        10,
+        7
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 128,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        10,
+        8
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 129,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        10,
+        9
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 130,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        9,
+        9
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 131,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        8,
+        9
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 132,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        7,
+        9
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 133,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        6,
+        9
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "L",
+      "level_id": "north_hero_07",
+      "moves": 134,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        5,
+        9
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 135,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        5,
+        8
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 136,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        5,
+        7
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 137,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        5,
+        6
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 138,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        5,
+        5
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 139,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        6,
+        5
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 140,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        7,
+        5
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 141,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        7,
+        4
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 142,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        7,
+        3
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 143,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        7,
+        2
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "U",
+      "level_id": "north_hero_07",
+      "moves": 144,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        7,
+        1
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 145,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        8,
+        1
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 146,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        9,
+        1
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 147,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        10,
+        1
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 148,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        11,
+        1
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 149,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        12,
+        1
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 150,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        13,
+        1
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "D",
+      "level_id": "north_hero_07",
+      "moves": 151,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        13,
+        2
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    },
+    {
+      "alive": true,
+      "barriers": [
+        {
+          "active": false,
+          "position": [
+            12,
+            1
+          ]
+        },
+        {
+          "active": false,
+          "position": [
+            15,
+            4
+          ]
+        }
+      ],
+      "bushes": [],
+      "completed": true,
+      "crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            12,
+            5
+          ]
+        }
+      ],
+      "exit": [
+        14,
+        2
+      ],
+      "exit_color": "green",
+      "hero_kind": "green",
+      "input": "R",
+      "level_id": "north_hero_07",
+      "moves": 152,
+      "plates": [
+        {
+          "group": "yellow_01",
+          "position": [
+            12,
+            5
+          ],
+          "pressed": true
+        }
+      ],
+      "player": [
+        14,
+        2
+      ],
+      "pressure": {
+        "yellow_01": true
+      },
+      "pulls": 56,
+      "pushes": 0
+    }
+  ],
+  "victory_pause_frames": 90
+}

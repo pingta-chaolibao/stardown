@@ -226,6 +226,60 @@
       "replay_report": "level_06_replay.json",
       "level_file": "levels/north_06.json",
       "solution_file": "levels/solutions/north_06.json"
+    },
+    {
+      "file": "video/chapter_01/level_07.mp4",
+      "level": 7,
+      "bytes": 1381551,
+      "sha256": "27aac0ad47140376d3a29ad8971d1eac60de2e580e5a5c5b99a22c0721fbe1a8",
+      "distinct_sampled_frames": 463,
+      "full_decode_passed": true,
+      "game_implementation_commit": "1612e5d5c321e4d61015c485cb425366443ad241",
+      "hero_kind": "green",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 2886,
+      "duration_seconds": 96.2,
+      "mp4_fast_start": true,
+      "moves": 152,
+      "pushes": 0,
+      "pulls": 56,
+      "initial_player": [
+        11,
+        5
+      ],
+      "victory_player": [
+        14,
+        2
+      ],
+      "legal_input_trace_verified": true,
+      "initial_and_final_frames_reviewed": true,
+      "hero_and_crystal_pressure_reviewed": true,
+      "gate_crossing_reviewed": true,
+      "corrected_floor_step": 54,
+      "hero_press_step": 113,
+      "first_crystal_handoff_step": 114,
+      "release_step": 115,
+      "final_crystal_handoff_step": 124,
+      "gate_crossing_step": 149,
+      "reviewed_encoded_frames": [
+        0,
+        1024,
+        2086,
+        2122,
+        2284,
+        2734,
+        2885
+      ],
+      "replay_report": "level_07_replay.json",
+      "level_file": "levels/north_07.json",
+      "solution_file": "levels/solutions/north_07.json"
     }
   ],
   "game_implementation_commits": {
@@ -234,6 +288,7 @@
     "level_03": "77b208c53142e3b310f4ed2093bc23afb5e7367b",
     "level_04": "50ef07db450b134169c9f60d1cab5d5218960789",
     "level_05": "878fbb16d02f2acd02b873b118efdd7daec3fcbc",
-    "level_06": "6f2061e7e9f3fea5ea5117d981f7798266d9df78"
+    "level_06": "6f2061e7e9f3fea5ea5117d981f7798266d9df78",
+    "level_07": "1612e5d5c321e4d61015c485cb425366443ad241"
   }
 }
