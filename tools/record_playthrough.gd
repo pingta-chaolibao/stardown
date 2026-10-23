@@ -21,8 +21,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number not in [1, 2, 3] or report_path.is_empty():
-		_fail("Pass --level=1, 2 or 3 and an absolute --report path.")
+	if level_number not in [1, 2, 3, 4] or report_path.is_empty():
+		_fail("Pass --level=1, 2, 3 or 4 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -90,11 +90,18 @@ func _state() -> Dictionary:
 	var barriers: Array[Dictionary] = []
 	for cell: Vector2i in game.model.barrier_states():
 		barriers.append({"position": [cell.x, cell.y], "active": game.model.barrier_is_active(cell)})
+	var bushes: Array = []
+	for bush in game.model.level.bushes:
+		bushes.append([bush.cell.x, bush.cell.y])
+	var plates: Array[Dictionary] = []
+	for link in game.model.level.energy_links:
+		for cell: Vector2i in link["plates"]:
+			plates.append({"group": link["id"], "position": [cell.x, cell.y], "pressed": game.model.pressure_cell_is_active(link["id"], cell)})
 	return {"level_id": game.model.level.id, "player": [game.model.player.x, game.model.player.y],
 		"crystals": crystals, "moves": game.model.moves, "pushes": game.model.pushes,
 		"completed": game.model.is_complete(), "exit": [game.model.level.exit_cell.x, game.model.level.exit_cell.y],
 		"exit_color": game.model.level.exit_color, "alive": game.model.alive,
-		"pressure": game.model.pressure_states(), "barriers": barriers}
+		"pressure": game.model.pressure_states(), "barriers": barriers, "bushes": bushes, "plates": plates}
 
 
 func _send_key(code: int, pressed: bool) -> void:

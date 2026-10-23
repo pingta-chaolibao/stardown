@@ -53,6 +53,8 @@ func try_move(direction: Vector2i) -> StringName:
 		return &"complete"
 	var next := player + direction
 	if not is_walkable(next):
+		if level.bush_at(next) != null:
+			return &"bush_blocked"
 		return &"energy_blocked" if barrier_is_active(next) else &"wall"
 	var chain: Array[Vector2i] = []
 	var destination := next
@@ -146,7 +148,10 @@ func history_size() -> int:
 
 
 func is_walkable(cell: Vector2i) -> bool:
-	return level != null and level.is_floor(cell) and not barrier_is_active(cell)
+	if level == null or not level.is_floor(cell) or barrier_is_active(cell):
+		return false
+	var bush := level.bush_at(cell)
+	return bush == null or not bush.BLOCKS_MOVEMENT
 
 
 func barrier_is_active(cell: Vector2i) -> bool:
@@ -155,6 +160,26 @@ func barrier_is_active(cell: Vector2i) -> bool:
 
 func pressure_is_active(id: String) -> bool:
 	return _pressure.get(id, false)
+
+
+func pressure_cell_is_active(id: String, cell: Vector2i) -> bool:
+	if level == null:
+		return false
+	for link in level.energy_links:
+		if link["id"] == id and cell in link["plates"]:
+			return Energy.pressure_matches(cell, link["pressure_sources"], player, _crates)
+	return false
+
+
+func pressure_progress(id: String) -> Vector2i:
+	var count := Vector2i.ZERO
+	if level != null:
+		for link in level.energy_links:
+			if link["id"] == id:
+				count.y = link["plates"].size()
+				for cell: Vector2i in link["plates"]:
+					count.x += 1 if pressure_cell_is_active(id, cell) else 0
+	return count
 
 
 func pressure_states() -> Dictionary:
@@ -167,7 +192,10 @@ func barrier_states() -> Dictionary:
 
 func blocks_sight(cell: Vector2i) -> bool:
 	# Terrain query only: movable sight targets are a caller-level concern.
-	return not is_walkable(cell)
+	if level == null or not level.is_floor(cell) or barrier_is_active(cell):
+		return true
+	var bush := level.bush_at(cell)
+	return bush != null and bush.BLOCKS_SIGHT
 
 
 func sight_path_is_clear(cells: Array[Vector2i]) -> bool:

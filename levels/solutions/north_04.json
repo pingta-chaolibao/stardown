@@ -1,0 +1,7 @@
+{
+  "level_id": "north_hero_04",
+  "path": "RDDLDRRRUUULULDDDLDRUUULDDURRRRRUU",
+  "moves": 34,
+  "pushes": 13,
+  "note": "U/D/L/R 为上/下/左/右。独立状态搜索找到，已由 Godot 实际规则与普通键盘逐输入验证；不宣称最优。"
+}

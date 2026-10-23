@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_04",
+  "title": "北部英雄 · 第四关",
+  "is_temporary": false,
+  "source_note": "依据主对话核对、用户确认边缘整行及右上终点/能量格分格后的 7×6 文本坐标。草丛挡移动与视线且不可移动/交换；三块黄板须全部同时由英雄或水晶占据。未实现灰色英雄。",
+  "terrain": [".....#.", ".....#.", ".......", ".......", ".......", "......."],
+  "player": [1, 1],
+  "crates": [[2, 1], [1, 2], [2, 2]],
+  "crystal_colors": ["blue", "purple", "blue"],
+  "bushes": [[3, 3], [0, 4]],
+  "targets": [],
+  "exit": [6, 0],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "energy_links": [
+    {"id": "yellow_01", "plates": [[1, 4], [3, 4], [5, 4]], "activation": "all", "barriers": [[6, 1]], "pressure_sources": ["hero", "crystal"]}
+  ]
+}

@@ -38,8 +38,11 @@ func _draw() -> void:
 	for cell in level.targets:
 		_target(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
 	for link in level.energy_links:
-		var center := origin + (Vector2(link["plate"]) + Vector2.ONE * 0.5) * tile
-		_pressure_plate(center, tile, model.pressure_is_active(link["id"]))
+		for plate: Vector2i in link["plates"]:
+			var center := origin + (Vector2(plate) + Vector2.ONE * 0.5) * tile
+			_pressure_plate(center, tile, model.pressure_cell_is_active(link["id"], plate))
+	for bush in level.bushes:
+		_bush(origin + (Vector2(bush.cell) + Vector2.ONE * 0.5) * tile, tile)
 	for cell: Vector2i in model.barrier_states():
 		if model.barrier_is_active(cell):
 			_energy_block(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
@@ -52,6 +55,16 @@ func _draw() -> void:
 		var center := origin + (Vector2(model.player) + Vector2.ONE * 0.5) * tile
 		draw_line(center + Vector2(-0.3, -0.3) * tile, center + Vector2(0.3, 0.3) * tile, Color("fff0cc"), 3, true)
 		draw_line(center + Vector2(-0.3, 0.3) * tile, center + Vector2(0.3, -0.3) * tile, Color("fff0cc"), 3, true)
+
+
+func _bush(center: Vector2, tile: float) -> void:
+	draw_ellipse_shadow(center + Vector2(0, tile * 0.25), Vector2(tile * 0.37, tile * 0.13))
+	for offset in [Vector2(-0.20, 0.04), Vector2(0.18, 0.02), Vector2(0, -0.17), Vector2(0, 0.17)]:
+		draw_circle(center + offset * tile, tile * 0.24, Color("325c42"))
+	for offset in [Vector2(-0.14, -0.02), Vector2(0.15, -0.04), Vector2(0, -0.19)]:
+		draw_circle(center + offset * tile, tile * 0.18, Color("568451"))
+	for offset in [-0.15, 0.03, 0.20]:
+		draw_line(center + Vector2(offset - 0.07, 0.14) * tile, center + Vector2(offset + 0.03, -0.07) * tile, Color("a1b76a"), tile * 0.025, true)
 
 
 func _pressure_plate(center: Vector2, tile: float, pressed: bool) -> void:

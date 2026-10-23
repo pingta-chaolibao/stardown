@@ -12,7 +12,9 @@ static func settle(links: Array[Dictionary], hero: Vector2i, crystals: Dictionar
 	var barriers: Dictionary = {}
 	var alive := true
 	for link in links:
-		var pressed := pressure_matches(link["plate"], link["pressure_sources"], hero, crystals)
+		var pressed := true
+		for plate: Vector2i in link["plates"]:
+			pressed = pressed and pressure_matches(plate, link["pressure_sources"], hero, crystals)
 		pressure[link["id"]] = pressed
 		for cell: Vector2i in link["barriers"]:
 			barriers[cell] = not pressed

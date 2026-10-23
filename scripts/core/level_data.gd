@@ -2,6 +2,8 @@ class_name PuzzleLevel
 extends RefCounted
 ## Validated, data-only level definition. Coordinates are zero-based [x, y].
 
+const Bush = preload("res://scripts/core/bush_obstacle.gd")
+
 var id: String = ""
 var title: String = ""
 var is_temporary: bool = true
@@ -17,6 +19,8 @@ var exit_cell := Vector2i(-1, -1)
 var exit_color: String = "yellow"
 var objective: String = "none"
 var energy_links: Array[Dictionary] = []
+var bushes: Array[Bush] = []
+var _bush_by_cell: Dictionary = {}
 var error: String = ""
 
 
@@ -100,6 +104,9 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	if level.objective == "all_crates_on_targets":
 		if level.initial_crates.is_empty() or level.initial_crates.size() != level.targets.size():
 			return _invalid("测试目标要求至少一个箱体，且箱体与落点数量相等。")
+	var bush_error := level._read_bushes(data.get("bushes", []))
+	if not bush_error.is_empty():
+		return _invalid(bush_error)
 	var link_error := level._read_energy_links(data.get("energy_links", []))
 	if not link_error.is_empty():
 		return _invalid(link_error)
@@ -108,6 +115,25 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	level.is_temporary = data["is_temporary"]
 	level.source_note = data["source_note"]
 	return level
+
+
+func _read_bushes(value: Variant) -> String:
+	if not value is Array:
+		return "bushes 必须是独立的草丛坐标数组。"
+	for entry in value:
+		var cell: Variant = _parse_cell(entry)
+		if cell == null or not is_floor(cell) or _bush_by_cell.has(cell):
+			return "草丛必须是地图内独立的地板坐标。"
+		if cell == start or cell in initial_crates or cell == exit_cell or cell in targets:
+			return "草丛不能与英雄、水晶或目标重叠。"
+		var bush := Bush.new(cell)
+		bushes.append(bush)
+		_bush_by_cell[cell] = bush
+	return ""
+
+
+func bush_at(cell: Vector2i) -> Bush:
+	return _bush_by_cell.get(cell)
 
 
 func _read_energy_links(value: Variant) -> String:
@@ -122,10 +148,20 @@ func _read_energy_links(value: Variant) -> String:
 		if ids.has(entry["id"]):
 			return "能量机关 id 不得重复。"
 		ids[entry["id"]] = true
-		var plate: Variant = _parse_cell(entry.get("plate"))
-		if plate == null or not is_floor(plate) or plates.has(plate):
-			return "压力板必须是独立且可通行的地图内坐标。"
-		plates[plate] = true
+		if entry.has("plate") and entry.has("plates"):
+			return "plate 与 plates 不能同时指定。"
+		var plate_entries: Variant = entry.get("plates", [entry["plate"]] if entry.has("plate") else [])
+		if not plate_entries is Array or plate_entries.is_empty():
+			return "每组机关需要至少一块压力板。"
+		if entry.get("activation", "all" if entry.has("plate") else "") != "all":
+			return "多压力板必须明确指定 activation = all。"
+		var group_plates: Array[Vector2i] = []
+		for item in plate_entries:
+			var plate: Variant = _parse_cell(item)
+			if plate == null or not is_floor(plate) or plates.has(plate) or bush_at(plate) != null:
+				return "压力板必须是独立且可通行的地图内坐标。"
+			plates[plate] = true
+			group_plates.append(plate)
 		var source_list: Variant = entry.get("pressure_sources")
 		if not source_list is Array or source_list.is_empty():
 			return "pressure_sources 必须显式指定 hero、crystal 或两者。"
@@ -140,11 +176,14 @@ func _read_energy_links(value: Variant) -> String:
 		var cells: Array[Vector2i] = []
 		for item in entries:
 			var cell: Variant = _parse_cell(item)
-			if cell == null or not is_floor(cell) or barriers.has(cell):
+			if cell == null or not is_floor(cell) or barriers.has(cell) or bush_at(cell) != null:
 				return "能量格必须在地板内，且不能重复或由多组机关同时控制。"
 			barriers[cell] = true
 			cells.append(cell)
-		energy_links.append({"id": entry["id"], "plate": plate, "barriers": cells, "pressure_sources": sources})
+		var link := {"id": entry["id"], "plates": group_plates, "activation": "all", "barriers": cells, "pressure_sources": sources}
+		if entry.has("plate"):
+			link["plate"] = group_plates[0]
+		energy_links.append(link)
 	for cell in plates:
 		if barriers.has(cell):
 			return "压力板与能量格不能重叠。"

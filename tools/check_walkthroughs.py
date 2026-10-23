@@ -19,6 +19,7 @@ def check_replay(item, directory):
     solution = json.loads((ROOT / item["solution_file"]).read_text())
     player = tuple(level["player"])
     crystals = {tuple(cell): identity for identity, cell in enumerate(level["crates"])}
+    bushes = {tuple(cell) for cell in level.get("bushes", [])}
     initial = evidence["initial_state"]
     assert initial["player"] == level["player"] and initial["moves"] == 0
     assert not initial["completed"] and evidence["path"] == solution["path"]
@@ -37,9 +38,10 @@ def check_replay(item, directory):
     def settle(previous_barriers):
         pressure, barriers = {}, {}
         for link in level.get("energy_links", []):
-            plate = tuple(link["plate"])
             sources = link["pressure_sources"]
-            pressed = ("hero" in sources and player == plate) or ("crystal" in sources and plate in crystals)
+            plates = [tuple(cell) for cell in link.get("plates", [link["plate"]] if "plate" in link else [])]
+            assert plates and link.get("activation", "all") == "all"
+            pressed = all(("hero" in sources and player == plate) or ("crystal" in sources and plate in crystals) for plate in plates)
             pressure[link["id"]] = pressed
             barriers.update({tuple(cell): not pressed for cell in link["barriers"]})
         alive = True
@@ -54,10 +56,21 @@ def check_replay(item, directory):
     pressure, barriers, alive = settle({})
 
     def walkable(cell):
-        return floor(cell) and not barriers.get(cell, False)
+        return floor(cell) and cell not in bushes and not barriers.get(cell, False)
 
     def check_mechanisms(state):
         assert alive and state.get("alive", True)
+        if bushes or "bushes" in state:
+            assert {tuple(cell) for cell in state["bushes"]} == bushes
+        if "plates" in state:
+            actual_plates = {(entry["group"], tuple(entry["position"])): entry["pressed"] for entry in state["plates"]}
+            expected_plates = {}
+            for link in level.get("energy_links", []):
+                for cell in link.get("plates", [link["plate"]] if "plate" in link else []):
+                    plate = tuple(cell)
+                    expected_plates[(link["id"], plate)] = (("hero" in link["pressure_sources"] and player == plate)
+                        or ("crystal" in link["pressure_sources"] and plate in crystals))
+            assert actual_plates == expected_plates
         if level.get("energy_links") or "pressure" in state:
             assert state["pressure"] == pressure
             actual = {tuple(entry["position"]): entry["active"] for entry in state["barriers"]}

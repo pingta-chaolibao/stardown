@@ -10,8 +10,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关"]
 
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
@@ -94,9 +94,12 @@ func apply_command(command: Dictionary) -> void:
 		&"move":
 			var direction: Vector2i = command.get("direction", Vector2i.ZERO)
 			var result := model.try_move(direction)
-			if result in [&"moved", &"pushed", &"wall", &"crate_blocked", &"energy_blocked", &"died"]:
+			if result in [&"moved", &"pushed", &"wall", &"crate_blocked", &"energy_blocked", &"bush_blocked", &"died"]:
 				board.facing = direction
 			match result:
+				&"bush_blocked":
+					board.blocked = true
+					_refresh("草丛阻挡通行，无法推动或交换。", GOLD)
 				&"wall":
 					board.blocked = true
 					_refresh("前方是墙，换个方向试试。", GOLD)
@@ -136,6 +139,10 @@ func _refresh(message: String, color: Color = MINT) -> void:
 		progress_label.text = "%d / %d 测试落点" % [model.occupied_targets(), model.level.targets.size()]
 	else:
 		progress_label.text = "未设置胜利判定"
+	for link in model.level.energy_links:
+		if link["plates"].size() > 1:
+			var count := model.pressure_progress(link["id"])
+			progress_label.text = "%s · 黄板 %d / %d" % ["已抵达终点" if model.is_complete() else "玩家到终点完成", count.x, count.y]
 	undo_button.disabled = model.history_size() == 0
 	restart_button.disabled = not model.alive
 	for node_name in ["MoveLeft", "MoveRight", "MoveUp", "MoveDown"]:
@@ -239,6 +246,8 @@ func _build_board(parent: HBoxContainer) -> void:
 	if not model.level.energy_links.is_empty():
 		legend.add_child(_label("▣ 压力板", 13, GOLD))
 		legend.add_child(_label("▤ 能量块", 13, GOLD))
+	if not model.level.bushes.is_empty():
+		legend.add_child(_label("♣ 草丛", 13, Color("a1b76a")))
 	_spacer(legend)
 	for entry in [["←", Vector2i.LEFT, "Left"], ["↑", Vector2i.UP, "Up"], ["↓", Vector2i.DOWN, "Down"], ["→", Vector2i.RIGHT, "Right"]]:
 		var button := _button(entry[0], "Move" + entry[2])
@@ -258,9 +267,14 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	intro.add_child(_label("推之英雄", 30, TEXT))
 	intro.add_child(_label("红色小人 · 只能推，不能拉", 16, Board.CORAL))
 	var instructions := _label("可推动紧密排成直线的整列水晶。\n每次前进一格，列末受阻则整列不动。", 14, MUTED)
+	if not model.level.bushes.is_empty():
+		instructions.text = "整列水晶每次推一格，末端受阻则不动。\n草丛挡通行与视线，不能推动或交换。"
 	intro.add_child(instructions)
 	if not model.level.energy_links.is_empty():
-		intro.add_child(_label("英雄或水晶压住黄板时，能量块消失。\n压力解除后恢复，格内英雄会死亡。", 13, GOLD))
+		var rules := "英雄或水晶压住黄板时，能量块消失。\n压力解除后恢复，格内英雄会死亡。"
+		if model.level.energy_links[0]["plates"].size() > 1:
+			rules = "三块黄板同时受压才开门。\n压力解除后恢复，格内英雄会死亡。"
+		intro.add_child(_label(rules, 13, GOLD))
 	var stats := _hbox(12)
 	sidebar.add_child(stats)
 	moves_label = _stat(stats, "步数", "Moves")
