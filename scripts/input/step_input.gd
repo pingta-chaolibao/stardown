@@ -11,7 +11,7 @@ const DIRECTIONS := {
 var _held_keys: Dictionary = {}
 
 
-func command_for_event(event: InputEvent) -> Dictionary:
+func command_for_event(event: InputEvent, swap_enabled: bool=false) -> Dictionary:
 	if not event is InputEventKey:
 		return {}
 	var key: int = event.physical_keycode if event.physical_keycode != 0 else event.keycode
@@ -29,7 +29,7 @@ func command_for_event(event: InputEvent) -> Dictionary:
 		mapped_event.physical_keycode = event.keycode
 	for action: StringName in DIRECTIONS:
 		if mapped_event.is_action(action):
-			return {"action": &"move", "direction": DIRECTIONS[action]}
+			return {"action": &"swap" if swap_enabled and event.shift_pressed else &"move", "direction": DIRECTIONS[action]}
 	if mapped_event.is_action(&"undo"):
 		return {"action": &"undo"}
 	if mapped_event.is_action(&"restart"):

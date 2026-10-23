@@ -26,6 +26,8 @@ The user confirmed the original numbered screenshot and matching 2D grid. Level 
 
 ## Required walkthrough for every completed level
 
+Level 09 adds the confirmed blue hero: ordinary directions walk without pushing, pulling or auto-swapping; Shift plus a direction/WASD explicitly exchanges with the first visible hero/crystal along that cardinal ray. Walls, static bushes and active energy block sight. The current world remains single-hero; reusable SwapRules classify hero/crystal targets and produce exchange plans, while the present GridState exchanges with crystals. Preserve full atomic movement/pressure/death/undo settlement. Uppercase UDLR in solution paths means walk; lowercase udlr means explicit exchange. Count each successful walk or swap as one operation, with a separate swaps counter. Existing eight maps, solutions, MP4s and replay reports must stay byte-for-byte unchanged. JSON schema remains 1.
+
 The user requires one complete gameplay demonstration video for every level. This is part of finishing a level, including future work.
 
 1. Finish and validate the level, then commit its implementation before producing the video.

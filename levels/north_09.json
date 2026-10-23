@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_09",
+  "title": "北部英雄 · 第九关",
+  "is_temporary": false,
+  "source_note": "依据父线程实际看图、用户确认编号原图与11×3二维图后的文字规格。蓝英雄13号(1,1)，紫晶8号(7,0)，蓝紫晶26号(3,2)，墙4/15/19/30号，目标21号(9,1)。蓝英雄正常走路不推拉，主动沿四向与首个可见英雄/水晶交换；本关单英雄。原创2D几何表现。",
+  "hero_kind": "blue",
+  "terrain": ["...#.......", "...#...#...", ".......#..."],
+  "player": [1,1],
+  "crates": [[7,0],[3,2]],
+  "crystal_colors": ["purple","blue_purple"],
+  "targets": [],
+  "exit": [9,1],
+  "exit_color": "green",
+  "objective": "player_on_exit"
+}

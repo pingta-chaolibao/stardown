@@ -5,12 +5,14 @@ extends RefCounted
 const Level = preload("res://scripts/core/level_data.gd")
 const Energy = preload("res://scripts/core/energy_rules.gd")
 const Heroes = preload("res://scripts/core/hero_rules.gd")
+const Swaps = preload("res://scripts/core/swap_rules.gd")
 
 var level: Level
 var player: Vector2i = Vector2i.ZERO
 var moves: int = 0
 var pushes: int = 0
 var pulls: int = 0
+var swaps: int = 0
 var alive: bool = true
 var last_mechanism_error: String = ""
 var _crates: Dictionary = {}
@@ -36,7 +38,7 @@ func load_level(definition: Level) -> bool:
 		return false
 	level = definition
 	_initial_state = {"player": definition.start, "crates": initial_crystals,
-		"moves": 0, "pushes": 0, "pulls": 0, "alive": true,
+		"moves": 0, "pushes": 0, "pulls": 0, "swaps": 0, "alive": true,
 		"pressure": settled["pressure"], "barriers": settled["barriers"]}
 	_restore(_initial_state)
 	_history.clear()
@@ -106,6 +108,53 @@ func try_move(direction: Vector2i) -> StringName:
 	if pulled:
 		return &"pulled"
 	return &"pushed" if not chain.is_empty() else &"moved"
+
+
+func swap_target(direction: Vector2i) -> Dictionary:
+	if level==null:
+		return {"result": &"no_level"}
+	return Swaps.first_target(player,direction,Rect2i(Vector2i.ZERO,Vector2i(level.width,level.height)),blocks_sight,_swap_occupant)
+
+
+func _swap_occupant(cell: Vector2i) -> Dictionary:
+	# The current world has one hero. The reusable sight/plan layer also classifies
+	# hero targets, without introducing unrequested multi-hero level state here.
+	return {"kind": &"crystal", "id":_crates[cell]} if _crates.has(cell) else {}
+
+
+func try_swap(direction: Vector2i) -> StringName:
+	if level==null:
+		return &"no_level"
+	if not alive:
+		return &"dead"
+	last_mechanism_error=""
+	if absi(direction.x)+absi(direction.y)!=1:
+		return &"invalid_direction"
+	if is_complete():
+		return &"complete"
+	if not Heroes.can_swap(level.hero_kind):
+		return &"cannot_swap"
+	var target:=swap_target(direction)
+	if target["result"]!=&"target":
+		return target["result"]
+	var plan:=Swaps.exchange_plan(player,target)
+	var next: Vector2i=plan["player"]
+	var candidate:=_crates.duplicate()
+	candidate.erase(next)
+	candidate[plan["target_cell"]]=plan["target_id"]
+	var settled:=Energy.settle(level.energy_links,next,candidate,_barriers)
+	last_mechanism_error=settled["error"]
+	if not last_mechanism_error.is_empty():
+		return &"rule_unresolved"
+	_history.append(snapshot())
+	player=next
+	_crates=candidate
+	moves+=1
+	swaps+=1
+	alive=settled["alive"]
+	_pressure=settled["pressure"]
+	_barriers=settled["barriers"]
+	return &"swapped" if alive else &"died"
 
 
 func undo() -> bool:
@@ -228,6 +277,7 @@ func _restore(state: Dictionary) -> void:
 	moves = state["moves"]
 	pushes = state["pushes"]
 	pulls = state["pulls"]
+	swaps = state.get("swaps",0)
 	alive = state["alive"]
 	_pressure = state["pressure"].duplicate()
 	_barriers = state["barriers"].duplicate()
@@ -236,5 +286,5 @@ func _restore(state: Dictionary) -> void:
 
 func snapshot() -> Dictionary:
 	# Copies prevent external callers and later moves from altering undo history.
-	return {"player": player, "crates": _crates.duplicate(), "moves": moves, "pushes": pushes, "pulls": pulls,
+	return {"player": player, "crates": _crates.duplicate(), "moves": moves, "pushes": pushes, "pulls": pulls, "swaps":swaps,
 		"alive": alive, "pressure": _pressure.duplicate(), "barriers": _barriers.duplicate()}

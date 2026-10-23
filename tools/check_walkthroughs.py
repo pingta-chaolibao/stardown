@@ -19,7 +19,7 @@ def check_replay(item, directory):
     solution = json.loads((ROOT / item["solution_file"]).read_text())
     player = tuple(level["player"])
     hero_kind = level.get("hero_kind", "red")
-    assert hero_kind in ("red", "green")
+    assert hero_kind in ("red", "green", "blue")
     crystals = {tuple(cell): identity for identity, cell in enumerate(level["crates"])}
     bushes = {tuple(cell) for cell in level.get("bushes", [])}
     initial = evidence["initial_state"]
@@ -89,31 +89,42 @@ def check_replay(item, directory):
 
     check_crystals(initial)
     check_mechanisms(initial)
-    pushes, pulls = 0, 0
+    pushes, pulls, swaps = 0, 0, 0
     for index, (symbol, state) in enumerate(zip(solution["path"], evidence["trace"]), 1):
         assert state["input"] == symbol
-        direction = DIRECTIONS[symbol]
+        direction = DIRECTIONS[symbol.upper()]
         target = plus(player, direction)
-        assert walkable(target)
-        assert hero_kind == "red" or target not in crystals, "Green hero cannot push"
-        chain = []
-        terminal = target
-        while terminal in crystals:
-            chain.append(terminal)
-            terminal = plus(terminal, direction)
-        assert walkable(terminal)
-        for cell in reversed(chain):
-            crystals[plus(cell, direction)] = crystals.pop(cell)
-        pushes += bool(chain)
-        behind = (player[0] - direction[0], player[1] - direction[1])
-        if hero_kind == "green" and behind in crystals:
-            crystals[player] = crystals.pop(behind)
-            pulls += 1
+        ability = symbol.islower()
+        assert state.get("action", "move") == ("swap" if ability else "move")
+        if ability:
+            assert hero_kind == "blue", "Only blue can explicitly exchange"
+            while walkable(target) and target not in crystals:
+                target = plus(target, direction)
+            assert walkable(target) and target in crystals, "Ability must hit first visible crystal before any blocker"
+            crystals[player] = crystals.pop(target)
+            swaps += 1
+        else:
+            assert walkable(target)
+            assert hero_kind == "red" or target not in crystals, "Green/blue cannot push"
+            chain = []
+            terminal = target
+            while terminal in crystals:
+                chain.append(terminal)
+                terminal = plus(terminal, direction)
+            assert walkable(terminal)
+            for cell in reversed(chain):
+                crystals[plus(cell, direction)] = crystals.pop(cell)
+            pushes += bool(chain)
+            behind = (player[0] - direction[0], player[1] - direction[1])
+            if hero_kind == "green" and behind in crystals:
+                crystals[player] = crystals.pop(behind)
+                pulls += 1
         player = target
         pressure, barriers, alive = settle(barriers)
         assert state["player"] == list(player)
         assert state["moves"] == index and state["pushes"] == pushes
         assert state.get("pulls", 0) == pulls
+        assert state.get("swaps", 0) == swaps
         assert state["completed"] == (player == tuple(level["exit"])) == (index == solution["moves"])
         check_crystals(state)
         check_mechanisms(state)
@@ -121,6 +132,7 @@ def check_replay(item, directory):
     assert final["player"] == level["exit"] and final["completed"]
     assert final["moves"] == solution["moves"] and final["pushes"] == solution["pushes"]
     assert final.get("pulls", 0) == solution.get("pulls", 0) == pulls
+    assert final.get("swaps", 0) == solution.get("swaps", 0) == swaps
     check_crystals(final)
     check_mechanisms(final)
     return evidence

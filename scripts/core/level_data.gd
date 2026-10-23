@@ -54,7 +54,7 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	var level := PuzzleLevel.new()
 	var kind: Variant = data.get("hero_kind", "red")
 	if not Heroes.is_supported(kind):
-		return _invalid("hero_kind 只支持 red（推）或 green（拉）。")
+		return _invalid("hero_kind 只支持 red（推）、green（拉）或 blue（交换）。")
 	level.hero_kind = kind
 	level.width = rows[0].length()
 	level.height = rows.size()
@@ -104,8 +104,8 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 		return _invalid("crystal_colors 必须为空数组或与水晶数量相同的颜色数组。")
 	for i in level.initial_crates.size():
 		var variant: Variant = colors[i] if not colors.is_empty() else ("blue" if i % 2 == 0 else "purple")
-		if variant not in ["blue", "purple"]:
-			return _invalid("水晶颜色仅支持 blue 和 purple。")
+		if variant not in ["blue", "purple", "blue_purple"]:
+			return _invalid("水晶颜色仅支持 blue、purple 和 blue_purple。")
 		level.crystal_colors.append(variant)
 	if level.objective == "all_crates_on_targets":
 		if level.initial_crates.is_empty() or level.initial_crates.size() != level.targets.size():

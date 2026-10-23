@@ -2,6 +2,7 @@ extends SceneTree
 ## Godot Movie Maker capture driven exclusively by normal keyboard events.
 
 const KEYS := {"U": KEY_W, "D": KEY_S, "L": KEY_A, "R": KEY_D}
+const DIRECTIONS := {"U":Vector2i.UP,"D":Vector2i.DOWN,"L":Vector2i.LEFT,"R":Vector2i.RIGHT}
 const STEP_FRAMES := 18
 const INITIAL_FRAMES := 60
 const VICTORY_FRAMES := 90
@@ -21,8 +22,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number not in [1, 2, 3, 4, 5, 6, 7, 8] or report_path.is_empty():
-		_fail("Pass --level=1 through 8 and an absolute --report path.")
+	if level_number not in [1, 2, 3, 4, 5, 6, 7, 8, 9] or report_path.is_empty():
+		_fail("Pass --level=1 through 9 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -44,21 +45,38 @@ func _run() -> void:
 	var previous := initial
 	for i in solution["path"].length():
 		var symbol: String = solution["path"][i]
-		_send_key(KEYS[symbol], true)
+		var use_swap:=symbol!=symbol.to_upper()
+		var target: Dictionary={}
+		if use_swap:
+			target=game.model.swap_target(DIRECTIONS[symbol.to_upper()])
+			if target.get("result")!=&"target":
+				_fail("Ability input %d has no legal first visible target." % (i+1))
+				return
+			_send_key(KEY_SHIFT,true)
+		_send_key(KEYS[symbol.to_upper()], true,use_swap)
 		await _frames(1)
-		_send_key(KEYS[symbol], false)
+		_send_key(KEYS[symbol.to_upper()], false,use_swap)
+		if use_swap:_send_key(KEY_SHIFT,false)
 		await _frames(1)
 		var current := _state()
 		var distance: int = absi(current["player"][0] - previous["player"][0]) + absi(current["player"][1] - previous["player"][1])
-		if not current["alive"] or current["moves"] != i + 1 or distance != 1 or current["pushes"] < previous["pushes"] or current["pushes"] > previous["pushes"] + 1 or current["pulls"] < previous["pulls"] or current["pulls"] > previous["pulls"] + 1:
-			_fail("Input %d did not make exactly one legal grid step." % (i + 1))
+		var position_valid:=distance==1
+		if use_swap:
+			position_valid=current["player"]==[target["cell"].x,target["cell"].y] and current["swaps"]==previous["swaps"]+1
+			for crystal in current["crystals"]:
+				if crystal["id"]==target["id"]:position_valid=position_valid and crystal["position"]==previous["player"]
+		else:
+			position_valid=position_valid and current["swaps"]==previous["swaps"]
+		if not current["alive"] or current["moves"] != i + 1 or not position_valid or current["pushes"] < previous["pushes"] or current["pushes"] > previous["pushes"] + 1 or current["pulls"] < previous["pulls"] or current["pulls"] > previous["pulls"] + 1:
+			_fail("Input %d did not make exactly one legal walk or explicit exchange." % (i + 1))
 			return
 		current["input"] = symbol
+		current["action"]="swap" if use_swap else "move"
 		trace.append(current)
 		previous = current
 		await _frames(STEP_FRAMES - 2)
 	var final := _state()
-	if not final["completed"] or final["moves"] != solution["moves"] or final["pushes"] != solution["pushes"] or final["pulls"] != solution.get("pulls", 0):
+	if not final["completed"] or final["moves"] != solution["moves"] or final["pushes"] != solution["pushes"] or final["pulls"] != solution.get("pulls", 0) or final["swaps"]!=solution.get("swaps",0):
 		_fail("Playback did not finish at the expected victory state.")
 		return
 	await _frames(VICTORY_FRAMES)
@@ -77,7 +95,7 @@ func _run() -> void:
 		return
 	file.store_string(JSON.stringify(report, "  ") + "\n")
 	file.close()
-	print("REPLAY RESULT: level %02d; %d legal moves, %d push actions, %d pull actions, victory=true" % [level_number, final["moves"], final["pushes"], final["pulls"]])
+	print("REPLAY RESULT: level %02d; %d legal actions, %d pushes, %d pulls, %d swaps, victory=true" % [level_number, final["moves"], final["pushes"], final["pulls"],final["swaps"]])
 	quit(0)
 
 
@@ -98,17 +116,18 @@ func _state() -> Dictionary:
 		for cell: Vector2i in link["plates"]:
 			plates.append({"group": link["id"], "position": [cell.x, cell.y], "pressed": game.model.pressure_cell_is_active(link["id"], cell)})
 	return {"level_id": game.model.level.id, "player": [game.model.player.x, game.model.player.y],
-		"crystals": crystals, "moves": game.model.moves, "pushes": game.model.pushes, "pulls": game.model.pulls, "hero_kind": game.model.level.hero_kind,
+		"crystals": crystals, "moves": game.model.moves, "pushes": game.model.pushes, "pulls": game.model.pulls,"swaps":game.model.swaps, "hero_kind": game.model.level.hero_kind,
 		"completed": game.model.is_complete(), "exit": [game.model.level.exit_cell.x, game.model.level.exit_cell.y],
 		"exit_color": game.model.level.exit_color, "alive": game.model.alive,
 		"pressure": game.model.pressure_states(), "barriers": barriers, "bushes": bushes, "plates": plates}
 
 
-func _send_key(code: int, pressed: bool) -> void:
+func _send_key(code: int, pressed: bool, shift: bool=false) -> void:
 	var event := InputEventKey.new()
 	event.keycode = code
 	event.physical_keycode = code
 	event.pressed = pressed
+	event.shift_pressed=shift
 	Input.parse_input_event(event)
 
 
