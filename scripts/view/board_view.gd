@@ -4,6 +4,7 @@ extends Control
 
 const State = preload("res://scripts/core/grid_state.gd")
 const CORAL := Color("f5787b")
+const HERO_GREEN := Color("72ce95")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
 
@@ -149,6 +150,9 @@ func _crystal(center: Vector2, tile: float, variant: String) -> void:
 
 
 func _hero(center: Vector2, tile: float) -> void:
+	var green := model.level.hero_kind == "green"
+	var tint := HERO_GREEN if green else CORAL
+	var shade := Color("3e9967") if green else Color("d45568")
 	draw_ellipse_shadow(center + Vector2(0, tile * 0.29), Vector2(tile * 0.25, tile * 0.09))
 	if blocked:
 		draw_arc(center, tile * 0.41, 0, TAU, 40, Color(GOLD, 0.55), 1.5, true)
@@ -156,14 +160,14 @@ func _hero(center: Vector2, tile: float) -> void:
 		center + Vector2(-0.12, -0.05) * tile, center + Vector2(0.12, -0.05) * tile,
 		center + Vector2(0.19, 0.24) * tile, center + Vector2(-0.19, 0.24) * tile,
 	])
-	draw_colored_polygon(body, CORAL)
-	draw_line(center + Vector2(-0.10, 0.18) * tile, center + Vector2(-0.12, 0.32) * tile, Color("d45568"), tile * 0.08, true)
-	draw_line(center + Vector2(0.10, 0.18) * tile, center + Vector2(0.12, 0.32) * tile, Color("d45568"), tile * 0.08, true)
-	draw_line(center + Vector2(-0.13, 0) * tile, center + Vector2(-0.23, 0.12) * tile, CORAL, tile * 0.075, true)
-	draw_line(center + Vector2(0.13, 0) * tile, center + Vector2(0.23, 0.12) * tile, CORAL, tile * 0.075, true)
-	draw_circle(center + Vector2(0, -0.21) * tile, tile * 0.13, CORAL)
+	draw_colored_polygon(body, tint)
+	draw_line(center + Vector2(-0.10, 0.18) * tile, center + Vector2(-0.12, 0.32) * tile, shade, tile * 0.08, true)
+	draw_line(center + Vector2(0.10, 0.18) * tile, center + Vector2(0.12, 0.32) * tile, shade, tile * 0.08, true)
+	draw_line(center + Vector2(-0.13, 0) * tile, center + Vector2(-0.23, 0.12) * tile, tint, tile * 0.075, true)
+	draw_line(center + Vector2(0.13, 0) * tile, center + Vector2(0.23, 0.12) * tile, tint, tile * 0.075, true)
+	draw_circle(center + Vector2(0, -0.21) * tile, tile * 0.13, tint)
 	draw_circle(center + Vector2(0, -0.21) * tile + Vector2(facing) * tile * 0.05, tile * 0.025, Color("ffe2c6"))
-	draw_line(center + Vector2(-0.11, 0.04) * tile, center + Vector2(0.11, 0.04) * tile, Color("ffc3a1"), tile * 0.035, true)
+	draw_line(center + Vector2(-0.11, 0.04) * tile, center + Vector2(0.11, 0.04) * tile, Color("c5efbb") if green else Color("ffc3a1"), tile * 0.035, true)
 
 
 func draw_ellipse_shadow(center: Vector2, radius: Vector2) -> void:

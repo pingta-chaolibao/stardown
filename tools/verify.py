@@ -92,15 +92,18 @@ def main():
             run("03_chain_push", ["--script", "res://tests/chain_push_regression.gd"])
             run("03_energy", ["--script", "res://tests/energy_regression.gd"])
             run("03_bush_group", ["--script", "res://tests/bush_and_group_regression.gd"])
+            run("03_green_pull", ["--script", "res://tests/green_pull_regression.gd"])
             run("03_north_01", ["--script", "res://tests/north_01_regression.gd"])
             run("03_north_02", ["--script", "res://tests/north_02_regression.gd"])
             run("03_north_03", ["--script", "res://tests/north_03_regression.gd"])
             run("03_north_04", ["--script", "res://tests/north_04_regression.gd"])
+            run("03_north_05", ["--script", "res://tests/north_05_regression.gd"])
             run("04_main_scene", ["--quit-after", "10", "--audio-driver", "Dummy"])
             run("05_scene_input", ["--script", "res://tests/scene_smoke.gd"])
             run("05_north_02_scene", ["--script", "res://tests/north_02_scene.gd"])
             run("05_north_03_scene", ["--script", "res://tests/north_03_scene.gd"])
             run("05_north_04_scene", ["--script", "res://tests/north_04_scene.gd"])
+            run("05_north_05_scene", ["--script", "res://tests/north_05_scene.gd"])
             if args.visual:
                 run("06_render", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                   "--audio-driver", "Dummy", "--script", "res://tests/scene_smoke.gd",
@@ -113,6 +116,9 @@ def main():
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_04", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_04_scene.gd",
+                                          "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+                run("06_render_north_05", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
+                                          "--audio-driver", "Dummy", "--script", "res://tests/north_05_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
         except (RuntimeError, OSError) as exc:
             report["error"] = str(exc)

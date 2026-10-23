@@ -1,6 +1,6 @@
-# 沉星之序 · 第一章前四关（Godot 4 / 2D）
+# 沉星之序 · 第一章前五关（Godot 4 / 2D）
 
-第一章前四关按确认的文字网格实现。只有红色推之英雄；蓝 / 紫水晶均可整列推动。第一关是 11 × 3、黄色终点；第二关是 11 × 7、10 枚水晶、绿色终点；第三关是 11 × 3，加入黄色压力板与能量屏障；第四关是 7 × 6，加入独立草丛与三板同时触发的屏障。玩家走到该关终点才判胜，水晶不需要停在终点。绿色终点绘制为绿色圆形标记。画面使用原创 2D 几何图形，不声称逐像素复刻。
+第一章前五关按确认的文字网格实现。前四关是红色推之英雄，可整列推水晶；第五关是绿色拉之英雄，只能自动拉最近一枚。第一关是 11 × 3、黄色终点；第二关是 11 × 7、10 枚水晶；第三关加入压力板与能量屏障；第四关加入独立草丛与三板同时触发的屏障；第五关沿用第一关布局，改变英雄能力。第二至五关使用绿色终点，玩家抵达才判胜。画面为原创 2D 几何图形，不声称逐像素复刻。
 
 开发、测试与 Git 操作均在选定云端 `/workspace/stardown` 完成，没有读取、迁移或操作用户电脑。交付分支为 `develop`；不发布游戏、不创建 PR。
 
@@ -27,6 +27,8 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 第三关画面：[初始状态](docs/screenshots/level_03_initial.png)、[英雄踩板后](docs/screenshots/level_03_plate_pressed.png)、[通关状态](docs/screenshots/level_03_completed.png)、[小窗口](docs/screenshots/level_03_compact.png)。
 
 第四关画面：[初始状态](docs/screenshots/level_04_initial.png)、[三板压满](docs/screenshots/level_04_all_plates.png)、[通关状态](docs/screenshots/level_04_completed.png)、[小窗口](docs/screenshots/level_04_compact.png)。
+
+第五关画面：[绿色英雄初始](docs/screenshots/level_05_initial.png)、[第一次拉动](docs/screenshots/level_05_first_pull.png)、[通关](docs/screenshots/level_05_completed.png)、[小窗口](docs/screenshots/level_05_compact.png)。
 
 ## 通关演示视频
 
@@ -116,30 +118,45 @@ TY.Y.Y.
 
 Godot 已验证路线 `RDDLDRRRUUULULDDDLDRUUULDDURRRRRUU`，**34 步、13 次推动**。最终三枚水晶分别持续压住三块板，英雄经过 `(6,1)` 到达 `(6,0)`。独立搜索工具 `python3 tools/search_north_04.py` 可重现解法与 234,773 个按位置去重的存活状态检查；实际规则、颜色身份和正常键盘入口另由 Godot 回归验证，不宣称最优解。
 
+### 第五关：绿色拉之英雄
+
+11 列 × 3 行，地形与第一关相同；绿色英雄 `(1,1)`，蓝水晶 `(3,2)`、紫水晶 `(7,0)`，墙 `(3,0)/(3,1)/(7,1)/(7,2)`，绿色终点 `(9,1)`。其余内格地板、外部不可走，未新增机关或角色。
+
+```text
+...#...V...
+.H.#...#.G.
+...B...#...
+```
+
+`H` 为绿色英雄。用户确认操作是**背离相邻水晶移动时自动拉最近一枚到英雄原位置**，后面相连的水晶不跟随。绿色不能推水晶；前方被任何障碍或水晶挡住时，英雄与后方水晶均不动。没有额外拉动按键，也不拉其他英雄。
+
+Godot 已验证路线 `DRLLURRDRRUURRLLDRRURRDR`，**24 步、8 次拉动、0 次推动**，两枚水晶均参与。可以用 `python3 tools/search_north_05.py` 重现独立搜索；详见[红绿英雄规则](docs/HERO_RULES.md)。
+
 ## 操作与通关
 
 | 操作 | 按键 / 界面 |
 | --- | --- |
-| 切换第一至第四关 | 顶部关卡按钮；存活时可切换，从该关初始状态开始，清空撤销历史 |
+| 切换第一至第五关 | 顶部关卡按钮；存活时可切换，从该关初始状态开始，清空撤销历史 |
 | 移动一格 | 方向键或 WASD；也可点击方向按钮 |
 | 撤销最近一次有效移动 | Z、U、Backspace，或“撤销”按钮 |
 | 恢复关卡初始状态 | 存活时按 R，或“重开”按钮；死亡时只能撤销 |
 
-每次输入让英雄前进一格；相邻水晶紧密排成直线时，可以将整列一起向前推动一格。水晶数量没有 3 或 4 枚的硬上限，受地图空间限制。先扫描整列，只有列末是可走空地才一次移动英雄与全部水晶；列末为墙、地图边界或不可移动障碍时，整次操作不移动、不计步、不写撤销历史。空格会截断水晶列，旁边不在直线上的水晶不会被带动。英雄不能拉水晶。
+每次输入让英雄前进一格。红英雄可将相邻直线整列水晶推一格，没有 3 或 4 枚的硬上限；只有列末可走且为空才原子移动，受阻不计数、不写历史。空格截断水晶列，旁侧水晶不被带动。红英雄不能拉。绿英雄只能在背离紧邻水晶移动时自动拉最近一枚，不能推或拉整列。
 
-松开再按可连续操作；长按的系统回声和未松开的重复事件不会多走。步数与推动次数均按成功输入计数，一次推动多枚水晶仍算一步、一次推动。撤销一次恢复上一次整列推动前的全部位置和颜色身份，重开恢复初始状态。
+松开再按可连续操作；长按回声和未松开的重复事件不会多走。步数、推动、拉动分别计数，一次整列推仍只算一步 / 一推。撤销一次恢复上次推、拉或行走前的全部位置、颜色身份、统计与机关生死状态，重开恢复初始状态。
 
-存活玩家进入当前关卡的终点才判胜（第一关黄色、第二至四关绿色）。通关后可以撤销最后一步，或重开；撤销恢复玩家、水晶、颜色身份、步数、推动次数、压力、屏障、生死和通关状态，重开清空历史并恢复全部初始状态。
+存活玩家进入当前关卡的终点才判胜（第一关黄色、第二至五关绿色）。通关后可以撤销最后一步，或重开；撤销恢复玩家、水晶、颜色身份、步数、推动 / 拉动次数、压力、屏障、生死和通关状态，重开清空历史并恢复全部初始状态。
 
 第一关已验证、两枚水晶均参与的通关路径：**下，右 × 3，上 × 2，右 × 4，下，右**。结果为 **12 步、4 次推动**；蓝水晶最终在 `(5,2)`，紫水晶最终在 `(9,0)`，玩家在 `(9,1)`。这是一条验证路径，不宣称最优解。
 
 ## 工程结构与数据
 
-- `levels/north_01.json` 至 `levels/north_04.json`：四关数据，默认进入第一关。
-- `levels/solutions/`：逐输入验证的四关通关路径，供测试与演示回放使用。
+- `levels/north_01.json` 至 `levels/north_05.json`：五关数据，默认进入第一关。
+- `levels/solutions/`：逐输入验证的五关通关路径，供测试与演示回放使用。
 - `scripts/core/level_data.gd`：JSON 解析与坐标校验。
 - `scripts/core/energy_rules.gd`：纯占用谓词和机关结算，提供可配置压力来源。
 - `scripts/core/bush_obstacle.gd`：独立静态草丛类型，明确不可移动 / 交换与阻挡能力。
+- `scripts/core/hero_rules.gd`：红推 / 绿拉能力，未支持的角色数据会被拒绝。
 - `scripts/core/grid_state.gd`：不依赖节点、渲染、计时器或物理的独立网格规则及撤销历史。
 - `scripts/input/step_input.gd`：按键去重与释放处理。
 - `scripts/view/board_view.gd`：只读网格状态的原创几何绘制；适配横向长廊。
@@ -151,11 +168,13 @@ Godot 已验证路线 `RDDLDRRRUUULULDDDLDRUUULDDURRRRRUU`，**34 步、13 次�
 - `tests/north_03_regression.gd`、`tests/north_03_scene.gd`：第三关解法、352 状态可达性、完整状态撤销重开、切关隔离、真实输入与画面适配。
 - `tests/bush_and_group_regression.gd`：草丛阻挡、全部 8 种三板组合、混合压力来源、原子交接、死亡撤销与数据校验。
 - `tests/north_04_regression.gd`、`tests/north_04_scene.gd`：第四关 42 格布局、实际通关、草丛受阻、三板开门、撤销重开、切关与重复输入。
+- `tests/green_pull_regression.gd`：四方向单拉、连列仅拉近的一枚、不可推、侧移、受阻、角色隔离、机关 / 死亡撤销与 1,000 次随机动作完整逆序撤销。
+- `tests/north_05_regression.gd`、`tests/north_05_scene.gd`：第五关解法、实际输入、绿色形象 / 拉动统计、切关与两种窗口尺寸。
 - `tests/chain_push_regression.gd`：2 / 3 / 4 / 8 / 60 枚水晶的四方向连推、原子阻挡、边界、空格截断、旁侧水晶、撤销重开和输入去重。
 - `tests/scene_smoke.gd`：真实场景键鼠、通关状态与两种窗口尺寸检查。
 - `tools/verify.py`：一键验证。
 
-地图使用 schema 1。`terrain` 中 `#` 是墙、`.` 是地板，行宽相同，宽高各为 1 至 64。`player`、`crates`、`exit` 使用 `[x,y]` 整数坐标；`crystal_colors` 按水晶身份指定 `blue` / `purple`。四关均为 `is_temporary=false`、`objective=player_on_exit`、`targets=[]`。`exit_color` 可为 `yellow` 或 `green`，默认 yellow。非法、重复、墙内或越界坐标会被拒绝。`bushes` 独立定义静态草丛；`energy_links` 定义黄板、屏障和压力来源。第三关保留单板 `plate` 原数据；第四关用 `plates` 数组与显式 `activation=all`。前两关没有机关数据。
+地图使用 schema 1。`terrain` 以 `#` / `.` 表示墙 / 地板，宽高各 1 至 64；`player`、`crates`、`exit` 使用 `[x,y]` 整数坐标。`hero_kind` 为 `red` / `green`，省略默认红色；`crystal_colors` 按身份指定 `blue` / `purple`。五关均为 `is_temporary=false`、`objective=player_on_exit`、`targets=[]`。`exit_color` 为 `yellow` / `green`，默认 yellow；非法、重复、墙内或越界坐标会被拒绝。`bushes` 定义独立草丛，`energy_links` 定义压力板与屏障。第三关单板 `plate` 保持原样，第四关用 `plates` 与 `activation=all`。
 
 ## 验证
 
@@ -164,7 +183,7 @@ cd /workspace/stardown
 python3 tools/verify.py
 ```
 
-该命令执行资源导入、所有脚本解析、通用逻辑测试、连推与机关回归、四关回归、默认主场景启动、关卡切换和键鼠场景检查。已有 X11 显示时加上真实渲染与截图：
+该命令执行资源导入、所有脚本解析、通用逻辑、红推 / 绿拉与机关回归、五关回归、默认场景启动、切关和键鼠检查。已有 X11 显示时加上真实渲染与截图：
 
 ```bash
 python3 tools/verify.py --visual --display :97
@@ -176,6 +195,6 @@ python3 tools/verify.py --visual --display :97
 /tmp/stardown-tools/xvfb/usr/bin/Xvfb :97 -screen 0 1280x820x24 -nolisten tcp -noreset
 ```
 
-运行生成的日志与截图在 `artifacts/`，缓存与完整生成目录不纳入 Git；必要的验证摘要和四关画面证据保留在 `docs/`。详见[验证记录](docs/VERIFICATION.md)和[结构化摘要](docs/verification-summary.json)。无头模式使用虚拟渲染器，只能证明逻辑 / 场景运行，画面结论来自实际 X11 / Mesa 渲染。
+运行日志与截图在 `artifacts/`，缓存与完整生成目录不纳入 Git；必要的验证摘要和五关画面保留在 `docs/`。详见[验证记录](docs/VERIFICATION.md)和[结构化摘要](docs/verification-summary.json)。无头模式只能证明逻辑 / 场景运行，画面结论来自实际 X11 / Mesa 渲染。
 
 中文字体已随工程附带，来自本云端 Debian 包内的 [Noto CJK](https://github.com/notofonts/noto-cjk)，授权见 [OFL.txt](assets/fonts/OFL.txt)。英雄、水晶、墙、地板、终点和图标均为原创几何图形，没有将原作截图打包进工程。命令行参数参考 [Godot 官方文档](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html)。

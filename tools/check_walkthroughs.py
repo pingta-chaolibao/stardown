@@ -18,6 +18,8 @@ def check_replay(item, directory):
     level = json.loads((ROOT / item["level_file"]).read_text())
     solution = json.loads((ROOT / item["solution_file"]).read_text())
     player = tuple(level["player"])
+    hero_kind = level.get("hero_kind", "red")
+    assert hero_kind in ("red", "green")
     crystals = {tuple(cell): identity for identity, cell in enumerate(level["crates"])}
     bushes = {tuple(cell) for cell in level.get("bushes", [])}
     initial = evidence["initial_state"]
@@ -60,6 +62,7 @@ def check_replay(item, directory):
 
     def check_mechanisms(state):
         assert alive and state.get("alive", True)
+        assert state.get("hero_kind", "red") == hero_kind
         if bushes or "bushes" in state:
             assert {tuple(cell) for cell in state["bushes"]} == bushes
         if "plates" in state:
@@ -84,12 +87,13 @@ def check_replay(item, directory):
 
     check_crystals(initial)
     check_mechanisms(initial)
-    pushes = 0
+    pushes, pulls = 0, 0
     for index, (symbol, state) in enumerate(zip(solution["path"], evidence["trace"]), 1):
         assert state["input"] == symbol
         direction = DIRECTIONS[symbol]
         target = plus(player, direction)
         assert walkable(target)
+        assert hero_kind == "red" or target not in crystals, "Green hero cannot push"
         chain = []
         terminal = target
         while terminal in crystals:
@@ -99,16 +103,22 @@ def check_replay(item, directory):
         for cell in reversed(chain):
             crystals[plus(cell, direction)] = crystals.pop(cell)
         pushes += bool(chain)
+        behind = (player[0] - direction[0], player[1] - direction[1])
+        if hero_kind == "green" and behind in crystals:
+            crystals[player] = crystals.pop(behind)
+            pulls += 1
         player = target
         pressure, barriers, alive = settle(barriers)
         assert state["player"] == list(player)
         assert state["moves"] == index and state["pushes"] == pushes
+        assert state.get("pulls", 0) == pulls
         assert state["completed"] == (player == tuple(level["exit"])) == (index == solution["moves"])
         check_crystals(state)
         check_mechanisms(state)
     final = evidence["final_state"]
     assert final["player"] == level["exit"] and final["completed"]
     assert final["moves"] == solution["moves"] and final["pushes"] == solution["pushes"]
+    assert final.get("pulls", 0) == solution.get("pulls", 0) == pulls
     check_crystals(final)
     check_mechanisms(final)
     return evidence

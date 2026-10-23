@@ -4,11 +4,13 @@ extends RefCounted
 
 const Level = preload("res://scripts/core/level_data.gd")
 const Energy = preload("res://scripts/core/energy_rules.gd")
+const Heroes = preload("res://scripts/core/hero_rules.gd")
 
 var level: Level
 var player: Vector2i = Vector2i.ZERO
 var moves: int = 0
 var pushes: int = 0
+var pulls: int = 0
 var alive: bool = true
 var last_mechanism_error: String = ""
 var _crates: Dictionary = {}
@@ -34,7 +36,7 @@ func load_level(definition: Level) -> bool:
 		return false
 	level = definition
 	_initial_state = {"player": definition.start, "crates": initial_crystals,
-		"moves": 0, "pushes": 0, "alive": true,
+		"moves": 0, "pushes": 0, "pulls": 0, "alive": true,
 		"pressure": settled["pressure"], "barriers": settled["barriers"]}
 	_restore(_initial_state)
 	_history.clear()
@@ -56,6 +58,8 @@ func try_move(direction: Vector2i) -> StringName:
 		if level.bush_at(next) != null:
 			return &"bush_blocked"
 		return &"energy_blocked" if barrier_is_active(next) else &"wall"
+	if _crates.has(next) and not Heroes.can_push(level.hero_kind):
+		return &"cannot_push"
 	var chain: Array[Vector2i] = []
 	var destination := next
 	while _crates.has(destination):
@@ -66,6 +70,7 @@ func try_move(direction: Vector2i) -> StringName:
 	if not chain.is_empty() and not is_walkable(destination):
 		return &"crate_blocked"
 	var candidate := _crates.duplicate()
+	var pulled := false
 	if not chain.is_empty():
 		# Move the far end first so no crystal overwrites the next one's identity.
 		for index in range(chain.size() - 1, -1, -1):
@@ -73,6 +78,15 @@ func try_move(direction: Vector2i) -> StringName:
 			var identity: int = candidate[cell]
 			candidate.erase(cell)
 			candidate[cell + direction] = identity
+	if Heroes.can_pull(level.hero_kind):
+		var behind := player - direction
+		if candidate.has(behind):
+			# Only the nearest rear crystal enters the hero's old cell.
+			# Further crystals and side neighbours keep their positions.
+			var identity: int = candidate[behind]
+			candidate.erase(behind)
+			candidate[player] = identity
+			pulled = true
 	var settled := Energy.settle(level.energy_links, next, candidate, _barriers)
 	last_mechanism_error = settled["error"]
 	if not last_mechanism_error.is_empty():
@@ -83,11 +97,14 @@ func try_move(direction: Vector2i) -> StringName:
 	player = next
 	moves += 1
 	pushes += 0 if chain.is_empty() else 1
+	pulls += 1 if pulled else 0
 	alive = settled["alive"]
 	_pressure = settled["pressure"]
 	_barriers = settled["barriers"]
 	if not alive:
 		return &"died"
+	if pulled:
+		return &"pulled"
 	return &"pushed" if not chain.is_empty() else &"moved"
 
 
@@ -210,6 +227,7 @@ func _restore(state: Dictionary) -> void:
 	_crates = state["crates"].duplicate()
 	moves = state["moves"]
 	pushes = state["pushes"]
+	pulls = state["pulls"]
 	alive = state["alive"]
 	_pressure = state["pressure"].duplicate()
 	_barriers = state["barriers"].duplicate()
@@ -218,5 +236,5 @@ func _restore(state: Dictionary) -> void:
 
 func snapshot() -> Dictionary:
 	# Copies prevent external callers and later moves from altering undo history.
-	return {"player": player, "crates": _crates.duplicate(), "moves": moves, "pushes": pushes,
+	return {"player": player, "crates": _crates.duplicate(), "moves": moves, "pushes": pushes, "pulls": pulls,
 		"alive": alive, "pressure": _pressure.duplicate(), "barriers": _barriers.duplicate()}

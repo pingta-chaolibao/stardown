@@ -1,0 +1,8 @@
+{
+  "level_id": "north_hero_05",
+  "path": "DRLLURRDRRUURRLLDRRURRDR",
+  "moves": 24,
+  "pushes": 0,
+  "pulls": 8,
+  "note": "U/D/L/R 为上/下/左/右。独立搜索找到，Godot 实际规则与正常键盘逐步验证；24 步、8 拉、0 推，不宣称最优。"
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_05",
+  "title": "北部英雄 · 第五关",
+  "is_temporary": false,
+  "source_note": "依据父线程实际像素核对的 11×3 文本规格，布局同第一关，绿色英雄 (1,1)，蓝水晶 (3,2)，紫水晶 (7,0)，墙 (3,0)/(3,1)/(7,1)/(7,2)，绿色目的地 (9,1)。用户明确确认背离相邻水晶移动时自动只拉最近一枚，不能推。",
+  "hero_kind": "green",
+  "terrain": ["...#.......", "...#...#...", ".......#..."],
+  "player": [1, 1],
+  "crates": [[3, 2], [7, 0]],
+  "crystal_colors": ["blue", "purple"],
+  "targets": [],
+  "exit": [9, 1],
+  "exit_color": "green",
+  "objective": "player_on_exit"
+}

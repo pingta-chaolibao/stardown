@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-23T00:16:34.154921+00:00",
+  "time_utc": "2026-10-23T01:02:48.299205+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,13 +7,13 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.016
+      "seconds": 0.015
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.68
+      "seconds": 7.17
     },
     {
       "name": "02_parse_00_bush_obstacle",
@@ -25,115 +25,139 @@
       "name": "02_parse_01_energy_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.14
     },
     {
       "name": "02_parse_02_grid_state",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.161
+      "seconds": 3.142
     },
     {
-      "name": "02_parse_03_level_data",
+      "name": "02_parse_03_hero_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.141
+    },
+    {
+      "name": "02_parse_04_level_data",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143
     },
     {
-      "name": "02_parse_04_step_input",
+      "name": "02_parse_05_step_input",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144
     },
     {
-      "name": "02_parse_05_main",
+      "name": "02_parse_06_main",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238
+    },
+    {
+      "name": "02_parse_07_board_view",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.141
+    },
+    {
+      "name": "02_parse_08_bush_and_group_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "02_parse_09_chain_push_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "02_parse_10_energy_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145
     },
     {
-      "name": "02_parse_06_board_view",
+      "name": "02_parse_11_green_pull_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144
     },
     {
-      "name": "02_parse_07_bush_and_group_regression",
+      "name": "02_parse_12_north_01_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.141
     },
     {
-      "name": "02_parse_08_chain_push_regression",
+      "name": "02_parse_13_north_02_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "02_parse_14_north_02_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145
     },
     {
-      "name": "02_parse_09_energy_regression",
+      "name": "02_parse_15_north_03_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.148
     },
     {
-      "name": "02_parse_10_north_01_regression",
+      "name": "02_parse_16_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.148
     },
     {
-      "name": "02_parse_11_north_02_regression",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.144
-    },
-    {
-      "name": "02_parse_12_north_02_scene",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.142
-    },
-    {
-      "name": "02_parse_13_north_03_regression",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.142
-    },
-    {
-      "name": "02_parse_14_north_03_scene",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.151
-    },
-    {
-      "name": "02_parse_15_north_04_regression",
+      "name": "02_parse_17_north_04_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146
     },
     {
-      "name": "02_parse_16_north_04_scene",
+      "name": "02_parse_18_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.142
     },
     {
-      "name": "02_parse_17_run_tests",
+      "name": "02_parse_19_north_05_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "02_parse_20_north_05_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144
     },
     {
-      "name": "02_parse_18_scene_smoke",
+      "name": "02_parse_21_run_tests",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144
+    },
+    {
+      "name": "02_parse_22_scene_smoke",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
     },
     {
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "03_chain_push",
@@ -154,82 +178,106 @@
       "seconds": 3.146
     },
     {
+      "name": "03_green_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
       "name": "03_north_01",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.143
     },
     {
       "name": "03_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.142
     },
     {
       "name": "03_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.238
     },
     {
       "name": "03_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.146
+    },
+    {
+      "name": "03_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
     },
     {
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.333
+      "seconds": 3.331
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.473
+      "seconds": 4.445
     },
     {
       "name": "05_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.265
+      "seconds": 4.261
     },
     {
       "name": "05_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.173
+      "seconds": 4.171
     },
     {
       "name": "05_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.374
+      "seconds": 4.357
+    },
+    {
+      "name": "05_north_05_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 4.363
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.209
+      "seconds": 12.202
     },
     {
       "name": "06_render_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.179
+      "seconds": 12.188
     },
     {
       "name": "06_render_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.171
+      "seconds": 13.868
     },
     {
       "name": "06_render_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.197
+      "seconds": 14.387
+    },
+    {
+      "name": "06_render_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.17
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -255,6 +303,11 @@
       "failures": 0,
       "cases": 8
     },
+    "green_pull": {
+      "checks": 4444,
+      "failures": 0,
+      "cases": 8
+    },
     "north_01": {
       "checks": 344,
       "failures": 0,
@@ -275,42 +328,56 @@
       "failures": 0,
       "cases": 4
     },
+    "north_05": {
+      "checks": 124,
+      "failures": 0,
+      "cases": 4
+    },
     "headless_scene": {
-      "checks": 212,
-      "failures": 0
-    },
-    "headless_north_02_scene": {
-      "checks": 176,
-      "failures": 0
-    },
-    "headless_north_03_scene": {
-      "checks": 179,
-      "failures": 0
-    },
-    "headless_north_04_scene": {
-      "checks": 193,
+      "checks": 214,
       "failures": 0
     },
     "rendered_scene": {
-      "checks": 222,
+      "checks": 224,
+      "failures": 0
+    },
+    "headless_north_02_scene": {
+      "checks": 178,
       "failures": 0
     },
     "rendered_north_02_scene": {
-      "checks": 182,
+      "checks": 184,
+      "failures": 0
+    },
+    "headless_north_03_scene": {
+      "checks": 181,
       "failures": 0
     },
     "rendered_north_03_scene": {
-      "checks": 187,
+      "checks": 189,
+      "failures": 0
+    },
+    "headless_north_04_scene": {
+      "checks": 195,
       "failures": 0
     },
     "rendered_north_04_scene": {
-      "checks": 201,
+      "checks": 203,
+      "failures": 0
+    },
+    "headless_north_05_scene": {
+      "checks": 183,
+      "failures": 0
+    },
+    "rendered_north_05_scene": {
+      "checks": 191,
       "failures": 0
     }
   },
   "levels": [
     {
       "id": "north_hero_01",
+      "hero_kind": "red",
       "size": [
         11,
         3
@@ -320,7 +387,6 @@
         1
       ],
       "crystal_count": 2,
-      "bush_count": 0,
       "exit": [
         9,
         1
@@ -336,6 +402,7 @@
     },
     {
       "id": "north_hero_02",
+      "hero_kind": "red",
       "size": [
         11,
         7
@@ -345,7 +412,6 @@
         1
       ],
       "crystal_count": 10,
-      "bush_count": 0,
       "exit": [
         1,
         5
@@ -361,6 +427,7 @@
     },
     {
       "id": "north_hero_03",
+      "hero_kind": "red",
       "size": [
         11,
         3
@@ -370,7 +437,6 @@
         1
       ],
       "crystal_count": 1,
-      "bush_count": 0,
       "exit": [
         9,
         1
@@ -386,6 +452,7 @@
     },
     {
       "id": "north_hero_04",
+      "hero_kind": "red",
       "size": [
         7,
         6
@@ -395,7 +462,6 @@
         1
       ],
       "crystal_count": 3,
-      "bush_count": 2,
       "exit": [
         6,
         0
@@ -408,21 +474,47 @@
         "pushes": 13,
         "note": "U/D/L/R 为上/下/左/右。独立状态搜索找到，已由 Godot 实际规则与普通键盘逐输入验证；不宣称最优。"
       }
+    },
+    {
+      "id": "north_hero_05",
+      "hero_kind": "green",
+      "size": [
+        11,
+        3
+      ],
+      "player": [
+        1,
+        1
+      ],
+      "crystal_count": 2,
+      "exit": [
+        9,
+        1
+      ],
+      "exit_color": "green",
+      "solution": {
+        "level_id": "north_hero_05",
+        "path": "DRLLURRDRRUURRLLDRRURRDR",
+        "moves": 24,
+        "pushes": 0,
+        "pulls": 8,
+        "note": "U/D/L/R 为上/下/左/右。独立搜索找到，Godot 实际规则与正常键盘逐步验证；24 步、8 拉、0 推，不宣称最优。"
+      }
     }
   ],
-  "north_04_independent_search": {
-    "living_occupancy_states_exhausted": 234773,
+  "north_05_independent_search": {
+    "living_occupancy_states_exhausted": 740,
     "crystal_colors_ignored_for_search": true,
+    "hero_kind": "green",
     "solution": {
-      "level_id": "north_hero_04",
-      "path": "RDDLDRRRUUULULDDDLDRUUULDDURRRRRUU",
-      "moves": 34,
-      "pushes": 13,
-      "note": "U/D/L/R 为上/下/左/右。独立状态搜索找到，已由 Godot 实际规则与普通键盘逐输入验证；不宣称最优。"
+      "level_id": "north_hero_05",
+      "path": "DRLLURRDRRUURRLLDRRURRDR",
+      "moves": 24,
+      "pushes": 0,
+      "pulls": 8,
+      "note": "U/D/L/R 为上/下/左/右。独立搜索找到，Godot 实际规则与正常键盘逐步验证；24 步、8 拉、0 推，不宣称最优。"
     },
-    "crystal_enters_barrier": false,
-    "undefined_transition_found": false,
-    "path_validated_separately_by": "tests/north_04_regression.gd"
+    "validated_separately_by": "tests/north_05_regression.gd"
   },
-  "previous_maps_solutions_and_videos_unchanged_from": "64ec6fc6f2a3948afb54e2af066cdf2908345c13"
+  "previous_maps_solutions_and_videos_unchanged_from": "7e7acfd1dd82d3e4148166e7f924dbbf78aa2a28"
 }

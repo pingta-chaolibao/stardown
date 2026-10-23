@@ -21,8 +21,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number not in [1, 2, 3, 4] or report_path.is_empty():
-		_fail("Pass --level=1, 2, 3 or 4 and an absolute --report path.")
+	if level_number not in [1, 2, 3, 4, 5] or report_path.is_empty():
+		_fail("Pass --level=1 through 5 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -50,7 +50,7 @@ func _run() -> void:
 		await _frames(1)
 		var current := _state()
 		var distance: int = absi(current["player"][0] - previous["player"][0]) + absi(current["player"][1] - previous["player"][1])
-		if not current["alive"] or current["moves"] != i + 1 or distance != 1 or current["pushes"] < previous["pushes"] or current["pushes"] > previous["pushes"] + 1:
+		if not current["alive"] or current["moves"] != i + 1 or distance != 1 or current["pushes"] < previous["pushes"] or current["pushes"] > previous["pushes"] + 1 or current["pulls"] < previous["pulls"] or current["pulls"] > previous["pulls"] + 1:
 			_fail("Input %d did not make exactly one legal grid step." % (i + 1))
 			return
 		current["input"] = symbol
@@ -58,7 +58,7 @@ func _run() -> void:
 		previous = current
 		await _frames(STEP_FRAMES - 2)
 	var final := _state()
-	if not final["completed"] or final["moves"] != solution["moves"] or final["pushes"] != solution["pushes"]:
+	if not final["completed"] or final["moves"] != solution["moves"] or final["pushes"] != solution["pushes"] or final["pulls"] != solution.get("pulls", 0):
 		_fail("Playback did not finish at the expected victory state.")
 		return
 	await _frames(VICTORY_FRAMES)
@@ -77,7 +77,7 @@ func _run() -> void:
 		return
 	file.store_string(JSON.stringify(report, "  ") + "\n")
 	file.close()
-	print("REPLAY RESULT: level %02d; %d legal moves, %d push actions, victory=true" % [level_number, final["moves"], final["pushes"]])
+	print("REPLAY RESULT: level %02d; %d legal moves, %d push actions, %d pull actions, victory=true" % [level_number, final["moves"], final["pushes"], final["pulls"]])
 	quit(0)
 
 
@@ -98,7 +98,7 @@ func _state() -> Dictionary:
 		for cell: Vector2i in link["plates"]:
 			plates.append({"group": link["id"], "position": [cell.x, cell.y], "pressed": game.model.pressure_cell_is_active(link["id"], cell)})
 	return {"level_id": game.model.level.id, "player": [game.model.player.x, game.model.player.y],
-		"crystals": crystals, "moves": game.model.moves, "pushes": game.model.pushes,
+		"crystals": crystals, "moves": game.model.moves, "pushes": game.model.pushes, "pulls": game.model.pulls, "hero_kind": game.model.level.hero_kind,
 		"completed": game.model.is_complete(), "exit": [game.model.level.exit_cell.x, game.model.level.exit_cell.y],
 		"exit_color": game.model.level.exit_color, "alive": game.model.alive,
 		"pressure": game.model.pressure_states(), "barriers": barriers, "bushes": bushes, "plates": plates}

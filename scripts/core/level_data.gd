@@ -3,6 +3,7 @@ extends RefCounted
 ## Validated, data-only level definition. Coordinates are zero-based [x, y].
 
 const Bush = preload("res://scripts/core/bush_obstacle.gd")
+const Heroes = preload("res://scripts/core/hero_rules.gd")
 
 var id: String = ""
 var title: String = ""
@@ -12,6 +13,7 @@ var terrain: PackedStringArray = []
 var width: int = 0
 var height: int = 0
 var start: Vector2i = Vector2i.ZERO
+var hero_kind: String = "red"
 var initial_crates: Array[Vector2i] = []
 var crystal_colors: PackedStringArray = []
 var targets: Array[Vector2i] = []
@@ -50,6 +52,10 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	if not rows[0] is String or rows[0].is_empty() or rows[0].length() > 64:
 		return _invalid("地图宽度必须为 1 至 64 格。")
 	var level := PuzzleLevel.new()
+	var kind: Variant = data.get("hero_kind", "red")
+	if not Heroes.is_supported(kind):
+		return _invalid("hero_kind 只支持 red（推）或 green（拉）。")
+	level.hero_kind = kind
 	level.width = rows[0].length()
 	level.height = rows.size()
 	for row in rows:
