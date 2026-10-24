@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_21",
+  "title": "北部英雄 · 第二十一关",
+  "is_temporary": false,
+  "source_note": "用户确认13×9编号/二维图，明确本关无栅栏；六黄板全局AND联动三能量，绿色终点仅视觉，原创2D几何图形。",
+  "terrain": [
+    "....#...#....",
+    "....#...#....",
+    "....#...#....",
+    "##.###.###.##",
+    "##.........##",
+    "##.........##",
+    "##.........##",
+    "#####..######",
+    "#####...#####"
+  ],
+  "heroes": [
+    {
+      "id": "red",
+      "kind": "red",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "green",
+      "kind": "green",
+      "position": [
+        6,
+        0
+      ]
+    },
+    {
+      "id": "blue",
+      "kind": "blue",
+      "position": [
+        12,
+        0
+      ]
+    }
+  ],
+  "active_hero": "red",
+  "crates": [
+    [
+      5,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      10,
+      1
+    ],
+    [
+      10,
+      6
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      8
+    ]
+  ],
+  "crystal_colors": [
+    "purple",
+    "blue_purple",
+    "purple",
+    "blue_purple",
+    "purple",
+    "blue_purple"
+  ],
+  "targets": [],
+  "exits": [
+    [
+      5,
+      5
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      7,
+      5
+    ]
+  ],
+  "exit_color": "green",
+  "mechanism_color": "yellow",
+  "objective": "all_heroes_on_exits",
+  "energy_links": [
+    {
+      "id": "yellow_01",
+      "plates": [
+        [
+          3,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          12,
+          2
+        ]
+      ],
+      "activation": "all",
+      "barriers": [
+        [
+          2,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          10,
+          3
+        ]
+      ],
+      "pressure_sources": [
+        "hero",
+        "crystal"
+      ]
+    }
+  ]
+}

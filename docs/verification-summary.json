@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-24T02:56:32.133408+00:00",
+  "time_utc": "2026-10-24T05:18:01.731828+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,103 +7,103 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.015
+      "seconds": 0.014
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.847
+      "seconds": 9.628
     },
     {
       "name": "02_parse_00_bush_obstacle",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.163
+      "seconds": 3.145
     },
     {
       "name": "02_parse_01_energy_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.141
     },
     {
       "name": "02_parse_02_fence_edges",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.143
     },
     {
       "name": "02_parse_03_grid_state",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.143
     },
     {
       "name": "02_parse_04_hero_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.142
     },
     {
       "name": "02_parse_05_level_data",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.144
     },
     {
       "name": "02_parse_06_swap_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.167
     },
     {
       "name": "02_parse_07_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "02_parse_08_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.238
+      "seconds": 3.236
     },
     {
       "name": "02_parse_09_board_view",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.144
     },
     {
       "name": "02_parse_10_level_card",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "02_parse_11_level_menu",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "02_parse_12_virtual_level_strip",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "02_parse_13_blue_swap_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.152
+      "seconds": 3.147
     },
     {
       "name": "02_parse_14_bush_and_group_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.143
     },
     {
       "name": "02_parse_15_chain_push_regression",
@@ -115,163 +115,163 @@
       "name": "02_parse_16_energy_destruction_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.143
     },
     {
       "name": "02_parse_17_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.144
     },
     {
       "name": "02_parse_18_energy_visibility_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.238
+      "seconds": 3.24
     },
     {
       "name": "02_parse_19_fence_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.142
     },
     {
       "name": "02_parse_20_global_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.152
+      "seconds": 3.142
     },
     {
       "name": "02_parse_21_green_pull_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.142
     },
     {
       "name": "02_parse_22_multi_hero_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.142
     },
     {
       "name": "02_parse_23_navigation_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.235
+      "seconds": 3.237
     },
     {
       "name": "02_parse_24_north_01_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.141
     },
     {
       "name": "02_parse_25_north_02_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.157
+      "seconds": 3.142
     },
     {
       "name": "02_parse_26_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.153
+      "seconds": 3.143
     },
     {
       "name": "02_parse_27_north_03_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.154
+      "seconds": 3.142
     },
     {
       "name": "02_parse_28_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.24
+      "seconds": 3.238
     },
     {
       "name": "02_parse_29_north_04_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.151
+      "seconds": 3.142
     },
     {
       "name": "02_parse_30_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.24
+      "seconds": 3.143
     },
     {
       "name": "02_parse_31_north_05_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.142
     },
     {
       "name": "02_parse_32_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.239
+      "seconds": 3.237
     },
     {
       "name": "02_parse_33_north_06_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.143
     },
     {
       "name": "02_parse_34_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.237
     },
     {
       "name": "02_parse_35_north_07_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.144
     },
     {
       "name": "02_parse_36_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.238
     },
     {
       "name": "02_parse_37_north_08_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.147
     },
     {
       "name": "02_parse_38_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.239
+      "seconds": 3.244
     },
     {
       "name": "02_parse_39_north_09_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.147
     },
     {
       "name": "02_parse_40_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.238
     },
     {
       "name": "02_parse_41_north_10_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.148
     },
     {
       "name": "02_parse_42_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.236
     },
     {
       "name": "02_parse_43_north_11_regression",
@@ -283,157 +283,169 @@
       "name": "02_parse_44_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "02_parse_45_north_12_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.151
     },
     {
       "name": "02_parse_46_north_12_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.241
     },
     {
       "name": "02_parse_47_north_13_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.147
     },
     {
       "name": "02_parse_48_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.243
     },
     {
       "name": "02_parse_49_north_14_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "02_parse_50_north_14_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.15
     },
     {
       "name": "02_parse_51_north_15_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.142
     },
     {
       "name": "02_parse_52_north_15_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.243
+      "seconds": 3.143
     },
     {
       "name": "02_parse_53_north_16_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.142
     },
     {
       "name": "02_parse_54_north_16_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.245
+      "seconds": 3.239
     },
     {
       "name": "02_parse_55_north_17_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.148
     },
     {
       "name": "02_parse_56_north_17_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.246
     },
     {
       "name": "02_parse_57_north_18_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.147
     },
     {
       "name": "02_parse_58_north_18_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.238
+      "seconds": 3.256
     },
     {
       "name": "02_parse_59_north_19_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.148
     },
     {
       "name": "02_parse_60_north_19_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.238
+      "seconds": 3.253
     },
     {
       "name": "02_parse_61_north_20_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.153
     },
     {
       "name": "02_parse_62_north_20_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.256
     },
     {
-      "name": "02_parse_63_run_tests",
+      "name": "02_parse_63_north_21_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.163
     },
     {
-      "name": "02_parse_64_scene_smoke",
+      "name": "02_parse_64_north_21_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.148
+    },
+    {
+      "name": "02_parse_65_run_tests",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_parse_66_scene_smoke",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24
     },
     {
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.238
+      "seconds": 3.237
     },
     {
       "name": "03_chain_push",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.144
     },
     {
       "name": "03_energy",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.143
     },
     {
       "name": "03_global_energy",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "03_bush_group",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "03_green_pull",
@@ -445,61 +457,61 @@
       "name": "03_blue_swap",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.144
     },
     {
       "name": "03_multi_hero",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.145
     },
     {
       "name": "03_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "03_north_14",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "03_north_15",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.237
     },
     {
       "name": "03_north_16",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.143
     },
     {
       "name": "03_energy_destruction",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.16
+      "seconds": 3.143
     },
     {
       "name": "03_north_17",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.152
+      "seconds": 3.145
     },
     {
       "name": "03_north_18",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.143
     },
     {
       "name": "03_north_19",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.145
     },
     {
       "name": "03_fences",
@@ -511,199 +523,205 @@
       "name": "03_north_20",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
-    },
-    {
-      "name": "03_north_01",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.145
-    },
-    {
-      "name": "03_north_02",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.157
-    },
-    {
-      "name": "03_north_03",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.238
-    },
-    {
-      "name": "03_north_04",
-      "passed": true,
-      "exit_code": 0,
       "seconds": 3.144
     },
     {
-      "name": "03_north_05",
+      "name": "03_north_21",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.142
     },
     {
-      "name": "03_north_06",
+      "name": "03_north_01",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.147
     },
     {
-      "name": "03_north_07",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.143
-    },
-    {
-      "name": "03_north_08",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.144
-    },
-    {
-      "name": "03_north_09",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.144
-    },
-    {
-      "name": "03_north_10",
+      "name": "03_north_02",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145
     },
     {
-      "name": "03_north_11",
+      "name": "03_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.235
     },
     {
-      "name": "03_north_12",
+      "name": "03_north_04",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143
     },
     {
+      "name": "03_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.141
+    },
+    {
+      "name": "03_north_06",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "03_north_07",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_08",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_north_09",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.151
+    },
+    {
+      "name": "03_north_10",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149
+    },
+    {
+      "name": "03_north_11",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_north_12",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149
+    },
+    {
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.331
+      "seconds": 3.424
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.542
+      "seconds": 4.541
     },
     {
       "name": "05_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.542
+      "seconds": 4.537
     },
     {
       "name": "05_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.355
+      "seconds": 4.358
     },
     {
       "name": "05_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.54
+      "seconds": 4.549
     },
     {
       "name": "05_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.54
+      "seconds": 4.547
     },
     {
       "name": "05_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.284
+      "seconds": 5.285
     },
     {
       "name": "05_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.31
+      "seconds": 6.332
     },
     {
       "name": "05_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.099
+      "seconds": 5.1
     },
     {
       "name": "05_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.011
+      "seconds": 5.006
     },
     {
       "name": "05_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.564
+      "seconds": 5.577
     },
     {
       "name": "05_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.012
+      "seconds": 5.007
     },
     {
       "name": "05_north_12_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.666
+      "seconds": 5.656
     },
     {
       "name": "05_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.754
+      "seconds": 5.753
     },
     {
       "name": "05_north_14_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.49
+      "seconds": 6.492
     },
     {
       "name": "05_north_15_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 7.795
+      "seconds": 7.797
     },
     {
       "name": "05_north_16_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.843
+      "seconds": 5.842
     },
     {
       "name": "05_north_17_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.957
+      "seconds": 6.867
     },
     {
       "name": "05_north_18_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 9.293
+      "seconds": 8.816
     },
     {
       "name": "05_north_19_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 8.727
+      "seconds": 8.724
     },
     {
       "name": "05_north_20_scene",
@@ -712,148 +730,160 @@
       "seconds": 5.47
     },
     {
+      "name": "05_north_21_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 7.701
+    },
+    {
       "name": "05_navigation",
       "passed": true,
       "exit_code": 0,
-      "seconds": 11.427
+      "seconds": 11.606
     },
     {
       "name": "05_energy_visibility",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.823
+      "seconds": 4.728
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 15.04
+      "seconds": 12.177
     },
     {
       "name": "06_render_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.963
+      "seconds": 12.166
     },
     {
       "name": "06_render_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.175
+      "seconds": 14.388
     },
     {
       "name": "06_render_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.172
+      "seconds": 14.723
     },
     {
       "name": "06_render_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.163
+      "seconds": 12.171
     },
     {
       "name": "06_render_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.597
+      "seconds": 13.599
     },
     {
       "name": "06_render_north_07",
       "passed": true,
       "exit_code": 0,
-      "seconds": 18.847
+      "seconds": 18.752
     },
     {
       "name": "06_render_north_08",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.86
+      "seconds": 12.928
     },
     {
       "name": "06_render_north_09",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.186
+      "seconds": 12.277
     },
     {
       "name": "06_render_north_10",
       "passed": true,
       "exit_code": 0,
-      "seconds": 17.178
+      "seconds": 14.261
     },
     {
       "name": "06_render_north_11",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.403
+      "seconds": 16.26
     },
     {
       "name": "06_render_north_12",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.056
+      "seconds": 13.711
     },
     {
       "name": "06_render_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.255
+      "seconds": 14.349
     },
     {
       "name": "06_render_north_14",
       "passed": true,
       "exit_code": 0,
-      "seconds": 19.686
+      "seconds": 16.701
     },
     {
       "name": "06_render_north_15",
       "passed": true,
       "exit_code": 0,
-      "seconds": 19.838
+      "seconds": 19.753
     },
     {
       "name": "06_render_north_16",
       "passed": true,
       "exit_code": 0,
-      "seconds": 17.343
+      "seconds": 14.705
     },
     {
       "name": "06_render_north_17",
       "passed": true,
       "exit_code": 0,
-      "seconds": 17.143
+      "seconds": 17.326
     },
     {
       "name": "06_render_north_18",
       "passed": true,
       "exit_code": 0,
-      "seconds": 24.273
+      "seconds": 20.864
     },
     {
       "name": "06_render_north_19",
       "passed": true,
       "exit_code": 0,
-      "seconds": 22.018
+      "seconds": 24.164
     },
     {
       "name": "06_render_north_20",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.956
+      "seconds": 14.04
+    },
+    {
+      "name": "06_render_north_21",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.524
     },
     {
       "name": "06_navigation",
       "passed": true,
       "exit_code": 0,
-      "seconds": 21.967
+      "seconds": 22.07
     },
     {
       "name": "06_energy_visibility",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.838
+      "seconds": 12.948
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -7690,5 +7720,104 @@
     "solution_file": "levels/solutions/north_20.json",
     "implementation_committed_before_recording": true,
     "gameplay_sources_unchanged_after_recording": true
+  },
+  "north_21_support": {
+    "confirmed_floor_cells": 68,
+    "fences": [],
+    "default_selected": "red",
+    "model_checks": 1687,
+    "headless_checks": 599,
+    "rendered_checks": 646,
+    "six_plate_occupancy_subsets": 64,
+    "actual_death_prefix": 43,
+    "actual_crystal_destruction_prefix": 101,
+    "simultaneous_three_crystal_destruction_undo_fixture": true,
+    "independent_route": {
+      "method": "Constructed legal stages with identity-preserving independent transition; local walk-only BFS,not exhaustive/optimal",
+      "walk_search_states": 250,
+      "solution": {
+        "level_id": "north_hero_21",
+        "path": "DRRDRUDLLLCDLDRUURCDLDRRUULLDLUULLLDLUUUULLLUULCDDDRRRRRULLLLDLUUCCRCDCCDRRRRUUURLCDDRRRRUURCLCCUCDDDDDDDDLURUUUUUUCCDLCCDCDDDCDDDLDCRDRCDDD",
+        "moves": 119,
+        "directions": 119,
+        "input_events": 140,
+        "selection_events": 21,
+        "pushes": 10,
+        "pulls": 8,
+        "swaps": 10,
+        "destroyed_crystals": 0,
+        "note": "独立构造的六板接替路线，单英雄纯步行局部BFS与每次完整动作重算；非全状态搜索，不宣称最短或穷举。C免费，明确无栅栏。"
+      },
+      "stages": {
+        "left_setup": 10,
+        "middle_setup": 17,
+        "first_all_six": 26,
+        "lower_crystal_replaces_blue": 27,
+        "bottom_crystal_lifted": 34,
+        "red_freed": 45,
+        "crystal_at_left_gate_exit": 62,
+        "left_plate_crystal_handoff": 63,
+        "blue_red_clear_left_corridor": 65,
+        "safe_single_plate_release": 84,
+        "middle_crystal_repositions_top_plate": 85,
+        "last_crystal_pulled_above_gate": 102,
+        "six_crystals_hold_all_plates": 105,
+        "victory": 119
+      }
+    },
+    "actual_images_reviewed": [
+      "initial",
+      "compact_occupied_energy",
+      "completed"
+    ],
+    "gameplay_sources_unchanged_from": "1f50ad22cf40d1e3edb5bb87208b5ce183cf359b"
+  },
+  "previous_twenty_level_files_byte_preserved": 80,
+  "previous_twenty_manifest_entries_preserved": true,
+  "previous_twenty_baseline": "1f50ad22cf40d1e3edb5bb87208b5ce183cf359b",
+  "six_energy_navigation_demo_files_byte_preserved": true,
+  "level_21_catalog_regression": {
+    "real_maps": 21,
+    "all21_entry_return_contexts_tested": true,
+    "headless_checks": 274,
+    "rendered_checks": 286,
+    "observations": {
+      "bind_count": 156,
+      "checks": 286,
+      "created_including_resizes": 17,
+      "failures": 0,
+      "pool_nodes": 10,
+      "provider_calls": 156,
+      "real_menu_pool": 10,
+      "resize_pools": [
+        {
+          "cards": 7,
+          "width": 360
+        },
+        {
+          "cards": 11,
+          "width": 1550
+        },
+        {
+          "cards": 7,
+          "width": 480
+        },
+        {
+          "cards": 10,
+          "width": 1180
+        }
+      ],
+      "stress_elapsed_ms": 1456.365,
+      "synthetic_item_count": 5000
+    },
+    "source_count_independent_of_pool": true
+  },
+  "north_21_walkthrough": {
+    "status": "pending implementation commit before recording",
+    "expected_frames": 2670,
+    "expected_duration_seconds": 89.0,
+    "actual_actions": 119,
+    "selection_events": 21,
+    "input_events": 140
   }
 }

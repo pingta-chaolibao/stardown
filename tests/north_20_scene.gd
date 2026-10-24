@@ -33,7 +33,7 @@ func _run() -> void:
 	_check(actions==30 and choices==13 and game.model.pushes==2 and game.model.pulls==2 and game.model.swaps==11 and game.model.occupied_exits()==3,"actual30/13C/2push2pull11swap victory")
 	await _capture("north_20_completed.png");await _press(KEY_Z);_check(game.model.moves==29 and not game.model.is_complete() and game.model.active_hero_id()=="red","victoryUndo keepsred and restores passiveblue")
 	await _press(KEY_R);_check(game.model.snapshot()==initial and game.model.active_hero_id()=="blue","victoryrestart restores initialworld/fences/blue")
-	await _click("BackToLevels");_check(game.menu.visible and game.menu.strip.item_count==20,"20 added to same virtual menu")
+	await _click("BackToLevels");_check(game.menu.visible and game.menu.strip.item_count==game.LEVEL_PATHS.size(),"20 added to same virtual menu")
 	await _click("Level19");_check(game.model.level.fence_edges.is_empty() and game.model.history_size()==0,"19 retains original terrain/no fence leak")
 	await _click("Level20");_check(game.model.snapshot()==initial,"return20 has independent history")
 	root.size=Vector2i(960,615);await _settle();_check_layout(game);await _inspect_fences();await _capture("north_20_compact_blue.png")

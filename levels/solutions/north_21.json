@@ -1,0 +1,13 @@
+{
+  "level_id": "north_hero_21",
+  "path": "DRRDRUDLLLCDLDRUURCDLDRRUULLDLUULLLDLUUUULLLUULCDDDRRRRRULLLLDLUUCCRCDCCDRRRRUUURLCDDRRRRUURCLCCUCDDDDDDDDLURUUUUUUCCDLCCDCDDDCDDDLDCRDRCDDD",
+  "moves": 119,
+  "directions": 119,
+  "input_events": 140,
+  "selection_events": 21,
+  "pushes": 10,
+  "pulls": 8,
+  "swaps": 10,
+  "destroyed_crystals": 0,
+  "note": "独立构造的六板接替路线，单英雄纯步行局部BFS与每次完整动作重算；非全状态搜索，不宣称最短或穷举。C免费，明确无栅栏。"
+}

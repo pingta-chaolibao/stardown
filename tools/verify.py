@@ -106,6 +106,7 @@ def main():
             run("03_north_19", ["--script", "res://tests/north_19_regression.gd"])
             run("03_fences", ["--script", "res://tests/fence_regression.gd"])
             run("03_north_20", ["--script", "res://tests/north_20_regression.gd"])
+            run("03_north_21", ["--script", "res://tests/north_21_regression.gd"])
             run("03_north_01", ["--script", "res://tests/north_01_regression.gd"])
             run("03_north_02", ["--script", "res://tests/north_02_regression.gd"])
             run("03_north_03", ["--script", "res://tests/north_03_regression.gd"])
@@ -139,6 +140,7 @@ def main():
             run("05_north_18_scene", ["--script", "res://tests/north_18_scene.gd"])
             run("05_north_19_scene", ["--script", "res://tests/north_19_scene.gd"])
             run("05_north_20_scene", ["--script", "res://tests/north_20_scene.gd"])
+            run("05_north_21_scene", ["--script", "res://tests/north_21_scene.gd"])
             run("05_navigation", ["--script", "res://tests/navigation_scene.gd"])
             run("05_energy_visibility", ["--script", "res://tests/energy_visibility_scene.gd"])
             if args.visual:
@@ -207,6 +209,9 @@ def main():
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_20", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_20_scene.gd",
+                                          "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+                run("06_render_north_21", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
+                                          "--audio-driver", "Dummy", "--script", "res://tests/north_21_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_navigation", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/navigation_scene.gd",
