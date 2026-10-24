@@ -25,4 +25,9 @@
 
 [主界面](screenshots/navigation_main.png) · [末端卡片](screenshots/navigation_last.png) · [关卡内返回入口](screenshots/navigation_in_level.png) · [死亡锁](screenshots/navigation_death_locked.png) · [小窗口](screenshots/navigation_960x615.png) · [宽窗口](screenshots/navigation_1600x820.png)
 
-UI视频会在实现提交后录制到`video/ui/level_navigation.mp4`，与关卡通关视频分开。`tools/record_navigation.gd`只注入真实鼠标/滚轮/触摸/键盘事件，不写滚动、选择索引或世界坐标；`--verify-only`可预演同一流程。正式演示需真实渲染与MovieMaker，不能用静态截图拼接。
+实现先提交并正常推送`594e349fa99d4cfe40bfbdbf239c3b7fe08b9c06`，随后才录制[真实UI演示](../video/ui/level_navigation.mp4)，与关卡通关视频分开。`tools/record_navigation.gd`只注入真实鼠标/滚轮/触摸/键盘事件，不写滚动、选择索引或世界坐标；`--verify-only`可预演同一流程。正式演示需真实渲染与MovieMaker，不能用静态截图拼接。
+
+
+演示557帧/30fps=18.566667秒，828060字节，H.264 High/yuv420p/1280×820/fast-start，无音轨。59个实际输入事件覆盖10阶段：初始主界面、鼠标拖动、滚轮、End到19、点击进入19、按钮返回同一偏移与选择、触摸横滑、Home/方向键选择5、Enter进入5、Esc回相同主界面上下文。源与录制器未在录制后修改；没有滚动/选择索引/世界坐标直接赋值，也未拼接截图。
+
+全部阶段编码画面及首尾已实际查看，完整解码/元数据/fast-start通过。逐输入事件与阶段记录见[原始录制证据](../video/ui/level_navigation_replay.json)，[媒体验证](../video/ui/level_navigation.json)。这不是某关通关视频，原19段历史视频保持不变。SHA256：`f7da0130a4b1de6f6998d8db0548704e94d8a827fe4880d065626e9679687dad`。

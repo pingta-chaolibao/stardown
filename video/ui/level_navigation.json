@@ -1,0 +1,60 @@
+{
+  "source_commit": "594e349fa99d4cfe40bfbdbf239c3b7fe08b9c06",
+  "file": "video/ui/level_navigation.mp4",
+  "bytes": 828060,
+  "sha256": "f7da0130a4b1de6f6998d8db0548704e94d8a827fe4880d065626e9679687dad",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "profile": "High",
+        "width": 1280,
+        "height": 820,
+        "pix_fmt": "yuv420p",
+        "avg_frame_rate": "30/1",
+        "nb_frames": "557"
+      }
+    ],
+    "format": {
+      "duration": "18.566667"
+    }
+  },
+  "frames": 557,
+  "fps": 30,
+  "duration_seconds": 18.566667,
+  "mp4_fast_start": true,
+  "full_decode_passed": true,
+  "actual_input_events": 59,
+  "phase_count": 10,
+  "recording_failures": 0,
+  "pool_nodes": 10,
+  "same_pool_through_enter_return": true,
+  "review_frames": [
+    0,
+    59,
+    127,
+    146,
+    188,
+    238,
+    276,
+    346,
+    430,
+    484,
+    556
+  ],
+  "initial_and_final_frames_reviewed": true,
+  "all_phase_frames_reviewed": true,
+  "real_level_count": 19,
+  "full_regression_steps": 134,
+  "parsed_scripts": 61,
+  "headless_navigation_checks": 262,
+  "rendered_navigation_checks": 274,
+  "synthetic_count": 5000,
+  "viewport_width_tested": 1180,
+  "pooled_card_nodes": 10,
+  "entire_strip_subtree_nodes": 11,
+  "implementation_committed_before_recording": true,
+  "gameplay_sources_unchanged_after_recording": true
+}

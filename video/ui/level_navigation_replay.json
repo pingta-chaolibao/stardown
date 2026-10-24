@@ -1,0 +1,576 @@
+{
+  "created_cards": 10,
+  "display": "X11",
+  "engine": {
+    "build": "official",
+    "hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+    "hex": 263683,
+    "major": 4,
+    "minor": 6,
+    "patch": 3,
+    "status": "stable",
+    "string": "4.6.3-stable (official)",
+    "timestamp": 0
+  },
+  "events": [
+    {
+      "at": [
+        954.0,
+        429.0
+      ],
+      "frame": 60,
+      "pressed": true,
+      "type": "mouse_button"
+    },
+    {
+      "at": [
+        916.0,
+        429.0
+      ],
+      "frame": 61,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        878.0,
+        429.0
+      ],
+      "frame": 63,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        840.0,
+        429.0
+      ],
+      "frame": 65,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        802.0,
+        429.0
+      ],
+      "frame": 67,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        764.0,
+        429.0
+      ],
+      "frame": 69,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        726.0,
+        429.0
+      ],
+      "frame": 71,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        688.0,
+        429.0
+      ],
+      "frame": 73,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        650.0,
+        429.0
+      ],
+      "frame": 75,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        612.0,
+        429.0
+      ],
+      "frame": 77,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        574.0,
+        429.0
+      ],
+      "frame": 79,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        536.0,
+        429.0
+      ],
+      "frame": 81,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        498.0,
+        429.0
+      ],
+      "frame": 83,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        460.0,
+        429.0
+      ],
+      "frame": 85,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        422.0,
+        429.0
+      ],
+      "frame": 87,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        384.0,
+        429.0
+      ],
+      "frame": 89,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        346.0,
+        429.0
+      ],
+      "frame": 91,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        308.0,
+        429.0
+      ],
+      "frame": 93,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        270.0,
+        429.0
+      ],
+      "frame": 95,
+      "type": "mouse_drag"
+    },
+    {
+      "at": [
+        270.0,
+        429.0
+      ],
+      "frame": 97,
+      "pressed": false,
+      "type": "mouse_button"
+    },
+    {
+      "at": [
+        594.0,
+        439.0
+      ],
+      "frame": 128,
+      "type": "mouse_wheel"
+    },
+    {
+      "code": 4194318,
+      "frame": 147,
+      "pressed": true,
+      "type": "key"
+    },
+    {
+      "code": 4194318,
+      "frame": 148,
+      "pressed": false,
+      "type": "key"
+    },
+    {
+      "at": [
+        1094.0,
+        458.0
+      ],
+      "frame": 189,
+      "pressed": true,
+      "type": "mouse_button"
+    },
+    {
+      "at": [
+        1094.0,
+        458.0
+      ],
+      "frame": 190,
+      "pressed": false,
+      "type": "mouse_button"
+    },
+    {
+      "at": [
+        1168.0,
+        75.0
+      ],
+      "frame": 239,
+      "pressed": true,
+      "type": "mouse_button"
+    },
+    {
+      "at": [
+        1168.0,
+        75.0
+      ],
+      "frame": 240,
+      "pressed": false,
+      "type": "mouse_button"
+    },
+    {
+      "at": [
+        264.0,
+        429.0
+      ],
+      "frame": 277,
+      "pressed": true,
+      "type": "touch"
+    },
+    {
+      "at": [
+        299.0,
+        429.0
+      ],
+      "frame": 278,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        334.0,
+        429.0
+      ],
+      "frame": 280,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        369.0,
+        429.0
+      ],
+      "frame": 282,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        404.0,
+        429.0
+      ],
+      "frame": 284,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        439.0,
+        429.0
+      ],
+      "frame": 286,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        474.0,
+        429.0
+      ],
+      "frame": 288,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        509.0,
+        429.0
+      ],
+      "frame": 290,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        544.0,
+        429.0
+      ],
+      "frame": 292,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        579.0,
+        429.0
+      ],
+      "frame": 294,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        614.0,
+        429.0
+      ],
+      "frame": 296,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        649.0,
+        429.0
+      ],
+      "frame": 298,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        684.0,
+        429.0
+      ],
+      "frame": 300,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        719.0,
+        429.0
+      ],
+      "frame": 302,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        754.0,
+        429.0
+      ],
+      "frame": 304,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        789.0,
+        429.0
+      ],
+      "frame": 306,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        824.0,
+        429.0
+      ],
+      "frame": 308,
+      "type": "touch_drag"
+    },
+    {
+      "at": [
+        824.0,
+        429.0
+      ],
+      "frame": 310,
+      "pressed": false,
+      "type": "touch"
+    },
+    {
+      "code": 4194317,
+      "frame": 347,
+      "pressed": true,
+      "type": "key"
+    },
+    {
+      "code": 4194317,
+      "frame": 348,
+      "pressed": false,
+      "type": "key"
+    },
+    {
+      "code": 4194321,
+      "frame": 359,
+      "pressed": true,
+      "type": "key"
+    },
+    {
+      "code": 4194321,
+      "frame": 360,
+      "pressed": false,
+      "type": "key"
+    },
+    {
+      "code": 4194321,
+      "frame": 371,
+      "pressed": true,
+      "type": "key"
+    },
+    {
+      "code": 4194321,
+      "frame": 372,
+      "pressed": false,
+      "type": "key"
+    },
+    {
+      "code": 4194321,
+      "frame": 383,
+      "pressed": true,
+      "type": "key"
+    },
+    {
+      "code": 4194321,
+      "frame": 384,
+      "pressed": false,
+      "type": "key"
+    },
+    {
+      "code": 4194321,
+      "frame": 395,
+      "pressed": true,
+      "type": "key"
+    },
+    {
+      "code": 4194321,
+      "frame": 396,
+      "pressed": false,
+      "type": "key"
+    },
+    {
+      "code": 4194309,
+      "frame": 431,
+      "pressed": true,
+      "type": "key"
+    },
+    {
+      "code": 4194309,
+      "frame": 432,
+      "pressed": false,
+      "type": "key"
+    },
+    {
+      "code": 4194305,
+      "frame": 485,
+      "pressed": true,
+      "type": "key"
+    },
+    {
+      "code": 4194305,
+      "frame": 486,
+      "pressed": false,
+      "type": "key"
+    }
+  ],
+  "failures": 0,
+  "final_menu_selected_index": 4,
+  "fps": 30,
+  "frames": 557,
+  "input_method": "Actual Input.parse_input_event mouse drag/wheel/touch/key press-release; no index/scroll/world writes",
+  "phases": [
+    {
+      "frame": 59,
+      "label": "initial",
+      "level_index": 0,
+      "menu": true,
+      "moves": 0,
+      "offset": 0.0,
+      "pool_nodes": 10,
+      "selected_index": 0
+    },
+    {
+      "frame": 127,
+      "label": "mouse_drag",
+      "level_index": 0,
+      "menu": true,
+      "moves": 0,
+      "offset": 803.407407407407,
+      "pool_nodes": 10,
+      "selected_index": 4
+    },
+    {
+      "frame": 146,
+      "label": "mouse_wheel",
+      "level_index": 0,
+      "menu": true,
+      "moves": 0,
+      "offset": 1014.90740740741,
+      "pool_nodes": 10,
+      "selected_index": 5
+    },
+    {
+      "frame": 188,
+      "label": "last_card",
+      "level_index": 0,
+      "menu": true,
+      "moves": 0,
+      "offset": 4168.0,
+      "pool_nodes": 10,
+      "selected_index": 18
+    },
+    {
+      "frame": 238,
+      "label": "in_level_19",
+      "level_index": 18,
+      "menu": false,
+      "moves": 0,
+      "offset": 4168.0,
+      "pool_nodes": 10,
+      "selected_index": 18
+    },
+    {
+      "frame": 276,
+      "label": "return_context",
+      "level_index": 18,
+      "menu": true,
+      "moves": 0,
+      "offset": 4168.0,
+      "pool_nodes": 10,
+      "selected_index": 18
+    },
+    {
+      "frame": 346,
+      "label": "touch_swipe",
+      "level_index": 18,
+      "menu": true,
+      "moves": 0,
+      "offset": 3513.57446808511,
+      "pool_nodes": 10,
+      "selected_index": 14
+    },
+    {
+      "frame": 430,
+      "label": "keyboard_selection",
+      "level_index": 18,
+      "menu": true,
+      "moves": 0,
+      "offset": 220.0,
+      "pool_nodes": 10,
+      "selected_index": 4
+    },
+    {
+      "frame": 484,
+      "label": "in_level_05",
+      "level_index": 4,
+      "menu": false,
+      "moves": 0,
+      "offset": 220.0,
+      "pool_nodes": 10,
+      "selected_index": 4
+    },
+    {
+      "frame": 556,
+      "label": "final_menu",
+      "level_index": 4,
+      "menu": true,
+      "moves": 0,
+      "offset": 220.0,
+      "pool_nodes": 10,
+      "selected_index": 4
+    }
+  ],
+  "pool_nodes": 10,
+  "purpose": "level navigation UI demonstration, not a level walkthrough",
+  "same_pool_through_enter_return": true,
+  "source_commit": "594e349fa99d4cfe40bfbdbf239c3b7fe08b9c06"
+}
