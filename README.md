@@ -65,6 +65,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十九关 | [观看 / 下载 MP4](video/chapter_01/level_19.mp4) | 63.2 秒 |
 | 第二十关 | [观看 / 下载 MP4](video/chapter_01/level_20.mp4) | 30.8 秒 |
 | 第二十一关 | [观看 / 下载 MP4](video/chapter_01/level_21.mp4) | 89 秒 |
+| 第二十二关 | [观看 / 下载 MP4](video/chapter_01/level_22.mp4) | 13.4 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -695,6 +696,6 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 
 独立安全格BFS验证`URURRRRRDRRRDR`：14次合法步行，从更正的12/2号格绕过中央怪物，经右上怪物的安全斜角(9,1)，抵达33号；不改图，不使用无水晶条件下不可能的直接推怪。
 
-[关卡数据](levels/north_22.json) · [合法路线](levels/solutions/north_22.json) · [独立复核](tools/check_north_22.py) · [初始](docs/screenshots/level_22_initial.png) · [相邻死亡](docs/screenshots/level_22_death_locked.png) · [撤销复活](docs/screenshots/level_22_revived.png) · [斜角安全](docs/screenshots/level_22_diagonal_safe.png) · [通关](docs/screenshots/level_22_completed.png) · [小窗口](docs/screenshots/level_22_compact.png)。正式视频在实现提交后录制，当前状态见[验证记录](docs/VERIFICATION.md)。
+[关卡数据](levels/north_22.json) · [合法路线](levels/solutions/north_22.json) · [独立复核](tools/check_north_22.py) · [初始](docs/screenshots/level_22_initial.png) · [相邻死亡](docs/screenshots/level_22_death_locked.png) · [撤销复活](docs/screenshots/level_22_revived.png) · [斜角安全](docs/screenshots/level_22_diagonal_safe.png) · [通关](docs/screenshots/level_22_completed.png) · [小窗口](docs/screenshots/level_22_compact.png)。[13.4秒实际通关视频](video/chapter_01/level_22.mp4) · [22关虚拟选关](docs/screenshots/level_22_navigation.png)。全部22视频完整解码和独立合法回放通过，详见[验证记录](docs/VERIFICATION.md)。
 
 当前怪物明确命名为 `goblin / 哥布林`，关卡的每个 `monsters` 项需写 `{"kind":"goblin","position":[x,y]}`。静止与四向攻击按类型分派；缺少kind或未知未来种类会明确拒绝，不能默默继承哥布林行为。能量杀怪、实体生死与撤销为公共能力，未实现其他怪物种类。

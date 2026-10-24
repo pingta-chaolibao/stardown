@@ -2605,6 +2605,154 @@
       "solution_file": "levels/solutions/north_21.json",
       "implementation_committed_before_recording": true,
       "gameplay_sources_unchanged_after_recording": true
+    },
+    {
+      "file": "video/chapter_01/level_22.mp4",
+      "level": 22,
+      "bytes": 170945,
+      "sha256": "266b38d66043db4599ae42e990b585508ea6b1f3584d5e50d61d1c2092c0b7f9",
+      "sampled_5fps_frames": 67,
+      "distinct_sampled_frames": 55,
+      "sampled_action_states": 15,
+      "distinct_action_state_frames": 15,
+      "full_decode_passed": true,
+      "legal_input_trace_verified": true,
+      "mp4_fast_start": true,
+      "game_implementation_commit": "03a637234b3890e6fe719f62e75ea9cde4791567",
+      "goblin_feature_commit": "23ea02d02754419ba9917613d12ee835a73e4383",
+      "hero_kinds": [
+        "red"
+      ],
+      "monster_kinds": [
+        "goblin"
+      ],
+      "unknown_monster_kinds_rejected": true,
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 402,
+      "duration_seconds": 13.4,
+      "moves": 14,
+      "directions": 14,
+      "input_events": 14,
+      "selection_events": 0,
+      "walks_without_push_pull_or_swap": 14,
+      "pushes": 0,
+      "pulls": 0,
+      "swaps": 0,
+      "destroyed_crystals": 0,
+      "counts_are_actual_actions": true,
+      "action_notation": "UDLR normal direction inputs. Red avoids stationary Goblins cardinal one-cell threats;diagonals safe. No crystals/plates/energy/fences in this map.",
+      "modifier_keys_used": [],
+      "keys_used": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ],
+      "initial_hero_position": [
+        0,
+        2
+      ],
+      "victory_hero_position": [
+        10,
+        2
+      ],
+      "initial_monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            10,
+            4
+          ]
+        }
+      ],
+      "final_monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            10,
+            4
+          ]
+        }
+      ],
+      "monsters_remain_stationary_and_alive": true,
+      "initial_and_final_frames_reviewed": true,
+      "correct_goblin_startup_hint_reviewed": true,
+      "all14_input_frames_reviewed": true,
+      "goblin_silhouette_and_cardinal_danger_cells_reviewed": true,
+      "safe_diagonal_approach_reviewed": true,
+      "corrected_left_cells_reviewed": true,
+      "victory_action": 14,
+      "victory_input_event": 14,
+      "reviewed_encoded_frames": [
+        0,
+        401,
+        70,
+        88,
+        106,
+        124,
+        142,
+        160,
+        178,
+        196,
+        214,
+        232,
+        250,
+        268,
+        286,
+        304
+      ],
+      "replay_report": "level_22_replay.json",
+      "level_file": "levels/north_22.json",
+      "solution_file": "levels/solutions/north_22.json",
+      "implementation_committed_before_recording": true,
+      "gameplay_sources_unchanged_after_recording": true
     }
   ],
   "game_implementation_commits": {
@@ -2628,6 +2776,7 @@
     "level_18": "3d79feb4478a929a1babefbe494126a608d8aea3",
     "level_19": "8e8951bf4411142096cb20d1c8ac244967dd6687",
     "level_20": "0f4b4ce2087581bc1bca8925dab74728d4f21739",
-    "level_21": "c48e84313f7b997e75f412cc697bfe5b55409e8a"
+    "level_21": "c48e84313f7b997e75f412cc697bfe5b55409e8a",
+    "level_22": "03a637234b3890e6fe719f62e75ea9cde4791567"
   }
 }
