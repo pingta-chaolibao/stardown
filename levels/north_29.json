@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_29",
+  "title": "北部英雄 · 第二十九关",
+  "is_temporary": false,
+  "source_note": "依据用户确认的10×9编号原图与二维格图；74号(3,7)明确为墙，不引入草丛。71号绿英雄、78号水晶、2号目标，24/58火龙朝下，42/87朝上。原创2D几何表现，非逐像素复刻。",
+  "terrain": [
+    "#..#######",
+    "#..#######",
+    "#.......##",
+    "#.......##",
+    "#.......##",
+    "#######.##",
+    "..........",
+    "...#......",
+    "##........"
+  ],
+  "hero_kind": "green",
+  "player": [
+    0,
+    7
+  ],
+  "crates": [
+    [
+      7,
+      7
+    ]
+  ],
+  "crystal_colors": [
+    "purple"
+  ],
+  "targets": [],
+  "exit": [
+    1,
+    0
+  ],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "monsters": [
+    {
+      "kind": "fire_dragon",
+      "position": [
+        3,
+        2
+      ],
+      "facing": "down"
+    },
+    {
+      "kind": "fire_dragon",
+      "position": [
+        1,
+        4
+      ],
+      "facing": "up"
+    },
+    {
+      "kind": "fire_dragon",
+      "position": [
+        7,
+        5
+      ],
+      "facing": "down"
+    },
+    {
+      "kind": "fire_dragon",
+      "position": [
+        6,
+        8
+      ],
+      "facing": "up"
+    }
+  ]
+}

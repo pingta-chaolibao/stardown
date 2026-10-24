@@ -1,0 +1,15 @@
+{
+  "level_id": "north_hero_29",
+  "path": "RRDRRRLLLUURRDDRRRRURULLDLURUUUULDLLURRDDLLULURLDDLRRRURULLLLUUL",
+  "moves": 64,
+  "directions": 64,
+  "input_events": 64,
+  "selection_events": 0,
+  "pushes": 0,
+  "pulls": 23,
+  "dragon_pulls": 13,
+  "crystal_pulls": 10,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "note": "构造合法路线并独立逐步复算，不声称最短。先向左拉87号龙绕过74号墙，再借78号水晶挡火将87号龙拉至58号正下方；21步移走水晶触发上下互射。水晶上运后遮挡24号火焰，移动42号龙至下方；56步移开水晶触发第二对互射，64步抵达目标。四龙均死亡、水晶保留，朝向从未改变。"
+}

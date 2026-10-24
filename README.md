@@ -761,3 +761,12 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 合法路线49步、17次拉动（7次拉龙、10次拉水晶），四龙和水晶均保留，不声称最短。水晶依次挡住19号、31号和30号龙的火焰，为英雄绕行留出安全格。
 
 [初始](docs/screenshots/level_28_initial.png) · [上部水晶挡火](docs/screenshots/level_28_action_16.png) · [31号龙挡火](docs/screenshots/level_28_action_32.png) · [30号龙挡火](docs/screenshots/level_28_action_42.png) · [通关](docs/screenshots/level_28_completed.png) · [小窗口](docs/screenshots/level_28_compact.png)。正式视频来自已提交实现的真实Godot与合法WASD输入：[观看 / 下载 MP4](video/chapter_01/level_28.mp4)，34.4秒、49次行动、17次拉动（7拉龙/10拉晶）。
+
+
+## 第二十九关：水晶挡火与两组互射
+
+用户确认的10×9地图：71号绿英雄、78号水晶、2号终点；24/58号火龙朝下，42/87号朝上，74号明确为墙。花纹地面可走，没有草丛、机关或新规则。
+
+构造合法路线64步、23次自动单拉（13次拉龙、10次拉晶），不声称最短。先把87号龙向左拉过74号墙下方，再借水晶挡火将其移到58号下方；第21步移开水晶，两龙同时死亡。水晶运至上区后遮挡24号火焰，为移动42号龙提供安全格；第56步再次移开水晶，两龙互射。第64步英雄抵达目标，水晶保留。
+
+[初始](docs/screenshots/level_29_initial.png) · [第一组互射后](docs/screenshots/level_29_action_21.png) · [上区水晶挡火](docs/screenshots/level_29_action_42.png) · [第二组互射后](docs/screenshots/level_29_action_56.png) · [通关](docs/screenshots/level_29_completed.png) · [小窗口](docs/screenshots/level_29_compact.png)。先验证并提交实现，再录制真实Godot视频；完成前不声称视频已交付。

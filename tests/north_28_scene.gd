@@ -28,6 +28,6 @@ func _run() -> void:
  _check(game.model.is_complete() and game.moves_label.text=="49" and game.pulls_label.text=="17" and dr==7 and cr==10 and game.status_label.text.contains("已抵达终点"),"actual49actions17pulls7dragon10crystalwin")
  await _capture("north_28_completed.png");await _click("Undo");_check(game.model.snapshot()==histories[-1] and not game.model.is_complete(),"victoryUndoexact");await _click("Restart");_check(game.model.snapshot()==initial,"restartrestores4dragonsandcrystal")
  root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_28_compact.png");await _click("BackToLevels")
- _check(game.menu.strip.item_count==28 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"28realentriesboundedpool");await _capture("north_28_navigation.png")
+ _check(game.menu.strip.item_count==game.LEVEL_PATHS.size() and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"28realentriesboundedpool");await _capture("north_28_navigation.png")
  await _click("Level27");_check(game.model.level.width==12 and game.model.crates().is_empty() and game.model.monsters().size()==3,"previous27unchanged");await _click("Level28");_check(game.model.snapshot()==initial,"28historyisolated")
  print("NORTH28 SCENE RESULT: %d checks, %d failures;display=%s" % [checks,failures,DisplayServer.get_name()]);quit(0 if failures==0 else 1)

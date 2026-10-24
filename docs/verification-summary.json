@@ -1,18 +1,18 @@
 {
-  "level": 28,
-  "base": "dc04f48f063a21bf16e75b3d6431483faf08e0cf",
+  "level": 29,
+  "base": "5d3fed265eeea9b9d3d676a70738cb51e2123d32",
   "engine": "4.6.3.stable.official.7d41c59c4",
   "passed": true,
-  "all_stages": 201,
+  "all_stages": 207,
   "verification_scope": {
-    "base": "dc04f48f063a21bf16e75b3d6431483faf08e0cf",
-    "fresh_stages": 118,
-    "reused_syntax_stages": 83,
+    "base": "5d3fed265eeea9b9d3d676a70738cb51e2123d32",
+    "fresh_stages": 122,
+    "reused_syntax_stages": 85,
     "all_models_and_independent_checks_fresh": true,
-    "all28_input_and_X11_render_checks_fresh": true,
+    "all29_input_and_X11_render_checks_fresh": true,
     "all_core_view_input_byte_identical": true,
     "engine_equal_to_baseline": true,
-    "only_reuse": "83Gitandpassing-baseline-verifiedbyte-identicalGDScriptsyntaxchecks",
+    "only_reuse": "85Gitandpassing-baseline-verifiedbyte-identicalGDScriptsyntaxchecks",
     "recorder_parse_fresh": true
   },
   "results": [
@@ -21,21 +21,21 @@
       "checks": 4662,
       "passed": true,
       "fresh": true,
-      "seconds": 3.238
+      "seconds": 3.251
     },
     {
       "name": "03_chain_push",
       "checks": 701,
       "passed": true,
       "fresh": true,
-      "seconds": 3.144
+      "seconds": 3.152
     },
     {
       "name": "03_energy",
       "checks": 83,
       "passed": true,
       "fresh": true,
-      "seconds": 3.144
+      "seconds": 3.148
     },
     {
       "name": "03_global_energy",
@@ -49,49 +49,49 @@
       "checks": 95,
       "passed": true,
       "fresh": true,
-      "seconds": 3.148
+      "seconds": 3.152
     },
     {
       "name": "03_green_pull",
       "checks": 4445,
       "passed": true,
       "fresh": true,
-      "seconds": 3.238
+      "seconds": 3.24
     },
     {
       "name": "03_blue_swap",
       "checks": 129,
       "passed": true,
       "fresh": true,
-      "seconds": 3.145
+      "seconds": 3.146
     },
     {
       "name": "03_multi_hero",
       "checks": 159,
       "passed": true,
       "fresh": true,
-      "seconds": 3.142
+      "seconds": 3.15
     },
     {
       "name": "03_north_13",
       "checks": 209,
       "passed": true,
       "fresh": true,
-      "seconds": 3.142
+      "seconds": 3.144
     },
     {
       "name": "03_north_14",
       "checks": 351,
       "passed": true,
       "fresh": true,
-      "seconds": 3.24
+      "seconds": 3.143
     },
     {
       "name": "03_north_15",
       "checks": 483,
       "passed": true,
       "fresh": true,
-      "seconds": 3.144
+      "seconds": 3.142
     },
     {
       "name": "03_north_16",
@@ -112,42 +112,56 @@
       "checks": 448,
       "passed": true,
       "fresh": true,
-      "seconds": 3.155
+      "seconds": 3.145
     },
     {
       "name": "03_north_18",
       "checks": 855,
       "passed": true,
       "fresh": true,
-      "seconds": 3.147
+      "seconds": 0.14
     },
     {
       "name": "03_north_19",
       "checks": 741,
       "passed": true,
       "fresh": true,
-      "seconds": 3.144
+      "seconds": 0.141
     },
     {
       "name": "03_fences",
       "checks": 199,
       "passed": true,
       "fresh": true,
-      "seconds": 3.146
+      "seconds": 0.143
     },
     {
       "name": "03_north_20",
       "checks": 251,
       "passed": true,
       "fresh": true,
-      "seconds": 3.154
+      "seconds": 0.139
     },
     {
       "name": "03_north_21",
       "checks": 1687,
       "passed": true,
       "fresh": true,
-      "seconds": 3.241
+      "seconds": 0.14
+    },
+    {
+      "name": "03_north_29_independent",
+      "checks": null,
+      "passed": true,
+      "fresh": true,
+      "seconds": 0.02
+    },
+    {
+      "name": "03_north_29",
+      "checks": 844,
+      "passed": true,
+      "fresh": true,
+      "seconds": 0.142
     },
     {
       "name": "03_north_28_independent",
@@ -161,14 +175,14 @@
       "checks": 561,
       "passed": true,
       "fresh": true,
-      "seconds": 3.144
+      "seconds": 0.139
     },
     {
       "name": "03_green_dragon_pull",
       "checks": 80,
       "passed": true,
       "fresh": true,
-      "seconds": 3.145
+      "seconds": 0.14
     },
     {
       "name": "03_north_27_independent",
@@ -182,14 +196,14 @@
       "checks": 679,
       "passed": true,
       "fresh": true,
-      "seconds": 3.146
+      "seconds": 0.141
     },
     {
       "name": "03_fire_dragon",
       "checks": 91,
       "passed": true,
       "fresh": true,
-      "seconds": 3.145
+      "seconds": 0.141
     },
     {
       "name": "03_north_26_independent",
@@ -203,21 +217,21 @@
       "checks": 225,
       "passed": true,
       "fresh": true,
-      "seconds": 3.145
+      "seconds": 0.14
     },
     {
       "name": "03_monsters",
       "checks": 126,
       "passed": true,
       "fresh": true,
-      "seconds": 3.147
+      "seconds": 0.14
     },
     {
       "name": "03_monster_independent",
       "checks": null,
       "passed": true,
       "fresh": true,
-      "seconds": 0.029
+      "seconds": 0.024
     },
     {
       "name": "03_north_25_independent",
@@ -231,7 +245,7 @@
       "checks": 931,
       "passed": true,
       "fresh": true,
-      "seconds": 3.166
+      "seconds": 0.14
     },
     {
       "name": "03_north_24_independent",
@@ -245,77 +259,77 @@
       "checks": 828,
       "passed": true,
       "fresh": true,
-      "seconds": 3.238
+      "seconds": 0.239
     },
     {
       "name": "03_north_23_independent",
       "checks": null,
       "passed": true,
       "fresh": true,
-      "seconds": 0.021
+      "seconds": 0.02
     },
     {
       "name": "03_north_23",
       "checks": 328,
       "passed": true,
       "fresh": true,
-      "seconds": 3.147
+      "seconds": 0.142
     },
     {
       "name": "03_north_22",
       "checks": 163,
       "passed": true,
       "fresh": true,
-      "seconds": 3.149
+      "seconds": 0.142
     },
     {
       "name": "03_north_01",
       "checks": 344,
       "passed": true,
       "fresh": true,
-      "seconds": 3.146
+      "seconds": 0.143
     },
     {
       "name": "03_north_02",
       "checks": 239,
       "passed": true,
       "fresh": true,
-      "seconds": 3.151
+      "seconds": 0.139
     },
     {
       "name": "03_north_03",
       "checks": 1084,
       "passed": true,
       "fresh": true,
-      "seconds": 3.25
+      "seconds": 0.239
     },
     {
       "name": "03_north_04",
       "checks": 430,
       "passed": true,
       "fresh": true,
-      "seconds": 3.15
+      "seconds": 3.149
     },
     {
       "name": "03_north_05",
       "checks": 124,
       "passed": true,
       "fresh": true,
-      "seconds": 3.163
+      "seconds": 3.147
     },
     {
       "name": "03_north_06",
       "checks": 410,
       "passed": true,
       "fresh": true,
-      "seconds": 3.264
+      "seconds": 3.15
     },
     {
       "name": "03_north_07",
       "checks": 867,
       "passed": true,
       "fresh": true,
-      "seconds": 3.263
+      "seconds": 3.146
     },
     {
       "name": "03_north_08",
@@ -329,546 +343,514 @@
       "checks": 82,
       "passed": true,
       "fresh": true,
-      "seconds": 3.148
+      "seconds": 3.146
     },
     {
       "name": "03_north_10",
       "checks": 344,
       "passed": true,
       "fresh": true,
-      "seconds": 3.151
+      "seconds": 3.148
     },
     {
       "name": "03_north_11",
       "checks": 754,
       "passed": true,
       "fresh": true,
-      "seconds": 3.146
+      "seconds": 3.145
     },
     {
       "name": "03_north_12",
       "checks": 223,
       "passed": true,
       "fresh": true,
-      "seconds": 3.153
+      "seconds": 3.24
     },
     {
       "name": "04_main_scene",
       "checks": null,
       "passed": true,
       "fresh": true,
-      "seconds": 3.432
+      "seconds": 3.33
     },
     {
       "name": "05_scene_input",
       "checks": 209,
       "passed": true,
       "fresh": true,
-      "seconds": 4.544
+      "seconds": 4.542
     },
     {
       "name": "05_north_02_scene",
       "checks": 170,
       "passed": true,
       "fresh": true,
-      "seconds": 4.636
+      "seconds": 1.632
     },
     {
       "name": "05_north_03_scene",
       "checks": 171,
       "passed": true,
       "fresh": true,
-      "seconds": 4.356
+      "seconds": 1.352
     },
     {
       "name": "05_north_04_scene",
       "checks": 185,
       "passed": true,
       "fresh": true,
-      "seconds": 4.546
+      "seconds": 4.543
     },
     {
       "name": "05_north_05_scene",
       "checks": 173,
       "passed": true,
       "fresh": true,
-      "seconds": 4.541
+      "seconds": 4.544
     },
     {
       "name": "05_north_06_scene",
       "checks": 225,
       "passed": true,
       "fresh": true,
-      "seconds": 5.287
+      "seconds": 2.283
     },
     {
       "name": "05_north_07_scene",
       "checks": 317,
       "passed": true,
       "fresh": true,
-      "seconds": 6.307
+      "seconds": 3.304
     },
     {
       "name": "05_north_08_scene",
       "checks": 220,
       "passed": true,
       "fresh": true,
-      "seconds": 5.104
+      "seconds": 2.092
     },
     {
       "name": "05_north_09_scene",
       "checks": 181,
       "passed": true,
       "fresh": true,
-      "seconds": 5.006
+      "seconds": 2.01
     },
     {
       "name": "05_north_10_scene",
       "checks": 278,
       "passed": true,
       "fresh": true,
-      "seconds": 5.561
+      "seconds": 2.585
     },
     {
       "name": "05_north_11_scene",
       "checks": 212,
       "passed": true,
       "fresh": true,
-      "seconds": 5.1
+      "seconds": 5.124
     },
     {
       "name": "05_north_12_scene",
       "checks": 228,
       "passed": true,
       "fresh": true,
-      "seconds": 5.662
+      "seconds": 5.776
     },
     {
       "name": "05_north_13_scene",
       "checks": 447,
       "passed": true,
       "fresh": true,
-      "seconds": 5.852
+      "seconds": 2.848
     },
     {
       "name": "05_north_14_scene",
       "checks": 492,
       "passed": true,
       "fresh": true,
-      "seconds": 6.601
+      "seconds": 3.49
     },
     {
       "name": "05_north_15_scene",
       "checks": 500,
       "passed": true,
       "fresh": true,
-      "seconds": 7.796
+      "seconds": 4.9
     },
     {
       "name": "05_north_16_scene",
       "checks": 355,
       "passed": true,
       "fresh": true,
-      "seconds": 5.86
+      "seconds": 3.052
     },
     {
       "name": "05_north_17_scene",
       "checks": 503,
       "passed": true,
       "fresh": true,
-      "seconds": 6.864
+      "seconds": 7.079
     },
     {
       "name": "05_north_18_scene",
       "checks": 809,
       "passed": true,
       "fresh": true,
-      "seconds": 8.908
+      "seconds": 5.91
     },
     {
       "name": "05_north_19_scene",
       "checks": 712,
       "passed": true,
       "fresh": true,
-      "seconds": 8.822
+      "seconds": 5.818
     },
     {
       "name": "05_north_20_scene",
       "checks": 296,
       "passed": true,
       "fresh": true,
-      "seconds": 5.563
+      "seconds": 5.604
     },
     {
       "name": "05_north_21_scene",
       "checks": 599,
       "passed": true,
       "fresh": true,
-      "seconds": 7.797
+      "seconds": 8.036
+    },
+    {
+      "name": "05_north_29_scene",
+      "checks": 474,
+      "passed": true,
+      "fresh": true,
+      "seconds": 5.601
     },
     {
       "name": "05_north_28_scene",
       "checks": 413,
       "passed": true,
       "fresh": true,
-      "seconds": 5.098
+      "seconds": 5.195
     },
     {
       "name": "05_green_dragon_pull",
       "checks": 71,
       "passed": true,
       "fresh": true,
-      "seconds": 3.617
+      "seconds": 0.701
     },
     {
       "name": "05_north_27_scene",
       "checks": 443,
       "passed": true,
       "fresh": true,
-      "seconds": 5.288
+      "seconds": 2.283
     },
     {
       "name": "05_north_26_scene",
       "checks": 217,
       "passed": true,
       "fresh": true,
-      "seconds": 4.857
+      "seconds": 1.822
     },
     {
       "name": "05_north_25_scene",
       "checks": 1235,
       "passed": true,
       "fresh": true,
-      "seconds": 5.563
+      "seconds": 2.691
     },
     {
       "name": "05_north_24_scene",
       "checks": 452,
       "passed": true,
       "fresh": true,
-      "seconds": 6.22
+      "seconds": 6.244
     },
     {
       "name": "05_north_23_scene",
       "checks": 262,
       "passed": true,
       "fresh": true,
-      "seconds": 5.283
+      "seconds": 2.282
     },
     {
       "name": "05_north_22_scene",
       "checks": 197,
       "passed": true,
       "fresh": true,
-      "seconds": 4.447
+      "seconds": 1.445
     },
     {
       "name": "05_navigation",
-      "checks": 317,
+      "checks": 323,
       "passed": true,
       "fresh": true,
-      "seconds": 12.817
+      "seconds": 10.519
     },
     {
       "name": "05_energy_visibility",
       "checks": 132,
       "passed": true,
       "fresh": true,
-      "seconds": 4.825
+      "seconds": 4.856
     },
     {
       "name": "06_render",
       "checks": 219,
       "passed": true,
       "fresh": true,
-      "seconds": 12.191
+      "seconds": 12.181
     },
     {
       "name": "06_render_north_02",
       "checks": 176,
       "passed": true,
       "fresh": true,
-      "seconds": 12.163
+      "seconds": 12.175
     },
     {
       "name": "06_render_north_03",
       "checks": 179,
       "passed": true,
       "fresh": true,
-      "seconds": 12.175
+      "seconds": 12.172
     },
     {
       "name": "06_render_north_04",
       "checks": 193,
       "passed": true,
       "fresh": true,
-      "seconds": 12.189
+      "seconds": 14.834
     },
     {
       "name": "06_render_north_05",
       "checks": 181,
       "passed": true,
       "fresh": true,
-      "seconds": 12.194
+      "seconds": 14.552
     },
     {
       "name": "06_render_north_06",
       "checks": 239,
       "passed": true,
       "fresh": true,
-      "seconds": 13.3
+      "seconds": 13.689
     },
     {
       "name": "06_render_north_07",
       "checks": 337,
       "passed": true,
       "fresh": true,
-      "seconds": 22.331
+      "seconds": 18.806
     },
     {
       "name": "06_render_north_08",
       "checks": 236,
       "passed": true,
       "fresh": true,
-      "seconds": 12.955
+      "seconds": 13.115
     },
     {
       "name": "06_render_north_09",
       "checks": 191,
       "passed": true,
       "fresh": true,
-      "seconds": 15.394
+      "seconds": 15.294
     },
     {
       "name": "06_render_north_10",
       "checks": 292,
       "passed": true,
       "fresh": true,
-      "seconds": 14.394
+      "seconds": 17.1
     },
     {
       "name": "06_render_north_11",
       "checks": 228,
       "passed": true,
       "fresh": true,
-      "seconds": 16.624
+      "seconds": 13.212
     },
     {
       "name": "06_render_north_12",
       "checks": 248,
       "passed": true,
       "fresh": true,
-      "seconds": 13.711
+      "seconds": 17.011
     },
     {
       "name": "06_render_north_13",
       "checks": 463,
       "passed": true,
       "fresh": true,
-      "seconds": 14.251
+      "seconds": 14.354
     },
     {
       "name": "06_render_north_14",
       "checks": 516,
       "passed": true,
       "fresh": true,
-      "seconds": 19.137
+      "seconds": 16.48
     },
     {
       "name": "06_render_north_15",
       "checks": 532,
       "passed": true,
       "fresh": true,
-      "seconds": 22.661
+      "seconds": 22.422
     },
     {
       "name": "06_render_north_16",
       "checks": 383,
       "passed": true,
       "fresh": true,
-      "seconds": 14.912
+      "seconds": 14.452
     },
     {
       "name": "06_render_north_17",
       "checks": 539,
       "passed": true,
       "fresh": true,
-      "seconds": 16.777
+      "seconds": 17.18
     },
     {
       "name": "06_render_north_18",
       "checks": 851,
       "passed": true,
       "fresh": true,
-      "seconds": 21.065
+      "seconds": 20.814
     },
     {
       "name": "06_render_north_19",
       "checks": 771,
       "passed": true,
       "fresh": true,
-      "seconds": 22.09
+      "seconds": 24.457
     },
     {
       "name": "06_render_north_20",
       "checks": 326,
       "passed": true,
       "fresh": true,
-      "seconds": 14.095
+      "seconds": 17.062
     },
     {
       "name": "06_render_north_21",
       "checks": 646,
       "passed": true,
       "fresh": true,
-      "seconds": 21.83
+      "seconds": 21.819
     },
     {
       "name": "06_render_north_22",
       "checks": 241,
       "passed": true,
       "fresh": true,
-      "seconds": 12.169
+      "seconds": 15.063
     },
     {
       "name": "06_render_north_23",
       "checks": 338,
       "passed": true,
       "fresh": true,
-      "seconds": 16.994
+      "seconds": 13.736
     },
     {
       "name": "06_render_north_24",
       "checks": 557,
       "passed": true,
       "fresh": true,
-      "seconds": 17.233
+      "seconds": 19.895
     },
     {
       "name": "06_render_north_25",
       "checks": 1398,
       "passed": true,
       "fresh": true,
-      "seconds": 16.118
+      "seconds": 19.429
     },
     {
       "name": "06_render_north_26",
       "checks": 237,
       "passed": true,
       "fresh": true,
-      "seconds": 13.146
+      "seconds": 12.945
     },
     {
       "name": "06_green_dragon_pull",
       "checks": 73,
       "passed": true,
       "fresh": true,
-      "seconds": 12.167
+      "seconds": 13.079
     },
     {
       "name": "06_render_north_27",
       "checks": 461,
       "passed": true,
       "fresh": true,
-      "seconds": 14.064
+      "seconds": 17.163
+    },
+    {
+      "name": "06_render_north_29",
+      "checks": 496,
+      "passed": true,
+      "fresh": true,
+      "seconds": 17.625
     },
     {
       "name": "06_render_north_28",
       "checks": 437,
       "passed": true,
       "fresh": true,
-      "seconds": 13.124
+      "seconds": 13.153
     },
     {
       "name": "06_navigation",
-      "checks": 329,
+      "checks": 335,
       "passed": true,
       "fresh": true,
-      "seconds": 24.54
+      "seconds": 25.286
     },
     {
       "name": "06_energy_visibility",
       "checks": 168,
       "passed": true,
       "fresh": true,
-      "seconds": 12.947
+      "seconds": 12.853
     }
   ],
   "map": {
     "size": [
-      7,
-      7
+      10,
+      9
     ],
-    "floors": 40,
-    "walls": 9,
-    "cell7": "floor",
-    "cell43": "rock"
+    "floors": 53,
+    "blocked": 37,
+    "cell74": "wall",
+    "no_other_mechanisms": true
   },
   "route": {
-    "actions": 49,
-    "pulls": 17,
-    "dragon_pulls": 7,
+    "actions": 64,
+    "pulls": 23,
+    "dragon_pulls": 13,
     "crystal_pulls": 10,
-    "all4_dragons_alive": true,
+    "mutual_pairs": {
+      "21": [
+        2,
+        3
+      ],
+      "56": [
+        0,
+        1
+      ]
+    },
+    "all4_dragons_dead": true,
     "crystal_identity_preserved": true
   },
-  "preserved_delivery_files": 114,
-  "preserved_old_video_entries": 27,
-  "formal_video_status": "recorded,encoded,reviewed,28_full_decodes_and_independent_legal_replays_passed",
-  "media": {
-    "implementation_commit": "d93753b9afd48d412be7f2c68e2fb450d3d9c80d",
-    "implementation_committed_before_recording": true,
-    "gameplay_sources_unchanged_after_recording": true,
-    "file": "video/chapter_01/level_28.mp4",
-    "codec": "h264",
-    "pixel_format": "yuv420p",
-    "dimensions": [
-      1280,
-      820
-    ],
-    "fps": 30,
-    "frames": 1032,
-    "duration_seconds": 34.4,
-    "bytes": 474039,
-    "sha256": "dd8090c72e8b6133329c30606b8bf6489efdb2f54feafce73987cea14e2b24b9",
-    "actions": 49,
-    "pulls": 17,
-    "dragon_pulls": 7,
-    "crystal_pulls": 10,
-    "selection_events": 0,
-    "all_four_dragons_alive": true,
-    "sampled_action_states": 50,
-    "reviewed_key_action_states": [
-      0,
-      1,
-      2,
-      7,
-      8,
-      9,
-      10,
-      11,
-      15,
-      16,
-      21,
-      22,
-      23,
-      24,
-      25,
-      29,
-      30,
-      31,
-      32,
-      37,
-      38,
-      39,
-      40,
-      41,
-      42,
-      49
-    ],
-    "all17_pull_frames_before_after_reviewed": true,
-    "all28_full_decodes_fresh": true,
-    "all28_independent_legal_replays_fresh": true,
-    "old_delivery_file_hashes_verified": 114
-  }
+  "preserved_delivery_files": 121,
+  "preserved_old_video_entries": 28,
+  "formal_video_status": "implementation_before_recording,notyetrecorded"
 }
