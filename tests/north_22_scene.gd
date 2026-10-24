@@ -28,6 +28,10 @@ func _run() -> void:
  await _click("Level21");_check(game.model.monsters().is_empty() and not game.model.snapshot().has("monster_positions"),"old21world and snapshots stay legacy shaped")
  await _click("Level22");_check(game.model.snapshot()==initial,"return22isolates history/life")
  root.size=Vector2i(960,615);await _settle();_check_layout(game);await _inspect_danger();await _capture("north_22_compact.png")
+ var old_game:Control=game;root.remove_child(old_game);old_game.queue_free()
+ game=load("res://scenes/main.tscn").instantiate();game.start_in_level=true;game.level_path="res://levels/north_22.json";root.add_child(game);await _settle()
+ _check(not game.menu.visible and game.model.moves==0 and game.status_label.text.contains("哥布林") and not game.status_label.text.contains("水晶"),"recording/start-in-level hint describes Goblin danger without absent crystals")
+ await _capture("north_22_startup_hint.png")
  print("NORTH 22 SCENE RESULT: %d checks, %d failures; display=%s" % [checks,failures,DisplayServer.get_name()]);quit(0 if failures==0 else 1)
 func _repeat() -> void:
  var event:=InputEventKey.new();event.keycode=KEY_D;event.physical_keycode=KEY_D;event.pressed=true;Input.parse_input_event(event);await _settle();var once:Dictionary=game.model.snapshot()

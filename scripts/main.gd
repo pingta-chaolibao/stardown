@@ -46,7 +46,10 @@ func _ready() -> void:
 		return
 	current_level_index = LEVEL_PATHS.find(level_path)
 	_build_ui()
-	_refresh("C 切换英雄，%s名英雄分占不同终点。" % ("三" if model.hero_count()==3 else "两") if model.hero_count()>1 else "按方向：有可见目标就交换，否则走一格。" if model.active_kind()=="blue" else "%s水晶腾出道路，再走到%s。" % ["拉动" if model.active_kind() == "green" else "推动", _goal_name()])
+	if not level.initial_monsters.is_empty():
+		_refresh("避开哥布林四向危险格，走到%s。" % _goal_name())
+	else:
+		_refresh("C 切换英雄，%s名英雄分占不同终点。" % ("三" if model.hero_count()==3 else "两") if model.hero_count()>1 else "按方向：有可见目标就交换，否则走一格。" if model.active_kind()=="blue" else "%s水晶腾出道路，再走到%s。" % ["拉动" if model.active_kind() == "green" else "推动", _goal_name()])
 
 	menu = LevelMenu.new()
 	menu.configure(LEVEL_PATHS)

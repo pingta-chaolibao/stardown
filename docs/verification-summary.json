@@ -8336,5 +8336,15 @@
     "actual_actions": 14,
     "selection_events": 0,
     "input_events": 14
+  },
+  "north_22_startup_hint_fix": {
+    "scope": "display copy only at recording/direct startup;no map or gameplay change",
+    "headless_checks": 197,
+    "rendered_checks": 241,
+    "actual_start_in_level_entry_tested": true,
+    "actual_image_reviewed": "docs/screenshots/level_22_startup_hint.png",
+    "old_recording_not_delivered": true,
+    "full_typed_regression_steps_before_copy_fix": 156,
+    "full_typed_parsed_scripts": 71
   }
 }
