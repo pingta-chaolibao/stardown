@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-24T06:36:47.327191+00:00",
+  "time_utc": "2026-10-24T08:25:59.194802+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,31 +7,31 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.014
+      "seconds": 0.015
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.671
+      "seconds": 8.629
     },
     {
       "name": "02_parse_00_bush_obstacle",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.14
     },
     {
       "name": "02_parse_01_energy_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.143
     },
     {
       "name": "02_parse_02_fence_edges",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.144
     },
     {
       "name": "02_parse_03_grid_state",
@@ -43,265 +43,265 @@
       "name": "02_parse_04_hero_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "02_parse_05_level_data",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.141
     },
     {
       "name": "02_parse_06_monster_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.14
+      "seconds": 3.143
     },
     {
       "name": "02_parse_07_swap_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "02_parse_08_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "02_parse_09_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.238
+      "seconds": 3.239
     },
     {
       "name": "02_parse_10_board_view",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.147
     },
     {
       "name": "02_parse_11_level_card",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.155
     },
     {
       "name": "02_parse_12_level_menu",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.155
     },
     {
       "name": "02_parse_13_virtual_level_strip",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "02_parse_14_blue_swap_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.144
     },
     {
       "name": "02_parse_15_bush_and_group_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.145
     },
     {
       "name": "02_parse_16_chain_push_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.144
     },
     {
       "name": "02_parse_17_energy_destruction_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.149
     },
     {
       "name": "02_parse_18_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.145
     },
     {
       "name": "02_parse_19_energy_visibility_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.24
     },
     {
       "name": "02_parse_20_fence_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "02_parse_21_global_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.141
+      "seconds": 3.147
     },
     {
       "name": "02_parse_22_green_pull_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.166
     },
     {
       "name": "02_parse_23_monster_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.147
     },
     {
       "name": "02_parse_24_multi_hero_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.15
+      "seconds": 3.144
     },
     {
       "name": "02_parse_25_navigation_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.251
+      "seconds": 3.243
     },
     {
       "name": "02_parse_26_north_01_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.154
     },
     {
       "name": "02_parse_27_north_02_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.161
     },
     {
       "name": "02_parse_28_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.151
     },
     {
       "name": "02_parse_29_north_03_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.151
     },
     {
       "name": "02_parse_30_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.249
+      "seconds": 3.239
     },
     {
       "name": "02_parse_31_north_04_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.147
     },
     {
       "name": "02_parse_32_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.244
+      "seconds": 3.146
     },
     {
       "name": "02_parse_33_north_05_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.146
     },
     {
       "name": "02_parse_34_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.239
+      "seconds": 3.237
     },
     {
       "name": "02_parse_35_north_06_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.167
+      "seconds": 3.144
     },
     {
       "name": "02_parse_36_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.241
+      "seconds": 3.24
     },
     {
       "name": "02_parse_37_north_07_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.143
     },
     {
       "name": "02_parse_38_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.242
     },
     {
       "name": "02_parse_39_north_08_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.148
     },
     {
       "name": "02_parse_40_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.244
     },
     {
       "name": "02_parse_41_north_09_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.149
     },
     {
       "name": "02_parse_42_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.238
+      "seconds": 3.236
     },
     {
       "name": "02_parse_43_north_10_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.149
     },
     {
       "name": "02_parse_44_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.24
     },
     {
       "name": "02_parse_45_north_11_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.146
     },
     {
       "name": "02_parse_46_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.148
     },
     {
       "name": "02_parse_47_north_12_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.146
     },
     {
       "name": "02_parse_48_north_12_scene",
@@ -313,37 +313,37 @@
       "name": "02_parse_49_north_13_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.147
     },
     {
       "name": "02_parse_50_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.242
+      "seconds": 3.245
     },
     {
       "name": "02_parse_51_north_14_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "02_parse_52_north_14_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.241
+      "seconds": 3.144
     },
     {
       "name": "02_parse_53_north_15_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.152
+      "seconds": 3.146
     },
     {
       "name": "02_parse_54_north_15_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.24
+      "seconds": 3.145
     },
     {
       "name": "02_parse_55_north_16_regression",
@@ -355,7 +355,7 @@
       "name": "02_parse_56_north_16_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.236
     },
     {
       "name": "02_parse_57_north_17_regression",
@@ -367,37 +367,37 @@
       "name": "02_parse_58_north_17_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.238
     },
     {
       "name": "02_parse_59_north_18_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.145
     },
     {
       "name": "02_parse_60_north_18_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.239
     },
     {
       "name": "02_parse_61_north_19_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "02_parse_62_north_19_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.241
     },
     {
       "name": "02_parse_63_north_20_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "02_parse_64_north_20_scene",
@@ -409,43 +409,55 @@
       "name": "02_parse_65_north_21_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "02_parse_66_north_21_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.239
     },
     {
       "name": "02_parse_67_north_22_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.147
     },
     {
       "name": "02_parse_68_north_22_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.253
+      "seconds": 3.146
     },
     {
-      "name": "02_parse_69_run_tests",
+      "name": "02_parse_69_north_23_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.147
     },
     {
-      "name": "02_parse_70_scene_smoke",
+      "name": "02_parse_70_north_23_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.235
+      "seconds": 3.238
+    },
+    {
+      "name": "02_parse_71_run_tests",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "02_parse_72_scene_smoke",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24
     },
     {
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.242
     },
     {
       "name": "03_chain_push",
@@ -457,43 +469,43 @@
       "name": "03_energy",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.149
     },
     {
       "name": "03_global_energy",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.146
     },
     {
       "name": "03_bush_group",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.151
     },
     {
       "name": "03_green_pull",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.243
     },
     {
       "name": "03_blue_swap",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.149
     },
     {
       "name": "03_multi_hero",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.147
     },
     {
       "name": "03_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.152
     },
     {
       "name": "03_north_14",
@@ -505,61 +517,61 @@
       "name": "03_north_15",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.148
     },
     {
       "name": "03_north_16",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.146
     },
     {
       "name": "03_energy_destruction",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.153
     },
     {
       "name": "03_north_17",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.144
     },
     {
       "name": "03_north_18",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.145
     },
     {
       "name": "03_north_19",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.146
     },
     {
       "name": "03_fences",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.148
     },
     {
       "name": "03_north_20",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.149
     },
     {
       "name": "03_north_21",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.149
     },
     {
       "name": "03_monsters",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.145
     },
     {
       "name": "03_monster_independent",
@@ -568,10 +580,22 @@
       "seconds": 0.026
     },
     {
-      "name": "03_north_22",
+      "name": "03_north_23_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.018
+    },
+    {
+      "name": "03_north_23",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144
+    },
+    {
+      "name": "03_north_22",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
     },
     {
       "name": "03_north_01",
@@ -583,37 +607,37 @@
       "name": "03_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.144
     },
     {
       "name": "03_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.241
     },
     {
       "name": "03_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.143
     },
     {
       "name": "03_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.142
     },
     {
       "name": "03_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.147
     },
     {
       "name": "03_north_07",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.143
     },
     {
       "name": "03_north_08",
@@ -625,19 +649,19 @@
       "name": "03_north_09",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.15
     },
     {
       "name": "03_north_10",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.146
     },
     {
       "name": "03_north_11",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.144
     },
     {
       "name": "03_north_12",
@@ -649,73 +673,73 @@
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.33
+      "seconds": 3.335
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.538
+      "seconds": 4.637
     },
     {
       "name": "05_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.631
+      "seconds": 4.544
     },
     {
       "name": "05_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.351
+      "seconds": 4.356
     },
     {
       "name": "05_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.547
+      "seconds": 4.542
     },
     {
       "name": "05_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.557
+      "seconds": 4.543
     },
     {
       "name": "05_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.298
+      "seconds": 5.287
     },
     {
       "name": "05_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.308
+      "seconds": 6.412
     },
     {
       "name": "05_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.098
+      "seconds": 5.11
     },
     {
       "name": "05_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.003
+      "seconds": 5.014
     },
     {
       "name": "05_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.562
+      "seconds": 5.576
     },
     {
       "name": "05_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.102
+      "seconds": 5.106
     },
     {
       "name": "05_north_12_scene",
@@ -727,217 +751,229 @@
       "name": "05_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.75
+      "seconds": 5.841
     },
     {
       "name": "05_north_14_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.495
+      "seconds": 6.588
     },
     {
       "name": "05_north_15_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 7.796
+      "seconds": 7.729
     },
     {
       "name": "05_north_16_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.842
+      "seconds": 5.847
     },
     {
       "name": "05_north_17_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.958
+      "seconds": 6.869
     },
     {
       "name": "05_north_18_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 9.109
+      "seconds": 9.007
     },
     {
       "name": "05_north_19_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 8.824
+      "seconds": 8.818
     },
     {
       "name": "05_north_20_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.566
+      "seconds": 5.47
     },
     {
       "name": "05_north_21_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 7.795
+      "seconds": 7.704
+    },
+    {
+      "name": "05_north_23_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 5.29
     },
     {
       "name": "05_north_22_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.36
+      "seconds": 4.448
     },
     {
       "name": "05_navigation",
       "passed": true,
       "exit_code": 0,
-      "seconds": 11.797
+      "seconds": 11.888
     },
     {
       "name": "05_energy_visibility",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.825
+      "seconds": 4.727
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.901
+      "seconds": 14.97
     },
     {
       "name": "06_render_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.182
+      "seconds": 12.175
     },
     {
       "name": "06_render_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.164
+      "seconds": 12.169
     },
     {
       "name": "06_render_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.174
+      "seconds": 14.633
     },
     {
       "name": "06_render_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.157
+      "seconds": 12.172
     },
     {
       "name": "06_render_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 16.504
+      "seconds": 13.829
     },
     {
       "name": "06_render_north_07",
       "passed": true,
       "exit_code": 0,
-      "seconds": 19.194
+      "seconds": 18.846
     },
     {
       "name": "06_render_north_08",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.048
+      "seconds": 12.968
     },
     {
       "name": "06_render_north_09",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.288
+      "seconds": 15.246
     },
     {
       "name": "06_render_north_10",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.245
+      "seconds": 13.989
     },
     {
       "name": "06_render_north_11",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.352
+      "seconds": 13.356
     },
     {
       "name": "06_render_north_12",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.053
+      "seconds": 14.162
     },
     {
       "name": "06_render_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 17.272
+      "seconds": 14.06
     },
     {
       "name": "06_render_north_14",
       "passed": true,
       "exit_code": 0,
-      "seconds": 19.664
+      "seconds": 16.983
     },
     {
       "name": "06_render_north_15",
       "passed": true,
       "exit_code": 0,
-      "seconds": 20.224
+      "seconds": 20.158
     },
     {
       "name": "06_render_north_16",
       "passed": true,
       "exit_code": 0,
-      "seconds": 17.478
+      "seconds": 17.722
     },
     {
       "name": "06_render_north_17",
       "passed": true,
       "exit_code": 0,
-      "seconds": 17.245
+      "seconds": 17.632
     },
     {
       "name": "06_render_north_18",
       "passed": true,
       "exit_code": 0,
-      "seconds": 21.333
+      "seconds": 20.507
     },
     {
       "name": "06_render_north_19",
       "passed": true,
       "exit_code": 0,
-      "seconds": 22.167
+      "seconds": 25.196
     },
     {
       "name": "06_render_north_20",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.104
+      "seconds": 16.901
     },
     {
       "name": "06_render_north_21",
       "passed": true,
       "exit_code": 0,
-      "seconds": 21.722
+      "seconds": 21.531
     },
     {
       "name": "06_render_north_22",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.183
+      "seconds": 14.994
+    },
+    {
+      "name": "06_render_north_23",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.894
     },
     {
       "name": "06_navigation",
       "passed": true,
       "exit_code": 0,
-      "seconds": 22.299
+      "seconds": 23.382
     },
     {
       "name": "06_energy_visibility",
       "passed": true,
       "exit_code": 0,
-      "seconds": 15.573
+      "seconds": 12.95
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -1022,6 +1058,36 @@
       "checks": 741,
       "failures": 0,
       "cases": 5
+    },
+    "03_fences": {
+      "checks": 199,
+      "failures": 0,
+      "cases": 5
+    },
+    "03_north_20": {
+      "checks": 251,
+      "failures": 0,
+      "cases": 3
+    },
+    "03_north_21": {
+      "checks": 1687,
+      "failures": 0,
+      "cases": 6
+    },
+    "03_monsters": {
+      "checks": 126,
+      "failures": 0,
+      "cases": 7
+    },
+    "03_north_23": {
+      "checks": 328,
+      "failures": 0,
+      "cases": 4
+    },
+    "03_north_22": {
+      "checks": 163,
+      "failures": 0,
+      "cases": 4
     },
     "03_north_01": {
       "checks": 344,
@@ -1159,8 +1225,24 @@
       "checks": 712,
       "failures": 0
     },
-    "05_navigation": {
+    "05_north_20_scene": {
+      "checks": 296,
+      "failures": 0
+    },
+    "05_north_21_scene": {
+      "checks": 599,
+      "failures": 0
+    },
+    "05_north_23_scene": {
       "checks": 262,
+      "failures": 0
+    },
+    "05_north_22_scene": {
+      "checks": 197,
+      "failures": 0
+    },
+    "05_navigation": {
+      "checks": 286,
       "failures": 0
     },
     "05_energy_visibility": {
@@ -1243,8 +1325,24 @@
       "checks": 771,
       "failures": 0
     },
+    "06_render_north_20": {
+      "checks": 326,
+      "failures": 0
+    },
+    "06_render_north_21": {
+      "checks": 646,
+      "failures": 0
+    },
+    "06_render_north_22": {
+      "checks": 241,
+      "failures": 0
+    },
+    "06_render_north_23": {
+      "checks": 338,
+      "failures": 0
+    },
     "06_navigation": {
-      "checks": 274,
+      "checks": 298,
       "failures": 0
     },
     "06_energy_visibility": {
@@ -1254,21 +1352,8 @@
   },
   "levels": [
     {
-      "id": "north_hero_01",
-      "hero_kind": "red",
-      "size": [
-        11,
-        3
-      ],
-      "player": [
-        1,
-        1
-      ],
-      "crystal_count": 2,
-      "exit": [
-        9,
-        1
-      ],
+      "number": 1,
+      "file": "levels/north_01.json",
       "solution": {
         "level_id": "north_hero_01",
         "path": "DRRRUURRRRDR",
@@ -1278,21 +1363,8 @@
       }
     },
     {
-      "id": "north_hero_02",
-      "hero_kind": "red",
-      "size": [
-        11,
-        7
-      ],
-      "player": [
-        0,
-        1
-      ],
-      "crystal_count": 10,
-      "exit": [
-        1,
-        5
-      ],
+      "number": 2,
+      "file": "levels/north_02.json",
       "solution": {
         "level_id": "north_hero_02",
         "path": "RRRRURRDRRDRDDLDLLULLDLLULD",
@@ -1302,21 +1374,8 @@
       }
     },
     {
-      "id": "north_hero_03",
-      "hero_kind": "red",
-      "size": [
-        11,
-        3
-      ],
-      "player": [
-        0,
-        1
-      ],
-      "crystal_count": 1,
-      "exit": [
-        9,
-        1
-      ],
+      "number": 3,
+      "file": "levels/north_03.json",
       "solution": {
         "level_id": "north_hero_03",
         "path": "RRRRURRDLLLLRRRRDRRUR",
@@ -1326,21 +1385,8 @@
       }
     },
     {
-      "id": "north_hero_04",
-      "hero_kind": "red",
-      "size": [
-        7,
-        6
-      ],
-      "player": [
-        1,
-        1
-      ],
-      "crystal_count": 3,
-      "exit": [
-        6,
-        0
-      ],
+      "number": 4,
+      "file": "levels/north_04.json",
       "solution": {
         "level_id": "north_hero_04",
         "path": "RDDLDRRRUUULULDDDLDRUUULDDURRRRRUU",
@@ -1350,21 +1396,8 @@
       }
     },
     {
-      "id": "north_hero_05",
-      "hero_kind": "green",
-      "size": [
-        11,
-        3
-      ],
-      "player": [
-        1,
-        1
-      ],
-      "crystal_count": 2,
-      "exit": [
-        9,
-        1
-      ],
+      "number": 5,
+      "file": "levels/north_05.json",
       "solution": {
         "level_id": "north_hero_05",
         "path": "DRLLURRDRRUURRLLDRRURRDR",
@@ -1375,21 +1408,8 @@
       }
     },
     {
-      "id": "north_hero_06",
-      "hero_kind": "green",
-      "size": [
-        11,
-        7
-      ],
-      "player": [
-        0,
-        1
-      ],
-      "crystal_count": 7,
-      "exit": [
-        1,
-        5
-      ],
+      "number": 6,
+      "file": "levels/north_06.json",
       "solution": {
         "level_id": "north_hero_06",
         "path": "RRLLURRDRRDRUURDULDDRRRRDDRDLURDDLLLLULLURDLDRURULLLRRRDDLLUULLDL",
@@ -1400,21 +1420,8 @@
       }
     },
     {
-      "id": "north_hero_07",
-      "hero_kind": "green",
-      "size": [
-        17,
-        11
-      ],
-      "player": [
-        11,
-        5
-      ],
-      "crystal_count": 1,
-      "exit": [
-        14,
-        2
-      ],
+      "number": 7,
+      "file": "levels/north_07.json",
       "solution": {
         "level_id": "north_hero_07",
         "path": "DLDDDLLLLLUUUURRUUUURRDRURULLDLLLDRDDDDLULLLLLURUUULDLURRDDLDDDRURRRRDLDDDDLULDRRURRRRRRRRRRULLDLLLLURUUUULDDRRURRRRRDLLULLLDLDDDLLLLLUUUURRUUUURRRRRRDR",
@@ -1425,21 +1432,8 @@
       }
     },
     {
-      "id": "north_hero_08",
-      "hero_kind": "green",
-      "size": [
-        7,
-        6
-      ],
-      "player": [
-        1,
-        1
-      ],
-      "crystal_count": 3,
-      "exit": [
-        6,
-        0
-      ],
+      "number": 8,
+      "file": "levels/north_08.json",
       "solution": {
         "level_id": "north_hero_08",
         "path": "URRDDDLDDLULUURRDDDLLUUURRURDLDRURRRDDLLUULDDRUDDRURUUUU",
@@ -1450,21 +1444,8 @@
       }
     },
     {
-      "id": "north_hero_09",
-      "hero_kind": "blue",
-      "size": [
-        11,
-        3
-      ],
-      "player": [
-        1,
-        1
-      ],
-      "crystal_count": 2,
-      "exit": [
-        9,
-        1
-      ],
+      "number": 9,
+      "file": "levels/north_09.json",
       "solution": {
         "level_id": "north_hero_09",
         "path": "DRRUURRDR",
@@ -1476,21 +1457,8 @@
       }
     },
     {
-      "id": "north_hero_10",
-      "hero_kind": "blue",
-      "size": [
-        11,
-        7
-      ],
-      "player": [
-        0,
-        1
-      ],
-      "crystal_count": 1,
-      "exit": [
-        1,
-        5
-      ],
+      "number": 10,
+      "file": "levels/north_10.json",
       "solution": {
         "level_id": "north_hero_10",
         "path": "URDRURRRLDDRRRRDDDURDRRDRDDDRLUUUURRRDRDDDDRULLLLLLLLL",
@@ -1502,72 +1470,8 @@
       }
     },
     {
-      "id": "north_hero_11",
-      "hero_kind": "blue",
-      "size": [
-        11,
-        7
-      ],
-      "player": [
-        5,
-        0
-      ],
-      "crystal_count": 9,
-      "exit": [
-        9,
-        1
-      ],
-      "mechanism_color": "green",
-      "void_cells": [
-        [
-          8,
-          3
-        ],
-        [
-          9,
-          3
-        ],
-        [
-          10,
-          3
-        ],
-        [
-          8,
-          4
-        ],
-        [
-          9,
-          4
-        ],
-        [
-          10,
-          4
-        ],
-        [
-          8,
-          5
-        ],
-        [
-          9,
-          5
-        ],
-        [
-          10,
-          5
-        ],
-        [
-          8,
-          6
-        ],
-        [
-          9,
-          6
-        ],
-        [
-          10,
-          6
-        ]
-      ],
+      "number": 11,
+      "file": "levels/north_11.json",
       "solution": {
         "level_id": "north_hero_11",
         "path": "LLLLLDDDDRDRRUURULD",
@@ -1579,36 +1483,8 @@
       }
     },
     {
-      "id": "north_hero_12",
-      "hero_kind": "blue",
-      "size": [
-        7,
-        6
-      ],
-      "player": [
-        1,
-        1
-      ],
-      "crystal_count": 3,
-      "crystal_colors": [
-        "orange",
-        "purple",
-        "pink"
-      ],
-      "bushes": [
-        [
-          3,
-          3
-        ],
-        [
-          3,
-          5
-        ]
-      ],
-      "exit": [
-        6,
-        0
-      ],
+      "number": 12,
+      "file": "levels/north_12.json",
       "solution": {
         "level_id": "north_hero_12",
         "path": "DDDURRDRRLDDRLURRRDDDRURUU",
@@ -1620,41 +1496,8 @@
       }
     },
     {
-      "id": "north_hero_13",
-      "size": [
-        7,
-        7
-      ],
-      "heroes": [
-        {
-          "id": "red",
-          "kind": "red",
-          "position": [
-            2,
-            2
-          ]
-        },
-        {
-          "id": "blue",
-          "kind": "blue",
-          "position": [
-            2,
-            4
-          ]
-        }
-      ],
-      "active_hero": "blue",
-      "crystal_count": 2,
-      "exits": [
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          5
-        ]
-      ],
+      "number": 13,
+      "file": "levels/north_13.json",
       "solution": {
         "level_id": "north_hero_13",
         "path": "DRRRCURRRCULLLULLDDCLLLDLLU",
@@ -1669,41 +1512,8 @@
       }
     },
     {
-      "id": "north_hero_14",
-      "size": [
-        10,
-        7
-      ],
-      "heroes": [
-        {
-          "id": "red",
-          "kind": "red",
-          "position": [
-            1,
-            1
-          ]
-        },
-        {
-          "id": "green",
-          "kind": "green",
-          "position": [
-            1,
-            5
-          ]
-        }
-      ],
-      "active_hero": "red",
-      "crystal_count": 1,
-      "exits": [
-        [
-          6,
-          0
-        ],
-        [
-          6,
-          6
-        ]
-      ],
+      "number": 14,
+      "file": "levels/north_14.json",
       "solution": {
         "level_id": "north_hero_14",
         "path": "RRCRRRUUUDCRCRCDCRCDRCUCRDRCRCUCRCUCDCRUULLCDLDDLL",
@@ -1718,41 +1528,8 @@
       }
     },
     {
-      "id": "north_hero_15",
-      "size": [
-        11,
-        7
-      ],
-      "heroes": [
-        {
-          "id": "blue",
-          "kind": "blue",
-          "position": [
-            4,
-            0
-          ]
-        },
-        {
-          "id": "green",
-          "kind": "green",
-          "position": [
-            3,
-            3
-          ]
-        }
-      ],
-      "active_hero": "blue",
-      "crystal_count": 2,
-      "exits": [
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          4
-        ]
-      ],
+      "number": 15,
+      "file": "levels/north_15.json",
       "solution": {
         "level_id": "north_hero_15",
         "path": "CURRRUUCRDCRRCURCDCLLCDRURCDDCRRCRCDCRLDDDDRCDLLLLDUCLCUULDLCUULLLULLLCLCRCUCLLDL",
@@ -1767,45 +1544,8 @@
       }
     },
     {
-      "id": "north_hero_16",
-      "size": [
-        11,
-        3
-      ],
-      "heroes": [
-        {
-          "id": "red",
-          "kind": "red",
-          "position": [
-            5,
-            1
-          ]
-        },
-        {
-          "id": "blue",
-          "kind": "blue",
-          "position": [
-            5,
-            2
-          ]
-        }
-      ],
-      "active_hero": "blue",
-      "crystal_count": 1,
-      "crystal_colors": [
-        "purple_pink"
-      ],
-      "exits": [
-        [
-          9,
-          0
-        ],
-        [
-          9,
-          2
-        ]
-      ],
-      "exit_color": "purple",
+      "number": 16,
+      "file": "levels/north_16.json",
       "solution": {
         "level_id": "north_hero_16",
         "path": "ULLLLRCURRRRCLUCLD",
@@ -1820,59 +1560,8 @@
       }
     },
     {
-      "id": "north_hero_17",
-      "size": [
-        9,
-        5
-      ],
-      "heroes": [
-        {
-          "id": "green",
-          "kind": "green",
-          "position": [
-            0,
-            4
-          ]
-        },
-        {
-          "id": "blue",
-          "kind": "blue",
-          "position": [
-            2,
-            4
-          ]
-        },
-        {
-          "id": "red",
-          "kind": "red",
-          "position": [
-            8,
-            4
-          ]
-        }
-      ],
-      "active_hero": "blue",
-      "crystal_count": 4,
-      "crystal_colors": [
-        "blue",
-        "purple",
-        "purple_pink",
-        "purple"
-      ],
-      "exits": [
-        [
-          3,
-          0
-        ],
-        [
-          4,
-          0
-        ],
-        [
-          2,
-          2
-        ]
-      ],
+      "number": 17,
+      "file": "levels/north_17.json",
       "solution": {
         "level_id": "north_hero_17",
         "path": "URRRRDLULLRULDCUCUUUDDCUDCCUUURRRRRRRLCCUUUCLLLLLLDCCLLLLLLLCDDCUDCRRRCUUURRRCLUL",
@@ -1888,57 +1577,8 @@
       }
     },
     {
-      "id": "north_hero_18",
-      "size": [
-        7,
-        8
-      ],
-      "heroes": [
-        {
-          "id": "red",
-          "kind": "red",
-          "position": [
-            0,
-            2
-          ]
-        },
-        {
-          "id": "green",
-          "kind": "green",
-          "position": [
-            1,
-            2
-          ]
-        },
-        {
-          "id": "blue",
-          "kind": "blue",
-          "position": [
-            2,
-            2
-          ]
-        }
-      ],
-      "active_hero": "blue",
-      "crystal_count": 1,
-      "crystal_colors": [
-        "purple_pink"
-      ],
-      "exits": [
-        [
-          4,
-          3
-        ],
-        [
-          3,
-          4
-        ],
-        [
-          4,
-          4
-        ]
-      ],
-      "exit_color": "blue",
+      "number": 18,
+      "file": "levels/north_18.json",
       "solution": {
         "level_id": "north_hero_18",
         "path": "CCDCCRDCCLDCDDDCCRCDLCUCCRRRRCCDCRCUCCRUUUUUCCUULCCDCRRRRRRDCCDDDDCDCCDDDDCLCCDCRUCCLCCULCCDLCLLCUCCLCUCCLCCDCLUUCRCCULUCCUCRRCDCCRCDLCDCRD",
@@ -1954,58 +1594,8 @@
       }
     },
     {
-      "id": "north_hero_19",
-      "size": [
-        11,
-        7
-      ],
-      "heroes": [
-        {
-          "id": "red",
-          "kind": "red",
-          "position": [
-            5,
-            1
-          ]
-        },
-        {
-          "id": "green",
-          "kind": "green",
-          "position": [
-            4,
-            0
-          ]
-        },
-        {
-          "id": "blue",
-          "kind": "blue",
-          "position": [
-            6,
-            0
-          ]
-        }
-      ],
-      "active_hero": "green",
-      "crystal_count": 1,
-      "crystal_colors": [
-        "purple"
-      ],
-      "exits": [
-        [
-          4,
-          0
-        ],
-        [
-          6,
-          0
-        ],
-        [
-          9,
-          1
-        ]
-      ],
-      "exit_color": "orange",
-      "mechanism_color": "blue",
+      "number": 19,
+      "file": "levels/north_19.json",
       "solution": {
         "level_id": "north_hero_19",
         "path": "CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCLLLCUCUCLUUUULUCCR",
@@ -2018,6 +1608,74 @@
         "swaps": 5,
         "destroyed_crystals": 0,
         "note": "独立红绿蓝身份占用BFS含能量再现毁晶状态，首次存活胜利停止，再按身份回放；不宣称穷举或最优。C免费选择不进撤销，橙目标和蓝机关仅显示配色。绿/蓝初始占两个终点不提前胜利，三板AND同时开两门。"
+      }
+    },
+    {
+      "number": 20,
+      "file": "levels/north_20.json",
+      "solution": {
+        "level_id": "north_hero_20",
+        "path": "LLDCCRDLUCURDLDCCRCURDCCRRDCRURDCLLDRCCULCL",
+        "moves": 30,
+        "directions": 30,
+        "input_events": 43,
+        "selection_events": 13,
+        "pushes": 2,
+        "pulls": 2,
+        "swaps": 11,
+        "destroyed_crystals": 0,
+        "note": "独立五对象身份BFS，边栅栏双向挡所有走动和推拉，蓝方向首目标交换忽略栅栏；首次胜利停止，不宣称穷举或最优。"
+      }
+    },
+    {
+      "number": 21,
+      "file": "levels/north_21.json",
+      "solution": {
+        "level_id": "north_hero_21",
+        "path": "DRRDRUDLLLCDLDRUURCDLDRRUULLDLUULLLDLUUUULLLUULCDDDRRRRRULLLLDLUUCCRCDCCDRRRRUUURLCDDRRRRUURCLCCUCDDDDDDDDLURUUUUUUCCDLCCDCDDDCDDDLDCRDRCDDD",
+        "moves": 119,
+        "directions": 119,
+        "input_events": 140,
+        "selection_events": 21,
+        "pushes": 10,
+        "pulls": 8,
+        "swaps": 10,
+        "destroyed_crystals": 0,
+        "note": "独立构造的六板接替路线，单英雄纯步行局部BFS与每次完整动作重算；非全状态搜索，不宣称最短或穷举。C免费，明确无栅栏。"
+      }
+    },
+    {
+      "number": 22,
+      "file": "levels/north_22.json",
+      "solution": {
+        "level_id": "north_hero_22",
+        "path": "URURRRRRDRRRDR",
+        "moves": 14,
+        "directions": 14,
+        "input_events": 14,
+        "selection_events": 0,
+        "pushes": 0,
+        "pulls": 0,
+        "swaps": 0,
+        "destroyed_crystals": 0,
+        "note": "独立安全格BFS；本关无可推动的隔晶链，避开三哥布林四向一格攻击范围，不改变最终修正地形。"
+      }
+    },
+    {
+      "number": 23,
+      "file": "levels/north_23.json",
+      "solution": {
+        "level_id": "north_hero_23",
+        "path": "DRDRDDDRDRRURUULUUURRRDRDDDRDDL",
+        "moves": 31,
+        "directions": 31,
+        "input_events": 31,
+        "selection_events": 0,
+        "pushes": 0,
+        "pulls": 0,
+        "swaps": 0,
+        "destroyed_crystals": 0,
+        "note": "独立安全格BFS；77格全地面、10只静止哥布林，避开26个四向危险格与7个重叠格。67可走但受两只威胁，不改地图或规则。"
       }
     }
   ],
@@ -7287,131 +6945,33 @@
     "solution_file": "levels/solutions/north_19.json"
   },
   "level_navigation": {
-    "architecture": "persistent independent menu; numeric virtual extent; bounded modulo card pool; viewport-owned logical focus; on-demand provider; cached styles",
-    "default_startup_menu": true,
-    "real_maps": 19,
-    "prefetch_per_side": 2,
-    "pool_bound": "min(item_count,ceil(logical_viewport_width/282)+5)",
-    "observations": {
-      "bind_count": 156,
-      "checks": 274,
-      "created_including_resizes": 17,
-      "failures": 0,
-      "pool_nodes": 10,
-      "provider_calls": 156,
-      "real_menu_pool": 10,
-      "resize_pools": [
-        {
-          "cards": 7,
-          "width": 360
-        },
-        {
-          "cards": 11,
-          "width": 1550
-        },
-        {
-          "cards": 7,
-          "width": 480
-        },
-        {
-          "cards": 10,
-          "width": 1180
-        }
-      ],
-      "stress_elapsed_ms": 1534.748,
-      "synthetic_item_count": 5000
-    },
-    "subtree_node_probe": [
+    "bind_count": 156,
+    "checks": 298,
+    "created_including_resizes": 17,
+    "failures": 0,
+    "pool_nodes": 10,
+    "provider_calls": 156,
+    "real_menu_pool": 10,
+    "resize_pools": [
       {
-        "card_nodes": 10,
-        "created_cards": 10,
-        "entire_strip_subtree_nodes": 11,
-        "items": 1000
+        "cards": 7,
+        "width": 360
       },
       {
-        "card_nodes": 10,
-        "created_cards": 10,
-        "entire_strip_subtree_nodes": 11,
-        "items": 5000
+        "cards": 11,
+        "width": 1550
+      },
+      {
+        "cards": 7,
+        "width": 480
+      },
+      {
+        "cards": 10,
+        "width": 1180
       }
     ],
-    "all_19_real_entry_return_contexts_tested": true,
-    "death_lock_back_escape_api_and_undo_tested": true,
-    "mouse_wheel_drag_touch_cancel_keyboard_resize_tested": true,
-    "gameplay_core_board_input_unchanged": [
-      "scripts/core/level_data.gd",
-      "scripts/core/energy_rules.gd",
-      "scripts/core/grid_state.gd",
-      "scripts/core/hero_rules.gd",
-      "scripts/core/swap_rules.gd",
-      "scripts/core/bush_obstacle.gd",
-      "scripts/input/step_input.gd",
-      "scripts/view/board_view.gd"
-    ],
-    "historical_chapter_files_preserved": 76,
-    "historical_chapter_manifest_and_visibility_demo_unchanged": true,
-    "all_19_historical_decode_and_legal_replays_passed": true,
-    "energy_demo_34_event_replay_passed": true,
-    "demo": {
-      "source_commit": "594e349fa99d4cfe40bfbdbf239c3b7fe08b9c06",
-      "file": "video/ui/level_navigation.mp4",
-      "bytes": 828060,
-      "sha256": "f7da0130a4b1de6f6998d8db0548704e94d8a827fe4880d065626e9679687dad",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "profile": "High",
-            "width": 1280,
-            "height": 820,
-            "pix_fmt": "yuv420p",
-            "avg_frame_rate": "30/1",
-            "nb_frames": "557"
-          }
-        ],
-        "format": {
-          "duration": "18.566667"
-        }
-      },
-      "frames": 557,
-      "fps": 30,
-      "duration_seconds": 18.566667,
-      "mp4_fast_start": true,
-      "full_decode_passed": true,
-      "actual_input_events": 59,
-      "phase_count": 10,
-      "recording_failures": 0,
-      "pool_nodes": 10,
-      "same_pool_through_enter_return": true,
-      "review_frames": [
-        0,
-        59,
-        127,
-        146,
-        188,
-        238,
-        276,
-        346,
-        430,
-        484,
-        556
-      ],
-      "initial_and_final_frames_reviewed": true,
-      "all_phase_frames_reviewed": true,
-      "real_level_count": 19,
-      "full_regression_steps": 134,
-      "parsed_scripts": 61,
-      "headless_navigation_checks": 262,
-      "rendered_navigation_checks": 274,
-      "synthetic_count": 5000,
-      "viewport_width_tested": 1180,
-      "pooled_card_nodes": 10,
-      "entire_strip_subtree_nodes": 11,
-      "implementation_committed_before_recording": true,
-      "gameplay_sources_unchanged_after_recording": true
-    }
+    "stress_elapsed_ms": 1440.964,
+    "synthetic_item_count": 5000
   },
   "north_20_independent_search": {
     "method": "Independent five-object identity BFS, undirected movement fences and fence-transparent blue sight; first victory,not exhaustive/optimality claim",
@@ -8489,5 +8049,282 @@
     "full_typed_regression_steps_before_copy_fix": 156,
     "full_typed_parsed_scripts": 71,
     "final_recording_source": "03a637234b3890e6fe719f62e75ea9cde4791567"
-  }
+  },
+  "current_level_count": 23,
+  "north_23_support": {
+    "confirmed_floor_cells": 77,
+    "hero": "red",
+    "hero_start": [
+      0,
+      0
+    ],
+    "goal": [
+      9,
+      6
+    ],
+    "monsters": [
+      {
+        "kind": "goblin",
+        "position": [
+          2,
+          0
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          10,
+          0
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          3,
+          1
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          7,
+          2
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          0,
+          3
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          4,
+          4
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          0,
+          5
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          8,
+          5
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          1,
+          6
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          7,
+          6
+        ]
+      }
+    ],
+    "monster_kind": "goblin",
+    "no_new_mechanism": true,
+    "common_rule_render_input_pool_sources_unchanged": true,
+    "independent_route": {
+      "visited": 41,
+      "solution": {
+        "level_id": "north_hero_23",
+        "path": "DRDRDDDRDRRURUULUUURRRDRDDDRDDL",
+        "moves": 31,
+        "directions": 31,
+        "input_events": 31,
+        "selection_events": 0,
+        "pushes": 0,
+        "pulls": 0,
+        "swaps": 0,
+        "destroyed_crystals": 0,
+        "note": "独立安全格BFS；77格全地面、10只静止哥布林，避开26个四向危险格与7个重叠格。67可走但受两只威胁，不改地图或规则。"
+      },
+      "floor": 77,
+      "danger": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "overlapping_danger": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          6
+        ]
+      ]
+    },
+    "model_checks": 328,
+    "headless_checks": 262,
+    "rendered_checks": 338,
+    "actual_images_reviewed": [
+      "initial",
+      "overlap_death",
+      "revived",
+      "diagonal_safe",
+      "lower_passage",
+      "completed",
+      "compact",
+      "navigation"
+    ],
+    "window_sizes": [
+      [
+        1280,
+        820
+      ],
+      [
+        960,
+        615
+      ]
+    ],
+    "pixel_sampling_note": "Scaled thin borders checked on four own-cell sides;at least2marked danger sides/zero for explicit safe controls. No rendering rule changed.",
+    "undefined_nonblocking": [
+      "Goblin pressure-plate occupancy",
+      "attacks across fences"
+    ]
+  },
+  "previous_twenty_two_maps_solutions_videos_replays_unchanged_from": "dc5e6dea6031825378191c54c5fdd59f14022ff9",
+  "north_23_preservation": {
+    "level_files": 88,
+    "demo_files": 6,
+    "manifest_entries": 22,
+    "byte_identical": true
+  },
+  "north_23_delivery_stage": "Implementation validated;formal MovieMaker recording and media checks follow this implementation commit."
 }

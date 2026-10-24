@@ -162,3 +162,10 @@ Monster pressure-plate occupancy and attacks across fence edges remain UNCONFIRM
 ## Monster naming/type correction
 
 User explicitly named this enemy Goblin and said future monsters will differ. Level22 each monster must be {kind:"goblin",position:[x,y]}. Onlygoblin is currently supported;missing/unknown kinds are rejected,never defaulted to Goblin. Stationary/cardinal behavior and artwork dispatch bykind;public energy killing,entity life andUndo remain generic. UI/config/docs must say哥布林/goblin. Do not implement undefined future monsters or an oversized registry. Pre-type156-step validation was preserved,then changed-code tests and fullsuite rerun;do not use the old run as final proof.
+
+
+## Confirmed twenty-third map
+
+Level23 is the user-confirmed11x7 all77floor map in north_23.json. Red=(0,0),green goal=(9,6),ten kind:goblin at(2,0)/(10,0)/(3,1)/(7,2)/(0,3)/(4,4)/(0,5)/(8,5)/(1,6)/(7,6). Marker67=(0,6) is floor,but doubly threatened. No wall,bush,crystal,plate,energy,fence or new mechanism. Reuse typed stationary cardinal Goblin behavior and undo-only revival;never infer dangerous floor as blocked terrain. Independent safe-cell route31directions DRDRDDDRDRRURUULUUURRRDRDDDRDDL avoids26unique danger cells,including7overlaps;Godot and actual input verify it separately. No push/pull/swap or selection in formal route.
+
+Keep all prior22maps/solutions/MP4s/replays(88files),22manifest entries,and6navigation/energy demo files byte-identical fromdc5e6dea6031825378191c54c5fdd59f14022ff9. Public gameplay/render/input/virtual pool code unchanged;append real catalog and update data-size test assertions without removing existing gameplay assertions. Full visual regression,implementation commit before actual video/chapter_01/level_23.mp4,then separate media commit/normaldevelop push/remoteSHA/actualHTTP bytes/decode/CI verification. NoZIP,forcepush,PR,deployment,credential reading or usercomputer.

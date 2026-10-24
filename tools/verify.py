@@ -126,6 +126,8 @@ def main():
             run("03_north_21", ["--script", "res://tests/north_21_regression.gd"])
             run("03_monsters", ["--script", "res://tests/monster_regression.gd"])
             run_python("03_monster_independent", "tools/check_monster_replays.py")
+            run_python("03_north_23_independent", "tools/check_north_23.py")
+            run("03_north_23", ["--script", "res://tests/north_23_regression.gd"])
             run("03_north_22", ["--script", "res://tests/north_22_regression.gd"])
             run("03_north_01", ["--script", "res://tests/north_01_regression.gd"])
             run("03_north_02", ["--script", "res://tests/north_02_regression.gd"])
@@ -161,6 +163,7 @@ def main():
             run("05_north_19_scene", ["--script", "res://tests/north_19_scene.gd"])
             run("05_north_20_scene", ["--script", "res://tests/north_20_scene.gd"])
             run("05_north_21_scene", ["--script", "res://tests/north_21_scene.gd"])
+            run("05_north_23_scene", ["--script", "res://tests/north_23_scene.gd"])
             run("05_north_22_scene", ["--script", "res://tests/north_22_scene.gd"])
             run("05_navigation", ["--script", "res://tests/navigation_scene.gd"])
             run("05_energy_visibility", ["--script", "res://tests/energy_visibility_scene.gd"])
@@ -236,6 +239,9 @@ def main():
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_22", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_22_scene.gd",
+                                          "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+                run("06_render_north_23", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
+                                          "--audio-driver", "Dummy", "--script", "res://tests/north_23_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_navigation", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/navigation_scene.gd",

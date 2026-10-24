@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_23",
+  "title": "北部英雄 · 第二十三关",
+  "is_temporary": false,
+  "source_note": "用户确认11×7全77格地面：1红英雄，76终点；3/11/15/30/34/49/56/64/68/74均为哥布林，67地面。无墙体、水晶、机关或新机制。原创2D几何表现。",
+  "terrain": [
+    "...........",
+    "...........",
+    "...........",
+    "...........",
+    "...........",
+    "...........",
+    "..........."
+  ],
+  "player": [
+    0,
+    0
+  ],
+  "hero_kind": "red",
+  "crates": [],
+  "targets": [],
+  "exit": [
+    9,
+    6
+  ],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "monsters": [
+    {
+      "kind": "goblin",
+      "position": [
+        2,
+        0
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        10,
+        0
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        3,
+        1
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        7,
+        2
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        0,
+        3
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        0,
+        5
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        8,
+        5
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        1,
+        6
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        7,
+        6
+      ]
+    }
+  ]
+}

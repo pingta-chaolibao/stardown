@@ -1,0 +1,13 @@
+{
+  "level_id": "north_hero_23",
+  "path": "DRDRDDDRDRRURUULUUURRRDRDDDRDDL",
+  "moves": 31,
+  "directions": 31,
+  "input_events": 31,
+  "selection_events": 0,
+  "pushes": 0,
+  "pulls": 0,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "note": "独立安全格BFS；77格全地面、10只静止哥布林，避开26个四向危险格与7个重叠格。67可走但受两只威胁，不改地图或规则。"
+}

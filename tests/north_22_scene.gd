@@ -24,7 +24,7 @@ func _run() -> void:
  _check(game.model.pushes==0 and game.model.pulls==0 and game.model.swaps==0,"formal path uses no impossible direct monster push")
  await _capture("north_22_completed.png");await _press(KEY_Z);_check(not game.model.is_complete() and game.model.player==Vector2i(9,2),"victoryUndo to prior safe cell")
  await _press(KEY_R);_check(game.model.snapshot()==initial,"restart resets hero/all three live monster identities")
- await _click("BackToLevels");_check(game.menu.strip.item_count==22,"persistent pool holds22catalog only")
+ await _click("BackToLevels");_check(game.menu.strip.item_count==game.LEVEL_PATHS.size(),"persistent pool holds22catalog only")
  await _click("Level21");_check(game.model.monsters().is_empty() and not game.model.snapshot().has("monster_positions"),"old21world and snapshots stay legacy shaped")
  await _click("Level22");_check(game.model.snapshot()==initial,"return22isolates history/life")
  root.size=Vector2i(960,615);await _settle();_check_layout(game);await _inspect_danger();await _capture("north_22_compact.png")

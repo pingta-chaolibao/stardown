@@ -25,7 +25,7 @@ func _run() -> void:
 	await _press(KEY_D)
 	_check(game.model.moves == 1, "first-level progress before switching")
 	var before_invalid: Dictionary = game.model.snapshot()
-	_check(not game.select_level(-1) and not game.select_level(22) and game.model.snapshot() == before_invalid, "invalid selection preserves active session")
+	_check(not game.select_level(-1) and not game.select_level(game.LEVEL_PATHS.size()) and game.model.snapshot() == before_invalid, "invalid selection preserves active session")
 	await _click("Level02")
 	_check(game.current_level_index == 1 and game.model.level.id == "north_hero_02", "GUI enters second level")
 	_check(game.model.player == Vector2i(0, 1) and game.model.crates().size() == 10, "GUI second-level initial coordinates")
