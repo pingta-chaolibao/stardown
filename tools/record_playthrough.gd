@@ -24,8 +24,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number<1 or level_number>24 or report_path.is_empty():
-		_fail("Pass --level=1 through 24 and an absolute --report path.")
+	if level_number<1 or level_number>25 or report_path.is_empty():
+		_fail("Pass --level=1 through 25 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")

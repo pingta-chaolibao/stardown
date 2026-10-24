@@ -1,0 +1,14 @@
+{
+  "level_id": "north_hero_25",
+  "path": "DDRRURRDRRURDDDDDLLLLULDDDRDDRRRURRR",
+  "moves": 36,
+  "directions": 36,
+  "input_events": 36,
+  "selection_events": 0,
+  "pushes": 0,
+  "pulls": 0,
+  "swaps": 17,
+  "destroyed_crystals": 0,
+  "monster_swaps": 5,
+  "note": "构造合法路线后独立按身份逐输入复算：蓝方向首目标被动交换，否则一步；17交换含5哥布林/12水晶。无搜索最短或穷尽声明，不修改用户确认地图/死亡/视线规则。"
+}

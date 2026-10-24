@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-24T10:13:05.865687+00:00",
+  "time_utc": "2026-10-24T12:33:05.246952+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,1148 +7,1371 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.017,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 0.015
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 8.81,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 11.806
     },
     {
       "name": "02_parse_00_bush_obstacle",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.148,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_00_bush_obstacle",
+      "cached_source_file": "scripts/core/bush_obstacle.gd",
+      "cached_source_sha256": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_01_energy_rules",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.147,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_01_energy_rules",
+      "cached_source_file": "scripts/core/energy_rules.gd",
+      "cached_source_sha256": "4d6f75958b8d9f72bc8c268c28b066404c10a307a17c1b89e5d6a354a9f0f781",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_02_fence_edges",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.14,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_02_fence_edges",
+      "cached_source_file": "scripts/core/fence_edges.gd",
+      "cached_source_sha256": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_03_grid_state",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_03_grid_state",
+      "cached_source_file": "scripts/core/grid_state.gd",
+      "cached_source_sha256": "3c8beb3401c8a5677063a61294670731d816f11bc70ceaaced7cfaed66b282c9",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_04_hero_rules",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_04_hero_rules",
+      "cached_source_file": "scripts/core/hero_rules.gd",
+      "cached_source_sha256": "bf8efdc79b2479e27f0bc2f0a0c24d4aca84a464d514a873682d85079e5e583f",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_05_level_data",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_05_level_data",
+      "cached_source_file": "scripts/core/level_data.gd",
+      "cached_source_sha256": "5c5d7c5ab0c64637b0896c71eea9b92a252578ad5134038dba20f45a808e514f",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_06_monster_rules",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_06_monster_rules",
+      "cached_source_file": "scripts/core/monster_rules.gd",
+      "cached_source_sha256": "5cd891e20413862ba92b7ffc6320d2c6059e51277b61ea8ec55ff14b6dce09d5",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_07_swap_rules",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.149,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_07_swap_rules",
+      "cached_source_file": "scripts/core/swap_rules.gd",
+      "cached_source_sha256": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_08_step_input",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_08_step_input",
+      "cached_source_file": "scripts/input/step_input.gd",
+      "cached_source_sha256": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_09_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.239,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 3.239
     },
     {
       "name": "02_parse_10_board_view",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_10_board_view",
+      "cached_source_file": "scripts/view/board_view.gd",
+      "cached_source_sha256": "4b8db348c81ff54715192e75278da20a40a36a5243568f50310e2e3d4c8c9a75",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_11_level_card",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_11_level_card",
+      "cached_source_file": "scripts/view/level_card.gd",
+      "cached_source_sha256": "16350d98ea1046e7cfc3b181790b3dde3445a068718066e5dd1865db8044462f",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_12_level_menu",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.153,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_12_level_menu",
+      "cached_source_file": "scripts/view/level_menu.gd",
+      "cached_source_sha256": "ea9ce80958f8ddb3428e670adf94e97df8ad33910efd90820609f241386bfab3",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_13_virtual_level_strip",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_13_virtual_level_strip",
+      "cached_source_file": "scripts/view/virtual_level_strip.gd",
+      "cached_source_sha256": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_14_blue_swap_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_14_blue_swap_regression",
+      "cached_source_file": "tests/blue_swap_regression.gd",
+      "cached_source_sha256": "b18dfbee6e1047eda61398af9832b4f4759bfb2c14cbfe3d0aa335d5398be30e",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_15_bush_and_group_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_15_bush_and_group_regression",
+      "cached_source_file": "tests/bush_and_group_regression.gd",
+      "cached_source_sha256": "c69f97de7adc2971bdbd46b4ea1acbada842a01c3c3f3b722d182a848f8db4fd",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_16_chain_push_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_16_chain_push_regression",
+      "cached_source_file": "tests/chain_push_regression.gd",
+      "cached_source_sha256": "bda55346b683a4394c81fc2d55b0e17b78aa96daa2286430cf17d192d82a49ff",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_17_energy_destruction_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_17_energy_destruction_regression",
+      "cached_source_file": "tests/energy_destruction_regression.gd",
+      "cached_source_sha256": "891bedcaa43282849b7132faab6b5edd21c956818e3997cc3bc0214de9dbce88",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_18_energy_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.142,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_18_energy_regression",
+      "cached_source_file": "tests/energy_regression.gd",
+      "cached_source_sha256": "fcc21de4fa9a3527dbfaaa0385a581ae26bf151fa3caca1ef946135f59a7871c",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_19_energy_visibility_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.238,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_19_energy_visibility_scene",
+      "cached_source_file": "tests/energy_visibility_scene.gd",
+      "cached_source_sha256": "c41260762ec85d7c61857006321affc49c320755a297620e9a6cdfc262abd8f0",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_20_fence_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_20_fence_regression",
+      "cached_source_file": "tests/fence_regression.gd",
+      "cached_source_sha256": "03817daaf19990eda6890b586b5bff025633dd7cf3127ece7d4ff12d724fa835",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_21_global_energy_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.142,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_21_global_energy_regression",
+      "cached_source_file": "tests/global_energy_regression.gd",
+      "cached_source_sha256": "1d3c29499d55da6f6e8d9ebe1262216201f987c44a44286a9e3a5715a9dde8f7",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_22_green_pull_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_22_green_pull_regression",
+      "cached_source_file": "tests/green_pull_regression.gd",
+      "cached_source_sha256": "2874ef517921cb0d4f6a343af3e9350751a6e3b909df1b267bb63ba8711abbb9",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_23_monster_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_23_monster_regression",
+      "cached_source_file": "tests/monster_regression.gd",
+      "cached_source_sha256": "4c6ad2736510bad84c7b77c28183e70f565a3344d7336bca3ecad7f68259316f",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_24_multi_hero_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_24_multi_hero_regression",
+      "cached_source_file": "tests/multi_hero_regression.gd",
+      "cached_source_sha256": "0331b230cb99dc2bd347abaf20e666e42d1920ae20aef7f49192ee5453221899",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_25_navigation_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.236,
+      "original_cached_step": "02_parse_25_navigation_scene",
+      "cached_source_file": "tests/navigation_scene.gd",
+      "cached_source_sha256": "d9d6e910eaa881feb46f4692cee1eb7f635cf16bb63f6784daf007012ca967f5",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_26_north_01_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_26_north_01_regression",
+      "cached_source_file": "tests/north_01_regression.gd",
+      "cached_source_sha256": "1efc64ab42eae4b03806b5c929c886265279bd635b5ffba798e47a27a8f74e07",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_27_north_02_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.15,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_27_north_02_regression",
+      "cached_source_file": "tests/north_02_regression.gd",
+      "cached_source_sha256": "bf0ea1099dfa9d5f80de4118d7ae932e7698c021b51523065f29a3f59e8c7d1a",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_28_north_02_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.149,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_28_north_02_scene",
+      "cached_source_file": "tests/north_02_scene.gd",
+      "cached_source_sha256": "fcdd6ae2c8c9f60881d5502b14062c39a295516e57f5b532052709426f7c49a4",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_29_north_03_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.142,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_29_north_03_regression",
+      "cached_source_file": "tests/north_03_regression.gd",
+      "cached_source_sha256": "3320cbf2b9818271f9922635a9be6f25ab40bff7a107cb918f43fb314dd518cd",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_30_north_03_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.242,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_30_north_03_scene",
+      "cached_source_file": "tests/north_03_scene.gd",
+      "cached_source_sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_31_north_04_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.148,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_31_north_04_regression",
+      "cached_source_file": "tests/north_04_regression.gd",
+      "cached_source_sha256": "7b975d0e605420f2fa3fabed79e9a761ce8bb56a8d3bbf710935add9bc248a02",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_32_north_04_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.148,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_32_north_04_scene",
+      "cached_source_file": "tests/north_04_scene.gd",
+      "cached_source_sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_33_north_05_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.149,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_33_north_05_regression",
+      "cached_source_file": "tests/north_05_regression.gd",
+      "cached_source_sha256": "1a8fb647e50b4334be3c748f33393d431a3abe1cc4e7165f96effa0466b7cc24",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_34_north_05_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.238,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_34_north_05_scene",
+      "cached_source_file": "tests/north_05_scene.gd",
+      "cached_source_sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_35_north_06_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_35_north_06_regression",
+      "cached_source_file": "tests/north_06_regression.gd",
+      "cached_source_sha256": "c53a922d497450e1774a97e80d378e299b3ee510ce0ce6dfbb9e749452756d1d",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_36_north_06_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.241,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_36_north_06_scene",
+      "cached_source_file": "tests/north_06_scene.gd",
+      "cached_source_sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_37_north_07_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_37_north_07_regression",
+      "cached_source_file": "tests/north_07_regression.gd",
+      "cached_source_sha256": "9b438a03f5403ba0c858733fd24a92e6f3e0eea946168c23bb634f610dbb5db5",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_38_north_07_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.24,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_38_north_07_scene",
+      "cached_source_file": "tests/north_07_scene.gd",
+      "cached_source_sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_39_north_08_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.158,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_39_north_08_regression",
+      "cached_source_file": "tests/north_08_regression.gd",
+      "cached_source_sha256": "3a9a02f8c3af160cee0c21ac32c1b72914e53ef8676d72eb8b3da022a15dfe02",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_40_north_08_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.241,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_40_north_08_scene",
+      "cached_source_file": "tests/north_08_scene.gd",
+      "cached_source_sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_41_north_09_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_41_north_09_regression",
+      "cached_source_file": "tests/north_09_regression.gd",
+      "cached_source_sha256": "a7a1ba0deec8aa131206588a2e2bbabad7b24d5f7335bd7520e1f30e84889444",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_42_north_09_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.245,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_42_north_09_scene",
+      "cached_source_file": "tests/north_09_scene.gd",
+      "cached_source_sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_43_north_10_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_43_north_10_regression",
+      "cached_source_file": "tests/north_10_regression.gd",
+      "cached_source_sha256": "d833cff22eed25743fbd2ae7f511a091c1020ca7282b801210f313945ff15790",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_44_north_10_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_44_north_10_scene",
+      "cached_source_file": "tests/north_10_scene.gd",
+      "cached_source_sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_45_north_11_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_45_north_11_regression",
+      "cached_source_file": "tests/north_11_regression.gd",
+      "cached_source_sha256": "fcbf162596e05dacd900e993a483ad3d8c94ca5aee4861337d8d56ffb3e1f0be",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_46_north_11_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.238,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_46_north_11_scene",
+      "cached_source_file": "tests/north_11_scene.gd",
+      "cached_source_sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_47_north_12_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_47_north_12_regression",
+      "cached_source_file": "tests/north_12_regression.gd",
+      "cached_source_sha256": "ff1b4d812d34418ef731cc3305c9e0705017124ad19a1c215b20c60fc515d40c",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_48_north_12_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.239,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_48_north_12_scene",
+      "cached_source_file": "tests/north_12_scene.gd",
+      "cached_source_sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_49_north_13_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_49_north_13_regression",
+      "cached_source_file": "tests/north_13_regression.gd",
+      "cached_source_sha256": "578968e74a77d92feaa6a5aa4e16904760b9f2a6fc7bf410cddd0c6c403450a4",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_50_north_13_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.236,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_50_north_13_scene",
+      "cached_source_file": "tests/north_13_scene.gd",
+      "cached_source_sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_51_north_14_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_51_north_14_regression",
+      "cached_source_file": "tests/north_14_regression.gd",
+      "cached_source_sha256": "74da5e6158136ae3e94e86c337bfe97d8045439c961ae1a605b6f4bf210e1654",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_52_north_14_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_52_north_14_scene",
+      "cached_source_file": "tests/north_14_scene.gd",
+      "cached_source_sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_53_north_15_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_53_north_15_regression",
+      "cached_source_file": "tests/north_15_regression.gd",
+      "cached_source_sha256": "f5b104a3d965c60bba273472d492c379ece91d3530f1c31088877d0299415b1e",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_54_north_15_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.237,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_54_north_15_scene",
+      "cached_source_file": "tests/north_15_scene.gd",
+      "cached_source_sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_55_north_16_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_55_north_16_regression",
+      "cached_source_file": "tests/north_16_regression.gd",
+      "cached_source_sha256": "5b373eaef6e742aec472dc452499b84661cd4d842e3bc94874e1694e5541efa7",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_56_north_16_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_56_north_16_scene",
+      "cached_source_file": "tests/north_16_scene.gd",
+      "cached_source_sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_57_north_17_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.15,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_57_north_17_regression",
+      "cached_source_file": "tests/north_17_regression.gd",
+      "cached_source_sha256": "36eca8d1f3d739d87f45948b30aca88b740b2412cf651b6612bcf29f9df5bf99",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_58_north_17_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.237,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_58_north_17_scene",
+      "cached_source_file": "tests/north_17_scene.gd",
+      "cached_source_sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_59_north_18_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_59_north_18_regression",
+      "cached_source_file": "tests/north_18_regression.gd",
+      "cached_source_sha256": "01cb8d689606e6094abd7214fa52cf4a66f2f14d64c3d54436bf317fd71fd716",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_60_north_18_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.237,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_60_north_18_scene",
+      "cached_source_file": "tests/north_18_scene.gd",
+      "cached_source_sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_61_north_19_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.241,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_61_north_19_regression",
+      "cached_source_file": "tests/north_19_regression.gd",
+      "cached_source_sha256": "2c8938dfd6c627780d945ad547a77ede6dd5de5e63451e0d468faaf100ab45e2",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_62_north_19_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.242,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_62_north_19_scene",
+      "cached_source_file": "tests/north_19_scene.gd",
+      "cached_source_sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_63_north_20_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_63_north_20_regression",
+      "cached_source_file": "tests/north_20_regression.gd",
+      "cached_source_sha256": "e569073b093749e4c12dae9dbec6a2b6059fb6f09018c69ccd711345b38a7f2f",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_64_north_20_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.147,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_64_north_20_scene",
+      "cached_source_file": "tests/north_20_scene.gd",
+      "cached_source_sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_65_north_21_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.147,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_65_north_21_regression",
+      "cached_source_file": "tests/north_21_regression.gd",
+      "cached_source_sha256": "8473a6213c52c724d564aa4c80c8e83514f9c3482795dd98551811d715765cac",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_66_north_21_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.239,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_66_north_21_scene",
+      "cached_source_file": "tests/north_21_scene.gd",
+      "cached_source_sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_67_north_22_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_67_north_22_regression",
+      "cached_source_file": "tests/north_22_regression.gd",
+      "cached_source_sha256": "823531af34fb05aba87a62bea3e261c3c719d062e06eb36a1c770793b60443be",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_68_north_22_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_68_north_22_scene",
+      "cached_source_file": "tests/north_22_scene.gd",
+      "cached_source_sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_69_north_23_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_69_north_23_regression",
+      "cached_source_file": "tests/north_23_regression.gd",
+      "cached_source_sha256": "85d2e5228f668490cabdedeb1f04b57916280fa1e0897ae0af3295c1d2c3158a",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_70_north_23_scene",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.238,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_70_north_23_scene",
+      "cached_source_file": "tests/north_23_scene.gd",
+      "cached_source_sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_71_north_24_regression",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.157,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_71_north_24_regression",
+      "cached_source_file": "tests/north_24_regression.gd",
+      "cached_source_sha256": "5ea464c53f54c2f285cd9ea00fde39330cc7ded2b6bc119b30999b27bf3ea1c9",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "02_parse_72_north_24_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.242,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 3.238
     },
     {
-      "name": "02_parse_73_run_tests",
+      "name": "02_parse_73_north_25_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "02_parse_74_north_25_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.235
+    },
+    {
+      "name": "02_parse_75_run_tests",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_73_run_tests",
+      "cached_source_file": "tests/run_tests.gd",
+      "cached_source_sha256": "4d1a1dcbb4e576c5555e115855c547205cfb1deb93deef99ef5ed07d60ad5d6f",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
-      "name": "02_parse_74_scene_smoke",
+      "name": "02_parse_76_scene_smoke",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.239,
-      "reused_successful_evidence_after_test_fix": true
+      "original_cached_step": "02_parse_74_scene_smoke",
+      "cached_source_file": "tests/scene_smoke.gd",
+      "cached_source_sha256": "dee090e74f00ca0b9d593c7c5a46526f98361b5602d08479ed16490a2d642467",
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.24,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 3.237
     },
     {
       "name": "03_chain_push",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.149,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_energy",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.251,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_global_energy",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.256,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_bush_group",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.153,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_green_pull",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.275,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_blue_swap",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.26,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 3.144
     },
     {
       "name": "03_multi_hero",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.152,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_13",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.274,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_14",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.153,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_15",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.246,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_16",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.158,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_energy_destruction",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.152,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_17",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_18",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_19",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.147,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_fences",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_20",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.149,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_21",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_monsters",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 3.146
     },
     {
       "name": "03_monster_independent",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.026,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 0.029
+    },
+    {
+      "name": "03_north_25_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.023
+    },
+    {
+      "name": "03_north_25",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
     },
     {
       "name": "03_north_24_independent",
       "passed": true,
       "exit_code": 0,
       "seconds": 0.025,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_24",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.147,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_23_independent",
       "passed": true,
       "exit_code": 0,
       "seconds": 0.019,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_23",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_22",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_01",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.151,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_02",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_03",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.236,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_04",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_05",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.162,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_06",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_07",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.144,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_08",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.153,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_09",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.155,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_10",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.15,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_11",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.156,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "03_north_12",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.153,
-      "reused_successful_evidence_after_test_fix": true
+      "evidence_reused_from_unchanged_base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43"
     },
     {
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.435,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 3.331
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.644,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 4.541
     },
     {
       "name": "05_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.638,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 4.539
     },
     {
       "name": "05_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.357,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 4.352
     },
     {
       "name": "05_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.541,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 4.538
     },
     {
       "name": "05_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.542,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 4.54
     },
     {
       "name": "05_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.284,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 5.284
     },
     {
       "name": "05_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.321,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 6.401
     },
     {
       "name": "05_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.102,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 5.097
     },
     {
       "name": "05_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.006,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 5.003
     },
     {
       "name": "05_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.562,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 5.562
     },
     {
       "name": "05_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.095,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 5.096
     },
     {
       "name": "05_north_12_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.657,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 5.756
     },
     {
       "name": "05_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.751,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 5.958
     },
     {
       "name": "05_north_14_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.493,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 6.502
     },
     {
       "name": "05_north_15_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 7.798,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 7.797
     },
     {
       "name": "05_north_16_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.846,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 5.85
     },
     {
       "name": "05_north_17_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.774,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 6.962
     },
     {
       "name": "05_north_18_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 8.912,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 9.01
     },
     {
       "name": "05_north_19_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 8.821,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 9.01
     },
     {
       "name": "05_north_20_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.471,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 5.471
     },
     {
       "name": "05_north_21_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 7.794,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 7.801
+    },
+    {
+      "name": "05_north_25_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 5.564
     },
     {
       "name": "05_north_24_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.307,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 6.212
     },
     {
       "name": "05_north_23_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.284,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 5.283
     },
     {
       "name": "05_north_22_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.446,
-      "reused_successful_evidence_after_test_fix": true
+      "seconds": 4.452
     },
     {
       "name": "05_navigation",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.168
+      "seconds": 12.257
     },
     {
       "name": "05_energy_visibility",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.822
+      "seconds": 4.727
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.208
+      "seconds": 15.039
     },
     {
       "name": "06_render_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 15.282
+      "seconds": 12.167
     },
     {
       "name": "06_render_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.174
+      "seconds": 12.164
     },
     {
       "name": "06_render_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.173
+      "seconds": 12.179
     },
     {
       "name": "06_render_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.193
+      "seconds": 14.645
     },
     {
       "name": "06_render_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 16.817
+      "seconds": 13.602
     },
     {
       "name": "06_render_north_07",
       "passed": true,
       "exit_code": 0,
-      "seconds": 19.304
+      "seconds": 22.098
     },
     {
       "name": "06_render_north_08",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.76
+      "seconds": 13.145
     },
     {
       "name": "06_render_north_09",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.171
+      "seconds": 15.19
     },
     {
       "name": "06_render_north_10",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.971
+      "seconds": 14.355
     },
     {
       "name": "06_render_north_11",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.259
+      "seconds": 13.406
     },
     {
       "name": "06_render_north_12",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.536
+      "seconds": 14.059
     },
     {
       "name": "06_render_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.166
+      "seconds": 14.037
     },
     {
       "name": "06_render_north_14",
       "passed": true,
       "exit_code": 0,
-      "seconds": 16.837
+      "seconds": 16.483
     },
     {
       "name": "06_render_north_15",
       "passed": true,
       "exit_code": 0,
-      "seconds": 19.967
+      "seconds": 19.962
     },
     {
       "name": "06_render_north_16",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.557
+      "seconds": 14.669
     },
     {
       "name": "06_render_north_17",
       "passed": true,
       "exit_code": 0,
-      "seconds": 17.137
+      "seconds": 17.129
     },
     {
       "name": "06_render_north_18",
       "passed": true,
       "exit_code": 0,
-      "seconds": 21.156
+      "seconds": 24.203
     },
     {
       "name": "06_render_north_19",
       "passed": true,
       "exit_code": 0,
-      "seconds": 21.895
+      "seconds": 22.401
     },
     {
       "name": "06_render_north_20",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.148
+      "seconds": 13.807
     },
     {
       "name": "06_render_north_21",
       "passed": true,
       "exit_code": 0,
-      "seconds": 22.17
+      "seconds": 24.814
     },
     {
       "name": "06_render_north_22",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.173
+      "seconds": 12.162
     },
     {
       "name": "06_render_north_23",
       "passed": true,
       "exit_code": 0,
-      "seconds": 16.861
+      "seconds": 13.811
     },
     {
       "name": "06_render_north_24",
       "passed": true,
       "exit_code": 0,
-      "seconds": 20.539
+      "seconds": 17.133
+    },
+    {
+      "name": "06_render_north_25",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 15.958
     },
     {
       "name": "06_navigation",
       "passed": true,
       "exit_code": 0,
-      "seconds": 23.386
+      "seconds": 26.956
     },
     {
       "name": "06_energy_visibility",
       "passed": true,
       "exit_code": 0,
-      "seconds": 16.035
+      "seconds": 12.782
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -1157,385 +1380,452 @@
     "03_logic": {
       "checks": 4662,
       "failures": 0,
-      "cases": 13
+      "reused": false
     },
     "03_chain_push": {
       "checks": 701,
       "failures": 0,
-      "cases": 6
+      "reused": true
     },
     "03_energy": {
       "checks": 83,
       "failures": 0,
-      "cases": 9
+      "reused": true
     },
     "03_global_energy": {
       "checks": 168,
       "failures": 0,
-      "cases": 6
+      "reused": true
     },
     "03_bush_group": {
       "checks": 95,
       "failures": 0,
-      "cases": 8
+      "reused": true
     },
     "03_green_pull": {
       "checks": 4445,
       "failures": 0,
-      "cases": 8
+      "reused": true
     },
     "03_blue_swap": {
       "checks": 129,
       "failures": 0,
-      "cases": 8
+      "reused": false
     },
     "03_multi_hero": {
       "checks": 159,
       "failures": 0,
-      "cases": 7
+      "reused": true
     },
     "03_north_13": {
       "checks": 209,
       "failures": 0,
-      "cases": 3
+      "reused": true
     },
     "03_north_14": {
       "checks": 351,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_15": {
       "checks": 483,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_16": {
       "checks": 209,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_energy_destruction": {
       "checks": 21,
       "failures": 0,
-      "cases": 3
+      "reused": true
     },
     "03_north_17": {
       "checks": 448,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_18": {
       "checks": 855,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_19": {
       "checks": 741,
       "failures": 0,
-      "cases": 5
+      "reused": true
     },
     "03_fences": {
       "checks": 199,
       "failures": 0,
-      "cases": 5
+      "reused": true
     },
     "03_north_20": {
       "checks": 251,
       "failures": 0,
-      "cases": 3
+      "reused": true
     },
     "03_north_21": {
       "checks": 1687,
       "failures": 0,
-      "cases": 6
+      "reused": true
     },
     "03_monsters": {
       "checks": 126,
       "failures": 0,
-      "cases": 7
+      "reused": false
+    },
+    "03_north_25": {
+      "checks": 931,
+      "failures": 0,
+      "reused": false
     },
     "03_north_24": {
       "checks": 828,
       "failures": 0,
-      "cases": 5
+      "reused": true
     },
     "03_north_23": {
       "checks": 328,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_22": {
       "checks": 163,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_01": {
       "checks": 344,
       "failures": 0,
-      "cases": 6
+      "reused": true
     },
     "03_north_02": {
       "checks": 239,
       "failures": 0,
-      "cases": 5
+      "reused": true
     },
     "03_north_03": {
       "checks": 1084,
       "failures": 0,
-      "cases": 3
+      "reused": true
     },
     "03_north_04": {
       "checks": 430,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_05": {
       "checks": 124,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_06": {
       "checks": 410,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_07": {
       "checks": 867,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_08": {
       "checks": 384,
       "failures": 0,
-      "cases": 5
+      "reused": true
     },
     "03_north_09": {
       "checks": 82,
       "failures": 0,
-      "cases": 4
+      "reused": true
     },
     "03_north_10": {
       "checks": 344,
       "failures": 0,
-      "cases": 5
+      "reused": true
     },
     "03_north_11": {
       "checks": 754,
       "failures": 0,
-      "cases": 6
+      "reused": true
     },
     "03_north_12": {
       "checks": 223,
       "failures": 0,
-      "cases": 5
+      "reused": true
     },
     "05_scene_input": {
       "checks": 209,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_02_scene": {
       "checks": 170,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_03_scene": {
       "checks": 171,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_04_scene": {
       "checks": 185,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_05_scene": {
       "checks": 173,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_06_scene": {
       "checks": 225,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_07_scene": {
       "checks": 317,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_08_scene": {
       "checks": 220,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_09_scene": {
       "checks": 181,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_10_scene": {
       "checks": 278,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_11_scene": {
       "checks": 212,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_12_scene": {
       "checks": 228,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_13_scene": {
       "checks": 447,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_14_scene": {
       "checks": 492,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_15_scene": {
       "checks": 500,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_16_scene": {
       "checks": 355,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_17_scene": {
       "checks": 503,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_18_scene": {
       "checks": 809,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_19_scene": {
       "checks": 712,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_20_scene": {
       "checks": 296,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_21_scene": {
       "checks": 599,
-      "failures": 0
+      "failures": 0,
+      "reused": false
+    },
+    "05_north_25_scene": {
+      "checks": 1235,
+      "failures": 0,
+      "reused": false
     },
     "05_north_24_scene": {
       "checks": 452,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_23_scene": {
       "checks": 262,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_north_22_scene": {
       "checks": 197,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "05_navigation": {
-      "checks": 293,
-      "failures": 0
+      "checks": 299,
+      "failures": 0,
+      "reused": false
     },
     "05_energy_visibility": {
       "checks": 132,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render": {
       "checks": 219,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_02": {
       "checks": 176,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_03": {
       "checks": 179,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_04": {
       "checks": 193,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_05": {
       "checks": 181,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_06": {
       "checks": 239,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_07": {
       "checks": 337,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_08": {
       "checks": 236,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_09": {
       "checks": 191,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_10": {
       "checks": 292,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_11": {
       "checks": 228,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_12": {
       "checks": 248,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_13": {
       "checks": 463,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_14": {
       "checks": 516,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_15": {
       "checks": 532,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_16": {
       "checks": 383,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_17": {
       "checks": 539,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_18": {
       "checks": 851,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_19": {
       "checks": 771,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_20": {
       "checks": 326,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_21": {
       "checks": 646,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_22": {
       "checks": 241,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_23": {
       "checks": 338,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     },
     "06_render_north_24": {
       "checks": 557,
-      "failures": 0
+      "failures": 0,
+      "reused": false
+    },
+    "06_render_north_25": {
+      "checks": 1398,
+      "failures": 0,
+      "reused": false
     },
     "06_navigation": {
-      "checks": 305,
-      "failures": 0
+      "checks": 311,
+      "failures": 0,
+      "reused": false
     },
     "06_energy_visibility": {
       "checks": 168,
-      "failures": 0
+      "failures": 0,
+      "reused": false
     }
   },
   "levels": [
@@ -1881,6 +2171,24 @@
         "swaps": 0,
         "destroyed_crystals": 0,
         "note": "独立身份占用BFS；绿自动仅拉单晶、压板联动/能量恢复、静止哥布林四向威胁。保留用户顶排8–13全部可走，不为求解改图；首次胜利停止，不宣称穷举或最优。"
+      }
+    },
+    {
+      "number": 25,
+      "file": "levels/north_25.json",
+      "solution": {
+        "level_id": "north_hero_25",
+        "path": "DDRRURRDRRURDDDDDLLLLULDDDRDDRRRURRR",
+        "moves": 36,
+        "directions": 36,
+        "input_events": 36,
+        "selection_events": 0,
+        "pushes": 0,
+        "pulls": 0,
+        "swaps": 17,
+        "destroyed_crystals": 0,
+        "monster_swaps": 5,
+        "note": "构造合法路线后独立按身份逐输入复算：蓝方向首目标被动交换，否则一步；17交换含5哥布林/12水晶。无搜索最短或穷尽声明，不修改用户确认地图/死亡/视线规则。"
       }
     }
   ],
@@ -7151,7 +7459,7 @@
   },
   "level_navigation": {
     "bind_count": 156,
-    "checks": 305,
+    "checks": 311,
     "created_including_resizes": 17,
     "failures": 0,
     "pool_nodes": 10,
@@ -7175,7 +7483,7 @@
         "width": 1180
       }
     ],
-    "stress_elapsed_ms": 1505.208,
+    "stress_elapsed_ms": 1497.531,
     "synthetic_item_count": 5000
   },
   "north_20_independent_search": {
@@ -8255,7 +8563,7 @@
     "full_typed_parsed_scripts": 71,
     "final_recording_source": "03a637234b3890e6fe719f62e75ea9cde4791567"
   },
-  "current_level_count": 24,
+  "current_level_count": 25,
   "north_23_support": {
     "confirmed_floor_cells": 77,
     "hero": "red",
@@ -8822,16 +9130,6 @@
     "gameplay_sources_unchanged_after_recording": true
   },
   "north_23_final_recording_source": "1c07a0651f35b80109b3c4424c8bb56c1b98135c",
-  "continuation": {
-    "reason": "Navigation test assumed fixed Right safe in penultimate map;use validated level solution prefix",
-    "test_only_changed": [
-      "tests/navigation_scene.gd"
-    ],
-    "all_other_sources_fingerprint_unchanged": true,
-    "reused_successful_steps": 139,
-    "prior_report": "north_24_before_navigation_fix_report.json",
-    "failed_or_affected_and_remaining_steps_run": true
-  },
   "north_24_support": {
     "confirmed_floor_cells": 134,
     "boundary_void_cells": 9,
@@ -9496,5 +9794,338 @@
     "implementation_committed_before_recording": true,
     "gameplay_sources_unchanged_after_recording": true
   },
-  "north_24_final_recording_source": "cf10cb5b9ab5aba8b1eaa8f2d9aa4a5ce5855f7c"
+  "north_24_final_recording_source": "cf10cb5b9ab5aba8b1eaa8f2d9aa4a5ce5855f7c",
+  "verification_scope": {
+    "base": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43",
+    "reused_successful_steps": 107,
+    "fresh_steps": 67,
+    "engine_version_verified": "4.6.3.stable.official.7d41c59c4",
+    "dependency_fingerprints_checked": true,
+    "source_scope_proof": "north_25_reuse_scope.json",
+    "fresh_scope": "ALL25UI/input/X11/navigation/energy checks;changed and new parses;core/blue/Goblin models;new25model/independent route",
+    "cached_scope": "unchanged script parses and unrelated pure model groups;no scene or rendered results reused",
+    "prior_report": "before_north_25_report.json",
+    "dependency_fingerprint_digest": "4897476f0395dd0709c7db484adf756ae1fe2b0b07740c6d2d0e9c1ad9bf8883",
+    "checked_dependency_files": 155,
+    "changed_old_execution_sources": [
+      "scripts/main.gd",
+      "tests/north_24_scene.gd",
+      "tools/record_playthrough.gd",
+      "tools/verify.py"
+    ]
+  },
+  "north_25_support": {
+    "floor_cells": 89,
+    "fixed_blocked_cells": 43,
+    "hero": "blue",
+    "hero_start": [
+      0,
+      0
+    ],
+    "goal": [
+      11,
+      9
+    ],
+    "crystals": [
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        6
+      ]
+    ],
+    "monsters": [
+      {
+        "kind": "goblin",
+        "position": [
+          3,
+          0
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          7,
+          0
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          11,
+          1
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          5,
+          3
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          9,
+          3
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          4,
+          4
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          7,
+          4
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          0,
+          5
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          2,
+          7
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          5,
+          7
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          4,
+          9
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          6,
+          9
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          3,
+          10
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          5,
+          10
+        ]
+      },
+      {
+        "kind": "goblin",
+        "position": [
+          8,
+          10
+        ]
+      }
+    ],
+    "monster_kind": "goblin",
+    "common_gameplay_render_input_pool_unchanged": true,
+    "model_checks": 931,
+    "headless_checks": 1235,
+    "rendered_checks": 1398,
+    "independent_route": {
+      "method": "Constructed legal route,independent identity-aware replay;not shortest/exhaustive search",
+      "floor": 89,
+      "blocked": 43,
+      "solution": {
+        "level_id": "north_hero_25",
+        "path": "DDRRURRDRRURDDDDDLLLLULDDDRDDRRRURRR",
+        "moves": 36,
+        "directions": 36,
+        "input_events": 36,
+        "selection_events": 0,
+        "pushes": 0,
+        "pulls": 0,
+        "swaps": 17,
+        "destroyed_crystals": 0,
+        "monster_swaps": 5,
+        "note": "构造合法路线后独立按身份逐输入复算：蓝方向首目标被动交换，否则一步；17交换含5哥布林/12水晶。无搜索最短或穷尽声明，不修改用户确认地图/死亡/视线规则。"
+      }
+    },
+    "goblin_swap_actions": [
+      {
+        "action": 12,
+        "input": "R",
+        "hero": [
+          11,
+          1
+        ],
+        "target_id": 2,
+        "swaps": 8,
+        "monster_swaps": 1
+      },
+      {
+        "action": 23,
+        "input": "L",
+        "hero": [
+          0,
+          5
+        ],
+        "target_id": 7,
+        "swaps": 14,
+        "monster_swaps": 2
+      },
+      {
+        "action": 30,
+        "input": "R",
+        "hero": [
+          3,
+          10
+        ],
+        "target_id": 12,
+        "swaps": 15,
+        "monster_swaps": 3
+      },
+      {
+        "action": 31,
+        "input": "R",
+        "hero": [
+          5,
+          10
+        ],
+        "target_id": 13,
+        "swaps": 16,
+        "monster_swaps": 4
+      },
+      {
+        "action": 32,
+        "input": "R",
+        "hero": [
+          8,
+          10
+        ],
+        "target_id": 14,
+        "swaps": 17,
+        "monster_swaps": 5
+      }
+    ],
+    "no_autonomous_monster_movement": true,
+    "all_actor_identities_preserved": true,
+    "actual_images_reviewed": [
+      "initial",
+      "swap_death",
+      "revived",
+      "crystal_swap",
+      "goblin_swap_12",
+      "goblin_swap_23",
+      "bottom_swap_30",
+      "bottom_swap_31",
+      "goblin_swap_32",
+      "completed",
+      "compact",
+      "navigation"
+    ],
+    "window_sizes": [
+      [
+        1280,
+        820
+      ],
+      [
+        960,
+        615
+      ]
+    ],
+    "no_new_gameplay_mechanism": true
+  },
+  "previous_twenty_four_maps_solutions_videos_replays_unchanged_from": "a4adfa88dcb0db8cdc75a2c2e59e5f9d81fa9b43",
+  "north_25_preservation": {
+    "level_files": 96,
+    "demo_files": 6,
+    "manifest_entries": 24,
+    "byte_identical": true
+  },
+  "north_25_delivery_stage": "Implementation validated;actual MovieMaker video follows implementation commit."
 }

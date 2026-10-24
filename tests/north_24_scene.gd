@@ -50,7 +50,7 @@ func _run() -> void:
  await _click("Level23");_check(game.model.monsters().size()==10 and game.model.level.energy_links.is_empty() and game.model.level.mechanism_color=="yellow","prior23has no purple/energy/entity/history leaks")
  await _click("Level24");_check(game.model.snapshot()==initial,"return24isolates history and mechanisms")
  root.size=Vector2i(960,615);await _settle();_check_layout(game);await _inspect_danger();await _inspect_energy();await _capture("north_24_compact.png")
- await _click("BackToLevels");_check_layout(game);_check(game.menu.strip.item_count==24 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"24real maps use bounded reused cards")
+ await _click("BackToLevels");_check_layout(game);_check(game.menu.strip.item_count==game.LEVEL_PATHS.size() and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"24real maps use bounded reused cards")
  await _capture("north_24_navigation.png")
  var old:Control=game;root.remove_child(old);old.queue_free()
  game=load("res://scenes/main.tscn").instantiate();game.start_in_level=true;game.level_path="res://levels/north_24.json";root.add_child(game);await _settle()
