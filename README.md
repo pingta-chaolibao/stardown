@@ -67,6 +67,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第二十一关 | [观看 / 下载 MP4](video/chapter_01/level_21.mp4) | 89 秒 |
 | 第二十二关 | [观看 / 下载 MP4](video/chapter_01/level_22.mp4) | 13.4 秒 |
 | 第二十三关 | [观看 / 下载 MP4](video/chapter_01/level_23.mp4) | 23.6 秒 |
+| 第二十四关 | [观看 / 下载 MP4](video/chapter_01/level_24.mp4) | 58.4 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -717,4 +718,4 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 
 复用自动只拉最近一个水晶、哥布林静止四向相邻击杀和整步撤销。独立搜索与Godot复核路线89方向输入、15次单晶拉动，0推/交换/C；第70步英雄压板、第71步水晶接替、第72步拉离恢复能量、第76–77步再次交接压板，第87步穿过消失能量格，第89步到达终点。紫色只扩展机关视觉，颜色不匹配对象或改变规则；没有为求解改图。
 
-[关卡JSON](levels/north_24.json) · [合法路线](levels/solutions/north_24.json) · [独立复核](tools/check_north_24.py)。[初始](docs/screenshots/level_24_initial.png) · [紫色消失能量覆盖](docs/screenshots/level_24_open_energy_compact.png) · [胜利](docs/screenshots/level_24_completed.png) · [小窗口](docs/screenshots/level_24_compact.png)。正式视频按先验证并提交实现、再真实Godot录制的约定交付；当前检查见[验证记录](docs/VERIFICATION.md)。
+[关卡JSON](levels/north_24.json) · [合法路线](levels/solutions/north_24.json) · [独立复核](tools/check_north_24.py)。[初始](docs/screenshots/level_24_initial.png) · [紫色消失能量覆盖](docs/screenshots/level_24_open_energy_compact.png) · [胜利](docs/screenshots/level_24_completed.png) · [小窗口](docs/screenshots/level_24_compact.png)。[58.4秒实际通关视频](video/chapter_01/level_24.mp4) · [逐输入状态](video/chapter_01/level_24_replay.json)。全部24视频完整解码与独立合法回放通过，详见[验证记录](docs/VERIFICATION.md)。
