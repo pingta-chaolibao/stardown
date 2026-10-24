@@ -1,0 +1,13 @@
+{
+  "level_id": "north_hero_26",
+  "path": "LLUUUURULLLLLULLUL",
+  "moves": 18,
+  "directions": 18,
+  "input_events": 18,
+  "selection_events": 0,
+  "pushes": 9,
+  "pulls": 0,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "note": "构造18步路线，9次推动；第5步火龙击杀哥布林，水晶遮挡两条火线后绕行到目标。仅声称合法，不声称最短；不修改确认地图。"
+}

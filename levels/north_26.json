@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_26",
+  "title": "北部英雄 · 第二十六关",
+  "is_temporary": false,
+  "source_note": "用户确认11×8完整编号布局；23火龙朝右、81火龙朝上、64哥布林、88红英雄、75水晶、2终点。固定朝向火龙每次有效行动攻击首个英雄或怪物，水晶挡火。原创2D几何表现。",
+  "terrain": [
+    "#..........",
+    "#..........",
+    "...........",
+    "#.....#....",
+    "#.....#....",
+    "#.....##.##",
+    "#.....#....",
+    "###.###...."
+  ],
+  "player": [
+    10,
+    7
+  ],
+  "hero_kind": "red",
+  "crates": [
+    [
+      8,
+      6
+    ]
+  ],
+  "crystal_colors": [
+    "purple_pink"
+  ],
+  "targets": [],
+  "exit": [
+    1,
+    0
+  ],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "monsters": [
+    {
+      "kind": "fire_dragon",
+      "position": [
+        0,
+        2
+      ],
+      "facing": "right"
+    },
+    {
+      "kind": "fire_dragon",
+      "position": [
+        3,
+        7
+      ],
+      "facing": "up"
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        8,
+        5
+      ]
+    }
+  ]
+}

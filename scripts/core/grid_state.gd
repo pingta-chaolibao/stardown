@@ -6,6 +6,7 @@ const Level = preload("res://scripts/core/level_data.gd")
 const Energy = preload("res://scripts/core/energy_rules.gd")
 const Heroes = preload("res://scripts/core/hero_rules.gd")
 const Monsters = preload("res://scripts/core/monster_rules.gd")
+const Fire = preload("res://scripts/core/fire_rules.gd")
 const Swaps = preload("res://scripts/core/swap_rules.gd")
 
 var level: Level
@@ -22,6 +23,7 @@ var _hero_positions: Array[Vector2i] = []
 var _hero_alive: Array[bool] = []
 var _monster_positions:Array[Vector2i]=[]
 var _monster_alive:Array[bool]=[]
+var _monster_facings:Array[Vector2i]=[]
 var death_reason:String=""
 var moves: int = 0
 var pushes: int = 0
@@ -48,7 +50,7 @@ func load_level(definition: Level) -> bool:
 	var monster_positions:Array[Vector2i]=definition.initial_monsters.duplicate()
 	var monster_life:Array[bool]=[]
 	for _m in monster_positions:monster_life.append(true)
-	var settled := _settle_world(definition,positions,initial_crystals,monster_positions,monster_life,{})
+	var settled := _settle_world(definition,positions,initial_crystals,monster_positions,monster_life,{},false)
 	last_mechanism_error = settled["error"]
 	if not last_mechanism_error.is_empty():
 		return false
@@ -65,6 +67,8 @@ func load_level(definition: Level) -> bool:
 		_initial_state.merge({"hero_positions":positions,"hero_alive":settled["hero_alive"]})
 	if not monster_positions.is_empty():
 		_initial_state.merge({"monster_positions":monster_positions,"monster_alive":settled["monster_alive"],"death_reason":""})
+	if definition.monster_kinds.has("fire_dragon"):
+		_initial_state["monster_facings"]=definition.monster_facings.duplicate()
 	_restore(_initial_state)
 	_history.clear()
 	return true
@@ -208,18 +212,18 @@ func _commit(positions: Array[Vector2i], candidate: Dictionary, pushed: int, pul
 	return &"committed" if alive else &"died"
 
 
-func _settle_world(definition:Level,positions:Array[Vector2i],crystals:Dictionary,monsters:Array[Vector2i],living:Array[bool],previous:Dictionary) -> Dictionary:
+func _settle_world(definition:Level,positions:Array[Vector2i],crystals:Dictionary,monsters:Array[Vector2i],living:Array[bool],previous:Dictionary,advance:bool=true) -> Dictionary:
 	# No assumption that monsters do/don't hold plates: unsupported encounters
 	# are explicitly unresolved, rather than silently treated as a user rule.
 	for i in monsters.size():
 		if not living[i]:continue
 		for link in definition.energy_links:
-			if monsters[i] in link["plates"]:return {"error":"哥布林压板规则尚未确认；该组合动作未提交。"}
+			if monsters[i] in link["plates"]:return {"error":"怪物压板规则尚未确认；该组合动作未提交。"}
 	var settled:=Energy.settle(definition.energy_links,positions,crystals,previous)
 	if not settled["error"].is_empty() or monsters.is_empty():return settled
-	var danger:=Monsters.settle(definition.monster_kinds,monsters,living,positions,settled["hero_alive"],previous,settled["barriers"],definition.has_fence)
+	var danger:=Monsters.settle(definition.monster_kinds,monsters,living,positions,settled["hero_alive"],previous,settled["barriers"],definition.has_fence,{"facings":definition.monster_facings,"crystals":settled["crystals"],"bounds":Rect2i(Vector2i.ZERO,Vector2i(definition.width,definition.height)),"blocks":func(c:Vector2i)->bool:return not definition.is_floor(c) or definition.bush_at(c)!=null or settled["barriers"].get(c,false),"advance":advance})
 	if not danger["error"].is_empty():return danger
-	settled["death_reason"]="monster" if not danger["attacked_heroes"].is_empty() else ("energy" if not settled["alive"] else "")
+	settled["death_reason"]="fire" if not danger.get("fire_heroes",[]).is_empty() else ("monster" if not danger["attacked_heroes"].is_empty() else ("energy" if not settled["alive"] else ""))
 	settled["alive"]=danger["alive"];settled["hero_alive"]=danger["hero_alive"];settled["monster_alive"]=danger["monster_alive"]
 	return settled
 
@@ -232,13 +236,27 @@ func monster_at(cell:Vector2i) -> int:
 
 func monsters() -> Array[Dictionary]:
 	var result:Array[Dictionary]=[]
-	for i in _monster_positions.size():result.append({"id":i,"kind":level.monster_kinds[i],"position":_monster_positions[i],"alive":_monster_alive[i]})
+	for i in _monster_positions.size():
+		var entry:Dictionary={"id":i,"kind":level.monster_kinds[i],"position":_monster_positions[i],"alive":_monster_alive[i]}
+		if level.monster_kinds[i]=="fire_dragon":entry["facing"]=_monster_facings[i]
+		result.append(entry)
 	return result
 
 
 func monster_danger_at(cell:Vector2i) -> bool:
 	for i in _monster_positions.size():
 		if _monster_alive[i] and Monsters.threatens(level.monster_kinds[i],cell,_monster_positions[i]) and not level.has_fence(cell,_monster_positions[i]):return true
+	return false
+
+
+func fire_rays() -> Array[Dictionary]:
+	if level==null or not level.monster_kinds.has("fire_dragon"):return []
+	return Fire.plan(level.monster_kinds,_monster_positions,_monster_alive,_monster_facings,_hero_positions,_hero_alive,_crates,Rect2i(Vector2i.ZERO,Vector2i(level.width,level.height)),blocks_sight,level.has_fence)["rays"]
+
+
+func fire_danger_at(cell:Vector2i) -> bool:
+	for ray in fire_rays():
+		if cell in ray["cells"]:return true
 	return false
 
 
@@ -409,6 +427,7 @@ func _restore(state: Dictionary) -> void:
 		_hero_positions.assign([state["player"]])
 	_monster_positions.assign(state.get("monster_positions",[]))
 	_monster_alive.assign(state.get("monster_alive",[]))
+	_monster_facings.assign(state.get("monster_facings",[]))
 	death_reason=state.get("death_reason","")
 	_crates = state["crates"].duplicate()
 	moves = state["moves"]
@@ -427,6 +446,8 @@ func snapshot() -> Dictionary:
 		"alive":alive,"pressure":_pressure.duplicate(),"barriers":_barriers.duplicate()}
 	if not _monster_positions.is_empty():
 		result.merge({"monster_positions":_monster_positions.duplicate(),"monster_alive":_monster_alive.duplicate(),"death_reason":death_reason})
+	if level!=null and level.monster_kinds.has("fire_dragon"):
+		result["monster_facings"]=_monster_facings.duplicate()
 	# Legacy single-hero snapshots retain their original shape.
 	if _hero_positions.size() > 1:
 		result.merge({"hero_positions":_hero_positions.duplicate(),"hero_alive":_hero_alive.duplicate()})

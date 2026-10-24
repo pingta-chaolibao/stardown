@@ -65,8 +65,11 @@ func _draw() -> void:
 			for x in level.width:
 				var cell:=Vector2i(x,y)
 				if level.is_floor(cell) and model.monster_danger_at(cell):_danger(origin+(Vector2(cell)+Vector2.ONE*0.5)*tile,tile)
+	for ray in model.fire_rays():
+		for cell in ray["cells"]:_fire_danger(origin+(Vector2(cell)+Vector2.ONE*0.5)*tile,tile,model.monsters()[ray["dragon"]]["facing"])
 	for monster in model.monsters():
 		if monster["kind"]=="goblin":_goblin(origin+(Vector2(monster["position"])+Vector2.ONE*0.5)*tile,tile,monster["alive"])
+		elif monster["kind"]=="fire_dragon":_fire_dragon(origin+(Vector2(monster["position"])+Vector2.ONE*0.5)*tile,tile,monster["alive"],monster["facing"])
 	for cell in model.crates():
 		_crystal(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile, level.crystal_colors[model.crate_id(cell)])
 	for hero in model.heroes():
@@ -341,3 +344,31 @@ func _box(rect: Rect2, color: Color, radius: int) -> void:
 	style.bg_color = color
 	style.set_corner_radius_all(radius)
 	draw_style_box(style, rect)
+
+
+func _fire_danger(center:Vector2,tile:float,direction:Vector2i) -> void:
+	var d:=Vector2(direction)
+	var side:=Vector2(-d.y,d.x)
+	draw_rect(Rect2(center-Vector2.ONE*tile*0.42,Vector2.ONE*tile*0.84),Color(0.96,0.40,0.13,0.13))
+	for offset in [-0.26,0.23]:
+		var a:Vector2=center+d*tile*offset
+		draw_line(a-d*tile*0.10-side*tile*0.08,a,Color(1.0,0.67,0.32,0.45),1.4,true)
+		draw_line(a-d*tile*0.10+side*tile*0.08,a,Color(1.0,0.67,0.32,0.45),1.4,true)
+
+
+func _fire_dragon(center:Vector2,tile:float,living:bool,direction:Vector2i) -> void:
+	var d:=Vector2(direction)
+	var side:=Vector2(-d.y,d.x)
+	if not living:
+		draw_arc(center,tile*0.23,0,TAU,12,Color(0.65,0.45,0.27,0.28),1.2,true)
+		return
+	draw_ellipse_shadow(center+Vector2(0,tile*0.28),Vector2(tile*0.36,tile*0.11))
+	var points:=PackedVector2Array([center-d*tile*0.30-side*tile*0.17,center-d*tile*0.12-side*tile*0.34,center+d*tile*0.10-side*tile*0.25,center+d*tile*0.34,center+d*tile*0.10+side*tile*0.25,center-d*tile*0.12+side*tile*0.34,center-d*tile*0.30+side*tile*0.17])
+	draw_colored_polygon(points,Color("6b3b37"))
+	var outline:=points.duplicate();outline.append(points[0])
+	draw_polyline(outline,Color("ee965b"),maxf(1.6,tile*0.03),true)
+	for sign_y in [-1,1]:draw_circle(center+d*tile*0.05+side*tile*0.12*sign_y,tile*0.042,Color("ffe4a1"))
+	# The fixed-facing arrow stays inside the monster cell, above the head.
+	draw_line(center-d*tile*0.14,center+d*tile*0.22,Color("fff0b8"),maxf(2,tile*0.035),true)
+	draw_line(center+d*tile*0.12-side*tile*0.08,center+d*tile*0.22,Color("fff0b8"),maxf(2,tile*0.035),true)
+	draw_line(center+d*tile*0.12+side*tile*0.08,center+d*tile*0.22,Color("fff0b8"),maxf(2,tile*0.035),true)

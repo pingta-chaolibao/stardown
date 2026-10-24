@@ -18,7 +18,7 @@ func configure(paths: Array) -> void:
 		var detail:String="%d × %d   ·   %d 枚水晶" % [map["terrain"][0].length(),map["terrain"].size(),map["crates"].size()]
 		if not map.get("monsters",[]).is_empty():
 			var known:bool=map["monsters"].all(func(m:Dictionary)->bool:return m.get("kind")=="goblin")
-			detail="%d × %d   ·   %d 只%s" % [map["terrain"][0].length(),map["terrain"].size(),map["monsters"].size(),"哥布林" if known else "未支持的怪物"]
+			detail="%d × %d   ·   %d 只%s" % [map["terrain"][0].length(),map["terrain"].size(),map["monsters"].size(),"哥布林" if known else ("火龙 / 哥布林" if map["monsters"].any(func(m:Dictionary)->bool:return m.get("kind")=="fire_dragon") else "未支持的怪物")]
 		entries.append({"title":title,"kinds":kinds,"map":map,"detail":detail})
 
 func _ready() -> void:

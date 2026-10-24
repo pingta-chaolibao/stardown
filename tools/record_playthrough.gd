@@ -24,8 +24,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number<1 or level_number>25 or report_path.is_empty():
-		_fail("Pass --level=1 through 25 and an absolute --report path.")
+	if level_number<1 or level_number>26 or report_path.is_empty():
+		_fail("Pass --level=1 through 26 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -147,7 +147,10 @@ func _state() -> Dictionary:
 		result.merge({"heroes":heroes,"active_hero_index":game.model.active_hero_index,"active_hero":game.model.active_hero_id(),"selection_events":selection_events,"history_size":game.model.history_size(),"exits":exits,"occupied_exits":game.model.occupied_exits()})
 	if not game.model.level.initial_monsters.is_empty():
 		var monsters:Array=[]
-		for monster in game.model.monsters():monsters.append({"id":monster["id"],"kind":monster["kind"],"position":[monster["position"].x,monster["position"].y],"alive":monster["alive"]})
+		for monster in game.model.monsters():
+			var entry:Dictionary={"id":monster["id"],"kind":monster["kind"],"position":[monster["position"].x,monster["position"].y],"alive":monster["alive"]}
+			if monster.has("facing"):entry["facing"]=[monster["facing"].x,monster["facing"].y]
+			monsters.append(entry)
 		result["monsters"]=monsters
 		result["death_reason"]=game.model.death_reason
 	if not game.model.level.fence_edges.is_empty():

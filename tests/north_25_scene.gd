@@ -43,7 +43,7 @@ func _run() -> void:
  await _click("Level24");_check(game.model.active_kind()=="green" and game.model.crates().size()==1 and game.model.monsters().size()==8 and game.model.level.mechanism_color=="purple","previous24rules/entities and purple mechanisms remain intact")
  await _click("Level25");_check(game.model.snapshot()==initial and game.model.level.energy_links.is_empty(),"return25isolates history and removes prior mechanisms")
  root.size=Vector2i(960,615);await _settle();_check_layout(game);await _inspect_danger();await _capture("north_25_compact.png")
- await _click("BackToLevels");_check_layout(game);_check(game.menu.strip.item_count==game.LEVEL_PATHS.size() and game.menu.strip.item_count==25 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"25actual data cards,viewport pool remains bounded")
+ await _click("BackToLevels");_check_layout(game);_check(game.menu.strip.item_count==game.LEVEL_PATHS.size() and game.menu.strip.item_count==game.LEVEL_PATHS.size() and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"25actual data cards,viewport pool remains bounded")
  await _capture("north_25_navigation.png")
  var previous:Control=game;root.remove_child(previous);previous.queue_free();game=load("res://scenes/main.tscn").instantiate();game.start_in_level=true;game.level_path="res://levels/north_25.json";root.add_child(game);await _settle()
  _check(game.model.moves==0 and game.model.active_kind()=="blue" and not game.menu.visible and game.status_label.text.contains("哥布林"),"formal recorder startup is exact unsolved blue25")

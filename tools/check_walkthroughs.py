@@ -24,9 +24,11 @@ def check_replay(item, directory, require_rendered=True):
     multi = len(heroes) > 1
     crystals = {tuple(cell): identity for identity, cell in enumerate(level["crates"])}
     monster_kinds = [entry["kind"] for entry in level.get("monsters", [])]
-    assert all(kind=="goblin" for kind in monster_kinds), "Unknown monster kinds need explicit behavior, no goblin default"
+    assert all(kind in ("goblin","fire_dragon") for kind in monster_kinds), "Unknown monster kinds need explicit behavior, no goblin default"
     monster_positions = [tuple(entry["position"]) for entry in level.get("monsters", [])]
     monster_living = [True] * len(monster_positions)
+    facings = [dict(up=(0,-1),down=(0,1),left=(-1,0),right=(1,0)).get(entry.get("facing")) for entry in level.get("monsters", [])]
+    assert all(facings[i] is not None for i,k in enumerate(monster_kinds) if k=="fire_dragon"), "Dragon direction required"
     def monster_cells():
         return {cell: i for i, cell in enumerate(monster_positions) if monster_living[i]}
     bushes = {tuple(cell) for cell in level.get("bushes", [])}
@@ -57,7 +59,7 @@ def check_replay(item, directory, require_rendered=True):
     def edge_blocked(a,b):
         return frozenset((a,b)) in fences
 
-    def settle(previous_barriers):
+    def settle(previous_barriers, advance=True):
         pressure, barriers = {}, {}
         for link in level.get("energy_links", []):
             sources = link["pressure_sources"]
@@ -80,14 +82,38 @@ def check_replay(item, directory, require_rendered=True):
             if monster_living[i] and barriers.get(cell, False):
                 assert cell in previous_barriers and not previous_barriers[cell], "Monster cannot start in solid energy"
                 monster_living[i] = False
-        for h, cell in enumerate(heroes):
-            for i, monster in enumerate(monster_positions):
-                if monster_living[i] and monster_kinds[i]=="goblin" and abs(cell[0]-monster[0])+abs(cell[1]-monster[1]) == 1:
-                    assert not edge_blocked(cell,monster), "Monster attack across fences is undefined"
-                    living[h] = False
+        # Sample all attacks from the common state, before attack deaths.
+        goblin_heroes = []
+        for h,cell in enumerate(heroes):
+            for i,monster in enumerate(monster_positions):
+                if living[h] and monster_living[i] and monster_kinds[i]=="goblin" and abs(cell[0]-monster[0])+abs(cell[1]-monster[1])==1:
+                    assert not edge_blocked(cell,monster), "Goblin/fence attack is undefined"
+                    goblin_heroes.append(h)
+        targets = {}
+        goblin_dragons = []
+        if advance:
+            for i,origin in enumerate(monster_positions):
+                if not monster_living[i] or monster_kinds[i]!="fire_dragon":continue
+                cell = plus(origin,facings[i]);previous = origin
+                while floor(cell) and cell not in bushes and not barriers.get(cell,False) and cell not in crystals:
+                    assert not edge_blocked(previous,cell), "Fire/fence interaction is unconfirmed"
+                    if cell in heroes and living[heroes.index(cell)]:targets[i] = ("hero",heroes.index(cell));break
+                    if cell in monster_cells():targets[i] = ("monster",monster_cells()[cell]);break
+                    previous = cell;cell = plus(cell,facings[i])
+            for i,goblin in enumerate(monster_positions):
+                if not monster_living[i] or monster_kinds[i]!="goblin":continue
+                for v,dragon in enumerate(monster_positions):
+                    if monster_living[v] and monster_kinds[v]=="fire_dragon" and abs(goblin[0]-dragon[0])+abs(goblin[1]-dragon[1])==1:
+                        assert not edge_blocked(goblin,dragon), "Goblin/fence attack is undefined"
+                        goblin_dragons.append(v)
+        for family,victim in targets.values():
+            if family=="hero":living[victim] = False
+            else:monster_living[victim] = False
+        for victim in goblin_dragons:monster_living[victim] = False
+        for h in goblin_heroes:living[h] = False
         return pressure, barriers, living
 
-    pressure, barriers, living = settle({})
+    pressure, barriers, living = settle({}, advance=False)
 
     def walkable(cell):
         return floor(cell) and cell not in bushes and not barriers.get(cell, False)
@@ -118,7 +144,8 @@ def check_replay(item, directory, require_rendered=True):
         actual = {tuple(entry["position"]): entry["id"] for entry in state["crystals"]}
         assert actual == crystals
         if monster_positions:
-            assert state["monsters"] == [{"id": i, "kind":monster_kinds[i], "position": list(cell), "alive": monster_living[i]} for i,cell in enumerate(monster_positions)]
+            expected_monsters = [{"id": i, "kind":monster_kinds[i], "position": list(cell), "alive": monster_living[i], **({"facing":list(facings[i])} if monster_kinds[i]=="fire_dragon" else {})} for i,cell in enumerate(monster_positions)]
+            assert state["monsters"] == expected_monsters
             assert state.get("death_reason", "") == ""
             assert not set(heroes).intersection(monster_cells()) and not set(crystals).intersection(monster_cells())
         if fences:
