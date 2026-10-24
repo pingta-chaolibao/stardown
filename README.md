@@ -62,7 +62,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十六关 | [观看 / 下载 MP4](video/chapter_01/level_16.mp4) | 15.8 秒 |
 | 第十七关 | [观看 / 下载 MP4](video/chapter_01/level_17.mp4) | 53.6 秒 |
 | 第十八关 | [观看 / 下载 MP4](video/chapter_01/level_18.mp4) | 88.4 秒 |
-| 第十九关 | 实现提交后录制 | 待验证 |
+| 第十九关 | [观看 / 下载 MP4](video/chapter_01/level_19.mp4) | 63.2 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -616,4 +616,6 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 
 63实际行动+34免费C=97输入，13推5换0拉，全程存活且无毁晶。18三英雄压满三板，19蓝隔开放左能量交换紫晶，使晶接替左板；30红推晶至中板，34蓝红交换跨过左门并保持压力；36红、49绿分别站开放能量格。最终红(4,0)、绿(9,1)、蓝(6,0)占三不同目标，紫晶ID0留左板(1,5)，颜色不限制目标配对。
 
-合法死亡支路：正式前缀36后选绿向上离开右板，两个能量同时恢复，杀死左能量格上的非当前红。C/方向/R/切关全部锁定，一次Undo复活红、恢复全体占用/压力/能量并保留绿选择。仅作为独立测试，不拼进通关演示。数据`levels/north_19.json`、解法`levels/solutions/north_19.json`、独立求解`python3 tools/search_north_19.py`；模型及真实输入测试为`north_19_regression.gd`/`north_19_scene.gd`。先提交实现再制作正式视频，前18关72份数据/解法/MP4/回放和独立能量显示短片保持原字节。
+合法死亡支路：正式前缀36后选绿向上离开右板，两个能量同时恢复，杀死左能量格上的非当前红。C/方向/R/切关全部锁定，一次Undo复活红、恢复全体占用/压力/能量并保留绿选择。仅作为独立测试，不拼进通关演示。数据`levels/north_19.json`、解法`levels/solutions/north_19.json`、独立求解`python3 tools/search_north_19.py`；模型及真实输入测试为`north_19_regression.gd`/`north_19_scene.gd`。实现先提交并正常推送`8e8951bf4411142096cb20d1c8ac244967dd6687`，随后才录制[正式通关视频](video/chapter_01/level_19.mp4)。前18关72份数据/解法/MP4/回放和独立能量显示短片保持原字节。
+
+第十九关实际视频63.2秒/1896帧，63行动+34免费C、13推5换0拉，全程存活且无毁晶。初始两英雄占目标但未胜利，结束三英雄分占三个不同目标；首尾、五次交换及34次C高亮已查看。全部19视频完整解码和独立合法回放通过。实际画面：[初始](docs/screenshots/level_19_initial.png)、[绿人通过消失能量](docs/screenshots/level_19_green_energy.png)、[三英雄胜利](docs/screenshots/level_19_completed.png)、[小窗口能量标记](docs/screenshots/level_19_compact_energy_active.png)。
