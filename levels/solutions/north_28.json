@@ -1,0 +1,15 @@
+{
+  "level_id": "north_hero_28",
+  "path": "RLDDRRURRRRULLDURRDDLDDDDLUULRRRDDLLULLURRDDLLLUL",
+  "moves": 49,
+  "directions": 49,
+  "input_events": 49,
+  "selection_events": 0,
+  "pushes": 0,
+  "pulls": 17,
+  "dragon_pulls": 7,
+  "crystal_pulls": 10,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "note": "构造合法路线并独立逐步复算：先拉3号龙左移，用水晶挡住其与19号龙火线；水晶下移后拉31号龙右移，水晶左移挡住30号龙移位后的火焰，再从下方绕到目标。7号可走、43岩石保持。无需新机制，无最短/穷尽搜索声明。"
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_28",
+  "title": "北部英雄 · 第二十八关",
+  "is_temporary": false,
+  "source_note": "用户确认7×7全图：1绿英雄、9水晶、36终点；3/30/31火龙朝下，19朝右。7号可走，43号岩石阻挡；花纹地面可走，右列和底行完整纳入。沿用绿色自动单拉水晶或火龙与共同攻击，不新增机制，原创2D几何表现。",
+  "terrain": [
+    "...#...",
+    ".......",
+    "...#...",
+    "#####..",
+    "#......",
+    ".......",
+    "#......"
+  ],
+  "player": [
+    0,
+    0
+  ],
+  "hero_kind": "green",
+  "crates": [
+    [
+      1,
+      1
+    ]
+  ],
+  "crystal_colors": [
+    "purple"
+  ],
+  "targets": [],
+  "exit": [
+    0,
+    5
+  ],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "monsters": [
+    {
+      "kind": "fire_dragon",
+      "position": [
+        2,
+        0
+      ],
+      "facing": "down"
+    },
+    {
+      "kind": "fire_dragon",
+      "position": [
+        4,
+        2
+      ],
+      "facing": "right"
+    },
+    {
+      "kind": "fire_dragon",
+      "position": [
+        1,
+        4
+      ],
+      "facing": "down"
+    },
+    {
+      "kind": "fire_dragon",
+      "position": [
+        2,
+        4
+      ],
+      "facing": "down"
+    }
+  ]
+}

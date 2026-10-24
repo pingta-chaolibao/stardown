@@ -26,8 +26,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number<1 or level_number>27 or report_path.is_empty():
-		_fail("Pass --level=1 through 27 and an absolute --report path.")
+	if level_number<1 or level_number>28 or report_path.is_empty():
+		_fail("Pass --level=1 through 28 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -108,6 +108,8 @@ func _run() -> void:
 		return
 	if track_dragon_pulls and dragon_pulls!=int(solution["dragon_pulls"]):
 		_fail("Dragon pull count differs from checked solution.");return
+	if solution.has("crystal_pulls") and game.model.pulls-dragon_pulls!=int(solution["crystal_pulls"]):
+		_fail("Crystal pull count differs from checked solution.");return
 	await _frames(VICTORY_FRAMES)
 	var report := {"input_events":solution["path"].length(),"direction_actions":actual_actions,"selection_events":selection_events,"chapter": 1, "level": level_number,
 		"game_implementation_commit": OS.get_environment("STARDOWN_RECORDING_COMMIT"),

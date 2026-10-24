@@ -237,6 +237,7 @@ def check_replay(item, directory, require_rendered=True):
     assert pulls == solution.get("pulls", 0) and swaps == solution.get("swaps", 0)
     assert actual_actions == solution["moves"]
     if "dragon_pulls" in solution:assert dragon_pulls == solution["dragon_pulls"]
+    if "crystal_pulls" in solution:assert pulls-dragon_pulls == solution["crystal_pulls"]
     assert selection_events == solution.get("selection_events", 0)
     if multi:
         assert evidence["input_events"]==solution["input_events"] and evidence["direction_actions"]==actual_actions and evidence["selection_events"]==selection_events

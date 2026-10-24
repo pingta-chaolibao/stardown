@@ -27,6 +27,6 @@ func _run() -> void:
  _check(game.model.is_complete() and game.moves_label.text=="74" and game.pulls_label.text=="03" and game.status_label.text.contains("已抵达终点"),"actual74actions3pullslivingvictory")
  await _capture("north_27_completed.png");await _click("Undo");_check(game.model.snapshot()==histories[-1] and not game.model.is_complete(),"victoryscreenUndo exact");await _click("Restart");_check(game.model.snapshot()==initial,"screenrestart aftervictoryrestoresall3dragons")
  root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_27_compact.png")
- await _click("BackToLevels");_check(game.menu.strip.item_count==27 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"27actualdatacards,boundedpoolnotfullinstantiation");await _capture("north_27_navigation.png")
+ await _click("BackToLevels");_check(game.menu.strip.item_count==game.LEVEL_PATHS.size() and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"27actualdatacards,boundedpoolnotfullinstantiation");await _capture("north_27_navigation.png")
  await _click("Level26");_check(game.model.active_kind()=="red" and game.model.monsters().size()==3 and game.model.crates().size()==1,"previous26unchanged");await _click("Level27");_check(game.model.snapshot()==initial,"reenter27hasisolatedhistory")
  print("NORTH27 SCENE RESULT: %d checks, %d failures;display=%s" % [checks,failures,DisplayServer.get_name()]);quit(0 if failures==0 else 1)

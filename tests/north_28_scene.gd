@@ -1,0 +1,33 @@
+extends "res://tests/north_02_scene.gd"
+const Map=preload("res://tests/north_28_regression.gd")
+func _run() -> void:
+ root.size=Vector2i(1280,820);game=load("res://scenes/main.tscn").instantiate();root.add_child(game);await _settle();await _click("Level28")
+ _check(game.current_level_index==27 and game.model.active_kind()=="green" and game.model.crates()==[Vector2i(1,1)] and game.model.monsters().size()==4,"actualpooled28enterscorrectgreen/crystal/4dragons")
+ _check(game.model.level.width==7 and game.model.level.height==7 and game.model.level.is_floor(Vector2i(6,0)) and not game.model.level.is_floor(Vector2i(0,6)),"7floor/43rockcorrect")
+ var initial:Dictionary=game.model.snapshot();_check_layout(game);await _capture("north_28_initial.png")
+ await _press(KEY_C);_check(game.model.snapshot()==initial,"Cdoesnotattackorcount")
+ var e:=InputEventKey.new();e.keycode=KEY_S;e.physical_keycode=KEY_S;e.pressed=true;Input.parse_input_event(e);await _settle();var once:Dictionary=game.model.snapshot();e.echo=true;Input.parse_input_event(e);await _settle();e.echo=false;Input.parse_input_event(e);await _settle()
+ _check(game.model.moves==1 and game.model.player==Vector2i(0,1) and game.model.snapshot()==once,"held/echoDownoneactiononly")
+ e.pressed=false;Input.parse_input_event(e);await _settle();await _click("Restart")
+ for s in "DDRR":await _press(_keycode(s))
+ _check(not game.model.alive and game.model.player==Vector2i(2,2) and game.status_label.text.contains("火焰"),"realshortcutdiesin3dragonray")
+ await _capture("north_28_shortcut_death.png");var dead:Dictionary=game.model.snapshot();await _press(KEY_C);await _press(KEY_R);await _click("BackToLevels");_check(game.model.snapshot()==dead and not game.menu.visible,"deathonlyUndo,noC/restart/menu")
+ await _click("Undo");_check(game.model.alive and game.model.player==Vector2i(1,2),"Undo revives" );await _click("Restart")
+ await _click("MoveRight");await _click("MoveLeft");_check(game.model.pulls==1 and game.model.monsters()[0]["position"]==Vector2i(1,0) and game.model.monsters()[0]["facing"]==Vector2i.DOWN,"screenbuttonsperformfirstdragonpullleft");await _click("Undo");await _click("Restart");_check(game.model.snapshot()==initial,"screenUndo/restartrestorecrystalanddragons")
+ var sol:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://levels/solutions/north_28.json"));var proof:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://artifacts/verification/north_28_route.json"));var histories:Array[Dictionary]=[];var dr:=0;var cr:=0
+ for i in sol["path"].length():
+  histories.append(game.model.snapshot());await _press(_keycode(sol["path"][i]));var expected:Dictionary=proof["trace"][i]
+  _check(game.model.moves==i+1 and game.model.alive and game.model.player==Vector2i(expected["hero"][0],expected["hero"][1]) and game.model.crate_id(Vector2i(expected["crystal"][0],expected["crystal"][1]))==0 and game.model.pulls==expected["pulls"],"actual49routehero/crystal/pullidentityaction%02d" % (i+1))
+  for m in game.model.monsters():_check(m["alive"] and m["position"]==Vector2i(expected["monsters"][m["id"]][0],expected["monsters"][m["id"]][1]) and m["facing"]==(Vector2i.RIGHT if m["id"]==1 else Vector2i.DOWN),"all4dragonids/facings/life")
+  if Map.DRAGON_PULLS.has(i+1):dr+=1;_check(game.status_label.text.contains("火龙"),"UIclassifiesdragonpull")
+  elif i+1 in Map.CRYSTAL_PULLS:cr+=1;_check(game.status_label.text.contains("水晶"),"UIclassifiescrystalpull")
+  if i+1 in [2,11,16,25,32,39,42]:await _capture("north_28_action_%02d.png" % (i+1))
+  if i==15:_check(game.model.crate_id(Vector2i(5,1))==0 and not game.model.fire_danger_at(Vector2i(6,1)),"crystalblocks19dragonafteruppull,safetopright7route")
+  if i==31:_check(game.model.crate_id(Vector2i(5,5))==0 and not game.model.fire_danger_at(Vector2i(5,6)),"crystalshieldallowsgoaround31below")
+  if i==41:_check(game.model.crate_id(Vector2i(3,5))==0 and not game.model.fire_danger_at(Vector2i(3,6)),"finalcrystalshieldallowsgoaround30togoal")
+ _check(game.model.is_complete() and game.moves_label.text=="49" and game.pulls_label.text=="17" and dr==7 and cr==10 and game.status_label.text.contains("已抵达终点"),"actual49actions17pulls7dragon10crystalwin")
+ await _capture("north_28_completed.png");await _click("Undo");_check(game.model.snapshot()==histories[-1] and not game.model.is_complete(),"victoryUndoexact");await _click("Restart");_check(game.model.snapshot()==initial,"restartrestores4dragonsandcrystal")
+ root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_28_compact.png");await _click("BackToLevels")
+ _check(game.menu.strip.item_count==28 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"28realentriesboundedpool");await _capture("north_28_navigation.png")
+ await _click("Level27");_check(game.model.level.width==12 and game.model.crates().is_empty() and game.model.monsters().size()==3,"previous27unchanged");await _click("Level28");_check(game.model.snapshot()==initial,"28historyisolated")
+ print("NORTH28 SCENE RESULT: %d checks, %d failures;display=%s" % [checks,failures,DisplayServer.get_name()]);quit(0 if failures==0 else 1)
