@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_19",
+  "title": "北部英雄 · 第十九关",
+  "is_temporary": false,
+  "source_note": "用户确认11×7原图编号与二维格图；绿5=(4,0)、蓝7=(6,0)起点也是橙色终点，红17=(5,1)。蓝板57/61/65、蓝能量35/43，70/74立柱为墙非草丛。橙目标与蓝机关均仅视觉配色，原创2D几何图形。",
+  "terrain": [
+    "...#...#...",
+    "...#...#...",
+    "...#...#...",
+    "#.###.###.#",
+    "...#...#...",
+    "...........",
+    "...#...#..."
+  ],
+  "heroes": [
+    {
+      "id": "red",
+      "kind": "red",
+      "position": [
+        5,
+        1
+      ]
+    },
+    {
+      "id": "green",
+      "kind": "green",
+      "position": [
+        4,
+        0
+      ]
+    },
+    {
+      "id": "blue",
+      "kind": "blue",
+      "position": [
+        6,
+        0
+      ]
+    }
+  ],
+  "active_hero": "green",
+  "crates": [
+    [
+      1,
+      1
+    ]
+  ],
+  "crystal_colors": [
+    "purple"
+  ],
+  "targets": [],
+  "exits": [
+    [
+      4,
+      0
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      9,
+      1
+    ]
+  ],
+  "exit_color": "orange",
+  "mechanism_color": "blue",
+  "objective": "all_heroes_on_exits",
+  "energy_links": [
+    {
+      "id": "blue_01",
+      "plates": [
+        [
+          1,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          9,
+          5
+        ]
+      ],
+      "activation": "all",
+      "barriers": [
+        [
+          1,
+          3
+        ],
+        [
+          9,
+          3
+        ]
+      ],
+      "pressure_sources": [
+        "hero",
+        "crystal"
+      ]
+    }
+  ]
+}

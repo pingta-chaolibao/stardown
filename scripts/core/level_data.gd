@@ -134,12 +134,12 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 		if level.objective == "all_heroes_on_exits" and level.exit_cells.size() != level.hero_definitions.size():
 			return _invalid("全部英雄目标要求终点数量与英雄数量相等。")
 	var goal_color: Variant = data.get("exit_color", "yellow")
-	if goal_color not in ["yellow", "green", "red", "purple", "blue"]:
-		return _invalid("exit_color 仅支持 yellow、green、red、purple 或 blue。")
+	if goal_color not in ["yellow", "green", "red", "purple", "blue", "orange"]:
+		return _invalid("exit_color 仅支持 yellow、green、red、purple、blue 或 orange。")
 	level.exit_color = goal_color
 	var mechanism_tint: Variant = data.get("mechanism_color", "yellow")
-	if mechanism_tint not in ["yellow", "green"]:
-		return _invalid("mechanism_color 仅支持 yellow 或 green，且只影响显示。")
+	if mechanism_tint not in ["yellow", "green", "blue"]:
+		return _invalid("mechanism_color 仅支持 yellow、green 或 blue，且只影响显示。")
 	level.mechanism_color = mechanism_tint
 	var colors: Variant = data.get("crystal_colors", [])
 	if not colors is Array or (not colors.is_empty() and colors.size() != level.initial_crates.size()):

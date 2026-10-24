@@ -1,0 +1,13 @@
+{
+  "level_id": "north_hero_19",
+  "path": "CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCLLLCUCUCLUUUULUCCR",
+  "moves": 63,
+  "directions": 63,
+  "input_events": 97,
+  "selection_events": 34,
+  "pushes": 13,
+  "pulls": 0,
+  "swaps": 5,
+  "destroyed_crystals": 0,
+  "note": "独立红绿蓝身份占用BFS含能量再现毁晶状态，首次存活胜利停止，再按身份回放；不宣称穷举或最优。C免费选择不进撤销，橙目标和蓝机关仅显示配色。绿/蓝初始占两个终点不提前胜利，三板AND同时开两门。"
+}

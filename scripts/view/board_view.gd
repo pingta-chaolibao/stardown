@@ -7,9 +7,11 @@ const CORAL := Color("f5787b")
 const HERO_GREEN := Color("72ce95")
 const HERO_BLUE := Color("78aff0")
 const MECHANISM_GREEN := Color("78d799")
+const MECHANISM_BLUE := Color("7dbce9")
 const GOLD := Color("dfbb78")
 const GOAL_PURPLE := Color("c4a0f3")
 const GOAL_BLUE := Color("85bef5")
+const GOAL_ORANGE := Color("efac71")
 const MINT := Color("9bc9c1")
 
 var model: State
@@ -84,6 +86,9 @@ func _pressure_plate(center: Vector2, tile: float, pressed: bool) -> void:
 	var green := model.level.mechanism_color == "green"
 	var base := (Color("4da66e") if pressed else Color("315a47")) if green else (Color("c7a34d") if pressed else Color("74613c"))
 	var light := Color("c6ffd5") if green else Color("ffe6a0")
+	if model.level.mechanism_color == "blue":
+		base = Color("4c90c1") if pressed else Color("355775")
+		light = Color("c8eaff")
 	_box(Rect2(center - Vector2.ONE * tile * 0.4, Vector2.ONE * tile * 0.8), base, 5)
 	draw_arc(center, tile * 0.24, 0, TAU, 32, light, 2, true)
 	if pressed:
@@ -92,21 +97,28 @@ func _pressure_plate(center: Vector2, tile: float, pressed: bool) -> void:
 
 func _energy_block(center: Vector2, tile: float) -> void:
 	var green := model.level.mechanism_color == "green"
-	_box(Rect2(center - Vector2.ONE * tile * 0.43, Vector2.ONE * tile * 0.86), Color("3e845b") if green else Color("ba923c"), 5)
-	_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), MECHANISM_GREEN if green else Color("f2ce6d"), 3)
+	var blue := model.level.mechanism_color == "blue"
+	_box(Rect2(center - Vector2.ONE * tile * 0.43, Vector2.ONE * tile * 0.86), Color("376e9b") if blue else (Color("3e845b") if green else Color("ba923c")), 5)
+	_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), MECHANISM_BLUE if blue else (MECHANISM_GREEN if green else Color("f2ce6d")), 3)
 	for offset in [-0.20, 0.0, 0.20]:
-		draw_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("dbffe6") if green else Color("fff0b5"), tile * 0.035, true)
+		draw_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("e1f5ff") if blue else (Color("dbffe6") if green else Color("fff0b5")), tile * 0.035, true)
+
+
+func _mechanism_tint() -> Color:
+	if model.level.mechanism_color == "blue":
+		return MECHANISM_BLUE
+	return MECHANISM_GREEN if model.level.mechanism_color == "green" else GOLD
 
 
 func _inactive_energy_floor(center: Vector2, tile: float) -> void:
-	var tint := MECHANISM_GREEN if model.level.mechanism_color == "green" else GOLD
+	var tint := _mechanism_tint()
 	draw_rect(Rect2(center - Vector2.ONE * tile * 0.38, Vector2.ONE * tile * 0.76), Color(tint, 0.045))
 	for offset in [-0.24, -0.12, 0.0, 0.12, 0.24]:
 		draw_line(center + Vector2(offset - 0.09, -0.17) * tile, center + Vector2(offset + 0.09, 0.17) * tile, Color(tint, 0.16), 1.0, true)
 
 
 func _inactive_energy_border(center: Vector2, tile: float) -> void:
-	var tint := MECHANISM_GREEN if model.level.mechanism_color == "green" else GOLD
+	var tint := _mechanism_tint()
 	var corners := PackedVector2Array([
 		center + Vector2(-0.43, -0.43) * tile, center + Vector2(0.43, -0.43) * tile,
 		center + Vector2(0.43, 0.43) * tile, center + Vector2(-0.43, 0.43) * tile,
@@ -154,6 +166,11 @@ func _target(center: Vector2, tile: float) -> void:
 
 func _exit_marker(center: Vector2, tile: float) -> void:
 	var rect := Rect2(center - Vector2.ONE * tile * 0.4, Vector2.ONE * tile * 0.8)
+	if model.level.exit_color == "orange":
+		draw_circle(center, tile * 0.36, Color("714a32"))
+		draw_arc(center, tile * 0.30, 0, TAU, 48, GOAL_ORANGE, 3, true)
+		draw_circle(center, tile * 0.16, Color("ffe0bc"))
+		return
 	if model.level.exit_color=="red":
 		draw_circle(center,tile*0.36,Color("733f4d"))
 		draw_arc(center,tile*0.31,0,TAU,48,CORAL,3,true)

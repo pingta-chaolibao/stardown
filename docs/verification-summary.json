@@ -1,5 +1,5 @@
 {
-  "time_utc": "2026-10-23T16:20:58.180767+00:00",
+  "time_utc": "2026-10-24T00:59:01.310768+00:00",
   "root": "/workspace/stardown",
   "visual_requested": true,
   "steps": [
@@ -7,169 +7,169 @@
       "name": "00_version",
       "passed": true,
       "exit_code": 0,
-      "seconds": 0.014
+      "seconds": 0.015
     },
     {
       "name": "01_import",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.833
+      "seconds": 8.622
     },
     {
       "name": "02_parse_00_bush_obstacle",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.165
+      "seconds": 3.145
     },
     {
       "name": "02_parse_01_energy_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.152
     },
     {
       "name": "02_parse_02_grid_state",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.149
     },
     {
       "name": "02_parse_03_hero_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.155
     },
     {
       "name": "02_parse_04_level_data",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.148
     },
     {
       "name": "02_parse_05_swap_rules",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.15
     },
     {
       "name": "02_parse_06_step_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.142
     },
     {
       "name": "02_parse_07_main",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.238
+      "seconds": 3.234
     },
     {
       "name": "02_parse_08_board_view",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.142
     },
     {
       "name": "02_parse_09_blue_swap_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "02_parse_10_bush_and_group_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.152
     },
     {
       "name": "02_parse_11_chain_push_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.144
     },
     {
       "name": "02_parse_12_energy_destruction_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.151
     },
     {
       "name": "02_parse_13_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.152
     },
     {
       "name": "02_parse_14_energy_visibility_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.237
+      "seconds": 3.241
     },
     {
       "name": "02_parse_15_global_energy_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.145
     },
     {
       "name": "02_parse_16_green_pull_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.147
     },
     {
       "name": "02_parse_17_multi_hero_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.148
     },
     {
       "name": "02_parse_18_north_01_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.152
+      "seconds": 3.149
     },
     {
       "name": "02_parse_19_north_02_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.151
+      "seconds": 3.144
     },
     {
       "name": "02_parse_20_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "02_parse_21_north_03_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.143
     },
     {
       "name": "02_parse_22_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.143
     },
     {
       "name": "02_parse_23_north_04_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.143
     },
     {
       "name": "02_parse_24_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.145
     },
     {
       "name": "02_parse_25_north_05_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.148
     },
     {
       "name": "02_parse_26_north_05_scene",
@@ -181,37 +181,37 @@
       "name": "02_parse_27_north_06_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.144
     },
     {
       "name": "02_parse_28_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.144
     },
     {
       "name": "02_parse_29_north_07_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.148
     },
     {
       "name": "02_parse_30_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.145
     },
     {
       "name": "02_parse_31_north_08_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.142
     },
     {
       "name": "02_parse_32_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.15
     },
     {
       "name": "02_parse_33_north_09_regression",
@@ -223,61 +223,61 @@
       "name": "02_parse_34_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.146
     },
     {
       "name": "02_parse_35_north_10_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.149
     },
     {
       "name": "02_parse_36_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.144
     },
     {
       "name": "02_parse_37_north_11_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.144
     },
     {
       "name": "02_parse_38_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.152
+      "seconds": 3.154
     },
     {
       "name": "02_parse_39_north_12_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.244
+      "seconds": 3.146
     },
     {
       "name": "02_parse_40_north_12_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.143
     },
     {
       "name": "02_parse_41_north_13_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.151
+      "seconds": 3.144
     },
     {
       "name": "02_parse_42_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.142
+      "seconds": 3.144
     },
     {
       "name": "02_parse_43_north_14_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.144
     },
     {
       "name": "02_parse_44_north_14_scene",
@@ -289,58 +289,70 @@
       "name": "02_parse_45_north_15_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.146
+      "seconds": 3.143
     },
     {
       "name": "02_parse_46_north_15_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "02_parse_47_north_16_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.145
     },
     {
       "name": "02_parse_48_north_16_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.146
     },
     {
       "name": "02_parse_49_north_17_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.148
+      "seconds": 3.145
     },
     {
       "name": "02_parse_50_north_17_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.241
+      "seconds": 3.239
     },
     {
       "name": "02_parse_51_north_18_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.148
     },
     {
       "name": "02_parse_52_north_18_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.242
+      "seconds": 3.252
     },
     {
-      "name": "02_parse_53_run_tests",
+      "name": "02_parse_53_north_19_regression",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.151
     },
     {
-      "name": "02_parse_54_scene_smoke",
+      "name": "02_parse_54_north_19_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.243
+    },
+    {
+      "name": "02_parse_55_run_tests",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "02_parse_56_scene_smoke",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.143
@@ -349,397 +361,415 @@
       "name": "03_logic",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.236
+      "seconds": 3.239
     },
     {
       "name": "03_chain_push",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.146
     },
     {
       "name": "03_energy",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.165
+      "seconds": 3.146
     },
     {
       "name": "03_global_energy",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.161
+      "seconds": 3.143
     },
     {
       "name": "03_bush_group",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.15
+      "seconds": 3.144
     },
     {
       "name": "03_green_pull",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.143
     },
     {
       "name": "03_blue_swap",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.143
+      "seconds": 3.142
     },
     {
       "name": "03_multi_hero",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.145
+      "seconds": 3.142
     },
     {
       "name": "03_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.142
     },
     {
       "name": "03_north_14",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.149
+      "seconds": 3.143
     },
     {
       "name": "03_north_15",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.158
+      "seconds": 3.141
     },
     {
       "name": "03_north_16",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.154
+      "seconds": 3.142
     },
     {
       "name": "03_energy_destruction",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.147
+      "seconds": 3.142
     },
     {
       "name": "03_north_17",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.145
     },
     {
       "name": "03_north_18",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.144
+      "seconds": 3.147
     },
     {
-      "name": "03_north_01",
+      "name": "03_north_19",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.146
     },
     {
+      "name": "03_north_01",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
       "name": "03_north_02",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.149
-    },
-    {
-      "name": "03_north_03",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.256
-    },
-    {
-      "name": "03_north_04",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.149
-    },
-    {
-      "name": "03_north_05",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.148
-    },
-    {
-      "name": "03_north_06",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.152
-    },
-    {
-      "name": "03_north_07",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.152
-    },
-    {
-      "name": "03_north_08",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.153
-    },
-    {
-      "name": "03_north_09",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.156
-    },
-    {
-      "name": "03_north_10",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.151
-    },
-    {
-      "name": "03_north_11",
-      "passed": true,
-      "exit_code": 0,
-      "seconds": 3.147
-    },
-    {
-      "name": "03_north_12",
       "passed": true,
       "exit_code": 0,
       "seconds": 3.145
     },
     {
+      "name": "03_north_03",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239
+    },
+    {
+      "name": "03_north_04",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "03_north_06",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_north_07",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_north_08",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_09",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_north_10",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_north_11",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_north_12",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
       "name": "04_main_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 3.336
+      "seconds": 3.331
     },
     {
       "name": "05_scene_input",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.451
+      "seconds": 4.448
     },
     {
       "name": "05_north_02_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.26
+      "seconds": 4.262
     },
     {
       "name": "05_north_03_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.171
+      "seconds": 4.264
     },
     {
       "name": "05_north_04_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.362
+      "seconds": 4.356
     },
     {
       "name": "05_north_05_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.358
+      "seconds": 4.356
     },
     {
       "name": "05_north_06_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.003
+      "seconds": 5.008
     },
     {
       "name": "05_north_07_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.122
+      "seconds": 6.121
     },
     {
       "name": "05_north_08_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.82
+      "seconds": 4.817
     },
     {
       "name": "05_north_09_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.728
+      "seconds": 4.729
     },
     {
       "name": "05_north_10_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.377
+      "seconds": 5.379
     },
     {
       "name": "05_north_11_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.912
+      "seconds": 4.913
     },
     {
       "name": "05_north_12_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.469
+      "seconds": 5.47
     },
     {
       "name": "05_north_13_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.653
+      "seconds": 5.656
     },
     {
       "name": "05_north_14_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.775
+      "seconds": 6.771
     },
     {
       "name": "05_north_15_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 8.072
+      "seconds": 8.657
     },
     {
       "name": "05_north_16_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 5.844
+      "seconds": 6.047
     },
     {
       "name": "05_north_17_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 6.957
+      "seconds": 7.164
     },
     {
       "name": "05_north_18_scene",
       "passed": true,
       "exit_code": 0,
-      "seconds": 9.654
+      "seconds": 9.841
+    },
+    {
+      "name": "05_north_19_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.373
     },
     {
       "name": "05_energy_visibility",
       "passed": true,
       "exit_code": 0,
-      "seconds": 4.819
+      "seconds": 4.822
     },
     {
       "name": "06_render",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.172
+      "seconds": 14.74
     },
     {
       "name": "06_render_north_02",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.656
+      "seconds": 12.169
     },
     {
       "name": "06_render_north_03",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.164
+      "seconds": 14.075
     },
     {
       "name": "06_render_north_04",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.172
+      "seconds": 14.428
     },
     {
       "name": "06_render_north_05",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.175
+      "seconds": 14.471
     },
     {
       "name": "06_render_north_06",
       "passed": true,
       "exit_code": 0,
-      "seconds": 16.245
+      "seconds": 13.397
     },
     {
       "name": "06_render_north_07",
       "passed": true,
       "exit_code": 0,
-      "seconds": 19.402
+      "seconds": 21.48
     },
     {
       "name": "06_render_north_08",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.797
+      "seconds": 12.75
     },
     {
       "name": "06_render_north_09",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.181
+      "seconds": 15.097
     },
     {
       "name": "06_render_north_10",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.357
+      "seconds": 14.142
     },
     {
       "name": "06_render_north_11",
       "passed": true,
       "exit_code": 0,
-      "seconds": 13.312
+      "seconds": 13.331
     },
     {
       "name": "06_render_north_12",
       "passed": true,
       "exit_code": 0,
-      "seconds": 16.874
+      "seconds": 13.995
     },
     {
       "name": "06_render_north_13",
       "passed": true,
       "exit_code": 0,
-      "seconds": 17.276
+      "seconds": 14.081
     },
     {
       "name": "06_render_north_14",
       "passed": true,
       "exit_code": 0,
-      "seconds": 17.365
+      "seconds": 17.269
     },
     {
       "name": "06_render_north_15",
       "passed": true,
       "exit_code": 0,
-      "seconds": 23.534
+      "seconds": 23.872
     },
     {
       "name": "06_render_north_16",
       "passed": true,
       "exit_code": 0,
-      "seconds": 14.718
+      "seconds": 14.953
     },
     {
       "name": "06_render_north_17",
       "passed": true,
       "exit_code": 0,
-      "seconds": 20.901
+      "seconds": 20.588
     },
     {
       "name": "06_render_north_18",
       "passed": true,
       "exit_code": 0,
-      "seconds": 22.386
+      "seconds": 22.831
+    },
+    {
+      "name": "06_render_north_19",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.205
     },
     {
       "name": "06_energy_visibility",
       "passed": true,
       "exit_code": 0,
-      "seconds": 12.738
+      "seconds": 15.644
     }
   ],
   "engine": "4.6.3.stable.official.7d41c59c4",
@@ -820,6 +850,11 @@
       "failures": 0,
       "cases": 4
     },
+    "03_north_19": {
+      "checks": 741,
+      "failures": 0,
+      "cases": 5
+    },
     "03_north_01": {
       "checks": 344,
       "failures": 0,
@@ -881,155 +916,163 @@
       "cases": 5
     },
     "05_scene_input": {
-      "checks": 241,
+      "checks": 243,
       "failures": 0
     },
     "05_north_02_scene": {
-      "checks": 206,
+      "checks": 208,
       "failures": 0
     },
     "05_north_03_scene": {
-      "checks": 209,
-      "failures": 0
-    },
-    "05_north_04_scene": {
-      "checks": 223,
-      "failures": 0
-    },
-    "05_north_05_scene": {
       "checks": 211,
       "failures": 0
     },
+    "05_north_04_scene": {
+      "checks": 225,
+      "failures": 0
+    },
+    "05_north_05_scene": {
+      "checks": 213,
+      "failures": 0
+    },
     "05_north_06_scene": {
-      "checks": 262,
+      "checks": 264,
       "failures": 0
     },
     "05_north_07_scene": {
-      "checks": 354,
+      "checks": 356,
       "failures": 0
     },
     "05_north_08_scene": {
-      "checks": 257,
+      "checks": 259,
       "failures": 0
     },
     "05_north_09_scene": {
-      "checks": 218,
+      "checks": 220,
       "failures": 0
     },
     "05_north_10_scene": {
-      "checks": 316,
+      "checks": 318,
       "failures": 0
     },
     "05_north_11_scene": {
-      "checks": 250,
+      "checks": 252,
       "failures": 0
     },
     "05_north_12_scene": {
-      "checks": 266,
+      "checks": 268,
       "failures": 0
     },
     "05_north_13_scene": {
-      "checks": 543,
+      "checks": 548,
       "failures": 0
     },
     "05_north_14_scene": {
-      "checks": 590,
+      "checks": 595,
       "failures": 0
     },
     "05_north_15_scene": {
-      "checks": 578,
+      "checks": 582,
       "failures": 0
     },
     "05_north_16_scene": {
-      "checks": 433,
+      "checks": 437,
       "failures": 0
     },
     "05_north_17_scene": {
-      "checks": 581,
+      "checks": 585,
       "failures": 0
     },
     "05_north_18_scene": {
-      "checks": 907,
+      "checks": 912,
+      "failures": 0
+    },
+    "05_north_19_scene": {
+      "checks": 815,
       "failures": 0
     },
     "05_energy_visibility": {
-      "checks": 151,
+      "checks": 152,
       "failures": 0
     },
     "06_render": {
-      "checks": 251,
+      "checks": 253,
       "failures": 0
     },
     "06_render_north_02": {
-      "checks": 212,
+      "checks": 214,
       "failures": 0
     },
     "06_render_north_03": {
-      "checks": 217,
-      "failures": 0
-    },
-    "06_render_north_04": {
-      "checks": 231,
-      "failures": 0
-    },
-    "06_render_north_05": {
       "checks": 219,
       "failures": 0
     },
+    "06_render_north_04": {
+      "checks": 233,
+      "failures": 0
+    },
+    "06_render_north_05": {
+      "checks": 221,
+      "failures": 0
+    },
     "06_render_north_06": {
-      "checks": 276,
+      "checks": 278,
       "failures": 0
     },
     "06_render_north_07": {
-      "checks": 374,
+      "checks": 376,
       "failures": 0
     },
     "06_render_north_08": {
-      "checks": 273,
+      "checks": 275,
       "failures": 0
     },
     "06_render_north_09": {
-      "checks": 228,
+      "checks": 230,
       "failures": 0
     },
     "06_render_north_10": {
-      "checks": 330,
+      "checks": 332,
       "failures": 0
     },
     "06_render_north_11": {
-      "checks": 266,
+      "checks": 268,
       "failures": 0
     },
     "06_render_north_12": {
-      "checks": 286,
+      "checks": 288,
       "failures": 0
     },
     "06_render_north_13": {
-      "checks": 559,
+      "checks": 564,
       "failures": 0
     },
     "06_render_north_14": {
-      "checks": 614,
+      "checks": 619,
       "failures": 0
     },
     "06_render_north_15": {
-      "checks": 610,
+      "checks": 614,
       "failures": 0
     },
     "06_render_north_16": {
-      "checks": 461,
+      "checks": 465,
       "failures": 0
     },
     "06_render_north_17": {
-      "checks": 617,
+      "checks": 621,
       "failures": 0
     },
     "06_render_north_18": {
-      "checks": 949,
+      "checks": 954,
+      "failures": 0
+    },
+    "06_render_north_19": {
+      "checks": 874,
       "failures": 0
     },
     "06_energy_visibility": {
-      "checks": 187,
+      "checks": 188,
       "failures": 0
     }
   },
@@ -1732,6 +1775,73 @@
         "swaps": 10,
         "destroyed_crystals": 0,
         "note": "独立红绿蓝身份占用BFS含能量再现毁晶状态，首次存活胜利停止，再按身份回放；不宣称穷举或最优。C免费选择不进撤销，蓝色圆盘仅为终点配色。18号可走、12号墙、19号单格能量不变。"
+      }
+    },
+    {
+      "id": "north_hero_19",
+      "size": [
+        11,
+        7
+      ],
+      "heroes": [
+        {
+          "id": "red",
+          "kind": "red",
+          "position": [
+            5,
+            1
+          ]
+        },
+        {
+          "id": "green",
+          "kind": "green",
+          "position": [
+            4,
+            0
+          ]
+        },
+        {
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            6,
+            0
+          ]
+        }
+      ],
+      "active_hero": "green",
+      "crystal_count": 1,
+      "crystal_colors": [
+        "purple"
+      ],
+      "exits": [
+        [
+          4,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          9,
+          1
+        ]
+      ],
+      "exit_color": "orange",
+      "mechanism_color": "blue",
+      "solution": {
+        "level_id": "north_hero_19",
+        "path": "CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCLLLCUCUCLUUUULUCCR",
+        "moves": 63,
+        "directions": 63,
+        "input_events": 97,
+        "selection_events": 34,
+        "pushes": 13,
+        "pulls": 0,
+        "swaps": 5,
+        "destroyed_crystals": 0,
+        "note": "独立红绿蓝身份占用BFS含能量再现毁晶状态，首次存活胜利停止，再按身份回放；不宣称穷举或最优。C免费选择不进撤销，橙目标和蓝机关仅显示配色。绿/蓝初始占两个终点不提前胜利，三板AND同时开两门。"
       }
     }
   ],
@@ -6661,5 +6771,74 @@
     "replay_report": "level_18_replay.json",
     "level_file": "levels/north_18.json",
     "solution_file": "levels/solutions/north_18.json"
-  }
+  },
+  "north_19_independent_search": {
+    "method": "Identity-aware four-object BFS with free selection and restoration deletion;first living victory,no exhaustive/optimality claim",
+    "floor_cells": 59,
+    "expanded_states": 3574484,
+    "visited_states": 3755119,
+    "pending_states": 180635,
+    "seconds": 21.802,
+    "solution": {
+      "level_id": "north_hero_19",
+      "path": "CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCLLLCUCUCLUUUULUCCR",
+      "moves": 63,
+      "directions": 63,
+      "input_events": 97,
+      "selection_events": 34,
+      "pushes": 13,
+      "pulls": 0,
+      "swaps": 5,
+      "destroyed_crystals": 0,
+      "note": "独立红绿蓝身份占用BFS含能量再现毁晶状态，首次存活胜利停止，再按身份回放；不宣称穷举或最优。C免费选择不进撤销，橙目标和蓝机关仅显示配色。绿/蓝初始占两个终点不提前胜利，三板AND同时开两门。"
+    }
+  },
+  "north_19_support": {
+    "model_cases": 5,
+    "model_checks": 741,
+    "headless_ui_checks": 815,
+    "rendered_ui_checks": 874,
+    "terrain_cells_checked": 77,
+    "floor_cells": 59,
+    "initial_active_hero": "green",
+    "initial_goal_occupants": 2,
+    "no_premature_victory": true,
+    "ordinary_orange_goals": true,
+    "blue_mechanisms_presentation_only": true,
+    "plate_occupancy_masks_checked": 8,
+    "actual_actions": 63,
+    "selection_events": 34,
+    "input_events": 97,
+    "pushes": 13,
+    "pulls": 0,
+    "swaps": 5,
+    "destroyed_crystals_on_route": 0,
+    "first_all_plates_action": 18,
+    "first_crystal_handoff_action": 19,
+    "red_energy_action": 36,
+    "green_energy_action": 49,
+    "victory_action": 63,
+    "window_sizes": [
+      [
+        1280,
+        820
+      ],
+      [
+        960,
+        615
+      ]
+    ],
+    "navigation_rows": [
+      10,
+      9
+    ],
+    "all_three_screen_selection_highlights_tested": true,
+    "compact_active_inactive_blue_energy_markers_verified": true,
+    "legal_death_side_path": "prefix36,choosegreen U ->both energies restore and kill inactive red at(1,3);C/R/move/load blocked;oneUndo revives and retainsgreen",
+    "shared_gameplay_rules_changed": false
+  },
+  "previous_eighteen_maps_solutions_videos_replays_unchanged_from": "e445d2aea0e7aa7ddf2c5f21c16f1be3c9cc35af",
+  "previous_eighteen_deliverable_files_compared": 72,
+  "previous_eighteen_manifest_entries_unchanged": true,
+  "north_19_walkthrough_pending": true
 }
