@@ -79,6 +79,23 @@ def main():
                 raise RuntimeError(label)
             return log
 
+        def run_python(label, relative):
+            began = time.monotonic()
+            process = subprocess.run([sys.executable, str(ROOT / relative)], cwd=ROOT, env=env,
+                                     text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                     timeout=90, check=False)
+            log = process.stdout
+            (output / (label + ".log")).write_text(log, encoding="utf-8")
+            passed = process.returncode == 0 and not ERROR.search(log)
+            report["steps"].append({"name": label, "passed": passed, "exit_code": process.returncode,
+                                    "seconds": round(time.monotonic() - began, 3)})
+            print(f"{'PASS' if passed else 'FAIL'} {label}", flush=True)
+            for line in log.splitlines():
+                if "RESULT:" in line: print("  " + line, flush=True)
+            if not passed:
+                print(log, file=sys.stderr)
+                raise RuntimeError(label)
+
         try:
             report["engine"] = run("00_version", ["--version"]).strip()
             if not re.search(r"(?:^|\n)4\.", report["engine"]):
@@ -107,6 +124,9 @@ def main():
             run("03_fences", ["--script", "res://tests/fence_regression.gd"])
             run("03_north_20", ["--script", "res://tests/north_20_regression.gd"])
             run("03_north_21", ["--script", "res://tests/north_21_regression.gd"])
+            run("03_monsters", ["--script", "res://tests/monster_regression.gd"])
+            run_python("03_monster_independent", "tools/check_monster_replays.py")
+            run("03_north_22", ["--script", "res://tests/north_22_regression.gd"])
             run("03_north_01", ["--script", "res://tests/north_01_regression.gd"])
             run("03_north_02", ["--script", "res://tests/north_02_regression.gd"])
             run("03_north_03", ["--script", "res://tests/north_03_regression.gd"])
@@ -141,6 +161,7 @@ def main():
             run("05_north_19_scene", ["--script", "res://tests/north_19_scene.gd"])
             run("05_north_20_scene", ["--script", "res://tests/north_20_scene.gd"])
             run("05_north_21_scene", ["--script", "res://tests/north_21_scene.gd"])
+            run("05_north_22_scene", ["--script", "res://tests/north_22_scene.gd"])
             run("05_navigation", ["--script", "res://tests/navigation_scene.gd"])
             run("05_energy_visibility", ["--script", "res://tests/energy_visibility_scene.gd"])
             if args.visual:
@@ -212,6 +233,9 @@ def main():
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_21", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_21_scene.gd",
+                                          "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+                run("06_render_north_22", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
+                                          "--audio-driver", "Dummy", "--script", "res://tests/north_22_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_navigation", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/navigation_scene.gd",

@@ -4,6 +4,7 @@ extends RefCounted
 
 const Bush = preload("res://scripts/core/bush_obstacle.gd")
 const Heroes = preload("res://scripts/core/hero_rules.gd")
+const Monsters = preload("res://scripts/core/monster_rules.gd")
 const Fences = preload("res://scripts/core/fence_edges.gd")
 
 var id: String = ""
@@ -20,6 +21,8 @@ var hero_kind: String = "red"
 var hero_definitions: Array[Dictionary] = []
 var initial_active_hero: int = 0
 var initial_crates: Array[Vector2i] = []
+var initial_monsters: Array[Vector2i] = []
+var monster_kinds:PackedStringArray=[]
 var crystal_colors: PackedStringArray = []
 var targets: Array[Vector2i] = []
 var exit_cell := Vector2i(-1, -1)
@@ -165,6 +168,16 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	if not fences["error"].is_empty(): return _invalid(fences["error"])
 	level.fence_edges.assign(fences["edges"])
 	level._fence_index = fences["index"]
+	var monster_entries: Variant=data.get("monsters",[])
+	if not monster_entries is Array:return _invalid("monsters 必须是坐标数组。")
+	for entry in monster_entries:
+		if not entry is Dictionary or not Monsters.is_supported(entry.get("kind")):
+			return _invalid("每只怪物需明确kind；当前仅支持goblin（哥布林），未知类型不能套用其行为。")
+		var cell:Variant=_parse_cell(entry.get("position"))
+		if cell==null or not level.is_floor(cell) or cell in level.initial_monsters or cell in level.initial_crates or level.hero_start_at(cell)>=0 or level.bush_at(cell)!=null:
+			return _invalid("怪物必须在独立的地图内整数地板格，不能与英雄、水晶、草丛重叠。")
+		level.initial_monsters.append(cell)
+		level.monster_kinds.append(entry["kind"])
 	level.id = data["id"]
 	level.title = data["title"]
 	level.is_temporary = data["is_temporary"]

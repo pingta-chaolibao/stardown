@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DIRECTIONS = {"U": (0, -1), "D": (0, 1), "L": (-1, 0), "R": (1, 0)}
 
 
-def check_replay(item, directory):
+def check_replay(item, directory, require_rendered=True):
     evidence = json.loads((directory / item["replay_report"]).read_text())
     level = json.loads((ROOT / item["level_file"]).read_text())
     solution = json.loads((ROOT / item["solution_file"]).read_text())
@@ -23,6 +23,12 @@ def check_replay(item, directory):
     assert all(hero["kind"] in ("red", "green", "blue") for hero in definitions)
     multi = len(heroes) > 1
     crystals = {tuple(cell): identity for identity, cell in enumerate(level["crates"])}
+    monster_kinds = [entry["kind"] for entry in level.get("monsters", [])]
+    assert all(kind=="goblin" for kind in monster_kinds), "Unknown monster kinds need explicit behavior, no goblin default"
+    monster_positions = [tuple(entry["position"]) for entry in level.get("monsters", [])]
+    monster_living = [True] * len(monster_positions)
+    def monster_cells():
+        return {cell: i for i, cell in enumerate(monster_positions) if monster_living[i]}
     bushes = {tuple(cell) for cell in level.get("bushes", [])}
     exits = {tuple(cell) for cell in level.get("exits", [level["exit"]] if "exit" in level else [])}
     initial = evidence["initial_state"]
@@ -30,7 +36,8 @@ def check_replay(item, directory):
     assert not initial["completed"] and evidence["path"] == solution["path"]
     assert initial["level_id"] == level["id"] == solution["level_id"]
     assert evidence["game_implementation_commit"] == item["game_implementation_commit"]
-    assert evidence["display"] == "X11"
+    if require_rendered:
+        assert evidence["display"] == "X11"
     assert len(evidence["trace"]) == len(solution["path"]) == solution.get("input_events",solution["moves"])
 
     def floor(cell):
@@ -56,6 +63,7 @@ def check_replay(item, directory):
             sources = link["pressure_sources"]
             plates = [tuple(cell) for cell in link.get("plates", [link["plate"]] if "plate" in link else [])]
             assert plates and link.get("activation", "all") == "all"
+            assert not set(plates).intersection(monster_cells()), "Monster pressure-source behavior has not been confirmed"
             pressure[link["id"]] = all(("hero" in sources and plate in heroes) or ("crystal" in sources and plate in crystals) for plate in plates)
         all_pressed = all(pressure.values())
         for link in level.get("energy_links", []):
@@ -68,6 +76,15 @@ def check_replay(item, directory):
                     del crystals[cell]
                 if not previous_barriers.get(cell, False) and cell in heroes:
                     living[heroes.index(cell)] = False
+        for i, cell in enumerate(monster_positions):
+            if monster_living[i] and barriers.get(cell, False):
+                assert cell in previous_barriers and not previous_barriers[cell], "Monster cannot start in solid energy"
+                monster_living[i] = False
+        for h, cell in enumerate(heroes):
+            for i, monster in enumerate(monster_positions):
+                if monster_living[i] and monster_kinds[i]=="goblin" and abs(cell[0]-monster[0])+abs(cell[1]-monster[1]) == 1:
+                    assert not edge_blocked(cell,monster), "Monster attack across fences is undefined"
+                    living[h] = False
         return pressure, barriers, living
 
     pressure, barriers, living = settle({})
@@ -100,6 +117,10 @@ def check_replay(item, directory):
             assert state["occupied_exits"] == sum(cell in exits for cell in heroes)
         actual = {tuple(entry["position"]): entry["id"] for entry in state["crystals"]}
         assert actual == crystals
+        if monster_positions:
+            assert state["monsters"] == [{"id": i, "kind":monster_kinds[i], "position": list(cell), "alive": monster_living[i]} for i,cell in enumerate(monster_positions)]
+            assert state.get("death_reason", "") == ""
+            assert not set(heroes).intersection(monster_cells()) and not set(crystals).intersection(monster_cells())
         if fences:
             assert {frozenset((tuple(a),tuple(b))) for a,b in state["fences"]} == fences
 
@@ -135,23 +156,25 @@ def check_replay(item, directory):
             target = plus(player, direction)
             visible = target
             if hero_kind == "blue":
-                while walkable(visible) and visible not in crystals and visible not in heroes:
+                while walkable(visible) and visible not in crystals and visible not in heroes and visible not in monster_cells():
                     visible = plus(visible, direction)
-            automatic_swap = hero_kind == "blue" and walkable(visible) and (visible in crystals or visible in heroes)
+            automatic_swap = hero_kind == "blue" and walkable(visible) and (visible in crystals or visible in heroes or visible in monster_cells())
             assert state.get("action", "move") == ("swap" if automatic_swap else "move")
             if automatic_swap:
                 target = visible
                 if target in crystals:
                     crystals[player] = crystals.pop(target)
+                elif target in monster_cells():
+                    monster_positions[monster_cells()[target]] = player
                 else:
                     heroes[heroes.index(target)] = player
                 swaps += 1
             else:
                 assert walkable(target) and not edge_blocked(player,target)
-                assert hero_kind == "red" or (target not in crystals and target not in heroes), "Green/blue cannot push"
+                assert hero_kind == "red" or (target not in crystals and target not in heroes and target not in monster_cells()), "Green/blue cannot push"
                 chain = []
                 terminal = target
-                while terminal in crystals or terminal in heroes:
+                while terminal in crystals or terminal in heroes or terminal in monster_cells():
                     chain.append(terminal)
                     terminal = plus(terminal, direction)
                 assert walkable(terminal)
@@ -159,6 +182,8 @@ def check_replay(item, directory):
                 for cell in reversed(chain):
                     if cell in crystals:
                         crystals[plus(cell, direction)] = crystals.pop(cell)
+                    elif cell in monster_cells():
+                        monster_positions[monster_cells()[cell]] = plus(cell,direction)
                     else:
                         heroes[heroes.index(cell)] = plus(cell, direction)
                 pushes += bool(chain)

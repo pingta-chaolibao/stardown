@@ -83,6 +83,11 @@ func _preview(area: Rect2) -> void:
 		for c in link["barriers"]:
 			draw_rect(Rect2(origin+Vector2(c[0],c[1])*tile+Vector2.ONE*2,Vector2.ONE*(tile-4)),Color(tint,0.65))
 	for c in data.get("bushes", []): draw_circle(origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile,tile*0.3,Color("517345"))
+	for monster in data.get("monsters",[]):
+		if monster.get("kind")!="goblin":continue
+		var c:Array=monster["position"]
+		var point:=origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile
+		draw_rect(Rect2(point-Vector2.ONE*tile*0.3,Vector2.ONE*tile*0.6),Color("d68a67"))
 	var crystals: Array = data.get("crates", [])
 	var colors: Array = data.get("crystal_colors", [])
 	for index in crystals.size():

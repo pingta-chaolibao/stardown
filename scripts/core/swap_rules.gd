@@ -3,7 +3,7 @@ extends RefCounted
 ## Bounded cardinal sight and a data-only exchange plan, independent of the world.
 
 static func is_interactable(kind: Variant) -> bool:
-	return kind in [&"hero", &"crystal"]
+	return kind in [&"hero", &"crystal", &"monster"]
 
 static func first_target(origin: Vector2i, direction: Vector2i, bounds: Rect2i, blocks_sight: Callable, occupant_at: Callable) -> Dictionary:
 	if absi(direction.x)+absi(direction.y)!=1:

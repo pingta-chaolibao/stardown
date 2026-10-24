@@ -59,6 +59,13 @@ func _draw() -> void:
 		_exit_marker(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
 	for edge in level.fence_edges:
 		_fence(origin, tile, edge["a"], edge["b"])
+	if not level.initial_monsters.is_empty():
+		for y in level.height:
+			for x in level.width:
+				var cell:=Vector2i(x,y)
+				if level.is_floor(cell) and model.monster_danger_at(cell):_danger(origin+(Vector2(cell)+Vector2.ONE*0.5)*tile,tile)
+	for monster in model.monsters():
+		if monster["kind"]=="goblin":_goblin(origin+(Vector2(monster["position"])+Vector2.ONE*0.5)*tile,tile,monster["alive"])
 	for cell in model.crates():
 		_crystal(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile, level.crystal_colors[model.crate_id(cell)])
 	for hero in model.heroes():
@@ -72,6 +79,29 @@ func _draw() -> void:
 	for cell: Vector2i in model.barrier_states():
 		if not model.barrier_is_active(cell):
 			_inactive_energy_border(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
+
+
+func _danger(center:Vector2,tile:float) -> void:
+	var r:=Rect2(center-Vector2.ONE*tile*0.43,Vector2.ONE*tile*0.86)
+	draw_rect(r,Color(0.8,0.25,0.12,0.13));draw_rect(r,Color(0.9,0.42,0.24,0.55),false,1.3)
+	# Four marked corners identify a cell, without shading diagonal neighbors.
+	for v in [Vector2(-1,-1),Vector2(1,-1),Vector2(-1,1),Vector2(1,1)]:
+		var p:Vector2=center+v*tile*0.34
+		draw_line(p,p-Vector2(v.x,0)*tile*0.08,Color("c56e4e"),1.5,true)
+
+
+func _goblin(center:Vector2,tile:float,living:bool) -> void:
+	if not living:
+		draw_arc(center+Vector2(0,0.22)*tile,tile*0.20,0,TAU,12,Color(0.6,0.4,0.3,0.28),1.2,true)
+		return # A non-interactive trace, drawn beneath any new occupant.
+	draw_ellipse_shadow(center+Vector2(0,0.29)*tile,Vector2(tile*0.34,tile*0.12))
+	var shape:=PackedVector2Array([center+Vector2(-0.30,0.25)*tile,center+Vector2(-0.28,-0.16)*tile,center+Vector2(-0.37,-0.37)*tile,center+Vector2(-0.12,-0.24)*tile,center+Vector2(0.12,-0.24)*tile,center+Vector2(0.37,-0.37)*tile,center+Vector2(0.28,-0.16)*tile,center+Vector2(0.30,0.25)*tile])
+	draw_colored_polygon(shape,Color("482e35"));var outline:=shape.duplicate();outline.append(shape[0]);draw_polyline(outline,Color("ce805c"),maxf(1.4,tile*0.027),true)
+	for x in [-0.13,0.13]:
+		draw_circle(center+Vector2(x,-0.05)*tile,tile*0.064,Color("ffbd74"))
+		draw_line(center+Vector2(x,-0.095)*tile,center+Vector2(x,-0.015)*tile,Color("301a23"),maxf(1,tile*0.025),true)
+	draw_line(center+Vector2(-0.13,0.14)*tile,center+Vector2(0.13,0.14)*tile,Color("ecb39a"),tile*0.03,true)
+	for x in [-0.07,0.07]:draw_line(center+Vector2(x,0.12)*tile,center+Vector2(x,0.19)*tile,Color("ecb39a"),tile*0.025,true)
 
 
 func _fence(origin: Vector2,tile: float,a: Vector2i,b: Vector2i) -> void:

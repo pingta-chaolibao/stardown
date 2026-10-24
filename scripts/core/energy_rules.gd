@@ -1,7 +1,7 @@
 class_name EnergyRules
 extends RefCounted
 ## Pure post-action settlement. Callers atomically commit returned occupancy and life.
-## Monster is a future entity category: semantics only, no monster gameplay here.
+## Monster life is applied by MonsterRules after shared energy settlement.
 const RESTORATION_EFFECTS := {&"hero": &"killed", &"monster": &"killed", &"crystal": &"destroyed"}
 
 

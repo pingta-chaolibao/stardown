@@ -24,8 +24,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number<1 or level_number>21 or report_path.is_empty():
-		_fail("Pass --level=1 through 21 and an absolute --report path.")
+	if level_number<1 or level_number>22 or report_path.is_empty():
+		_fail("Pass --level=1 through 22 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -71,6 +71,9 @@ func _run() -> void:
 			position_valid=current["player"]==[target["cell"].x,target["cell"].y] and current["swaps"]==previous["swaps"]+1
 			if target["kind"]==&"hero":
 				position_valid=position_valid and current["heroes"][target["id"]]["position"]==previous["player"]
+			elif target["kind"]==&"monster":
+				for monster in current["monsters"]:
+					if monster["id"]==target["id"]:position_valid=position_valid and monster["position"]==previous["player"]
 			else:
 				for crystal in current["crystals"]:
 					if crystal["id"]==target["id"]:position_valid=position_valid and crystal["position"]==previous["player"]
@@ -142,6 +145,11 @@ func _state() -> Dictionary:
 		for cell in game.model.level.exit_cells:exits.append([cell.x,cell.y])
 		result.erase("exit")
 		result.merge({"heroes":heroes,"active_hero_index":game.model.active_hero_index,"active_hero":game.model.active_hero_id(),"selection_events":selection_events,"history_size":game.model.history_size(),"exits":exits,"occupied_exits":game.model.occupied_exits()})
+	if not game.model.level.initial_monsters.is_empty():
+		var monsters:Array=[]
+		for monster in game.model.monsters():monsters.append({"id":monster["id"],"kind":monster["kind"],"position":[monster["position"].x,monster["position"].y],"alive":monster["alive"]})
+		result["monsters"]=monsters
+		result["death_reason"]=game.model.death_reason
 	if not game.model.level.fence_edges.is_empty():
 		var edges:Array=[]
 		for edge in game.model.level.fence_edges:edges.append([[edge["a"].x,edge["a"].y],[edge["b"].x,edge["b"].y]])

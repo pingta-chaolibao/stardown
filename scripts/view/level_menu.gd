@@ -15,7 +15,11 @@ func configure(paths: Array) -> void:
 		for hero in map.get("heroes",[{"kind":map.get("hero_kind","red")}]):
 			if hero["kind"] not in kinds: kinds.append(hero["kind"])
 		var title: String = "三英雄协作" if kinds.size()==3 else ("双英雄协作" if kinds.size()==2 else {"red":"推之英雄","green":"拉之英雄","blue":"交换之英雄"}[kinds[0]])
-		entries.append({"title":title,"kinds":kinds,"map":map,"detail":"%d × %d   ·   %d 枚水晶" % [map["terrain"][0].length(),map["terrain"].size(),map["crates"].size()]})
+		var detail:String="%d × %d   ·   %d 枚水晶" % [map["terrain"][0].length(),map["terrain"].size(),map["crates"].size()]
+		if not map.get("monsters",[]).is_empty():
+			var known:bool=map["monsters"].all(func(m:Dictionary)->bool:return m.get("kind")=="goblin")
+			detail="%d × %d   ·   %d 只%s" % [map["terrain"][0].length(),map["terrain"].size(),map["monsters"].size(),"哥布林" if known else "未支持的怪物"]
+		entries.append({"title":title,"kinds":kinds,"map":map,"detail":detail})
 
 func _ready() -> void:
 	name="LevelMenu"

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_22",
+  "title": "北部英雄 · 第二十二关",
+  "is_temporary": false,
+  "source_note": "用户确认最终11×5地图：1/45墙、2/12/34地板，31固定墙非草丛；三静止哥布林11/28/55，23红人、33终点。原创2D几何表现。",
+  "terrain": [
+    "#..........",
+    "...........",
+    "........#..",
+    "...........",
+    "#.........."
+  ],
+  "player": [
+    0,
+    2
+  ],
+  "hero_kind": "red",
+  "crates": [],
+  "targets": [],
+  "exit": [
+    10,
+    2
+  ],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "monsters": [
+    {
+      "kind": "goblin",
+      "position": [
+        10,
+        0
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        5,
+        2
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        10,
+        4
+      ]
+    }
+  ]
+}

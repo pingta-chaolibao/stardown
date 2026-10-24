@@ -1,0 +1,13 @@
+{
+  "level_id": "north_hero_22",
+  "path": "URURRRRRDRRRDR",
+  "moves": 14,
+  "directions": 14,
+  "input_events": 14,
+  "selection_events": 0,
+  "pushes": 0,
+  "pulls": 0,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "note": "独立安全格BFS；本关无可推动的隔晶链，避开三哥布林四向一格攻击范围，不改变最终修正地形。"
+}

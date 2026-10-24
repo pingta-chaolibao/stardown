@@ -34,7 +34,7 @@ func _run() -> void:
  _check(actions==119 and choices==21 and game.model.pushes==10 and game.model.pulls==8 and game.model.swaps==10 and game.model.occupied_exits()==3,"actual119+21C,10push8pull10swap victory")
  await _capture("north_21_completed.png");await _press(KEY_Z);_check(game.model.moves==118 and not game.model.is_complete() and game.model.active_hero_id()=="red","victoryundo retains current selection")
  await _press(KEY_R);_check(game.model.snapshot()==initial,"restart restores all9objects/sixplates/3solid gates")
- await _click("BackToLevels");_check(game.menu.strip.item_count==21,"same persistent virtual menu21")
+ await _click("BackToLevels");_check(game.menu.strip.item_count==game.LEVEL_PATHS.size(),"same persistent virtual menu21")
  await _click("Level20");_check(game.model.level.fence_edges.size()==2 and game.model.moves==0,"20retains original two edge fences")
  await _click("Level21");_check(game.model.snapshot()==initial and game.model.level.fence_edges.is_empty(),"no fence/history leakage into21")
  root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_21_compact_red.png")
