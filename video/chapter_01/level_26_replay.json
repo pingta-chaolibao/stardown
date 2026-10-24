@@ -1,0 +1,1543 @@
+{
+  "capture": "Godot Movie Maker viewport; actual Input.parse_input_event press/release",
+  "chapter": 1,
+  "direction_actions": 18,
+  "display": "X11",
+  "engine": {
+    "build": "official",
+    "hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+    "hex": 263683,
+    "major": 4,
+    "minor": 6,
+    "patch": 3,
+    "status": "stable",
+    "string": "4.6.3-stable (official)",
+    "timestamp": 0
+  },
+  "final_state": {
+    "alive": true,
+    "barriers": [],
+    "bushes": [],
+    "completed": true,
+    "crystals": [
+      {
+        "color": "purple_pink",
+        "id": 0,
+        "position": [
+          3,
+          2
+        ]
+      }
+    ],
+    "death_reason": "",
+    "exit": [
+      1,
+      0
+    ],
+    "exit_color": "green",
+    "hero_kind": "red",
+    "level_id": "north_hero_26",
+    "monsters": [
+      {
+        "alive": true,
+        "facing": [
+          1,
+          0
+        ],
+        "id": 0,
+        "kind": "fire_dragon",
+        "position": [
+          0,
+          2
+        ]
+      },
+      {
+        "alive": true,
+        "facing": [
+          0,
+          -1
+        ],
+        "id": 1,
+        "kind": "fire_dragon",
+        "position": [
+          3,
+          7
+        ]
+      },
+      {
+        "alive": false,
+        "id": 2,
+        "kind": "goblin",
+        "position": [
+          8,
+          2
+        ]
+      }
+    ],
+    "moves": 18,
+    "plates": [],
+    "player": [
+      1,
+      0
+    ],
+    "pressure": {
+
+    },
+    "pulls": 0,
+    "pushes": 9,
+    "swaps": 0
+  },
+  "fps": 30,
+  "frames_per_input": 18,
+  "game_implementation_commit": "14b67d090c39f6cb7af49a99c549fae1a1979c5a",
+  "initial_pause_frames": 60,
+  "initial_state": {
+    "alive": true,
+    "barriers": [],
+    "bushes": [],
+    "completed": false,
+    "crystals": [
+      {
+        "color": "purple_pink",
+        "id": 0,
+        "position": [
+          8,
+          6
+        ]
+      }
+    ],
+    "death_reason": "",
+    "exit": [
+      1,
+      0
+    ],
+    "exit_color": "green",
+    "hero_kind": "red",
+    "level_id": "north_hero_26",
+    "monsters": [
+      {
+        "alive": true,
+        "facing": [
+          1,
+          0
+        ],
+        "id": 0,
+        "kind": "fire_dragon",
+        "position": [
+          0,
+          2
+        ]
+      },
+      {
+        "alive": true,
+        "facing": [
+          0,
+          -1
+        ],
+        "id": 1,
+        "kind": "fire_dragon",
+        "position": [
+          3,
+          7
+        ]
+      },
+      {
+        "alive": true,
+        "id": 2,
+        "kind": "goblin",
+        "position": [
+          8,
+          5
+        ]
+      }
+    ],
+    "moves": 0,
+    "plates": [],
+    "player": [
+      10,
+      7
+    ],
+    "pressure": {
+
+    },
+    "pulls": 0,
+    "pushes": 0,
+    "swaps": 0
+  },
+  "input_events": 18,
+  "level": 26,
+  "movie_file": "level_26.avi",
+  "path": "LLUUUURULLLLLULLUL",
+  "selection_events": 0,
+  "trace": [
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            8,
+            6
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 1,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        }
+      ],
+      "moves": 1,
+      "plates": [],
+      "player": [
+        9,
+        7
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            8,
+            6
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 2,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        }
+      ],
+      "moves": 2,
+      "plates": [],
+      "player": [
+        8,
+        7
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            8,
+            5
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 3,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            4
+          ]
+        }
+      ],
+      "moves": 3,
+      "plates": [],
+      "player": [
+        8,
+        6
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 1,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            8,
+            4
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 4,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            3
+          ]
+        }
+      ],
+      "moves": 4,
+      "plates": [],
+      "player": [
+        8,
+        5
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 2,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            8,
+            3
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 5,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 5,
+      "plates": [],
+      "player": [
+        8,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 3,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 6,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 6,
+      "plates": [],
+      "player": [
+        8,
+        3
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 4,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 7,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 7,
+      "plates": [],
+      "player": [
+        9,
+        3
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 4,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 8,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 8,
+      "plates": [],
+      "player": [
+        9,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 4,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            7,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 9,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 9,
+      "plates": [],
+      "player": [
+        8,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 5,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            6,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 10,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 10,
+      "plates": [],
+      "player": [
+        7,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 6,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            5,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 11,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 11,
+      "plates": [],
+      "player": [
+        6,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 7,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            4,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 12,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 12,
+      "plates": [],
+      "player": [
+        5,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 8,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 13,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 13,
+      "plates": [],
+      "player": [
+        4,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 9,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 14,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 14,
+      "plates": [],
+      "player": [
+        4,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 9,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 15,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 15,
+      "plates": [],
+      "player": [
+        3,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 9,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 16,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 16,
+      "plates": [],
+      "player": [
+        2,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 9,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 17,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 17,
+      "plates": [],
+      "player": [
+        2,
+        0
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 9,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": true,
+      "crystals": [
+        {
+          "color": "purple_pink",
+          "id": 0,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "death_reason": "",
+      "event_index": 18,
+      "exit": [
+        1,
+        0
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_26",
+      "monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "moves": 18,
+      "plates": [],
+      "player": [
+        1,
+        0
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 9,
+      "swaps": 0
+    }
+  ],
+  "victory_pause_frames": 90
+}

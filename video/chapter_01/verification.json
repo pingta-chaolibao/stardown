@@ -4027,6 +4027,145 @@
       "solution_file": "levels/solutions/north_25.json",
       "implementation_committed_before_recording": true,
       "gameplay_sources_unchanged_after_recording": true
+    },
+    {
+      "file": "video/chapter_01/level_26.mp4",
+      "level": 26,
+      "bytes": 209793,
+      "sha256": "72b9ca780b83ca42a258a3828532053fe0e66632a3010bded5ab307f56e8e6c5",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 474,
+      "duration_seconds": 15.8,
+      "moves": 18,
+      "directions": 18,
+      "input_events": 18,
+      "selection_events": 0,
+      "pushes": 9,
+      "pulls": 0,
+      "swaps": 0,
+      "destroyed_crystals": 0,
+      "monster_kills": 1,
+      "goblin_killed_at_action": 5,
+      "surviving_fire_dragons": 2,
+      "game_implementation_commit": "14b67d090c39f6cb7af49a99c549fae1a1979c5a",
+      "replay_report": "level_26_replay.json",
+      "level_file": "levels/north_26.json",
+      "solution_file": "levels/solutions/north_26.json",
+      "full_decode_passed": true,
+      "legal_input_trace_verified": true,
+      "mp4_fast_start": true,
+      "initial_and_final_frames_reviewed": true,
+      "all9_pushes_and_fire_shield_actions_reviewed": true,
+      "reviewed_encoded_frames": [
+        0,
+        473,
+        70,
+        88,
+        106,
+        124,
+        142,
+        160,
+        178,
+        196,
+        214,
+        232,
+        250,
+        268,
+        286,
+        304,
+        322,
+        340,
+        358,
+        376
+      ],
+      "counts_are_actual_actions": true,
+      "implementation_committed_before_recording": true,
+      "gameplay_sources_unchanged_after_recording": true,
+      "initial_monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        }
+      ],
+      "final_monsters": [
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            -1
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            7
+          ]
+        },
+        {
+          "alive": false,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            2
+          ]
+        }
+      ],
+      "sampled_5fps_frames": 79,
+      "distinct_sampled_frames": 65,
+      "sampled_action_states": 19,
+      "distinct_action_state_frames": 19
     }
   ],
   "game_implementation_commits": {
@@ -4054,6 +4193,7 @@
     "level_22": "03a637234b3890e6fe719f62e75ea9cde4791567",
     "level_23": "1c07a0651f35b80109b3c4424c8bb56c1b98135c",
     "level_24": "cf10cb5b9ab5aba8b1eaa8f2d9aa4a5ce5855f7c",
-    "level_25": "eef2b04e3b31296bd15a5d730b98dcf1554b279f"
+    "level_25": "eef2b04e3b31296bd15a5d730b98dcf1554b279f",
+    "level_26": "14b67d090c39f6cb7af49a99c549fae1a1979c5a"
   }
 }

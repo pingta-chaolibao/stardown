@@ -69,6 +69,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第二十三关 | [观看 / 下载 MP4](video/chapter_01/level_23.mp4) | 23.6 秒 |
 | 第二十四关 | [观看 / 下载 MP4](video/chapter_01/level_24.mp4) | 58.4 秒 |
 | 第二十五关 | [观看 / 下载 MP4](video/chapter_01/level_25.mp4) | 26.6 秒 |
+| 第二十六关 | [观看 / 下载 MP4](video/chapter_01/level_26.mp4) | 15.8 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -738,3 +739,5 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 合法路线18次行动、9次推动；第5步火焰杀死哥布林，借水晶挡火后抵达终点。原图仅作布局依据，本工程使用原创2D几何表现。启动 `godot --path .` 后在横向虚拟选关列表进入第二十六关，方向键/WASD或屏幕方向按钮操作，Z/U/Backspace撤销，R重开，Esc返回选关（死亡时锁定）。
 
 [第26关初始画面](docs/screenshots/level_26_initial.png) · [火焰击杀](docs/screenshots/level_26_fire_kill.png) · [水晶挡火](docs/screenshots/level_26_crystal_shield.png) · [通关](docs/screenshots/level_26_completed.png) · [小窗口](docs/screenshots/level_26_compact.png)
+
+第26关正式通关视频：[观看 / 下载 MP4](video/chapter_01/level_26.mp4)，15.8秒，18次有效行动、9次推动；来自已提交实现的实际Godot视口和普通WASD输入。前25关视频保持原字节。

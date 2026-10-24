@@ -740,5 +740,29 @@
     "fire_across_fences",
     "monster_pressure_sources"
   ],
-  "formal_video_status": "not_recorded_yet_implementation_first"
+  "formal_video_status": "actual_Godot_recording_and_final_MP4_checks_passed",
+  "walkthroughs": {
+    "count": 26,
+    "all_fresh_full_decode_and_independent_replay": true,
+    "new_video": {
+      "file": "video/chapter_01/level_26.mp4",
+      "source_commit": "14b67d090c39f6cb7af49a99c549fae1a1979c5a",
+      "duration_seconds": 15.8,
+      "frames": 474,
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "bytes": 209793,
+      "sha256": "72b9ca780b83ca42a258a3828532053fe0e66632a3010bded5ab307f56e8e6c5",
+      "actions": 18,
+      "pushes": 9,
+      "reviewed_action_states": 19,
+      "victory": true
+    },
+    "delivery_verification": "Final remote SHA,HTTP bytes,decode and CI are reported separately after normal push"
+  }
 }
