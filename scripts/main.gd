@@ -11,8 +11,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json", "res://levels/north_20.json", "res://levels/north_21.json", "res://levels/north_22.json", "res://levels/north_23.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关", "第二十关", "第二十一关", "第二十二关", "第二十三关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json", "res://levels/north_20.json", "res://levels/north_21.json", "res://levels/north_22.json", "res://levels/north_23.json", "res://levels/north_24.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关", "第二十关", "第二十一关", "第二十二关", "第二十三关", "第二十四关"]
 
 @export var start_in_level := false
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
@@ -121,11 +121,13 @@ func _goal_color() -> Color:
 
 
 func _plate_name() -> String:
+	if model.level.mechanism_color=="purple":return "紫板"
 	if model.level.mechanism_color=="blue":return "蓝板"
 	return "绿板" if model.level.mechanism_color=="green" else "黄板"
 
 
 func _mechanism_tint() -> Color:
+	if model.level.mechanism_color=="purple":return Board.MECHANISM_PURPLE
 	if model.level.mechanism_color=="blue":return Board.MECHANISM_BLUE
 	return Board.MECHANISM_GREEN if model.level.mechanism_color=="green" else GOLD
 
@@ -358,10 +360,11 @@ func _build_board(parent: HBoxContainer) -> void:
 
 
 func _build_sidebar(parent: HBoxContainer) -> void:
-	var sidebar := _vbox(8 if model.hero_count()>2 else (12 if not model.level.energy_links.is_empty() else 16))
+	var compact_rules:=not model.level.initial_monsters.is_empty() and not model.level.energy_links.is_empty()
+	var sidebar := _vbox(8 if model.hero_count()>2 or compact_rules else (12 if not model.level.energy_links.is_empty() else 16))
 	sidebar.custom_minimum_size.x = 300
 	parent.add_child(sidebar)
-	var intro := _vbox(4 if model.hero_count()>2 else 6)
+	var intro := _vbox(4 if model.hero_count()>2 or compact_rules else 6)
 	sidebar.add_child(intro)
 	intro.add_child(_label("北部英雄  /  %s" % LEVEL_TITLES[maxi(0, current_level_index)], 12, MINT))
 	var multi:=model.hero_count()>1

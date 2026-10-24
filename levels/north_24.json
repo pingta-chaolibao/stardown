@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_24",
+  "title": "北部英雄 · 第二十四关",
+  "is_temporary": false,
+  "source_note": "用户确认修正版13×11：8–13全部可走，顶排连通；仅128–130/138–143界外，100绿英雄、101水晶、1终点、94紫板、15紫能量，八只均为哥布林。紫色为显示配色，无新机制。原创2D几何表现。",
+  "terrain": [
+    ".............",
+    ".............",
+    ".............",
+    ".............",
+    ".............",
+    ".............",
+    ".............",
+    ".............",
+    ".............",
+    "..........###",
+    ".......######"
+  ],
+  "void_cells": [
+    [
+      10,
+      9
+    ],
+    [
+      11,
+      9
+    ],
+    [
+      12,
+      9
+    ],
+    [
+      7,
+      10
+    ],
+    [
+      8,
+      10
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      10,
+      10
+    ],
+    [
+      11,
+      10
+    ],
+    [
+      12,
+      10
+    ]
+  ],
+  "player": [
+    8,
+    7
+  ],
+  "hero_kind": "green",
+  "crates": [
+    [
+      9,
+      7
+    ]
+  ],
+  "crystal_colors": [
+    "purple"
+  ],
+  "targets": [],
+  "exit": [
+    0,
+    0
+  ],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "mechanism_color": "purple",
+  "energy_links": [
+    {
+      "id": "purple_01",
+      "plate": [
+        2,
+        7
+      ],
+      "barriers": [
+        [
+          1,
+          1
+        ]
+      ],
+      "pressure_sources": [
+        "hero",
+        "crystal"
+      ]
+    }
+  ],
+  "monsters": [
+    {
+      "kind": "goblin",
+      "position": [
+        2,
+        0
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        5,
+        2
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        7,
+        2
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        0,
+        3
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        2,
+        5
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        10,
+        5
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        6,
+        6
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        3,
+        9
+      ]
+    }
+  ]
+}

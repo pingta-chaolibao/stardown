@@ -36,7 +36,7 @@ func _run() -> void:
  await _click("Level23");_check(game.model.snapshot()==initial,"reenter23isolates history/life")
  root.size=Vector2i(960,615);await _settle();_check_layout(game);await _inspect_danger();await _capture("north_23_compact.png")
  await _click("BackToLevels");_check_layout(game)
- _check(game.menu.strip.item_count==23 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"23real maps with bounded viewport pool")
+ _check(game.menu.strip.item_count==game.LEVEL_PATHS.size() and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"23real maps with bounded viewport pool")
  await _capture("north_23_navigation.png")
  var old_game:Control=game;root.remove_child(old_game);old_game.queue_free()
  game=load("res://scenes/main.tscn").instantiate();game.start_in_level=true;game.level_path="res://levels/north_23.json";root.add_child(game);await _settle()

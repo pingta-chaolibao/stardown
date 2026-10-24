@@ -1,0 +1,13 @@
+{
+  "level_id": "north_hero_24",
+  "path": "LDRRUULUUURRRDRDDDLLLULULULLLLUUURURRRRDRDDDLLLLDLDDDRRRURUUULLLDLDLDLLLDRRURURUUULULLULU",
+  "moves": 89,
+  "directions": 89,
+  "input_events": 89,
+  "selection_events": 0,
+  "pushes": 0,
+  "pulls": 15,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "note": "独立身份占用BFS；绿自动仅拉单晶、压板联动/能量恢复、静止哥布林四向威胁。保留用户顶排8–13全部可走，不为求解改图；首次胜利停止，不宣称穷举或最优。"
+}

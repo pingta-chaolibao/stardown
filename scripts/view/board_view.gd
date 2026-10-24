@@ -8,6 +8,7 @@ const HERO_GREEN := Color("72ce95")
 const HERO_BLUE := Color("78aff0")
 const MECHANISM_GREEN := Color("78d799")
 const MECHANISM_BLUE := Color("7dbce9")
+const MECHANISM_PURPLE := Color("bc9af3")
 const GOLD := Color("dfbb78")
 const GOAL_PURPLE := Color("c4a0f3")
 const GOAL_BLUE := Color("85bef5")
@@ -136,6 +137,9 @@ func _pressure_plate(center: Vector2, tile: float, pressed: bool) -> void:
 	if model.level.mechanism_color == "blue":
 		base = Color("4c90c1") if pressed else Color("355775")
 		light = Color("c8eaff")
+	if model.level.mechanism_color == "purple":
+		base = Color("9164bf") if pressed else Color("58436f")
+		light = Color("e9d4ff")
 	_box(Rect2(center - Vector2.ONE * tile * 0.4, Vector2.ONE * tile * 0.8), base, 5)
 	draw_arc(center, tile * 0.24, 0, TAU, 32, light, 2, true)
 	if pressed:
@@ -145,13 +149,16 @@ func _pressure_plate(center: Vector2, tile: float, pressed: bool) -> void:
 func _energy_block(center: Vector2, tile: float) -> void:
 	var green := model.level.mechanism_color == "green"
 	var blue := model.level.mechanism_color == "blue"
-	_box(Rect2(center - Vector2.ONE * tile * 0.43, Vector2.ONE * tile * 0.86), Color("376e9b") if blue else (Color("3e845b") if green else Color("ba923c")), 5)
-	_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), MECHANISM_BLUE if blue else (MECHANISM_GREEN if green else Color("f2ce6d")), 3)
+	var purple := model.level.mechanism_color == "purple"
+	_box(Rect2(center - Vector2.ONE * tile * 0.43, Vector2.ONE * tile * 0.86), Color("6b4293") if purple else (Color("376e9b") if blue else (Color("3e845b") if green else Color("ba923c"))), 5)
+	_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), MECHANISM_PURPLE if purple else (MECHANISM_BLUE if blue else (MECHANISM_GREEN if green else Color("f2ce6d"))), 3)
 	for offset in [-0.20, 0.0, 0.20]:
-		draw_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("e1f5ff") if blue else (Color("dbffe6") if green else Color("fff0b5")), tile * 0.035, true)
+		draw_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("f4e8ff") if purple else (Color("e1f5ff") if blue else (Color("dbffe6") if green else Color("fff0b5"))), tile * 0.035, true)
 
 
 func _mechanism_tint() -> Color:
+	if model.level.mechanism_color == "purple":
+		return MECHANISM_PURPLE
 	if model.level.mechanism_color == "blue":
 		return MECHANISM_BLUE
 	return MECHANISM_GREEN if model.level.mechanism_color == "green" else GOLD

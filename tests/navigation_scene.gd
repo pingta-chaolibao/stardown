@@ -27,7 +27,14 @@ func _run() -> void:
 	await _press(KEY_LEFT);await _press(KEY_ENTER)
 	_check(game.current_level_index==game.LEVEL_PATHS.size()-2 and not game.menu.visible,"keyboard selects penultimate real map and Enter enters")
 	await _capture("navigation_in_level.png")
-	await _press(KEY_RIGHT);var preserved_world:Dictionary=game.model.snapshot()
+	# Drive this actual level's checked safe prefix. A fixed Right can enter
+	# Goblin danger when catalog growth changes the penultimate level.
+	var safe_path:String=JSON.parse_string(FileAccess.get_file_as_string("res://levels/solutions/north_%02d.json" % (game.current_level_index+1)))["path"]
+	for symbol in safe_path:
+		await _press({"U":KEY_UP,"D":KEY_DOWN,"L":KEY_LEFT,"R":KEY_RIGHT,"C":KEY_C}[symbol])
+		if symbol!="C":break
+	_check(game.model.alive and game.model.moves==1,"checked legal prefix changes world before menu preservation test")
+	var preserved_world:Dictionary=game.model.snapshot()
 	await _press(KEY_ESCAPE);_check(game.menu.visible and game.menu.strip.selected_index==game.LEVEL_PATHS.size()-2,"Escape returns to same context")
 	for code in [KEY_C,KEY_R,KEY_Z,KEY_D,KEY_UP]:await _press(code)
 	_check(game.model.snapshot()==preserved_world,"menu keyboard never moves,restarts,switches or undoes hidden game")
