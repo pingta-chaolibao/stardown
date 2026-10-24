@@ -71,6 +71,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第二十五关 | [观看 / 下载 MP4](video/chapter_01/level_25.mp4) | 26.6 秒 |
 | 第二十六关 | [观看 / 下载 MP4](video/chapter_01/level_26.mp4) | 15.8 秒 |
 | 第二十七关 | [观看 / 下载 MP4](video/chapter_01/level_27.mp4) | 49.4 秒 |
+| 第二十八关 | [观看 / 下载 MP4](video/chapter_01/level_28.mp4) | 34.4 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -759,4 +760,4 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 
 合法路线49步、17次拉动（7次拉龙、10次拉水晶），四龙和水晶均保留，不声称最短。水晶依次挡住19号、31号和30号龙的火焰，为英雄绕行留出安全格。
 
-[初始](docs/screenshots/level_28_initial.png) · [上部水晶挡火](docs/screenshots/level_28_action_16.png) · [31号龙挡火](docs/screenshots/level_28_action_32.png) · [30号龙挡火](docs/screenshots/level_28_action_42.png) · [通关](docs/screenshots/level_28_completed.png) · [小窗口](docs/screenshots/level_28_compact.png)。先验证并提交实现，再录制真实Godot视频；完成前不声称视频已交付。
+[初始](docs/screenshots/level_28_initial.png) · [上部水晶挡火](docs/screenshots/level_28_action_16.png) · [31号龙挡火](docs/screenshots/level_28_action_32.png) · [30号龙挡火](docs/screenshots/level_28_action_42.png) · [通关](docs/screenshots/level_28_completed.png) · [小窗口](docs/screenshots/level_28_compact.png)。正式视频来自已提交实现的真实Godot与合法WASD输入：[观看 / 下载 MP4](video/chapter_01/level_28.mp4)，34.4秒、49次行动、17次拉动（7拉龙/10拉晶）。

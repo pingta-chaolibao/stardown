@@ -4331,6 +4331,215 @@
       "distinct_sampled_frames": 234,
       "sampled_action_states": 75,
       "distinct_action_state_frames": 75
+    },
+    {
+      "file": "video/chapter_01/level_28.mp4",
+      "level": 28,
+      "bytes": 474039,
+      "sha256": "dd8090c72e8b6133329c30606b8bf6489efdb2f54feafce73987cea14e2b24b9",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 1032,
+      "duration_seconds": 34.4,
+      "moves": 49,
+      "directions": 49,
+      "input_events": 49,
+      "selection_events": 0,
+      "pushes": 0,
+      "pulls": 17,
+      "dragon_pulls": 7,
+      "crystal_pulls": 10,
+      "swaps": 0,
+      "destroyed_crystals": 0,
+      "all_four_dragons_alive": true,
+      "crystal_identity_preserved": true,
+      "all_fixed_facings_preserved": true,
+      "game_implementation_commit": "d93753b9afd48d412be7f2c68e2fb450d3d9c80d",
+      "replay_report": "level_28_replay.json",
+      "level_file": "levels/north_28.json",
+      "solution_file": "levels/solutions/north_28.json",
+      "full_decode_passed": true,
+      "legal_input_trace_verified": true,
+      "mp4_fast_start": true,
+      "initial_and_final_frames_reviewed": true,
+      "all17_pull_frames_before_after_reviewed": true,
+      "reviewed_key_action_states": [
+        0,
+        1,
+        2,
+        7,
+        8,
+        9,
+        10,
+        11,
+        15,
+        16,
+        21,
+        22,
+        23,
+        24,
+        25,
+        29,
+        30,
+        31,
+        32,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        49
+      ],
+      "reviewed_encoded_frames": [
+        0,
+        1031,
+        70,
+        88,
+        178,
+        196,
+        214,
+        232,
+        250,
+        322,
+        340,
+        430,
+        448,
+        466,
+        484,
+        502,
+        574,
+        592,
+        610,
+        628,
+        718,
+        736,
+        754,
+        772,
+        790,
+        808,
+        934
+      ],
+      "implementation_committed_before_recording": true,
+      "gameplay_sources_unchanged_after_recording": true,
+      "initial_monsters": [
+        {
+          "alive": true,
+          "facing": [
+            0,
+            1
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            4,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            1
+          ],
+          "id": 2,
+          "kind": "fire_dragon",
+          "position": [
+            1,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            1
+          ],
+          "id": 3,
+          "kind": "fire_dragon",
+          "position": [
+            2,
+            4
+          ]
+        }
+      ],
+      "final_monsters": [
+        {
+          "alive": true,
+          "facing": [
+            0,
+            1
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            1,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            4,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            1
+          ],
+          "id": 2,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            0,
+            1
+          ],
+          "id": 3,
+          "kind": "fire_dragon",
+          "position": [
+            5,
+            4
+          ]
+        }
+      ],
+      "sampled_5fps_frames": 172,
+      "distinct_sampled_frames": 160,
+      "sampled_action_states": 50,
+      "distinct_action_state_frames": 50
     }
   ],
   "game_implementation_commits": {
@@ -4360,6 +4569,7 @@
     "level_24": "cf10cb5b9ab5aba8b1eaa8f2d9aa4a5ce5855f7c",
     "level_25": "eef2b04e3b31296bd15a5d730b98dcf1554b279f",
     "level_26": "14b67d090c39f6cb7af49a99c549fae1a1979c5a",
-    "level_27": "059ac90ffb4997bb3e4a75c1c1d5d1ed34126613"
+    "level_27": "059ac90ffb4997bb3e4a75c1c1d5d1ed34126613",
+    "level_28": "d93753b9afd48d412be7f2c68e2fb450d3d9c80d"
   }
 }
