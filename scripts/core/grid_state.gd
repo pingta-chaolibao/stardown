@@ -107,7 +107,8 @@ func try_move(direction: Vector2i) -> StringName:
 	if level.has_fence(player,next): return &"fence_blocked"
 	for cell in chain:
 		if level.has_fence(cell,cell+direction): return &"fence_blocked"
-	if Heroes.can_pull(active_kind()) and _crates.has(player-direction) and level.has_fence(player-direction,player):
+	var pulling:=pull_target_at(player-direction)
+	if not pulling.is_empty() and level.has_fence(player-direction,player):
 		return &"fence_blocked"
 	var candidate := _crates.duplicate()
 	var positions: Array[Vector2i] = _hero_positions.duplicate()
@@ -122,14 +123,15 @@ func try_move(direction: Vector2i) -> StringName:
 			monster_positions[monster_at(cell)]=cell+direction
 		else:
 			positions[hero_at(cell)] = cell + direction
-	var pulled := false
-	if Heroes.can_pull(active_kind()):
-		var behind := player - direction
-		if candidate.has(behind):
-			var identity: int = candidate[behind]
+	var pulled:bool=not pulling.is_empty()
+	if pulled:
+		var behind:Vector2i=player-direction
+		if pulling["kind"]=="crystal":
 			candidate.erase(behind)
-			candidate[player] = identity
-			pulled = true
+			candidate[player]=pulling["id"]
+		else:
+			# A dragon keeps identity/facing; only this adjacent object follows.
+			monster_positions[pulling["id"]]=player
 	positions[active_hero_index] = next
 	var result := _commit(positions, candidate, 0 if chain.is_empty() else 1, 1 if pulled else 0, 0, monster_positions)
 	if result != &"committed":
@@ -137,6 +139,15 @@ func try_move(direction: Vector2i) -> StringName:
 	if pulled:
 		return &"pulled"
 	return &"pushed" if not chain.is_empty() else &"moved"
+
+
+func pull_target_at(cell:Vector2i) -> Dictionary:
+	if level==null or not Heroes.can_pull(active_kind()):return {}
+	if _crates.has(cell):return {"kind":"crystal","id":_crates[cell]}
+	var m:int=monster_at(cell)
+	if m>=0 and Heroes.can_pull_target(active_kind(),level.monster_kinds[m]):
+		return {"kind":level.monster_kinds[m],"id":m}
+	return {}
 
 
 func switch_hero() -> StringName:

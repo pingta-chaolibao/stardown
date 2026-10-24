@@ -124,6 +124,7 @@ def check_replay(item, directory, require_rendered=True):
         return all(living) and heroes[selected] in exits
 
     pushes, pulls, swaps, selection_events, actual_actions = 0, 0, 0, 0, 0
+    dragon_pulls = 0
 
     def check_state(state, moves):
         assert all(living) and state.get("alive", True), "Walkthrough must never use a dead hero"
@@ -133,6 +134,7 @@ def check_replay(item, directory, require_rendered=True):
         assert state["moves"] == moves and state["pushes"] == pushes
         assert state.get("pulls", 0) == pulls and state.get("swaps", 0) == swaps
         assert state.get("selection_events", 0) == selection_events
+        if "dragon_pulls" in solution:assert state["dragon_pulls"] == dragon_pulls
         if multi:
             assert state["history_size"] == moves and "switches" not in state
         assert state["completed"] == completed()
@@ -219,6 +221,11 @@ def check_replay(item, directory, require_rendered=True):
                     assert not edge_blocked(behind,player), "Automatic pull cannot cross a fence"
                     crystals[player] = crystals.pop(behind)
                     pulls += 1
+                elif hero_kind == "green" and behind in monster_cells() and monster_kinds[monster_cells()[behind]]=="fire_dragon":
+                    assert not edge_blocked(behind,player), "Automatic dragon pull cannot cross a fence"
+                    monster_positions[monster_cells()[behind]] = player
+                    pulls += 1
+                    dragon_pulls += 1
             heroes[selected] = target
             pressure, barriers, living = settle(barriers)
         check_state(state, actual_actions)
@@ -229,6 +236,7 @@ def check_replay(item, directory, require_rendered=True):
     assert final["completed"] and pushes == solution["pushes"]
     assert pulls == solution.get("pulls", 0) and swaps == solution.get("swaps", 0)
     assert actual_actions == solution["moves"]
+    if "dragon_pulls" in solution:assert dragon_pulls == solution["dragon_pulls"]
     assert selection_events == solution.get("selection_events", 0)
     if multi:
         assert evidence["input_events"]==solution["input_events"] and evidence["direction_actions"]==actual_actions and evidence["selection_events"]==selection_events

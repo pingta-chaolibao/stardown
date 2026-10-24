@@ -1,0 +1,14 @@
+{
+  "level_id": "north_hero_27",
+  "path": "DRRRRRRRRRDDLLLLLLLLLDDRRRRRRRRRDDLDRUULLLLLLLLUDLUURRRRRRRRUDRUULLLLLLLLL",
+  "moves": 74,
+  "directions": 74,
+  "input_events": 74,
+  "selection_events": 0,
+  "pushes": 0,
+  "pulls": 3,
+  "dragon_pulls": 3,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "note": "完整外围修订确认后构造合法路线，74方向/3拉龙，依次63/38/27向下各拉一格（36/49/62步），三龙存活朝向不变。全部x统一+2，保留1–93编号映射；无最短或穷尽搜索声明。"
+}

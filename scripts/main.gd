@@ -11,8 +11,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json", "res://levels/north_20.json", "res://levels/north_21.json", "res://levels/north_22.json", "res://levels/north_23.json", "res://levels/north_24.json", "res://levels/north_25.json", "res://levels/north_26.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关", "第二十关", "第二十一关", "第二十二关", "第二十三关", "第二十四关", "第二十五关", "第二十六关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json", "res://levels/north_20.json", "res://levels/north_21.json", "res://levels/north_22.json", "res://levels/north_23.json", "res://levels/north_24.json", "res://levels/north_25.json", "res://levels/north_26.json", "res://levels/north_27.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关", "第二十关", "第二十一关", "第二十二关", "第二十三关", "第二十四关", "第二十五关", "第二十六关", "第二十七关"]
 
 @export var start_in_level := false
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
@@ -47,7 +47,7 @@ func _ready() -> void:
 	current_level_index = LEVEL_PATHS.find(level_path)
 	_build_ui()
 	if not level.initial_monsters.is_empty():
-		_refresh(("避开箭头火线，用水晶挡火，走到%s。" if level.monster_kinds.has("fire_dragon") else "避开哥布林四向危险格，走到%s。") % _goal_name())
+		_refresh((("背离相邻火龙可自动拉一只，朝向不变；走到%s。" if model.active_kind()=="green" else "避开箭头火线，用水晶挡火，走到%s。") if level.monster_kinds.has("fire_dragon") else "避开哥布林四向危险格，走到%s。") % _goal_name())
 	else:
 		_refresh("C 切换英雄，%s名英雄分占不同终点。" % ("三" if model.hero_count()==3 else "两") if model.hero_count()>1 else "按方向：有可见目标就交换，否则走一格。" if model.active_kind()=="blue" else "%s水晶腾出道路，再走到%s。" % ["拉动" if model.active_kind() == "green" else "推动", _goal_name()])
 
@@ -156,6 +156,7 @@ func apply_command(command: Dictionary) -> void:
 	if model.level == null:
 		return
 	var before_selection:=model.active_hero_index
+	var pulling:Dictionary=model.pull_target_at(model.player-command.get("direction",Vector2i.ZERO)) if command.get("action")==&"move" else {}
 	var before_crystals:=model.crates().size()
 	var before_monsters:int=model.monsters().filter(func(m:Dictionary)->bool:return m["alive"]).size()
 	board.blocked = false
@@ -172,7 +173,7 @@ func apply_command(command: Dictionary) -> void:
 				&"swapped":
 					_refresh("已与本次输入方向的第一个可见目标交换。")
 				&"pulled":
-					_refresh("最近一枚水晶跟到英雄原位置，后面的水晶保持不动。")
+					_refresh("最近一只火龙跟到英雄原位置，朝向不变；只拉一个。" if pulling.get("kind")=="fire_dragon" else "最近一枚水晶跟到英雄原位置，后面的水晶保持不动。")
 				&"bush_blocked":
 					board.blocked = true
 					_refresh("草丛阻挡通行，无法推动或交换。", GOLD)
@@ -396,6 +397,8 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 		instructions.text="哥布林静止；上下左右一格击杀英雄。\n斜角安全，进入范围后只能撤销。\n"+("蓝人可与首个可见活哥布林交换。" if blue else ("绿人仍只自动拉一枚水晶。" if green else "红人可隔着水晶推动哥布林。"))
 	if model.level.monster_kinds.has("fire_dragon"):
 		instructions.text="火龙不转向；每次有效行动只击杀首目标。\n水晶、墙与实体屏障挡火，水晶不烧毁。\n红推、蓝换不改朝向；哥布林四向危险。"
+	if green and model.level.monster_kinds.has("fire_dragon"):
+		instructions.text="背离相邻水晶或火龙，自动只拉一个。\n火龙不转向；每步火焰只击杀首目标。\n不能推、不能链拉；死亡仅能撤销。"
 	intro.add_child(instructions)
 	if not model.level.fence_edges.is_empty():
 		intro.add_child(_label("栅栏挡走动和推拉。\n蓝人视线与交换不受栅栏阻挡。", 13, MINT))

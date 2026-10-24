@@ -1,0 +1,1142 @@
+{
+  "map_id": "north_hero_27",
+  "original_bounds": {
+    "x_min": -2,
+    "x_max": 9,
+    "y_min": 0,
+    "y_max": 8
+  },
+  "normalization_offset": [
+    2,
+    0
+  ],
+  "markers": [
+    {
+      "number": 1,
+      "original": [
+        0,
+        0
+      ],
+      "position": [
+        2,
+        0
+      ],
+      "walkable": true
+    },
+    {
+      "number": 2,
+      "original": [
+        1,
+        0
+      ],
+      "position": [
+        3,
+        0
+      ],
+      "walkable": true
+    },
+    {
+      "number": 3,
+      "original": [
+        2,
+        0
+      ],
+      "position": [
+        4,
+        0
+      ],
+      "walkable": true
+    },
+    {
+      "number": 4,
+      "original": [
+        3,
+        0
+      ],
+      "position": [
+        5,
+        0
+      ],
+      "walkable": false
+    },
+    {
+      "number": 5,
+      "original": [
+        4,
+        0
+      ],
+      "position": [
+        6,
+        0
+      ],
+      "walkable": false
+    },
+    {
+      "number": 6,
+      "original": [
+        5,
+        0
+      ],
+      "position": [
+        7,
+        0
+      ],
+      "walkable": false
+    },
+    {
+      "number": 7,
+      "original": [
+        6,
+        0
+      ],
+      "position": [
+        8,
+        0
+      ],
+      "walkable": false
+    },
+    {
+      "number": 8,
+      "original": [
+        7,
+        0
+      ],
+      "position": [
+        9,
+        0
+      ],
+      "walkable": false
+    },
+    {
+      "number": 9,
+      "original": [
+        8,
+        0
+      ],
+      "position": [
+        10,
+        0
+      ],
+      "walkable": false
+    },
+    {
+      "number": 10,
+      "original": [
+        0,
+        1
+      ],
+      "position": [
+        2,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 11,
+      "original": [
+        1,
+        1
+      ],
+      "position": [
+        3,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 12,
+      "original": [
+        2,
+        1
+      ],
+      "position": [
+        4,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 13,
+      "original": [
+        3,
+        1
+      ],
+      "position": [
+        5,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 14,
+      "original": [
+        4,
+        1
+      ],
+      "position": [
+        6,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 15,
+      "original": [
+        5,
+        1
+      ],
+      "position": [
+        7,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 16,
+      "original": [
+        6,
+        1
+      ],
+      "position": [
+        8,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 17,
+      "original": [
+        7,
+        1
+      ],
+      "position": [
+        9,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 18,
+      "original": [
+        8,
+        1
+      ],
+      "position": [
+        10,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 19,
+      "original": [
+        0,
+        2
+      ],
+      "position": [
+        2,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 20,
+      "original": [
+        1,
+        2
+      ],
+      "position": [
+        3,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 21,
+      "original": [
+        2,
+        2
+      ],
+      "position": [
+        4,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 22,
+      "original": [
+        3,
+        2
+      ],
+      "position": [
+        5,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 23,
+      "original": [
+        4,
+        2
+      ],
+      "position": [
+        6,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 24,
+      "original": [
+        5,
+        2
+      ],
+      "position": [
+        7,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 25,
+      "original": [
+        6,
+        2
+      ],
+      "position": [
+        8,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 26,
+      "original": [
+        7,
+        2
+      ],
+      "position": [
+        9,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 27,
+      "original": [
+        8,
+        2
+      ],
+      "position": [
+        10,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 28,
+      "original": [
+        0,
+        3
+      ],
+      "position": [
+        2,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 29,
+      "original": [
+        1,
+        3
+      ],
+      "position": [
+        3,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 30,
+      "original": [
+        2,
+        3
+      ],
+      "position": [
+        4,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 31,
+      "original": [
+        3,
+        3
+      ],
+      "position": [
+        5,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 32,
+      "original": [
+        4,
+        3
+      ],
+      "position": [
+        6,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 33,
+      "original": [
+        5,
+        3
+      ],
+      "position": [
+        7,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 34,
+      "original": [
+        6,
+        3
+      ],
+      "position": [
+        8,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 35,
+      "original": [
+        7,
+        3
+      ],
+      "position": [
+        9,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 36,
+      "original": [
+        8,
+        3
+      ],
+      "position": [
+        10,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 37,
+      "original": [
+        0,
+        4
+      ],
+      "position": [
+        2,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 38,
+      "original": [
+        1,
+        4
+      ],
+      "position": [
+        3,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 39,
+      "original": [
+        2,
+        4
+      ],
+      "position": [
+        4,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 40,
+      "original": [
+        3,
+        4
+      ],
+      "position": [
+        5,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 41,
+      "original": [
+        4,
+        4
+      ],
+      "position": [
+        6,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 42,
+      "original": [
+        5,
+        4
+      ],
+      "position": [
+        7,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 43,
+      "original": [
+        6,
+        4
+      ],
+      "position": [
+        8,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 44,
+      "original": [
+        7,
+        4
+      ],
+      "position": [
+        9,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 45,
+      "original": [
+        8,
+        4
+      ],
+      "position": [
+        10,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 46,
+      "original": [
+        0,
+        5
+      ],
+      "position": [
+        2,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 47,
+      "original": [
+        1,
+        5
+      ],
+      "position": [
+        3,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 48,
+      "original": [
+        2,
+        5
+      ],
+      "position": [
+        4,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 49,
+      "original": [
+        3,
+        5
+      ],
+      "position": [
+        5,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 50,
+      "original": [
+        4,
+        5
+      ],
+      "position": [
+        6,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 51,
+      "original": [
+        5,
+        5
+      ],
+      "position": [
+        7,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 52,
+      "original": [
+        6,
+        5
+      ],
+      "position": [
+        8,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 53,
+      "original": [
+        7,
+        5
+      ],
+      "position": [
+        9,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 54,
+      "original": [
+        8,
+        5
+      ],
+      "position": [
+        10,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 55,
+      "original": [
+        0,
+        6
+      ],
+      "position": [
+        2,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 56,
+      "original": [
+        1,
+        6
+      ],
+      "position": [
+        3,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 57,
+      "original": [
+        2,
+        6
+      ],
+      "position": [
+        4,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 58,
+      "original": [
+        3,
+        6
+      ],
+      "position": [
+        5,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 59,
+      "original": [
+        4,
+        6
+      ],
+      "position": [
+        6,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 60,
+      "original": [
+        5,
+        6
+      ],
+      "position": [
+        7,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 61,
+      "original": [
+        6,
+        6
+      ],
+      "position": [
+        8,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 62,
+      "original": [
+        7,
+        6
+      ],
+      "position": [
+        9,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 63,
+      "original": [
+        8,
+        6
+      ],
+      "position": [
+        10,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 64,
+      "original": [
+        0,
+        7
+      ],
+      "position": [
+        2,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 65,
+      "original": [
+        1,
+        7
+      ],
+      "position": [
+        3,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 66,
+      "original": [
+        2,
+        7
+      ],
+      "position": [
+        4,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 67,
+      "original": [
+        3,
+        7
+      ],
+      "position": [
+        5,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 68,
+      "original": [
+        4,
+        7
+      ],
+      "position": [
+        6,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 69,
+      "original": [
+        5,
+        7
+      ],
+      "position": [
+        7,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 70,
+      "original": [
+        6,
+        7
+      ],
+      "position": [
+        8,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 71,
+      "original": [
+        7,
+        7
+      ],
+      "position": [
+        9,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 72,
+      "original": [
+        8,
+        7
+      ],
+      "position": [
+        10,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 73,
+      "original": [
+        9,
+        1
+      ],
+      "position": [
+        11,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 74,
+      "original": [
+        9,
+        2
+      ],
+      "position": [
+        11,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 75,
+      "original": [
+        9,
+        3
+      ],
+      "position": [
+        11,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 76,
+      "original": [
+        9,
+        4
+      ],
+      "position": [
+        11,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 77,
+      "original": [
+        9,
+        5
+      ],
+      "position": [
+        11,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 78,
+      "original": [
+        9,
+        6
+      ],
+      "position": [
+        11,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 79,
+      "original": [
+        9,
+        7
+      ],
+      "position": [
+        11,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 80,
+      "original": [
+        -1,
+        0
+      ],
+      "position": [
+        1,
+        0
+      ],
+      "walkable": true
+    },
+    {
+      "number": 81,
+      "original": [
+        -1,
+        1
+      ],
+      "position": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "number": 82,
+      "original": [
+        -1,
+        2
+      ],
+      "position": [
+        1,
+        2
+      ],
+      "walkable": true
+    },
+    {
+      "number": 83,
+      "original": [
+        -1,
+        3
+      ],
+      "position": [
+        1,
+        3
+      ],
+      "walkable": true
+    },
+    {
+      "number": 84,
+      "original": [
+        -1,
+        4
+      ],
+      "position": [
+        1,
+        4
+      ],
+      "walkable": true
+    },
+    {
+      "number": 85,
+      "original": [
+        -1,
+        5
+      ],
+      "position": [
+        1,
+        5
+      ],
+      "walkable": true
+    },
+    {
+      "number": 86,
+      "original": [
+        -1,
+        6
+      ],
+      "position": [
+        1,
+        6
+      ],
+      "walkable": true
+    },
+    {
+      "number": 87,
+      "original": [
+        -1,
+        7
+      ],
+      "position": [
+        1,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 88,
+      "original": [
+        -1,
+        8
+      ],
+      "position": [
+        1,
+        8
+      ],
+      "walkable": true
+    },
+    {
+      "number": 89,
+      "original": [
+        -2,
+        7
+      ],
+      "position": [
+        0,
+        7
+      ],
+      "walkable": true
+    },
+    {
+      "number": 90,
+      "original": [
+        -2,
+        8
+      ],
+      "position": [
+        0,
+        8
+      ],
+      "walkable": true
+    },
+    {
+      "number": 91,
+      "original": [
+        0,
+        8
+      ],
+      "position": [
+        2,
+        8
+      ],
+      "walkable": true
+    },
+    {
+      "number": 92,
+      "original": [
+        8,
+        8
+      ],
+      "position": [
+        10,
+        8
+      ],
+      "walkable": true
+    },
+    {
+      "number": 93,
+      "original": [
+        9,
+        8
+      ],
+      "position": [
+        11,
+        8
+      ],
+      "walkable": true
+    }
+  ],
+  "explicit_blocked_boundary": {
+    "original": [
+      9,
+      0
+    ],
+    "position": [
+      11,
+      0
+    ],
+    "meaning": "above73,notwalkable"
+  }
+}

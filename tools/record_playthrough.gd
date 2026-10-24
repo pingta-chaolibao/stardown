@@ -12,6 +12,8 @@ var report_path: String = ""
 var game: Control
 # Recording telemetry only; never part of GridState or its undo history.
 var selection_events: int=0
+var dragon_pulls:int=0
+var track_dragon_pulls:bool=false
 
 
 func _init() -> void:
@@ -24,14 +26,15 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number<1 or level_number>26 or report_path.is_empty():
-		_fail("Pass --level=1 through 26 and an absolute --report path.")
+	if level_number<1 or level_number>27 or report_path.is_empty():
+		_fail("Pass --level=1 through 27 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
 		return
 	root.size = Vector2i(1280, 820)
 	var solution: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://levels/solutions/north_%02d.json" % level_number))
+	track_dragon_pulls=solution.has("dragon_pulls")
 	game = load("res://scenes/main.tscn").instantiate()
 	game.start_in_level = true
 	# Choosing the exported startup level happens before the first rendered frame.
@@ -60,6 +63,14 @@ func _run() -> void:
 		if symbol=="C":selection_events+=1
 		else:actual_actions+=1
 		var current := _state()
+		if track_dragon_pulls and symbol!="C" and game.model.active_kind()=="green" and current["pulls"]==previous["pulls"]+1:
+			var moved_dragons:int=0
+			for m in current.get("monsters",[]):
+				if m["kind"]=="fire_dragon" and m["position"]!=previous["monsters"][m["id"]]["position"]:moved_dragons+=1
+			if moved_dragons>1:
+				_fail("A green input moved more than one dragon.");return
+			dragon_pulls+=moved_dragons
+		if track_dragon_pulls:current["dragon_pulls"]=dragon_pulls
 		var distance: int = absi(current["player"][0] - previous["player"][0]) + absi(current["player"][1] - previous["player"][1])
 		var position_valid:=distance==1
 		if symbol=="C":
@@ -95,6 +106,8 @@ func _run() -> void:
 	if solution.has("destroyed_crystals") and game.model.crates().size()!=game.model.level.initial_crates.size()-int(solution["destroyed_crystals"]):
 		_fail("Final surviving crystal count does not match confirmed destruction route.")
 		return
+	if track_dragon_pulls and dragon_pulls!=int(solution["dragon_pulls"]):
+		_fail("Dragon pull count differs from checked solution.");return
 	await _frames(VICTORY_FRAMES)
 	var report := {"input_events":solution["path"].length(),"direction_actions":actual_actions,"selection_events":selection_events,"chapter": 1, "level": level_number,
 		"game_implementation_commit": OS.get_environment("STARDOWN_RECORDING_COMMIT"),
@@ -153,6 +166,7 @@ func _state() -> Dictionary:
 			monsters.append(entry)
 		result["monsters"]=monsters
 		result["death_reason"]=game.model.death_reason
+	if track_dragon_pulls:result["dragon_pulls"]=dragon_pulls
 	if not game.model.level.fence_edges.is_empty():
 		var edges:Array=[]
 		for edge in game.model.level.fence_edges:edges.append([[edge["a"].x,edge["a"].y],[edge["b"].x,edge["b"].y]])

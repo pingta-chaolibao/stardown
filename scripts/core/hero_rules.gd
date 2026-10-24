@@ -17,3 +17,7 @@ static func can_pull(kind: String) -> bool:
 
 static func can_swap(kind: String) -> bool:
 	return kind == "blue"
+
+
+static func can_pull_target(kind:String,target_kind:String) -> bool:
+	return can_pull(kind) and target_kind in ["crystal","fire_dragon"]
