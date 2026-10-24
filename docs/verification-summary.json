@@ -791,5 +791,50 @@
   },
   "preserved_delivery_files": 110,
   "preserved_old_manifest_entries": 26,
-  "formal_video_status": "implementation_before_recording;notyetrecorded"
+  "formal_video_status": "actual_Godot_MovieMaker_video_passed",
+  "walkthroughs": {
+    "count": 27,
+    "all_fresh_full_decode_and_independent_replay": true,
+    "new_video": {
+      "file": "video/chapter_01/level_27.mp4",
+      "implementation_commit": "059ac90ffb4997bb3e4a75c1c1d5d1ed34126613",
+      "duration_seconds": 49.4,
+      "frames": 1482,
+      "fps": 30,
+      "dimensions": [
+        1280,
+        820
+      ],
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "bytes": 572274,
+      "sha256": "303051899154861613a57482ba3de8f1838b638767b8df787592711f795fee3f",
+      "actual_directions": 74,
+      "dragon_pulls": 3,
+      "initial_and_final_frames_reviewed": true,
+      "three_pulls_before_after_reviewed": true,
+      "sampled_action_states": 75,
+      "reviewed_key_action_states": [
+        0,
+        10,
+        12,
+        23,
+        32,
+        35,
+        36,
+        37,
+        39,
+        47,
+        48,
+        49,
+        50,
+        60,
+        61,
+        62,
+        65,
+        74
+      ]
+    },
+    "remote_and_download_status": "reported separately after normal push"
+  }
 }

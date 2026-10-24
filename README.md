@@ -70,6 +70,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第二十四关 | [观看 / 下载 MP4](video/chapter_01/level_24.mp4) | 58.4 秒 |
 | 第二十五关 | [观看 / 下载 MP4](video/chapter_01/level_25.mp4) | 26.6 秒 |
 | 第二十六关 | [观看 / 下载 MP4](video/chapter_01/level_26.mp4) | 15.8 秒 |
+| 第二十七关 | [观看 / 下载 MP4](video/chapter_01/level_27.mp4) | 49.4 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -749,4 +750,4 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 
 绿英雄背离相邻水晶或火龙移动时，自动只拉最近一个；火龙朝向不变，不能推或链拉，不拉英雄、哥布林。成功动作完成后共同采样攻击并统一死亡，C与无效输入不推进攻击；死亡只能撤销，Undo完整恢复拉动与生命。
 
-合法路线74步、3次拉龙，依次将63/38/27号火龙向下拉一格，三龙全部存活，不声称最短。[初始](docs/screenshots/level_27_initial.png) · [第一拉](docs/screenshots/level_27_pull_36.png) · [第二拉](docs/screenshots/level_27_pull_49.png) · [第三拉](docs/screenshots/level_27_pull_62.png) · [通关](docs/screenshots/level_27_completed.png) · [小窗口](docs/screenshots/level_27_compact.png)。先验证提交实现，再录制实际Godot通关视频；视频完成前不声称已交付。
+合法路线74步、3次拉龙，依次将63/38/27号火龙向下拉一格，三龙全部存活，不声称最短。[初始](docs/screenshots/level_27_initial.png) · [第一拉](docs/screenshots/level_27_pull_36.png) · [第二拉](docs/screenshots/level_27_pull_49.png) · [第三拉](docs/screenshots/level_27_pull_62.png) · [通关](docs/screenshots/level_27_completed.png) · [小窗口](docs/screenshots/level_27_compact.png)。正式视频来自已提交实现的实际Godot视口与合法WASD输入：[观看 / 下载 MP4](video/chapter_01/level_27.mp4)，49.4秒、1482帧、74次行动、3次单拉火龙。

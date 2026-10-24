@@ -4166,6 +4166,171 @@
       "distinct_sampled_frames": 65,
       "sampled_action_states": 19,
       "distinct_action_state_frames": 19
+    },
+    {
+      "file": "video/chapter_01/level_27.mp4",
+      "level": 27,
+      "bytes": 572274,
+      "sha256": "303051899154861613a57482ba3de8f1838b638767b8df787592711f795fee3f",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 1482,
+      "duration_seconds": 49.4,
+      "moves": 74,
+      "directions": 74,
+      "input_events": 74,
+      "selection_events": 0,
+      "pushes": 0,
+      "pulls": 3,
+      "dragon_pulls": 3,
+      "swaps": 0,
+      "destroyed_crystals": 0,
+      "all_three_dragons_alive": true,
+      "all_fixed_facings_preserved": true,
+      "game_implementation_commit": "059ac90ffb4997bb3e4a75c1c1d5d1ed34126613",
+      "replay_report": "level_27_replay.json",
+      "level_file": "levels/north_27.json",
+      "solution_file": "levels/solutions/north_27.json",
+      "full_decode_passed": true,
+      "legal_input_trace_verified": true,
+      "mp4_fast_start": true,
+      "initial_and_final_frames_reviewed": true,
+      "all_three_pulls_before_and_after_reviewed": true,
+      "reviewed_key_action_states": [
+        0,
+        10,
+        12,
+        23,
+        32,
+        35,
+        36,
+        37,
+        39,
+        47,
+        48,
+        49,
+        50,
+        60,
+        61,
+        62,
+        65,
+        74
+      ],
+      "reviewed_encoded_frames": [
+        0,
+        1481,
+        232,
+        268,
+        466,
+        628,
+        682,
+        700,
+        718,
+        754,
+        898,
+        916,
+        934,
+        952,
+        1132,
+        1150,
+        1168,
+        1222,
+        1384
+      ],
+      "implementation_committed_before_recording": true,
+      "gameplay_sources_unchanged_after_recording": true,
+      "initial_monsters": [
+        {
+          "alive": true,
+          "facing": [
+            -1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            10,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            -1,
+            0
+          ],
+          "id": 2,
+          "kind": "fire_dragon",
+          "position": [
+            10,
+            6
+          ]
+        }
+      ],
+      "final_monsters": [
+        {
+          "alive": true,
+          "facing": [
+            -1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            10,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            -1,
+            0
+          ],
+          "id": 2,
+          "kind": "fire_dragon",
+          "position": [
+            10,
+            7
+          ]
+        }
+      ],
+      "sampled_5fps_frames": 247,
+      "distinct_sampled_frames": 234,
+      "sampled_action_states": 75,
+      "distinct_action_state_frames": 75
     }
   ],
   "game_implementation_commits": {
@@ -4194,6 +4359,7 @@
     "level_23": "1c07a0651f35b80109b3c4424c8bb56c1b98135c",
     "level_24": "cf10cb5b9ab5aba8b1eaa8f2d9aa4a5ce5855f7c",
     "level_25": "eef2b04e3b31296bd15a5d730b98dcf1554b279f",
-    "level_26": "14b67d090c39f6cb7af49a99c549fae1a1979c5a"
+    "level_26": "14b67d090c39f6cb7af49a99c549fae1a1979c5a",
+    "level_27": "059ac90ffb4997bb3e4a75c1c1d5d1ed34126613"
   }
 }
