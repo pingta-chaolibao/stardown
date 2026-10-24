@@ -24,8 +24,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number<1 or level_number>19 or report_path.is_empty():
-		_fail("Pass --level=1 through 19 and an absolute --report path.")
+	if level_number<1 or level_number>20 or report_path.is_empty():
+		_fail("Pass --level=1 through 20 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -142,6 +142,10 @@ func _state() -> Dictionary:
 		for cell in game.model.level.exit_cells:exits.append([cell.x,cell.y])
 		result.erase("exit")
 		result.merge({"heroes":heroes,"active_hero_index":game.model.active_hero_index,"active_hero":game.model.active_hero_id(),"selection_events":selection_events,"history_size":game.model.history_size(),"exits":exits,"occupied_exits":game.model.occupied_exits()})
+	if not game.model.level.fence_edges.is_empty():
+		var edges:Array=[]
+		for edge in game.model.level.fence_edges:edges.append([[edge["a"].x,edge["a"].y],[edge["b"].x,edge["b"].y]])
+		result["fences"]=edges
 	return result
 
 

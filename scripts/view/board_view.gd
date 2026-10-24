@@ -57,6 +57,8 @@ func _draw() -> void:
 			_inactive_energy_floor(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
 	for cell in level.exit_cells:
 		_exit_marker(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
+	for edge in level.fence_edges:
+		_fence(origin, tile, edge["a"], edge["b"])
 	for cell in model.crates():
 		_crystal(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile, level.crystal_colors[model.crate_id(cell)])
 	for hero in model.heroes():
@@ -70,6 +72,21 @@ func _draw() -> void:
 	for cell: Vector2i in model.barrier_states():
 		if not model.barrier_is_active(cell):
 			_inactive_energy_border(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
+
+
+func _fence(origin: Vector2,tile: float,a: Vector2i,b: Vector2i) -> void:
+	var center := origin+(Vector2(a)+Vector2(b)+Vector2.ONE)*tile*0.5
+	var normal := Vector2(b-a)
+	var tangent := Vector2(normal.y,-normal.x)
+	var length := tile*0.43
+	draw_line(center-tangent*length,center+tangent*length,Color("07111b"),tile*0.15,true)
+	for sign_y in [-1,1]:
+		var rail: Vector2 = center+normal*tile*0.035*sign_y
+		draw_line(rail-tangent*length,rail+tangent*length,Color("abc4d3"),clampf(tile*0.027,1.4,2.0),true)
+	for offset in [-0.41,-0.20,0.0,0.20,0.41]:
+		var post: Vector2 = center+tangent*tile*offset
+		draw_line(post-normal*tile*0.09,post+normal*tile*0.09,Color("6e94aa"),clampf(tile*0.04,1.8,3.0),true)
+		draw_circle(post,tile*0.021,Color("e0c893"))
 
 
 func _bush(center: Vector2, tile: float) -> void:

@@ -1,6 +1,6 @@
-# 沉星之序 · 第一章前十九关（Godot 4 / 2D）
+# 沉星之序 · 第一章前二十关（Godot 4 / 2D）
 
-第一章前十九关按确认的文字网格实现。前四关是红色推之英雄，可整列推水晶；第五至八关是绿色拉之英雄，只能自动拉最近一枚；第九至十二关是蓝色交换英雄，能走路但不能推拉。第一关是 11 × 3、黄色终点；第二关是 11 × 7、10 枚水晶；第三关加入压力板与能量屏障；第四关加入独立草丛与三板联动；第五关沿用第一关布局，改变英雄能力；第六关结合绿色单拉和单板屏障；第七关是一枚紫晶与单板双屏障的城堡通道；第八关结合绿色单拉、三紫晶、草丛与三板联动；第九关加入方向输入被动交换，第十关结合蓝英雄与单板屏障；第十一关是九绿板联动与隔门橙晶交换；第十二关结合蓝英雄、三色水晶、两草丛与三黄板；第十三关加入红 / 蓝双英雄、C 切换、混合整列推动与双终点；第十四关为红 / 绿协作、单黄板双能量门，6号(5,0)按用户最新更正保留墙；第十五关为蓝 / 绿协作，两水晶与双板单门，25号(2,2)按最新更正不可走；第十六关为红 / 蓝协作、单板单门与两个紫色圆盘终点，圆盘只作目标显示。第二至十二关使用绿色终点，玩家抵达才判胜；第十三至十六关两英雄、第十七至十九关三英雄，均须同时分占不同终点，不限定英雄对应。画面为原创 2D 几何图形，不声称逐像素复刻。
+第一章前二十关按确认的文字网格实现。前四关是红色推之英雄，可整列推水晶；第五至八关是绿色拉之英雄，只能自动拉最近一枚；第九至十二关是蓝色交换英雄，能走路但不能推拉。第一关是 11 × 3、黄色终点；第二关是 11 × 7、10 枚水晶；第三关加入压力板与能量屏障；第四关加入独立草丛与三板联动；第五关沿用第一关布局，改变英雄能力；第六关结合绿色单拉和单板屏障；第七关是一枚紫晶与单板双屏障的城堡通道；第八关结合绿色单拉、三紫晶、草丛与三板联动；第九关加入方向输入被动交换，第十关结合蓝英雄与单板屏障；第十一关是九绿板联动与隔门橙晶交换；第十二关结合蓝英雄、三色水晶、两草丛与三黄板；第十三关加入红 / 蓝双英雄、C 切换、混合整列推动与双终点；第十四关为红 / 绿协作、单黄板双能量门，6号(5,0)按用户最新更正保留墙；第十五关为蓝 / 绿协作，两水晶与双板单门，25号(2,2)按最新更正不可走；第十六关为红 / 蓝协作、单板单门与两个紫色圆盘终点，圆盘只作目标显示。第二至十二关使用绿色终点，玩家抵达才判胜；第十三至十六关两英雄、第十七至二十关三英雄，均须同时分占不同终点，不限定英雄对应。画面为原创 2D 几何图形，不声称逐像素复刻。
 
 开发、测试与 Git 操作均在选定云端 `/workspace/stardown` 完成，没有读取、迁移或操作用户电脑。交付分支为 `develop`；不发布游戏、不创建 PR。
 
@@ -316,6 +316,8 @@ HV.#.......
 
 实际画面：[初始](docs/screenshots/level_12_initial.png)、[首次交换](docs/screenshots/level_12_first_swap.png)、[紫晶压板](docs/screenshots/level_12_purple_plate.png)、[两板占用](docs/screenshots/level_12_two_plates.png)、[英雄压满](docs/screenshots/level_12_hero_plate.png)、[粉红接替](docs/screenshots/level_12_crystal_plate.png)、[过门](docs/screenshots/level_12_crossing.png)、[通关](docs/screenshots/level_12_completed.png)、[离板恢复](docs/screenshots/level_12_released.png)、[小窗口](docs/screenshots/level_12_compact.png)。离板截图是独立规则侧路，不拼接进正式通关录像。
 
+`fences` 是可选的相邻地板端点对数组，双向阻挡走动及推拉链中每个对象跨边，蓝人的首目标视线与交换忽略栅栏。没有交换目标时普通行走仍受栅栏阻挡。绿人自动单拉跨栏会拒绝整次走动/拉动，保持原子性。详见[栅栏数据与验证](docs/FENCES.md)。
+
 ## 操作与通关
 
 | 操作 | 按键 / 界面 |
@@ -337,9 +339,10 @@ HV.#.......
 
 ## 工程结构与数据
 
-- `levels/north_01.json` 至 `levels/north_19.json`：十九关数据，从主界面选择进入。
-- `levels/solutions/`：逐输入验证的十九关通关路径，供测试与演示回放使用。
+- `levels/north_01.json` 至 `levels/north_20.json`：二十关数据，从主界面选择进入。
+- `levels/solutions/`：逐输入验证的二十关通关路径，供测试与演示回放使用。
 - `scripts/core/level_data.gd`：JSON 解析与坐标校验。
+- `scripts/core/fence_edges.gd`：可选的相邻格公共边、规范化与双向查询；栅栏不占格、不挡视线。
 - `scripts/core/energy_rules.gd`：纯占用谓词和机关结算，提供可配置压力来源。
 - `scripts/core/bush_obstacle.gd`：独立静态草丛类型，明确不可移动 / 交换与阻挡能力。
 - `scripts/core/hero_rules.gd`：红推 / 绿拉 / 蓝色被动交换能力，未支持的角色数据会被拒绝。
@@ -383,19 +386,15 @@ cd /workspace/stardown
 python3 tools/verify.py
 ```
 
-该命令执行资源导入、所有脚本解析、通用逻辑、红推 / 绿拉 / 蓝色交换与机关回归、十五关回归、默认场景启动、切关和键鼠检查。已有 X11 显示时加上真实渲染与截图：
+该命令执行资源导入、所有脚本解析、通用逻辑、红推 / 绿拉 / 蓝色交换与机关回归、二十关回归、默认场景启动、切关和键鼠检查。已有 X11 显示时加上真实渲染与截图：
 
 ```bash
 python3 tools/verify.py --visual --display :97
 ```
 
-本轮云端的临时 Xvfb 在 `/tmp/stardown-tools/xvfb/usr/bin/Xvfb`，它不是游戏依赖，跨会话可能不保留。需要时可在单独云端终端启动：
+本轮云端使用已配置的 Xorg dummy 显示 `:97` 与 Mesa llvmpipe 软件渲染；它是验证环境，不是游戏运行依赖。其他环境需使用自身可用的图形显示，不能假定云端临时工具或显示进程仍然存在。
 
-```bash
-/tmp/stardown-tools/xvfb/usr/bin/Xvfb :97 -screen 0 1280x820x24 -nolisten tcp -noreset
-```
-
-运行日志与截图在 `artifacts/`，缓存与完整生成目录不纳入 Git；必要的验证摘要和十八关画面保留在 `docs/`。详见[验证记录](docs/VERIFICATION.md)和[结构化摘要](docs/verification-summary.json)。无头模式只能证明逻辑 / 场景运行，画面结论来自实际 X11 / Mesa 渲染。
+运行日志与截图在 `artifacts/`，缓存与完整生成目录不纳入 Git；必要的验证摘要和各关画面保留在 `docs/`。详见[验证记录](docs/VERIFICATION.md)和[结构化摘要](docs/verification-summary.json)。无头模式只能证明逻辑 / 场景运行，画面结论来自实际 X11 / Mesa 渲染。
 
 中文字体已随工程附带，来自本云端 Debian 包内的 [Noto CJK](https://github.com/notofonts/noto-cjk)，授权见 [OFL.txt](assets/fonts/OFL.txt)。英雄、水晶、墙、地板、终点和图标均为原创几何图形，没有将原作截图打包进工程。命令行参数参考 [Godot 官方文档](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html)。
 
@@ -628,3 +627,24 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 合法死亡支路：正式前缀36后选绿向上离开右板，两个能量同时恢复，杀死左能量格上的非当前红。C/方向/R/切关全部锁定，一次Undo复活红、恢复全体占用/压力/能量并保留绿选择。仅作为独立测试，不拼进通关演示。数据`levels/north_19.json`、解法`levels/solutions/north_19.json`、独立求解`python3 tools/search_north_19.py`；模型及真实输入测试为`north_19_regression.gd`/`north_19_scene.gd`。实现先提交并正常推送`8e8951bf4411142096cb20d1c8ac244967dd6687`，随后才录制[正式通关视频](video/chapter_01/level_19.mp4)。前18关72份数据/解法/MP4/回放和独立能量显示短片保持原字节。
 
 第十九关实际视频63.2秒/1896帧，63行动+34免费C、13推5换0拉，全程存活且无毁晶。初始两英雄占目标但未胜利，结束三英雄分占三个不同目标；首尾、五次交换及34次C高亮已查看。全部19视频完整解码和独立合法回放通过。实际画面：[初始](docs/screenshots/level_19_initial.png)、[绿人通过消失能量](docs/screenshots/level_19_green_energy.png)、[三英雄胜利](docs/screenshots/level_19_completed.png)、[小窗口能量标记](docs/screenshots/level_19_compact_energy_active.png)。
+
+
+## 第二十关：三英雄与格边栅栏
+
+5×5 地形按用户确认坐标录入，编号逐行1–25，地图外不可走：
+
+```text
+#.#.#
+.....
+.....
+.....
+.###.
+```
+
+初始蓝(2,1)/绿(0,4)/红(4,4)，选中蓝；水晶(1,0)/(3,0)，三个终点(1,2)/(2,2)/(3,2)。F1在(0,3)↔(0,4)，即16↔21公共边；F2在(4,3)↔(4,4)，即20↔25公共边。两条栅栏不占格，无压力板或能量。水晶与目标配色是原创显示选择，不引入颜色匹配规则。
+
+方向路线 `LLDCCRDLUCURDLDCCRCURDCCRRDCRURDCLLDRCCULCL` 已由独立搜索和 Godot 模型/实际输入验证：30次实际行动、13次免费C，2推、2拉、11次交换（6次跨栏）。第三步蓝人跨F1与绿人交换；第五步绿人拉出左水晶；第19步拉出右水晶；第23步蓝人跨F2与红人交换。最终红(3,2)/绿(1,2)/蓝(2,2)同时分占三终点。没有为求解改图或放宽栅栏/视线规则，不宣称最短。
+
+新增 `levels/north_20.json` 和独立 `fences` 边数据；公共模型和独立视频校验器分别检查所有走动/推/拉参与边。20关仍通过原虚拟化主界面进入，卡片绘制格边简图，没有重建全量按钮。前19关地图、解法、视频和逐输入回放，以及导航/能量短片保持原样。
+
+实际 Godot 画面：[初始](docs/screenshots/level_20_initial.png) · [跨F1交换英雄](docs/screenshots/level_20_left_hero_exchange.png) · [跨F2交换水晶](docs/screenshots/level_20_right_crystal_exchange.png) · [三终点胜利](docs/screenshots/level_20_completed.png) · [小窗口绿人高亮](docs/screenshots/level_20_compact_green.png)。完整检查和录制状态见[验证记录](docs/VERIFICATION.md)。

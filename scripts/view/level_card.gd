@@ -68,6 +68,11 @@ func _preview(area: Rect2) -> void:
 	for y in rows.size():
 		for x in rows[y].length():
 			draw_rect(Rect2(origin + Vector2(x,y)*tile + Vector2.ONE, Vector2.ONE*(tile-2)), Color("2b4654") if rows[y][x]=="." else Color("182d3a"))
+	for edge in data.get("fences", []):
+		var a: Array=edge[0];var b: Array=edge[1]
+		var center := origin+(Vector2(a[0],a[1])+Vector2(b[0],b[1])+Vector2.ONE)*tile*0.5
+		var normal := Vector2(b[0]-a[0],b[1]-a[1]);var tangent:=Vector2(normal.y,-normal.x)
+		draw_line(center-tangent*tile*0.44,center+tangent*tile*0.44,Color("abc4d3"),2,true)
 	var goals: Array = data.get("exits", [data["exit"]] if data.has("exit") else [])
 	var goal_tint: Color = {"yellow":GOLD,"green":Color("78dd99"),"blue":Color("85bef5"),"purple":Color("c4a0f3"),"orange":Color("efac71"),"red":Color("f5787b")}.get(data.get("exit_color","yellow"),GOLD)
 	for c in goals: draw_arc(origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile,tile*0.30,0,TAU,16,goal_tint,1,true)

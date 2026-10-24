@@ -89,6 +89,13 @@ func try_move(direction: Vector2i) -> StringName:
 		destination += direction
 	if not chain.is_empty() and not is_walkable(destination):
 		return &"crate_blocked"
+	# Validate every moving object's edge before creating any candidate state.
+	# Blue's visible-target exchange has already returned above and ignores edges.
+	if level.has_fence(player,next): return &"fence_blocked"
+	for cell in chain:
+		if level.has_fence(cell,cell+direction): return &"fence_blocked"
+	if Heroes.can_pull(active_kind()) and _crates.has(player-direction) and level.has_fence(player-direction,player):
+		return &"fence_blocked"
 	var candidate := _crates.duplicate()
 	var positions: Array[Vector2i] = _hero_positions.duplicate()
 	for index in range(chain.size() - 1, -1, -1):

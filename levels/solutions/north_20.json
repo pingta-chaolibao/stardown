@@ -1,0 +1,13 @@
+{
+  "level_id": "north_hero_20",
+  "path": "LLDCCRDLUCURDLDCCRCURDCCRRDCRURDCLLDRCCULCL",
+  "moves": 30,
+  "directions": 30,
+  "input_events": 43,
+  "selection_events": 13,
+  "pushes": 2,
+  "pulls": 2,
+  "swaps": 11,
+  "destroyed_crystals": 0,
+  "note": "独立五对象身份BFS，边栅栏双向挡所有走动和推拉，蓝方向首目标交换忽略栅栏；首次胜利停止，不宣称穷举或最优。"
+}

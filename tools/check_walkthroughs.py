@@ -40,6 +40,16 @@ def check_replay(item, directory):
     def plus(cell, delta):
         return cell[0] + delta[0], cell[1] + delta[1]
 
+    fences = set()
+    for a,b in level.get("fences", []):
+        a,b = tuple(a),tuple(b)
+        assert floor(a) and floor(b) and abs(a[0]-b[0])+abs(a[1]-b[1]) == 1
+        edge = frozenset((a,b))
+        assert edge not in fences, "Duplicate/reversed fence edge"
+        fences.add(edge)
+    def edge_blocked(a,b):
+        return frozenset((a,b)) in fences
+
     def settle(previous_barriers):
         pressure, barriers = {}, {}
         for link in level.get("energy_links", []):
@@ -90,6 +100,9 @@ def check_replay(item, directory):
             assert state["occupied_exits"] == sum(cell in exits for cell in heroes)
         actual = {tuple(entry["position"]): entry["id"] for entry in state["crystals"]}
         assert actual == crystals
+        if fences:
+            assert {frozenset((tuple(a),tuple(b))) for a,b in state["fences"]} == fences
+
         for entry in state["crystals"]:
             assert entry["color"] == level["crystal_colors"][entry["id"]]
         if bushes or "bushes" in state:
@@ -134,7 +147,7 @@ def check_replay(item, directory):
                     heroes[heroes.index(target)] = player
                 swaps += 1
             else:
-                assert walkable(target)
+                assert walkable(target) and not edge_blocked(player,target)
                 assert hero_kind == "red" or (target not in crystals and target not in heroes), "Green/blue cannot push"
                 chain = []
                 terminal = target
@@ -142,6 +155,7 @@ def check_replay(item, directory):
                     chain.append(terminal)
                     terminal = plus(terminal, direction)
                 assert walkable(terminal)
+                assert all(not edge_blocked(cell,plus(cell,direction)) for cell in chain), "Any blocked mixed-chain edge rejects the entire push"
                 for cell in reversed(chain):
                     if cell in crystals:
                         crystals[plus(cell, direction)] = crystals.pop(cell)
@@ -150,6 +164,7 @@ def check_replay(item, directory):
                 pushes += bool(chain)
                 behind = (player[0] - direction[0], player[1] - direction[1])
                 if hero_kind == "green" and behind in crystals:
+                    assert not edge_blocked(behind,player), "Automatic pull cannot cross a fence"
                     crystals[player] = crystals.pop(behind)
                     pulls += 1
             heroes[selected] = target

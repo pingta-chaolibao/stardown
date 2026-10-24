@@ -4,6 +4,7 @@ extends RefCounted
 
 const Bush = preload("res://scripts/core/bush_obstacle.gd")
 const Heroes = preload("res://scripts/core/hero_rules.gd")
+const Fences = preload("res://scripts/core/fence_edges.gd")
 
 var id: String = ""
 var title: String = ""
@@ -30,6 +31,8 @@ var energy_links: Array[Dictionary] = []
 var bushes: Array[Bush] = []
 var _bush_by_cell: Dictionary = {}
 var error: String = ""
+var fence_edges: Array[Dictionary] = []
+var _fence_index: Dictionary = {}
 
 
 static func from_file(path: String) -> PuzzleLevel:
@@ -158,6 +161,10 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	var link_error := level._read_energy_links(data.get("energy_links", []))
 	if not link_error.is_empty():
 		return _invalid(link_error)
+	var fences := Fences.read(data.get("fences", []),_parse_cell,level.is_floor)
+	if not fences["error"].is_empty(): return _invalid(fences["error"])
+	level.fence_edges.assign(fences["edges"])
+	level._fence_index = fences["index"]
 	level.id = data["id"]
 	level.title = data["title"]
 	level.is_temporary = data["is_temporary"]
@@ -274,6 +281,10 @@ func is_floor(cell: Vector2i) -> bool:
 
 func is_void(cell: Vector2i) -> bool:
 	return _void_by_cell.has(cell)
+
+
+func has_fence(a: Vector2i,b: Vector2i) -> bool:
+	return _fence_index.has(Fences.key(a,b))
 
 
 static func _parse_cell(value: Variant) -> Variant:

@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_20",
+  "title": "北部英雄 · 第二十关",
+  "is_temporary": false,
+  "source_note": "用户确认5×5坐标；栅栏位于16↔21及20↔25公共边，双向挡移动和推拉但不挡蓝人视线/交换，不占格。原创2D几何图形。",
+  "terrain": [
+    "#.#.#",
+    ".....",
+    ".....",
+    ".....",
+    ".###."
+  ],
+  "heroes": [
+    {
+      "id": "red",
+      "kind": "red",
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "id": "green",
+      "kind": "green",
+      "position": [
+        0,
+        4
+      ]
+    },
+    {
+      "id": "blue",
+      "kind": "blue",
+      "position": [
+        2,
+        1
+      ]
+    }
+  ],
+  "active_hero": "blue",
+  "crates": [
+    [
+      1,
+      0
+    ],
+    [
+      3,
+      0
+    ]
+  ],
+  "crystal_colors": [
+    "blue",
+    "purple"
+  ],
+  "targets": [],
+  "exits": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      2
+    ]
+  ],
+  "exit_color": "green",
+  "objective": "all_heroes_on_exits",
+  "fences": [
+    [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ]
+  ]
+}

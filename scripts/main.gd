@@ -11,8 +11,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json", "res://levels/north_20.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关", "第二十关"]
 
 @export var start_in_level := false
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
@@ -157,7 +157,7 @@ func apply_command(command: Dictionary) -> void:
 		&"move":
 			var direction: Vector2i = command.get("direction", Vector2i.ZERO)
 			var result := model.try_move(direction)
-			if result in [&"moved", &"pushed", &"pulled", &"swapped", &"cannot_push", &"wall", &"crate_blocked", &"energy_blocked", &"bush_blocked", &"died"]:
+			if result in [&"moved", &"pushed", &"pulled", &"swapped", &"cannot_push", &"wall", &"crate_blocked", &"energy_blocked", &"bush_blocked", &"fence_blocked", &"died"]:
 				board.facing = direction
 			match result:
 				&"cannot_push":
@@ -173,6 +173,9 @@ func apply_command(command: Dictionary) -> void:
 				&"wall":
 					board.blocked = true
 					_refresh("前方是墙，换个方向试试。", GOLD)
+				&"fence_blocked":
+					board.blocked = true
+					_refresh("栅栏阻挡走动和推拉；蓝人仍可交换另一侧可见对象。", MINT)
 				&"energy_blocked":
 					board.blocked = true
 					_refresh("能量屏障阻挡通行，需要压住全部%s。" % _plate_name(), _mechanism_tint())
@@ -378,6 +381,8 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 		if _has_hero_kind("red") and blue_party and green_party:
 			instructions.text="红：混合整列推；绿：自动单晶拉。\n蓝：方向首目标交换，否则走一步。\nC 免费选择，撤销保留当前选择。"
 	intro.add_child(instructions)
+	if not model.level.fence_edges.is_empty():
+		intro.add_child(_label("栅栏挡走动和推拉。\n蓝人视线与交换不受栅栏阻挡。", 13, MINT))
 	if not model.level.energy_links.is_empty():
 		var rules := "英雄或水晶压住%s时，能量块消失。\n再现：格内英雄死亡、水晶摧毁。" % _plate_name()
 		if model.level.energy_links[0]["plates"].size() > 1:
