@@ -2002,7 +2002,7 @@
     "modifier_keys_used": [],
     "user_example_13_to_24_then_24_swaps_with_26": true
   },
-  "all_chapter_one_walkthroughs_checked": 22,
+  "all_chapter_one_walkthroughs_checked": 23,
   "previous_nine_maps_solutions_videos_replays_unchanged_from": "9c879b28bd093773d6af2a9dcf2aa6dccc3c205b",
   "north_10_independent_search": {
     "living_identity_states_exhausted": 2560,
@@ -8326,5 +8326,295 @@
     "manifest_entries": 22,
     "byte_identical": true
   },
-  "north_23_delivery_stage": "Implementation validated;formal MovieMaker recording and media checks follow this implementation commit."
+  "north_23_delivery_stage": "Actual video decoded/replayed/reviewed;independent media commit follows implementation. Remote/HTTP/CI checked separately at final delivery.",
+  "north_23_walkthrough": {
+    "file": "video/chapter_01/level_23.mp4",
+    "level": 23,
+    "bytes": 307754,
+    "sha256": "38c513a4c680a619392662dabb054dbcbf88cf238a1ba97b39cb1aa7f6bc6b0f",
+    "sampled_5fps_frames": 118,
+    "distinct_sampled_frames": 102,
+    "sampled_action_states": 32,
+    "distinct_action_state_frames": 32,
+    "full_decode_passed": true,
+    "mp4_fast_start": true,
+    "legal_input_trace_verified": true,
+    "game_implementation_commit": "1c07a0651f35b80109b3c4424c8bb56c1b98135c",
+    "hero_kinds": [
+      "red"
+    ],
+    "monster_kinds": [
+      "goblin"
+    ],
+    "codec": "h264",
+    "profile": "High",
+    "pixel_format": "yuv420p",
+    "dimensions": [
+      1280,
+      820
+    ],
+    "fps": 30,
+    "frames": 708,
+    "duration_seconds": 23.6,
+    "moves": 31,
+    "directions": 31,
+    "input_events": 31,
+    "selection_events": 0,
+    "walks_without_push_pull_or_swap": 31,
+    "pushes": 0,
+    "pulls": 0,
+    "swaps": 0,
+    "destroyed_crystals": 0,
+    "counts_are_actual_actions": true,
+    "action_notation": "UDLR normal directions;red walks around ten stationary typed Goblins,26 cardinal danger cells/7 overlaps. All77terrain floor,67floor but dangerous. No crystals,mechanisms or new abilities.",
+    "modifier_keys_used": [],
+    "keys_used": [
+      "W",
+      "A",
+      "S",
+      "D"
+    ],
+    "initial_hero_position": [
+      0,
+      0
+    ],
+    "victory_hero_position": [
+      9,
+      6
+    ],
+    "initial_monsters": [
+      {
+        "alive": true,
+        "id": 0,
+        "kind": "goblin",
+        "position": [
+          2,
+          0
+        ]
+      },
+      {
+        "alive": true,
+        "id": 1,
+        "kind": "goblin",
+        "position": [
+          10,
+          0
+        ]
+      },
+      {
+        "alive": true,
+        "id": 2,
+        "kind": "goblin",
+        "position": [
+          3,
+          1
+        ]
+      },
+      {
+        "alive": true,
+        "id": 3,
+        "kind": "goblin",
+        "position": [
+          7,
+          2
+        ]
+      },
+      {
+        "alive": true,
+        "id": 4,
+        "kind": "goblin",
+        "position": [
+          0,
+          3
+        ]
+      },
+      {
+        "alive": true,
+        "id": 5,
+        "kind": "goblin",
+        "position": [
+          4,
+          4
+        ]
+      },
+      {
+        "alive": true,
+        "id": 6,
+        "kind": "goblin",
+        "position": [
+          0,
+          5
+        ]
+      },
+      {
+        "alive": true,
+        "id": 7,
+        "kind": "goblin",
+        "position": [
+          8,
+          5
+        ]
+      },
+      {
+        "alive": true,
+        "id": 8,
+        "kind": "goblin",
+        "position": [
+          1,
+          6
+        ]
+      },
+      {
+        "alive": true,
+        "id": 9,
+        "kind": "goblin",
+        "position": [
+          7,
+          6
+        ]
+      }
+    ],
+    "final_monsters": [
+      {
+        "alive": true,
+        "id": 0,
+        "kind": "goblin",
+        "position": [
+          2,
+          0
+        ]
+      },
+      {
+        "alive": true,
+        "id": 1,
+        "kind": "goblin",
+        "position": [
+          10,
+          0
+        ]
+      },
+      {
+        "alive": true,
+        "id": 2,
+        "kind": "goblin",
+        "position": [
+          3,
+          1
+        ]
+      },
+      {
+        "alive": true,
+        "id": 3,
+        "kind": "goblin",
+        "position": [
+          7,
+          2
+        ]
+      },
+      {
+        "alive": true,
+        "id": 4,
+        "kind": "goblin",
+        "position": [
+          0,
+          3
+        ]
+      },
+      {
+        "alive": true,
+        "id": 5,
+        "kind": "goblin",
+        "position": [
+          4,
+          4
+        ]
+      },
+      {
+        "alive": true,
+        "id": 6,
+        "kind": "goblin",
+        "position": [
+          0,
+          5
+        ]
+      },
+      {
+        "alive": true,
+        "id": 7,
+        "kind": "goblin",
+        "position": [
+          8,
+          5
+        ]
+      },
+      {
+        "alive": true,
+        "id": 8,
+        "kind": "goblin",
+        "position": [
+          1,
+          6
+        ]
+      },
+      {
+        "alive": true,
+        "id": 9,
+        "kind": "goblin",
+        "position": [
+          7,
+          6
+        ]
+      }
+    ],
+    "monsters_remain_stationary_and_alive": true,
+    "initial_and_final_frames_reviewed": true,
+    "all31_input_frames_reviewed": true,
+    "goblin_silhouette_and_cardinal_danger_cells_reviewed": true,
+    "overlap_and_corner_clipping_reviewed": true,
+    "safe_diagonal_and_lower_path_reviewed": true,
+    "confirmed_marker67_floor_retained": true,
+    "victory_action": 31,
+    "victory_input_event": 31,
+    "reviewed_encoded_frames": [
+      0,
+      707,
+      70,
+      88,
+      106,
+      124,
+      142,
+      160,
+      178,
+      196,
+      214,
+      232,
+      250,
+      268,
+      286,
+      304,
+      322,
+      340,
+      358,
+      376,
+      394,
+      412,
+      430,
+      448,
+      466,
+      484,
+      502,
+      520,
+      538,
+      556,
+      574,
+      592,
+      610
+    ],
+    "replay_report": "level_23_replay.json",
+    "level_file": "levels/north_23.json",
+    "solution_file": "levels/solutions/north_23.json",
+    "implementation_committed_before_recording": true,
+    "gameplay_sources_unchanged_after_recording": true
+  },
+  "north_23_final_recording_source": "1c07a0651f35b80109b3c4424c8bb56c1b98135c"
 }

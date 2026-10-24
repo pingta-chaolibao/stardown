@@ -66,6 +66,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第二十关 | [观看 / 下载 MP4](video/chapter_01/level_20.mp4) | 30.8 秒 |
 | 第二十一关 | [观看 / 下载 MP4](video/chapter_01/level_21.mp4) | 89 秒 |
 | 第二十二关 | [观看 / 下载 MP4](video/chapter_01/level_22.mp4) | 13.4 秒 |
+| 第二十三关 | [观看 / 下载 MP4](video/chapter_01/level_23.mp4) | 23.6 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -707,4 +708,4 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 
 复用现有哥布林上下左右一格击杀、不含斜角、死亡只能撤销的规则，无新机制。独立安全格搜索与Godot验证路线`DRDRDDDRDRRURUULUUURRRDRDDDRDDL`：31次方向步行，0推/拉/交换/切换；绕开26个危险格，其中7格受双重威胁。没有通过改变地图或能力求解。
 
-[关卡JSON](levels/north_23.json) · [合法路线](levels/solutions/north_23.json) · [独立复核](tools/check_north_23.py)。启动进入持久虚拟选关，点击23号卡片；方向键/WASD/屏幕方向操作，Z或屏幕撤销恢复死亡前状态，存活时R重开。[实际初始画面](docs/screenshots/level_23_initial.png) · [重叠死亡与Undo](docs/screenshots/level_23_overlap_death.png) · [通关](docs/screenshots/level_23_completed.png) · [小窗口](docs/screenshots/level_23_compact.png)。正式视频依照先提交实现、再实际Godot录制和独立媒体提交的约定制作；当前验证状态见[验证记录](docs/VERIFICATION.md)。
+[关卡JSON](levels/north_23.json) · [合法路线](levels/solutions/north_23.json) · [独立复核](tools/check_north_23.py)。启动进入持久虚拟选关，点击23号卡片；方向键/WASD/屏幕方向操作，Z或屏幕撤销恢复死亡前状态，存活时R重开。[实际初始画面](docs/screenshots/level_23_initial.png) · [重叠死亡与Undo](docs/screenshots/level_23_overlap_death.png) · [通关](docs/screenshots/level_23_completed.png) · [小窗口](docs/screenshots/level_23_compact.png)。[23.6秒实际通关视频](video/chapter_01/level_23.mp4) · [逐输入状态](video/chapter_01/level_23_replay.json)。全部23视频完整解码与独立合法回放通过，详见[验证记录](docs/VERIFICATION.md)。

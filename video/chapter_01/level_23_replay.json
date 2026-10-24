@@ -1,0 +1,4049 @@
+{
+  "capture": "Godot Movie Maker viewport; actual Input.parse_input_event press/release",
+  "chapter": 1,
+  "direction_actions": 31,
+  "display": "X11",
+  "engine": {
+    "build": "official",
+    "hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+    "hex": 263683,
+    "major": 4,
+    "minor": 6,
+    "patch": 3,
+    "status": "stable",
+    "string": "4.6.3-stable (official)",
+    "timestamp": 0
+  },
+  "final_state": {
+    "alive": true,
+    "barriers": [],
+    "bushes": [],
+    "completed": true,
+    "crystals": [],
+    "death_reason": "",
+    "exit": [
+      9,
+      6
+    ],
+    "exit_color": "green",
+    "hero_kind": "red",
+    "level_id": "north_hero_23",
+    "monsters": [
+      {
+        "alive": true,
+        "id": 0,
+        "kind": "goblin",
+        "position": [
+          2,
+          0
+        ]
+      },
+      {
+        "alive": true,
+        "id": 1,
+        "kind": "goblin",
+        "position": [
+          10,
+          0
+        ]
+      },
+      {
+        "alive": true,
+        "id": 2,
+        "kind": "goblin",
+        "position": [
+          3,
+          1
+        ]
+      },
+      {
+        "alive": true,
+        "id": 3,
+        "kind": "goblin",
+        "position": [
+          7,
+          2
+        ]
+      },
+      {
+        "alive": true,
+        "id": 4,
+        "kind": "goblin",
+        "position": [
+          0,
+          3
+        ]
+      },
+      {
+        "alive": true,
+        "id": 5,
+        "kind": "goblin",
+        "position": [
+          4,
+          4
+        ]
+      },
+      {
+        "alive": true,
+        "id": 6,
+        "kind": "goblin",
+        "position": [
+          0,
+          5
+        ]
+      },
+      {
+        "alive": true,
+        "id": 7,
+        "kind": "goblin",
+        "position": [
+          8,
+          5
+        ]
+      },
+      {
+        "alive": true,
+        "id": 8,
+        "kind": "goblin",
+        "position": [
+          1,
+          6
+        ]
+      },
+      {
+        "alive": true,
+        "id": 9,
+        "kind": "goblin",
+        "position": [
+          7,
+          6
+        ]
+      }
+    ],
+    "moves": 31,
+    "plates": [],
+    "player": [
+      9,
+      6
+    ],
+    "pressure": {
+
+    },
+    "pulls": 0,
+    "pushes": 0,
+    "swaps": 0
+  },
+  "fps": 30,
+  "frames_per_input": 18,
+  "game_implementation_commit": "1c07a0651f35b80109b3c4424c8bb56c1b98135c",
+  "initial_pause_frames": 60,
+  "initial_state": {
+    "alive": true,
+    "barriers": [],
+    "bushes": [],
+    "completed": false,
+    "crystals": [],
+    "death_reason": "",
+    "exit": [
+      9,
+      6
+    ],
+    "exit_color": "green",
+    "hero_kind": "red",
+    "level_id": "north_hero_23",
+    "monsters": [
+      {
+        "alive": true,
+        "id": 0,
+        "kind": "goblin",
+        "position": [
+          2,
+          0
+        ]
+      },
+      {
+        "alive": true,
+        "id": 1,
+        "kind": "goblin",
+        "position": [
+          10,
+          0
+        ]
+      },
+      {
+        "alive": true,
+        "id": 2,
+        "kind": "goblin",
+        "position": [
+          3,
+          1
+        ]
+      },
+      {
+        "alive": true,
+        "id": 3,
+        "kind": "goblin",
+        "position": [
+          7,
+          2
+        ]
+      },
+      {
+        "alive": true,
+        "id": 4,
+        "kind": "goblin",
+        "position": [
+          0,
+          3
+        ]
+      },
+      {
+        "alive": true,
+        "id": 5,
+        "kind": "goblin",
+        "position": [
+          4,
+          4
+        ]
+      },
+      {
+        "alive": true,
+        "id": 6,
+        "kind": "goblin",
+        "position": [
+          0,
+          5
+        ]
+      },
+      {
+        "alive": true,
+        "id": 7,
+        "kind": "goblin",
+        "position": [
+          8,
+          5
+        ]
+      },
+      {
+        "alive": true,
+        "id": 8,
+        "kind": "goblin",
+        "position": [
+          1,
+          6
+        ]
+      },
+      {
+        "alive": true,
+        "id": 9,
+        "kind": "goblin",
+        "position": [
+          7,
+          6
+        ]
+      }
+    ],
+    "moves": 0,
+    "plates": [],
+    "player": [
+      0,
+      0
+    ],
+    "pressure": {
+
+    },
+    "pulls": 0,
+    "pushes": 0,
+    "swaps": 0
+  },
+  "input_events": 31,
+  "level": 23,
+  "movie_file": "level_23.avi",
+  "path": "DRDRDDDRDRRURUULUUURRRDRDDDRDDL",
+  "selection_events": 0,
+  "trace": [
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 1,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 1,
+      "plates": [],
+      "player": [
+        0,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 2,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 2,
+      "plates": [],
+      "player": [
+        1,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 3,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 3,
+      "plates": [],
+      "player": [
+        1,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 4,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 4,
+      "plates": [],
+      "player": [
+        2,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 5,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 5,
+      "plates": [],
+      "player": [
+        2,
+        3
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 6,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 6,
+      "plates": [],
+      "player": [
+        2,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 7,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 7,
+      "plates": [],
+      "player": [
+        2,
+        5
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 8,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 8,
+      "plates": [],
+      "player": [
+        3,
+        5
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 9,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 9,
+      "plates": [],
+      "player": [
+        3,
+        6
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 10,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 10,
+      "plates": [],
+      "player": [
+        4,
+        6
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 11,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 11,
+      "plates": [],
+      "player": [
+        5,
+        6
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 12,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 12,
+      "plates": [],
+      "player": [
+        5,
+        5
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 13,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 13,
+      "plates": [],
+      "player": [
+        6,
+        5
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 14,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 14,
+      "plates": [],
+      "player": [
+        6,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 15,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 15,
+      "plates": [],
+      "player": [
+        6,
+        3
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 16,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 16,
+      "plates": [],
+      "player": [
+        5,
+        3
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 17,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 17,
+      "plates": [],
+      "player": [
+        5,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 18,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 18,
+      "plates": [],
+      "player": [
+        5,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 19,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "U",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 19,
+      "plates": [],
+      "player": [
+        5,
+        0
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 20,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 20,
+      "plates": [],
+      "player": [
+        6,
+        0
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 21,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 21,
+      "plates": [],
+      "player": [
+        7,
+        0
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 22,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 22,
+      "plates": [],
+      "player": [
+        8,
+        0
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 23,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 23,
+      "plates": [],
+      "player": [
+        8,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 24,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 24,
+      "plates": [],
+      "player": [
+        9,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 25,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 25,
+      "plates": [],
+      "player": [
+        9,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 26,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 26,
+      "plates": [],
+      "player": [
+        9,
+        3
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 27,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 27,
+      "plates": [],
+      "player": [
+        9,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 28,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "R",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 28,
+      "plates": [],
+      "player": [
+        10,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 29,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 29,
+      "plates": [],
+      "player": [
+        10,
+        5
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 30,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "D",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 30,
+      "plates": [],
+      "player": [
+        10,
+        6
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": true,
+      "crystals": [],
+      "death_reason": "",
+      "event_index": 31,
+      "exit": [
+        9,
+        6
+      ],
+      "exit_color": "green",
+      "hero_kind": "red",
+      "input": "L",
+      "level_id": "north_hero_23",
+      "monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            8,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            1,
+            6
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "moves": 31,
+      "plates": [],
+      "player": [
+        9,
+        6
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "swaps": 0
+    }
+  ],
+  "victory_pause_frames": 90
+}
