@@ -2298,6 +2298,313 @@
       "solution_file": "levels/solutions/north_20.json",
       "implementation_committed_before_recording": true,
       "gameplay_sources_unchanged_after_recording": true
+    },
+    {
+      "file": "video/chapter_01/level_21.mp4",
+      "level": 21,
+      "bytes": 1372739,
+      "sha256": "b62ade42dd975b6e4cbc1e0432adb1de7696c8dfa8fcb94b00ed33c6312dd222",
+      "sampled_5fps_frames": 445,
+      "distinct_sampled_frames": 436,
+      "sampled_action_states": 141,
+      "distinct_action_state_frames": 141,
+      "full_decode_passed": true,
+      "legal_input_trace_verified": true,
+      "mp4_fast_start": true,
+      "game_implementation_commit": "c48e84313f7b997e75f412cc697bfe5b55409e8a",
+      "hero_kinds": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 2670,
+      "duration_seconds": 89.0,
+      "moves": 119,
+      "directions": 119,
+      "input_events": 140,
+      "selection_events": 21,
+      "walks_without_push_pull_or_swap": 91,
+      "pushes": 10,
+      "pulls": 8,
+      "swaps": 10,
+      "destroyed_crystals": 0,
+      "counts_are_actual_actions": true,
+      "selection_counts_as_operation": false,
+      "selection_is_undoable": false,
+      "undo_keeps_current_selection": true,
+      "action_notation": "UDLR actual directions;C free selection only;red mixed chain push,green automatic single-crystal pull,blue input-direction first visible target swap;6plates globally AND all3energy. No fences.",
+      "modifier_keys_used": [],
+      "keys_used": [
+        "W",
+        "A",
+        "S",
+        "D",
+        "C"
+      ],
+      "initial_hero_positions": {
+        "red": [
+          0,
+          0
+        ],
+        "green": [
+          6,
+          0
+        ],
+        "blue": [
+          12,
+          0
+        ]
+      },
+      "victory_hero_positions": {
+        "red": [
+          6,
+          5
+        ],
+        "green": [
+          5,
+          5
+        ],
+        "blue": [
+          7,
+          5
+        ]
+      },
+      "initial_active_hero": "red",
+      "victory_active_hero": "red",
+      "fences": [],
+      "initial_and_final_frames_reviewed": true,
+      "all_twenty_one_free_selection_highlights_reviewed": true,
+      "inactive_heroes_retain_hue_reviewed": true,
+      "all_ten_pushes_eight_pulls_ten_swaps_reviewed": true,
+      "six_plate_three_energy_states_reviewed": true,
+      "absent_energy_markers_with_hero_and_crystal_reviewed": true,
+      "three_distinct_hero_goals_reviewed": true,
+      "selection_input_events": [
+        11,
+        19,
+        48,
+        66,
+        67,
+        69,
+        71,
+        72,
+        83,
+        93,
+        95,
+        96,
+        98,
+        116,
+        117,
+        120,
+        121,
+        123,
+        127,
+        133,
+        137
+      ],
+      "selection_unchanged_action_counts": [
+        10,
+        17,
+        45,
+        62,
+        62,
+        63,
+        64,
+        64,
+        74,
+        83,
+        84,
+        84,
+        85,
+        102,
+        102,
+        104,
+        104,
+        105,
+        108,
+        113,
+        116
+      ],
+      "push_actions": [
+        3,
+        6,
+        55,
+        56,
+        57,
+        58,
+        61,
+        62,
+        85,
+        104
+      ],
+      "pull_actions": [
+        13,
+        94,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102
+      ],
+      "swap_actions": [
+        19,
+        23,
+        27,
+        34,
+        45,
+        63,
+        65,
+        74,
+        105,
+        115
+      ],
+      "hero_swap_actions": [
+        45,
+        65,
+        115
+      ],
+      "crystal_swap_actions": [
+        19,
+        23,
+        27,
+        34,
+        63,
+        74,
+        105
+      ],
+      "first_all_plates_action": 26,
+      "right_crystal_handoff_action": 27,
+      "left_crystal_handoff_action": 63,
+      "safe_restoration_action": 84,
+      "reopen_action": 85,
+      "all_six_crystals_on_plates_action": 105,
+      "victory_action": 119,
+      "victory_input_event": 140,
+      "final_crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            7,
+            0
+          ]
+        },
+        {
+          "color": "blue_purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 2,
+          "position": [
+            12,
+            2
+          ]
+        },
+        {
+          "color": "blue_purple",
+          "id": 3,
+          "position": [
+            10,
+            0
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 4,
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "color": "blue_purple",
+          "id": 5,
+          "position": [
+            5,
+            1
+          ]
+        }
+      ],
+      "reviewed_encoded_frames": [
+        0,
+        2669,
+        106,
+        160,
+        250,
+        304,
+        394,
+        430,
+        502,
+        556,
+        574,
+        700,
+        862,
+        898,
+        916,
+        1096,
+        1114,
+        1132,
+        1150,
+        1204,
+        1222,
+        1240,
+        1258,
+        1276,
+        1294,
+        1330,
+        1348,
+        1366,
+        1528,
+        1546,
+        1726,
+        1744,
+        1762,
+        1780,
+        1798,
+        1816,
+        1870,
+        1978,
+        2032,
+        2050,
+        2068,
+        2086,
+        2104,
+        2122,
+        2140,
+        2158,
+        2194,
+        2212,
+        2230,
+        2248,
+        2266,
+        2320,
+        2338,
+        2428,
+        2446,
+        2482,
+        2500,
+        2518,
+        2572
+      ],
+      "replay_report": "level_21_replay.json",
+      "level_file": "levels/north_21.json",
+      "solution_file": "levels/solutions/north_21.json",
+      "implementation_committed_before_recording": true,
+      "gameplay_sources_unchanged_after_recording": true
     }
   ],
   "game_implementation_commits": {
@@ -2320,6 +2627,7 @@
     "level_17": "e639fc242ba534b7def99a0724c0ee4e99905717",
     "level_18": "3d79feb4478a929a1babefbe494126a608d8aea3",
     "level_19": "8e8951bf4411142096cb20d1c8ac244967dd6687",
-    "level_20": "0f4b4ce2087581bc1bca8925dab74728d4f21739"
+    "level_20": "0f4b4ce2087581bc1bca8925dab74728d4f21739",
+    "level_21": "c48e84313f7b997e75f412cc697bfe5b55409e8a"
   }
 }

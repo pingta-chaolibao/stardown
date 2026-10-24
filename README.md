@@ -64,6 +64,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十八关 | [观看 / 下载 MP4](video/chapter_01/level_18.mp4) | 88.4 秒 |
 | 第十九关 | [观看 / 下载 MP4](video/chapter_01/level_19.mp4) | 63.2 秒 |
 | 第二十关 | [观看 / 下载 MP4](video/chapter_01/level_20.mp4) | 30.8 秒 |
+| 第二十一关 | [观看 / 下载 MP4](video/chapter_01/level_21.mp4) | 89 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -673,4 +674,4 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 
 专项验证另用真实可达前缀：43后红松板杀死能量格上的非当前蓝人，只能撤销复活；101后蓝松板摧毁中间能量格上的晶ID5，一次撤销恢复。三枚晶同次被能量重现摧毁的独立夹具也验证完整撤销，不混入正式录像。
 
-[关卡数据](levels/north_21.json) · [合法输入路线](levels/solutions/north_21.json) · [独立路线验证](tools/check_north_21.py) · [初始画面](docs/screenshots/level_21_initial.png) · [六板全压](docs/screenshots/level_21_all_six_plates.png) · [三英雄胜利](docs/screenshots/level_21_completed.png) · [小窗口能量标记](docs/screenshots/level_21_compact_occupied_energy.png)。正式录像在实现提交后制作，交付状态见[验证记录](docs/VERIFICATION.md)。
+[关卡数据](levels/north_21.json) · [合法输入路线](levels/solutions/north_21.json) · [独立路线验证](tools/check_north_21.py) · [初始画面](docs/screenshots/level_21_initial.png) · [六板全压](docs/screenshots/level_21_all_six_plates.png) · [三英雄胜利](docs/screenshots/level_21_completed.png) · [小窗口能量标记](docs/screenshots/level_21_compact_occupied_energy.png)。[89秒实际通关视频](video/chapter_01/level_21.mp4) · [21关虚拟选关](docs/screenshots/level_21_navigation.png)。全部21视频完整解码和独立合法回放通过，详见[验证记录](docs/VERIFICATION.md)。
