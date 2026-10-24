@@ -136,6 +136,7 @@ def main():
             run("05_north_17_scene", ["--script", "res://tests/north_17_scene.gd"])
             run("05_north_18_scene", ["--script", "res://tests/north_18_scene.gd"])
             run("05_north_19_scene", ["--script", "res://tests/north_19_scene.gd"])
+            run("05_navigation", ["--script", "res://tests/navigation_scene.gd"])
             run("05_energy_visibility", ["--script", "res://tests/energy_visibility_scene.gd"])
             if args.visual:
                 run("06_render", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
@@ -200,6 +201,9 @@ def main():
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_19", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_19_scene.gd",
+                                          "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+                run("06_navigation", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
+                                          "--audio-driver", "Dummy", "--script", "res://tests/navigation_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_energy_visibility", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/energy_visibility_scene.gd",

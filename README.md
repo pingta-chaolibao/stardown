@@ -12,7 +12,7 @@
 
 ## 获取与运行
 
-通过 Git 获取 [develop 分支](https://github.com/pingta-chaolibao/stardown/tree/develop)，在所选云端环境使用 Godot 导入 `project.godot`，按 **F5** 运行。用户已选择通过 Git 获取工程，交付提供逐关通关视频。
+通过 Git 获取 [develop 分支](https://github.com/pingta-chaolibao/stardown/tree/develop)，在所选云端环境使用 Godot 导入 `project.godot`，按 **F5** 进入独立选关主界面。用户已选择通过 Git 获取工程，交付提供逐关通关视频。
 
 已验证的精确版本：`4.6.3.stable.official.7d41c59c4`（标准版）。不需要 C#、插件、在线字体或导出模板。有图形显示时，终端最简运行方式：
 
@@ -67,6 +67,15 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
 **今后每完成一关，都须先提交关卡实现，再制作并提交对应通关视频，按章节保存在仓库根目录 `video/chapter_XX/level_YY.mp4`。** 项目工作约定也已写入 [AGENTS.md](AGENTS.md)。
+
+
+## 选关主界面
+
+启动显示第一章横向关卡卡片。鼠标拖动、滚轮或触屏横滑可浏览；方向键左右选择，Home/End到首尾，PageUp/PageDown按一屏移动，Enter/空格进入。卡片含真实地图概览、英雄类型、尺寸与水晶数，没有锁关、星数、奖励或虚构完成进度。
+
+关卡右上角“返回选关”或Esc返回同一主界面，保留浏览位置、选择和卡片对象；重新点击关卡从该关初始状态开始。菜单中的按键不操作隐藏的游戏。任意英雄死亡时返回/切关/重开均锁定，只有撤销可复活。C仍免费，撤销仍保留当前英雄选择，全部已确认玩法保持不变。
+
+列表使用可视区域虚拟化和对象池，不为所有关卡创建隐藏按钮。数据提供器与数字滚动范围独立，视口宽1180时只保留10张卡片，滚动重绑数据而不分配新卡片。绘制样式缓存复用，卡片不持有键盘焦点；父视口保存逻辑选择，避免回收后焦点或点击串关。详见[导航架构与验证](docs/NAVIGATION.md)。
 
 ## 确认的地图
 
@@ -328,7 +337,7 @@ HV.#.......
 
 ## 工程结构与数据
 
-- `levels/north_01.json` 至 `levels/north_19.json`：十九关数据，默认进入第一关。
+- `levels/north_01.json` 至 `levels/north_19.json`：十九关数据，从主界面选择进入。
 - `levels/solutions/`：逐输入验证的十九关通关路径，供测试与演示回放使用。
 - `scripts/core/level_data.gd`：JSON 解析与坐标校验。
 - `scripts/core/energy_rules.gd`：纯占用谓词和机关结算，提供可配置压力来源。

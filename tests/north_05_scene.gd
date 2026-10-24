@@ -92,7 +92,7 @@ func _green_death_fixture() -> void:
 	var before: Dictionary = game.model.snapshot()
 	await _press(KEY_D)
 	_check(not game.model.alive and game.model.pulls == 1 and game.pulls_label.text == "01" and game.status_label.text.contains("英雄已死亡"), "real green pull settles death with visible pull count")
-	_check(game.restart_button.disabled and game.find_child("Level05", true, false).disabled and game.find_child("MoveRight", true, false).disabled, "dead green UI only allows undo")
+	_check(game.restart_button.disabled and game.find_child("BackToLevels", true, false).disabled and game.find_child("MoveRight", true, false).disabled, "dead green UI only allows undo")
 	var dead: Dictionary = game.model.snapshot()
 	await _press(KEY_R)
 	await _press(KEY_D)

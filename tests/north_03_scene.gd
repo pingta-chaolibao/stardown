@@ -63,7 +63,7 @@ func _check_separate_death_fixture() -> void:
 	await _press(KEY_D)
 	_check(not game.model.alive and game.model.moves == 1 and game.model.pushes == 1, "actual input triggers restoration death in independent fixture")
 	_check(game.status_label.text.contains("英雄已死亡") and game.restart_button.disabled, "death UI only offers undo")
-	_check(game.find_child("Level01", true, false).disabled and game.find_child("MoveRight", true, false).disabled, "death disables level switching and movement controls")
+	_check(game.find_child("BackToLevels", true, false).disabled and game.find_child("MoveRight", true, false).disabled, "death disables level switching and movement controls")
 	var dead: Dictionary = game.model.snapshot()
 	await _press(KEY_R)
 	await _press(KEY_D)

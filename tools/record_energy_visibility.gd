@@ -24,7 +24,7 @@ func _init() -> void:
 	call_deferred("_verify_demo" if not verify_path.is_empty() else "_run")
 func _run() -> void:
 	if DisplayServer.get_name()=="headless" or Engine.get_write_movie_path().is_empty() or report_path.is_empty():_fail("Demo requires Movie Maker, X11 and report path");return
-	root.size=Vector2i(1280,820);game=load("res://scenes/main.tscn").instantiate();game.level_path="res://levels/north_17.json";root.add_child(game)
+	root.size=Vector2i(1280,820);game=load("res://scenes/main.tscn").instantiate();game.start_in_level=true;game.level_path="res://levels/north_17.json";root.add_child(game)
 	await _frames(45);var initial:=_state();var phases:Array[Dictionary]=[]
 	for phase in DEMO_PHASES:
 		while game.model.active_hero_id()!=phase["hero"]:await _demo_input("C")
@@ -54,7 +54,7 @@ func _demo_input(symbol:String) -> void:
 func _frames(count:int) -> void:
 	for _i in count:await process_frame;demo_frames+=1
 func _verify_demo() -> void:
-	var r:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(verify_path));game=load("res://scenes/main.tscn").instantiate();game.level_path="res://levels/north_17.json";root.add_child(game);await _frames(2)
+	var r:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(verify_path));game=load("res://scenes/main.tscn").instantiate();game.start_in_level=true;game.level_path="res://levels/north_17.json";root.add_child(game);await _frames(2)
 	var checks:=0
 	if _normalized(_state())!=_normalized(r["initial_state"]):_fail("Demo initial world differs");return
 	for expected in r["trace"]:

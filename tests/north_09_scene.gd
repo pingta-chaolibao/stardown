@@ -113,7 +113,7 @@ func _blue_death_fixture() -> void:
 	var initial: Dictionary=game.model.snapshot()
 	await _action("R")
 	_check(not game.model.alive and game.model.swaps==1 and game.swaps_label.text=="01" and game.status_label.text.contains("死亡"),"real direction input settles restoration death and shows exchange statistic")
-	_check(game.restart_button.disabled and game.find_child("MoveRight",true,false).disabled and game.find_child("Level09",true,false).disabled,"dead blue UI leaves only undo available")
+	_check(game.restart_button.disabled and game.find_child("MoveRight",true,false).disabled and game.find_child("BackToLevels",true,false).disabled,"dead blue UI leaves only undo available")
 	var dead: Dictionary=game.model.snapshot()
 	await _press(KEY_R)
 	await _press(KEY_A)

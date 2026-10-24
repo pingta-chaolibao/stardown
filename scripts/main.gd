@@ -5,6 +5,7 @@ const Level = preload("res://scripts/core/level_data.gd")
 const State = preload("res://scripts/core/grid_state.gd")
 const KeySteps = preload("res://scripts/input/step_input.gd")
 const Board = preload("res://scripts/view/board_view.gd")
+const LevelMenu = preload("res://scripts/view/level_menu.gd")
 const UI_FONT = preload("res://assets/fonts/NotoSansCJKsc-Regular.otf")
 const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
@@ -13,6 +14,7 @@ const MINT := Color("9bc9c1")
 const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json"]
 const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关"]
 
+@export var start_in_level := false
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
 
 var model := State.new()
@@ -28,6 +30,7 @@ var undo_button: Button
 var restart_button: Button
 var current_level_index: int = 0
 var ui_root: Control
+var menu: Control
 
 
 func _ready() -> void:
@@ -45,6 +48,24 @@ func _ready() -> void:
 	_build_ui()
 	_refresh("C 切换英雄，%s名英雄分占不同终点。" % ("三" if model.hero_count()==3 else "两") if model.hero_count()>1 else "按方向：有可见目标就交换，否则走一格。" if model.active_kind()=="blue" else "%s水晶腾出道路，再走到%s。" % ["拉动" if model.active_kind() == "green" else "推动", _goal_name()])
 
+	menu = LevelMenu.new()
+	menu.configure(LEVEL_PATHS)
+	add_child(menu)
+	menu.level_requested.connect(select_level)
+	if start_in_level: menu.hide()
+	else: ui_root.hide()
+
+
+func back_to_menu() -> bool:
+	if not model.alive:
+		_refresh("英雄已死亡，仅可撤销恢复。", Board.CORAL)
+		return false
+	key_steps.clear()
+	ui_root.hide()
+	menu.show()
+	menu.focus_strip()
+	return true
+
 
 func select_level(index: int) -> bool:
 	if not model.alive:
@@ -55,6 +76,9 @@ func select_level(index: int) -> bool:
 	var definition := Level.from_file(LEVEL_PATHS[index])
 	if not model.load_level(definition):
 		return false
+	if menu != null:
+		menu.strip.freeze()
+		menu.hide()
 	current_level_index = index
 	level_path = LEVEL_PATHS[index]
 	key_steps.clear()
@@ -111,6 +135,11 @@ func _draw() -> void:
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
+	if menu != null and menu.visible: return
+	if event is InputEventKey and event.keycode==KEY_ESCAPE and event.pressed and not event.echo:
+		back_to_menu()
+		get_viewport().set_input_as_handled()
+		return
 	var command := key_steps.command_for_event(event)
 	if not command.is_empty() and model.level != null:
 		apply_command(command)
@@ -118,6 +147,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 
 func apply_command(command: Dictionary) -> void:
+	if menu != null and menu.visible: return
 	if model.level == null:
 		return
 	var before_selection:=model.active_hero_index
@@ -210,10 +240,8 @@ func _refresh(message: String, color: Color = MINT) -> void:
 	var switch_button:=find_child("SwitchHero",true,false) as Button
 	if switch_button!=null:
 		switch_button.disabled=not model.alive or model.is_complete()
-	for index in LEVEL_PATHS.size():
-		var button := find_child("Level%02d" % (index + 1), true, false) as Button
-		if button != null:
-			button.disabled = not model.alive or index == current_level_index
+	var back := find_child("BackToLevels",true,false) as Button
+	if back != null: back.disabled = not model.alive
 	if not model.alive:
 		progress_label.text = "英雄已死亡"
 		status_label.text = "英雄已死亡。\n只能撤销到屏障恢复前的状态复活。"
@@ -249,7 +277,7 @@ func _build_ui() -> void:
 
 func _build_header(parent: VBoxContainer) -> void:
 	var row:=_hbox(10)
-	row.custom_minimum_size.y=76
+	row.custom_minimum_size.y=78
 	parent.add_child(row)
 	var emblem:=_label("✦",52,GOLD)
 	emblem.custom_minimum_size.x=58
@@ -259,22 +287,11 @@ func _build_header(parent: VBoxContainer) -> void:
 	titles.add_child(_label("STARDOWN  /  NORTHERN REALM",12,MINT))
 	titles.add_child(_label("沉星之序",34,TEXT))
 	_spacer(row)
-	# Two compact rows retain readable titles as chapter one grows beyond16 levels.
-	var navigation:=_vbox(2)
-	navigation.size_flags_vertical=Control.SIZE_SHRINK_CENTER
-	row.add_child(navigation)
-	var per_row:=10 if LEVEL_PATHS.size()>18 else (9 if LEVEL_PATHS.size()>16 else 8)
-	for start in range(0,LEVEL_PATHS.size(),per_row):
-		var line:=_hbox(4)
-		navigation.add_child(line)
-		for index in range(start,mini(start+per_row,LEVEL_PATHS.size())):
-			var button:=_button(LEVEL_TITLES[index],"Level%02d" % (index+1))
-			button.disabled=index==current_level_index
-			button.custom_minimum_size=Vector2(68,34)
-			button.add_theme_font_size_override("font_size",14)
-			button.tooltip_text="切换关卡并从初始状态开始"
-			button.pressed.connect(select_level.bind(index))
-			line.add_child(button)
+	var back := _button("←  返回选关", "BackToLevels")
+	back.custom_minimum_size = Vector2(152,46)
+	back.tooltip_text = "返回主界面，保留浏览位置；英雄死亡时仅可撤销"
+	back.pressed.connect(back_to_menu)
+	row.add_child(back)
 
 
 func _build_board(parent: HBoxContainer) -> void:

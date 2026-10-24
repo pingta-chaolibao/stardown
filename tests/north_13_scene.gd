@@ -146,6 +146,6 @@ func _inactive_death_input() -> void:
 	await _press(KEY_C)
 	await _press(KEY_R)
 	await _press(KEY_RIGHT)
-	_check(game.model.snapshot()==dead and game.find_child("SwitchHero",true,false).disabled and game.find_child("Level12",true,false).disabled,"actual C/restart/direction cannot bypass another hero death")
+	_check(game.model.snapshot()==dead and game.find_child("SwitchHero",true,false).disabled and game.find_child("BackToLevels",true,false).disabled,"actual C/restart/direction cannot bypass another hero death")
 	await _click("Undo")
 	_check(game.model.snapshot()==before and game.model.alive and game.model.hero_is_alive(1),"one screen undo revives inactive hero and restores plate, selection and gate")

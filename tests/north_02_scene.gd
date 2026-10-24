@@ -1,4 +1,5 @@
 extends SceneTree
+const NavigationCard = preload("res://scripts/view/level_card.gd")
 ## Actual keyboard/GUI input, victory replay, and isolated level switching.
 
 var game: Control
@@ -19,6 +20,7 @@ func _run() -> void:
 	game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
 	await _settle()
+	await _click("Level01")
 	var initial_one: Dictionary = game.model.snapshot()
 	await _press(KEY_D)
 	_check(game.model.moves == 1, "first-level progress before switching")
@@ -87,7 +89,13 @@ func _press(code: int) -> void:
 
 
 func _click(node_name: String) -> void:
-	var button := game.find_child(node_name, true, false) as Button
+	if node_name.begins_with("Level"):
+		if not game.menu.visible:
+			await _click("BackToLevels")
+			if not game.menu.visible: return # death locks the actual return button
+		game.menu.strip.reveal_index(int(node_name.trim_prefix("Level"))-1)
+		await _settle()
+	var button := game.find_child(node_name, true, false) as Control
 	_check(button != null, "button exists: " + node_name)
 	if button == null:
 		return
@@ -125,7 +133,7 @@ func _capture(filename: String) -> void:
 
 
 func _check_layout(node: Node) -> void:
-	if node is Control and node.is_visible_in_tree():
+	if node is Control and node.is_visible_in_tree() and not node is NavigationCard:
 		var rect: Rect2 = node.get_global_rect()
 		_check(rect.position.x >= -1 and rect.position.y >= -1 and rect.end.x <= root.get_visible_rect().size.x + 1 and rect.end.y <= root.get_visible_rect().size.y + 1, "visible control fits viewport: %s %s within %s" % [node.get_path(), rect, root.get_visible_rect()])
 	for child in node.get_children():

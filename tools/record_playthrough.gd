@@ -33,6 +33,7 @@ func _run() -> void:
 	root.size = Vector2i(1280, 820)
 	var solution: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://levels/solutions/north_%02d.json" % level_number))
 	game = load("res://scenes/main.tscn").instantiate()
+	game.start_in_level = true
 	# Choosing the exported startup level happens before the first rendered frame.
 	# After initialization, all movement uses only actual press/release events.
 	game.level_path = "res://levels/north_%02d.json" % level_number
