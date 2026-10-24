@@ -68,6 +68,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第二十二关 | [观看 / 下载 MP4](video/chapter_01/level_22.mp4) | 13.4 秒 |
 | 第二十三关 | [观看 / 下载 MP4](video/chapter_01/level_23.mp4) | 23.6 秒 |
 | 第二十四关 | [观看 / 下载 MP4](video/chapter_01/level_24.mp4) | 58.4 秒 |
+| 第二十五关 | [观看 / 下载 MP4](video/chapter_01/level_25.mp4) | 26.6 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -727,4 +728,4 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 
 沿用本次方向首个可见对象优先交换，否则走一步的蓝英雄规则，无技能键、不推拉。哥布林不主动移动，但可被合法交换，位置改变后四向危险格随之改变；交换后进入相邻威胁仍立即死亡，只能Undo。构造路线`DDRRURRDRRURDDDDDLLLLULDDDRDDRRRURRR`已独立按实体身份逐输入复核并由Godot验证：36方向，17交换=12水晶+5哥布林，0推拉/C/毁晶。第12/23步移动右侧/左侧哥布林打开路线，第30/31/32步与底排三哥布林依次交换，第36步走到目标。19枚水晶完整保留，15只哥布林全部存活且身份保留；不宣称最短或穷举，不改图凑解。
 
-[关卡JSON](levels/north_25.json) · [合法路线](levels/solutions/north_25.json) · [独立复核](tools/check_north_25.py)。[初始](docs/screenshots/level_25_initial.png) · [哥布林交换/危险格更新](docs/screenshots/level_25_goblin_swap_32.png) · [胜利](docs/screenshots/level_25_completed.png) · [小窗口](docs/screenshots/level_25_compact.png)。正式视频按先验证并提交实现、再真实Godot录制的约定交付；最终检查与复用范围见[验证记录](docs/VERIFICATION.md)。
+[关卡JSON](levels/north_25.json) · [合法路线](levels/solutions/north_25.json) · [独立复核](tools/check_north_25.py)。[初始](docs/screenshots/level_25_initial.png) · [哥布林交换/危险格更新](docs/screenshots/level_25_goblin_swap_32.png) · [胜利](docs/screenshots/level_25_completed.png) · [小窗口](docs/screenshots/level_25_compact.png)。[26.6秒实际通关视频](video/chapter_01/level_25.mp4) · [逐输入状态](video/chapter_01/level_25_replay.json)。全部25录像完整解码与独立合法回放通过，最终检查与复用范围见[验证记录](docs/VERIFICATION.md)。

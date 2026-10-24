@@ -3327,6 +3327,706 @@
       "solution_file": "levels/solutions/north_24.json",
       "implementation_committed_before_recording": true,
       "gameplay_sources_unchanged_after_recording": true
+    },
+    {
+      "file": "video/chapter_01/level_25.mp4",
+      "level": 25,
+      "bytes": 444785,
+      "sha256": "c5975dd5c68239f8ab71e9ff9ea2b5faacfa8ba5bfb9b6bd335d22412495f472",
+      "sampled_5fps_frames": 133,
+      "distinct_sampled_frames": 122,
+      "sampled_action_states": 37,
+      "distinct_action_state_frames": 37,
+      "full_decode_passed": true,
+      "mp4_fast_start": true,
+      "legal_input_trace_verified": true,
+      "game_implementation_commit": "eef2b04e3b31296bd15a5d730b98dcf1554b279f",
+      "hero_kinds": [
+        "blue"
+      ],
+      "monster_kinds": [
+        "goblin"
+      ],
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 798,
+      "duration_seconds": 26.6,
+      "moves": 36,
+      "directions": 36,
+      "input_events": 36,
+      "selection_events": 0,
+      "walks_without_push_pull_or_swap": 19,
+      "pushes": 0,
+      "pulls": 0,
+      "swaps": 17,
+      "crystal_swaps": 12,
+      "monster_swaps": 5,
+      "destroyed_crystals": 0,
+      "counts_are_actual_actions": true,
+      "action_notation": "UDLR blue passive input-direction first-visible crystal/Goblin swap,otherwise one walk;walls block sight,no skill key,push,pull or C.",
+      "modifier_keys_used": [],
+      "keys_used": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ],
+      "initial_hero_position": [
+        0,
+        0
+      ],
+      "victory_hero_position": [
+        11,
+        9
+      ],
+      "initial_crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            4,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 2,
+          "position": [
+            5,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 3,
+          "position": [
+            6,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 4,
+          "position": [
+            7,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 5,
+          "position": [
+            3,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 6,
+          "position": [
+            4,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 7,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 8,
+          "position": [
+            6,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 9,
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 10,
+          "position": [
+            3,
+            5
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 11,
+          "position": [
+            4,
+            5
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 12,
+          "position": [
+            5,
+            5
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 13,
+          "position": [
+            6,
+            5
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 14,
+          "position": [
+            7,
+            5
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 15,
+          "position": [
+            3,
+            6
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 16,
+          "position": [
+            4,
+            6
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 17,
+          "position": [
+            6,
+            6
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 18,
+          "position": [
+            7,
+            6
+          ]
+        }
+      ],
+      "final_crystals": [
+        {
+          "color": "purple",
+          "id": 0,
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            4,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 2,
+          "position": [
+            4,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 3,
+          "position": [
+            5,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 4,
+          "position": [
+            7,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 5,
+          "position": [
+            0,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 6,
+          "position": [
+            3,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 7,
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 8,
+          "position": [
+            6,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 9,
+          "position": [
+            6,
+            2
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 10,
+          "position": [
+            3,
+            6
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 11,
+          "position": [
+            4,
+            5
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 12,
+          "position": [
+            5,
+            5
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 13,
+          "position": [
+            6,
+            5
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 14,
+          "position": [
+            7,
+            5
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 15,
+          "position": [
+            4,
+            6
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 16,
+          "position": [
+            6,
+            6
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 17,
+          "position": [
+            7,
+            6
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 18,
+          "position": [
+            11,
+            6
+          ]
+        }
+      ],
+      "initial_monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            3,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            7,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            11,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            5,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            9,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            7,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            0,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            2,
+            7
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            5,
+            7
+          ]
+        },
+        {
+          "alive": true,
+          "id": 10,
+          "kind": "goblin",
+          "position": [
+            4,
+            9
+          ]
+        },
+        {
+          "alive": true,
+          "id": 11,
+          "kind": "goblin",
+          "position": [
+            6,
+            9
+          ]
+        },
+        {
+          "alive": true,
+          "id": 12,
+          "kind": "goblin",
+          "position": [
+            3,
+            10
+          ]
+        },
+        {
+          "alive": true,
+          "id": 13,
+          "kind": "goblin",
+          "position": [
+            5,
+            10
+          ]
+        },
+        {
+          "alive": true,
+          "id": 14,
+          "kind": "goblin",
+          "position": [
+            8,
+            10
+          ]
+        }
+      ],
+      "final_monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            3,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            7,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            1
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            5,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            9,
+            3
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            4,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 6,
+          "kind": "goblin",
+          "position": [
+            7,
+            4
+          ]
+        },
+        {
+          "alive": true,
+          "id": 7,
+          "kind": "goblin",
+          "position": [
+            3,
+            5
+          ]
+        },
+        {
+          "alive": true,
+          "id": 8,
+          "kind": "goblin",
+          "position": [
+            2,
+            7
+          ]
+        },
+        {
+          "alive": true,
+          "id": 9,
+          "kind": "goblin",
+          "position": [
+            5,
+            7
+          ]
+        },
+        {
+          "alive": true,
+          "id": 10,
+          "kind": "goblin",
+          "position": [
+            4,
+            9
+          ]
+        },
+        {
+          "alive": true,
+          "id": 11,
+          "kind": "goblin",
+          "position": [
+            6,
+            9
+          ]
+        },
+        {
+          "alive": true,
+          "id": 12,
+          "kind": "goblin",
+          "position": [
+            1,
+            10
+          ]
+        },
+        {
+          "alive": true,
+          "id": 13,
+          "kind": "goblin",
+          "position": [
+            3,
+            10
+          ]
+        },
+        {
+          "alive": true,
+          "id": 14,
+          "kind": "goblin",
+          "position": [
+            5,
+            10
+          ]
+        }
+      ],
+      "all19_crystal_identities_preserved": true,
+      "all15_goblins_alive": true,
+      "goblin_moves_only_during_exchange": true,
+      "initial_and_final_frames_reviewed": true,
+      "all17_exchange_frames_reviewed": true,
+      "all5_goblin_exchanges_reviewed": true,
+      "moving_cardinal_danger_regions_reviewed": true,
+      "fixed_clutter_not_pushable_reviewed": true,
+      "crystal_swap_actions": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "goblin_swap_actions": [
+        12,
+        23,
+        30,
+        31,
+        32
+      ],
+      "victory_action": 36,
+      "victory_input_event": 36,
+      "reviewed_encoded_frames": [
+        0,
+        797,
+        88,
+        106,
+        124,
+        142,
+        160,
+        178,
+        196,
+        214,
+        268,
+        376,
+        394,
+        412,
+        430,
+        448,
+        466,
+        592,
+        610,
+        628,
+        646,
+        700
+      ],
+      "replay_report": "level_25_replay.json",
+      "level_file": "levels/north_25.json",
+      "solution_file": "levels/solutions/north_25.json",
+      "implementation_committed_before_recording": true,
+      "gameplay_sources_unchanged_after_recording": true
     }
   ],
   "game_implementation_commits": {
@@ -3353,6 +4053,7 @@
     "level_21": "c48e84313f7b997e75f412cc697bfe5b55409e8a",
     "level_22": "03a637234b3890e6fe719f62e75ea9cde4791567",
     "level_23": "1c07a0651f35b80109b3c4424c8bb56c1b98135c",
-    "level_24": "cf10cb5b9ab5aba8b1eaa8f2d9aa4a5ce5855f7c"
+    "level_24": "cf10cb5b9ab5aba8b1eaa8f2d9aa4a5ce5855f7c",
+    "level_25": "eef2b04e3b31296bd15a5d730b98dcf1554b279f"
   }
 }
