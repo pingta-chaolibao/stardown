@@ -1,0 +1,5198 @@
+{
+  "capture": "Godot Movie Maker viewport; actual Input.parse_input_event press/release",
+  "chapter": 1,
+  "direction_actions": 30,
+  "display": "X11",
+  "engine": {
+    "build": "official",
+    "hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+    "hex": 263683,
+    "major": 4,
+    "minor": 6,
+    "patch": 3,
+    "status": "stable",
+    "string": "4.6.3-stable (official)",
+    "timestamp": 0
+  },
+  "final_state": {
+    "active_hero": "red",
+    "active_hero_index": 0,
+    "alive": true,
+    "barriers": [],
+    "bushes": [],
+    "completed": true,
+    "crystals": [
+      {
+        "color": "blue",
+        "id": 0,
+        "position": [
+          0,
+          4
+        ]
+      },
+      {
+        "color": "purple",
+        "id": 1,
+        "position": [
+          4,
+          4
+        ]
+      }
+    ],
+    "exit_color": "green",
+    "exits": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "fences": [
+      [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      [
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    ],
+    "hero_kind": "red",
+    "heroes": [
+      {
+        "alive": true,
+        "id": "red",
+        "kind": "red",
+        "position": [
+          3,
+          2
+        ],
+        "selected": true
+      },
+      {
+        "alive": true,
+        "id": "green",
+        "kind": "green",
+        "position": [
+          1,
+          2
+        ],
+        "selected": false
+      },
+      {
+        "alive": true,
+        "id": "blue",
+        "kind": "blue",
+        "position": [
+          2,
+          2
+        ],
+        "selected": false
+      }
+    ],
+    "history_size": 30,
+    "level_id": "north_hero_20",
+    "moves": 30,
+    "occupied_exits": 3,
+    "plates": [],
+    "player": [
+      3,
+      2
+    ],
+    "pressure": {
+
+    },
+    "pulls": 2,
+    "pushes": 2,
+    "selection_events": 13,
+    "swaps": 11
+  },
+  "fps": 30,
+  "frames_per_input": 18,
+  "game_implementation_commit": "0f4b4ce2087581bc1bca8925dab74728d4f21739",
+  "initial_pause_frames": 60,
+  "initial_state": {
+    "active_hero": "blue",
+    "active_hero_index": 2,
+    "alive": true,
+    "barriers": [],
+    "bushes": [],
+    "completed": false,
+    "crystals": [
+      {
+        "color": "blue",
+        "id": 0,
+        "position": [
+          1,
+          0
+        ]
+      },
+      {
+        "color": "purple",
+        "id": 1,
+        "position": [
+          3,
+          0
+        ]
+      }
+    ],
+    "exit_color": "green",
+    "exits": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "fences": [
+      [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      [
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    ],
+    "hero_kind": "blue",
+    "heroes": [
+      {
+        "alive": true,
+        "id": "red",
+        "kind": "red",
+        "position": [
+          4,
+          4
+        ],
+        "selected": false
+      },
+      {
+        "alive": true,
+        "id": "green",
+        "kind": "green",
+        "position": [
+          0,
+          4
+        ],
+        "selected": false
+      },
+      {
+        "alive": true,
+        "id": "blue",
+        "kind": "blue",
+        "position": [
+          2,
+          1
+        ],
+        "selected": true
+      }
+    ],
+    "history_size": 0,
+    "level_id": "north_hero_20",
+    "moves": 0,
+    "occupied_exits": 0,
+    "plates": [],
+    "player": [
+      2,
+      1
+    ],
+    "pressure": {
+
+    },
+    "pulls": 0,
+    "pushes": 0,
+    "selection_events": 0,
+    "swaps": 0
+  },
+  "input_events": 43,
+  "level": 20,
+  "movie_file": "level_20.avi",
+  "path": "LLDCCRDLUCURDLDCCRCURDCCRRDCRURDCLLDRCCULCL",
+  "selection_events": 13,
+  "trace": [
+    {
+      "action": "move",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            0
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 1,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            1
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 1,
+      "input": "L",
+      "level_id": "north_hero_20",
+      "moves": 1,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        1,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "selection_events": 0,
+      "swaps": 0
+    },
+    {
+      "action": "move",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            0
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 2,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            1
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 2,
+      "input": "L",
+      "level_id": "north_hero_20",
+      "moves": 2,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        0,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "selection_events": 0,
+      "swaps": 0
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            0
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 3,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            1
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 3,
+      "input": "D",
+      "level_id": "north_hero_20",
+      "moves": 3,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        0,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "selection_events": 0,
+      "swaps": 1
+    },
+    {
+      "action": "switch",
+      "active_hero": "red",
+      "active_hero_index": 0,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            0
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 4,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "red",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            1
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 3,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 3,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        4,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "selection_events": 1,
+      "swaps": 1
+    },
+    {
+      "action": "switch",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            0
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 5,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            1
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 3,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 3,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        0,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "selection_events": 2,
+      "swaps": 1
+    },
+    {
+      "action": "move",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            0
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 6,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            1
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 4,
+      "input": "R",
+      "level_id": "north_hero_20",
+      "moves": 4,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        1,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 0,
+      "pushes": 0,
+      "selection_events": 2,
+      "swaps": 1
+    },
+    {
+      "action": "move",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 7,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 5,
+      "input": "D",
+      "level_id": "north_hero_20",
+      "moves": 5,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        1,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 2,
+      "swaps": 1
+    },
+    {
+      "action": "move",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 8,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            2
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 6,
+      "input": "L",
+      "level_id": "north_hero_20",
+      "moves": 6,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        0,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 2,
+      "swaps": 1
+    },
+    {
+      "action": "move",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 9,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            1
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 7,
+      "input": "U",
+      "level_id": "north_hero_20",
+      "moves": 7,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        0,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 2,
+      "swaps": 1
+    },
+    {
+      "action": "switch",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 10,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            1
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 7,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 7,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        0,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 3,
+      "swaps": 1
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            1,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 11,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            1
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 8,
+      "input": "U",
+      "level_id": "north_hero_20",
+      "moves": 8,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        0,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 3,
+      "swaps": 2
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 12,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            1
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 9,
+      "input": "R",
+      "level_id": "north_hero_20",
+      "moves": 9,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        1,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 3,
+      "swaps": 3
+    },
+    {
+      "action": "move",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 13,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            2
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 10,
+      "input": "D",
+      "level_id": "north_hero_20",
+      "moves": 10,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        1,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 3,
+      "swaps": 3
+    },
+    {
+      "action": "move",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 14,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            2
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 11,
+      "input": "L",
+      "level_id": "north_hero_20",
+      "moves": 11,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        0,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 3,
+      "swaps": 3
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 15,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 12,
+      "input": "D",
+      "level_id": "north_hero_20",
+      "moves": 12,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        0,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 3,
+      "swaps": 4
+    },
+    {
+      "action": "switch",
+      "active_hero": "red",
+      "active_hero_index": 0,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 16,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "red",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 12,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 12,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        4,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 4,
+      "swaps": 4
+    },
+    {
+      "action": "switch",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 17,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            0,
+            2
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 12,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 12,
+      "occupied_exits": 0,
+      "plates": [],
+      "player": [
+        0,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 5,
+      "swaps": 4
+    },
+    {
+      "action": "move",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 18,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 13,
+      "input": "R",
+      "level_id": "north_hero_20",
+      "moves": 13,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        1,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 5,
+      "swaps": 4
+    },
+    {
+      "action": "switch",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            1
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 19,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            4
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 13,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 13,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        0,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 6,
+      "swaps": 4
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 20,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            0,
+            1
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 14,
+      "input": "U",
+      "level_id": "north_hero_20",
+      "moves": 14,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        0,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 6,
+      "swaps": 5
+    },
+    {
+      "action": "move",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 21,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            1
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 15,
+      "input": "R",
+      "level_id": "north_hero_20",
+      "moves": 15,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        1,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 6,
+      "swaps": 5
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 22,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            1
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            2
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 16,
+      "input": "D",
+      "level_id": "north_hero_20",
+      "moves": 16,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        1,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 6,
+      "swaps": 6
+    },
+    {
+      "action": "switch",
+      "active_hero": "red",
+      "active_hero_index": 0,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 23,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "red",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            1
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 16,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 16,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        4,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 7,
+      "swaps": 6
+    },
+    {
+      "action": "switch",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 24,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            1
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 16,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 16,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        1,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 8,
+      "swaps": 6
+    },
+    {
+      "action": "move",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 25,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            2,
+            1
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 17,
+      "input": "R",
+      "level_id": "north_hero_20",
+      "moves": 17,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        2,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 8,
+      "swaps": 6
+    },
+    {
+      "action": "move",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "event_index": 26,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            3,
+            1
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 18,
+      "input": "R",
+      "level_id": "north_hero_20",
+      "moves": 18,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        3,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 1,
+      "pushes": 0,
+      "selection_events": 8,
+      "swaps": 6
+    },
+    {
+      "action": "move",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            1
+          ]
+        }
+      ],
+      "event_index": 27,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            3,
+            2
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 19,
+      "input": "D",
+      "level_id": "north_hero_20",
+      "moves": 19,
+      "occupied_exits": 2,
+      "plates": [],
+      "player": [
+        3,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 0,
+      "selection_events": 8,
+      "swaps": 6
+    },
+    {
+      "action": "switch",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            1
+          ]
+        }
+      ],
+      "event_index": 28,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            3,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            1,
+            2
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 19,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 19,
+      "occupied_exits": 2,
+      "plates": [],
+      "player": [
+        1,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 0,
+      "selection_events": 9,
+      "swaps": 6
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            1
+          ]
+        }
+      ],
+      "event_index": 29,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            3,
+            2
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 20,
+      "input": "R",
+      "level_id": "north_hero_20",
+      "moves": 20,
+      "occupied_exits": 2,
+      "plates": [],
+      "player": [
+        3,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 0,
+      "selection_events": 9,
+      "swaps": 7
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "event_index": 30,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            3,
+            1
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 21,
+      "input": "U",
+      "level_id": "north_hero_20",
+      "moves": 21,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        3,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 0,
+      "selection_events": 9,
+      "swaps": 8
+    },
+    {
+      "action": "move",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "event_index": 31,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            4,
+            1
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 22,
+      "input": "R",
+      "level_id": "north_hero_20",
+      "moves": 22,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        4,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 0,
+      "selection_events": 9,
+      "swaps": 8
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "event_index": 32,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            1
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            4,
+            4
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 23,
+      "input": "D",
+      "level_id": "north_hero_20",
+      "moves": 23,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        4,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 0,
+      "selection_events": 9,
+      "swaps": 9
+    },
+    {
+      "action": "switch",
+      "active_hero": "red",
+      "active_hero_index": 0,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "event_index": 33,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "red",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            1
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 23,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 23,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        4,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 0,
+      "selection_events": 10,
+      "swaps": 9
+    },
+    {
+      "action": "move",
+      "active_hero": "red",
+      "active_hero_index": 0,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "event_index": 34,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "red",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            3,
+            1
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 24,
+      "input": "L",
+      "level_id": "north_hero_20",
+      "moves": 24,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        3,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 0,
+      "selection_events": 10,
+      "swaps": 9
+    },
+    {
+      "action": "move",
+      "active_hero": "red",
+      "active_hero_index": 0,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "event_index": 35,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "red",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            2,
+            1
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 25,
+      "input": "L",
+      "level_id": "north_hero_20",
+      "moves": 25,
+      "occupied_exits": 1,
+      "plates": [],
+      "player": [
+        2,
+        1
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 0,
+      "selection_events": 10,
+      "swaps": 9
+    },
+    {
+      "action": "move",
+      "active_hero": "red",
+      "active_hero_index": 0,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            3,
+            2
+          ]
+        }
+      ],
+      "event_index": 36,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "red",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            2,
+            2
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 26,
+      "input": "D",
+      "level_id": "north_hero_20",
+      "moves": 26,
+      "occupied_exits": 2,
+      "plates": [],
+      "player": [
+        2,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 0,
+      "selection_events": 10,
+      "swaps": 9
+    },
+    {
+      "action": "move",
+      "active_hero": "red",
+      "active_hero_index": 0,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            4,
+            2
+          ]
+        }
+      ],
+      "event_index": 37,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "red",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            3,
+            2
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 27,
+      "input": "R",
+      "level_id": "north_hero_20",
+      "moves": 27,
+      "occupied_exits": 2,
+      "plates": [],
+      "player": [
+        3,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 1,
+      "selection_events": 10,
+      "swaps": 9
+    },
+    {
+      "action": "switch",
+      "active_hero": "green",
+      "active_hero_index": 1,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            4,
+            2
+          ]
+        }
+      ],
+      "event_index": 38,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "green",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            3,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            4,
+            4
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 27,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 27,
+      "occupied_exits": 2,
+      "plates": [],
+      "player": [
+        1,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 1,
+      "selection_events": 11,
+      "swaps": 9
+    },
+    {
+      "action": "switch",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            4,
+            2
+          ]
+        }
+      ],
+      "event_index": 39,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            3,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            4,
+            4
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 27,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 27,
+      "occupied_exits": 2,
+      "plates": [],
+      "player": [
+        4,
+        4
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 1,
+      "selection_events": 12,
+      "swaps": 9
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            4,
+            4
+          ]
+        }
+      ],
+      "event_index": 40,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            3,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            4,
+            2
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 28,
+      "input": "U",
+      "level_id": "north_hero_20",
+      "moves": 28,
+      "occupied_exits": 2,
+      "plates": [],
+      "player": [
+        4,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 1,
+      "selection_events": 12,
+      "swaps": 10
+    },
+    {
+      "action": "swap",
+      "active_hero": "blue",
+      "active_hero_index": 2,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            4,
+            4
+          ]
+        }
+      ],
+      "event_index": 41,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "blue",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            3,
+            2
+          ],
+          "selected": true
+        }
+      ],
+      "history_size": 29,
+      "input": "L",
+      "level_id": "north_hero_20",
+      "moves": 29,
+      "occupied_exits": 2,
+      "plates": [],
+      "player": [
+        3,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 1,
+      "selection_events": 12,
+      "swaps": 11
+    },
+    {
+      "action": "switch",
+      "active_hero": "red",
+      "active_hero_index": 0,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": false,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            4,
+            4
+          ]
+        }
+      ],
+      "event_index": 42,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "red",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            4,
+            2
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            3,
+            2
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 29,
+      "input": "C",
+      "level_id": "north_hero_20",
+      "moves": 29,
+      "occupied_exits": 2,
+      "plates": [],
+      "player": [
+        4,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 1,
+      "selection_events": 13,
+      "swaps": 11
+    },
+    {
+      "action": "move",
+      "active_hero": "red",
+      "active_hero_index": 0,
+      "alive": true,
+      "barriers": [],
+      "bushes": [],
+      "completed": true,
+      "crystals": [
+        {
+          "color": "blue",
+          "id": 0,
+          "position": [
+            0,
+            4
+          ]
+        },
+        {
+          "color": "purple",
+          "id": 1,
+          "position": [
+            4,
+            4
+          ]
+        }
+      ],
+      "event_index": 43,
+      "exit_color": "green",
+      "exits": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "fences": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ],
+      "hero_kind": "red",
+      "heroes": [
+        {
+          "alive": true,
+          "id": "red",
+          "kind": "red",
+          "position": [
+            3,
+            2
+          ],
+          "selected": true
+        },
+        {
+          "alive": true,
+          "id": "green",
+          "kind": "green",
+          "position": [
+            1,
+            2
+          ],
+          "selected": false
+        },
+        {
+          "alive": true,
+          "id": "blue",
+          "kind": "blue",
+          "position": [
+            2,
+            2
+          ],
+          "selected": false
+        }
+      ],
+      "history_size": 30,
+      "input": "L",
+      "level_id": "north_hero_20",
+      "moves": 30,
+      "occupied_exits": 3,
+      "plates": [],
+      "player": [
+        3,
+        2
+      ],
+      "pressure": {
+
+      },
+      "pulls": 2,
+      "pushes": 2,
+      "selection_events": 13,
+      "swaps": 11
+    }
+  ],
+  "victory_pause_frames": 90
+}

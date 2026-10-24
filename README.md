@@ -63,6 +63,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第十七关 | [观看 / 下载 MP4](video/chapter_01/level_17.mp4) | 53.6 秒 |
 | 第十八关 | [观看 / 下载 MP4](video/chapter_01/level_18.mp4) | 88.4 秒 |
 | 第十九关 | [观看 / 下载 MP4](video/chapter_01/level_19.mp4) | 63.2 秒 |
+| 第二十关 | [观看 / 下载 MP4](video/chapter_01/level_20.mp4) | 30.8 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -647,4 +648,4 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 
 新增 `levels/north_20.json` 和独立 `fences` 边数据；公共模型和独立视频校验器分别检查所有走动/推/拉参与边。20关仍通过原虚拟化主界面进入，卡片绘制格边简图，没有重建全量按钮。前19关地图、解法、视频和逐输入回放，以及导航/能量短片保持原样。
 
-实际 Godot 画面：[初始](docs/screenshots/level_20_initial.png) · [跨F1交换英雄](docs/screenshots/level_20_left_hero_exchange.png) · [跨F2交换水晶](docs/screenshots/level_20_right_crystal_exchange.png) · [三终点胜利](docs/screenshots/level_20_completed.png) · [小窗口绿人高亮](docs/screenshots/level_20_compact_green.png)。完整检查和录制状态见[验证记录](docs/VERIFICATION.md)。
+实际 Godot 画面：[初始](docs/screenshots/level_20_initial.png) · [跨F1交换英雄](docs/screenshots/level_20_left_hero_exchange.png) · [跨F2交换水晶](docs/screenshots/level_20_right_crystal_exchange.png) · [三终点胜利](docs/screenshots/level_20_completed.png) · [小窗口绿人高亮](docs/screenshots/level_20_compact_green.png)。[20关选关目录](docs/screenshots/level_20_navigation.png)；[30.8秒完整通关视频](video/chapter_01/level_20.mp4)。全部20视频完整解码和独立合法回放通过，完整检查见[验证记录](docs/VERIFICATION.md)。

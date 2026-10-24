@@ -2260,7 +2260,7 @@
     "modifier_keys_used": [],
     "user_example_13_to_24_then_24_swaps_with_26": true
   },
-  "all_chapter_one_walkthroughs_checked": 19,
+  "all_chapter_one_walkthroughs_checked": 20,
   "previous_nine_maps_solutions_videos_replays_unchanged_from": "9c879b28bd093773d6af2a9dcf2aa6dccc3c205b",
   "north_10_independent_search": {
     "living_identity_states_exhausted": 2560,
@@ -7396,7 +7396,8 @@
     "actual_images_reviewed": [
       "initial",
       "completed",
-      "compact_green"
+      "compact_green",
+      "navigation"
     ]
   },
   "global_fences": {
@@ -7452,9 +7453,242 @@
     "node_count_bound_unchanged": true
   },
   "north_20_walkthrough": {
-    "status": "pending: implementation must be committed before real Godot MovieMaker recording",
-    "expected_input_events": 43,
-    "expected_frames": 924,
-    "expected_duration_seconds": 30.8
+    "file": "video/chapter_01/level_20.mp4",
+    "level": 20,
+    "bytes": 475627,
+    "sha256": "110a813191b37a67a92475819ab4aa2aeaf399fe7aef7c3c6d3fc94a8fa82c68",
+    "sampled_5fps_frames": 154,
+    "distinct_sampled_frames": 145,
+    "sampled_action_states": 44,
+    "distinct_action_state_frames": 44,
+    "full_decode_passed": true,
+    "legal_input_trace_verified": true,
+    "mp4_fast_start": true,
+    "game_implementation_commit": "0f4b4ce2087581bc1bca8925dab74728d4f21739",
+    "hero_kinds": [
+      "red",
+      "green",
+      "blue"
+    ],
+    "codec": "h264",
+    "profile": "High",
+    "pixel_format": "yuv420p",
+    "dimensions": [
+      1280,
+      820
+    ],
+    "fps": 30,
+    "frames": 924,
+    "duration_seconds": 30.8,
+    "moves": 30,
+    "directions": 30,
+    "input_events": 43,
+    "selection_events": 13,
+    "walks_without_push_pull_or_swap": 15,
+    "pushes": 2,
+    "pulls": 2,
+    "swaps": 11,
+    "destroyed_crystals": 0,
+    "counts_are_actual_actions": true,
+    "selection_counts_as_operation": false,
+    "selection_is_undoable": false,
+    "undo_keeps_current_selection": true,
+    "action_notation": "UDLR are actual directions; C only selects. Undirected fences block walking and every pushing/pulling participant edge; blue input-direction first-visible-target exchanges ignore fences, other sight blockers remain.",
+    "modifier_keys_used": [],
+    "keys_used": [
+      "W",
+      "A",
+      "S",
+      "D",
+      "C"
+    ],
+    "initial_hero_positions": {
+      "red": [
+        4,
+        4
+      ],
+      "green": [
+        0,
+        4
+      ],
+      "blue": [
+        2,
+        1
+      ]
+    },
+    "victory_hero_positions": {
+      "red": [
+        3,
+        2
+      ],
+      "green": [
+        1,
+        2
+      ],
+      "blue": [
+        2,
+        2
+      ]
+    },
+    "initial_active_hero": "blue",
+    "victory_active_hero": "red",
+    "fences": [
+      [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      [
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    ],
+    "fences_do_not_occupy_cells": true,
+    "initial_and_final_frames_reviewed": true,
+    "all_43_input_frames_reviewed": true,
+    "all_thirteen_free_selection_highlights_reviewed": true,
+    "inactive_heroes_retain_hue_reviewed": true,
+    "all_eleven_swaps_reviewed": true,
+    "all_six_fence_crossing_swaps_reviewed": true,
+    "three_distinct_hero_goals_reviewed": true,
+    "selection_input_events": [
+      4,
+      5,
+      10,
+      16,
+      17,
+      19,
+      23,
+      24,
+      28,
+      33,
+      38,
+      39,
+      42
+    ],
+    "selection_unchanged_action_counts": [
+      3,
+      3,
+      7,
+      12,
+      12,
+      13,
+      16,
+      16,
+      19,
+      23,
+      27,
+      27,
+      29
+    ],
+    "push_actions": [
+      27,
+      30
+    ],
+    "pull_actions": [
+      5,
+      19
+    ],
+    "swap_actions": [
+      3,
+      8,
+      9,
+      12,
+      14,
+      16,
+      20,
+      21,
+      23,
+      28,
+      29
+    ],
+    "fence_crossing_swap_actions": [
+      3,
+      8,
+      12,
+      14,
+      23,
+      28
+    ],
+    "hero_swap_actions": [
+      3,
+      8,
+      12,
+      16,
+      20,
+      23,
+      29
+    ],
+    "crystal_swap_actions": [
+      9,
+      14,
+      21,
+      28
+    ],
+    "victory_action": 30,
+    "victory_input_event": 43,
+    "reviewed_encoded_frames": [
+      0,
+      923,
+      70,
+      88,
+      106,
+      124,
+      142,
+      160,
+      178,
+      196,
+      214,
+      232,
+      250,
+      268,
+      286,
+      304,
+      322,
+      340,
+      358,
+      376,
+      394,
+      412,
+      430,
+      448,
+      466,
+      484,
+      502,
+      520,
+      538,
+      556,
+      574,
+      592,
+      610,
+      628,
+      646,
+      664,
+      682,
+      700,
+      718,
+      736,
+      754,
+      772,
+      790,
+      808,
+      826
+    ],
+    "replay_report": "level_20_replay.json",
+    "level_file": "levels/north_20.json",
+    "solution_file": "levels/solutions/north_20.json",
+    "implementation_committed_before_recording": true,
+    "gameplay_sources_unchanged_after_recording": true
   }
 }
