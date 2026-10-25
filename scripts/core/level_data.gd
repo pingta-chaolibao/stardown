@@ -146,8 +146,8 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 		return _invalid("exit_color 仅支持 yellow、green、red、purple、blue 或 orange。")
 	level.exit_color = goal_color
 	var mechanism_tint: Variant = data.get("mechanism_color", "yellow")
-	if mechanism_tint not in ["yellow", "green", "blue", "purple"]:
-		return _invalid("mechanism_color 仅支持 yellow、green、blue 或 purple，且只影响显示。")
+	if mechanism_tint not in ["yellow", "green", "blue", "purple", "red"]:
+		return _invalid("mechanism_color 仅支持 yellow、green、blue、purple 或 red，且只影响显示。")
 	level.mechanism_color = mechanism_tint
 	var colors: Variant = data.get("crystal_colors", [])
 	if not colors is Array or (not colors.is_empty() and colors.size() != level.initial_crates.size()):

@@ -110,6 +110,8 @@ func _test_cosmetic_data() -> void:
 		_check(not Level.from_dictionary(data).error.is_empty(),"invalid void annotation is rejected")
 	data=_data()
 	data["mechanism_color"]="red"
+	_check(Level.from_dictionary(data).error.is_empty(),"red mechanism skin explicitly supported without a color-based rule")
+	data["mechanism_color"]="unsupported"
 	_check(not Level.from_dictionary(data).error.is_empty(),"unknown mechanism presentation is rejected")
 	data=_data()
 	data["crystal_colors"][8]="red"

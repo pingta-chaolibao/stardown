@@ -71,7 +71,7 @@ func _timeline() -> void:
 	clock.cancel(); _check(clock.accents.is_empty(),"cancel clears selection/victory/undo/contact effects")
 
 func _campaign() -> void:
-	for number in range(1,32):
+	for number in range(1,33):
 		var g := State.new(); _check(g.load_level(Level.from_file("res://levels/north_%02d.json" % number)),"campaign loads")
 		var solution: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://levels/solutions/north_%02d.json" % number))
 		var attack_actions: Array[int] = []
@@ -80,7 +80,7 @@ func _campaign() -> void:
 			var before := Events.capture(g)
 			if symbol == "C": g.switch_hero(); continue
 			g.try_move(DIRS[symbol]); var world := g.snapshot(); var plan := Events.action(before,g,DIRS[symbol])
-			_check(not plan.is_empty() and world == g.snapshot(),"31 confirmed legal paths remain atomic with read-only feedback")
+			_check(not plan.is_empty() and world == g.snapshot(),"32 confirmed legal paths remain atomic with read-only feedback")
 			for ray in plan["fire"]:
 				_check(not ray["target"].is_empty(),"campaign fire feedback requires a real target,not an empty sight query")
 			if not plan["fire"].is_empty():

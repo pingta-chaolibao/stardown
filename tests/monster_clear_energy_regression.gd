@@ -36,7 +36,7 @@ func _validation() -> void:
 		data["energy_blocks"][0]["position"]=cell
 		_check(not Level.from_dictionary(data).error.is_empty(),"one cell cannot be a pressure plate or two differently controlled barriers")
 func _zero_monsters() -> void:
-	for tint in ["yellow","blue","green","purple"]:
+	for tint in ["yellow","blue","green","purple","red"]:
 		var data:=_base();data["mechanism_color"]=tint;data["crates"]=[[5,1]]
 		var game:=_game(data)
 		_check(game.living_monster_count()==0 and not game.barrier_is_active(Vector2i(5,1)),"zero initial monsters already clear,regardless of color")

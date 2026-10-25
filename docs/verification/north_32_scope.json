@@ -1,0 +1,1432 @@
+{
+  "base": "4d2aea5a6cc3b3feb8a320b6380ed36f7ca6e281",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "time_utc": "2026-10-25T12:57:58.469045+00:00",
+  "passed": true,
+  "command": "tools/verify.py --visual --display :98;wrapper reuses only Git/hash-proven passing syntax",
+  "stages": 239,
+  "fresh_stages_this_task": 149,
+  "reused_baseline_syntax_stages": 90,
+  "all_runtime_models_routes_input_X11_navigation_energy_executed_this_task": true,
+  "no_baseline_runtime_reuse": true,
+  "syntax_reuse_proof": {
+    "base": "4d2aea5a6cc3b3feb8a320b6380ed36f7ca6e281",
+    "checks": [
+      {
+        "file": "scripts/core/bush_obstacle.gd",
+        "sha256": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+        "baseline_parse_name": "02_parse_00_bush_obstacle",
+        "current_parse_name": "02_parse_00_bush_obstacle"
+      },
+      {
+        "file": "scripts/core/energy_rules.gd",
+        "sha256": "ef4b82341c52d67abb333d88790b9dc584607f97f921defdcb6679f2bde8796f",
+        "baseline_parse_name": "02_parse_01_energy_rules",
+        "current_parse_name": "02_parse_01_energy_rules"
+      },
+      {
+        "file": "scripts/core/fence_edges.gd",
+        "sha256": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+        "baseline_parse_name": "02_parse_02_fence_edges",
+        "current_parse_name": "02_parse_02_fence_edges"
+      },
+      {
+        "file": "scripts/core/fire_rules.gd",
+        "sha256": "2710bdffe3b25ddbde4109cf590b7376d85796f7372af6ff9945a472953caaa0",
+        "baseline_parse_name": "02_parse_03_fire_rules",
+        "current_parse_name": "02_parse_03_fire_rules"
+      },
+      {
+        "file": "scripts/core/grid_state.gd",
+        "sha256": "ca7152d608495a3847a38c7a6c9b9366b9d643cb1be6d9a2a1e2824971afc16b",
+        "baseline_parse_name": "02_parse_04_grid_state",
+        "current_parse_name": "02_parse_04_grid_state"
+      },
+      {
+        "file": "scripts/core/hero_rules.gd",
+        "sha256": "a4839e71c09cf4023d537f12a5d5948a0f91ced1d3dac6d61208d59ac3dbeae7",
+        "baseline_parse_name": "02_parse_05_hero_rules",
+        "current_parse_name": "02_parse_05_hero_rules"
+      },
+      {
+        "file": "scripts/core/monster_rules.gd",
+        "sha256": "d66fe58d580f74d1f4d766fbda8b5a69d8271da8cfa5f0560c84b1625b4808ab",
+        "baseline_parse_name": "02_parse_07_monster_rules",
+        "current_parse_name": "02_parse_07_monster_rules"
+      },
+      {
+        "file": "scripts/core/swap_rules.gd",
+        "sha256": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+        "baseline_parse_name": "02_parse_08_swap_rules",
+        "current_parse_name": "02_parse_08_swap_rules"
+      },
+      {
+        "file": "scripts/input/step_input.gd",
+        "sha256": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a",
+        "baseline_parse_name": "02_parse_09_step_input",
+        "current_parse_name": "02_parse_09_step_input"
+      },
+      {
+        "file": "scripts/view/feedback_events.gd",
+        "sha256": "520d04b8cff9e99dbcd9b9c495304f72c6258cc7c6cf0534c2abac2a8b9d3677",
+        "baseline_parse_name": "02_parse_12_feedback_events",
+        "current_parse_name": "02_parse_12_feedback_events"
+      },
+      {
+        "file": "scripts/view/feedback_timeline.gd",
+        "sha256": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+        "baseline_parse_name": "02_parse_13_feedback_timeline",
+        "current_parse_name": "02_parse_13_feedback_timeline"
+      },
+      {
+        "file": "scripts/view/level_menu.gd",
+        "sha256": "f7ba0588a971b3b200fa32320ca6efbcc51a0def4d87c331860cb66b347df2c7",
+        "baseline_parse_name": "02_parse_15_level_menu",
+        "current_parse_name": "02_parse_15_level_menu"
+      },
+      {
+        "file": "scripts/view/virtual_level_strip.gd",
+        "sha256": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d",
+        "baseline_parse_name": "02_parse_16_virtual_level_strip",
+        "current_parse_name": "02_parse_16_virtual_level_strip"
+      },
+      {
+        "file": "tests/blue_swap_regression.gd",
+        "sha256": "b18dfbee6e1047eda61398af9832b4f4759bfb2c14cbfe3d0aa335d5398be30e",
+        "baseline_parse_name": "02_parse_17_blue_swap_regression",
+        "current_parse_name": "02_parse_17_blue_swap_regression"
+      },
+      {
+        "file": "tests/bush_and_group_regression.gd",
+        "sha256": "c69f97de7adc2971bdbd46b4ea1acbada842a01c3c3f3b722d182a848f8db4fd",
+        "baseline_parse_name": "02_parse_18_bush_and_group_regression",
+        "current_parse_name": "02_parse_18_bush_and_group_regression"
+      },
+      {
+        "file": "tests/chain_push_regression.gd",
+        "sha256": "bda55346b683a4394c81fc2d55b0e17b78aa96daa2286430cf17d192d82a49ff",
+        "baseline_parse_name": "02_parse_19_chain_push_regression",
+        "current_parse_name": "02_parse_19_chain_push_regression"
+      },
+      {
+        "file": "tests/energy_destruction_regression.gd",
+        "sha256": "891bedcaa43282849b7132faab6b5edd21c956818e3997cc3bc0214de9dbce88",
+        "baseline_parse_name": "02_parse_20_energy_destruction_regression",
+        "current_parse_name": "02_parse_20_energy_destruction_regression"
+      },
+      {
+        "file": "tests/energy_regression.gd",
+        "sha256": "fcc21de4fa9a3527dbfaaa0385a581ae26bf151fa3caca1ef946135f59a7871c",
+        "baseline_parse_name": "02_parse_21_energy_regression",
+        "current_parse_name": "02_parse_21_energy_regression"
+      },
+      {
+        "file": "tests/energy_visibility_scene.gd",
+        "sha256": "c41260762ec85d7c61857006321affc49c320755a297620e9a6cdfc262abd8f0",
+        "baseline_parse_name": "02_parse_22_energy_visibility_scene",
+        "current_parse_name": "02_parse_22_energy_visibility_scene"
+      },
+      {
+        "file": "tests/feedback_cases.gd",
+        "sha256": "7f1eadc4e925a03928ccaed1864ccb6d240321bc281f3f9a6a1f106187ea485e",
+        "baseline_parse_name": "02_parse_23_feedback_cases",
+        "current_parse_name": "02_parse_23_feedback_cases"
+      },
+      {
+        "file": "tests/feedback_scene.gd",
+        "sha256": "6aaad87e24d60b5e57b6d331387cdff43cad91445b440715baf55dc701d6e512",
+        "baseline_parse_name": "02_parse_25_feedback_scene",
+        "current_parse_name": "02_parse_25_feedback_scene"
+      },
+      {
+        "file": "tests/fence_regression.gd",
+        "sha256": "03817daaf19990eda6890b586b5bff025633dd7cf3127ece7d4ff12d724fa835",
+        "baseline_parse_name": "02_parse_26_fence_regression",
+        "current_parse_name": "02_parse_26_fence_regression"
+      },
+      {
+        "file": "tests/fire_dragon_regression.gd",
+        "sha256": "a7d48ecea00aa2c22d6429054e05fb32c3f2b8001b7067814d578e6035f721a5",
+        "baseline_parse_name": "02_parse_27_fire_dragon_regression",
+        "current_parse_name": "02_parse_27_fire_dragon_regression"
+      },
+      {
+        "file": "tests/global_energy_regression.gd",
+        "sha256": "1d3c29499d55da6f6e8d9ebe1262216201f987c44a44286a9e3a5715a9dde8f7",
+        "baseline_parse_name": "02_parse_28_global_energy_regression",
+        "current_parse_name": "02_parse_28_global_energy_regression"
+      },
+      {
+        "file": "tests/green_dragon_pull_regression.gd",
+        "sha256": "8e70f8bb878c35f7e32ae9b19616d7971fde3c4b72c5b6199dc92893050687a9",
+        "baseline_parse_name": "02_parse_29_green_dragon_pull_regression",
+        "current_parse_name": "02_parse_29_green_dragon_pull_regression"
+      },
+      {
+        "file": "tests/green_dragon_pull_scene.gd",
+        "sha256": "c5d435c0a45f3e305b03552e927d3580d4ba3e840f4eb28c2dc6c172922484cc",
+        "baseline_parse_name": "02_parse_30_green_dragon_pull_scene",
+        "current_parse_name": "02_parse_30_green_dragon_pull_scene"
+      },
+      {
+        "file": "tests/green_pull_regression.gd",
+        "sha256": "2874ef517921cb0d4f6a343af3e9350751a6e3b909df1b267bb63ba8711abbb9",
+        "baseline_parse_name": "02_parse_31_green_pull_regression",
+        "current_parse_name": "02_parse_31_green_pull_regression"
+      },
+      {
+        "file": "tests/monster_clear_energy_scene.gd",
+        "sha256": "0a70e7f6aa2db9201c06489151910f981ffb6c4354e93cd04da8f33f9ba779e3",
+        "baseline_parse_name": "02_parse_33_monster_clear_energy_scene",
+        "current_parse_name": "02_parse_33_monster_clear_energy_scene"
+      },
+      {
+        "file": "tests/monster_regression.gd",
+        "sha256": "912cf9d7695362803822c599ca9896b9c514be2396d4ea76bd289d895c7c77e6",
+        "baseline_parse_name": "02_parse_34_monster_regression",
+        "current_parse_name": "02_parse_34_monster_regression"
+      },
+      {
+        "file": "tests/multi_hero_regression.gd",
+        "sha256": "0331b230cb99dc2bd347abaf20e666e42d1920ae20aef7f49192ee5453221899",
+        "baseline_parse_name": "02_parse_35_multi_hero_regression",
+        "current_parse_name": "02_parse_35_multi_hero_regression"
+      },
+      {
+        "file": "tests/navigation_scene.gd",
+        "sha256": "d9d6e910eaa881feb46f4692cee1eb7f635cf16bb63f6784daf007012ca967f5",
+        "baseline_parse_name": "02_parse_36_navigation_scene",
+        "current_parse_name": "02_parse_36_navigation_scene"
+      },
+      {
+        "file": "tests/north_01_regression.gd",
+        "sha256": "1efc64ab42eae4b03806b5c929c886265279bd635b5ffba798e47a27a8f74e07",
+        "baseline_parse_name": "02_parse_37_north_01_regression",
+        "current_parse_name": "02_parse_37_north_01_regression"
+      },
+      {
+        "file": "tests/north_02_regression.gd",
+        "sha256": "bf0ea1099dfa9d5f80de4118d7ae932e7698c021b51523065f29a3f59e8c7d1a",
+        "baseline_parse_name": "02_parse_38_north_02_regression",
+        "current_parse_name": "02_parse_38_north_02_regression"
+      },
+      {
+        "file": "tests/north_02_scene.gd",
+        "sha256": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+        "baseline_parse_name": "02_parse_39_north_02_scene",
+        "current_parse_name": "02_parse_39_north_02_scene"
+      },
+      {
+        "file": "tests/north_03_regression.gd",
+        "sha256": "3320cbf2b9818271f9922635a9be6f25ab40bff7a107cb918f43fb314dd518cd",
+        "baseline_parse_name": "02_parse_40_north_03_regression",
+        "current_parse_name": "02_parse_40_north_03_regression"
+      },
+      {
+        "file": "tests/north_03_scene.gd",
+        "sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0",
+        "baseline_parse_name": "02_parse_41_north_03_scene",
+        "current_parse_name": "02_parse_41_north_03_scene"
+      },
+      {
+        "file": "tests/north_04_regression.gd",
+        "sha256": "7b975d0e605420f2fa3fabed79e9a761ce8bb56a8d3bbf710935add9bc248a02",
+        "baseline_parse_name": "02_parse_42_north_04_regression",
+        "current_parse_name": "02_parse_42_north_04_regression"
+      },
+      {
+        "file": "tests/north_04_scene.gd",
+        "sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4",
+        "baseline_parse_name": "02_parse_43_north_04_scene",
+        "current_parse_name": "02_parse_43_north_04_scene"
+      },
+      {
+        "file": "tests/north_05_regression.gd",
+        "sha256": "1a8fb647e50b4334be3c748f33393d431a3abe1cc4e7165f96effa0466b7cc24",
+        "baseline_parse_name": "02_parse_44_north_05_regression",
+        "current_parse_name": "02_parse_44_north_05_regression"
+      },
+      {
+        "file": "tests/north_05_scene.gd",
+        "sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45",
+        "baseline_parse_name": "02_parse_45_north_05_scene",
+        "current_parse_name": "02_parse_45_north_05_scene"
+      },
+      {
+        "file": "tests/north_06_regression.gd",
+        "sha256": "c53a922d497450e1774a97e80d378e299b3ee510ce0ce6dfbb9e749452756d1d",
+        "baseline_parse_name": "02_parse_46_north_06_regression",
+        "current_parse_name": "02_parse_46_north_06_regression"
+      },
+      {
+        "file": "tests/north_06_scene.gd",
+        "sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a",
+        "baseline_parse_name": "02_parse_47_north_06_scene",
+        "current_parse_name": "02_parse_47_north_06_scene"
+      },
+      {
+        "file": "tests/north_07_regression.gd",
+        "sha256": "9b438a03f5403ba0c858733fd24a92e6f3e0eea946168c23bb634f610dbb5db5",
+        "baseline_parse_name": "02_parse_48_north_07_regression",
+        "current_parse_name": "02_parse_48_north_07_regression"
+      },
+      {
+        "file": "tests/north_07_scene.gd",
+        "sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f",
+        "baseline_parse_name": "02_parse_49_north_07_scene",
+        "current_parse_name": "02_parse_49_north_07_scene"
+      },
+      {
+        "file": "tests/north_08_regression.gd",
+        "sha256": "3a9a02f8c3af160cee0c21ac32c1b72914e53ef8676d72eb8b3da022a15dfe02",
+        "baseline_parse_name": "02_parse_50_north_08_regression",
+        "current_parse_name": "02_parse_50_north_08_regression"
+      },
+      {
+        "file": "tests/north_08_scene.gd",
+        "sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767",
+        "baseline_parse_name": "02_parse_51_north_08_scene",
+        "current_parse_name": "02_parse_51_north_08_scene"
+      },
+      {
+        "file": "tests/north_09_regression.gd",
+        "sha256": "a7a1ba0deec8aa131206588a2e2bbabad7b24d5f7335bd7520e1f30e84889444",
+        "baseline_parse_name": "02_parse_52_north_09_regression",
+        "current_parse_name": "02_parse_52_north_09_regression"
+      },
+      {
+        "file": "tests/north_09_scene.gd",
+        "sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653",
+        "baseline_parse_name": "02_parse_53_north_09_scene",
+        "current_parse_name": "02_parse_53_north_09_scene"
+      },
+      {
+        "file": "tests/north_10_regression.gd",
+        "sha256": "d833cff22eed25743fbd2ae7f511a091c1020ca7282b801210f313945ff15790",
+        "baseline_parse_name": "02_parse_54_north_10_regression",
+        "current_parse_name": "02_parse_54_north_10_regression"
+      },
+      {
+        "file": "tests/north_10_scene.gd",
+        "sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d",
+        "baseline_parse_name": "02_parse_55_north_10_scene",
+        "current_parse_name": "02_parse_55_north_10_scene"
+      },
+      {
+        "file": "tests/north_11_scene.gd",
+        "sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117",
+        "baseline_parse_name": "02_parse_57_north_11_scene",
+        "current_parse_name": "02_parse_57_north_11_scene"
+      },
+      {
+        "file": "tests/north_12_regression.gd",
+        "sha256": "ff1b4d812d34418ef731cc3305c9e0705017124ad19a1c215b20c60fc515d40c",
+        "baseline_parse_name": "02_parse_58_north_12_regression",
+        "current_parse_name": "02_parse_58_north_12_regression"
+      },
+      {
+        "file": "tests/north_12_scene.gd",
+        "sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c",
+        "baseline_parse_name": "02_parse_59_north_12_scene",
+        "current_parse_name": "02_parse_59_north_12_scene"
+      },
+      {
+        "file": "tests/north_13_regression.gd",
+        "sha256": "578968e74a77d92feaa6a5aa4e16904760b9f2a6fc7bf410cddd0c6c403450a4",
+        "baseline_parse_name": "02_parse_60_north_13_regression",
+        "current_parse_name": "02_parse_60_north_13_regression"
+      },
+      {
+        "file": "tests/north_13_scene.gd",
+        "sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a",
+        "baseline_parse_name": "02_parse_61_north_13_scene",
+        "current_parse_name": "02_parse_61_north_13_scene"
+      },
+      {
+        "file": "tests/north_14_regression.gd",
+        "sha256": "74da5e6158136ae3e94e86c337bfe97d8045439c961ae1a605b6f4bf210e1654",
+        "baseline_parse_name": "02_parse_62_north_14_regression",
+        "current_parse_name": "02_parse_62_north_14_regression"
+      },
+      {
+        "file": "tests/north_14_scene.gd",
+        "sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b",
+        "baseline_parse_name": "02_parse_63_north_14_scene",
+        "current_parse_name": "02_parse_63_north_14_scene"
+      },
+      {
+        "file": "tests/north_15_regression.gd",
+        "sha256": "f5b104a3d965c60bba273472d492c379ece91d3530f1c31088877d0299415b1e",
+        "baseline_parse_name": "02_parse_64_north_15_regression",
+        "current_parse_name": "02_parse_64_north_15_regression"
+      },
+      {
+        "file": "tests/north_15_scene.gd",
+        "sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb",
+        "baseline_parse_name": "02_parse_65_north_15_scene",
+        "current_parse_name": "02_parse_65_north_15_scene"
+      },
+      {
+        "file": "tests/north_16_regression.gd",
+        "sha256": "5b373eaef6e742aec472dc452499b84661cd4d842e3bc94874e1694e5541efa7",
+        "baseline_parse_name": "02_parse_66_north_16_regression",
+        "current_parse_name": "02_parse_66_north_16_regression"
+      },
+      {
+        "file": "tests/north_16_scene.gd",
+        "sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba",
+        "baseline_parse_name": "02_parse_67_north_16_scene",
+        "current_parse_name": "02_parse_67_north_16_scene"
+      },
+      {
+        "file": "tests/north_17_regression.gd",
+        "sha256": "36eca8d1f3d739d87f45948b30aca88b740b2412cf651b6612bcf29f9df5bf99",
+        "baseline_parse_name": "02_parse_68_north_17_regression",
+        "current_parse_name": "02_parse_68_north_17_regression"
+      },
+      {
+        "file": "tests/north_17_scene.gd",
+        "sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191",
+        "baseline_parse_name": "02_parse_69_north_17_scene",
+        "current_parse_name": "02_parse_69_north_17_scene"
+      },
+      {
+        "file": "tests/north_18_regression.gd",
+        "sha256": "01cb8d689606e6094abd7214fa52cf4a66f2f14d64c3d54436bf317fd71fd716",
+        "baseline_parse_name": "02_parse_70_north_18_regression",
+        "current_parse_name": "02_parse_70_north_18_regression"
+      },
+      {
+        "file": "tests/north_18_scene.gd",
+        "sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb",
+        "baseline_parse_name": "02_parse_71_north_18_scene",
+        "current_parse_name": "02_parse_71_north_18_scene"
+      },
+      {
+        "file": "tests/north_19_regression.gd",
+        "sha256": "2c8938dfd6c627780d945ad547a77ede6dd5de5e63451e0d468faaf100ab45e2",
+        "baseline_parse_name": "02_parse_72_north_19_regression",
+        "current_parse_name": "02_parse_72_north_19_regression"
+      },
+      {
+        "file": "tests/north_19_scene.gd",
+        "sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6",
+        "baseline_parse_name": "02_parse_73_north_19_scene",
+        "current_parse_name": "02_parse_73_north_19_scene"
+      },
+      {
+        "file": "tests/north_20_regression.gd",
+        "sha256": "e569073b093749e4c12dae9dbec6a2b6059fb6f09018c69ccd711345b38a7f2f",
+        "baseline_parse_name": "02_parse_74_north_20_regression",
+        "current_parse_name": "02_parse_74_north_20_regression"
+      },
+      {
+        "file": "tests/north_20_scene.gd",
+        "sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255",
+        "baseline_parse_name": "02_parse_75_north_20_scene",
+        "current_parse_name": "02_parse_75_north_20_scene"
+      },
+      {
+        "file": "tests/north_21_regression.gd",
+        "sha256": "8473a6213c52c724d564aa4c80c8e83514f9c3482795dd98551811d715765cac",
+        "baseline_parse_name": "02_parse_76_north_21_regression",
+        "current_parse_name": "02_parse_76_north_21_regression"
+      },
+      {
+        "file": "tests/north_21_scene.gd",
+        "sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a",
+        "baseline_parse_name": "02_parse_77_north_21_scene",
+        "current_parse_name": "02_parse_77_north_21_scene"
+      },
+      {
+        "file": "tests/north_22_regression.gd",
+        "sha256": "823531af34fb05aba87a62bea3e261c3c719d062e06eb36a1c770793b60443be",
+        "baseline_parse_name": "02_parse_78_north_22_regression",
+        "current_parse_name": "02_parse_78_north_22_regression"
+      },
+      {
+        "file": "tests/north_22_scene.gd",
+        "sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780",
+        "baseline_parse_name": "02_parse_79_north_22_scene",
+        "current_parse_name": "02_parse_79_north_22_scene"
+      },
+      {
+        "file": "tests/north_23_regression.gd",
+        "sha256": "85d2e5228f668490cabdedeb1f04b57916280fa1e0897ae0af3295c1d2c3158a",
+        "baseline_parse_name": "02_parse_80_north_23_regression",
+        "current_parse_name": "02_parse_80_north_23_regression"
+      },
+      {
+        "file": "tests/north_23_scene.gd",
+        "sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657",
+        "baseline_parse_name": "02_parse_81_north_23_scene",
+        "current_parse_name": "02_parse_81_north_23_scene"
+      },
+      {
+        "file": "tests/north_24_regression.gd",
+        "sha256": "5ea464c53f54c2f285cd9ea00fde39330cc7ded2b6bc119b30999b27bf3ea1c9",
+        "baseline_parse_name": "02_parse_82_north_24_regression",
+        "current_parse_name": "02_parse_82_north_24_regression"
+      },
+      {
+        "file": "tests/north_24_scene.gd",
+        "sha256": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809",
+        "baseline_parse_name": "02_parse_83_north_24_scene",
+        "current_parse_name": "02_parse_83_north_24_scene"
+      },
+      {
+        "file": "tests/north_25_regression.gd",
+        "sha256": "a55c9716a1789d16ba9cf07803a610c16a8ed50f1afd86d23183a6994b690884",
+        "baseline_parse_name": "02_parse_84_north_25_regression",
+        "current_parse_name": "02_parse_84_north_25_regression"
+      },
+      {
+        "file": "tests/north_25_scene.gd",
+        "sha256": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab",
+        "baseline_parse_name": "02_parse_85_north_25_scene",
+        "current_parse_name": "02_parse_85_north_25_scene"
+      },
+      {
+        "file": "tests/north_26_regression.gd",
+        "sha256": "c1960ff743bdac1248a45f745bf65bdf031d24924350563f08d77a58db86a15e",
+        "baseline_parse_name": "02_parse_86_north_26_regression",
+        "current_parse_name": "02_parse_86_north_26_regression"
+      },
+      {
+        "file": "tests/north_26_scene.gd",
+        "sha256": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c",
+        "baseline_parse_name": "02_parse_87_north_26_scene",
+        "current_parse_name": "02_parse_87_north_26_scene"
+      },
+      {
+        "file": "tests/north_27_regression.gd",
+        "sha256": "01cb00fe04fea707443bcd54b19c6f7c4e37c2493c3e6224ac1a7c47b579b49b",
+        "baseline_parse_name": "02_parse_88_north_27_regression",
+        "current_parse_name": "02_parse_88_north_27_regression"
+      },
+      {
+        "file": "tests/north_27_scene.gd",
+        "sha256": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3",
+        "baseline_parse_name": "02_parse_89_north_27_scene",
+        "current_parse_name": "02_parse_89_north_27_scene"
+      },
+      {
+        "file": "tests/north_28_regression.gd",
+        "sha256": "5364bd271076f2f86810671fb6947f91aa612069f759bfa3f0599175a5c27288",
+        "baseline_parse_name": "02_parse_90_north_28_regression",
+        "current_parse_name": "02_parse_90_north_28_regression"
+      },
+      {
+        "file": "tests/north_28_scene.gd",
+        "sha256": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf",
+        "baseline_parse_name": "02_parse_91_north_28_scene",
+        "current_parse_name": "02_parse_91_north_28_scene"
+      },
+      {
+        "file": "tests/north_29_regression.gd",
+        "sha256": "e12e3f227584d6a343eb7807997615aa83c9deb3efb0cf369d704c4a392b2f5b",
+        "baseline_parse_name": "02_parse_92_north_29_regression",
+        "current_parse_name": "02_parse_92_north_29_regression"
+      },
+      {
+        "file": "tests/north_30_regression.gd",
+        "sha256": "3bddf7dbf2137e4963605ac5e5f841c34c88df61a29e64b6cd9109a4ace95116",
+        "baseline_parse_name": "02_parse_94_north_30_regression",
+        "current_parse_name": "02_parse_94_north_30_regression"
+      },
+      {
+        "file": "tests/north_31_regression.gd",
+        "sha256": "b1cf2f26d454fc465298870e063a3a86e424e1b7e99fa2da53298894cfecbc13",
+        "baseline_parse_name": "02_parse_96_north_31_regression",
+        "current_parse_name": "02_parse_96_north_31_regression"
+      },
+      {
+        "file": "tests/run_tests.gd",
+        "sha256": "4d1a1dcbb4e576c5555e115855c547205cfb1deb93deef99ef5ed07d60ad5d6f",
+        "baseline_parse_name": "02_parse_98_run_tests",
+        "current_parse_name": "02_parse_100_run_tests"
+      },
+      {
+        "file": "tests/scene_smoke.gd",
+        "sha256": "72fb4ec6c0e8002db315754429287ebb7d0c05c24cc055e808014cb725773a60",
+        "baseline_parse_name": "02_parse_99_scene_smoke",
+        "current_parse_name": "02_parse_101_scene_smoke"
+      }
+    ],
+    "fresh_parse": [
+      "scripts/core/level_data.gd",
+      "scripts/main.gd",
+      "scripts/view/board_view.gd",
+      "scripts/view/level_card.gd",
+      "tests/feedback_regression.gd",
+      "tests/monster_clear_energy_regression.gd",
+      "tests/north_11_regression.gd",
+      "tests/north_29_scene.gd",
+      "tests/north_30_scene.gd",
+      "tests/north_31_scene.gd",
+      "tests/north_32_regression.gd",
+      "tests/north_32_scene.gd"
+    ],
+    "never_reused": "models, routes, input, X11, navigation, media, recorder parsing"
+  },
+  "runtime_results": [
+    {
+      "name": "00_version",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.016
+    },
+    {
+      "name": "01_import",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 6.805
+    },
+    {
+      "name": "02_record_visual_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_record_playthrough",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.333
+    },
+    {
+      "name": "03_monster_clear_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_logic",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239
+    },
+    {
+      "name": "03_chain_push",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "03_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149
+    },
+    {
+      "name": "03_global_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.151
+    },
+    {
+      "name": "03_bush_group",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15
+    },
+    {
+      "name": "03_green_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238
+    },
+    {
+      "name": "03_blue_swap",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148
+    },
+    {
+      "name": "03_multi_hero",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_north_13",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_north_14",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_north_15",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238
+    },
+    {
+      "name": "03_north_16",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_energy_destruction",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "03_north_17",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "03_north_18",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24
+    },
+    {
+      "name": "03_north_19",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237
+    },
+    {
+      "name": "03_fences",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_20",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "03_north_21",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237
+    },
+    {
+      "name": "03_north_29_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.044
+    },
+    {
+      "name": "03_north_29",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.151
+    },
+    {
+      "name": "03_north_30_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.018
+    },
+    {
+      "name": "03_north_30",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_31_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.02
+    },
+    {
+      "name": "03_north_31",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.242
+    },
+    {
+      "name": "03_north_32_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.017
+    },
+    {
+      "name": "03_north_32",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238
+    },
+    {
+      "name": "03_north_28_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.021
+    },
+    {
+      "name": "03_north_28",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_green_dragon_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "03_north_27_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.021
+    },
+    {
+      "name": "03_north_27",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_fire_dragon",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_26_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.016
+    },
+    {
+      "name": "03_north_26",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "03_monsters",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_monster_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.027
+    },
+    {
+      "name": "03_north_25_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.023
+    },
+    {
+      "name": "03_north_25",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236
+    },
+    {
+      "name": "03_north_24_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.024
+    },
+    {
+      "name": "03_north_24",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238
+    },
+    {
+      "name": "03_north_23_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.019
+    },
+    {
+      "name": "03_north_23",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_22",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_north_01",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_north_02",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_north_03",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24
+    },
+    {
+      "name": "03_north_04",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_north_06",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.152
+    },
+    {
+      "name": "03_north_07",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148
+    },
+    {
+      "name": "03_north_08",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_north_09",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_10",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_north_11",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_north_12",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239
+    },
+    {
+      "name": "04_main_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.429
+    },
+    {
+      "name": "05_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.563
+    },
+    {
+      "name": "05_monster_clear_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.574
+    },
+    {
+      "name": "05_scene_input",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.562
+    },
+    {
+      "name": "05_north_02_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.444
+    },
+    {
+      "name": "05_north_03_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.657
+    },
+    {
+      "name": "05_north_04_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.454
+    },
+    {
+      "name": "05_north_05_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 10.875
+    },
+    {
+      "name": "05_north_06_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 19.061
+    },
+    {
+      "name": "05_north_07_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 36.073
+    },
+    {
+      "name": "05_north_08_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.292
+    },
+    {
+      "name": "05_north_09_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.752
+    },
+    {
+      "name": "05_north_10_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 25.744
+    },
+    {
+      "name": "05_north_11_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.077
+    },
+    {
+      "name": "05_north_12_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 25.006
+    },
+    {
+      "name": "05_north_13_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.727
+    },
+    {
+      "name": "05_north_14_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.066
+    },
+    {
+      "name": "05_north_15_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.177
+    },
+    {
+      "name": "05_north_16_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.555
+    },
+    {
+      "name": "05_north_17_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 27.04
+    },
+    {
+      "name": "05_north_18_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.386
+    },
+    {
+      "name": "05_north_19_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.654
+    },
+    {
+      "name": "05_north_20_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 14.038
+    },
+    {
+      "name": "05_north_21_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 42.198
+    },
+    {
+      "name": "05_north_29_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.373
+    },
+    {
+      "name": "05_north_30_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 15.33
+    },
+    {
+      "name": "05_north_31_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 29.462
+    },
+    {
+      "name": "05_north_32_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.908
+    },
+    {
+      "name": "05_north_28_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 15.886
+    },
+    {
+      "name": "05_green_dragon_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 4.26
+    },
+    {
+      "name": "05_north_27_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.16
+    },
+    {
+      "name": "05_north_26_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.817
+    },
+    {
+      "name": "05_north_25_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 14.214
+    },
+    {
+      "name": "05_north_24_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.486
+    },
+    {
+      "name": "05_north_23_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.724
+    },
+    {
+      "name": "05_north_22_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 8.914
+    },
+    {
+      "name": "05_navigation",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 23.322
+    },
+    {
+      "name": "05_energy_visibility",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.451
+    },
+    {
+      "name": "06_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.569
+    },
+    {
+      "name": "06_monster_clear_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 19.24
+    },
+    {
+      "name": "06_render",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.062
+    },
+    {
+      "name": "06_render_north_02",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.891
+    },
+    {
+      "name": "06_render_north_03",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.45
+    },
+    {
+      "name": "06_render_north_04",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.507
+    },
+    {
+      "name": "06_render_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 18.344
+    },
+    {
+      "name": "06_render_north_06",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 29.024
+    },
+    {
+      "name": "06_render_north_07",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 56.013
+    },
+    {
+      "name": "06_render_north_08",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.671
+    },
+    {
+      "name": "06_render_north_09",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.806
+    },
+    {
+      "name": "06_render_north_10",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 37.05
+    },
+    {
+      "name": "06_render_north_11",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 25.838
+    },
+    {
+      "name": "06_render_north_12",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 37.897
+    },
+    {
+      "name": "06_render_north_13",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 22.109
+    },
+    {
+      "name": "06_render_north_14",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.194
+    },
+    {
+      "name": "06_render_north_15",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 51.704
+    },
+    {
+      "name": "06_render_north_16",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 31.248
+    },
+    {
+      "name": "06_render_north_17",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 41.308
+    },
+    {
+      "name": "06_render_north_18",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 51.213
+    },
+    {
+      "name": "06_render_north_19",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 54.981
+    },
+    {
+      "name": "06_render_north_20",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 27.478
+    },
+    {
+      "name": "06_render_north_21",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 69.444
+    },
+    {
+      "name": "06_render_north_22",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.575
+    },
+    {
+      "name": "06_render_north_23",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 22.959
+    },
+    {
+      "name": "06_render_north_24",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 41.907
+    },
+    {
+      "name": "06_render_north_25",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 31.566
+    },
+    {
+      "name": "06_render_north_26",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.926
+    },
+    {
+      "name": "06_green_dragon_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.18
+    },
+    {
+      "name": "06_render_north_27",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 30.913
+    },
+    {
+      "name": "06_render_north_29",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 32.642
+    },
+    {
+      "name": "06_render_north_30",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.116
+    },
+    {
+      "name": "06_render_north_31",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 44.944
+    },
+    {
+      "name": "06_render_north_32",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.097
+    },
+    {
+      "name": "06_render_north_28",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 25.456
+    },
+    {
+      "name": "06_navigation",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 38.801
+    },
+    {
+      "name": "06_energy_visibility",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 22.049
+    }
+  ],
+  "core_rule_files_unchanged": [
+    "scripts/core/grid_state.gd",
+    "scripts/core/energy_rules.gd",
+    "scripts/core/monster_rules.gd",
+    "scripts/core/fire_rules.gd",
+    "scripts/core/fence_edges.gd",
+    "scripts/core/hero_rules.gd",
+    "scripts/core/swap_rules.gd",
+    "scripts/input/step_input.gd",
+    "scripts/view/feedback_events.gd",
+    "scripts/view/feedback_timeline.gd"
+  ],
+  "red_color_only_no_rule_change": true,
+  "preserved_old_deliverables": 134,
+  "preserved_old_manifest_entries": 31,
+  "tested_sources_unchanged": true,
+  "map": "User-confirmed10x5;wall8/18/28/38/39;29/30floor;redclearenergyonly40",
+  "route": {
+    "actual_actions": 43,
+    "pushes": 12,
+    "pulls": 0,
+    "swaps": 0,
+    "selection_events": 0,
+    "death_and_gate_open_action": 32,
+    "gate_traversal": 41,
+    "victory_action": 43,
+    "shortest_directions_claim": false
+  },
+  "focused_model_checks": 465,
+  "focused_X11_checks": 352,
+  "display": ":98,MIT-SHM disabled;existing verified same-cloud software rendering session",
+  "not_tested": [
+    "Physical GPU/mobile devices",
+    "Undefined monster-pressure and fire/fence combinations remain guarded"
+  ],
+  "CI": "Cloud local checks only;GitHub status queried separately after finalpush"
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_32",
+  "title": "北部英雄 · 第三十二关",
+  "is_temporary": false,
+  "source_note": "用户确认10×5完整外围。8/18/28/38/39墙；29/30明确空地；22红、23/35水晶、25/41哥布林、20目标、40红色清怪能量仅一格。全部怪物死亡才消失为已确认公共规则，原创2D图形。",
+  "terrain": [
+    ".......#..",
+    ".......#..",
+    ".......#..",
+    ".......##.",
+    ".........."
+  ],
+  "player": [
+    1,
+    2
+  ],
+  "hero_kind": "red",
+  "crates": [
+    [
+      2,
+      2
+    ],
+    [
+      4,
+      3
+    ]
+  ],
+  "crystal_colors": [
+    "purple",
+    "purple_pink"
+  ],
+  "targets": [],
+  "objective": "player_on_exit",
+  "exit": [
+    9,
+    1
+  ],
+  "exit_color": "green",
+  "mechanism_color": "red",
+  "monsters": [
+    {
+      "kind": "goblin",
+      "position": [
+        4,
+        2
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        0,
+        4
+      ]
+    }
+  ],
+  "energy_blocks": [
+    {
+      "kind": "all_monsters_defeated",
+      "position": [
+        9,
+        3
+      ]
+    }
+  ]
+}

@@ -13,6 +13,7 @@ const HERO_BLUE := Color("78aff0")
 const MECHANISM_GREEN := Color("78d799")
 const MECHANISM_BLUE := Color("7dbce9")
 const MECHANISM_PURPLE := Color("bc9af3")
+const MECHANISM_RED := Color("ef8b83")
 const GOLD := Color("dfbb78")
 const GOAL_PURPLE := Color("c4a0f3")
 const GOAL_BLUE := Color("85bef5")
@@ -174,6 +175,12 @@ func _pressure_plate(center: Vector2, tile: float, pressed: bool) -> void:
 
 
 func _energy_block(center: Vector2, tile: float) -> void:
+	if model.level.mechanism_color == "red":
+		_box(Rect2(center - Vector2.ONE * tile * 0.43, Vector2.ONE * tile * 0.86), Color("914e4a"), 5)
+		_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), MECHANISM_RED, 3)
+		for offset in [-0.20, 0.0, 0.20]:
+			_actor_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("ffe2da"), tile * 0.035, true)
+		return
 	var green := model.level.mechanism_color == "green"
 	var blue := model.level.mechanism_color == "blue"
 	var purple := model.level.mechanism_color == "purple"
@@ -184,6 +191,8 @@ func _energy_block(center: Vector2, tile: float) -> void:
 
 
 func _mechanism_tint() -> Color:
+	if model.level.mechanism_color == "red":
+		return MECHANISM_RED
 	if model.level.mechanism_color == "purple":
 		return MECHANISM_PURPLE
 	if model.level.mechanism_color == "blue":

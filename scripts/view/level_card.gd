@@ -77,6 +77,7 @@ func _preview(area: Rect2) -> void:
 	var goal_tint: Color = {"yellow":GOLD,"green":Color("78dd99"),"blue":Color("85bef5"),"purple":Color("c4a0f3"),"orange":Color("efac71"),"red":Color("f5787b")}.get(data.get("exit_color","yellow"),GOLD)
 	for c in goals: draw_arc(origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile,tile*0.30,0,TAU,16,goal_tint,1,true)
 	var tint := Color("7dbce9") if data.get("mechanism_color")=="blue" else (Color("78d799") if data.get("mechanism_color")=="green" else GOLD)
+	if data.get("mechanism_color")=="red":tint=Color("ef8b83")
 	for link in data.get("energy_links", []):
 		for c in link.get("plates", [link["plate"]] if link.has("plate") else []):
 			draw_circle(origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile,tile*0.18,tint)

@@ -1,0 +1,14 @@
+{
+  "level_id": "north_hero_32",
+  "path": "URDLDRRDRRURULDDLURUULULDRDRDLLLDRRRRRRRUUU",
+  "moves": 43,
+  "directions": 43,
+  "input_events": 43,
+  "selection_events": 0,
+  "pushes": 12,
+  "pulls": 0,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "monster_death_action": 32,
+  "note": "确认地图的构造路线经独立身份回放复核；第32步哥布林互杀并使40红色清怪能量消失。无新玩法，不宣称最短方向路线。"
+}
