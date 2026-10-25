@@ -5605,6 +5605,176 @@
       "static_danger_hints_preserved": true,
       "red_clear_energy_visual_only": true,
       "gate_traversal_action": 66
+    },
+    {
+      "file": "video/chapter_01/level_34.mp4",
+      "level": 34,
+      "bytes": 427195,
+      "sha256": "6384988a10e54884195652e8284c18b8e745b5f6ccbaaeaaa3f45ba30fe67174",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 744,
+      "duration_seconds": 24.8,
+      "moves": 33,
+      "directions": 33,
+      "input_events": 33,
+      "selection_events": 0,
+      "pushes": 0,
+      "pulls": 18,
+      "dragon_pulls": 10,
+      "crystal_pulls": 8,
+      "swaps": 0,
+      "destroyed_crystals": 0,
+      "game_implementation_commit": "791770f5042dab2b6f48a3d188f0a95e8dea43ac",
+      "replay_report": "level_34_replay.json",
+      "level_file": "levels/north_34.json",
+      "solution_file": "levels/solutions/north_34.json",
+      "full_decode_passed": true,
+      "legal_input_trace_verified": true,
+      "mp4_fast_start": true,
+      "initial_and_final_frames_reviewed": true,
+      "all33_input_states_reviewed": true,
+      "all18_single_pull_motion_frames_reviewed": true,
+      "shield_and_reciprocal_fire_reviewed": true,
+      "reviewed_encoded_frames": [
+        0,
+        77,
+        95,
+        113,
+        116,
+        131,
+        134,
+        149,
+        152,
+        167,
+        170,
+        185,
+        203,
+        221,
+        224,
+        239,
+        242,
+        257,
+        275,
+        293,
+        296,
+        311,
+        329,
+        347,
+        365,
+        368,
+        383,
+        386,
+        401,
+        404,
+        419,
+        422,
+        437,
+        440,
+        455,
+        473,
+        491,
+        494,
+        509,
+        527,
+        530,
+        534,
+        538,
+        542,
+        545,
+        563,
+        581,
+        584,
+        599,
+        602,
+        617,
+        620,
+        635,
+        638,
+        653,
+        743
+      ],
+      "implementation_committed_before_recording": true,
+      "gameplay_sources_unchanged_after_recording": true,
+      "initial_monsters": [
+        {
+          "alive": true,
+          "facing": [
+            -1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            4,
+            0
+          ]
+        }
+      ],
+      "final_monsters": [
+        {
+          "alive": false,
+          "facing": [
+            -1,
+            0
+          ],
+          "id": 0,
+          "kind": "fire_dragon",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "alive": false,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 1,
+          "kind": "fire_dragon",
+          "position": [
+            1,
+            1
+          ]
+        }
+      ],
+      "all_monsters_dead": true,
+      "monster_death_action": 27,
+      "clear_energy_disappears_action": 27,
+      "sampled_5fps_frames": 124,
+      "distinct_sampled_frames": 124,
+      "visual_feedback_enabled": true,
+      "all33_feedback_intervals_settled": true,
+      "animation_world_unchanged": true,
+      "attack_feedback_requires_target": true,
+      "fire_attack_count": 2,
+      "fire_attack_actions": [
+        27
+      ],
+      "goblin_strikes": 0,
+      "fixed_dragon_facings_preserved": true,
+      "static_danger_hints_preserved": true,
+      "gate_traversal_action": 31
     }
   ],
   "game_implementation_commits": {
@@ -5640,6 +5810,7 @@
     "level_30": "737633c276aa2e340074ba0ca254df7fc17fc571",
     "level_31": "9bc2ef388517d31e8bd804dbeb6a7900cf1d8210",
     "level_32": "a295c979e425de19d443e10b19dbeec0c4e2aa3d",
-    "level_33": "ee53cb4e27fe32f9c30e868b3ab545283af2078a"
+    "level_33": "ee53cb4e27fe32f9c30e868b3ab545283af2078a",
+    "level_34": "791770f5042dab2b6f48a3d188f0a95e8dea43ac"
   }
 }
