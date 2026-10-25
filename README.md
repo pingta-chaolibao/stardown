@@ -73,6 +73,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第二十七关 | [观看 / 下载 MP4](video/chapter_01/level_27.mp4) | 49.4 秒 |
 | 第二十八关 | [观看 / 下载 MP4](video/chapter_01/level_28.mp4) | 34.4 秒 |
 | 第二十九关 | [观看 / 下载 MP4](video/chapter_01/level_29.mp4) | 43.4 秒 |
+| 第三十关 | [观看 / 下载 MP4](video/chapter_01/level_30.mp4) | 35.6 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -784,3 +785,6 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 独立构造与Godot验证的路线40次实际行动、11次免费C，3推、3拉、7交换。先把水晶放到(2,3)挡住下龙火线，英雄从上方跨左列；绿英雄将水晶拉至中间，红英雄把它推到(6,2)，从下方跨右列。最终红(8,1)、绿(7,2)、蓝(8,3)分占三目标。两只火龙原位存活，水晶身份保留；所选路线没有实际攻击，沿用“有有效目标才播放攻击”的公共表现，不声称最短解。
 
 [关卡JSON](levels/north_30.json) · [合法路线](levels/solutions/north_30.json) · [独立复核](tools/check_north_30.py)。初始、晶体遮挡、三目标胜利和大小窗口由实际Godot验证，媒体在实现提交后另行录制。
+
+
+[第三十关完整通关视频](video/chapter_01/level_30.mp4)：35.6秒、40行动+11免费C、3推3拉7换。两只火龙原位存活，水晶挡住两列火线，无空攻击动画。实际画面：[初始](docs/screenshots/level_30_initial.png) · [左侧挡火](docs/screenshots/level_30_left_shield.png) · [右侧挡火](docs/screenshots/level_30_right_shield.png) · [三英雄胜利](docs/screenshots/level_30_victory.png) · [小窗口绿人高亮](docs/screenshots/level_30_compact_green.png)。

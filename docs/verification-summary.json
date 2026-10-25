@@ -908,5 +908,205 @@
     "physical devices",
     "other GPUs",
     "CI reported separately from final commit evidence"
-  ]
+  ],
+  "recording": {
+    "file": "video/chapter_01/level_30.mp4",
+    "level": 30,
+    "bytes": 746503,
+    "sha256": "b3efe4f81b90853cae6fccdece0b6d476fec61d03794c482b0779baaaaaa7d5a",
+    "codec": "h264",
+    "profile": "High",
+    "pixel_format": "yuv420p",
+    "dimensions": [
+      1280,
+      820
+    ],
+    "fps": 30,
+    "frames": 1068,
+    "duration_seconds": 35.6,
+    "moves": 40,
+    "directions": 40,
+    "input_events": 51,
+    "selection_events": 11,
+    "pushes": 3,
+    "pulls": 3,
+    "dragon_pulls": 0,
+    "crystal_pulls": 3,
+    "swaps": 7,
+    "destroyed_crystals": 0,
+    "all_two_dragons_alive_and_fixed": true,
+    "crystal_identity_preserved": true,
+    "game_implementation_commit": "737633c276aa2e340074ba0ca254df7fc17fc571",
+    "replay_report": "level_30_replay.json",
+    "level_file": "levels/north_30.json",
+    "solution_file": "levels/solutions/north_30.json",
+    "full_decode_passed": true,
+    "legal_input_trace_verified": true,
+    "mp4_fast_start": true,
+    "initial_and_final_frames_reviewed": true,
+    "all51_input_states_reviewed": true,
+    "reviewed_encoded_frames": [
+      0,
+      61,
+      64,
+      77,
+      79,
+      82,
+      95,
+      113,
+      115,
+      118,
+      131,
+      133,
+      136,
+      149,
+      167,
+      185,
+      187,
+      190,
+      203,
+      221,
+      239,
+      257,
+      275,
+      277,
+      280,
+      293,
+      311,
+      314,
+      320,
+      329,
+      347,
+      365,
+      383,
+      392,
+      401,
+      419,
+      437,
+      455,
+      473,
+      491,
+      509,
+      511,
+      514,
+      518,
+      527,
+      545,
+      563,
+      566,
+      572,
+      581,
+      584,
+      590,
+      599,
+      617,
+      635,
+      638,
+      644,
+      653,
+      671,
+      689,
+      707,
+      710,
+      725,
+      728,
+      734,
+      743,
+      761,
+      779,
+      788,
+      797,
+      815,
+      833,
+      842,
+      851,
+      869,
+      887,
+      905,
+      923,
+      941,
+      959,
+      968,
+      977,
+      1067
+    ],
+    "swap_endpoint_frames_reviewed": true,
+    "all_push_pull_motion_frames_reviewed": true,
+    "both_shield_crossings_reviewed": true,
+    "implementation_committed_before_recording": true,
+    "gameplay_sources_unchanged_after_recording": true,
+    "initial_monsters": [
+      {
+        "alive": true,
+        "facing": [
+          0,
+          1
+        ],
+        "id": 0,
+        "kind": "fire_dragon",
+        "position": [
+          6,
+          0
+        ]
+      },
+      {
+        "alive": true,
+        "facing": [
+          0,
+          -1
+        ],
+        "id": 1,
+        "kind": "fire_dragon",
+        "position": [
+          2,
+          4
+        ]
+      }
+    ],
+    "final_monsters": [
+      {
+        "alive": true,
+        "facing": [
+          0,
+          1
+        ],
+        "id": 0,
+        "kind": "fire_dragon",
+        "position": [
+          6,
+          0
+        ]
+      },
+      {
+        "alive": true,
+        "facing": [
+          0,
+          -1
+        ],
+        "id": 1,
+        "kind": "fire_dragon",
+        "position": [
+          2,
+          4
+        ]
+      }
+    ],
+    "sampled_5fps_frames": 178,
+    "distinct_sampled_frames": 178,
+    "visual_feedback_enabled": true,
+    "all51_feedback_intervals_settled": true,
+    "animation_world_unchanged": true,
+    "attack_feedback_requires_target": true,
+    "fire_attack_count": 0,
+    "static_danger_hints_preserved": true
+  },
+  "old29_media_entries_unchanged": true,
+  "tested_sources_unchanged_after_capture": true,
+  "fresh_media_validation": {
+    "videos": 30,
+    "full_decode": true,
+    "independent_identity_replay": true,
+    "all_passed": true,
+    "earlier29_deliverables_preserved": true
+  }
 }
