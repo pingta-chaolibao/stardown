@@ -76,6 +76,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第二十八关 | [观看 / 下载 MP4](video/chapter_01/level_28.mp4) | 34.4 秒 |
 | 第二十九关 | [观看 / 下载 MP4](video/chapter_01/level_29.mp4) | 43.4 秒 |
 | 第三十关 | [观看 / 下载 MP4](video/chapter_01/level_30.mp4) | 35.6 秒 |
+| 第三十一关 | [观看 / 下载 MP4](video/chapter_01/level_31.mp4) | 62.6 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -812,3 +813,6 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 
 
 实际Godot画面：[初始](docs/screenshots/level_31_initial.png) · [新增顶排转向](docs/screenshots/level_31_action_73.png) · [互杀后开门](docs/screenshots/level_31_clear_open.png) · [撤销复活并关门](docs/screenshots/level_31_undo_revived.png) · [通关](docs/screenshots/level_31_completed.png) · [小窗口](docs/screenshots/level_31_compact.png)。完整执行范围见[第31关验证记录](docs/verification/north_31_scope.json)。
+
+
+[第三十一关正式通关视频](video/chapter_01/level_31.mp4)：62.6秒、96次实际行动、29次推动。来自实现提交后的真实Godot与合法WASD按键，包含新增顶排转向、两只哥布林第77步互杀、清怪能量消失及最终胜利。[互杀攻击帧](docs/screenshots/level_31_mutual_attack.png) · [完整通关末帧](docs/screenshots/level_31_victory.png)。每步表现时钟均在下一输入前结束，动画不改变逻辑状态；仅第77步播放两次已触发哥布林攻击，无空攻击等待。
