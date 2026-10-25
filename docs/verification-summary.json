@@ -865,5 +865,21 @@
     "physical devices",
     "other GPUs",
     "CI is reported separately from final GitHub evidence"
-  ]
+  ],
+  "recording": {
+    "implementation_commit": "bf83a07663525ba84265828de163827ff917eb7b",
+    "file": "video/chapter_01/level_29.mp4",
+    "duration_seconds": 43.4,
+    "frames": 1302,
+    "bytes": 830260,
+    "sha256": "3838358f21f509b58036172ede5ebef3b80d21855798d01d16c2abce7f96c6c7",
+    "actions": 64,
+    "pulls": 23,
+    "dragon_pulls": 13,
+    "crystal_pulls": 10,
+    "visual_intervals_checked": 64,
+    "key_frames_viewed": 64,
+    "full_decode_passed": true,
+    "visual_review_complete": true
+  }
 }
