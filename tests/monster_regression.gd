@@ -35,7 +35,8 @@ func _four_directions() -> void:
 func _mixed_push() -> void:
  for dir in [Vector2i.UP,Vector2i.DOWN,Vector2i.LEFT,Vector2i.RIGHT]:
   var origin:Vector2i=Vector2i(4,4)-dir*3;var d:=_base();d["player"]=[origin.x,origin.y];d["crates"]=[[origin.x+dir.x,origin.y+dir.y]];d["monsters"]=_goblins([[origin.x+dir.x*2,origin.y+dir.y*2],[origin.x+dir.x*3,origin.y+dir.y*3]])
-  var g:=_load(d);var before:=g.snapshot();_check(g.try_move(dir)==&"pushed" and g.alive and g.monster_at(origin+dir*3)==0 and g.monster_at(origin+dir*4)==1 and g.crate_id(origin+dir*2)==0,"red pushes crystal/two-monster chain atomically,stays2cells away")
+  var g:=_load(d);var before:=g.snapshot();_check(g.try_move(dir)==&"pushed" and g.alive and g.monsters()[0]["position"]==origin+dir*3 and g.monsters()[1]["position"]==origin+dir*4 and not g.monsters()[0]["alive"] and not g.monsters()[1]["alive"] and g.crate_id(origin+dir*2)==0,"red pushes completechain thenadjacentGoblins mutuallydie;hero stays2cells away")
+  _check(g.monster_at(origin+dir*3)==-1 and g.monster_at(origin+dir*4)==-1,"pushed deadGoblins no longercollide orreceive interactions")
   _check(g.undo() and g.snapshot()==before,"mixed monster push restores stable IDs/life")
   var end:Vector2i=origin+dir*4;var row:String=d["terrain"][end.y];d["terrain"][end.y]=row.substr(0,end.x)+"#"+row.substr(end.x+1);g=_load(d);before=g.snapshot()
   _check(g.try_move(dir)==&"crate_blocked" and g.snapshot()==before and g.history_size()==0,"wall at mixed-chain end moves no participant")

@@ -4,6 +4,7 @@ extends RefCounted
 ## No gameplay mutation, timer, damage or collision is performed here.
 const Fire = preload("res://scripts/core/fire_rules.gd")
 const Monsters = preload("res://scripts/core/monster_rules.gd")
+const Energy = preload("res://scripts/core/energy_rules.gd")
 
 static func capture(model: RefCounted) -> Dictionary:
 	var entities: Dictionary = {}
@@ -95,8 +96,14 @@ static func _sample_attacks(plan: Dictionary, before: Dictionary, after: Diction
 		facings.append(monster.get("facing",Vector2i.ZERO))
 	var crystals: Dictionary = {}
 	for cell in model.crates(): crystals[cell] = model.crate_id(cell)
+	# Reconstruct the locked attack phase, not the final cleared-gate state.
+	# A last-monster death may open a gate only AFTER targets were sampled.
+	var attack_barriers: Dictionary = after["barriers"].duplicate()
+	attack_barriers.merge(Energy.monster_clear_states(model.level.monster_clear_barriers,monster_lives),true)
+	var attack_blocks: Callable = func(cell: Vector2i) -> bool:
+		return not model.level.is_floor(cell) or model.level.bush_at(cell) != null or attack_barriers.get(cell,false)
 	var rays := Fire.plan(model.level.monster_kinds,monster_positions,monster_lives,facings,hero_positions,hero_lives,crystals,
-		Rect2i(Vector2i.ZERO,Vector2i(model.level.width,model.level.height)),model.blocks_sight,model.level.has_fence)
+		Rect2i(Vector2i.ZERO,Vector2i(model.level.width,model.level.height)),attack_blocks,model.level.has_fence)
 	for ray in rays["rays"]:
 		var event: Dictionary = ray.duplicate(true)
 		event["from"] = monster_positions[ray["dragon"]]
@@ -112,5 +119,5 @@ static func _sample_attacks(plan: Dictionary, before: Dictionary, after: Diction
 			if hero_lives[h] and Monsters.threatens("goblin",monster_positions[i],hero_positions[h]):
 				plan["goblin"].append({"from":monster_positions[i],"to":hero_positions[h]})
 		for m in monster_positions.size():
-			if monster_lives[m] and model.level.monster_kinds[m] == "fire_dragon" and Monsters.threatens("goblin",monster_positions[i],monster_positions[m]):
+			if m != i and monster_lives[m] and Monsters.can_attack_monster("goblin",model.level.monster_kinds[m]) and Monsters.threatens("goblin",monster_positions[i],monster_positions[m]):
 				plan["goblin"].append({"from":monster_positions[i],"to":monster_positions[m]})

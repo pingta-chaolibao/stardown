@@ -26,8 +26,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number<1 or level_number>30 or report_path.is_empty():
-		_fail("Pass --level=1 through 30 and an absolute --report path.")
+	if level_number<1 or level_number>31 or report_path.is_empty():
+		_fail("Pass --level=1 through 31 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -158,9 +158,15 @@ func _visual_sample(index: int, symbol: String) -> Dictionary:
 		rays.append({"dragon":ray["dragon"],"from":[ray["from"].x,ray["from"].y],"facing":[ray["facing"].x,ray["facing"].y],"cells":cells,"target":ray["target"]})
 	var deaths: Array[String] = []
 	for event in clock.plan.get("deaths",[]): deaths.append(event["key"])
+	var strikes: Array[Dictionary] = []
+	for event in clock.plan.get("goblin",[]):
+		strikes.append({"from":[event["from"].x,event["from"].y],"to":[event["to"].x,event["to"].y]})
+	var energy: Array[Dictionary] = []
+	for event in clock.plan.get("energy",[]):
+		energy.append({"cell":[event["cell"].x,event["cell"].y],"active":event["active"]})
 	return {"event_index":index+1,"input":symbol,"start_frame":INITIAL_FRAMES+index*STEP_FRAMES,
 		"sample_age_seconds":clock.age,"swap":clock.plan.get("swap",false),"motions":motions,
-		"locked_fire":rays,"death_keys":deaths}
+		"locked_fire":rays,"locked_goblin":strikes,"energy_changes":energy,"death_keys":deaths}
 
 
 func _state() -> Dictionary:

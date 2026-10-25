@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_31",
+  "title": "北部英雄 · 第三十一关",
+  "is_temporary": false,
+  "source_note": "用户确认补全顶部：新增78–88仅85不可走，其余地板；原1–77编号保留，运行坐标统一y+1。45红英雄、52/67哥布林、64/65水晶、21目标、43全怪清除能量。按已确认哥布林相邻互杀与全怪清除规则，原创2D几何表现。",
+  "terrain": [
+    ".......#...",
+    ".......#...",
+    ".......#...",
+    "..#....#...",
+    "..##...##.#",
+    "..#........",
+    "..#........",
+    "..#........"
+  ],
+  "player": [
+    0,
+    5
+  ],
+  "hero_kind": "red",
+  "crates": [
+    [
+      8,
+      6
+    ],
+    [
+      9,
+      6
+    ]
+  ],
+  "crystal_colors": [
+    "purple",
+    "purple_pink"
+  ],
+  "targets": [],
+  "objective": "player_on_exit",
+  "exit": [
+    9,
+    2
+  ],
+  "exit_color": "green",
+  "mechanism_color": "blue",
+  "monsters": [
+    {
+      "kind": "goblin",
+      "position": [
+        7,
+        5
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        0,
+        7
+      ]
+    }
+  ],
+  "energy_blocks": [
+    {
+      "kind": "all_monsters_defeated",
+      "position": [
+        9,
+        4
+      ]
+    }
+  ]
+}

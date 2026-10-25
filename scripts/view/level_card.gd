@@ -82,6 +82,9 @@ func _preview(area: Rect2) -> void:
 			draw_circle(origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile,tile*0.18,tint)
 		for c in link["barriers"]:
 			draw_rect(Rect2(origin+Vector2(c[0],c[1])*tile+Vector2.ONE*2,Vector2.ONE*(tile-4)),Color(tint,0.65))
+	for block in data.get("energy_blocks", []):
+		var c: Array=block["position"]
+		draw_rect(Rect2(origin+Vector2(c[0],c[1])*tile+Vector2.ONE*2,Vector2.ONE*(tile-4)),Color(tint,0.65))
 	for c in data.get("bushes", []): draw_circle(origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile,tile*0.3,Color("517345"))
 	for monster in data.get("monsters",[]):
 		if monster.get("kind") not in ["goblin","fire_dragon"]:continue

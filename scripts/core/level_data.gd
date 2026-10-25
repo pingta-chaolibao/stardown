@@ -32,6 +32,7 @@ var exit_color: String = "yellow"
 var mechanism_color: String = "yellow"
 var objective: String = "none"
 var energy_links: Array[Dictionary] = []
+var monster_clear_barriers: Array[Vector2i] = []
 var bushes: Array[Bush] = []
 var _bush_by_cell: Dictionary = {}
 var error: String = ""
@@ -165,6 +166,9 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	var link_error := level._read_energy_links(data.get("energy_links", []))
 	if not link_error.is_empty():
 		return _invalid(link_error)
+	var block_error := level._read_energy_blocks(data.get("energy_blocks", []))
+	if not block_error.is_empty():
+		return _invalid(block_error)
 	var fences := Fences.read(data.get("fences", []),_parse_cell,level.is_floor)
 	if not fences["error"].is_empty(): return _invalid(fences["error"])
 	level.fence_edges.assign(fences["edges"])
@@ -291,6 +295,24 @@ func _read_energy_links(value: Variant) -> String:
 	for cell in plates:
 		if barriers.has(cell):
 			return "压力板与能量格不能重叠。"
+	return ""
+
+
+func _read_energy_blocks(value: Variant) -> String:
+	if not value is Array:
+		return "energy_blocks 必须是明确类型的能量块数组。"
+	var occupied: Dictionary = {}
+	for link in energy_links:
+		for cell in link["plates"]: occupied[cell] = true
+		for cell in link["barriers"]: occupied[cell] = true
+	for entry in value:
+		if not entry is Dictionary or entry.get("kind") != "all_monsters_defeated":
+			return "energy_blocks 需明确 kind=all_monsters_defeated；未知条件不能套用压板规则。"
+		var cell: Variant = _parse_cell(entry.get("position"))
+		if cell == null or not is_floor(cell) or bush_at(cell) != null or occupied.has(cell):
+			return "清怪能量块必须在独立地板格，不能与草丛、压力板或其他能量块重叠。"
+		occupied[cell] = true
+		monster_clear_barriers.append(cell)
 	return ""
 
 

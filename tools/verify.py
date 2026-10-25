@@ -108,6 +108,7 @@ def main():
             run("02_record_visual_feedback", ["--check-only", "--script", "res://tools/record_visual_feedback.gd"])
             run("02_record_playthrough", ["--check-only", "--script", "res://tools/record_playthrough.gd"])
             run("03_feedback", ["--script", "res://tests/feedback_regression.gd"])
+            run("03_monster_clear_energy", ["--script", "res://tests/monster_clear_energy_regression.gd"])
             run("03_logic", ["--script", "res://tests/run_tests.gd"])
             run("03_chain_push", ["--script", "res://tests/chain_push_regression.gd"])
             run("03_energy", ["--script", "res://tests/energy_regression.gd"])
@@ -131,6 +132,8 @@ def main():
             run("03_north_29", ["--script", "res://tests/north_29_regression.gd"])
             run_python("03_north_30_independent", "tools/check_north_30.py")
             run("03_north_30", ["--script", "res://tests/north_30_regression.gd"])
+            run_python("03_north_31_independent", "tools/check_north_31.py")
+            run("03_north_31", ["--script", "res://tests/north_31_regression.gd"])
             run_python("03_north_28_independent", "tools/check_north_28.py")
             run("03_north_28", ["--script", "res://tests/north_28_regression.gd"])
             run("03_green_dragon_pull", ["--script", "res://tests/green_dragon_pull_regression.gd"])
@@ -162,6 +165,7 @@ def main():
             run("03_north_12", ["--script", "res://tests/north_12_regression.gd"])
             run("04_main_scene", ["--quit-after", "10", "--audio-driver", "Dummy"])
             run("05_feedback", ["--script", "res://tests/feedback_scene.gd"])
+            run("05_monster_clear_energy", ["--script", "res://tests/monster_clear_energy_scene.gd"])
             run("05_scene_input", ["--script", "res://tests/scene_smoke.gd"])
             run("05_north_02_scene", ["--script", "res://tests/north_02_scene.gd"])
             run("05_north_03_scene", ["--script", "res://tests/north_03_scene.gd"])
@@ -185,6 +189,7 @@ def main():
             run("05_north_21_scene", ["--script", "res://tests/north_21_scene.gd"])
             run("05_north_29_scene", ["--script", "res://tests/north_29_scene.gd"])
             run("05_north_30_scene", ["--script", "res://tests/north_30_scene.gd"])
+            run("05_north_31_scene", ["--script", "res://tests/north_31_scene.gd"])
             run("05_north_28_scene", ["--script", "res://tests/north_28_scene.gd"])
             run("05_green_dragon_pull", ["--script", "res://tests/green_dragon_pull_scene.gd"])
             run("05_north_27_scene", ["--script", "res://tests/north_27_scene.gd"])
@@ -197,6 +202,7 @@ def main():
             run("05_energy_visibility", ["--script", "res://tests/energy_visibility_scene.gd"])
             if args.visual:
                 run("06_feedback", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/feedback_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "feedback" / "screenshots")], visual=True)
+                run("06_monster_clear_energy", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/monster_clear_energy_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                   "--audio-driver", "Dummy", "--script", "res://tests/scene_smoke.gd",
                                   "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
@@ -289,6 +295,7 @@ def main():
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_29", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/north_29_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_30", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/north_30_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
+                run("06_render_north_31", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/north_31_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_28", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",
                                           "--audio-driver", "Dummy", "--script", "res://tests/north_28_scene.gd",
                                           "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)

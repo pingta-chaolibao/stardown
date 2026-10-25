@@ -59,6 +59,14 @@ def check_replay(item, directory, require_rendered=True):
     def edge_blocked(a,b):
         return frozenset((a,b)) in fences
 
+    clear_cells = set()
+    for block in level.get("energy_blocks", []):
+        assert block["kind"] == "all_monsters_defeated", "Unknown energy condition must not default to pressure"
+        cell = tuple(block["position"])
+        assert floor(cell) and cell not in bushes and cell not in clear_cells
+        assert all(cell not in [tuple(c) for c in link["barriers"]] and cell not in [tuple(c) for c in link.get("plates", [link["plate"]] if "plate" in link else [])] for link in level.get("energy_links", []))
+        clear_cells.add(cell)
+
     def settle(previous_barriers, advance=True):
         pressure, barriers = {}, {}
         for link in level.get("energy_links", []):
@@ -70,6 +78,7 @@ def check_replay(item, directory, require_rendered=True):
         all_pressed = all(pressure.values())
         for link in level.get("energy_links", []):
             barriers.update({tuple(cell): not all_pressed for cell in link["barriers"]})
+        barriers.update({cell: any(monster_living) for cell in clear_cells})
         living = [True] * len(heroes)
         for cell, active in barriers.items():
             if active:
@@ -90,7 +99,7 @@ def check_replay(item, directory, require_rendered=True):
                     assert not edge_blocked(cell,monster), "Goblin/fence attack is undefined"
                     goblin_heroes.append(h)
         targets = {}
-        goblin_dragons = []
+        goblin_monsters = []
         if advance:
             for i,origin in enumerate(monster_positions):
                 if not monster_living[i] or monster_kinds[i]!="fire_dragon":continue
@@ -102,15 +111,18 @@ def check_replay(item, directory, require_rendered=True):
                     previous = cell;cell = plus(cell,facings[i])
             for i,goblin in enumerate(monster_positions):
                 if not monster_living[i] or monster_kinds[i]!="goblin":continue
-                for v,dragon in enumerate(monster_positions):
-                    if monster_living[v] and monster_kinds[v]=="fire_dragon" and abs(goblin[0]-dragon[0])+abs(goblin[1]-dragon[1])==1:
-                        assert not edge_blocked(goblin,dragon), "Goblin/fence attack is undefined"
-                        goblin_dragons.append(v)
+                for v,target in enumerate(monster_positions):
+                    if v!=i and monster_living[v] and monster_kinds[v] in ("goblin","fire_dragon") and abs(goblin[0]-target[0])+abs(goblin[1]-target[1])==1:
+                        assert not edge_blocked(goblin,target), "Goblin/fence attack is undefined"
+                        goblin_monsters.append(v)
         for family,victim in targets.values():
             if family=="hero":living[victim] = False
             else:monster_living[victim] = False
-        for victim in goblin_dragons:monster_living[victim] = False
+        for victim in goblin_monsters:monster_living[victim] = False
         for h in goblin_heroes:living[h] = False
+        # Final death results clear only this independent barrier type.
+        # Opening a barrier never schedules another attack this action.
+        barriers.update({cell: any(monster_living) for cell in clear_cells})
         return pressure, barriers, living
 
     pressure, barriers, living = settle({}, advance=False)
@@ -301,6 +313,17 @@ def check_visual_feedback(item, evidence):
             assert locked[pair[1]] == {"kind":"monster", "id":pair[0]}
     if item["level"] == 30 and require_targets:
         assert not any(v["locked_fire"] for v in views), "Chosen level30 route shields every crossing and triggers no attack"
+    if item["level"] == 31:
+        assert not any(v["locked_fire"] for v in views)
+        assert [v["event_index"] for v in views if v["locked_goblin"]] == [77]
+        strikes = views[76]["locked_goblin"]
+        assert len(strikes) == 2
+        assert {(tuple(s["from"]), tuple(s["to"])) for s in strikes} == {
+            ((0, 6), (0, 7)), ((0, 7), (0, 6))}
+        assert set(views[76]["death_keys"]) == {"m:0", "m:1"}
+        assert [v["event_index"] for v in views if v["energy_changes"]] == [77]
+        assert views[76]["energy_changes"] == [{"cell":[9,4], "active":False}]
+        assert all(not m["alive"] for m in evidence["final_state"]["monsters"])
 
 
 def check_media(item, evidence):

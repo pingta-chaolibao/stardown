@@ -1,0 +1,14 @@
+{
+  "level_id": "north_hero_31",
+  "path": "UUURRRDRDDDDRRRRUDRRUULLLLRRRRDLLLLLDLURUDLURUDLURURULLLLRRRDDLUURULLLLULDDDDUUURRDRDRDDRRRRRUUU",
+  "moves": 96,
+  "directions": 96,
+  "input_events": 96,
+  "selection_events": 0,
+  "pushes": 29,
+  "pulls": 0,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "monster_death_action": 77,
+  "note": "完整已确认11×8地图上的构造路线：96行动29推，第77步哥布林同快照互杀并使清怪能量消失。顶部78/79提供转向站位；不新增出棋盘死亡，不宣称最短。"
+}

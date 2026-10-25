@@ -1,0 +1,46 @@
+extends "res://tests/north_02_scene.gd"
+func _run() -> void:
+	root.size=Vector2i(1280,820);game=load("res://scenes/main.tscn").instantiate();root.add_child(game)
+	await _settle();await _click("Level31")
+	_check(game.current_level_index==30 and game.model.level.id=="north_hero_31" and game.model.level.height==8,"pooled31card openscompleteconfirmed11x8 map")
+	_check(game.model.player==Vector2i(0,5) and game.model.active_kind()=="red" and game.model.living_monster_count()==2,"45red andtwoGoblin exactinitial")
+	var initial:Dictionary=game.model.snapshot();_check_layout(game);await _capture("north_31_initial.png")
+	var key:=InputEventKey.new();key.keycode=KEY_W;key.physical_keycode=KEY_W;key.pressed=true
+	Input.parse_input_event(key);await _settle();var once:Dictionary=game.model.snapshot()
+	for echo in [true,false,true]:
+		key.echo=echo;Input.parse_input_event(key);await _settle();_check(game.model.snapshot()==once and game.model.moves==1,"held/echo doesnotrepeatdirection")
+	key.pressed=false;Input.parse_input_event(key);await _settle();await _click("Undo")
+	_check(game.model.snapshot()==initial,"screenUndo restoresactualstep")
+	await _press(KEY_C);_check(game.model.snapshot()==initial and game.model.history_size()==0,"singleheroCfree/nohistory/noattack")
+	await _click("MoveDown");_check(not game.model.alive and game.model.death_reason=="monster","screeninputenteringGoblinrange dies")
+	var dead:Dictionary=game.model.snapshot();await _press(KEY_C);await _press(KEY_R);await _click("BackToLevels")
+	_check(game.model.snapshot()==dead and not game.menu.visible,"deathcannotbypassviaC/restart/menu")
+	await _click("Undo");_check(game.model.alive and game.model.snapshot()==initial,"onlyscreenUndo revives")
+	for symbol in "UUURRRDRDDDDRRRRRRUUL":await _press(_keycode(symbol))
+	var gate:Dictionary=game.model.snapshot();await _click("MoveUp")
+	_check(game.model.snapshot()==gate and game.model.barrier_is_active(Vector2i(9,4)) and game.status_label.text.contains("清怪能量"),"screenblockedclearenergy explainsmonstercondition,nopressureplate requirement")
+	await _capture("north_31_gate_blocked.png");await _click("Restart")
+	var solution:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://levels/solutions/north_31.json"))
+	var proof:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://artifacts/verification/north_31_route.json"))
+	var history:Array[Dictionary]=[]
+	for i in solution["path"].length():
+		var symbol:String=solution["path"][i];var before:Dictionary=game.model.snapshot();history.append(before)
+		await _press(_keycode(symbol));var expected:Dictionary=proof["trace"][i]
+		_check(game.model.alive and game.model.moves==i+1 and game.model.player==_cell(expected["player"]) and game.model.pushes==expected["pushes"],"actualkeyboardhero andcounters matchindependenttrace")
+		for identity in 2:_check(game.model.crate_id(_cell(expected["crystals"][identity]))==identity and game.model.monsters()[identity]["position"]==_cell(expected["monsters"][identity]) and game.model.monsters()[identity]["alive"]==expected["monster_alive"][identity],"actual input preservescrystal/Goblin identities andlife")
+		_check(game.model.barrier_is_active(Vector2i(9,4))==expected["barrier_active"] and game.model.is_complete()==(i==95),"actualcleargate andgoal timingexact")
+		if i in [59,72,75]:await _capture("north_31_action_%02d.png" % (i+1))
+		if i==76:
+			var cleared:Dictionary=game.model.snapshot();_check(game.model.living_monster_count()==0 and game.progress_label.text.contains("0 / 2"),"livecountreflectsmutualdeath")
+			await _capture("north_31_clear_open.png");await _click("Undo")
+			_check(game.model.snapshot()==before and game.model.living_monster_count()==2 and game.model.barrier_is_active(Vector2i(9,4)) and game.board.feedback.plan.is_empty(),"actualUndo revivesbothGoblins andsolidclearblock")
+			await _capture("north_31_undo_revived.png");await _press(_keycode(symbol));_check(game.model.snapshot()==cleared,"repeat77clearsdeterministically")
+	_check(game.model.is_complete() and game.moves_label.text=="96" and game.model.pushes==29 and game.model.crates().size()==2,"actual96directions29pushlivingvictory")
+	await _capture("north_31_completed.png");await _click("Undo")
+	_check(game.model.snapshot()==history[-1] and not game.model.is_complete(),"victoryUndo restoreslastactualaction")
+	await _click("Restart");root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_31_compact.png")
+	await _click("BackToLevels");_check(game.menu.strip.item_count==31 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"31entry preservesboundedpoolednavigation")
+	await _capture("north_31_navigation.png");await _click("Level30");await _click("Level31")
+	_check(game.model.snapshot()==initial and game.model.history_size()==0 and game.model.barrier_is_active(Vector2i(9,4)),"30/31UIhistory/life/clearstates isolated")
+	print("NORTH31 SCENE RESULT: %d checks,%d failures;display=%s" % [checks,failures,DisplayServer.get_name()]);quit(0 if failures==0 else 1)
+func _cell(a:Array) -> Vector2i:return Vector2i(a[0],a[1])

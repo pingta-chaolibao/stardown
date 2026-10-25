@@ -230,12 +230,15 @@ func _settle_world(definition:Level,positions:Array[Vector2i],crystals:Dictionar
 		if not living[i]:continue
 		for link in definition.energy_links:
 			if monsters[i] in link["plates"]:return {"error":"怪物压板规则尚未确认；该组合动作未提交。"}
-	var settled:=Energy.settle(definition.energy_links,positions,crystals,previous)
+	var settled:=Energy.settle(definition.energy_links,positions,crystals,previous,Energy.monster_clear_states(definition.monster_clear_barriers,living))
 	if not settled["error"].is_empty() or monsters.is_empty():return settled
 	var danger:=Monsters.settle(definition.monster_kinds,monsters,living,positions,settled["hero_alive"],previous,settled["barriers"],definition.has_fence,{"facings":definition.monster_facings,"crystals":settled["crystals"],"bounds":Rect2i(Vector2i.ZERO,Vector2i(definition.width,definition.height)),"blocks":func(c:Vector2i)->bool:return not definition.is_floor(c) or definition.bush_at(c)!=null or settled["barriers"].get(c,false),"advance":advance})
 	if not danger["error"].is_empty():return danger
 	settled["death_reason"]="fire" if not danger.get("fire_heroes",[]).is_empty() else ("monster" if not danger["attacked_heroes"].is_empty() else ("energy" if not settled["alive"] else ""))
 	settled["alive"]=danger["alive"];settled["hero_alive"]=danger["hero_alive"];settled["monster_alive"]=danger["monster_alive"]
+	# Final death results open clear-type blocks in this SAME atomic action.
+	# Never resample attacks through the newly absent blocks this turn.
+	settled["barriers"].merge(Energy.monster_clear_states(definition.monster_clear_barriers,danger["monster_alive"]),true)
 	return settled
 
 
@@ -252,6 +255,10 @@ func monsters() -> Array[Dictionary]:
 		if level.monster_kinds[i]=="fire_dragon":entry["facing"]=_monster_facings[i]
 		result.append(entry)
 	return result
+
+
+func living_monster_count() -> int:
+	return _monster_alive.count(true)
 
 
 func monster_danger_at(cell:Vector2i) -> bool:

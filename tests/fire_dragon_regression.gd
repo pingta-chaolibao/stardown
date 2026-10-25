@@ -94,7 +94,9 @@ func _mutual() -> void:
  _check(g.try_move(Vector2i.RIGHT)==&"moved" and not g.monsters()[0]["alive"] and not g.monsters()[1]["alive"] and g.monsters()[2]["alive"],"mutual death does not pierce to farther Goblin")
  _check(g.try_move(Vector2i.DOWN)==&"moved" and g.monsters()[2]["alive"] and g.fire_rays().is_empty(),"dead dragon never attacks on next action")
  d=_base();d["monsters"]=[{"kind":"goblin","position":[3,4]},{"kind":"goblin","position":[4,4]}];g=_load(d)
- _check(g.try_move(Vector2i.RIGHT)==&"moved" and g.monsters()[0]["alive"] and g.monsters()[1]["alive"],"no unrequested Goblin-vs-Goblin behavior added")
+ var goblin_before:=g.snapshot()
+ _check(g.try_move(Vector2i.RIGHT)==&"moved" and not g.monsters()[0]["alive"] and not g.monsters()[1]["alive"],"user-confirmed adjacentGoblins mutuallydie in onecommon attack step")
+ _check(g.undo() and g.snapshot()==goblin_before,"Undo restoresboth mutuallykilledGoblins")
 
 func _inactive_hero_simultaneous() -> void:
  var d:=_base();d.erase("player");d.erase("hero_kind");d["heroes"]=[{"id":"red","kind":"red","position":[2,4]},{"id":"blue","kind":"blue","position":[3,0]}];d["active_hero"]="red";d["crates"]=[[3,3]];d["monsters"]=[{"kind":"fire_dragon","position":[0,1],"facing":"right"},{"kind":"goblin","position":[3,2]}];var g:=_load(d)

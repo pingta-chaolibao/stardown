@@ -53,7 +53,7 @@ func _run() -> void:
 	await _click("Restart"); _check(game.model.snapshot() == initial,"restart revives all4dragons after mutual kills")
 	root.size = Vector2i(960,615); await _settle(); _check_layout(game); await _capture("north_29_compact.png")
 	await _click("BackToLevels")
-	_check(game.menu.strip.item_count == game.LEVEL_PATHS.size() and game.menu.strip.item_count == 30 and game.menu.strip.pool.size() <= game.menu.strip.capacity_bound(),"30reallevels stay viewport-pooled")
+	_check(game.menu.strip.item_count == game.LEVEL_PATHS.size() and game.menu.strip.item_count == 31 and game.menu.strip.pool.size() <= game.menu.strip.capacity_bound(),"31reallevels stay viewport-pooled")
 	await _capture("north_29_navigation.png")
 	await _click("Level28"); _check(game.model.player == Vector2i(0,0) and game.model.monsters().size() == 4 and game.model.crates() == [Vector2i(1,1)],"prior28unchanged")
 	await _click("Level29"); _check(game.model.snapshot() == initial,"29history cannot leak across navigation")

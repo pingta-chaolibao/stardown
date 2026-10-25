@@ -10,7 +10,14 @@ static func pressure_matches(cell: Vector2i, sources: Array, hero: Variant, crys
 	return ("hero" in sources and hero_present) or ("crystal" in sources and crystals.has(cell))
 
 
-static func settle(links: Array[Dictionary], hero: Variant, crystals: Dictionary, previous_barriers: Dictionary) -> Dictionary:
+static func monster_clear_states(cells: Array[Vector2i], living: Array[bool]) -> Dictionary:
+	var result: Dictionary = {}
+	for cell in cells:
+		result[cell] = living.has(true) # Zero initial monsters means already clear.
+	return result
+
+
+static func settle(links: Array[Dictionary], hero: Variant, crystals: Dictionary, previous_barriers: Dictionary, other_barriers: Dictionary = {}) -> Dictionary:
 	var pressure: Dictionary = {}
 	var barriers: Dictionary = {}
 	var alive := true
@@ -32,6 +39,7 @@ static func settle(links: Array[Dictionary], hero: Variant, crystals: Dictionary
 	for link in links:
 		for cell: Vector2i in link["barriers"]:
 			barriers[cell] = not all_pressed
+	barriers.merge(other_barriers)
 	# All occupancy and pressure are computed before evaluating consequences.
 	for cell: Vector2i in barriers:
 		if not barriers[cell]:
