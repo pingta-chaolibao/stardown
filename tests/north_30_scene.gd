@@ -1,0 +1,70 @@
+extends "res://tests/north_02_scene.gd"
+
+func _run() -> void:
+	root.size = Vector2i(1280,820)
+	game = load("res://scenes/main.tscn").instantiate(); root.add_child(game)
+	await _settle(); await _click("Level30")
+	_check(game.current_level_index == 29 and game.model.level.id == "north_hero_30" and game.model.active_hero_id() == "blue","pooled30card enters confirmed three-hero level")
+	_check(game.model.hero_count() == 3 and game.model.hero_position(0) == Vector2i(0,1) and game.model.hero_position(1) == Vector2i(0,2) and game.model.hero_position(2) == Vector2i(0,3),"10red/19green/28blue exact,green is not a gray hero")
+	_check(game.model.crates() == [Vector2i(8,2)] and game.model.monsters().size() == 2 and game.model.occupied_exits() == 0,"one crystal,two dragons,three initially empty goals")
+	var initial: Dictionary = game.model.snapshot()
+	_check_layout(game); await _capture("north_30_initial.png")
+	var key := InputEventKey.new(); key.keycode = KEY_D; key.physical_keycode = KEY_D; key.pressed = true
+	Input.parse_input_event(key); await _settle(); var once: Dictionary = game.model.snapshot()
+	for echo in [true,false,true]:
+		key.echo = echo; Input.parse_input_event(key); await _settle()
+		_check(game.model.snapshot() == once and game.model.moves == 1 and game.model.alive,"held/echo does not enter lethal next column")
+	key.pressed = false; Input.parse_input_event(key); await _settle(); await _click("Undo")
+	_check(game.model.snapshot() == initial,"screenUndo restores first actual action")
+	await _click("SwitchHero")
+	_check(game.model.active_hero_id() == "red" and game.model.snapshot() == initial,"screen switch free,without world/attack change")
+	await _click("Undo"); _check(game.model.active_hero_id() == "red" and game.model.snapshot() == initial,"empty Undo does not undo selection")
+	await _click("Restart")
+	await _click("MoveUp")
+	_check(game.model.swaps == 1 and game.model.player == Vector2i(0,2) and game.model.hero_position(1) == Vector2i(0,3),"screen direction passively swaps first visible hero")
+	await _click("Undo"); _check(game.model.snapshot() == initial,"screenUndo restores hero exchange atomically")
+	await _press(KEY_C); await _press(KEY_D); await _press(KEY_D)
+	_check(not game.model.alive and game.model.death_reason == "fire" and game.model.active_hero_id() == "red","actual unshielded red shortcut dies")
+	await _capture("north_30_unshielded_death.png")
+	var dead: Dictionary = game.model.snapshot()
+	await _press(KEY_C); await _press(KEY_R); await _click("BackToLevels")
+	_check(game.model.snapshot() == dead and not game.menu.visible,"death cannot be bypassed by C/restart/menu")
+	await _click("Undo"); _check(game.model.alive and game.model.player == Vector2i(1,1) and game.model.active_hero_id() == "red","only Undo revives and retains selection")
+	await _click("Restart"); _check(game.model.snapshot() == initial and game.model.active_hero_id() == "blue","restart restores initial selection and all identities")
+	var solution: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://levels/solutions/north_30.json"))
+	var proof: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://artifacts/verification/north_30_route.json"))
+	var history: Array[Dictionary] = []
+	var selections := 0
+	for symbol in solution["path"]:
+		var before: Dictionary = game.model.snapshot()
+		if symbol == "C":
+			await _press(KEY_C); selections += 1
+			_check(game.model.snapshot() == before and game.model.history_size() == game.model.moves,"keyboard C changes highlight without operation/history/attack")
+			continue
+		history.append(before); await _press(_keycode(symbol))
+		var expected: Dictionary = proof["trace"][game.model.moves-1]
+		_check(game.model.alive and game.model.active_hero_id() == expected["hero"] and game.model.moves == history.size(),"actual selected hero commits one living action")
+		for i in 3: _check(game.model.hero_position(i) == _cell(expected["heroes"][i]) and game.model.hero_is_alive(i),"real inputs agree with independent hero identities")
+		_check(game.model.crate_id(_cell(expected["crystal"])) == 0 and game.model.pushes == expected["pushes"] and game.model.pulls == expected["pulls"] and game.model.swaps == expected["swaps"],"real crystal and counters match independent proof")
+		_check(game.model.fire_rays().all(func(ray: Dictionary)->bool: return ray["target"].is_empty()),"chosen route never triggers an attack")
+		if game.model.moves in [11,20,25,28,31,34]: await _capture("north_30_action_%02d.png" % game.model.moves)
+		if game.model.moves == 11: _check(not game.model.fire_danger_at(Vector2i(2,2)),"left crystal shield opens upper crossing")
+		if game.model.moves == 28: _check(not game.model.fire_danger_at(Vector2i(6,3)) and game.model.fire_danger_at(Vector2i(6,1)),"right shield blocks only flame beyond crystal")
+	_check(game.model.is_complete() and game.model.occupied_exits() == 3 and game.moves_label.text == "40" and game.model.pushes == 3 and game.model.pulls == 3 and game.model.swaps == 7 and selections == 11,"40actualactions/11freeC,3push3pull7swap,three-goal victory")
+	await _capture("north_30_completed.png")
+	await _click("Undo"); _check(game.model.snapshot() == history[-1] and not game.model.is_complete() and game.model.active_hero_id() == "green","victoryUndo restores whole world and retains current choice")
+	await _click("Restart")
+	root.size = Vector2i(960,615); await _settle(); _check_layout(game); await _capture("north_30_compact_blue.png")
+	await _click("SwitchHero"); _check(game.model.active_hero_id() == "red" and game.model.moves == 0,"small-window screen selection red remains free")
+	_check_layout(game); await _capture("north_30_compact_red.png")
+	await _click("SwitchHero"); _check(game.model.active_hero_id() == "green" and game.model.moves == 0,"small-window screen selection green retains distinct hue")
+	_check_layout(game); await _capture("north_30_compact_green.png")
+	await _click("BackToLevels")
+	_check(game.menu.strip.item_count == 30 and game.menu.strip.pool.size() <= game.menu.strip.capacity_bound(),"30reallevels use bounded persistent pool")
+	await _capture("north_30_navigation.png")
+	await _click("Level29"); _check(game.model.level.id == "north_hero_29" and game.model.monsters().size() == 4,"fixed29 preserved")
+	await _click("Level30"); _check(game.model.snapshot() == initial and game.model.active_hero_id() == "blue","30 history cannot leak across menu or previous level")
+	print("NORTH30 SCENE RESULT: %d checks, %d failures;display=%s" % [checks,failures,DisplayServer.get_name()])
+	quit(0 if failures == 0 else 1)
+
+func _cell(a: Array) -> Vector2i: return Vector2i(a[0],a[1])

@@ -1,0 +1,15 @@
+{
+  "level_id": "north_hero_30",
+  "path": "URDLURDLCDCCUCRURRUCCRRRDRCCRRULUCCDRRDRRUURCDDRRRU",
+  "moves": 40,
+  "directions": 40,
+  "input_events": 51,
+  "selection_events": 11,
+  "pushes": 3,
+  "pulls": 3,
+  "swaps": 7,
+  "dragon_pulls": 0,
+  "crystal_pulls": 3,
+  "destroyed_crystals": 0,
+  "note": "构造路线并独立按身份逐步复算；三英雄利用水晶依次遮挡两列火线，40行动与11次免费选择，3推3拉7交换。两龙原位存活，无实际攻击；不宣称最短或穷举。"
+}

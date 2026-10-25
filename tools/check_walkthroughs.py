@@ -299,6 +299,8 @@ def check_visual_feedback(item, evidence):
             locked = {r["dragon"]: r["target"] for r in views[action-1]["locked_fire"]}
             assert locked[pair[0]] == {"kind":"monster", "id":pair[1]}
             assert locked[pair[1]] == {"kind":"monster", "id":pair[0]}
+    if item["level"] == 30 and require_targets:
+        assert not any(v["locked_fire"] for v in views), "Chosen level30 route shields every crossing and triggers no attack"
 
 
 def check_media(item, evidence):

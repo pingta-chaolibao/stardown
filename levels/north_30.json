@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_30",
+  "title": "北部英雄 · 第三十关",
+  "is_temporary": false,
+  "source_note": "用户确认9×5编号图及全部布局；19号是绿色拉动英雄。中间三行完整可走，7号火龙朝下、39号朝上；无新机制，原创2D几何表现。",
+  "terrain": [
+    "######.##",
+    ".........",
+    ".........",
+    ".........",
+    "##.######"
+  ],
+  "heroes": [
+    {
+      "id": "red",
+      "kind": "red",
+      "position": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "green",
+      "kind": "green",
+      "position": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "blue",
+      "kind": "blue",
+      "position": [
+        0,
+        3
+      ]
+    }
+  ],
+  "active_hero": "blue",
+  "crates": [
+    [
+      8,
+      2
+    ]
+  ],
+  "crystal_colors": [
+    "purple"
+  ],
+  "targets": [],
+  "exits": [
+    [
+      8,
+      1
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      8,
+      3
+    ]
+  ],
+  "exit_color": "green",
+  "objective": "all_heroes_on_exits",
+  "monsters": [
+    {
+      "kind": "fire_dragon",
+      "position": [
+        6,
+        0
+      ],
+      "facing": "down"
+    },
+    {
+      "kind": "fire_dragon",
+      "position": [
+        2,
+        4
+      ],
+      "facing": "up"
+    }
+  ]
+}

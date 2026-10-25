@@ -1,0 +1,717 @@
+{
+  "base": "d6c625eb0bf05add4814f4a91258c0782aff328b",
+  "checks": [
+    {
+      "file": "scripts/core/bush_obstacle.gd",
+      "sha256": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+      "baseline_parse_name": "02_parse_00_bush_obstacle",
+      "current_parse_name": "02_parse_00_bush_obstacle"
+    },
+    {
+      "file": "scripts/core/energy_rules.gd",
+      "sha256": "4d6f75958b8d9f72bc8c268c28b066404c10a307a17c1b89e5d6a354a9f0f781",
+      "baseline_parse_name": "02_parse_01_energy_rules",
+      "current_parse_name": "02_parse_01_energy_rules"
+    },
+    {
+      "file": "scripts/core/fence_edges.gd",
+      "sha256": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+      "baseline_parse_name": "02_parse_02_fence_edges",
+      "current_parse_name": "02_parse_02_fence_edges"
+    },
+    {
+      "file": "scripts/core/fire_rules.gd",
+      "sha256": "2710bdffe3b25ddbde4109cf590b7376d85796f7372af6ff9945a472953caaa0",
+      "baseline_parse_name": "02_parse_03_fire_rules",
+      "current_parse_name": "02_parse_03_fire_rules"
+    },
+    {
+      "file": "scripts/core/grid_state.gd",
+      "sha256": "bb6f892aa76657d35f775f1b3cfffb334c178ddf8d9ae1575669c2c28c4a1571",
+      "baseline_parse_name": "02_parse_04_grid_state",
+      "current_parse_name": "02_parse_04_grid_state"
+    },
+    {
+      "file": "scripts/core/hero_rules.gd",
+      "sha256": "a4839e71c09cf4023d537f12a5d5948a0f91ced1d3dac6d61208d59ac3dbeae7",
+      "baseline_parse_name": "02_parse_05_hero_rules",
+      "current_parse_name": "02_parse_05_hero_rules"
+    },
+    {
+      "file": "scripts/core/level_data.gd",
+      "sha256": "4a2eed7827d7a38c1b95814862b4d14903b3c10ad73e17dc722076e6a81fd9ea",
+      "baseline_parse_name": "02_parse_06_level_data",
+      "current_parse_name": "02_parse_06_level_data"
+    },
+    {
+      "file": "scripts/core/monster_rules.gd",
+      "sha256": "0d9328fb1148fc2ef02f70abfa3167955f08e6b01a58d0c9b0ec804d178f6867",
+      "baseline_parse_name": "02_parse_07_monster_rules",
+      "current_parse_name": "02_parse_07_monster_rules"
+    },
+    {
+      "file": "scripts/core/swap_rules.gd",
+      "sha256": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+      "baseline_parse_name": "02_parse_08_swap_rules",
+      "current_parse_name": "02_parse_08_swap_rules"
+    },
+    {
+      "file": "scripts/input/step_input.gd",
+      "sha256": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a",
+      "baseline_parse_name": "02_parse_09_step_input",
+      "current_parse_name": "02_parse_09_step_input"
+    },
+    {
+      "file": "scripts/view/board_view.gd",
+      "sha256": "22c808bc3b4c9c78b13d3d574f71c396914bde9a33e49e52ed28eec5eb25ba15",
+      "baseline_parse_name": "02_parse_11_board_view",
+      "current_parse_name": "02_parse_11_board_view"
+    },
+    {
+      "file": "scripts/view/feedback_events.gd",
+      "sha256": "0f91c9f0625cfac1373d3d1cad2bc89247067b497c15799b870600d7796d8faf",
+      "baseline_parse_name": "02_parse_12_feedback_events",
+      "current_parse_name": "02_parse_12_feedback_events"
+    },
+    {
+      "file": "scripts/view/feedback_timeline.gd",
+      "sha256": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+      "baseline_parse_name": "02_parse_13_feedback_timeline",
+      "current_parse_name": "02_parse_13_feedback_timeline"
+    },
+    {
+      "file": "scripts/view/level_card.gd",
+      "sha256": "5635314365d5a0ab2edd3a608a1e368b2990db0723d63f1c48101c00a7763ec2",
+      "baseline_parse_name": "02_parse_14_level_card",
+      "current_parse_name": "02_parse_14_level_card"
+    },
+    {
+      "file": "scripts/view/level_menu.gd",
+      "sha256": "f7ba0588a971b3b200fa32320ca6efbcc51a0def4d87c331860cb66b347df2c7",
+      "baseline_parse_name": "02_parse_15_level_menu",
+      "current_parse_name": "02_parse_15_level_menu"
+    },
+    {
+      "file": "scripts/view/virtual_level_strip.gd",
+      "sha256": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d",
+      "baseline_parse_name": "02_parse_16_virtual_level_strip",
+      "current_parse_name": "02_parse_16_virtual_level_strip"
+    },
+    {
+      "file": "tests/blue_swap_regression.gd",
+      "sha256": "b18dfbee6e1047eda61398af9832b4f4759bfb2c14cbfe3d0aa335d5398be30e",
+      "baseline_parse_name": "02_parse_17_blue_swap_regression",
+      "current_parse_name": "02_parse_17_blue_swap_regression"
+    },
+    {
+      "file": "tests/bush_and_group_regression.gd",
+      "sha256": "c69f97de7adc2971bdbd46b4ea1acbada842a01c3c3f3b722d182a848f8db4fd",
+      "baseline_parse_name": "02_parse_18_bush_and_group_regression",
+      "current_parse_name": "02_parse_18_bush_and_group_regression"
+    },
+    {
+      "file": "tests/chain_push_regression.gd",
+      "sha256": "bda55346b683a4394c81fc2d55b0e17b78aa96daa2286430cf17d192d82a49ff",
+      "baseline_parse_name": "02_parse_19_chain_push_regression",
+      "current_parse_name": "02_parse_19_chain_push_regression"
+    },
+    {
+      "file": "tests/energy_destruction_regression.gd",
+      "sha256": "891bedcaa43282849b7132faab6b5edd21c956818e3997cc3bc0214de9dbce88",
+      "baseline_parse_name": "02_parse_20_energy_destruction_regression",
+      "current_parse_name": "02_parse_20_energy_destruction_regression"
+    },
+    {
+      "file": "tests/energy_regression.gd",
+      "sha256": "fcc21de4fa9a3527dbfaaa0385a581ae26bf151fa3caca1ef946135f59a7871c",
+      "baseline_parse_name": "02_parse_21_energy_regression",
+      "current_parse_name": "02_parse_21_energy_regression"
+    },
+    {
+      "file": "tests/energy_visibility_scene.gd",
+      "sha256": "c41260762ec85d7c61857006321affc49c320755a297620e9a6cdfc262abd8f0",
+      "baseline_parse_name": "02_parse_22_energy_visibility_scene",
+      "current_parse_name": "02_parse_22_energy_visibility_scene"
+    },
+    {
+      "file": "tests/feedback_cases.gd",
+      "sha256": "7f1eadc4e925a03928ccaed1864ccb6d240321bc281f3f9a6a1f106187ea485e",
+      "baseline_parse_name": "02_parse_23_feedback_cases",
+      "current_parse_name": "02_parse_23_feedback_cases"
+    },
+    {
+      "file": "tests/feedback_scene.gd",
+      "sha256": "6aaad87e24d60b5e57b6d331387cdff43cad91445b440715baf55dc701d6e512",
+      "baseline_parse_name": "02_parse_25_feedback_scene",
+      "current_parse_name": "02_parse_25_feedback_scene"
+    },
+    {
+      "file": "tests/fence_regression.gd",
+      "sha256": "03817daaf19990eda6890b586b5bff025633dd7cf3127ece7d4ff12d724fa835",
+      "baseline_parse_name": "02_parse_26_fence_regression",
+      "current_parse_name": "02_parse_26_fence_regression"
+    },
+    {
+      "file": "tests/fire_dragon_regression.gd",
+      "sha256": "40cd970cc931b44c773c3901b1e2d6bf07816c9112a233a634556ca726f8ff18",
+      "baseline_parse_name": "02_parse_27_fire_dragon_regression",
+      "current_parse_name": "02_parse_27_fire_dragon_regression"
+    },
+    {
+      "file": "tests/global_energy_regression.gd",
+      "sha256": "1d3c29499d55da6f6e8d9ebe1262216201f987c44a44286a9e3a5715a9dde8f7",
+      "baseline_parse_name": "02_parse_28_global_energy_regression",
+      "current_parse_name": "02_parse_28_global_energy_regression"
+    },
+    {
+      "file": "tests/green_dragon_pull_regression.gd",
+      "sha256": "8e70f8bb878c35f7e32ae9b19616d7971fde3c4b72c5b6199dc92893050687a9",
+      "baseline_parse_name": "02_parse_29_green_dragon_pull_regression",
+      "current_parse_name": "02_parse_29_green_dragon_pull_regression"
+    },
+    {
+      "file": "tests/green_dragon_pull_scene.gd",
+      "sha256": "c5d435c0a45f3e305b03552e927d3580d4ba3e840f4eb28c2dc6c172922484cc",
+      "baseline_parse_name": "02_parse_30_green_dragon_pull_scene",
+      "current_parse_name": "02_parse_30_green_dragon_pull_scene"
+    },
+    {
+      "file": "tests/green_pull_regression.gd",
+      "sha256": "2874ef517921cb0d4f6a343af3e9350751a6e3b909df1b267bb63ba8711abbb9",
+      "baseline_parse_name": "02_parse_31_green_pull_regression",
+      "current_parse_name": "02_parse_31_green_pull_regression"
+    },
+    {
+      "file": "tests/monster_regression.gd",
+      "sha256": "4c6ad2736510bad84c7b77c28183e70f565a3344d7336bca3ecad7f68259316f",
+      "baseline_parse_name": "02_parse_32_monster_regression",
+      "current_parse_name": "02_parse_32_monster_regression"
+    },
+    {
+      "file": "tests/multi_hero_regression.gd",
+      "sha256": "0331b230cb99dc2bd347abaf20e666e42d1920ae20aef7f49192ee5453221899",
+      "baseline_parse_name": "02_parse_33_multi_hero_regression",
+      "current_parse_name": "02_parse_33_multi_hero_regression"
+    },
+    {
+      "file": "tests/navigation_scene.gd",
+      "sha256": "d9d6e910eaa881feb46f4692cee1eb7f635cf16bb63f6784daf007012ca967f5",
+      "baseline_parse_name": "02_parse_34_navigation_scene",
+      "current_parse_name": "02_parse_34_navigation_scene"
+    },
+    {
+      "file": "tests/north_01_regression.gd",
+      "sha256": "1efc64ab42eae4b03806b5c929c886265279bd635b5ffba798e47a27a8f74e07",
+      "baseline_parse_name": "02_parse_35_north_01_regression",
+      "current_parse_name": "02_parse_35_north_01_regression"
+    },
+    {
+      "file": "tests/north_02_regression.gd",
+      "sha256": "bf0ea1099dfa9d5f80de4118d7ae932e7698c021b51523065f29a3f59e8c7d1a",
+      "baseline_parse_name": "02_parse_36_north_02_regression",
+      "current_parse_name": "02_parse_36_north_02_regression"
+    },
+    {
+      "file": "tests/north_02_scene.gd",
+      "sha256": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+      "baseline_parse_name": "02_parse_37_north_02_scene",
+      "current_parse_name": "02_parse_37_north_02_scene"
+    },
+    {
+      "file": "tests/north_03_regression.gd",
+      "sha256": "3320cbf2b9818271f9922635a9be6f25ab40bff7a107cb918f43fb314dd518cd",
+      "baseline_parse_name": "02_parse_38_north_03_regression",
+      "current_parse_name": "02_parse_38_north_03_regression"
+    },
+    {
+      "file": "tests/north_03_scene.gd",
+      "sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0",
+      "baseline_parse_name": "02_parse_39_north_03_scene",
+      "current_parse_name": "02_parse_39_north_03_scene"
+    },
+    {
+      "file": "tests/north_04_regression.gd",
+      "sha256": "7b975d0e605420f2fa3fabed79e9a761ce8bb56a8d3bbf710935add9bc248a02",
+      "baseline_parse_name": "02_parse_40_north_04_regression",
+      "current_parse_name": "02_parse_40_north_04_regression"
+    },
+    {
+      "file": "tests/north_04_scene.gd",
+      "sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4",
+      "baseline_parse_name": "02_parse_41_north_04_scene",
+      "current_parse_name": "02_parse_41_north_04_scene"
+    },
+    {
+      "file": "tests/north_05_regression.gd",
+      "sha256": "1a8fb647e50b4334be3c748f33393d431a3abe1cc4e7165f96effa0466b7cc24",
+      "baseline_parse_name": "02_parse_42_north_05_regression",
+      "current_parse_name": "02_parse_42_north_05_regression"
+    },
+    {
+      "file": "tests/north_05_scene.gd",
+      "sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45",
+      "baseline_parse_name": "02_parse_43_north_05_scene",
+      "current_parse_name": "02_parse_43_north_05_scene"
+    },
+    {
+      "file": "tests/north_06_regression.gd",
+      "sha256": "c53a922d497450e1774a97e80d378e299b3ee510ce0ce6dfbb9e749452756d1d",
+      "baseline_parse_name": "02_parse_44_north_06_regression",
+      "current_parse_name": "02_parse_44_north_06_regression"
+    },
+    {
+      "file": "tests/north_06_scene.gd",
+      "sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a",
+      "baseline_parse_name": "02_parse_45_north_06_scene",
+      "current_parse_name": "02_parse_45_north_06_scene"
+    },
+    {
+      "file": "tests/north_07_regression.gd",
+      "sha256": "9b438a03f5403ba0c858733fd24a92e6f3e0eea946168c23bb634f610dbb5db5",
+      "baseline_parse_name": "02_parse_46_north_07_regression",
+      "current_parse_name": "02_parse_46_north_07_regression"
+    },
+    {
+      "file": "tests/north_07_scene.gd",
+      "sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f",
+      "baseline_parse_name": "02_parse_47_north_07_scene",
+      "current_parse_name": "02_parse_47_north_07_scene"
+    },
+    {
+      "file": "tests/north_08_regression.gd",
+      "sha256": "3a9a02f8c3af160cee0c21ac32c1b72914e53ef8676d72eb8b3da022a15dfe02",
+      "baseline_parse_name": "02_parse_48_north_08_regression",
+      "current_parse_name": "02_parse_48_north_08_regression"
+    },
+    {
+      "file": "tests/north_08_scene.gd",
+      "sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767",
+      "baseline_parse_name": "02_parse_49_north_08_scene",
+      "current_parse_name": "02_parse_49_north_08_scene"
+    },
+    {
+      "file": "tests/north_09_regression.gd",
+      "sha256": "a7a1ba0deec8aa131206588a2e2bbabad7b24d5f7335bd7520e1f30e84889444",
+      "baseline_parse_name": "02_parse_50_north_09_regression",
+      "current_parse_name": "02_parse_50_north_09_regression"
+    },
+    {
+      "file": "tests/north_09_scene.gd",
+      "sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653",
+      "baseline_parse_name": "02_parse_51_north_09_scene",
+      "current_parse_name": "02_parse_51_north_09_scene"
+    },
+    {
+      "file": "tests/north_10_regression.gd",
+      "sha256": "d833cff22eed25743fbd2ae7f511a091c1020ca7282b801210f313945ff15790",
+      "baseline_parse_name": "02_parse_52_north_10_regression",
+      "current_parse_name": "02_parse_52_north_10_regression"
+    },
+    {
+      "file": "tests/north_10_scene.gd",
+      "sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d",
+      "baseline_parse_name": "02_parse_53_north_10_scene",
+      "current_parse_name": "02_parse_53_north_10_scene"
+    },
+    {
+      "file": "tests/north_11_regression.gd",
+      "sha256": "fcbf162596e05dacd900e993a483ad3d8c94ca5aee4861337d8d56ffb3e1f0be",
+      "baseline_parse_name": "02_parse_54_north_11_regression",
+      "current_parse_name": "02_parse_54_north_11_regression"
+    },
+    {
+      "file": "tests/north_11_scene.gd",
+      "sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117",
+      "baseline_parse_name": "02_parse_55_north_11_scene",
+      "current_parse_name": "02_parse_55_north_11_scene"
+    },
+    {
+      "file": "tests/north_12_regression.gd",
+      "sha256": "ff1b4d812d34418ef731cc3305c9e0705017124ad19a1c215b20c60fc515d40c",
+      "baseline_parse_name": "02_parse_56_north_12_regression",
+      "current_parse_name": "02_parse_56_north_12_regression"
+    },
+    {
+      "file": "tests/north_12_scene.gd",
+      "sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c",
+      "baseline_parse_name": "02_parse_57_north_12_scene",
+      "current_parse_name": "02_parse_57_north_12_scene"
+    },
+    {
+      "file": "tests/north_13_regression.gd",
+      "sha256": "578968e74a77d92feaa6a5aa4e16904760b9f2a6fc7bf410cddd0c6c403450a4",
+      "baseline_parse_name": "02_parse_58_north_13_regression",
+      "current_parse_name": "02_parse_58_north_13_regression"
+    },
+    {
+      "file": "tests/north_13_scene.gd",
+      "sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a",
+      "baseline_parse_name": "02_parse_59_north_13_scene",
+      "current_parse_name": "02_parse_59_north_13_scene"
+    },
+    {
+      "file": "tests/north_14_regression.gd",
+      "sha256": "74da5e6158136ae3e94e86c337bfe97d8045439c961ae1a605b6f4bf210e1654",
+      "baseline_parse_name": "02_parse_60_north_14_regression",
+      "current_parse_name": "02_parse_60_north_14_regression"
+    },
+    {
+      "file": "tests/north_14_scene.gd",
+      "sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b",
+      "baseline_parse_name": "02_parse_61_north_14_scene",
+      "current_parse_name": "02_parse_61_north_14_scene"
+    },
+    {
+      "file": "tests/north_15_regression.gd",
+      "sha256": "f5b104a3d965c60bba273472d492c379ece91d3530f1c31088877d0299415b1e",
+      "baseline_parse_name": "02_parse_62_north_15_regression",
+      "current_parse_name": "02_parse_62_north_15_regression"
+    },
+    {
+      "file": "tests/north_15_scene.gd",
+      "sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb",
+      "baseline_parse_name": "02_parse_63_north_15_scene",
+      "current_parse_name": "02_parse_63_north_15_scene"
+    },
+    {
+      "file": "tests/north_16_regression.gd",
+      "sha256": "5b373eaef6e742aec472dc452499b84661cd4d842e3bc94874e1694e5541efa7",
+      "baseline_parse_name": "02_parse_64_north_16_regression",
+      "current_parse_name": "02_parse_64_north_16_regression"
+    },
+    {
+      "file": "tests/north_16_scene.gd",
+      "sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba",
+      "baseline_parse_name": "02_parse_65_north_16_scene",
+      "current_parse_name": "02_parse_65_north_16_scene"
+    },
+    {
+      "file": "tests/north_17_regression.gd",
+      "sha256": "36eca8d1f3d739d87f45948b30aca88b740b2412cf651b6612bcf29f9df5bf99",
+      "baseline_parse_name": "02_parse_66_north_17_regression",
+      "current_parse_name": "02_parse_66_north_17_regression"
+    },
+    {
+      "file": "tests/north_17_scene.gd",
+      "sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191",
+      "baseline_parse_name": "02_parse_67_north_17_scene",
+      "current_parse_name": "02_parse_67_north_17_scene"
+    },
+    {
+      "file": "tests/north_18_regression.gd",
+      "sha256": "01cb8d689606e6094abd7214fa52cf4a66f2f14d64c3d54436bf317fd71fd716",
+      "baseline_parse_name": "02_parse_68_north_18_regression",
+      "current_parse_name": "02_parse_68_north_18_regression"
+    },
+    {
+      "file": "tests/north_18_scene.gd",
+      "sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb",
+      "baseline_parse_name": "02_parse_69_north_18_scene",
+      "current_parse_name": "02_parse_69_north_18_scene"
+    },
+    {
+      "file": "tests/north_19_regression.gd",
+      "sha256": "2c8938dfd6c627780d945ad547a77ede6dd5de5e63451e0d468faaf100ab45e2",
+      "baseline_parse_name": "02_parse_70_north_19_regression",
+      "current_parse_name": "02_parse_70_north_19_regression"
+    },
+    {
+      "file": "tests/north_19_scene.gd",
+      "sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6",
+      "baseline_parse_name": "02_parse_71_north_19_scene",
+      "current_parse_name": "02_parse_71_north_19_scene"
+    },
+    {
+      "file": "tests/north_20_regression.gd",
+      "sha256": "e569073b093749e4c12dae9dbec6a2b6059fb6f09018c69ccd711345b38a7f2f",
+      "baseline_parse_name": "02_parse_72_north_20_regression",
+      "current_parse_name": "02_parse_72_north_20_regression"
+    },
+    {
+      "file": "tests/north_20_scene.gd",
+      "sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255",
+      "baseline_parse_name": "02_parse_73_north_20_scene",
+      "current_parse_name": "02_parse_73_north_20_scene"
+    },
+    {
+      "file": "tests/north_21_regression.gd",
+      "sha256": "8473a6213c52c724d564aa4c80c8e83514f9c3482795dd98551811d715765cac",
+      "baseline_parse_name": "02_parse_74_north_21_regression",
+      "current_parse_name": "02_parse_74_north_21_regression"
+    },
+    {
+      "file": "tests/north_21_scene.gd",
+      "sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a",
+      "baseline_parse_name": "02_parse_75_north_21_scene",
+      "current_parse_name": "02_parse_75_north_21_scene"
+    },
+    {
+      "file": "tests/north_22_regression.gd",
+      "sha256": "823531af34fb05aba87a62bea3e261c3c719d062e06eb36a1c770793b60443be",
+      "baseline_parse_name": "02_parse_76_north_22_regression",
+      "current_parse_name": "02_parse_76_north_22_regression"
+    },
+    {
+      "file": "tests/north_22_scene.gd",
+      "sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780",
+      "baseline_parse_name": "02_parse_77_north_22_scene",
+      "current_parse_name": "02_parse_77_north_22_scene"
+    },
+    {
+      "file": "tests/north_23_regression.gd",
+      "sha256": "85d2e5228f668490cabdedeb1f04b57916280fa1e0897ae0af3295c1d2c3158a",
+      "baseline_parse_name": "02_parse_78_north_23_regression",
+      "current_parse_name": "02_parse_78_north_23_regression"
+    },
+    {
+      "file": "tests/north_23_scene.gd",
+      "sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657",
+      "baseline_parse_name": "02_parse_79_north_23_scene",
+      "current_parse_name": "02_parse_79_north_23_scene"
+    },
+    {
+      "file": "tests/north_24_regression.gd",
+      "sha256": "5ea464c53f54c2f285cd9ea00fde39330cc7ded2b6bc119b30999b27bf3ea1c9",
+      "baseline_parse_name": "02_parse_80_north_24_regression",
+      "current_parse_name": "02_parse_80_north_24_regression"
+    },
+    {
+      "file": "tests/north_24_scene.gd",
+      "sha256": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809",
+      "baseline_parse_name": "02_parse_81_north_24_scene",
+      "current_parse_name": "02_parse_81_north_24_scene"
+    },
+    {
+      "file": "tests/north_25_regression.gd",
+      "sha256": "a55c9716a1789d16ba9cf07803a610c16a8ed50f1afd86d23183a6994b690884",
+      "baseline_parse_name": "02_parse_82_north_25_regression",
+      "current_parse_name": "02_parse_82_north_25_regression"
+    },
+    {
+      "file": "tests/north_25_scene.gd",
+      "sha256": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab",
+      "baseline_parse_name": "02_parse_83_north_25_scene",
+      "current_parse_name": "02_parse_83_north_25_scene"
+    },
+    {
+      "file": "tests/north_26_regression.gd",
+      "sha256": "c1960ff743bdac1248a45f745bf65bdf031d24924350563f08d77a58db86a15e",
+      "baseline_parse_name": "02_parse_84_north_26_regression",
+      "current_parse_name": "02_parse_84_north_26_regression"
+    },
+    {
+      "file": "tests/north_26_scene.gd",
+      "sha256": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c",
+      "baseline_parse_name": "02_parse_85_north_26_scene",
+      "current_parse_name": "02_parse_85_north_26_scene"
+    },
+    {
+      "file": "tests/north_27_regression.gd",
+      "sha256": "01cb00fe04fea707443bcd54b19c6f7c4e37c2493c3e6224ac1a7c47b579b49b",
+      "baseline_parse_name": "02_parse_86_north_27_regression",
+      "current_parse_name": "02_parse_86_north_27_regression"
+    },
+    {
+      "file": "tests/north_27_scene.gd",
+      "sha256": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3",
+      "baseline_parse_name": "02_parse_87_north_27_scene",
+      "current_parse_name": "02_parse_87_north_27_scene"
+    },
+    {
+      "file": "tests/north_28_regression.gd",
+      "sha256": "5364bd271076f2f86810671fb6947f91aa612069f759bfa3f0599175a5c27288",
+      "baseline_parse_name": "02_parse_88_north_28_regression",
+      "current_parse_name": "02_parse_88_north_28_regression"
+    },
+    {
+      "file": "tests/north_28_scene.gd",
+      "sha256": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf",
+      "baseline_parse_name": "02_parse_89_north_28_scene",
+      "current_parse_name": "02_parse_89_north_28_scene"
+    },
+    {
+      "file": "tests/north_29_regression.gd",
+      "sha256": "e12e3f227584d6a343eb7807997615aa83c9deb3efb0cf369d704c4a392b2f5b",
+      "baseline_parse_name": "02_parse_90_north_29_regression",
+      "current_parse_name": "02_parse_90_north_29_regression"
+    },
+    {
+      "file": "tests/run_tests.gd",
+      "sha256": "4d1a1dcbb4e576c5555e115855c547205cfb1deb93deef99ef5ed07d60ad5d6f",
+      "baseline_parse_name": "02_parse_92_run_tests",
+      "current_parse_name": "02_parse_94_run_tests"
+    },
+    {
+      "file": "tests/scene_smoke.gd",
+      "sha256": "72fb4ec6c0e8002db315754429287ebb7d0c05c24cc055e808014cb725773a60",
+      "baseline_parse_name": "02_parse_93_scene_smoke",
+      "current_parse_name": "02_parse_95_scene_smoke"
+    }
+  ],
+  "fresh_parse": [
+    "scripts/main.gd",
+    "tests/feedback_regression.gd",
+    "tests/north_29_scene.gd",
+    "tests/north_30_regression.gd",
+    "tests/north_30_scene.gd"
+  ],
+  "never_reused": "models, routes, input, X11, navigation, media, recorder parsing",
+  "verification_scope": {
+    "base": "d6c625eb0bf05add4814f4a91258c0782aff328b",
+    "fresh_stages": 131,
+    "reused_syntax_stages": 91,
+    "all_models_and_independent_checks_fresh": true,
+    "all30_input_and_X11_render_checks_fresh": true,
+    "all_core_input_maps_unchanged": true,
+    "all_core_view_input_unchanged": true,
+    "engine_equal_to_baseline": true,
+    "only_reuse": "Git and passing-baseline verified byte-identical GDScript syntax checks",
+    "recorder_parsing_fresh": true
+  },
+  "unchanged_engine_files": {
+    "scripts/core/level_data.gd": "4a2eed7827d7a38c1b95814862b4d14903b3c10ad73e17dc722076e6a81fd9ea",
+    "scripts/core/energy_rules.gd": "4d6f75958b8d9f72bc8c268c28b066404c10a307a17c1b89e5d6a354a9f0f781",
+    "scripts/core/grid_state.gd": "bb6f892aa76657d35f775f1b3cfffb334c178ddf8d9ae1575669c2c28c4a1571",
+    "scripts/core/fire_rules.gd": "2710bdffe3b25ddbde4109cf590b7376d85796f7372af6ff9945a472953caaa0",
+    "scripts/core/hero_rules.gd": "a4839e71c09cf4023d537f12a5d5948a0f91ced1d3dac6d61208d59ac3dbeae7",
+    "scripts/core/swap_rules.gd": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+    "scripts/core/fence_edges.gd": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+    "scripts/core/monster_rules.gd": "0d9328fb1148fc2ef02f70abfa3167955f08e6b01a58d0c9b0ec804d178f6867",
+    "scripts/core/bush_obstacle.gd": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+    "scripts/view/virtual_level_strip.gd": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d",
+    "scripts/view/level_menu.gd": "f7ba0588a971b3b200fa32320ca6efbcc51a0def4d87c331860cb66b347df2c7",
+    "scripts/view/level_card.gd": "5635314365d5a0ab2edd3a608a1e368b2990db0723d63f1c48101c00a7763ec2",
+    "scripts/view/feedback_events.gd": "0f91c9f0625cfac1373d3d1cad2bc89247067b497c15799b870600d7796d8faf",
+    "scripts/view/board_view.gd": "22c808bc3b4c9c78b13d3d574f71c396914bde9a33e49e52ed28eec5eb25ba15",
+    "scripts/view/feedback_timeline.gd": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+    "scripts/input/step_input.gd": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a"
+  },
+  "preserved_files": {
+    "levels/mappings/north_27_markers.json": "a766f8a995ece6b8bebc3dba1c82d7387f9d696867272b2f618d7e859015d440",
+    "levels/north_01.json": "17a29d0e73951b7f0d6f5c7d6df775969d721f6732e27f26c2f0248f4e1880d9",
+    "levels/north_02.json": "8cb130ecef2a83557ceef02399d688390188a7dd665587302cd509b55d162f4f",
+    "levels/north_03.json": "2b5b3e1f1dd384fbd28826394c60d8f17b8d8441151d32313bd26c0a9222114c",
+    "levels/north_04.json": "01761d10577b3455cb6e98681199971af7e87f5de68b355b0ee78715d4c10116",
+    "levels/north_05.json": "4b112934f4872c7db841425a2d8c8757e82cfb58317c37ae361f7fe1cbc75b5f",
+    "levels/north_06.json": "c1587bb9497b7627462f9ee5d6756a0335c210cad8b645508d98d6185c5b4fc3",
+    "levels/north_07.json": "318b92c535deeb38abdc8903ce3f9142be690fa5c4958ce0444511639a43fb67",
+    "levels/north_08.json": "03c2dd041136f8eb2fbae87d576bb3ba9797463f0d86b929acd827b5d36c5d88",
+    "levels/north_09.json": "adebc84be096e0229a75d7f87e00d22c6089208d9dc8c461369f7e7064d03fd2",
+    "levels/north_10.json": "85e23a355130d3032397b428039c47b3382427fa34512251087f5287282d36ec",
+    "levels/north_11.json": "64da72c3df1d30458f0e9571c0793756601871159f7a0863342859840c057eba",
+    "levels/north_12.json": "ea5ace23428f061d5e76aaa81df6e820a0a95972e6625e379255ab20dc0c52c9",
+    "levels/north_13.json": "827af82774bc42c878fef5a5a94e11a6606cfd3b8107f15a0f45a0e58ac76dc1",
+    "levels/north_14.json": "f9c2fb501c2e9ab74ae6470e136acc5badbee537a7f7e2014aebb9a791ec99a6",
+    "levels/north_15.json": "23bbb1726e455c0e3e3b3724f74c6974e3adfe2b3a33376a50bdc3bca0900ea5",
+    "levels/north_16.json": "b2aa0a0ddf35587352f1ea467537728682e702a602812bc543de628781728441",
+    "levels/north_17.json": "8a3a68f8d529a54cebe0d5d87506357a5598d0f59ef71838fcbdea2c7c25ca95",
+    "levels/north_18.json": "fd18bd381a23060605ad7a59b6b4aa20e6fc20e3b2fb921a3792adce7418a583",
+    "levels/north_19.json": "cb4d88302d15b6fecc47bae53447e3196388ab9d6c03db5bc19770bd7c45e2a3",
+    "levels/north_20.json": "9991217f26568ad1f5e7a623563bdc98fac4cde7406a307e8cbd277284d88889",
+    "levels/north_21.json": "16f5fce03e0eaa8ce42b92ff67ff5334ed99c923dfc45f6c8cdf75c4e1262e54",
+    "levels/north_22.json": "5ae88685eac8383f7bb12c8deae5ea054bd06399c91d406c2e013bdfaae62261",
+    "levels/north_23.json": "e3997b7ad4b569d95bd52f3ea00bd385e9a6580ac7f6202d571afada429dc6f9",
+    "levels/north_24.json": "729646560471e9a5384c5872f406df6c660aca6f6eb42dd17fe85eb736ddd693",
+    "levels/north_25.json": "0a5c4831b8a34aff57ece6eb118996030f57ec527c403f324e16323eb5f1a072",
+    "levels/north_26.json": "acc2f8154e20c332e701f3b2e4ab41a4922b5a9876dcb82eb30e6a1b61f1cffa",
+    "levels/north_27.json": "a0e9b4292ef06d658566897544ff92cdccdd95d0bd659624cada6533fff616ff",
+    "levels/north_28.json": "0c31714d93be0a7d97f1deaf2ab48909eeff67c4043150a46679759c80701681",
+    "levels/north_29.json": "8baa7030b730b7ccc3996e2fde2b154f7bd75eeef23ac28787b0cb9705121aaa",
+    "levels/solutions/north_01.json": "15e2e6472c8f1972de875ec90927a6e95b6fb79f33bf3879eab7b9d1daf68a7f",
+    "levels/solutions/north_02.json": "b8dcaa9629058a9911744dda4847e83e110451915f4f4b714054b31adbe35c11",
+    "levels/solutions/north_03.json": "e674ade0117e33dba91e73275fb135a5ce2caed9ae320051fd97a89d33b0335e",
+    "levels/solutions/north_04.json": "1f3a3e8007daedb9d6d5dc9abd4cbb808d8564d02cb4b39cddf2c87dbb4060ca",
+    "levels/solutions/north_05.json": "310445b7b9f294935c9e287fc83a899308e026ba323384c110804ca092ca0e5b",
+    "levels/solutions/north_06.json": "8cafd9098cc0871a48012c6616b72280897bb0fe785e9cc610f55a751c809473",
+    "levels/solutions/north_07.json": "54749c7054dfd2aa174d910235c674550b56a48831feaac47bdc6f8a9d558f23",
+    "levels/solutions/north_08.json": "f647a87e00f353b1a73c0012a020a80d2b368355ed25f179d7519a929a5a3efc",
+    "levels/solutions/north_09.json": "8e3215929eaf7b7a53bbef821616986c00d0d821b642f83614c22ae7d4e601f6",
+    "levels/solutions/north_10.json": "da4da316359be9c574f05230d3af637a4523c12abc8ea7406bf541f3212cff28",
+    "levels/solutions/north_11.json": "2414ea27995c405e9643d1fd02fbe74be41ff35e19df468a424fa7102955fe3a",
+    "levels/solutions/north_12.json": "452b8085c8231836ad0cb61136d27ac7166c279576db9f0ae3e609443c07de33",
+    "levels/solutions/north_13.json": "39ad6cfed2d9531812908365013d94f5735709984ed8327809034ae890f0cfdb",
+    "levels/solutions/north_14.json": "b4e2ecb836b1d5db3150d23c95504c66ade74e1f0faead60ff2dcaec0aa275ff",
+    "levels/solutions/north_15.json": "b3334ed96890917c4fcb49e1acde98a84c669e4f2d40c49ef78e84c0f05bdaa8",
+    "levels/solutions/north_16.json": "fb3edc09d21e4864121516d22a2dd7f5fef1eacc2d45bec7428ed3e693a14304",
+    "levels/solutions/north_17.json": "737d6489e00031a10509985109fd76f8eae10e27d17081c906e255f0dbafa381",
+    "levels/solutions/north_18.json": "f8f86704a397c8b8823fb8107ce6bb918d85f1c5d093a8722255f376a16d0316",
+    "levels/solutions/north_19.json": "02b187cee7fb7f4e85d24ab517f38722f947d07e06c13e2ddfa59a01906d1f6d",
+    "levels/solutions/north_20.json": "2169932eb56e2cc00e6b1339f043e5ca8104281db47366afdf8d24bf2f2f192f",
+    "levels/solutions/north_21.json": "90e28b57fba18c5c0a148c769fb2f2aecd99f8807aae50b23ff5f86cc592763a",
+    "levels/solutions/north_22.json": "c33e231545fde1e909c51feac4f1336628f95ecf0ebb82577fc18a9010624a50",
+    "levels/solutions/north_23.json": "3fd88c02dfe4ecfa8b484a72bb472ead604aaa7455f6e876516d85b310a96686",
+    "levels/solutions/north_24.json": "43ed3fc76ed331d35fd800ec828de692a6c89f76d72199b49ebc54e32e3a8895",
+    "levels/solutions/north_25.json": "4a0007eb3d4c65ff057973a129bb7ab1df3c6578a4c8a05efad444d575ce1fcd",
+    "levels/solutions/north_26.json": "169244ee11ec147a8d22452d8bf6125eaaef2ff01f9f0dcc62b9d26adea3192d",
+    "levels/solutions/north_27.json": "49e45e88135979b23f2626681f12b0970172a929a0937225fc8c056fc2b202bf",
+    "levels/solutions/north_28.json": "e50bda574bd2d791f91f71a295281d73ddac930e40009cc214a541a26d3c4a31",
+    "levels/solutions/north_29.json": "db0acc8cb0d2cbfe29279d766aed919c78bd5c28f81b18027fb49f0c406be698",
+    "video/.gdignore": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "video/README.md": "9afa3035fe120a2f7acc8b69248a608d11eb21128c3360b31bb603136891c814",
+    "video/chapter_01/energy_block_visibility.json": "b2bea567f0a495be2693f13d304ddb045f9b0f7fd49661a131da515c2ac068fa",
+    "video/chapter_01/energy_block_visibility.mp4": "b2ff64e0992e7de90ba9ce820775af8e95eb8e1b2a5cbbb14f64665ba41ee08c",
+    "video/chapter_01/energy_block_visibility_replay.json": "39375c1c3a66426dda1b85f9471c9f860b2b6615213682260efb61483a5e5dd8",
+    "video/chapter_01/level_01.mp4": "7bc924b31150e53bd609605ddc05a8f127bfd885368892b7cf59b158d8590358",
+    "video/chapter_01/level_01_replay.json": "57a2f15e91d9e148cf39552d5a83c0740e36ac154f5a3ff5612bd461bc9c9a5e",
+    "video/chapter_01/level_02.mp4": "5f01ec7e8d3c8c39a26e6648cf4fc1e8e5aaf6d5847a81ecb7b19352138dece7",
+    "video/chapter_01/level_02_replay.json": "d75aba610e157718ec611a712ab5e9efe8a68fddfb06318ff177476aa9410e56",
+    "video/chapter_01/level_03.mp4": "1d8ff6fb9d25fcfbe04d1f1499cb4aabebdaa5f0c59320130f9649f3fcf99e55",
+    "video/chapter_01/level_03_replay.json": "055d92ed449e4a32a33d2a7a2667c762d61ae3330da05fc1027e733df94dcf35",
+    "video/chapter_01/level_04.mp4": "5a2c7568f3501d29a60d065ea80002a753ebdbe83553a0f35b6b6e679dbe1864",
+    "video/chapter_01/level_04_replay.json": "54f0a1b0c9a17b5982be2a5a131c33ce52194c02880b216157aacc672358d5c9",
+    "video/chapter_01/level_05.mp4": "94d1a1cd7ea048a7e0546b1225631d07537e1f407a63671790b3d7b1fd598d6b",
+    "video/chapter_01/level_05_replay.json": "02c8ba2ffa7437565ecc6e96501385817cf9efe78cfc2d454485658ec49bdcca",
+    "video/chapter_01/level_06.mp4": "4ef89a69442ec9d0b81828365fa742ba331ab39f154ba8a07f9f921d95e04cac",
+    "video/chapter_01/level_06_replay.json": "3cf0746739a029bed9860c3ca7fe0254f82dcf021552afa42ba4bd010d2d2be4",
+    "video/chapter_01/level_07.mp4": "27aac0ad47140376d3a29ad8971d1eac60de2e580e5a5c5b99a22c0721fbe1a8",
+    "video/chapter_01/level_07_replay.json": "51764f5f6078700feda42b3babfdb18182bf9ab807c70e685e6606518a78efb5",
+    "video/chapter_01/level_08.mp4": "806fbca4e46c6ca70fc35e8c3cd587229ab742a9de8a1cf3744c0e791d981558",
+    "video/chapter_01/level_08_replay.json": "8d846eabdc31d8f78e3c55c431329d38a85f144a558c411bb43d6b9a509bca25",
+    "video/chapter_01/level_09.mp4": "53828710a5710b19c23f738b6aa48694b233ad6cd859ea338437f915aee3084f",
+    "video/chapter_01/level_09_replay.json": "b1c91d1465081577d55489ec51a49fd9ba3531e04d911342fd4dda14b4ff9076",
+    "video/chapter_01/level_10.mp4": "289feceb4080a25b62fa3b0dbf5a03291079394dd68b3f489656234028e13693",
+    "video/chapter_01/level_10_replay.json": "4fb1f7a1d5a3006adab490c4099d749a50decdbe92f058e65f8ba264feeeb2a3",
+    "video/chapter_01/level_11.mp4": "9d8b5386963d86794927e0021f811be14fe213deaa2e1d910025a7643e706544",
+    "video/chapter_01/level_11_replay.json": "796a556e929479a20abd10d9146bc4822d227dcd46f1cf172ea6c20ba68ed9f3",
+    "video/chapter_01/level_12.mp4": "3c20b247fe5977124fac93dd79c08d8ddc4ce31cd9585ddc6d8c5a1b1182a3c9",
+    "video/chapter_01/level_12_replay.json": "63dccbb7ea0fadacf97bc92143300e4138f26c64c2d3db18100143227c38dd88",
+    "video/chapter_01/level_13.mp4": "7342b7fc5dcbd6b37f2e915ee11d6003fecb11377d39ce94ef68f3e83417c47d",
+    "video/chapter_01/level_13_replay.json": "cc9ba62d1d243962ddc9580f9cc7bc8649e52230f7f170b782ea29267ca6520f",
+    "video/chapter_01/level_14.mp4": "6611b5c20eb85070b1c640bf46ffb02e8a035b307796fd4258d38b7509ee9899",
+    "video/chapter_01/level_14_replay.json": "0b4e2834460a749cdb7b110d1cc269cd8df8d712489c24dafa80c078a2b9943a",
+    "video/chapter_01/level_15.mp4": "c5a819128aa5d90e887fc8c0f4b02366457de4b6b069a3f98a03968ba16b05ff",
+    "video/chapter_01/level_15_replay.json": "acb7e01b3bd7c2a6bc15c04ea0acc98864f138c2305dc4d373ac7524e87eda33",
+    "video/chapter_01/level_16.mp4": "e1d6de5471a1518766bd4c5e359f2c51906e20570b1b5c15c0c3adb0ba4c0932",
+    "video/chapter_01/level_16_replay.json": "8f80b41134810410c83583af45402d7e5116689d8e663992b1e3db8083cb0971",
+    "video/chapter_01/level_17.mp4": "82032a65d89e9834b9c998d851f1cfbd9b16175dd9247cdab105b255434f61ec",
+    "video/chapter_01/level_17_replay.json": "25d50b961e3dcf0403eba7f743eaaea85354f47b6986bac4452562b9e891cc30",
+    "video/chapter_01/level_18.mp4": "1d69321521fae66267fe164f924e7b75d2d8e710709209eef00d0fdef64460d8",
+    "video/chapter_01/level_18_replay.json": "8a827b5ac9870358d324a1a2072e7598163e57b04f7b5ea222adf0012dc3975e",
+    "video/chapter_01/level_19.mp4": "7c51c48c4d46327616f59ae0c39835c811304d52c6956f5b3d36815330567ab8",
+    "video/chapter_01/level_19_replay.json": "e02f658af7d222bc79278e9ed589cda4711679d772d9432c7236273b7187697c",
+    "video/chapter_01/level_20.mp4": "110a813191b37a67a92475819ab4aa2aeaf399fe7aef7c3c6d3fc94a8fa82c68",
+    "video/chapter_01/level_20_replay.json": "ee529adae8c76723dd0e354f0f49117456dcc12df4f6722eb361bc237757592a",
+    "video/chapter_01/level_21.mp4": "b62ade42dd975b6e4cbc1e0432adb1de7696c8dfa8fcb94b00ed33c6312dd222",
+    "video/chapter_01/level_21_replay.json": "b50da3e2ada7e226c411e4822f9b8bd79f7b1d35fddd5f31d3678aabf25fbfe8",
+    "video/chapter_01/level_22.mp4": "266b38d66043db4599ae42e990b585508ea6b1f3584d5e50d61d1c2092c0b7f9",
+    "video/chapter_01/level_22_replay.json": "b0875a4121891b6014b1fb669f680d571f35ee3266be949c06a3fc4f6f83fcd4",
+    "video/chapter_01/level_23.mp4": "38c513a4c680a619392662dabb054dbcbf88cf238a1ba97b39cb1aa7f6bc6b0f",
+    "video/chapter_01/level_23_replay.json": "6838fdd40c9b79fa3f958c36bfa7b3129b086e6a81ca3dee60d47d51744c7b7b",
+    "video/chapter_01/level_24.mp4": "4ecc3dccde5dac42c6902336ee115a933dfbc8dbf7d892ab7b7c8ffb4f5923fe",
+    "video/chapter_01/level_24_replay.json": "395bf13b47411e35fe9ddad852081cd6cadcd3412b78208af796681fcdafef26",
+    "video/chapter_01/level_25.mp4": "c5975dd5c68239f8ab71e9ff9ea2b5faacfa8ba5bfb9b6bd335d22412495f472",
+    "video/chapter_01/level_25_replay.json": "7c9b2128758502db9fe015078622f085e23dd3bee7a4618fbf38100d723c0095",
+    "video/chapter_01/level_26.mp4": "72b9ca780b83ca42a258a3828532053fe0e66632a3010bded5ab307f56e8e6c5",
+    "video/chapter_01/level_26_replay.json": "398258822ec8837cf182146326d26bf58f3031f6cab11f3b6e0555213903a32e",
+    "video/chapter_01/level_27.mp4": "303051899154861613a57482ba3de8f1838b638767b8df787592711f795fee3f",
+    "video/chapter_01/level_27_replay.json": "2a7895d48b18508d4ae742ff83441e75b159d359c70c1fe9f10e8f499d957a79",
+    "video/chapter_01/level_28.mp4": "dd8090c72e8b6133329c30606b8bf6489efdb2f54feafce73987cea14e2b24b9",
+    "video/chapter_01/level_28_replay.json": "2b150eeef3458ec94723a8348b2d61e1668faa1ae98aa4ff435ce80a0e09fc04",
+    "video/chapter_01/level_29.mp4": "d21a2f1cbabb9c262b058f80d49818adbb1ab0e829c36abb1099c3ad36d69b6b",
+    "video/chapter_01/level_29_replay.json": "8c299fd16ba3b00c2f7c85fe2811035bb28a95eae822b28faada9ab24410c73d",
+    "video/ui/level_navigation.json": "a5605429d52c42a225cef98e6e06a2293f55bc70bda64c1dd7670a23272c9b69",
+    "video/ui/level_navigation.mp4": "f7da0130a4b1de6f6998d8db0548704e94d8a827fe4880d065626e9679687dad",
+    "video/ui/level_navigation_replay.json": "c095c6c9b99aaec8c413331ba73022e1571d9a548a0f53a34d09eaf75d69803b"
+  },
+  "main_catalog_append_only": true
+}
