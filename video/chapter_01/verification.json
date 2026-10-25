@@ -5241,6 +5241,162 @@
         79,
         78
       ]
+    },
+    {
+      "file": "video/chapter_01/level_32.mp4",
+      "level": 32,
+      "bytes": 572978,
+      "sha256": "9486eea458a6b58cf434021394276b98faf098bf408447cc4da76bf2f29613a5",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 924,
+      "duration_seconds": 30.8,
+      "moves": 43,
+      "directions": 43,
+      "input_events": 43,
+      "selection_events": 0,
+      "pushes": 12,
+      "pulls": 0,
+      "swaps": 0,
+      "destroyed_crystals": 0,
+      "game_implementation_commit": "a295c979e425de19d443e10b19dbeec0c4e2aa3d",
+      "replay_report": "level_32_replay.json",
+      "level_file": "levels/north_32.json",
+      "solution_file": "levels/solutions/north_32.json",
+      "full_decode_passed": true,
+      "legal_input_trace_verified": true,
+      "mp4_fast_start": true,
+      "initial_and_final_frames_reviewed": true,
+      "all43_input_states_reviewed": true,
+      "all12_push_motion_frames_reviewed": true,
+      "turn_and_reciprocal_attacks_reviewed": true,
+      "reviewed_encoded_frames": [
+        0,
+        77,
+        95,
+        98,
+        113,
+        131,
+        149,
+        152,
+        167,
+        170,
+        185,
+        203,
+        221,
+        239,
+        242,
+        257,
+        275,
+        293,
+        296,
+        311,
+        329,
+        347,
+        365,
+        368,
+        383,
+        401,
+        419,
+        437,
+        440,
+        455,
+        473,
+        491,
+        494,
+        509,
+        527,
+        530,
+        545,
+        563,
+        581,
+        584,
+        599,
+        602,
+        617,
+        620,
+        624,
+        628,
+        632,
+        635,
+        653,
+        671,
+        689,
+        707,
+        725,
+        743,
+        761,
+        779,
+        797,
+        815,
+        833,
+        923
+      ],
+      "implementation_committed_before_recording": true,
+      "gameplay_sources_unchanged_after_recording": true,
+      "initial_monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            4,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            0,
+            4
+          ]
+        }
+      ],
+      "final_monsters": [
+        {
+          "alive": false,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            0,
+            3
+          ]
+        },
+        {
+          "alive": false,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            0,
+            4
+          ]
+        }
+      ],
+      "all_monsters_dead": true,
+      "monster_death_action": 32,
+      "clear_energy_disappears_action": 32,
+      "sampled_5fps_frames": 154,
+      "distinct_sampled_frames": 154,
+      "visual_feedback_enabled": true,
+      "all43_feedback_intervals_settled": true,
+      "animation_world_unchanged": true,
+      "attack_feedback_requires_target": true,
+      "fire_attack_count": 0,
+      "goblin_attack_actions": [
+        32
+      ],
+      "goblin_strikes": 2,
+      "static_danger_hints_preserved": true,
+      "red_clear_energy_visual_only": true,
+      "gate_traversal_action": 41
     }
   ],
   "game_implementation_commits": {
@@ -5274,6 +5430,7 @@
     "level_28": "d93753b9afd48d412be7f2c68e2fb450d3d9c80d",
     "level_29": "55b4ee17009cc7f21a8c842eea16511adf5341aa",
     "level_30": "737633c276aa2e340074ba0ca254df7fc17fc571",
-    "level_31": "9bc2ef388517d31e8bd804dbeb6a7900cf1d8210"
+    "level_31": "9bc2ef388517d31e8bd804dbeb6a7900cf1d8210",
+    "level_32": "a295c979e425de19d443e10b19dbeec0c4e2aa3d"
   }
 }
