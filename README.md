@@ -837,3 +837,19 @@ CCDCDCLDCCRCCDDDCCLCDCRCCDCRRRCLLLUCLLLULLDRRRRLLLCCDCDDDRCUCRCDRRRCCLCRRRCUUCCL
 实际Godot画面：[初始红色清怪能量](docs/screenshots/level_32_initial.png) · [两晶连推](docs/screenshots/level_32_action_07.png) · [互杀开门](docs/screenshots/level_32_clear_open.png) · [撤销复活](docs/screenshots/level_32_undo_revived.png) · [通关](docs/screenshots/level_32_completed.png) · [小窗口](docs/screenshots/level_32_compact.png)。[执行范围与验证](docs/verification/north_32_scope.json)。
 
 [第三十二关正式通关视频](video/chapter_01/level_32.mp4)：30.8秒、43行动12推动。实现提交后使用真实Godot和合法WASD输入录制，包含两晶连推、哥布林与水晶混合推动、32步同时互杀与红色清怪能量消失、41步过门和43步存活胜利。[互杀攻击帧](docs/screenshots/level_32_mutual_attack.png) · [胜利末帧](docs/screenshots/level_32_victory.png)。仅实际触发的32步播放两次哥布林攻击，其余方向无空攻击等待。
+
+
+## 第三十三关
+
+用户确认的12×7布局：主区8×7全部地板，右平台9..11列/2..4行，唯一连接格(8,3)为红色清怪能量；其余为场外。18号明确是哥布林，本关共3只哥布林，没有火龙或新机制。红英雄(2,3)、水晶(6,3)/(4,5)、哥布林(1,2)/(4,3)/(0,6)、目标(10,3)。关卡见[JSON](levels/north_33.json)，仍使用原有数据格式和公共规则。
+
+已由独立身份回放及Godot模型验证的构造路线为68次方向行动、21次推动（不声称最短）：
+
+```text
+DDDRRRUURURULLRDDDDLLLURDRRUUUUULLDDDRDRDLLUUUURULLLULDDDDURRRRRRRRR
+```
+
+58步三只哥布林同快照互攻同时死亡，红色清怪能量随即消失；66步过门，68步存活抵达终点。两枚水晶都保留；撤销完整恢复三只哥布林和能量块。方向键/WASD、Z/U/Backspace撤销、R重开，只有撤销能够解除死亡锁；没有主动攻击键。
+
+
+实际Godot画面：[初始](docs/screenshots/level_33_initial.png) · [清怪开门](docs/screenshots/level_33_clear_open.png) · [撤销复活](docs/screenshots/level_33_undo_revived.png) · [通关](docs/screenshots/level_33_completed.png) · [小窗口](docs/screenshots/level_33_compact.png)。[执行范围与验证](docs/verification/north_33_scope.json)。

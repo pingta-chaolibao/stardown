@@ -1,0 +1,14 @@
+{
+  "level_id": "north_hero_33",
+  "path": "DDDRRRUURURULLRDDDDLLLURDRRUUUUULLDDDRDRDLLUUUURULLLULDDDDURRRRRRRRR",
+  "moves": 68,
+  "directions": 68,
+  "input_events": 68,
+  "selection_events": 0,
+  "pushes": 21,
+  "pulls": 0,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "monster_death_action": 58,
+  "note": "确认12×7完整地图的构造路线，三哥布林同一步相邻攻击同时死亡；独立身份回放验证，不宣称最短方向路线。"
+}
