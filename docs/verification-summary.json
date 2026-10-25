@@ -869,5 +869,25 @@
     "physical devices",
     "other GPUs",
     "CI reported from final remote evidence"
-  ]
+  ],
+  "recording": {
+    "implementation_commit": "55b4ee17009cc7f21a8c842eea16511adf5341aa",
+    "file": "video/chapter_01/level_29.mp4",
+    "duration_seconds": 43.4,
+    "frames": 1302,
+    "bytes": 721612,
+    "sha256": "d21a2f1cbabb9c262b058f80d49818adbb1ab0e829c36abb1099c3ad36d69b6b",
+    "actions": 64,
+    "pulls": 23,
+    "dragon_pulls": 13,
+    "crystal_pulls": 10,
+    "fire_attack_actions": [
+      21,
+      56
+    ],
+    "fire_attack_count": 4,
+    "non_attack_actions": 62,
+    "reviewed_encoded_frames": 72,
+    "full_decode_passed": true
+  }
 }

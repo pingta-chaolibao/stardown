@@ -4544,8 +4544,8 @@
     {
       "file": "video/chapter_01/level_29.mp4",
       "level": 29,
-      "bytes": 830260,
-      "sha256": "3838358f21f509b58036172ede5ebef3b80d21855798d01d16c2abce7f96c6c7",
+      "bytes": 721612,
+      "sha256": "d21a2f1cbabb9c262b058f80d49818adbb1ab0e829c36abb1099c3ad36d69b6b",
       "codec": "h264",
       "profile": "High",
       "pixel_format": "yuv420p",
@@ -4573,7 +4573,7 @@
       ],
       "crystal_identity_preserved": true,
       "all_fixed_facings_preserved": true,
-      "game_implementation_commit": "bf83a07663525ba84265828de163827ff917eb7b",
+      "game_implementation_commit": "55b4ee17009cc7f21a8c842eea16511adf5341aa",
       "replay_report": "level_29_replay.json",
       "level_file": "levels/north_29.json",
       "solution_file": "levels/solutions/north_29.json",
@@ -4622,8 +4622,10 @@
       ],
       "reviewed_encoded_frames": [
         0,
+        68,
         167,
         170,
+        176,
         185,
         188,
         203,
@@ -4633,16 +4635,19 @@
         332,
         347,
         350,
+        356,
         365,
         368,
         383,
         386,
         401,
+        410,
         419,
         422,
         428,
         432,
         437,
+        446,
         509,
         512,
         527,
@@ -4665,6 +4670,7 @@
         743,
         746,
         761,
+        806,
         851,
         854,
         869,
@@ -4678,11 +4684,13 @@
         1013,
         1016,
         1031,
+        1040,
         1049,
         1052,
         1058,
         1062,
         1067,
+        1076,
         1211,
         1301
       ],
@@ -4804,7 +4812,16 @@
       "all64_feedback_intervals_settled": true,
       "animation_world_unchanged": true,
       "all23_pull_motion_frames_reviewed": true,
-      "both_mutual_fire_and_death_intervals_reviewed": true
+      "both_mutual_fire_and_death_intervals_reviewed": true,
+      "attack_feedback_requires_target": true,
+      "fire_attack_actions": [
+        21,
+        56
+      ],
+      "fire_attack_count": 4,
+      "non_attack_actions": 62,
+      "ordinary_actions_no_fire_reviewed": true,
+      "static_danger_hints_preserved": true
     }
   ],
   "game_implementation_commits": {
@@ -4836,6 +4853,6 @@
     "level_26": "14b67d090c39f6cb7af49a99c549fae1a1979c5a",
     "level_27": "059ac90ffb4997bb3e4a75c1c1d5d1ed34126613",
     "level_28": "d93753b9afd48d412be7f2c68e2fb450d3d9c80d",
-    "level_29": "bf83a07663525ba84265828de163827ff917eb7b"
+    "level_29": "55b4ee17009cc7f21a8c842eea16511adf5341aa"
   }
 }

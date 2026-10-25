@@ -1,4 +1,5 @@
 {
+  "attack_feedback_requires_target": true,
   "capture": "Godot Movie Maker viewport; actual Input.parse_input_event press/release",
   "chapter": 1,
   "direction_actions": 64,
@@ -107,7 +108,7 @@
   },
   "fps": 30,
   "frames_per_input": 18,
-  "game_implementation_commit": "bf83a07663525ba84265828de163827ff917eb7b",
+  "game_implementation_commit": "55b4ee17009cc7f21a8c842eea16511adf5341aa",
   "initial_pause_frames": 60,
   "initial_state": {
     "alive": true,
@@ -202,7 +203,7 @@
   },
   "input_events": 64,
   "level": 29,
-  "movie_file": "level_29_animated.avi",
+  "movie_file": "level_29_triggered.avi",
   "path": "RRDRRRLLLUURRDDRRRRURULLDLURUUUULDLLURRDDLLULURLDDLRRRURULLLLUUL",
   "selection_events": 0,
   "trace": [
@@ -6229,108 +6230,7 @@
       "death_keys": [],
       "event_index": 1,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              6,
-              7
-            ],
-            [
-              6,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            6,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -6358,108 +6258,7 @@
       "death_keys": [],
       "event_index": 2,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              6,
-              7
-            ],
-            [
-              6,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            6,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -6487,108 +6286,7 @@
       "death_keys": [],
       "event_index": 3,
       "input": "D",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              6,
-              7
-            ],
-            [
-              6,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            6,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -6616,108 +6314,7 @@
       "death_keys": [],
       "event_index": 4,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              6,
-              7
-            ],
-            [
-              6,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            6,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -6745,108 +6342,7 @@
       "death_keys": [],
       "event_index": 5,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              6,
-              7
-            ],
-            [
-              6,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            6,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -6874,108 +6370,7 @@
       "death_keys": [],
       "event_index": 6,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              6,
-              7
-            ],
-            [
-              6,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            6,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -7003,108 +6398,7 @@
       "death_keys": [],
       "event_index": 7,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              5,
-              7
-            ],
-            [
-              5,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            5,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -7147,108 +6441,7 @@
       "death_keys": [],
       "event_index": 8,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              4,
-              7
-            ],
-            [
-              4,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            4,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -7291,99 +6484,7 @@
       "death_keys": [],
       "event_index": 9,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            3,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -7426,99 +6527,7 @@
       "death_keys": [],
       "event_index": 10,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            3,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -7546,99 +6555,7 @@
       "death_keys": [],
       "event_index": 11,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            3,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -7666,99 +6583,7 @@
       "death_keys": [],
       "event_index": 12,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            3,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -7786,99 +6611,7 @@
       "death_keys": [],
       "event_index": 13,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            3,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -7906,99 +6639,7 @@
       "death_keys": [],
       "event_index": 14,
       "input": "D",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            3,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -8026,99 +6667,7 @@
       "death_keys": [],
       "event_index": 15,
       "input": "D",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            3,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -8146,108 +6695,7 @@
       "death_keys": [],
       "event_index": 16,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              4,
-              7
-            ],
-            [
-              4,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            4,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -8290,108 +6738,7 @@
       "death_keys": [],
       "event_index": 17,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              5,
-              7
-            ],
-            [
-              5,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            5,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -8434,108 +6781,7 @@
       "death_keys": [],
       "event_index": 18,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              6,
-              7
-            ],
-            [
-              6,
-              6
-            ]
-          ],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            6,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -8578,99 +6824,7 @@
       "death_keys": [],
       "event_index": 19,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            7,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -8713,99 +6867,7 @@
       "death_keys": [],
       "event_index": 20,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              7,
-              6
-            ]
-          ],
-          "dragon": 2,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            7,
-            5
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 3,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            7,
-            8
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -8837,62 +6899,6 @@
       "event_index": 21,
       "input": "R",
       "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        },
         {
           "cells": [
             [
@@ -8994,64 +7000,7 @@
       "death_keys": [],
       "event_index": 22,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -9079,64 +7028,7 @@
       "death_keys": [],
       "event_index": 23,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -9164,64 +7056,7 @@
       "death_keys": [],
       "event_index": 24,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -9249,64 +7084,7 @@
       "death_keys": [],
       "event_index": 25,
       "input": "D",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -9334,64 +7112,7 @@
       "death_keys": [],
       "event_index": 26,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -9434,64 +7155,7 @@
       "death_keys": [],
       "event_index": 27,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -9519,64 +7183,7 @@
       "death_keys": [],
       "event_index": 28,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -9604,64 +7211,7 @@
       "death_keys": [],
       "event_index": 29,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -9704,64 +7254,7 @@
       "death_keys": [],
       "event_index": 30,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -9804,64 +7297,7 @@
       "death_keys": [],
       "event_index": 31,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -9904,64 +7340,7 @@
       "death_keys": [],
       "event_index": 32,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10004,64 +7383,7 @@
       "death_keys": [],
       "event_index": 33,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10089,64 +7411,7 @@
       "death_keys": [],
       "event_index": 34,
       "input": "D",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10174,64 +7439,7 @@
       "death_keys": [],
       "event_index": 35,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10274,64 +7482,7 @@
       "death_keys": [],
       "event_index": 36,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10374,64 +7525,7 @@
       "death_keys": [],
       "event_index": 37,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            3,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10459,64 +7553,7 @@
       "death_keys": [],
       "event_index": 38,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              4,
-              3
-            ],
-            [
-              4,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            4,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10559,55 +7596,7 @@
       "death_keys": [],
       "event_index": 39,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            5,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10650,55 +7639,7 @@
       "death_keys": [],
       "event_index": 40,
       "input": "D",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            5,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10726,55 +7667,7 @@
       "death_keys": [],
       "event_index": 41,
       "input": "D",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            5,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10802,55 +7695,7 @@
       "death_keys": [],
       "event_index": 42,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            5,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10878,55 +7723,7 @@
       "death_keys": [],
       "event_index": 43,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            5,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -10954,55 +7751,7 @@
       "death_keys": [],
       "event_index": 44,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            5,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11030,64 +7779,7 @@
       "death_keys": [],
       "event_index": 45,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              5,
-              3
-            ],
-            [
-              5,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            5,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11130,64 +7822,7 @@
       "death_keys": [],
       "event_index": 46,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              5,
-              3
-            ],
-            [
-              5,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            5,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11215,64 +7850,7 @@
       "death_keys": [],
       "event_index": 47,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [
-            [
-              5,
-              3
-            ],
-            [
-              5,
-              4
-            ]
-          ],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            5,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11300,55 +7878,7 @@
       "death_keys": [],
       "event_index": 48,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            4,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11391,55 +7921,7 @@
       "death_keys": [],
       "event_index": 49,
       "input": "D",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            4,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11467,55 +7949,7 @@
       "death_keys": [],
       "event_index": 50,
       "input": "D",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            4,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11543,55 +7977,7 @@
       "death_keys": [],
       "event_index": 51,
       "input": "L",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            4,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              1,
-              3
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              1,
-              1
-            ],
-            [
-              1,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            1,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11619,55 +8005,7 @@
       "death_keys": [],
       "event_index": 52,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            4,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              2,
-              3
-            ],
-            [
-              2,
-              2
-            ],
-            [
-              2,
-              1
-            ],
-            [
-              2,
-              0
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            2,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11710,47 +8048,7 @@
       "death_keys": [],
       "event_index": 53,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            4,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [
-            [
-              3,
-              3
-            ],
-            [
-              3,
-              2
-            ]
-          ],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            3,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11793,38 +8091,7 @@
       "death_keys": [],
       "event_index": 54,
       "input": "R",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            4,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            4,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
@@ -11867,38 +8134,7 @@
       "death_keys": [],
       "event_index": 55,
       "input": "U",
-      "locked_fire": [
-        {
-          "cells": [],
-          "dragon": 0,
-          "facing": [
-            0,
-            1
-          ],
-          "from": [
-            4,
-            2
-          ],
-          "target": {
-
-          }
-        },
-        {
-          "cells": [],
-          "dragon": 1,
-          "facing": [
-            0,
-            -1
-          ],
-          "from": [
-            4,
-            4
-          ],
-          "target": {
-
-          }
-        }
-      ],
+      "locked_fire": [],
       "motions": [
         {
           "displayed": [
