@@ -134,6 +134,8 @@ def main():
             run("03_north_30", ["--script", "res://tests/north_30_regression.gd"])
             run_python("03_north_31_independent", "tools/check_north_31.py")
             run("03_north_31", ["--script", "res://tests/north_31_regression.gd"])
+            run_python("03_north_34_independent", "tools/check_north_34.py")
+            run("03_north_34", ["--script", "res://tests/north_34_regression.gd"])
             run_python("03_north_33_independent", "tools/check_north_33.py")
             run("03_north_33", ["--script", "res://tests/north_33_regression.gd"])
             run_python("03_north_32_independent", "tools/check_north_32.py")
@@ -168,6 +170,7 @@ def main():
             run("03_north_11", ["--script", "res://tests/north_11_regression.gd"])
             run("03_north_12", ["--script", "res://tests/north_12_regression.gd"])
             run("04_main_scene", ["--quit-after", "10", "--audio-driver", "Dummy"])
+            run("05_north_34_scene", ["--script", "res://tests/north_34_scene.gd"])
             run("05_feedback", ["--script", "res://tests/feedback_scene.gd"])
             run("05_monster_clear_energy", ["--script", "res://tests/monster_clear_energy_scene.gd"])
             run("05_scene_input", ["--script", "res://tests/scene_smoke.gd"])
@@ -207,6 +210,7 @@ def main():
             run("05_navigation", ["--script", "res://tests/navigation_scene.gd"])
             run("05_energy_visibility", ["--script", "res://tests/energy_visibility_scene.gd"])
             if args.visual:
+                run("06_render_north_34", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/north_34_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_feedback", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/feedback_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "feedback" / "screenshots")], visual=True)
                 run("06_monster_clear_energy", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/monster_clear_energy_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render", ["--display-driver", "x11", "--rendering-method", "gl_compatibility",

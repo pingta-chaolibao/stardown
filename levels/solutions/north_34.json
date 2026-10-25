@@ -1,0 +1,16 @@
+{
+  "level_id": "north_hero_34",
+  "path": "URRUULLDRDDLULURRLURRRDLDLDRURRRR",
+  "moves": 33,
+  "directions": 33,
+  "input_events": 33,
+  "selection_events": 0,
+  "pushes": 0,
+  "pulls": 18,
+  "dragon_pulls": 10,
+  "crystal_pulls": 8,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "monster_death_action": 27,
+  "note": "确认9×5布局，绿色自动单拉且火龙朝向不变。水晶遮挡后拉离火线，触发两龙同快照互杀，清怪能量同一步消失；构造路线独立逐步复核，不宣称最短或穷尽。"
+}

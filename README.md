@@ -856,3 +856,19 @@ DDDRRRUURURULLRDDDDLLLURDRRUUUUULLDDDRDRDLLUUUURULLLULDDDDURRRRRRRRR
 实际Godot画面：[初始](docs/screenshots/level_33_initial.png) · [清怪开门](docs/screenshots/level_33_clear_open.png) · [撤销复活](docs/screenshots/level_33_undo_revived.png) · [通关](docs/screenshots/level_33_completed.png) · [小窗口](docs/screenshots/level_33_compact.png)。[执行范围与验证](docs/verification/north_33_scope.json)。
 
 [第三十三关正式通关视频](video/chapter_01/level_33.mp4)：45.8秒、68行动21推动。实现提交后使用真实Godot和合法WASD输入录制，包含两枚水晶的搬运、哥布林与水晶混合推动、58步三哥布林同时互杀与红色清怪能量消失、66步过门和68步存活胜利。[互杀攻击帧](docs/screenshots/level_33_mutual_attack.png) · [胜利末帧](docs/screenshots/level_33_victory.png)。仅实际触发的58步播放四次哥布林攻击，其余方向无空攻击等待。
+
+
+## 第三十四关
+
+用户确认9×5完整边界，左侧5×5地板，右侧3×3平台只经(5,2)红色清怪能量连接。绿英雄(1,3)、水晶(3,3)、目标(7,2)；火龙(0,0)朝左、(4,0)朝右，没有哥布林或新机制。[关卡JSON](levels/north_34.json)。沿用自动单拉水晶/火龙、保持朝向、共同状态锁定攻击目标及完整撤销。
+
+独立回放验证的构造路线（不宣称最短）：
+
+```text
+URRUULLDRDDLULURRLURRRDLDLDRURRRR
+```
+
+33次实际行动、18次拉动（10次火龙、8次水晶）。27步把遮挡水晶拉离火线，两龙同快照互相击杀，红色清怪能量同时消失；英雄33步存活到达终点。Z/U/Backspace撤销，R重开，死亡仅能撤销复活。没有额外攻击键、自动等待回合或出界死亡。
+
+
+实际Godot画面：[初始](docs/screenshots/level_34_initial.png) · [水晶遮挡](docs/screenshots/level_34_action_26.png) · [清怪开门](docs/screenshots/level_34_clear_open.png) · [撤销复活](docs/screenshots/level_34_undo_revived.png) · [通关](docs/screenshots/level_34_completed.png) · [小窗口](docs/screenshots/level_34_compact.png)。[执行范围及复用证明](docs/verification/north_34_scope.json)。
