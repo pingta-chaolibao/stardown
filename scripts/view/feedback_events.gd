@@ -30,7 +30,7 @@ static func action(before: Dictionary, model: RefCounted, direction: Vector2i) -
 	if after["world"]["moves"] != before["world"]["moves"] + 1:
 		return {} # Failed input/selection/undo never creates an attack round.
 	var plan: Dictionary = {"before":before["entities"],"after":after["entities"].duplicate(true),
-		"motion":{},"energy":[],"plates":[],"deaths":[],"fire":[],"goblin":[],
+		"motion":{},"energy":[],"plates":[],"deaths":[],"sight":[],"fire":[],"goblin":[],
 		"swap":after["world"]["swaps"]>before["world"]["swaps"],
 		"contact":after["world"]["pushes"]>before["world"]["pushes"] or after["world"]["pulls"]>before["world"]["pulls"],
 		"victory":after["complete"] and not before["complete"]}
@@ -101,6 +101,10 @@ static func _sample_attacks(plan: Dictionary, before: Dictionary, after: Diction
 		var event: Dictionary = ray.duplicate(true)
 		event["from"] = monster_positions[ray["dragon"]]
 		event["facing"] = facings[ray["dragon"]]
+		# Preserve every locked sight ray for the existing danger overlay.
+		# Only an actual target contributes an attack or its waiting stage.
+		plan["sight"].append(event)
+		if ray["target"].is_empty(): continue
 		plan["fire"].append(event)
 	for i in monster_positions.size():
 		if not monster_lives[i] or model.level.monster_kinds[i] != "goblin": continue

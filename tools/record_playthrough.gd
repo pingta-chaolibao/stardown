@@ -132,7 +132,7 @@ func _run() -> void:
 		"fps": 30, "frames_per_input": STEP_FRAMES,
 		"initial_pause_frames": INITIAL_FRAMES, "victory_pause_frames": VICTORY_FRAMES,
 		"path": solution["path"], "initial_state": initial, "trace": trace, "final_state": final,
-		"visual_feedback":visual_feedback,"visual_feedback_enabled":true}
+		"visual_feedback":visual_feedback,"visual_feedback_enabled":true,"attack_feedback_requires_target":true}
 	DirAccess.make_dir_recursive_absolute(report_path.get_base_dir())
 	var file := FileAccess.open(report_path, FileAccess.WRITE)
 	if file == null:

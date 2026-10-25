@@ -7,6 +7,7 @@ func _run() -> void:
 	root.size = Vector2i(1280,820)
 	game = load("res://scenes/main.tscn").instantiate(); game.start_in_level = true; root.add_child(game)
 	await _settle()
+	await _attack_triggers()
 	var initial := _fixture(0)
 	await _capture_now("feedback_breath_initial.png")
 	await create_timer(0.7).timeout
@@ -46,6 +47,10 @@ func _run() -> void:
 		_check(game.model.moves == 0 and game.board.feedback.plan.is_empty(),"re-enter cannot inherit previous ghosts/timers")
 	for item in [[3,KEY_W,0.10,"feedback_energy_open.png"],[4,KEY_D,0.23,"feedback_fire_first_target.png"],[5,KEY_D,0.22,"feedback_goblin_attack.png"],[6,KEY_D,0.23,"feedback_mutual_death.png"],[7,KEY_A,0.28,"feedback_energy_destruction.png"]]:
 		_fixture(item[0]); await _tap(item[1]); await create_timer(item[2]).timeout
+		if item[0] == 5:
+			_check(game.board.feedback.plan["goblin"].size() == 1,"actual adjacent Goblin attack still animates")
+		if item[0] == 6:
+			_check(game.board.feedback.plan["fire"].size() == 2 and game.board.feedback.plan["goblin"].size() == 2,"all triggered mutual attacks survive same-step attacker deaths")
 		await _capture_now(item[3])
 		if not game.model.alive:
 			var dead: Dictionary = game.model.snapshot()
@@ -67,12 +72,42 @@ func _run() -> void:
 	quit(0 if failures == 0 else 1)
 
 func _fixture(index: int) -> Dictionary:
+	return _fixture_data(Cases.cases()[index]["data"],Cases.cases()[index]["caption"])
+
+func _fixture_data(data: Dictionary, caption: String) -> Dictionary:
 	if not game.model.alive: _check(game.model.undo(),"fixture preparation legally undoes prior death")
 	game.board.cancel_feedback()
-	_check(game.model.load_level(Definition.from_dictionary(Cases.cases()[index]["data"])),"explicit temporary feedback sandbox loads")
+	_check(game.model.load_level(Definition.from_dictionary(data)),"explicit temporary feedback sandbox loads")
 	game.menu.hide(); game.ui_root.show(); game._rebuild_ui()
-	game._refresh(Cases.cases()[index]["caption"])
+	game._refresh(caption)
 	return game.model.snapshot()
+
+func _attack_triggers() -> void:
+	for blocker in ["empty","crystal","wall","bush","energy","goblin_idle","target"]:
+		var initial := _fixture_data(Cases.attack_room(blocker),"只有实际命中目标才播放攻击；空射线只显示移动。")
+		await _tap(KEY_D)
+		var clock = game.board.feedback
+		var hit: bool = blocker == "target"
+		_check(game.model.moves == 1 and clock.plan["fire"].size() == (1 if hit else 0),"real input uses target-gated fire feedback: "+blocker)
+		_check(clock.plan["goblin"].is_empty(),"nonadjacent Goblin has no attack animation")
+		_check(clock.plan["sight"].size() == (0 if blocker == "goblin_idle" else 1),"danger rays remain visible during moves without firing")
+		if hit:
+			await create_timer(0.22).timeout
+			await _capture_now("feedback_attack_triggered.png")
+			_check(not game.model.monsters()[1]["alive"] and clock.is_busy(),"actual target death retains its short attack/death feedback")
+		else:
+			_check(is_equal_approx(clock.duration,0.16),"no target contributes zero attack-stage wait")
+			if blocker in ["empty","crystal"]:
+				await _capture_now("feedback_attack_"+blocker+".png")
+			await create_timer(0.18).timeout
+			_check(not clock.is_busy(),"empty attack stage does not delay the next input")
+			await _tap(KEY_D)
+			_check(game.model.moves == 2,"real next direction is accepted once movement ends")
+			await _tap(KEY_Z)
+		await _tap(KEY_Z)
+		_check(game.model.snapshot() == initial and clock.plan.is_empty(),"Undo removes all feedback and restores any killed target")
+		await create_timer(0.02).timeout
+		_check(game.model.snapshot() == initial,"canceled attack never rewrites restored state")
 
 func _tap(code: int) -> void:
 	for down in [true,false]:

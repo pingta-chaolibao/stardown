@@ -249,6 +249,9 @@ def check_visual_feedback(item, evidence):
     if not item.get("visual_feedback_enabled"):
         return
     assert evidence["visual_feedback_enabled"]
+    require_targets = item.get("attack_feedback_requires_target", False)
+    if require_targets:
+        assert evidence["attack_feedback_requires_target"]
     views = evidence["visual_feedback"]
     assert len(views) == len(evidence["trace"])
     previous = evidence["initial_state"]
@@ -276,6 +279,8 @@ def check_visual_feedback(item, evidence):
         ids = [r["dragon"] for r in view["locked_fire"]]
         assert len(ids) == len(set(ids)), "Each dragon emits at most one locked ray per action"
         for ray in view["locked_fire"]:
+            if require_targets:
+                assert ray["target"], "Empty or blocked sight queries must never trigger attack feedback"
             cell = tuple(ray["from"])
             facing = tuple(ray["facing"])
             for next_cell in ray["cells"]:
@@ -287,6 +292,9 @@ def check_visual_feedback(item, evidence):
             assert not view["motions"] and not view["locked_fire"] and not view["death_keys"]
         previous = current
     if item["level"] == 29:
+        if require_targets:
+            assert [v["event_index"] for v in views if v["locked_fire"]] == [21, 56]
+            assert sum(len(v["locked_fire"]) for v in views) == 4
         for action, pair in [(21, (2, 3)), (56, (0, 1))]:
             locked = {r["dragon"]: r["target"] for r in views[action-1]["locked_fire"]}
             assert locked[pair[0]] == {"kind":"monster", "id":pair[1]}

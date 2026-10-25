@@ -48,3 +48,17 @@ static func cases() -> Array[Dictionary]:
 	d["player"] = [1,1]; d["terrain"][0] = ".#..."; d["objective"] = "player_on_exit"; d["exit"] = [2,1]; d["exit_color"] = "green"
 	result.append({"id":"victory","data":d,"path":"URZR","caption":"受阻轻反馈不算行动；胜利光环与撤销提示可立即取消。"})
 	return result
+
+static func attack_room(blocker: String) -> Dictionary:
+	var d := room("attack_trigger","攻击触发回归 · "+blocker,8,5)
+	d["monsters"] = [{"kind":"fire_dragon","position":[0,2],"facing":"right"}]
+	if blocker == "goblin_idle":
+		d["monsters"] = [{"kind":"goblin","position":[3,2]}]
+	elif blocker != "empty":
+		d["monsters"].append({"kind":"goblin","position":[5,2]})
+	match blocker:
+		"crystal": d["crates"] = [[3,2]]
+		"wall": d["terrain"][2] = "...#...."
+		"bush": d["bushes"] = [[3,2]]
+		"energy": d["energy_links"] = [{"id":"gate","plate":[6,4],"barriers":[[3,2]],"pressure_sources":["hero","crystal"]}]
+	return d

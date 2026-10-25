@@ -90,7 +90,7 @@ func _draw() -> void:
 				var cell:=Vector2i(x,y)
 				if level.is_floor(cell) and model.monster_danger_at(cell):_danger(origin+(Vector2(cell)+Vector2.ONE*0.5)*tile,tile)
 	# During playback use the pre-death locked rays, never a rescan through a victim.
-	var rays: Array = feedback.plan.get("fire",model.fire_rays())
+	var rays: Array = feedback.plan.get("sight",model.fire_rays())
 	for ray in rays:
 		for cell in ray["cells"]:
 			_fire_danger(origin+(Vector2(cell)+Vector2.ONE*0.5)*tile,tile,model.monsters()[ray["dragon"]]["facing"])
