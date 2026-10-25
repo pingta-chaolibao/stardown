@@ -244,6 +244,55 @@ def check_replay(item, directory, require_rendered=True):
         assert sum(symbol in DIRECTIONS for symbol in solution["path"]) == solution["directions"]
     return evidence
 
+def check_visual_feedback(item, evidence):
+    """View telemetry supplements independent world replay,never drives it."""
+    if not item.get("visual_feedback_enabled"):
+        return
+    assert evidence["visual_feedback_enabled"]
+    views = evidence["visual_feedback"]
+    assert len(views) == len(evidence["trace"])
+    previous = evidence["initial_state"]
+    for index, (view, current) in enumerate(zip(views, evidence["trace"]), 1):
+        assert view["event_index"] == index and view["input"] == current["input"]
+        assert view["start_frame"] == evidence["initial_pause_frames"] + (index-1)*evidence["frames_per_input"]
+        assert view["settled_at_step_end"] and view["world_unchanged_during_feedback"]
+        progresses = []
+        for motion in view["motions"]:
+            a, b, at = motion["from"], motion["to"], motion["displayed"]
+            delta = [b[i]-a[i] for i in range(2)]
+            if view["swap"]:
+                assert at in (a, b), "Exchange must never interpolate through middle cells"
+            else:
+                assert abs(delta[0])+abs(delta[1]) == 1
+                t = sum((at[i]-a[i])*delta[i] for i in range(2))
+                assert 0 <= t <= 1
+                assert all(abs(at[i]-(a[i]+t*delta[i])) < 1e-5 for i in range(2))
+                progresses.append(t)
+        if progresses:
+            assert max(progresses)-min(progresses) < 1e-5, "A pushed/pulled chain shares one easing clock"
+        expected_deaths = {f"m:{m['id']}" for m, after in zip(previous.get("monsters", []), current.get("monsters", [])) if m["alive"] and not after["alive"]}
+        expected_deaths.update(f"c:{c['id']}" for c in previous["crystals"] if c["id"] not in {x["id"] for x in current["crystals"]})
+        assert set(view["death_keys"]) == expected_deaths
+        ids = [r["dragon"] for r in view["locked_fire"]]
+        assert len(ids) == len(set(ids)), "Each dragon emits at most one locked ray per action"
+        for ray in view["locked_fire"]:
+            cell = tuple(ray["from"])
+            facing = tuple(ray["facing"])
+            for next_cell in ray["cells"]:
+                cell = (cell[0]+facing[0], cell[1]+facing[1])
+                assert list(cell) == next_cell
+            if ray["target"].get("kind") == "monster":
+                assert ray["cells"][-1] == current["monsters"][ray["target"]["id"]]["position"]
+        if current["input"] == "C":
+            assert not view["motions"] and not view["locked_fire"] and not view["death_keys"]
+        previous = current
+    if item["level"] == 29:
+        for action, pair in [(21, (2, 3)), (56, (0, 1))]:
+            locked = {r["dragon"]: r["target"] for r in views[action-1]["locked_fire"]}
+            assert locked[pair[0]] == {"kind":"monster", "id":pair[1]}
+            assert locked[pair[1]] == {"kind":"monster", "id":pair[0]}
+
+
 def check_media(item, evidence):
     path = ROOT / item["file"]
     data = path.read_bytes()
@@ -284,6 +333,7 @@ def main():
         report = json.loads(manifest.read_text())
         for item in report["videos"]:
             evidence = check_replay(item, manifest.parent)
+            check_visual_feedback(item, evidence)
             check_media(item, evidence)
             checked += 1
             print(f"PASS {item['file']}: {item['duration_seconds']}s, {item['frames']} frames, full decode and legal input replay", flush=True)

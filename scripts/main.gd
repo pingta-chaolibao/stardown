@@ -4,6 +4,7 @@ extends Control
 const Level = preload("res://scripts/core/level_data.gd")
 const State = preload("res://scripts/core/grid_state.gd")
 const KeySteps = preload("res://scripts/input/step_input.gd")
+const Feedback = preload("res://scripts/view/feedback_events.gd")
 const Board = preload("res://scripts/view/board_view.gd")
 const LevelMenu = preload("res://scripts/view/level_menu.gd")
 const UI_FONT = preload("res://assets/fonts/NotoSansCJKsc-Regular.otf")
@@ -63,6 +64,7 @@ func back_to_menu() -> bool:
 	if not model.alive:
 		_refresh("英雄已死亡，仅可撤销恢复。", Board.CORAL)
 		return false
+	board.cancel_feedback()
 	key_steps.clear()
 	ui_root.hide()
 	menu.show()
@@ -76,6 +78,7 @@ func select_level(index: int) -> bool:
 		return false
 	if index < 0 or index >= LEVEL_PATHS.size():
 		return false
+	board.cancel_feedback()
 	var definition := Level.from_file(LEVEL_PATHS[index])
 	if not model.load_level(definition):
 		return false
@@ -90,12 +93,19 @@ func select_level(index: int) -> bool:
 	return true
 
 
-func _rebuild_ui() -> void:
+func _rebuild_ui(preserve_feedback: bool = false) -> void:
+	var timeline = board.feedback if preserve_feedback and board != null else null
+	var clock: float = board.idle_clock if board != null else 0.0
+	var old_facing: Vector2i = board.facing if board != null else Vector2i.DOWN
+	if board != null and not preserve_feedback: board.cancel_feedback()
 	# Rebuilding selection-dependent labels must not release held keyboard keys.
 	if ui_root != null:
 		remove_child(ui_root)
 		ui_root.queue_free()
 	_build_ui()
+	if timeline != null: board.feedback = timeline
+	board.idle_clock = clock
+	board.facing = old_facing
 
 
 func _has_hero_kind(kind: String) -> bool:
@@ -155,6 +165,10 @@ func apply_command(command: Dictionary) -> void:
 	if menu != null and menu.visible: return
 	if model.level == null:
 		return
+	# Movement is never queued behind feedback. Release events still reach StepInput.
+	# Undo/restart/selection remain responsive and do not invent a world action.
+	if command.get("action") == &"move" and board.feedback.is_busy(): return
+	var before_visual := Feedback.capture(model)
 	var before_selection:=model.active_hero_index
 	var pulling:Dictionary=model.pull_target_at(model.player-command.get("direction",Vector2i.ZERO)) if command.get("action")==&"move" else {}
 	var before_crystals:=model.crates().size()
@@ -203,9 +217,11 @@ func apply_command(command: Dictionary) -> void:
 			var result:=model.switch_hero()
 			_refresh("已切换操作英雄；不计步，不写撤销历史。" if result==&"switched" else ("任一英雄死亡后，仅可撤销恢复。" if result==&"dead" else "当前无法切换英雄。"))
 		&"undo":
+			board.cancel_feedback()
 			var undone := model.undo()
 			_refresh("已撤销最近一步。" if undone else "当前没有可撤销的步骤。")
 		&"restart":
+			if model.alive: board.cancel_feedback()
 			if model.restart():
 				board.facing = Vector2i.DOWN
 				_refresh("已重开%s。" % model.level.title)
@@ -219,8 +235,17 @@ func apply_command(command: Dictionary) -> void:
 		_refresh(("本步%d只怪物死亡；可撤销整步恢复。" if model.level.monster_kinds.has("fire_dragon") else "能量再现，%d只哥布林死亡；可撤销整步恢复。") % killed,GOLD)
 	if before_selection!=model.active_hero_index:
 		var message:=status_label.text
-		_rebuild_ui()
+		_rebuild_ui(true)
 		_refresh(message)
+		board.feedback.accent("selection",Vector2(model.player))
+	if command.get("action") == &"move":
+		if model.moves == before_visual["world"]["moves"]+1:
+			board.play_action(before_visual,command["direction"])
+		elif board.blocked:
+			board.feedback.accent("blocked",Vector2(model.player),0.16)
+	elif command.get("action") == &"undo" and model.moves < before_visual["world"]["moves"]:
+		board.feedback.accent("undo",Vector2(model.player))
+	_sync_feedback_controls()
 
 
 func _refresh(message: String, color: Color = MINT) -> void:
@@ -249,7 +274,7 @@ func _refresh(message: String, color: Color = MINT) -> void:
 	for node_name in ["MoveLeft", "MoveRight", "MoveUp", "MoveDown"]:
 		var button := find_child(node_name, true, false) as Button
 		if button != null:
-			button.disabled = not model.alive
+			button.disabled = not model.alive or board.feedback.is_busy()
 	var switch_button:=find_child("SwitchHero",true,false) as Button
 	if switch_button!=null:
 		switch_button.disabled=not model.alive or model.is_complete()
@@ -268,6 +293,12 @@ func _refresh(message: String, color: Color = MINT) -> void:
 		status_label.text = message
 		status_label.add_theme_color_override("font_color", color)
 	board.queue_redraw()
+
+
+func _sync_feedback_controls() -> void:
+	for node_name in ["MoveLeft","MoveRight","MoveUp","MoveDown"]:
+		var button := find_child(node_name,true,false) as Button
+		if button != null: button.disabled = not model.alive or board.feedback.is_busy()
 
 
 func _build_ui() -> void:
@@ -330,6 +361,7 @@ func _build_board(parent: HBoxContainer) -> void:
 	board = Board.new()
 	board.name = "Board"
 	board.model = model
+	board.feedback_finished.connect(_sync_feedback_controls)
 	board.custom_minimum_size = Vector2(560, 350)
 	board.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	content.add_child(board)

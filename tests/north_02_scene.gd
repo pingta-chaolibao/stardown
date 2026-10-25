@@ -79,6 +79,7 @@ func _keycode(symbol: String) -> int:
 
 
 func _press(code: int) -> void:
+	await _settle() # A deliberate next press waits for the prior visual action.
 	for pressed in [true, false]:
 		var event := InputEventKey.new()
 		event.keycode = code
@@ -86,6 +87,7 @@ func _press(code: int) -> void:
 		event.pressed = pressed
 		Input.parse_input_event(event)
 		await process_frame
+	await _settle()
 
 
 func _click(node_name: String) -> void:
@@ -143,6 +145,12 @@ func _check_layout(node: Node) -> void:
 func _settle() -> void:
 	for i in 4:
 		await process_frame
+	var deadline := Time.get_ticks_msec()+2000
+	while game != null and is_instance_valid(game.board) and game.board.feedback.is_busy():
+		await process_frame
+		if Time.get_ticks_msec()>deadline:
+			_check(false,"view feedback clock settles within 2 seconds")
+			break
 
 
 func _check(condition: bool, message: String) -> void:

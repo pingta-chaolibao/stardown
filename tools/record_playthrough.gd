@@ -47,10 +47,14 @@ func _run() -> void:
 		_fail("Initial state is not the selected level's unsolved start.")
 		return
 	var trace: Array[Dictionary] = []
+	var visual_feedback: Array[Dictionary] = []
 	print("REPLAY START: chapter 01, level %02d, %s" % [level_number, solution["path"]])
 	var previous := initial
 	var actual_actions:=0
 	for i in solution["path"].length():
+		if game.board.feedback.is_busy():
+			_fail("Previous visual feedback must finish before the next recorded input.")
+			return
 		var symbol: String = solution["path"][i]
 		var target: Dictionary={}
 		if symbol!="C" and game.model.active_kind()=="blue":
@@ -71,6 +75,9 @@ func _run() -> void:
 				_fail("A green input moved more than one dragon.");return
 			dragon_pulls+=moved_dragons
 		if track_dragon_pulls:current["dragon_pulls"]=dragon_pulls
+		var visual := _visual_sample(i,symbol)
+		var world_after_input: Dictionary = game.model.snapshot()
+		var selection_after_input: int = game.model.active_hero_index
 		var distance: int = absi(current["player"][0] - previous["player"][0]) + absi(current["player"][1] - previous["player"][1])
 		var position_valid:=distance==1
 		if symbol=="C":
@@ -99,6 +106,12 @@ func _run() -> void:
 		trace.append(current)
 		previous = current
 		await _frames(STEP_FRAMES - 2)
+		visual["settled_at_step_end"] = not game.board.feedback.is_busy()
+		visual["world_unchanged_during_feedback"] = game.model.snapshot()==world_after_input and game.model.active_hero_index==selection_after_input
+		if not visual["settled_at_step_end"] or not visual["world_unchanged_during_feedback"]:
+			_fail("Visual clock did not settle cleanly or changed gameplay state.")
+			return
+		visual_feedback.append(visual)
 	var final := _state()
 	if not final["completed"] or final["moves"] != solution["moves"] or final["pushes"] != solution["pushes"] or final["pulls"] != solution.get("pulls", 0) or final["swaps"]!=solution.get("swaps",0) or selection_events!=solution.get("selection_events",0) or solution["path"].length()!=solution.get("input_events",solution["moves"]):
 		_fail("Playback did not finish at the expected victory state.")
@@ -118,7 +131,8 @@ func _run() -> void:
 		"movie_file": Engine.get_write_movie_path().get_file(),
 		"fps": 30, "frames_per_input": STEP_FRAMES,
 		"initial_pause_frames": INITIAL_FRAMES, "victory_pause_frames": VICTORY_FRAMES,
-		"path": solution["path"], "initial_state": initial, "trace": trace, "final_state": final}
+		"path": solution["path"], "initial_state": initial, "trace": trace, "final_state": final,
+		"visual_feedback":visual_feedback,"visual_feedback_enabled":true}
 	DirAccess.make_dir_recursive_absolute(report_path.get_base_dir())
 	var file := FileAccess.open(report_path, FileAccess.WRITE)
 	if file == null:
@@ -128,6 +142,25 @@ func _run() -> void:
 	file.close()
 	print("REPLAY RESULT: level %02d; %d actual actions, %d uncounted selection events, %d pushes, %d pulls, %d swaps, victory=true" % [level_number, final["moves"],selection_events, final["pushes"], final["pulls"],final["swaps"]])
 	quit(0)
+
+
+func _visual_sample(index: int, symbol: String) -> Dictionary:
+	var clock = game.board.feedback
+	var motions: Array[Dictionary] = []
+	for key: String in clock.plan.get("motion",{}):
+		var motion: Dictionary = clock.plan["motion"][key]
+		var at: Vector2 = clock.position(key,motion["to"])
+		motions.append({"key":key,"from":[motion["from"].x,motion["from"].y],"to":[motion["to"].x,motion["to"].y],"displayed":[at.x,at.y]})
+	var rays: Array[Dictionary] = []
+	for ray in clock.plan.get("fire",[]):
+		var cells: Array = []
+		for cell in ray["cells"]: cells.append([cell.x,cell.y])
+		rays.append({"dragon":ray["dragon"],"from":[ray["from"].x,ray["from"].y],"facing":[ray["facing"].x,ray["facing"].y],"cells":cells,"target":ray["target"]})
+	var deaths: Array[String] = []
+	for event in clock.plan.get("deaths",[]): deaths.append(event["key"])
+	return {"event_index":index+1,"input":symbol,"start_frame":INITIAL_FRAMES+index*STEP_FRAMES,
+		"sample_age_seconds":clock.age,"swap":clock.plan.get("swap",false),"motions":motions,
+		"locked_fire":rays,"death_keys":deaths}
 
 
 func _state() -> Dictionary:

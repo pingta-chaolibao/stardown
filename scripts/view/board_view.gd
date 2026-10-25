@@ -2,6 +2,10 @@ class_name BoardView
 extends Control
 ## Original procedural 2D artwork. This view only reads the grid model.
 
+signal feedback_finished
+const Timeline = preload("res://scripts/view/feedback_timeline.gd")
+const Events = preload("res://scripts/view/feedback_events.gd")
+
 const State = preload("res://scripts/core/grid_state.gd")
 const CORAL := Color("f5787b")
 const HERO_GREEN := Color("72ce95")
@@ -18,11 +22,32 @@ const MINT := Color("9bc9c1")
 var model: State
 var facing := Vector2i.DOWN
 var blocked: bool = false
+var feedback := Timeline.new()
+var idle_clock: float = 0.0
+var _entity_alpha: float = 1.0
 
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	resized.connect(queue_redraw)
+
+
+func _process(delta: float) -> void:
+	if not is_visible_in_tree(): return
+	idle_clock = fmod(idle_clock+delta,TAU*10.0)
+	if feedback.advance(delta): feedback_finished.emit()
+	queue_redraw()
+
+
+func cancel_feedback() -> void:
+	feedback.cancel()
+	blocked = false
+	queue_redraw()
+
+
+func play_action(before: Dictionary, direction: Vector2i) -> void:
+	feedback.start(Events.action(before,model,direction))
+	queue_redraw()
 
 
 func _draw() -> void:
@@ -52,10 +77,9 @@ func _draw() -> void:
 	for bush in level.bushes:
 		_bush(origin + (Vector2(bush.cell) + Vector2.ONE * 0.5) * tile, tile)
 	for cell: Vector2i in model.barrier_states():
-		if model.barrier_is_active(cell):
-			_energy_block(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
-		else:
-			_inactive_energy_floor(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
+		var center := origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile
+		if not model.barrier_is_active(cell): _inactive_energy_floor(center,tile)
+		_draw_energy_transition(cell,center,tile)
 	for cell in level.exit_cells:
 		_exit_marker(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
 	for edge in level.fence_edges:
@@ -65,19 +89,19 @@ func _draw() -> void:
 			for x in level.width:
 				var cell:=Vector2i(x,y)
 				if level.is_floor(cell) and model.monster_danger_at(cell):_danger(origin+(Vector2(cell)+Vector2.ONE*0.5)*tile,tile)
-	for ray in model.fire_rays():
-		for cell in ray["cells"]:_fire_danger(origin+(Vector2(cell)+Vector2.ONE*0.5)*tile,tile,model.monsters()[ray["dragon"]]["facing"])
-	for monster in model.monsters():
-		if monster["kind"]=="goblin":_goblin(origin+(Vector2(monster["position"])+Vector2.ONE*0.5)*tile,tile,monster["alive"])
-		elif monster["kind"]=="fire_dragon":_fire_dragon(origin+(Vector2(monster["position"])+Vector2.ONE*0.5)*tile,tile,monster["alive"],monster["facing"])
-	for cell in model.crates():
-		_crystal(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile, level.crystal_colors[model.crate_id(cell)])
-	for hero in model.heroes():
-		var center:=origin+(Vector2(hero["position"])+Vector2.ONE*0.5)*tile
-		_hero(center,tile,hero["kind"],hero["selected"])
-		if not hero["alive"]:
-			draw_line(center+Vector2(-0.3,-0.3)*tile,center+Vector2(0.3,0.3)*tile,Color("fff0cc"),3,true)
-			draw_line(center+Vector2(-0.3,0.3)*tile,center+Vector2(0.3,-0.3)*tile,Color("fff0cc"),3,true)
+	# During playback use the pre-death locked rays, never a rescan through a victim.
+	var rays: Array = feedback.plan.get("fire",model.fire_rays())
+	for ray in rays:
+		for cell in ray["cells"]:
+			_fire_danger(origin+(Vector2(cell)+Vector2.ONE*0.5)*tile,tile,model.monsters()[ray["dragon"]]["facing"])
+	var entities: Dictionary = Events.capture(model)["entities"]
+	for key: String in feedback.plan.get("after",{}):
+		if not entities.has(key): entities[key] = feedback.plan["after"][key]
+	# Stable layering: monster ghosts below crystals, heroes above both.
+	for role in ["monster","crystal","hero"]:
+		for key: String in entities:
+			if entities[key]["role"] == role: _draw_entity(key,entities[key],origin,tile)
+	_draw_feedback(origin,tile)
 	# The footprint stays flat beneath occupants; only its outer dashes sit above
 	# them, so a selection ring/shadow cannot hide a passable energy cell.
 	for cell: Vector2i in model.barrier_states():
@@ -96,16 +120,16 @@ func _danger(center:Vector2,tile:float) -> void:
 
 func _goblin(center:Vector2,tile:float,living:bool) -> void:
 	if not living:
-		draw_arc(center+Vector2(0,0.22)*tile,tile*0.20,0,TAU,12,Color(0.6,0.4,0.3,0.28),1.2,true)
+		_actor_arc(center+Vector2(0,0.22)*tile,tile*0.20,0,TAU,12,Color(0.6,0.4,0.3,0.28),1.2,true)
 		return # A non-interactive trace, drawn beneath any new occupant.
 	draw_ellipse_shadow(center+Vector2(0,0.29)*tile,Vector2(tile*0.34,tile*0.12))
 	var shape:=PackedVector2Array([center+Vector2(-0.30,0.25)*tile,center+Vector2(-0.28,-0.16)*tile,center+Vector2(-0.37,-0.37)*tile,center+Vector2(-0.12,-0.24)*tile,center+Vector2(0.12,-0.24)*tile,center+Vector2(0.37,-0.37)*tile,center+Vector2(0.28,-0.16)*tile,center+Vector2(0.30,0.25)*tile])
-	draw_colored_polygon(shape,Color("482e35"));var outline:=shape.duplicate();outline.append(shape[0]);draw_polyline(outline,Color("ce805c"),maxf(1.4,tile*0.027),true)
+	_actor_polygon(shape,Color("482e35"));var outline:=shape.duplicate();outline.append(shape[0]);_actor_polyline(outline,Color("ce805c"),maxf(1.4,tile*0.027),true)
 	for x in [-0.13,0.13]:
-		draw_circle(center+Vector2(x,-0.05)*tile,tile*0.064,Color("ffbd74"))
-		draw_line(center+Vector2(x,-0.095)*tile,center+Vector2(x,-0.015)*tile,Color("301a23"),maxf(1,tile*0.025),true)
-	draw_line(center+Vector2(-0.13,0.14)*tile,center+Vector2(0.13,0.14)*tile,Color("ecb39a"),tile*0.03,true)
-	for x in [-0.07,0.07]:draw_line(center+Vector2(x,0.12)*tile,center+Vector2(x,0.19)*tile,Color("ecb39a"),tile*0.025,true)
+		_actor_circle(center+Vector2(x,-0.05)*tile,tile*0.064,Color("ffbd74"))
+		_actor_line(center+Vector2(x,-0.095)*tile,center+Vector2(x,-0.015)*tile,Color("301a23"),maxf(1,tile*0.025),true)
+	_actor_line(center+Vector2(-0.13,0.14)*tile,center+Vector2(0.13,0.14)*tile,Color("ecb39a"),tile*0.03,true)
+	for x in [-0.07,0.07]:_actor_line(center+Vector2(x,0.12)*tile,center+Vector2(x,0.19)*tile,Color("ecb39a"),tile*0.025,true)
 
 
 func _fence(origin: Vector2,tile: float,a: Vector2i,b: Vector2i) -> void:
@@ -156,7 +180,7 @@ func _energy_block(center: Vector2, tile: float) -> void:
 	_box(Rect2(center - Vector2.ONE * tile * 0.43, Vector2.ONE * tile * 0.86), Color("6b4293") if purple else (Color("376e9b") if blue else (Color("3e845b") if green else Color("ba923c"))), 5)
 	_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), MECHANISM_PURPLE if purple else (MECHANISM_BLUE if blue else (MECHANISM_GREEN if green else Color("f2ce6d"))), 3)
 	for offset in [-0.20, 0.0, 0.20]:
-		draw_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("f4e8ff") if purple else (Color("e1f5ff") if blue else (Color("dbffe6") if green else Color("fff0b5"))), tile * 0.035, true)
+		_actor_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("f4e8ff") if purple else (Color("e1f5ff") if blue else (Color("dbffe6") if green else Color("fff0b5"))), tile * 0.035, true)
 
 
 func _mechanism_tint() -> Color:
@@ -284,12 +308,12 @@ func _crystal(center: Vector2, tile: float, variant: String) -> void:
 	var right := center + Vector2(0.25, -0.11) * tile
 	var bottom := center + Vector2(-0.01, 0.31) * tile
 	var middle := center + Vector2(0.02, -0.02) * tile
-	draw_colored_polygon(PackedVector2Array([top, right, bottom, left]), base)
-	draw_colored_polygon(PackedVector2Array([top, middle, left]), light)
-	draw_colored_polygon(PackedVector2Array([middle, right, bottom]), dark)
-	draw_colored_polygon(PackedVector2Array([middle, bottom, left]), base.darkened(0.08))
-	draw_line(top, middle, Color(light, 0.9), tile * 0.025, true)
-	draw_line(middle, bottom, Color(light, 0.65), tile * 0.02, true)
+	_actor_polygon(PackedVector2Array([top, right, bottom, left]), base)
+	_actor_polygon(PackedVector2Array([top, middle, left]), light)
+	_actor_polygon(PackedVector2Array([middle, right, bottom]), dark)
+	_actor_polygon(PackedVector2Array([middle, bottom, left]), base.darkened(0.08))
+	_actor_line(top, middle, Color(light, 0.9), tile * 0.025, true)
+	_actor_line(middle, bottom, Color(light, 0.65), tile * 0.02, true)
 
 
 func _hero(center: Vector2, tile: float, kind: String, selected: bool) -> void:
@@ -308,10 +332,10 @@ func _hero(center: Vector2, tile: float, kind: String, selected: bool) -> void:
 		for i in 49:
 			var angle:=float(i)/48*TAU
 			ring.append(center+Vector2(cos(angle)*0.39,sin(angle)*0.12+0.32)*tile)
-		draw_polyline(ring,Color("f4e2b5"),2.5,true)
+		_actor_polyline(ring,Color("f4e2b5"),2.5,true)
 	draw_ellipse_shadow(center + Vector2(0, tile * 0.29), Vector2(tile * 0.25, tile * 0.09))
 	if blocked and selected:
-		draw_arc(center, tile * 0.41, 0, TAU, 40, Color(GOLD, 0.55), 1.5, true)
+		_actor_arc(center, tile * 0.41, 0, TAU, 40, Color(GOLD, 0.55), 1.5, true)
 	var body := PackedVector2Array([
 		center + Vector2(-0.12, -0.05) * tile, center + Vector2(0.12, -0.05) * tile,
 		center + Vector2(0.19, 0.24) * tile, center + Vector2(-0.19, 0.24) * tile,
@@ -319,16 +343,16 @@ func _hero(center: Vector2, tile: float, kind: String, selected: bool) -> void:
 	if multi and selected:
 		var outline:=body.duplicate()
 		outline.append(body[0])
-		draw_polyline(outline,Color("fff1cb"),3.5,true)
-		draw_arc(center+Vector2(0,-0.21)*tile,tile*0.15,0,TAU,32,Color("fff1cb"),2,true)
-	draw_colored_polygon(body, tint)
-	draw_line(center + Vector2(-0.10, 0.18) * tile, center + Vector2(-0.12, 0.32) * tile, shade, tile * 0.08, true)
-	draw_line(center + Vector2(0.10, 0.18) * tile, center + Vector2(0.12, 0.32) * tile, shade, tile * 0.08, true)
-	draw_line(center + Vector2(-0.13, 0) * tile, center + Vector2(-0.23, 0.12) * tile, tint, tile * 0.075, true)
-	draw_line(center + Vector2(0.13, 0) * tile, center + Vector2(0.23, 0.12) * tile, tint, tile * 0.075, true)
-	draw_circle(center + Vector2(0, -0.21) * tile, tile * 0.13, tint)
-	draw_circle(center + Vector2(0, -0.21) * tile + Vector2(facing if selected else Vector2i.DOWN) * tile * 0.05, tile * 0.025, Color("ffe2c6"))
-	draw_line(center + Vector2(-0.11, 0.04) * tile, center + Vector2(0.11, 0.04) * tile, Color("d8ecff") if kind=="blue" else (Color("c5efbb") if green else Color("ffc3a1")), tile * 0.035, true)
+		_actor_polyline(outline,Color("fff1cb"),3.5,true)
+		_actor_arc(center+Vector2(0,-0.21)*tile,tile*0.15,0,TAU,32,Color("fff1cb"),2,true)
+	_actor_polygon(body, tint)
+	_actor_line(center + Vector2(-0.10, 0.18) * tile, center + Vector2(-0.12, 0.32) * tile, shade, tile * 0.08, true)
+	_actor_line(center + Vector2(0.10, 0.18) * tile, center + Vector2(0.12, 0.32) * tile, shade, tile * 0.08, true)
+	_actor_line(center + Vector2(-0.13, 0) * tile, center + Vector2(-0.23, 0.12) * tile, tint, tile * 0.075, true)
+	_actor_line(center + Vector2(0.13, 0) * tile, center + Vector2(0.23, 0.12) * tile, tint, tile * 0.075, true)
+	_actor_circle(center + Vector2(0, -0.21) * tile, tile * 0.13, tint)
+	_actor_circle(center + Vector2(0, -0.21) * tile + Vector2(facing if selected else Vector2i.DOWN) * tile * 0.05, tile * 0.025, Color("ffe2c6"))
+	_actor_line(center + Vector2(-0.11, 0.04) * tile, center + Vector2(0.11, 0.04) * tile, Color("d8ecff") if kind=="blue" else (Color("c5efbb") if green else Color("ffc3a1")), tile * 0.035, true)
 
 
 func draw_ellipse_shadow(center: Vector2, radius: Vector2) -> void:
@@ -336,12 +360,12 @@ func draw_ellipse_shadow(center: Vector2, radius: Vector2) -> void:
 	for i in 32:
 		var angle := float(i) / 32 * TAU
 		points.append(center + Vector2(cos(angle), sin(angle)) * radius)
-	draw_colored_polygon(points, Color(0.025, 0.07, 0.10, 0.8))
+	_actor_polygon(points, Color(0.025, 0.07, 0.10, 0.8))
 
 
 func _box(rect: Rect2, color: Color, radius: int) -> void:
 	var style := StyleBoxFlat.new()
-	style.bg_color = color
+	style.bg_color = Color(color,color.a*_entity_alpha)
 	style.set_corner_radius_all(radius)
 	draw_style_box(style, rect)
 
@@ -360,15 +384,167 @@ func _fire_dragon(center:Vector2,tile:float,living:bool,direction:Vector2i) -> v
 	var d:=Vector2(direction)
 	var side:=Vector2(-d.y,d.x)
 	if not living:
-		draw_arc(center,tile*0.23,0,TAU,12,Color(0.65,0.45,0.27,0.28),1.2,true)
+		_actor_arc(center,tile*0.23,0,TAU,12,Color(0.65,0.45,0.27,0.28),1.2,true)
 		return
 	draw_ellipse_shadow(center+Vector2(0,tile*0.28),Vector2(tile*0.36,tile*0.11))
 	var points:=PackedVector2Array([center-d*tile*0.30-side*tile*0.17,center-d*tile*0.12-side*tile*0.34,center+d*tile*0.10-side*tile*0.25,center+d*tile*0.34,center+d*tile*0.10+side*tile*0.25,center-d*tile*0.12+side*tile*0.34,center-d*tile*0.30+side*tile*0.17])
-	draw_colored_polygon(points,Color("6b3b37"))
+	_actor_polygon(points,Color("6b3b37"))
 	var outline:=points.duplicate();outline.append(points[0])
-	draw_polyline(outline,Color("ee965b"),maxf(1.6,tile*0.03),true)
-	for sign_y in [-1,1]:draw_circle(center+d*tile*0.05+side*tile*0.12*sign_y,tile*0.042,Color("ffe4a1"))
+	_actor_polyline(outline,Color("ee965b"),maxf(1.6,tile*0.03),true)
+	for sign_y in [-1,1]:_actor_circle(center+d*tile*0.05+side*tile*0.12*sign_y,tile*0.042,Color("ffe4a1"))
 	# The fixed-facing arrow stays inside the monster cell, above the head.
-	draw_line(center-d*tile*0.14,center+d*tile*0.22,Color("fff0b8"),maxf(2,tile*0.035),true)
-	draw_line(center+d*tile*0.12-side*tile*0.08,center+d*tile*0.22,Color("fff0b8"),maxf(2,tile*0.035),true)
-	draw_line(center+d*tile*0.12+side*tile*0.08,center+d*tile*0.22,Color("fff0b8"),maxf(2,tile*0.035),true)
+	_actor_line(center-d*tile*0.14,center+d*tile*0.22,Color("fff0b8"),maxf(2,tile*0.035),true)
+	_actor_line(center+d*tile*0.12-side*tile*0.08,center+d*tile*0.22,Color("fff0b8"),maxf(2,tile*0.035),true)
+	_actor_line(center+d*tile*0.12+side*tile*0.08,center+d*tile*0.22,Color("fff0b8"),maxf(2,tile*0.035),true)
+
+
+func _draw_entity(key: String, entity: Dictionary, origin: Vector2, tile: float) -> void:
+	var cell := feedback.position(key,Vector2(entity["position"]))
+	var center := origin+(cell+Vector2.ONE*0.5)*tile
+	var dying := false
+	for death in feedback.plan.get("deaths",[]):
+		if death["key"] == key: dying = true
+	if not entity["alive"] and not dying:
+		if entity["role"] == "hero":
+			draw_arc(center,tile*0.22,0,TAU,24,Color(0.96,0.55,0.52,0.30),1.3,true)
+		else:
+			draw_arc(center,tile*0.16,0,TAU,16,Color(0.65,0.45,0.3,0.16),1.0,true)
+		return
+	_entity_alpha = feedback.opacity(key)
+	var scale_factor := Vector2.ONE
+	var rotation := 0.0
+	if entity["role"] == "crystal":
+		var breath := sin(idle_clock*1.8+float(entity["id"])*0.9)
+		scale_factor = Vector2.ONE*(1.0+0.022*breath)
+		draw_circle(center,tile*(0.33+0.012*breath),Color(0.72,0.78,1.0,(0.025+0.012*breath)*_entity_alpha))
+	if dying:
+		var fall := feedback.fraction(feedback.death_start(),Timeline.DEATH_SECONDS)
+		scale_factor *= Vector2(1.0+0.16*fall,1.0-0.55*fall)
+		rotation = fall*0.16
+	for accent in feedback.accents:
+		if accent["kind"] == "blocked" and entity["role"] == "hero" and Vector2(entity["position"]) == accent["cell"]:
+			center += Vector2(facing)*tile*0.045*sin(PI*accent["age"]/accent["duration"])
+	if entity["kind"] == "goblin":
+		for strike in feedback.plan.get("goblin",[]):
+			if strike["from"] == entity["position"]:
+				center += Vector2(strike["to"]-strike["from"])*tile*0.055*sin(PI*feedback.fraction(feedback.attack_start(),Timeline.ATTACK_SECONDS))
+	draw_set_transform(center,rotation,scale_factor)
+	match entity["role"]:
+		"hero": _hero(Vector2.ZERO,tile,entity["kind"],entity.get("selected",false))
+		"crystal": _crystal(Vector2.ZERO,tile,entity["color"])
+		"monster":
+			if entity["kind"] == "goblin": _goblin(Vector2.ZERO,tile,true)
+			else: _fire_dragon(Vector2.ZERO,tile,true,entity["facing"])
+	draw_set_transform(Vector2.ZERO)
+	_entity_alpha = 1.0
+
+
+func _draw_energy_transition(cell: Vector2i, center: Vector2, tile: float) -> void:
+	var active := model.barrier_is_active(cell)
+	var transition: Dictionary = {}
+	for event in feedback.plan.get("energy",[]):
+		if event["cell"] == cell: transition = event
+	if transition.is_empty():
+		if active: _energy_block(center,tile)
+		return
+	var t := feedback.fraction(0.04,0.16)
+	var visible := t if active else 1.0-t
+	_entity_alpha = visible
+	draw_set_transform(center,0.0,Vector2.ONE*(0.72+0.28*visible))
+	_energy_block(Vector2.ZERO,tile)
+	draw_set_transform(Vector2.ZERO)
+	_entity_alpha = 1.0
+	var tint := _mechanism_tint()
+	draw_arc(center,tile*(0.21+0.27*t),0,TAU,36,Color(tint,0.45*sin(PI*t)),1.5,true)
+	for i in 8:
+		var angle := TAU*float(i)/8.0
+		var point := center+Vector2(cos(angle),sin(angle))*tile*(0.18+0.27*t)
+		draw_circle(point,tile*0.024,Color(tint,0.60*(1.0-t)))
+
+
+func _draw_feedback(origin: Vector2, tile: float) -> void:
+	var plan := feedback.plan
+	var motion_t := feedback.fraction(0.0,feedback.motion_seconds())
+	if plan.get("swap",false) and motion_t < 1.0:
+		for motion in plan["motion"].values():
+			for cell in [motion["from"],motion["to"]]:
+				var center: Vector2 = origin+(cell+Vector2.ONE*0.5)*tile
+				var glow := sin(PI*motion_t)
+				draw_arc(center,tile*(0.16+0.26*motion_t),0,TAU,36,Color(HERO_BLUE,0.58*glow),2.0,true)
+				for i in 6:
+					var angle := float(i)*TAU/6.0+motion_t*0.5
+					var point := center+Vector2(cos(angle),sin(angle))*tile*(0.10+0.30*motion_t)
+					draw_circle(point,tile*0.025,Color("d9efff",0.70*glow))
+	if plan.get("contact",false) and motion_t > 0.3 and motion_t < 1.0:
+		for key: String in plan["motion"]:
+			var motion: Dictionary = plan["motion"][key]
+			var point: Vector2 = origin+(feedback.position(key,motion["to"])+Vector2.ONE*0.5)*tile
+			for sign_x in [-1,1]: draw_circle(point+Vector2(sign_x*0.21,0.28)*tile,tile*0.023,Color(GOLD,0.42*sin(PI*motion_t)))
+	for event in plan.get("plates",[]):
+		var t := feedback.fraction(0.06,0.18)
+		var center: Vector2 = origin+(Vector2(event["cell"])+Vector2.ONE*0.5)*tile
+		draw_arc(center,tile*(0.22+0.17*t),0,TAU,32,Color(_mechanism_tint(),0.38*sin(PI*t)),1.4,true)
+	var attack_t := feedback.fraction(feedback.attack_start(),Timeline.ATTACK_SECONDS)
+	if attack_t > 0.0 and attack_t < 1.0:
+		for ray in plan.get("fire",[]): _draw_flame(ray,attack_t,origin,tile)
+		for strike in plan.get("goblin",[]):
+			var center: Vector2 = origin+(Vector2(strike["to"])+Vector2.ONE*0.5)*tile
+			var direction := Vector2(strike["to"]-strike["from"])
+			var side := Vector2(-direction.y,direction.x)
+			for offset in [-0.10,0.0,0.10]:
+				var at: Vector2 = center+side*tile*offset
+				draw_line(at-direction*tile*0.22,at+direction*tile*0.17,Color("f4b389",0.85*sin(PI*attack_t)),tile*0.035,true)
+	for death in plan.get("deaths",[]):
+		var t := feedback.fraction(feedback.death_start(),Timeline.DEATH_SECONDS)
+		if t <= 0.0 or t >= 1.0: continue
+		var center: Vector2 = origin+(Vector2(death["entity"]["position"])+Vector2.ONE*0.5)*tile
+		var tint := _mechanism_tint() if death["energy"] else (Color("d6b3f7") if death["entity"]["role"] == "crystal" else Color("f0b78e"))
+		for i in 8:
+			var angle := float(i)*TAU/8.0+0.21
+			var point := center+Vector2(cos(angle),sin(angle))*tile*(0.07+0.33*t)
+			var shard := PackedVector2Array([point+Vector2(0,-0.035)*tile,point+Vector2(0.025,0.02)*tile,point+Vector2(-0.025,0.02)*tile])
+			draw_colored_polygon(shard,Color(tint,0.70*(1.0-t)))
+	for effect in feedback.accents:
+		var t: float = effect["age"]/effect["duration"]
+		if effect["kind"] == "victory":
+			for cell in model.level.exit_cells:
+				var center := origin+(Vector2(cell)+Vector2.ONE*0.5)*tile
+				draw_arc(center,tile*(0.27+0.19*t),0,TAU,36,Color(MINT,0.48*sin(PI*t)),1.8,true)
+			continue
+		var center: Vector2 = origin+(effect["cell"]+Vector2.ONE*0.5)*tile
+		var tint := HERO_BLUE if effect["kind"] == "undo" else GOLD
+		draw_arc(center,tile*(0.27+0.17*t),0,TAU,36,Color(tint,0.55*sin(PI*t)),1.6,true)
+
+
+func _draw_flame(ray: Dictionary, t: float, origin: Vector2, tile: float) -> void:
+	var direction := Vector2(ray["facing"])
+	var side := Vector2(-direction.y,direction.x)
+	var start := origin+(Vector2(ray["from"])+Vector2.ONE*0.5+direction*0.32)*tile
+	var end := start+direction*tile*0.07
+	if not ray["cells"].is_empty():
+		end = origin+(Vector2(ray["cells"][-1])+Vector2.ONE*0.5)*tile
+		if ray["target"].is_empty(): end += direction*tile*0.35
+	var reach := clampf(t*2.8,0.0,1.0)
+	var tip := start.lerp(end,reach)
+	var glow := sin(PI*t)
+	draw_line(start,tip,Color(0.96,0.32,0.12,0.40*glow),tile*0.18,true)
+	draw_line(start,tip,Color(1.0,0.78,0.37,0.80*glow),tile*0.065,true)
+	var count := maxi(1,int(start.distance_to(tip)/(tile*0.18)))
+	for i in count:
+		var f := float(i+1)/float(count+1)
+		var center := start.lerp(tip,f)
+		var width := tile*0.07*(0.6+0.4*sin(f*19.0-t*14.0))
+		var tongue := PackedVector2Array([center-direction*tile*0.10-side*width,center+direction*minf(tile*0.13,center.distance_to(tip)),center-direction*tile*0.10+side*width])
+		draw_colored_polygon(tongue,Color(1.0,0.57,0.20,0.60*glow))
+
+
+func _actor_polygon(points: PackedVector2Array, tint: Color) -> void:
+	draw_colored_polygon(points,Color(tint,tint.a*_entity_alpha))
+func _actor_line(a: Vector2, b: Vector2, tint: Color, width: float = -1.0, antialias: bool = false) -> void:
+	draw_line(a,b,Color(tint,tint.a*_entity_alpha),width,antialias)
+func _actor_circle(center: Vector2, radius: float, tint: Color) -> void:
+	draw_circle(center,radius,Color(tint,tint.a*_entity_alpha))
+func _actor_arc(center: Vector2, radius: float, a: float, b: float, count: int, tint: Color, width: float = 1.0, antialias: bool = false) -> void:
+	draw_arc(center,radius,a,b,count,Color(tint,tint.a*_entity_alpha),width,antialias)
+func _actor_polyline(points: PackedVector2Array, tint: Color, width: float = -1.0, antialias: bool = false) -> void:
+	draw_polyline(points,Color(tint,tint.a*_entity_alpha),width,antialias)
