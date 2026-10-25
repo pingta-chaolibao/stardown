@@ -78,6 +78,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第三十关 | [观看 / 下载 MP4](video/chapter_01/level_30.mp4) | 35.6 秒 |
 | 第三十一关 | [观看 / 下载 MP4](video/chapter_01/level_31.mp4) | 62.6 秒 |
 | 第三十二关 | [观看 / 下载 MP4](video/chapter_01/level_32.mp4) | 30.8 秒 |
+| 第三十三关 | [观看 / 下载 MP4](video/chapter_01/level_33.mp4) | 45.8 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -853,3 +854,5 @@ DDDRRRUURURULLRDDDDLLLURDRRUUUUULLDDDRDRDLLUUUURULLLULDDDDURRRRRRRRR
 
 
 实际Godot画面：[初始](docs/screenshots/level_33_initial.png) · [清怪开门](docs/screenshots/level_33_clear_open.png) · [撤销复活](docs/screenshots/level_33_undo_revived.png) · [通关](docs/screenshots/level_33_completed.png) · [小窗口](docs/screenshots/level_33_compact.png)。[执行范围与验证](docs/verification/north_33_scope.json)。
+
+[第三十三关正式通关视频](video/chapter_01/level_33.mp4)：45.8秒、68行动21推动。实现提交后使用真实Godot和合法WASD输入录制，包含两枚水晶的搬运、哥布林与水晶混合推动、58步三哥布林同时互杀与红色清怪能量消失、66步过门和68步存活胜利。[互杀攻击帧](docs/screenshots/level_33_mutual_attack.png) · [胜利末帧](docs/screenshots/level_33_victory.png)。仅实际触发的58步播放四次哥布林攻击，其余方向无空攻击等待。
