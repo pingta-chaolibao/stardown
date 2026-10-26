@@ -934,3 +934,14 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 实际Godot：[初始占板](docs/screenshots/level_38_initial.png) · [离板恢复](docs/screenshots/level_38_action_09.png) · [重新压板](docs/screenshots/level_38_action_31.png) · [哥布林接力](docs/screenshots/level_38_action_32.png) · [通关](docs/screenshots/level_38_completed.png) · [小窗口](docs/screenshots/level_38_compact.png)。[验证与复用范围](docs/verification/north_38_scope.json)。
 
 [第三十八关正式通关视频](video/chapter_01/level_38.mp4)：26.6秒、36行动10交换。实现提交后以实际Godot视口与正常WASD录制，紫色交换英雄和紫色压板能量；9步离板恢复五能量格，31步重压开放，32步哥布林接力维持压板、火龙首目标保护英雄，33步过能量格、36步到终点。最终压板哥布林与火龙仍活着，紫能量不以清怪控制。仅1/2/3/31/32播放实际目标喷火，十次交换为闪光换位。[能量恢复](docs/screenshots/level_38_restored.png) · [哥布林接力](docs/screenshots/level_38_goblin_handoff.png) · [胜利帧](docs/screenshots/level_38_victory.png)。
+
+
+## 第三十九关：红绿协作与双色压板
+
+用户确认10×5、原1–33编号及火龙上方新增34=(9,2)可走。绿拉英雄(6,2)、红推英雄(7,2)，两终点(0,0)/(1,0)；两只哥布林、一只朝左火龙、一颗水晶。蓝压板(5,0)控制蓝能量(3,1)，黄压板(0,4)控制黄能量(3,3)。[关卡](levels/north_39.json) · [编号映射](levels/mappings/north_39_markers.json)。
+
+公共 `energy_links.color` 可选，缺省沿用关卡 `mechanism_color`。同色全部压板跨链接ID共同AND，不同颜色分别控制对应能量；旧关卡数据不迁移。颜色不决定清怪类型，也不要求水晶配色。棋盘、过渡效果、失活格轮廓、选关卡片及界面分别保留蓝黄辨识。
+
+独立身份重放与Godot验证73次实际行动、11次免费C切换，7推8拉（7次水晶、1次火龙）。17步利用新增34从上推龙；22步拉开水晶，让火龙只击杀首个哥布林，23步混合推链立即恢复遮挡；29步红人压蓝板，34步绿人把龙拉回原通道且保持朝左；56步蓝门独立恢复，62步水晶接力压蓝板，73步两英雄分别到达终点。黄板一直由存活哥布林压住；结尾哥布林和火龙仍存活，不是清怪能量关，不宣称最短解。
+
+实际Godot：[初始双色](docs/screenshots/level_39_initial.png) · [拉龙](docs/screenshots/level_39_action_34.png) · [仅蓝门恢复](docs/screenshots/level_39_action_56.png) · [水晶接力](docs/screenshots/level_39_action_62.png) · [双英雄胜利](docs/screenshots/level_39_completed.png) · [小窗口](docs/screenshots/level_39_compact_green.png)。[测试证据与范围](docs/verification/north_39_scope.json)。

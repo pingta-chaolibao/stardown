@@ -260,6 +260,9 @@ func _read_energy_links(value: Variant) -> String:
 		if ids.has(entry["id"]):
 			return "能量机关 id 不得重复。"
 		ids[entry["id"]] = true
+		var color: Variant = entry.get("color", mechanism_color)
+		if color not in ["yellow", "green", "blue", "purple", "red"]:
+			return "压力机关 color 仅支持 yellow、green、blue、purple 或 red。"
 		if entry.has("plate") and entry.has("plates"):
 			return "plate 与 plates 不能同时指定。"
 		var plate_entries: Variant = entry.get("plates", [entry["plate"]] if entry.has("plate") else [])
@@ -292,7 +295,7 @@ func _read_energy_links(value: Variant) -> String:
 				return "能量格必须在地板内，且不能重复或由多组机关同时控制。"
 			barriers[cell] = true
 			cells.append(cell)
-		var link := {"id": entry["id"], "plates": group_plates, "activation": "all", "barriers": cells, "pressure_sources": sources}
+		var link := {"id": entry["id"], "color":color, "plates": group_plates, "activation": "all", "barriers": cells, "pressure_sources": sources}
 		if entry.has("plate"):
 			link["plate"] = group_plates[0]
 		energy_links.append(link)
@@ -300,6 +303,20 @@ func _read_energy_links(value: Variant) -> String:
 		if barriers.has(cell):
 			return "压力板与能量格不能重叠。"
 	return ""
+
+
+func pressure_color_at(cell: Vector2i) -> String:
+	for link in energy_links:
+		if cell in link["plates"] or cell in link["barriers"]:
+			return link["color"]
+	return mechanism_color
+
+
+func pressure_colors() -> Array[String]:
+	var result: Array[String] = []
+	for link in energy_links:
+		if link["color"] not in result: result.append(link["color"])
+	return result
 
 
 func _read_energy_blocks(value: Variant) -> String:

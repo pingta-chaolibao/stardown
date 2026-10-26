@@ -75,9 +75,12 @@ def check_replay(item, directory, require_rendered=True):
             assert plates and link.get("activation", "all") == "all"
             assert all(monster_kinds[monster_cells()[p]]=="goblin" for p in set(plates).intersection(monster_cells())), "Only living Goblin pressure is confirmed"
             pressure[link["id"]] = all(("hero" in sources and plate in heroes) or ("crystal" in sources and plate in crystals) or (plate in monster_cells() and monster_kinds[monster_cells()[plate]]=="goblin") for plate in plates)
-        all_pressed = all(pressure.values())
+        color_pressed = {}
         for link in level.get("energy_links", []):
-            barriers.update({tuple(cell): not all_pressed for cell in link["barriers"]})
+            color=link.get("color",level.get("mechanism_color","yellow"))
+            color_pressed[color]=color_pressed.get(color,True) and pressure[link["id"]]
+        for link in level.get("energy_links", []):
+            barriers.update({tuple(cell): not color_pressed[link.get("color",level.get("mechanism_color","yellow"))] for cell in link["barriers"]})
         barriers.update({cell: any(monster_living) for cell in clear_cells})
         living = [True] * len(heroes)
         for cell, active in barriers.items():
@@ -126,9 +129,12 @@ def check_replay(item, directory, require_rendered=True):
             sources=link["pressure_sources"]
             plates=[tuple(c) for c in link.get("plates",[link["plate"]] if "plate" in link else [])]
             pressure[link["id"]]=all(("hero" in sources and p in heroes) or ("crystal" in sources and p in crystals) or (p in monster_cells() and monster_kinds[monster_cells()[p]]=="goblin") for p in plates)
-        all_pressed=all(pressure.values());post={}
+        color_pressed={};post={}
         for link in level.get("energy_links", []):
-            post.update({tuple(c):not all_pressed for c in link["barriers"]})
+            color=link.get("color",level.get("mechanism_color","yellow"))
+            color_pressed[color]=color_pressed.get(color,True) and pressure[link["id"]]
+        for link in level.get("energy_links", []):
+            post.update({tuple(c):not color_pressed[link.get("color",level.get("mechanism_color","yellow"))] for c in link["barriers"]})
         for cell,active in post.items():
             if active and not barriers.get(cell,False):
                 crystals.pop(cell,None)
@@ -417,6 +423,20 @@ def check_visual_feedback(item, evidence):
         final=evidence["final_state"];assert [m["id"] for m in final["monsters"] if m["alive"]]==[1,6]
         assert final["monsters"][1]["position"]==[1,0] and final["pressure"]["purple_01"] and final["player"]==[2,7]
         assert evidence["initial_state"]["pressure"]["purple_01"]
+
+
+
+    if item["level"]==39:
+        assert [v["event_index"] for v in views if v["locked_fire"]]==[28]
+        assert not any(v["locked_goblin"] for v in views)
+        assert views[27]["locked_fire"]==[{"dragon":2,"from":[9,4],"facing":[-1,0],"cells":[[x,4] for x in range(8,1,-1)],"target":{"kind":"monster","id":1}}]
+        assert views[27]["death_keys"]==["m:1"]
+        assert [v["event_index"] for v in views if v["energy_changes"]]==[38,67,73]
+        for event,active in [(38,False),(67,True),(73,False)]:assert views[event-1]["energy_changes"]==[{"cell":[3,1],"active":active}]
+        final=evidence["final_state"];assert [h["position"] for h in final["heroes"]]==[[0,0],[1,0]]
+        assert final["crystals"][0]["position"]==[5,0] and [m["id"] for m in final["monsters"] if m["alive"]]==[0,2]
+        assert final["pressure"]["blue_01"] and final["pressure"]["yellow_01"] and evidence["selection_events"]==11
+        assert final["monsters"][2]["position"]==[9,3] and final["monsters"][2]["facing"]==[-1,0]
 
 
 def check_media(item, evidence):

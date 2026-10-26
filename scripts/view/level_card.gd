@@ -80,16 +80,16 @@ func _preview(area: Rect2) -> void:
 	var goals: Array = data.get("exits", [data["exit"]] if data.has("exit") else [])
 	var goal_tint: Color = {"yellow":GOLD,"green":Color("78dd99"),"blue":Color("85bef5"),"purple":Color("c4a0f3"),"orange":Color("efac71"),"red":Color("f5787b")}.get(data.get("exit_color","yellow"),GOLD)
 	for c in goals: draw_arc(origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile,tile*0.30,0,TAU,16,goal_tint,1,true)
-	var tint := Color("7dbce9") if data.get("mechanism_color")=="blue" else (Color("78d799") if data.get("mechanism_color")=="green" else GOLD)
-	if data.get("mechanism_color")=="red":tint=Color("ef8b83")
 	for link in data.get("energy_links", []):
+		var color_name:String=link.get("color",data.get("mechanism_color","yellow"))
+		var tint:Color={"blue":Color("7dbce9"),"green":Color("78d799"),"purple":Color("bc9af3"),"red":Color("ef8b83")}.get(color_name,GOLD)
 		for c in link.get("plates", [link["plate"]] if link.has("plate") else []):
 			draw_circle(origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile,tile*0.18,tint)
 		for c in link["barriers"]:
 			draw_rect(Rect2(origin+Vector2(c[0],c[1])*tile+Vector2.ONE*2,Vector2.ONE*(tile-4)),Color(tint,0.65))
 	for block in data.get("energy_blocks", []):
 		var c: Array=block["position"]
-		draw_rect(Rect2(origin+Vector2(c[0],c[1])*tile+Vector2.ONE*2,Vector2.ONE*(tile-4)),Color(tint,0.65))
+		draw_rect(Rect2(origin+Vector2(c[0],c[1])*tile+Vector2.ONE*2,Vector2.ONE*(tile-4)),Color(Color("ef8b83"),0.65))
 	for c in data.get("bushes", []): draw_circle(origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile,tile*0.3,Color("517345"))
 	for monster in data.get("monsters",[]):
 		if monster.get("kind") not in ["goblin","fire_dragon"]:continue

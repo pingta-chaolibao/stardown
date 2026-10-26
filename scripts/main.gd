@@ -12,8 +12,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json", "res://levels/north_20.json", "res://levels/north_21.json", "res://levels/north_22.json", "res://levels/north_23.json", "res://levels/north_24.json", "res://levels/north_25.json", "res://levels/north_26.json", "res://levels/north_27.json", "res://levels/north_28.json", "res://levels/north_29.json", "res://levels/north_30.json", "res://levels/north_31.json", "res://levels/north_32.json", "res://levels/north_33.json", "res://levels/north_34.json", "res://levels/north_35.json", "res://levels/north_36.json", "res://levels/north_37.json", "res://levels/north_38.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关", "第二十关", "第二十一关", "第二十二关", "第二十三关", "第二十四关", "第二十五关", "第二十六关", "第二十七关", "第二十八关", "第二十九关", "第三十关", "第三十一关", "第三十二关", "第三十三关", "第三十四关", "第三十五关", "第三十六关", "第三十七关", "第三十八关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json", "res://levels/north_20.json", "res://levels/north_21.json", "res://levels/north_22.json", "res://levels/north_23.json", "res://levels/north_24.json", "res://levels/north_25.json", "res://levels/north_26.json", "res://levels/north_27.json", "res://levels/north_28.json", "res://levels/north_29.json", "res://levels/north_30.json", "res://levels/north_31.json", "res://levels/north_32.json", "res://levels/north_33.json", "res://levels/north_34.json", "res://levels/north_35.json", "res://levels/north_36.json", "res://levels/north_37.json", "res://levels/north_38.json", "res://levels/north_39.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关", "第二十关", "第二十一关", "第二十二关", "第二十三关", "第二十四关", "第二十五关", "第二十六关", "第二十七关", "第二十八关", "第二十九关", "第三十关", "第三十一关", "第三十二关", "第三十三关", "第三十四关", "第三十五关", "第三十六关", "第三十七关", "第三十八关", "第三十九关"]
 
 @export var start_in_level := false
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
@@ -139,18 +139,14 @@ func _hero_tint() -> Color:
 	return Board.HERO_GREEN if model.active_kind()=="green" else Board.CORAL
 
 
-func _plate_name() -> String:
-	if model.level.mechanism_color=="red":return "红板"
-	if model.level.mechanism_color=="purple":return "紫板"
-	if model.level.mechanism_color=="blue":return "蓝板"
-	return "绿板" if model.level.mechanism_color=="green" else "黄板"
+func _plate_name(color_name:String="") -> String:
+	if color_name.is_empty():color_name=model.level.mechanism_color
+	return {"red":"红板","purple":"紫板","blue":"蓝板","green":"绿板"}.get(color_name,"黄板")
 
 
-func _mechanism_tint() -> Color:
-	if model.level.mechanism_color=="red":return Board.MECHANISM_RED
-	if model.level.mechanism_color=="purple":return Board.MECHANISM_PURPLE
-	if model.level.mechanism_color=="blue":return Board.MECHANISM_BLUE
-	return Board.MECHANISM_GREEN if model.level.mechanism_color=="green" else GOLD
+func _mechanism_tint(color_name:String="") -> Color:
+	if color_name.is_empty():color_name=model.level.mechanism_color
+	return {"red":Board.MECHANISM_RED,"purple":Board.MECHANISM_PURPLE,"blue":Board.MECHANISM_BLUE,"green":Board.MECHANISM_GREEN}.get(color_name,GOLD)
 
 
 func _draw() -> void:
@@ -275,11 +271,18 @@ func _refresh(message: String, color: Color = MINT) -> void:
 		progress_label.text = "%d / %d 测试落点" % [model.occupied_targets(), model.level.targets.size()]
 	else:
 		progress_label.text = "未设置胜利判定"
-	for link in model.level.energy_links:
-		if link["plates"].size() > 1 or model.hero_count()>1:
-			var count := model.pressure_progress(link["id"])
-			var objective_progress:=progress_label.text if model.hero_count()>1 else ("已抵达终点" if model.is_complete() else "玩家到终点完成")
-			progress_label.text = "%s · %s %d / %d" % [objective_progress, _plate_name(), count.x, count.y]
+	if model.level.pressure_colors().size()>1:
+		var counts:PackedStringArray=[]
+		for link in model.level.energy_links:
+			var count:=model.pressure_progress(link["id"])
+			counts.append("%s %d/%d" % [_plate_name(link["color"]),count.x,count.y])
+		progress_label.text+="\n"+" · ".join(counts)
+	else:
+		for link in model.level.energy_links:
+			if link["plates"].size() > 1 or model.hero_count()>1:
+				var count := model.pressure_progress(link["id"])
+				var objective_progress:=progress_label.text if model.hero_count()>1 else ("已抵达终点" if model.is_complete() else "玩家到终点完成")
+				progress_label.text = "%s · %s %d / %d" % [objective_progress, _plate_name(), count.x, count.y]
 	if not model.level.monster_clear_barriers.is_empty():
 		progress_label.text += " · 存活怪物 %d / %d" % [model.living_monster_count(),model.level.initial_monsters.size()]
 	undo_button.disabled = model.history_size() == 0
@@ -384,7 +387,10 @@ func _build_board(parent: HBoxContainer) -> void:
 	legend.add_child(_label("● 当前%s人" % active_name if model.hero_count()>1 else "● 英雄", 13, _hero_tint()))
 	legend.add_child(_label("◆ 水晶", 13, Color("9cc5f5")))
 	legend.add_child(_label("◇ 终点", 13, _goal_color()))
-	if not model.level.energy_links.is_empty():
+	if model.level.pressure_colors().size()>1:
+		for color_name in model.level.pressure_colors():
+			legend.add_child(_label("▣ %s机关" % _plate_name(color_name).trim_suffix("板"),13,_mechanism_tint(color_name)))
+	elif not model.level.energy_links.is_empty():
 		legend.add_child(_label("▣ 压力板", 13, _mechanism_tint()))
 		legend.add_child(_label("▤ 能量块", 13, _mechanism_tint()))
 	if not model.level.monster_clear_barriers.is_empty():
@@ -412,6 +418,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	var has_energy := not model.level.energy_links.is_empty() or not model.level.monster_clear_barriers.is_empty()
 	var compact_rules:=not model.level.initial_monsters.is_empty() and has_energy
 	var sidebar := _vbox(8 if model.hero_count()>2 or compact_rules else (12 if has_energy else 16))
+	if model.level.pressure_colors().size()>1:sidebar.add_theme_constant_override("separation",6)
 	sidebar.custom_minimum_size.x = 300
 	parent.add_child(sidebar)
 	var intro := _vbox(4 if model.hero_count()>2 or compact_rules else 6)
@@ -449,6 +456,8 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 		instructions.text="背离相邻水晶或火龙，自动只拉一个。\n火龙不转向；每步火焰只击杀首目标。\n不能推、不能链拉；死亡仅能撤销。"
 	if model.level.monster_kinds.has("goblin") and not model.level.energy_links.is_empty() and not model.level.monster_clear_barriers.is_empty():
 		instructions.text="%s人沿方向与首个可见对象交换。\n活哥布林可压板；四向相邻有危险。" % _hero_color_name() if blue else "活哥布林和英雄、水晶都能压板。\n哥布林四向一格危险；死亡仅可撤销。"
+	if model.level.pressure_colors().size()>1 and multi:
+		instructions.text="红人整列推；绿人只拉一晶或火龙。\nC 免费切换；火龙不转向，每步只击首目标。"
 	if model.level.swap_hero_color=="purple":instructions.text=instructions.text.replace("蓝","紫")
 	intro.add_child(instructions)
 	if not model.level.fence_edges.is_empty():
@@ -462,6 +471,8 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 			var count: int = model.level.energy_links[0]["plates"].size()
 			var number: String = {2:"两",3:"三",9:"九"}.get(count,str(count))
 			rules = "%s块%s同时受压才开门。\n再现：格内英雄死亡、水晶摧毁。" % [number,_plate_name()]
+		if model.level.pressure_colors().size()>1:
+			rules="蓝黄独立，同色全压；哥布林也可压板。\n再现杀英雄/怪物、毁晶；仅撤销恢复。"
 		intro.add_child(_label(rules, 13, _mechanism_tint()))
 	elif not model.level.monster_clear_barriers.is_empty():
 		intro.add_child(_label("清怪能量：所有类型的怪物全部死亡才消失。\n存在时挡移动和视线；撤销复活时同步恢复。",13,_mechanism_tint()))

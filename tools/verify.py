@@ -55,16 +55,17 @@ def main():
             if visual:
                 run_env["LIBGL_ALWAYS_SOFTWARE"] = "1"
             began = time.monotonic()
+            timeout_seconds = 180 if label in {"05_north_39_scene", "06_render_north_39"} else 90
             try:
                 process = subprocess.run(command, env=run_env, cwd=ROOT, text=True,
                                          stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                         timeout=90, check=False)
+                                         timeout=timeout_seconds, check=False)
                 log, returncode = process.stdout, process.returncode
             except subprocess.TimeoutExpired as exc:
                 log = exc.stdout or b""
                 if isinstance(log, bytes):
                     log = log.decode("utf-8", errors="replace")
-                log += "\nERROR: verification timed out after 90 seconds.\n"
+                log += f"\nERROR: verification timed out after {timeout_seconds} seconds.\n"
                 returncode = 124
             (output / (label + ".log")).write_text(log, encoding="utf-8")
             passed = returncode == 0 and not ERROR.search(log)
@@ -134,6 +135,9 @@ def main():
             run("03_north_30", ["--script", "res://tests/north_30_regression.gd"])
             run_python("03_north_31_independent", "tools/check_north_31.py")
             run("03_north_31", ["--script", "res://tests/north_31_regression.gd"])
+            run("03_colored_energy", ["--script", "res://tests/colored_energy_regression.gd"])
+            run_python("03_north_39_independent", "tools/check_north_39.py")
+            run("03_north_39", ["--script", "res://tests/north_39_regression.gd"])
             run_python("03_north_38_independent", "tools/check_north_38.py")
             run("03_north_38", ["--script", "res://tests/north_38_regression.gd"])
             run_python("03_north_37_independent", "tools/check_north_37.py")
@@ -179,6 +183,7 @@ def main():
             run("03_north_11", ["--script", "res://tests/north_11_regression.gd"])
             run("03_north_12", ["--script", "res://tests/north_12_regression.gd"])
             run("04_main_scene", ["--quit-after", "10", "--audio-driver", "Dummy"])
+            run("05_north_39_scene", ["--script", "res://tests/north_39_scene.gd"])
             run("05_north_38_scene", ["--script", "res://tests/north_38_scene.gd"])
             run("05_north_37_scene", ["--script", "res://tests/north_37_scene.gd"])
             run("05_north_36_scene", ["--script", "res://tests/north_36_scene.gd"])
@@ -223,6 +228,7 @@ def main():
             run("05_navigation", ["--script", "res://tests/navigation_scene.gd"])
             run("05_energy_visibility", ["--script", "res://tests/energy_visibility_scene.gd"])
             if args.visual:
+                run("06_render_north_39", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/north_39_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_38", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/north_38_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_37", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/north_37_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)
                 run("06_render_north_36", ["--display-driver", "x11", "--rendering-method", "gl_compatibility", "--audio-driver", "Dummy", "--script", "res://tests/north_36_scene.gd", "--", "--capture-dir=" + str(ROOT / "artifacts" / "screenshots")], visual=True)

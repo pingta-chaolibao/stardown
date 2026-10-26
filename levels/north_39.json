@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_39",
+  "title": "北部英雄 · 第三十九关",
+  "is_temporary": false,
+  "source_note": "用户确认10×5：16绿拉(6,2)、17红推(7,2)、24/26哥布林(0,4)/(2,4)、23火龙(9,3)朝左，8普通水晶(8,0)，1/2目标(0,0)/(1,0)。5蓝板(5,0)控制9蓝能量(3,1)；24黄板(0,4)控制19黄能量(3,3)。火龙正上新增34=(9,2)可走，原1–33保持。无交换英雄、清怪能量和新怪物。",
+  "terrain": [
+    "....#....#",
+    "###.#....#",
+    "###.#.....",
+    "###.#...#.",
+    ".........."
+  ],
+  "void_cells": [
+    [
+      4,
+      0
+    ],
+    [
+      9,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      8,
+      3
+    ]
+  ],
+  "heroes": [
+    {
+      "id": "green",
+      "kind": "green",
+      "position": [
+        6,
+        2
+      ]
+    },
+    {
+      "id": "red",
+      "kind": "red",
+      "position": [
+        7,
+        2
+      ]
+    }
+  ],
+  "active_hero": "green",
+  "crates": [
+    [
+      8,
+      0
+    ]
+  ],
+  "crystal_colors": [
+    "purple"
+  ],
+  "targets": [],
+  "exits": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "exit_color": "green",
+  "objective": "all_heroes_on_exits",
+  "mechanism_color": "yellow",
+  "energy_links": [
+    {
+      "id": "blue_01",
+      "color": "blue",
+      "plates": [
+        [
+          5,
+          0
+        ]
+      ],
+      "activation": "all",
+      "barriers": [
+        [
+          3,
+          1
+        ]
+      ],
+      "pressure_sources": [
+        "hero",
+        "crystal"
+      ]
+    },
+    {
+      "id": "yellow_01",
+      "color": "yellow",
+      "plates": [
+        [
+          0,
+          4
+        ]
+      ],
+      "activation": "all",
+      "barriers": [
+        [
+          3,
+          3
+        ]
+      ],
+      "pressure_sources": [
+        "hero",
+        "crystal"
+      ]
+    }
+  ],
+  "energy_blocks": [],
+  "monsters": [
+    {
+      "kind": "goblin",
+      "position": [
+        0,
+        4
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        2,
+        4
+      ]
+    },
+    {
+      "kind": "fire_dragon",
+      "position": [
+        9,
+        3
+      ],
+      "facing": "left"
+    }
+  ]
+}

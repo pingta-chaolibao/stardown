@@ -29,18 +29,20 @@ static func settle(links: Array[Dictionary], hero: Variant, crystals: Dictionary
 	var hero_alive: Array[bool] = []
 	for _cell in positions:
 		hero_alive.append(true)
-	var all_pressed := true
+	var color_pressed: Dictionary = {}
 	for link in links:
 		var pressed := true
 		for plate: Vector2i in link["plates"]:
 			pressed = pressed and pressure_matches(plate, link["pressure_sources"], hero, crystals, living_goblins)
 		pressure[link["id"]] = pressed
-		all_pressed = all_pressed and pressed
-	# Link IDs describe data and local occupancy, never independent doors.
-	# Every energy barrier uses the same all-pressure-plates AND result.
+		var color: String = link.get("color", "legacy")
+		color_pressed[color] = color_pressed.get(color, true) and pressed
+	# IDs are occupancy records, never independent doors. All plates of one
+	# color AND together; confirmed different colors control their own barriers.
+	# Legacy callers with no color still form one shared AND condition.
 	for link in links:
 		for cell: Vector2i in link["barriers"]:
-			barriers[cell] = not all_pressed
+			barriers[cell] = not color_pressed[link.get("color", "legacy")]
 	barriers.merge(other_barriers)
 	# All occupancy and pressure are computed before evaluating consequences.
 	for cell: Vector2i in barriers:

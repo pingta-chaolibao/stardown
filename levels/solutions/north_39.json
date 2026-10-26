@@ -1,0 +1,24 @@
+{
+  "level_id": "north_hero_39",
+  "path": "UCUUCRRDLULCDUCRCDDRRDULULCUCDCLUCUULLCRRRDULLDUUULDLDDDLLUUUULLLCRRDLDLUDDDLLUUUULL",
+  "moves": 73,
+  "directions": 73,
+  "input_events": 84,
+  "selection_events": 11,
+  "pushes": 7,
+  "pulls": 8,
+  "dragon_pulls": 1,
+  "crystal_pulls": 7,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "fire_attack_actions": [
+    22
+  ],
+  "blue_energy_changes_actions": [
+    29,
+    56,
+    62
+  ],
+  "surviving_monsters": 2,
+  "note": "用户确认10×5与新增34，绿/红协作、蓝黄两色压板各控制对应屏障，同色仍全板AND。73行动11免费切换，7推8拉(1龙7晶)，仅22步火龙击杀首个哥布林；最终晶压蓝板、活哥布林压黄板，双英雄到双目标。稳定ID独立回放，不宣称最短。"
+}
