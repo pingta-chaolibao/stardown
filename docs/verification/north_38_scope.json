@@ -4166,5 +4166,42 @@
     "PhysicalGPU/mobiledevices",
     "Undefined fire/fence or unconfirmed othermonster pressure combinations not expanded"
   ],
-  "CI": "Queried separately after finalpush;local verification is not CI."
+  "CI": "Queried separately after finalpush;local verification is not CI.",
+  "media": {
+    "implementation_commit": "4bd6e772d647ee0679d021f3039a217d04a70aa1",
+    "recording_after_implementation": true,
+    "path": "video/chapter_01/level_38.mp4",
+    "duration_seconds": 26.6,
+    "frames": 798,
+    "bytes": 563359,
+    "sha256": "aa4c150919bbad61a36615cbfcfb61ca6d3347f9c1bed64ed257c14a5745e755",
+    "actions": 36,
+    "swaps": 10,
+    "selection_events": 0,
+    "all36_input_states_and10_exchange_processes_reviewed": true,
+    "encoded_review_frame_count": 80,
+    "contact_pages_reviewed": 12,
+    "sampled_5fps_frames": 133,
+    "distinct_sampled_frames": 126,
+    "all38_full_decode_and_independent_replay_freshly_executed": true,
+    "unchanged_source_fingerprints": 239,
+    "unchanged_old_delivery_files": 161,
+    "unchanged_old_manifest_entries": 37,
+    "fire_attack_actions": [
+      1,
+      2,
+      3,
+      31,
+      32
+    ],
+    "goblin_attack_actions": [],
+    "pressure_energy_restores": 9,
+    "pressure_energy_disappears": 31,
+    "Goblin_pressure_handoff": 32,
+    "inactive_energy_cross": 33,
+    "living_victory": 36,
+    "surviving_monsters": 2,
+    "not_a_clear_monsters_gate": true,
+    "time_utc": "2026-10-26T09:48:45.410843+00:00"
+  }
 }

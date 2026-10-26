@@ -83,6 +83,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第三十五关 | [观看 / 下载 MP4](video/chapter_01/level_35.mp4) | 35.0 秒 |
 | 第三十六关 | [观看 / 下载 MP4](video/chapter_01/level_36.mp4) | 20.6 秒 |
 | 第三十七关 | [观看 / 下载 MP4](video/chapter_01/level_37.mp4) | 30.8 秒 |
+| 第三十八关 | [观看 / 下载 MP4](video/chapter_01/level_38.mp4) | 26.6 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -931,3 +932,5 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 独立稳定身份重放与实际Godot验证 `UUUUUUULDRDDLDRURRUDDURDDDDLULLDDDDR`，36行动10交换。1–3步火龙每步击杀射线上首个哥布林；8步英雄交换上板，9步离板使五个能量格恢复；31步重压后能量消失并恢复火线，32步交换让另一只哥布林接力压板，同时利用火线前的哥布林保护英雄。33步通过失活能量格，36步到终点。最终仍有压板哥布林和火龙两只怪物存活，不要求全怪死亡，不宣称最短路线。
 
 实际Godot：[初始占板](docs/screenshots/level_38_initial.png) · [离板恢复](docs/screenshots/level_38_action_09.png) · [重新压板](docs/screenshots/level_38_action_31.png) · [哥布林接力](docs/screenshots/level_38_action_32.png) · [通关](docs/screenshots/level_38_completed.png) · [小窗口](docs/screenshots/level_38_compact.png)。[验证与复用范围](docs/verification/north_38_scope.json)。
+
+[第三十八关正式通关视频](video/chapter_01/level_38.mp4)：26.6秒、36行动10交换。实现提交后以实际Godot视口与正常WASD录制，紫色交换英雄和紫色压板能量；9步离板恢复五能量格，31步重压开放，32步哥布林接力维持压板、火龙首目标保护英雄，33步过能量格、36步到终点。最终压板哥布林与火龙仍活着，紫能量不以清怪控制。仅1/2/3/31/32播放实际目标喷火，十次交换为闪光换位。[能量恢复](docs/screenshots/level_38_restored.png) · [哥布林接力](docs/screenshots/level_38_goblin_handoff.png) · [胜利帧](docs/screenshots/level_38_victory.png)。
