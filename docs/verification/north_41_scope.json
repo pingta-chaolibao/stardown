@@ -5045,5 +5045,23 @@
     "Physical GPU/mobile devices",
     "Unconfirmed future monster/fence or immunity combinations"
   ],
-  "CI": "Query after final push;local checks are not CI."
+  "CI": "Query after final push;local checks are not CI.",
+  "media": {
+    "bytes": 414979,
+    "sha256": "6c09980c83b61b52cf0ec706260fc79f6194fada0c6737b8e552d63e633864a0",
+    "sampled_5fps_frames": 115,
+    "distinct_sampled_frames": 106,
+    "actual_attacks": 0,
+    "shield_blocks": 10,
+    "surviving_monsters": 5,
+    "implementation_commit": "fa528ed13cc16b0a5c73abb18ffae66d3d7b8da1",
+    "duration_seconds": 23.0,
+    "frames": 690,
+    "actions": 25,
+    "selection_events": 5,
+    "swaps": 1,
+    "reviewed_encoded_frame_count": 122,
+    "contact_pages_reviewed": 14,
+    "all41_full_decode_and_independent_replay_freshly_executed": true
+  }
 }

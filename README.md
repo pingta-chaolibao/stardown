@@ -86,6 +86,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第三十八关 | [观看 / 下载 MP4](video/chapter_01/level_38.mp4) | 26.6 秒 |
 | 第三十九关 | [观看 / 下载 MP4](video/chapter_01/level_39.mp4) | 55.4 秒 |
 | 第四十关 | [观看 / 下载 MP4](video/chapter_01/level_40.mp4) | 15.2 秒 |
+| 第四十一关 | [观看 / 下载 MP4](video/chapter_01/level_41.mp4) | 23.0 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -973,3 +974,5 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 独立稳定身份回放及Godot验证25次方向操作、5次免费切换、1次英雄交换；黄人穿过中路后与紫人换位，两人分别到右侧上下终点。10次黄人护盾阻挡，五只哥布林全部原位存活，无实际攻击或死亡，不宣称最短路线。关卡无需消灭怪物。
 
 [实际初始画面](docs/screenshots/level_41_initial.png) · [双英雄到达](docs/screenshots/level_41_completed.png) · [小窗口](docs/screenshots/level_41_compact_yellow.png) · [测试证据与复用范围](docs/verification/north_41_scope.json)。死亡/撤销截图是合法诊断分支，不是正式通关情节。
+
+[第四十一关正式通关视频](video/chapter_01/level_41.mp4)：23秒，25次方向、5次免费C、1次紫黄英雄互换、10次黄色护盾阻挡；五只哥布林原位存活，无实际攻击或死亡。[护盾](docs/screenshots/level_41_protection.png) · [交换](docs/screenshots/level_41_swap.png) · [胜利](docs/screenshots/level_41_victory.png)。
