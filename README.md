@@ -82,6 +82,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第三十四关 | [观看 / 下载 MP4](video/chapter_01/level_34.mp4) | 24.8 秒 |
 | 第三十五关 | [观看 / 下载 MP4](video/chapter_01/level_35.mp4) | 35.0 秒 |
 | 第三十六关 | [观看 / 下载 MP4](video/chapter_01/level_36.mp4) | 20.6 秒 |
+| 第三十七关 | [观看 / 下载 MP4](video/chapter_01/level_37.mp4) | 30.8 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -919,3 +920,5 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 独立重放及实际Godot验证路线 `LLLLDDDRRRDDDRRRUURULLLLDDLLLUUURRRDRRRRRRR`：43行动、10推动，无切换。5、6步下推火龙分别消灭首个哥布林；7步固定水晶遮挡火焰。21–24步推动水晶与哥布林混合链；30步上推火龙，与最后哥布林同快照互杀，红屏障同一步消失；41步过门，43步存活通关。两颗水晶保留，不宣称最短路线。
 
 实际Godot：[初始](docs/screenshots/level_37_initial.png) · [水晶挡火](docs/screenshots/level_37_action_07.png) · [混合连推](docs/screenshots/level_37_action_24.png) · [清怪开门](docs/screenshots/level_37_clear_open.png) · [撤销复活](docs/screenshots/level_37_undo_revived.png) · [通关](docs/screenshots/level_37_completed.png) · [小窗口](docs/screenshots/level_37_compact.png)。[验证与复用范围](docs/verification/north_37_scope.json)。
+
+[第三十七关正式通关视频](video/chapter_01/level_37.mp4)：30.8秒、43行动10推动。实现提交后实际Godot视口用合法WASD录制；5、6步分别锁定一个哥布林喷火，7步固定水晶挡火，21–24步混合连推；30步上推火龙与最后哥布林同时攻击互杀，红色屏障同一步消失；41步过门，43步存活到终点。只有实际目标的5、6、30步播放喷火，其他输入没有空攻击动画。[水晶挡火](docs/screenshots/level_37_shield.png) · [混合连推](docs/screenshots/level_37_mixed_chain.png) · [互杀攻击](docs/screenshots/level_37_mutual_attack.png) · [胜利帧](docs/screenshots/level_37_victory.png)。
