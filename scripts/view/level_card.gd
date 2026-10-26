@@ -13,6 +13,10 @@ var pressed := false
 var keyboard_focus := false
 var _styles: Dictionary = {}
 
+func _role_color(kind:String) -> Color:
+	if kind=="blue" and entry.get("map",{}).get("swap_hero_color","blue")=="purple":return Color("bd9bf0")
+	return ROLES.get(kind,MINT)
+
 func bind(index: int, data: Dictionary) -> void:
 	bound_index = index
 	entry = data
@@ -49,8 +53,8 @@ func _draw() -> void:
 	var labels := {"red":"推", "green":"拉", "blue":"换位"}
 	var x := 24.0
 	for kind in kinds:
-		draw_circle(Vector2(x, 258 + lift), 3.5, ROLES.get(kind, MINT))
-		_text(labels.get(kind, kind), Vector2(x + 9, 263 + lift), 13, ROLES.get(kind, MINT))
+		draw_circle(Vector2(x, 258 + lift), 3.5, _role_color(kind))
+		_text(labels.get(kind, kind), Vector2(x + 9, 263 + lift), 13, _role_color(kind))
 		x += 66
 	_text(entry.get("detail", ""), Vector2(21, 285 + lift), 12, MINT)
 	draw_line(Vector2(20, size.y - 43), Vector2(size.x - 20, size.y - 43), Color("2a4450"), 1)
@@ -106,5 +110,5 @@ func _preview(area: Rect2) -> void:
 	for h in data.get("heroes", [{"kind":data.get("hero_kind","red"),"position":data.get("player",[1,1])}]):
 		var c: Array = h["position"]
 		var center := origin+(Vector2(c[0],c[1])+Vector2.ONE*0.5)*tile
-		draw_circle(center,tile*0.28,ROLES.get(h["kind"],MINT))
-		draw_line(center+Vector2(0,0.1)*tile,center+Vector2(0,0.45)*tile,ROLES.get(h["kind"],MINT),2,true)
+		draw_circle(center,tile*0.28,_role_color(h["kind"]))
+		draw_line(center+Vector2(0,0.1)*tile,center+Vector2(0,0.45)*tile,_role_color(h["kind"]),2,true)

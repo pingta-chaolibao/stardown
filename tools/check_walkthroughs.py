@@ -73,8 +73,8 @@ def check_replay(item, directory, require_rendered=True):
             sources = link["pressure_sources"]
             plates = [tuple(cell) for cell in link.get("plates", [link["plate"]] if "plate" in link else [])]
             assert plates and link.get("activation", "all") == "all"
-            assert not set(plates).intersection(monster_cells()), "Monster pressure-source behavior has not been confirmed"
-            pressure[link["id"]] = all(("hero" in sources and plate in heroes) or ("crystal" in sources and plate in crystals) for plate in plates)
+            assert all(monster_kinds[monster_cells()[p]]=="goblin" for p in set(plates).intersection(monster_cells())), "Only living Goblin pressure is confirmed"
+            pressure[link["id"]] = all(("hero" in sources and plate in heroes) or ("crystal" in sources and plate in crystals) or (plate in monster_cells() and monster_kinds[monster_cells()[plate]]=="goblin") for plate in plates)
         all_pressed = all(pressure.values())
         for link in level.get("energy_links", []):
             barriers.update({tuple(cell): not all_pressed for cell in link["barriers"]})
@@ -120,8 +120,22 @@ def check_replay(item, directory, require_rendered=True):
             else:monster_living[victim] = False
         for victim in goblin_monsters:monster_living[victim] = False
         for h in goblin_heroes:living[h] = False
-        # Final death results clear only this independent barrier type.
-        # Opening a barrier never schedules another attack this action.
+        # Death releases living-Goblin pressure in the SAME action. Restore
+        # energy victims once,without a second attack sample or corpse pressure.
+        for link in level.get("energy_links", []):
+            sources=link["pressure_sources"]
+            plates=[tuple(c) for c in link.get("plates",[link["plate"]] if "plate" in link else [])]
+            pressure[link["id"]]=all(("hero" in sources and p in heroes) or ("crystal" in sources and p in crystals) or (p in monster_cells() and monster_kinds[monster_cells()[p]]=="goblin") for p in plates)
+        all_pressed=all(pressure.values());post={}
+        for link in level.get("energy_links", []):
+            post.update({tuple(c):not all_pressed for c in link["barriers"]})
+        for cell,active in post.items():
+            if active and not barriers.get(cell,False):
+                crystals.pop(cell,None)
+                if cell in heroes:living[heroes.index(cell)]=False
+                for i,pos in enumerate(monster_positions):
+                    if monster_living[i] and pos==cell:monster_living[i]=False
+        barriers.update(post)
         barriers.update({cell: any(monster_living) for cell in clear_cells})
         return pressure, barriers, living
 
@@ -369,6 +383,14 @@ def check_visual_feedback(item, evidence):
         assert set(views[37]["death_keys"])=={"m:0","m:1"}
         assert [v["event_index"] for v in views if v["energy_changes"]]==[38] and views[37]["energy_changes"]==[{"cell":[8,2],"active":False}]
         assert all(not m["alive"] for m in evidence["final_state"]["monsters"])
+
+    if item["level"]==36:
+        assert not any(v["locked_fire"] or v["locked_goblin"] for v in views)
+        assert [v["event_index"] for v in views if v["death_keys"]]==[21]
+        assert views[20]["death_keys"]==["m:0"]
+        changes={tuple(x["cell"]):x["active"] for x in views[20]["energy_changes"]}
+        assert changes=={(5,1):True,(7,3):False}
+        assert not evidence["final_state"]["monsters"][0]["alive"]
 
 
 def check_media(item, evidence):

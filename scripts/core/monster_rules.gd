@@ -31,6 +31,8 @@ static func settle(kinds:PackedStringArray,positions:Array[Vector2i],living:Arra
 		survivors[i]=false
 	# Energy restoration resolves first. All attack targets then use this common
 	# post-movement/post-mechanism state, before ANY attack deaths are applied.
+	var attack_monster_alive:Array[bool]=survivors.duplicate()
+	var attack_hero_alive:Array[bool]=lives.duplicate()
 	var fire_targets:Array[Dictionary]=[]
 	var goblin_monster_victims:Array[int]=[]
 	if kinds.has("fire_dragon") and fire_context.get("advance",true):
@@ -63,4 +65,4 @@ static func settle(kinds:PackedStringArray,positions:Array[Vector2i],living:Arra
 		else:survivors[target["id"]]=false
 	for victim in goblin_monster_victims:survivors[victim]=false
 	for h in attacked:lives[h]=false
-	return {"error":"","monster_alive":survivors,"hero_alive":lives,"alive":not lives.has(false),"attacked_heroes":attacked,"fire_heroes":fire_heroes}
+	return {"error":"","monster_alive":survivors,"hero_alive":lives,"alive":not lives.has(false),"attacked_heroes":attacked,"fire_heroes":fire_heroes,"attack_monster_alive":attack_monster_alive,"attack_hero_alive":attack_hero_alive}

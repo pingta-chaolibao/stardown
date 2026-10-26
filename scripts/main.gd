@@ -12,8 +12,8 @@ const TEXT := Color("e3e9e6")
 const MUTED := Color("92a8b5")
 const GOLD := Color("dfbb78")
 const MINT := Color("9bc9c1")
-const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json", "res://levels/north_20.json", "res://levels/north_21.json", "res://levels/north_22.json", "res://levels/north_23.json", "res://levels/north_24.json", "res://levels/north_25.json", "res://levels/north_26.json", "res://levels/north_27.json", "res://levels/north_28.json", "res://levels/north_29.json", "res://levels/north_30.json", "res://levels/north_31.json", "res://levels/north_32.json", "res://levels/north_33.json", "res://levels/north_34.json", "res://levels/north_35.json"]
-const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关", "第二十关", "第二十一关", "第二十二关", "第二十三关", "第二十四关", "第二十五关", "第二十六关", "第二十七关", "第二十八关", "第二十九关", "第三十关", "第三十一关", "第三十二关", "第三十三关", "第三十四关", "第三十五关"]
+const LEVEL_PATHS := ["res://levels/north_01.json", "res://levels/north_02.json", "res://levels/north_03.json", "res://levels/north_04.json", "res://levels/north_05.json", "res://levels/north_06.json", "res://levels/north_07.json", "res://levels/north_08.json", "res://levels/north_09.json", "res://levels/north_10.json", "res://levels/north_11.json", "res://levels/north_12.json", "res://levels/north_13.json", "res://levels/north_14.json", "res://levels/north_15.json", "res://levels/north_16.json", "res://levels/north_17.json", "res://levels/north_18.json", "res://levels/north_19.json", "res://levels/north_20.json", "res://levels/north_21.json", "res://levels/north_22.json", "res://levels/north_23.json", "res://levels/north_24.json", "res://levels/north_25.json", "res://levels/north_26.json", "res://levels/north_27.json", "res://levels/north_28.json", "res://levels/north_29.json", "res://levels/north_30.json", "res://levels/north_31.json", "res://levels/north_32.json", "res://levels/north_33.json", "res://levels/north_34.json", "res://levels/north_35.json", "res://levels/north_36.json"]
+const LEVEL_TITLES := ["第一关", "第二关", "第三关", "第四关", "第五关", "第六关", "第七关", "第八关", "第九关", "第十关", "第十一关", "第十二关", "第十三关", "第十四关", "第十五关", "第十六关", "第十七关", "第十八关", "第十九关", "第二十关", "第二十一关", "第二十二关", "第二十三关", "第二十四关", "第二十五关", "第二十六关", "第二十七关", "第二十八关", "第二十九关", "第三十关", "第三十一关", "第三十二关", "第三十三关", "第三十四关", "第三十五关", "第三十六关"]
 
 @export var start_in_level := false
 @export_file("*.json") var level_path: String = "res://levels/north_01.json"
@@ -130,6 +130,15 @@ func _goal_color() -> Color:
 	return Color("78dd99") if model.level.exit_color == "green" else GOLD
 
 
+func _hero_color_name() -> String:
+	if model.active_kind()=="blue" and model.level.swap_hero_color=="purple":return "紫"
+	return {"red":"红","green":"绿","blue":"蓝"}[model.active_kind()]
+
+func _hero_tint() -> Color:
+	if model.active_kind()=="blue":return Board.HERO_PURPLE if model.level.swap_hero_color=="purple" else Board.HERO_BLUE
+	return Board.HERO_GREEN if model.active_kind()=="green" else Board.CORAL
+
+
 func _plate_name() -> String:
 	if model.level.mechanism_color=="red":return "红板"
 	if model.level.mechanism_color=="purple":return "紫板"
@@ -185,7 +194,7 @@ func apply_command(command: Dictionary) -> void:
 			match result:
 				&"cannot_push":
 					board.blocked = true
-					_refresh("蓝色英雄不能推拉；按方向自动交换可见目标。" if model.active_kind()=="blue" else "绿色英雄只能拉，不能推；请绕到水晶前方再背离它移动。", GOLD)
+					_refresh(_hero_color_name()+"色英雄不能推拉；按方向自动交换可见目标。" if model.active_kind()=="blue" else "绿色英雄只能拉，不能推；请绕到水晶前方再背离它移动。", GOLD)
 				&"swapped":
 					_refresh("已与本次输入方向的第一个可见目标交换。")
 				&"pulled":
@@ -371,15 +380,15 @@ func _build_board(parent: HBoxContainer) -> void:
 	content.add_child(board)
 	var legend := _hbox(8 if model.hero_count()>1 else 12)
 	content.add_child(legend)
-	var active_name: String={"red":"红","green":"绿","blue":"蓝"}[model.active_kind()]
-	legend.add_child(_label("● 当前%s人" % active_name if model.hero_count()>1 else "● 英雄", 13, Board.HERO_BLUE if model.active_kind()=="blue" else (Board.HERO_GREEN if model.active_kind() == "green" else Board.CORAL)))
+	var active_name: String=_hero_color_name()
+	legend.add_child(_label("● 当前%s人" % active_name if model.hero_count()>1 else "● 英雄", 13, _hero_tint()))
 	legend.add_child(_label("◆ 水晶", 13, Color("9cc5f5")))
 	legend.add_child(_label("◇ 终点", 13, _goal_color()))
 	if not model.level.energy_links.is_empty():
 		legend.add_child(_label("▣ 压力板", 13, _mechanism_tint()))
 		legend.add_child(_label("▤ 能量块", 13, _mechanism_tint()))
 	if not model.level.monster_clear_barriers.is_empty():
-		legend.add_child(_label("▤ 清怪能量", 13, _mechanism_tint()))
+		legend.add_child(_label("▤ 清怪能量", 13, Board.MECHANISM_RED))
 	if not model.level.bushes.is_empty():
 		legend.add_child(_label("♣ 草丛", 13, Color("a1b76a")))
 	if model.level.monster_kinds.has("goblin"):legend.add_child(_label("✦ 哥布林 · 四向危险格",13,Color("f0a16b")))
@@ -414,7 +423,7 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 	var green := model.active_kind() == "green"
 	var blue:=model.active_kind()=="blue"
 	intro.add_child(_label(("三英雄协作" if model.hero_count()==3 else "双英雄协作") if multi else ("交换之英雄" if blue else ("拉之英雄" if green else "推之英雄")), 30, TEXT))
-	var selected_label:=_label(("当前操作：%s色英雄" % {"red":"红","green":"绿","blue":"蓝"}[model.active_kind()]) if multi else ("蓝色小人 · 能走路，不能推拉" if blue else ("绿色小人 · 只能拉，不能推" if green else "红色小人 · 只能推，不能拉")), 16, Board.HERO_BLUE if blue else (Board.HERO_GREEN if green else Board.CORAL))
+	var selected_label:=_label(("当前操作：%s色英雄" % _hero_color_name()) if multi else ((_hero_color_name()+"色小人 · 能走路，不能推拉") if blue else ("绿色小人 · 只能拉，不能推" if green else "红色小人 · 只能推，不能拉")), 16, _hero_tint())
 	selected_label.name="SelectedHero"
 	intro.add_child(selected_label)
 	var instructions := _label("可推动紧密排成直线的整列水晶。\n每次前进一格，列末受阻则整列不动。", 14, MUTED)
@@ -438,17 +447,23 @@ func _build_sidebar(parent: HBoxContainer) -> void:
 		instructions.text="火龙不转向；每次有效行动只击杀首目标。\n水晶、墙与实体屏障挡火，水晶不烧毁。\n红推、蓝换不改朝向；哥布林四向危险。"
 	if green and model.level.monster_kinds.has("fire_dragon"):
 		instructions.text="背离相邻水晶或火龙，自动只拉一个。\n火龙不转向；每步火焰只击杀首目标。\n不能推、不能链拉；死亡仅能撤销。"
+	if model.level.monster_kinds.has("goblin") and not model.level.energy_links.is_empty() and not model.level.monster_clear_barriers.is_empty():
+		instructions.text="%s人沿方向与首个可见对象交换。\n活哥布林可压板；四向相邻有危险。" % _hero_color_name() if blue else "活哥布林和英雄、水晶都能压板。\n哥布林四向一格危险；死亡仅可撤销。"
+	if model.level.swap_hero_color=="purple":instructions.text=instructions.text.replace("蓝","紫")
 	intro.add_child(instructions)
 	if not model.level.fence_edges.is_empty():
 		intro.add_child(_label("栅栏挡走动和推拉。\n蓝人视线与交换不受栅栏阻挡。", 13, MINT))
-	if not model.level.energy_links.is_empty():
+	var combined_energy:bool=not model.level.energy_links.is_empty() and not model.level.monster_clear_barriers.is_empty()
+	if combined_energy:
+		intro.add_child(_label("全部%s同时受压：黄能量消失。\n全部怪物死亡：红屏障消失。\n再现杀英雄/怪物、毁晶；撤销恢复。" % _plate_name(),13,MUTED))
+	elif not model.level.energy_links.is_empty():
 		var rules := "英雄或水晶压住%s时，能量块消失。\n再现：格内英雄死亡、水晶摧毁。" % _plate_name()
 		if model.level.energy_links[0]["plates"].size() > 1:
 			var count: int = model.level.energy_links[0]["plates"].size()
 			var number: String = {2:"两",3:"三",9:"九"}.get(count,str(count))
 			rules = "%s块%s同时受压才开门。\n再现：格内英雄死亡、水晶摧毁。" % [number,_plate_name()]
 		intro.add_child(_label(rules, 13, _mechanism_tint()))
-	if not model.level.monster_clear_barriers.is_empty():
+	elif not model.level.monster_clear_barriers.is_empty():
 		intro.add_child(_label("清怪能量：所有类型的怪物全部死亡才消失。\n存在时挡移动和视线；撤销复活时同步恢复。",13,_mechanism_tint()))
 	var stats := _hbox(6 if multi else 12)
 	sidebar.add_child(stats)

@@ -894,3 +894,16 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 实际Godot画面：[初始](docs/screenshots/level_35_initial.png) · [使用新增顶行](docs/screenshots/level_35_action_09.png) · [清怪开门](docs/screenshots/level_35_clear_open.png) · [撤销复活](docs/screenshots/level_35_undo_revived.png) · [通关](docs/screenshots/level_35_completed.png) · [小窗口](docs/screenshots/level_35_compact.png)。[执行范围及复用证明](docs/verification/north_35_scope.json)。
 
 [第三十五关正式通关视频](video/chapter_01/level_35.mp4)：35.0秒、50行动16推动。实现提交后实际Godot视口使用合法WASD录制，9–11步使用新增完整顶行；38步龙与哥布林共同快照互杀，红色清怪能量同一步消失；47步过门，50步存活到终点。仅38步播放一次有效喷火和一次哥布林攻击，其他输入没有空攻击动画。[完整顶行](docs/screenshots/level_35_top_row.png) · [互杀攻击](docs/screenshots/level_35_mutual_attack.png) · [胜利帧](docs/screenshots/level_35_victory.png)。
+
+
+## 第三十六关：紫色交换英雄与哥布林压板
+
+用户确认完整11×7：主场7×7，右室3×3经(7,3)连接，右室底行43–45均可走。紫色交换英雄(2,3)，哥布林(4,3)，水晶(3,2)/(3,4)；黄板(1,1)/(1,5)/(5,5)，黄能量(5,1)，红色清怪能量(7,3)，目标(9,3)。原编号1–59映射保留。[关卡](levels/north_36.json) · [编号映射](levels/mappings/north_36_markers.json)。
+
+活哥布林能压板，尸体不持压；其他怪物压板仍未定义并有明确守卫。全部黄板全局AND开启黄色能量，全部怪物死亡开启独立红屏障。动作后统一结算占用、攻击、死亡松板与能量再现，不追加攻击轮。冻结攻击时的共同状态供表现层只读，防止取消同一步已成立的攻击。撤销完整恢复生死、水晶身份、两类机关与操作记录。
+
+紫色只通过可选 `swap_hero_color` 改变显示；内部沿用 `blue` 的方向首目标被动交换，旧关默认蓝色，不增新能力。没有目标时走一格，不能推拉，没有技能键。
+
+实际验证路线 `LRRLDRDUULLDDRRRUUUDRUURRR`，26行动8交换。16步英雄与两晶开黄门；17步哥布林接替压板；19步英雄进入能量格；20步交换哥布林到能量格；21步离板令黄能量恢复、杀哥布林，同时红屏障消失；24步过门，26步通关。两个水晶保留，不宣称最短方向路线。
+
+实际Godot：[初始](docs/screenshots/level_36_initial.png) · [哥布林压板](docs/screenshots/level_36_action_18.png) · [送入能量格](docs/screenshots/level_36_action_20.png) · [能量再现清怪](docs/screenshots/level_36_clear_open.png) · [撤销复活](docs/screenshots/level_36_undo_revived.png) · [胜利](docs/screenshots/level_36_completed.png) · [小窗口](docs/screenshots/level_36_compact.png)。[验证范围](docs/verification/north_36_scope.json)。

@@ -82,6 +82,7 @@ static func _sample_attacks(plan: Dictionary, before: Dictionary, after: Diction
 	# Reuse the exact pure ray query on the common post-move/post-energy state,
 	# with pre-attack life. Same-step dead attackers still have their one attack.
 	var hero_positions: Array[Vector2i] = []
+	var phase:Dictionary=model.attack_phase()
 	var hero_lives: Array[bool] = []
 	for hero in model.heroes():
 		var key: String = "h:"+str(hero["id"])
@@ -96,10 +97,14 @@ static func _sample_attacks(plan: Dictionary, before: Dictionary, after: Diction
 		facings.append(monster.get("facing",Vector2i.ZERO))
 	var crystals: Dictionary = {}
 	for cell in model.crates(): crystals[cell] = model.crate_id(cell)
+	if not phase.is_empty():
+		hero_lives.assign(phase["hero_alive"])
+		monster_lives.assign(phase["monster_alive"])
+		crystals=phase["crystals"].duplicate()
 	# Reconstruct the locked attack phase, not the final cleared-gate state.
 	# A last-monster death may open a gate only AFTER targets were sampled.
-	var attack_barriers: Dictionary = after["barriers"].duplicate()
-	attack_barriers.merge(Energy.monster_clear_states(model.level.monster_clear_barriers,monster_lives),true)
+	var attack_barriers: Dictionary = phase.get("barriers",after["barriers"]).duplicate()
+	if phase.is_empty():attack_barriers.merge(Energy.monster_clear_states(model.level.monster_clear_barriers,monster_lives),true)
 	var attack_blocks: Callable = func(cell: Vector2i) -> bool:
 		return not model.level.is_floor(cell) or model.level.bush_at(cell) != null or attack_barriers.get(cell,false)
 	var rays := Fire.plan(model.level.monster_kinds,monster_positions,monster_lives,facings,hero_positions,hero_lives,crystals,

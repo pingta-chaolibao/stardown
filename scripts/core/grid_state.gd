@@ -36,6 +36,7 @@ var _history: Array[Dictionary] = []
 var _pressure: Dictionary = {}
 var _barriers: Dictionary = {}
 var _initial_state: Dictionary = {}
+var _last_attack_phase: Dictionary = {}
 
 
 func load_level(definition: Level) -> bool:
@@ -220,26 +221,48 @@ func _commit(positions: Array[Vector2i], candidate: Dictionary, pushed: int, pul
 	_hero_alive.assign(settled["hero_alive"])
 	_pressure = settled["pressure"]
 	_barriers = settled["barriers"]
+	_last_attack_phase = settled.get("attack_phase",{}).duplicate(true)
 	return &"committed" if alive else &"died"
 
 
 func _settle_world(definition:Level,positions:Array[Vector2i],crystals:Dictionary,monsters:Array[Vector2i],living:Array[bool],previous:Dictionary,advance:bool=true) -> Dictionary:
-	# No assumption that monsters do/don't hold plates: unsupported encounters
-	# are explicitly unresolved, rather than silently treated as a user rule.
+	# Only living Goblins are confirmed pressure sources; other monster kinds
+	# remain explicitly undefined when they encounter a plate.
 	for i in monsters.size():
-		if not living[i]:continue
+		if not living[i] or definition.monster_kinds[i]=="goblin":continue
 		for link in definition.energy_links:
 			if monsters[i] in link["plates"]:return {"error":"怪物压板规则尚未确认；该组合动作未提交。"}
-	var settled:=Energy.settle(definition.energy_links,positions,crystals,previous,Energy.monster_clear_states(definition.monster_clear_barriers,living))
+	var settled:=Energy.settle(definition.energy_links,positions,crystals,previous,Energy.monster_clear_states(definition.monster_clear_barriers,living),_pressure_goblins(definition,monsters,living))
 	if not settled["error"].is_empty() or monsters.is_empty():return settled
 	var danger:=Monsters.settle(definition.monster_kinds,monsters,living,positions,settled["hero_alive"],previous,settled["barriers"],definition.has_fence,{"facings":definition.monster_facings,"crystals":settled["crystals"],"bounds":Rect2i(Vector2i.ZERO,Vector2i(definition.width,definition.height)),"blocks":func(c:Vector2i)->bool:return not definition.is_floor(c) or definition.bush_at(c)!=null or settled["barriers"].get(c,false),"advance":advance})
 	if not danger["error"].is_empty():return danger
-	settled["death_reason"]="fire" if not danger.get("fire_heroes",[]).is_empty() else ("monster" if not danger["attacked_heroes"].is_empty() else ("energy" if not settled["alive"] else ""))
-	settled["alive"]=danger["alive"];settled["hero_alive"]=danger["hero_alive"];settled["monster_alive"]=danger["monster_alive"]
-	# Final death results open clear-type blocks in this SAME atomic action.
-	# Never resample attacks through the newly absent blocks this turn.
-	settled["barriers"].merge(Energy.monster_clear_states(definition.monster_clear_barriers,danger["monster_alive"]),true)
-	return settled
+	var attack_phase:Dictionary={"monster_alive":danger["attack_monster_alive"].duplicate(),"hero_alive":danger["attack_hero_alive"].duplicate(),"barriers":settled["barriers"].duplicate(),"crystals":settled["crystals"].duplicate()}
+	# Attack deaths release Goblin-held plates in this SAME atomic action.
+	# Recompute mechanisms and restoration victims, never another attack round.
+	var final_living:Array[bool]=danger["monster_alive"].duplicate()
+	var final_energy:=Energy.settle(definition.energy_links,positions,settled["crystals"],settled["barriers"],Energy.monster_clear_states(definition.monster_clear_barriers,final_living),_pressure_goblins(definition,monsters,final_living))
+	if not final_energy["error"].is_empty():return final_energy
+	for i in monsters.size():
+		if final_living[i] and final_energy["barriers"].get(monsters[i],false) and not settled["barriers"].get(monsters[i],false):final_living[i]=false
+	for h in positions.size():final_energy["hero_alive"][h]=final_energy["hero_alive"][h] and danger["hero_alive"][h]
+	final_energy["alive"]=not final_energy["hero_alive"].has(false)
+	# Plates and energy cells cannot overlap, so restoration-killed monsters
+	# cannot release another plate. Only update the independent clear condition.
+	final_energy["barriers"].merge(Energy.monster_clear_states(definition.monster_clear_barriers,final_living),true)
+	final_energy["destroyed_crystals"].merge(settled["destroyed_crystals"])
+	final_energy["monster_alive"]=final_living
+	final_energy["attack_phase"]=attack_phase
+	final_energy["death_reason"]="fire" if not danger.get("fire_heroes",[]).is_empty() else ("monster" if not danger["attacked_heroes"].is_empty() else ("energy" if not final_energy["alive"] else ""))
+	return final_energy
+
+static func _pressure_goblins(definition:Level,positions:Array[Vector2i],living:Array[bool]) -> Array[Vector2i]:
+	var cells:Array[Vector2i]=[]
+	for i in positions.size():
+		if living[i] and definition.monster_kinds[i]=="goblin":cells.append(positions[i])
+	return cells
+
+func attack_phase() -> Dictionary:
+	return _last_attack_phase.duplicate(true)
 
 
 func monster_at(cell:Vector2i) -> int:
@@ -399,7 +422,7 @@ func pressure_cell_is_active(id: String, cell: Vector2i) -> bool:
 		return false
 	for link in level.energy_links:
 		if link["id"] == id and cell in link["plates"]:
-			return Energy.pressure_matches(cell, link["pressure_sources"], _hero_positions, _crates)
+			return Energy.pressure_matches(cell, link["pressure_sources"], _hero_positions, _crates, _pressure_goblins(level,_monster_positions,_monster_alive))
 	return false
 
 
@@ -438,6 +461,7 @@ func sight_path_is_clear(cells: Array[Vector2i]) -> bool:
 
 
 func _restore(state: Dictionary) -> void:
+	_last_attack_phase.clear()
 	# Undo restores the world while retaining the user's current selection.
 	if state.has("hero_positions"):
 		_hero_positions.assign(state["hero_positions"])

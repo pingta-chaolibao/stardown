@@ -5,9 +5,11 @@ extends RefCounted
 const RESTORATION_EFFECTS := {&"hero": &"killed", &"monster": &"killed", &"crystal": &"destroyed"}
 
 
-static func pressure_matches(cell: Vector2i, sources: Array, hero: Variant, crystals: Dictionary) -> bool:
+static func pressure_matches(cell: Vector2i, sources: Array, hero: Variant, crystals: Dictionary, living_goblins: Array[Vector2i] = []) -> bool:
 	var hero_present: bool = cell in hero if hero is Array else hero == cell
-	return ("hero" in sources and hero_present) or ("crystal" in sources and crystals.has(cell))
+	# Goblins are a confirmed global pressure source. The legacy source filter
+	# still selects hero/crystal participation without migrating old level JSON.
+	return ("hero" in sources and hero_present) or ("crystal" in sources and crystals.has(cell)) or cell in living_goblins
 
 
 static func monster_clear_states(cells: Array[Vector2i], living: Array[bool]) -> Dictionary:
@@ -17,7 +19,7 @@ static func monster_clear_states(cells: Array[Vector2i], living: Array[bool]) ->
 	return result
 
 
-static func settle(links: Array[Dictionary], hero: Variant, crystals: Dictionary, previous_barriers: Dictionary, other_barriers: Dictionary = {}) -> Dictionary:
+static func settle(links: Array[Dictionary], hero: Variant, crystals: Dictionary, previous_barriers: Dictionary, other_barriers: Dictionary = {}, living_goblins: Array[Vector2i] = []) -> Dictionary:
 	var pressure: Dictionary = {}
 	var barriers: Dictionary = {}
 	var alive := true
@@ -31,7 +33,7 @@ static func settle(links: Array[Dictionary], hero: Variant, crystals: Dictionary
 	for link in links:
 		var pressed := true
 		for plate: Vector2i in link["plates"]:
-			pressed = pressed and pressure_matches(plate, link["pressure_sources"], hero, crystals)
+			pressed = pressed and pressure_matches(plate, link["pressure_sources"], hero, crystals, living_goblins)
 		pressure[link["id"]] = pressed
 		all_pressed = all_pressed and pressed
 	# Link IDs describe data and local occupancy, never independent doors.

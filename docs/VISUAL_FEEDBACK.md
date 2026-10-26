@@ -57,3 +57,8 @@ Undo、正常重开、切关、返回主界面会清除旧反馈；所有位置�
 完整解码通过，已实际查看72个编码关键帧，包括8个普通动作无喷火对照、全部23次拉动前后 / 移动中间态、同步互杀 / 死亡与正确首尾。新逐步证据标记 `attack_feedback_requires_target=true`，独立回放额外强制只在21/56出现4条有目标攻击。SHA256：`d21a2f1cbabb9c262b058f80d49818adbb1ab0e829c36abb1099c3ad36d69b6b`。旧版本留在Git与Library历史，前28关媒体和旧演示不变。
 
 [当前通关视频](../video/chapter_01/level_29.mp4) · [逐步回放](../video/chapter_01/level_29_replay.json) · [普通动作不喷火](screenshots/level_29_animated_no_attack.png) · [实际互杀喷火](screenshots/level_29_animated_mutual_fire.png)。
+
+
+## 死亡松板后的攻击阶段
+
+活哥布林死亡会在同一步释放压力，恢复的能量可能再杀英雄/怪物或毁晶。反馈必须使用攻击成立时的共同状态，不能用最终屏障或生命倒推。`GridState.attack_phase()` 提供只读副本（生命、屏障、水晶），没有动画计时或玩法回写；`FeedbackEvents` 用它保留已触发的首目标攻击。最近动作的阶段数据不进入游戏撤销快照，Undo、重开和载入会清除；无效输入和免费C不创建攻击轮。相关回归见 `tests/goblin_pressure_regression.gd`。

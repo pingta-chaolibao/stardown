@@ -1,0 +1,15 @@
+{
+  "level_id": "north_hero_36",
+  "path": "LRRLDRDUULLDDRRRUUUDRUURRR",
+  "moves": 26,
+  "directions": 26,
+  "input_events": 26,
+  "selection_events": 0,
+  "pushes": 0,
+  "pulls": 0,
+  "swaps": 8,
+  "destroyed_crystals": 0,
+  "monster_death_action": 21,
+  "gate_traversal_action": 24,
+  "note": "用户确认完整11×7及活哥布林压板；既有交换能力blue，紫色只显示。独立稳定身份逐输入回放，非最短声明。"
+}

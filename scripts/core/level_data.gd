@@ -18,6 +18,7 @@ var width: int = 0
 var height: int = 0
 var start: Vector2i = Vector2i.ZERO
 var hero_kind: String = "red"
+var swap_hero_color: String = "blue" # Presentation only;the exchange kind stays blue.
 var hero_definitions: Array[Dictionary] = []
 var initial_active_hero: int = 0
 var initial_crates: Array[Vector2i] = []
@@ -149,6 +150,9 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	if mechanism_tint not in ["yellow", "green", "blue", "purple", "red"]:
 		return _invalid("mechanism_color 仅支持 yellow、green、blue、purple 或 red，且只影响显示。")
 	level.mechanism_color = mechanism_tint
+	var swap_tint:Variant=data.get("swap_hero_color","blue")
+	if swap_tint not in ["blue","purple"]:return _invalid("swap_hero_color 仅支持 blue 或 purple，且只影响交换英雄显示。")
+	level.swap_hero_color=swap_tint
 	var colors: Variant = data.get("crystal_colors", [])
 	if not colors is Array or (not colors.is_empty() and colors.size() != level.initial_crates.size()):
 		return _invalid("crystal_colors 必须为空数组或与水晶数量相同的颜色数组。")

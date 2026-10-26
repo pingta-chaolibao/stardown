@@ -10,6 +10,7 @@ const State = preload("res://scripts/core/grid_state.gd")
 const CORAL := Color("f5787b")
 const HERO_GREEN := Color("72ce95")
 const HERO_BLUE := Color("78aff0")
+const HERO_PURPLE := Color("bd9bf0")
 const MECHANISM_GREEN := Color("78d799")
 const MECHANISM_BLUE := Color("7dbce9")
 const MECHANISM_PURPLE := Color("bc9af3")
@@ -79,7 +80,7 @@ func _draw() -> void:
 		_bush(origin + (Vector2(bush.cell) + Vector2.ONE * 0.5) * tile, tile)
 	for cell: Vector2i in model.barrier_states():
 		var center := origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile
-		if not model.barrier_is_active(cell): _inactive_energy_floor(center,tile)
+		if not model.barrier_is_active(cell): _inactive_energy_floor(center,tile,cell in level.monster_clear_barriers)
 		_draw_energy_transition(cell,center,tile)
 	for cell in level.exit_cells:
 		_exit_marker(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
@@ -107,7 +108,7 @@ func _draw() -> void:
 	# them, so a selection ring/shadow cannot hide a passable energy cell.
 	for cell: Vector2i in model.barrier_states():
 		if not model.barrier_is_active(cell):
-			_inactive_energy_border(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile)
+			_inactive_energy_border(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile,cell in level.monster_clear_barriers)
 
 
 func _danger(center:Vector2,tile:float) -> void:
@@ -174,8 +175,8 @@ func _pressure_plate(center: Vector2, tile: float, pressed: bool) -> void:
 		draw_circle(center, tile * 0.15, light)
 
 
-func _energy_block(center: Vector2, tile: float) -> void:
-	if model.level.mechanism_color == "red":
+func _energy_block(center: Vector2, tile: float, clear:bool=false) -> void:
+	if clear or model.level.mechanism_color == "red":
 		_box(Rect2(center - Vector2.ONE * tile * 0.43, Vector2.ONE * tile * 0.86), Color("914e4a"), 5)
 		_box(Rect2(center - Vector2.ONE * tile * 0.34, Vector2.ONE * tile * 0.68), MECHANISM_RED, 3)
 		for offset in [-0.20, 0.0, 0.20]:
@@ -190,7 +191,8 @@ func _energy_block(center: Vector2, tile: float) -> void:
 		_actor_line(center + Vector2(offset, -0.28) * tile, center + Vector2(offset, 0.28) * tile, Color("f4e8ff") if purple else (Color("e1f5ff") if blue else (Color("dbffe6") if green else Color("fff0b5"))), tile * 0.035, true)
 
 
-func _mechanism_tint() -> Color:
+func _mechanism_tint(clear:bool=false) -> Color:
+	if clear:return MECHANISM_RED
 	if model.level.mechanism_color == "red":
 		return MECHANISM_RED
 	if model.level.mechanism_color == "purple":
@@ -200,15 +202,15 @@ func _mechanism_tint() -> Color:
 	return MECHANISM_GREEN if model.level.mechanism_color == "green" else GOLD
 
 
-func _inactive_energy_floor(center: Vector2, tile: float) -> void:
-	var tint := _mechanism_tint()
+func _inactive_energy_floor(center: Vector2, tile: float, clear:bool=false) -> void:
+	var tint := _mechanism_tint(clear)
 	draw_rect(Rect2(center - Vector2.ONE * tile * 0.38, Vector2.ONE * tile * 0.76), Color(tint, 0.045))
 	for offset in [-0.24, -0.12, 0.0, 0.12, 0.24]:
 		draw_line(center + Vector2(offset - 0.09, -0.17) * tile, center + Vector2(offset + 0.09, 0.17) * tile, Color(tint, 0.16), 1.0, true)
 
 
-func _inactive_energy_border(center: Vector2, tile: float) -> void:
-	var tint := _mechanism_tint()
+func _inactive_energy_border(center: Vector2, tile: float, clear:bool=false) -> void:
+	var tint := _mechanism_tint(clear)
 	var corners := PackedVector2Array([
 		center + Vector2(-0.43, -0.43) * tile, center + Vector2(0.43, -0.43) * tile,
 		center + Vector2(0.43, 0.43) * tile, center + Vector2(-0.43, 0.43) * tile,
@@ -330,8 +332,8 @@ func _hero(center: Vector2, tile: float, kind: String, selected: bool) -> void:
 	var tint := HERO_GREEN if green else CORAL
 	var shade := Color("3e9967") if green else Color("d45568")
 	if kind=="blue":
-		tint=HERO_BLUE
-		shade=Color("416fae")
+		tint=HERO_PURPLE if model.level.swap_hero_color=="purple" else HERO_BLUE
+		shade=Color("7652a8") if model.level.swap_hero_color=="purple" else Color("416fae")
 	var multi:=model.hero_count()>1
 	if multi and not selected:
 		tint=tint.darkened(0.35)
@@ -450,20 +452,21 @@ func _draw_entity(key: String, entity: Dictionary, origin: Vector2, tile: float)
 
 func _draw_energy_transition(cell: Vector2i, center: Vector2, tile: float) -> void:
 	var active := model.barrier_is_active(cell)
+	var clear:bool=cell in model.level.monster_clear_barriers
 	var transition: Dictionary = {}
 	for event in feedback.plan.get("energy",[]):
 		if event["cell"] == cell: transition = event
 	if transition.is_empty():
-		if active: _energy_block(center,tile)
+		if active: _energy_block(center,tile,clear)
 		return
 	var t := feedback.fraction(0.04,0.16)
 	var visible := t if active else 1.0-t
 	_entity_alpha = visible
 	draw_set_transform(center,0.0,Vector2.ONE*(0.72+0.28*visible))
-	_energy_block(Vector2.ZERO,tile)
+	_energy_block(Vector2.ZERO,tile,clear)
 	draw_set_transform(Vector2.ZERO)
 	_entity_alpha = 1.0
-	var tint := _mechanism_tint()
+	var tint := _mechanism_tint(clear)
 	draw_arc(center,tile*(0.21+0.27*t),0,TAU,36,Color(tint,0.45*sin(PI*t)),1.5,true)
 	for i in 8:
 		var angle := TAU*float(i)/8.0
