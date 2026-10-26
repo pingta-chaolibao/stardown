@@ -4219,5 +4219,34 @@
     "Physical GPU/mobile devices",
     "Undefined monster-pressure/fire-fence combinations remain guarded"
   ],
-  "CI": "Queried separately after finalpush;local verification is not CI."
+  "CI": "Queried separately after finalpush;local verification is not CI.",
+  "media": {
+    "implementation_commit": "cbaf52ad66fd247cdff032e4ea798399172abece",
+    "recording_after_implementation": true,
+    "path": "video/chapter_01/level_35.mp4",
+    "duration_seconds": 35.0,
+    "frames": 1050,
+    "bytes": 654094,
+    "sha256": "58fb1408f634c4e934770fa4709be6dbdf616825cef45b79bc5d42a7956a94b7",
+    "actions": 50,
+    "pushes": 16,
+    "all50_input_states_and16_push_motions_reviewed": true,
+    "encoded_review_frame_count": 71,
+    "sampled_5fps_frames": 175,
+    "distinct_sampled_frames": 175,
+    "all35_full_decode_and_independent_replay_freshly_executed": true,
+    "unchanged_source_fingerprints": 220,
+    "unchanged_old_delivery_files": 146,
+    "unchanged_old_manifest_entries": 34,
+    "fire_actions": [
+      38
+    ],
+    "goblin_attack_actions": [
+      38
+    ],
+    "clear_energy_disappears_action": 38,
+    "gate_cross": 47,
+    "living_victory": 50,
+    "time_utc": "2026-10-26T04:45:21.906053+00:00"
+  }
 }

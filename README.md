@@ -80,6 +80,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第三十二关 | [观看 / 下载 MP4](video/chapter_01/level_32.mp4) | 30.8 秒 |
 | 第三十三关 | [观看 / 下载 MP4](video/chapter_01/level_33.mp4) | 45.8 秒 |
 | 第三十四关 | [观看 / 下载 MP4](video/chapter_01/level_34.mp4) | 24.8 秒 |
+| 第三十五关 | [观看 / 下载 MP4](video/chapter_01/level_35.mp4) | 35.0 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -891,3 +892,5 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 
 
 实际Godot画面：[初始](docs/screenshots/level_35_initial.png) · [使用新增顶行](docs/screenshots/level_35_action_09.png) · [清怪开门](docs/screenshots/level_35_clear_open.png) · [撤销复活](docs/screenshots/level_35_undo_revived.png) · [通关](docs/screenshots/level_35_completed.png) · [小窗口](docs/screenshots/level_35_compact.png)。[执行范围及复用证明](docs/verification/north_35_scope.json)。
+
+[第三十五关正式通关视频](video/chapter_01/level_35.mp4)：35.0秒、50行动16推动。实现提交后实际Godot视口使用合法WASD录制，9–11步使用新增完整顶行；38步龙与哥布林共同快照互杀，红色清怪能量同一步消失；47步过门，50步存活到终点。仅38步播放一次有效喷火和一次哥布林攻击，其他输入没有空攻击动画。[完整顶行](docs/screenshots/level_35_top_row.png) · [互杀攻击](docs/screenshots/level_35_mutual_attack.png) · [胜利帧](docs/screenshots/level_35_victory.png)。
