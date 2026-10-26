@@ -1,0 +1,14 @@
+{
+  "level_id": "north_hero_41",
+  "path": "CUURCDDCRRRRRRCRRUUCRRRRRRRRDD",
+  "moves": 25,
+  "directions": 25,
+  "input_events": 30,
+  "selection_events": 5,
+  "pushes": 0,
+  "pulls": 0,
+  "swaps": 1,
+  "destroyed_crystals": 0,
+  "surviving_monsters": 5,
+  "note": "用户确认22可走格9×5；紫色被动交换与黄色正交保护协作，免费切换不推进攻击，两英雄分别到右侧两目标。稳定ID独立回放，不宣称最短。"
+}

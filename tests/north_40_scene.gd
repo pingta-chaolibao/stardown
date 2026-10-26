@@ -30,7 +30,7 @@ func _run()->void:
 	_check(game.model.is_complete() and game.moves_label.text=="17" and game.model.player==Vector2i(2,3),"yellow reaches30 in17actual walks")
 	await _capture("north_40_completed.png");await _click("Undo");_check(game.model.snapshot()==last_before and not game.model.is_complete(),"victory Undo restores actual prior action")
 	await _click("Restart");root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_40_compact.png")
-	await _click("BackToLevels");_check(game.menu.strip.item_count==40 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"40 catalog entries remain pooled")
+	await _click("BackToLevels");_check(game.menu.strip.item_count==game.LEVEL_PATHS.size() and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"40 catalog entries remain pooled")
 	await _capture("north_40_navigation.png");await _click("Level39");_check(not game.model.protected_heroes().has(true) and game.model.level.pressure_colors()==["blue","yellow"],"yellow immunity never leaks into old39")
 	await _click("Level40");_check(game.model.snapshot()==initial,"return40 restores pristine state")
 	game.queue_free();await process_frame

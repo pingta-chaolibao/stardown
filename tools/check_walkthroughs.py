@@ -455,6 +455,17 @@ def check_visual_feedback(item, evidence):
         assert final["crystals"]==evidence["initial_state"]["crystals"] and len(final["crystals"])==5
         assert final["monsters"][6]["facing"]==[1,0] and final["barriers"]==[]
 
+    if item["level"]==41:
+        assert evidence["path"]=="CUURCDDCRRRRRRCRRUUCRRRRRRRRDD"
+        assert evidence["direction_actions"]==25 and evidence["selection_events"]==5 and evidence["final_state"]["swaps"]==1
+        assert not any(v["locked_fire"] or v["locked_goblin"] or v["death_keys"] or v["energy_changes"] for v in views)
+        assert sum(len(v.get("shield_blocks",[])) for v in views)==10
+        final=evidence["final_state"]
+        assert final["crystals"]==[] and final["monsters"]==evidence["initial_state"]["monsters"]
+        assert len(final["monsters"])==5 and all(m["alive"] for m in final["monsters"])
+        assert {tuple(h["position"]) for h in final["heroes"]}=={(8,0),(8,4)}
+        assert [h["kind"] for h in final["heroes"]]==["blue","yellow"] and all(h["alive"] for h in final["heroes"])
+
 
 def check_media(item, evidence):
     path = ROOT / item["file"]

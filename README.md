@@ -962,3 +962,14 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 实际Godot：[初始范围](docs/screenshots/level_40_initial.png) · [挡住火线](docs/screenshots/level_40_action_13.png) · [通关](docs/screenshots/level_40_completed.png) · [小窗口](docs/screenshots/level_40_compact.png) · [独立邻保测试](docs/screenshots/level_40_fixture_ally.png)。独立测试截图不是正式通关情节。[测试证据与范围](docs/verification/north_40_scope.json)。
 
 [第四十关正式通关视频](video/chapter_01/level_40.mp4)：15.2秒、17次普通移动。黄色英雄不能推拉；2–8步自身免受哥布林，10–16步挡住火线；五晶、七怪全部保持原位存活，没有实际攻击或死亡。正常Godot/WASD录制，保护范围与盾牌可见。[哥布林保护](docs/screenshots/level_40_goblin_shield.png) · [挡住火线](docs/screenshots/level_40_fire_shield.png) · [胜利](docs/screenshots/level_40_victory.png)。
+
+
+## 第四十一关：紫黄英雄协作
+
+用户确认9×5，22个可走格按行编号。1紫色交换英雄、21黄色保护英雄；4、5、6、18、19哥布林，2、22终点。左右竖路各5格，中横路9格，没有新机制。[关卡](levels/north_41.json) · [原编号映射](levels/mappings/north_41_markers.json)。
+
+紫人沿本次方向视线优先交换首个英雄或怪物，否则走一步；黄人仅移动和正交一格保护，不推拉。C及屏幕切换免费、不入撤销，撤销保持当前选择。两英雄分别站不同终点才通关。哥布林四向威胁、同步结算和死亡只能撤销均不变。
+
+独立稳定身份回放及Godot验证25次方向操作、5次免费切换、1次英雄交换；黄人穿过中路后与紫人换位，两人分别到右侧上下终点。10次黄人护盾阻挡，五只哥布林全部原位存活，无实际攻击或死亡，不宣称最短路线。关卡无需消灭怪物。
+
+[实际初始画面](docs/screenshots/level_41_initial.png) · [双英雄到达](docs/screenshots/level_41_completed.png) · [小窗口](docs/screenshots/level_41_compact_yellow.png) · [测试证据与复用范围](docs/verification/north_41_scope.json)。死亡/撤销截图是合法诊断分支，不是正式通关情节。

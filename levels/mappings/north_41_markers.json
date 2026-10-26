@@ -1,0 +1,162 @@
+{
+  "level_id": "north_hero_41",
+  "columns": 9,
+  "rows": 5,
+  "numbering": "Only walkable cells,row-major,1–22;walls not numbered",
+  "markers": {
+    "1": {
+      "cell": [
+        0,
+        0
+      ],
+      "terrain": "."
+    },
+    "2": {
+      "cell": [
+        8,
+        0
+      ],
+      "terrain": "."
+    },
+    "3": {
+      "cell": [
+        0,
+        1
+      ],
+      "terrain": "."
+    },
+    "4": {
+      "cell": [
+        2,
+        1
+      ],
+      "terrain": "."
+    },
+    "5": {
+      "cell": [
+        4,
+        1
+      ],
+      "terrain": "."
+    },
+    "6": {
+      "cell": [
+        6,
+        1
+      ],
+      "terrain": "."
+    },
+    "7": {
+      "cell": [
+        8,
+        1
+      ],
+      "terrain": "."
+    },
+    "8": {
+      "cell": [
+        0,
+        2
+      ],
+      "terrain": "."
+    },
+    "9": {
+      "cell": [
+        1,
+        2
+      ],
+      "terrain": "."
+    },
+    "10": {
+      "cell": [
+        2,
+        2
+      ],
+      "terrain": "."
+    },
+    "11": {
+      "cell": [
+        3,
+        2
+      ],
+      "terrain": "."
+    },
+    "12": {
+      "cell": [
+        4,
+        2
+      ],
+      "terrain": "."
+    },
+    "13": {
+      "cell": [
+        5,
+        2
+      ],
+      "terrain": "."
+    },
+    "14": {
+      "cell": [
+        6,
+        2
+      ],
+      "terrain": "."
+    },
+    "15": {
+      "cell": [
+        7,
+        2
+      ],
+      "terrain": "."
+    },
+    "16": {
+      "cell": [
+        8,
+        2
+      ],
+      "terrain": "."
+    },
+    "17": {
+      "cell": [
+        0,
+        3
+      ],
+      "terrain": "."
+    },
+    "18": {
+      "cell": [
+        3,
+        3
+      ],
+      "terrain": "."
+    },
+    "19": {
+      "cell": [
+        5,
+        3
+      ],
+      "terrain": "."
+    },
+    "20": {
+      "cell": [
+        8,
+        3
+      ],
+      "terrain": "."
+    },
+    "21": {
+      "cell": [
+        0,
+        4
+      ],
+      "terrain": "."
+    },
+    "22": {
+      "cell": [
+        8,
+        4
+      ],
+      "terrain": "."
+    }
+  }
+}

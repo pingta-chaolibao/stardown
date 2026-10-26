@@ -71,7 +71,7 @@ func _timeline() -> void:
 	clock.cancel(); _check(clock.accents.is_empty(),"cancel clears selection/victory/undo/contact effects")
 
 func _campaign() -> void:
-	for number in range(1,41):
+	for number in range(1,42):
 		var g := State.new(); _check(g.load_level(Level.from_file("res://levels/north_%02d.json" % number)),"campaign loads")
 		var solution: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://levels/solutions/north_%02d.json" % number))
 		var attack_actions: Array[int] = []
