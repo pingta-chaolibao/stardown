@@ -33,7 +33,7 @@ func _run() -> void:
 	_check(game.model.is_complete() and game.moves_label.text=="33" and game.model.pulls==18 and game.model.pushes==0 and game.model.swaps==0,"33actions18pulls livingvictory")
 	await _capture("north_34_completed.png");await _click("Undo");_check(game.model.snapshot()==history[-1] and not game.model.is_complete(),"victoryUndo")
 	await _click("Restart");root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_34_compact.png")
-	await _click("BackToLevels");_check(game.menu.strip.item_count == 37 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"37realentriesremainpooled")
+	await _click("BackToLevels");_check(game.menu.strip.item_count == 38 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"38realentriesremainpooled")
 	await _capture("north_34_navigation.png");await _click("Level33");await _click("Level34");_check(game.model.snapshot()==initial and game.model.history_size()==0,"33/34worldhistoryisolation")
 	print("NORTH34 SCENE RESULT: %d checks,%d failures;display=%s" % [checks,failures,DisplayServer.get_name()]);quit(0 if failures==0 else 1)
 func _cell(a:Array)->Vector2i:return Vector2i(a[0],a[1])

@@ -922,3 +922,12 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 实际Godot：[初始](docs/screenshots/level_37_initial.png) · [水晶挡火](docs/screenshots/level_37_action_07.png) · [混合连推](docs/screenshots/level_37_action_24.png) · [清怪开门](docs/screenshots/level_37_clear_open.png) · [撤销复活](docs/screenshots/level_37_undo_revived.png) · [通关](docs/screenshots/level_37_completed.png) · [小窗口](docs/screenshots/level_37_compact.png)。[验证与复用范围](docs/verification/north_37_scope.json)。
 
 [第三十七关正式通关视频](video/chapter_01/level_37.mp4)：30.8秒、43行动10推动。实现提交后实际Godot视口用合法WASD录制；5、6步分别锁定一个哥布林喷火，7步固定水晶挡火，21–24步混合连推；30步上推火龙与最后哥布林同时攻击互杀，红色屏障同一步消失；41步过门，43步存活到终点。只有实际目标的5、6、30步播放喷火，其他输入没有空攻击动画。[水晶挡火](docs/screenshots/level_37_shield.png) · [混合连推](docs/screenshots/level_37_mixed_chain.png) · [互杀攻击](docs/screenshots/level_37_mutual_attack.png) · [胜利帧](docs/screenshots/level_37_victory.png)。
+
+
+## 第三十八关：紫色压板与哥布林接力
+
+用户确认15×8、75个可走编号；41=(4,4)是普通地板。紫交换英雄(6,7)，目标(2,7)；六只哥布林与(14,4)向左火龙。2号压板(1,0)初始被活哥布林占据，控制50、52–55号五个紫能量格。紫色只影响表现，本关使用既有 `energy_links` 压板机制，**没有清怪能量块**。[关卡](levels/north_38.json) · [原编号映射](levels/mappings/north_38_markers.json)。
+
+独立稳定身份重放与实际Godot验证 `UUUUUUULDRDDLDRURRUDDURDDDDLULLDDDDR`，36行动10交换。1–3步火龙每步击杀射线上首个哥布林；8步英雄交换上板，9步离板使五个能量格恢复；31步重压后能量消失并恢复火线，32步交换让另一只哥布林接力压板，同时利用火线前的哥布林保护英雄。33步通过失活能量格，36步到终点。最终仍有压板哥布林和火龙两只怪物存活，不要求全怪死亡，不宣称最短路线。
+
+实际Godot：[初始占板](docs/screenshots/level_38_initial.png) · [离板恢复](docs/screenshots/level_38_action_09.png) · [重新压板](docs/screenshots/level_38_action_31.png) · [哥布林接力](docs/screenshots/level_38_action_32.png) · [通关](docs/screenshots/level_38_completed.png) · [小窗口](docs/screenshots/level_38_compact.png)。[验证与复用范围](docs/verification/north_38_scope.json)。

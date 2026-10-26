@@ -1,0 +1,25 @@
+{
+  "level_id": "north_hero_38",
+  "path": "UUUUUUULDRDDLDRURRUDDURDDDDLULLDDDDR",
+  "moves": 36,
+  "directions": 36,
+  "input_events": 36,
+  "selection_events": 0,
+  "pushes": 0,
+  "pulls": 0,
+  "swaps": 10,
+  "destroyed_crystals": 0,
+  "pressure_energy_changes_actions": [
+    9,
+    31
+  ],
+  "fire_attack_actions": [
+    1,
+    2,
+    3,
+    31,
+    32
+  ],
+  "surviving_monsters": 2,
+  "note": "用户确认15×8、41可走、紫压板不是清怪能量。独立稳定身份逐输入回放；36行动10交换，最终活哥布林压板保持能量消失，仍有两怪存活。非最短路径声明。"
+}

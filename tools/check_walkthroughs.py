@@ -404,6 +404,21 @@ def check_visual_feedback(item, evidence):
         assert all(not m["alive"] for m in evidence["final_state"]["monsters"])
 
 
+
+    if item["level"]==38:
+        assert [v["event_index"] for v in views if v["locked_fire"]]==[1,2,3,31,32]
+        assert not any(v["locked_goblin"] for v in views)
+        for action,target in [(1,5),(2,4),(3,3),(31,2),(32,0)]:
+            rays=views[action-1]["locked_fire"];assert len(rays)==1 and rays[0]["dragon"]==6 and rays[0]["from"]==[14,4] and rays[0]["facing"]==[-1,0] and rays[0]["target"]=={"kind":"monster","id":target}
+            assert set(views[action-1]["death_keys"])=={"m:"+str(target)}
+        assert [v["event_index"] for v in views if v["energy_changes"]]==[9,31]
+        for action,active in [(9,True),(31,False)]:
+            assert {tuple(x["cell"]):x["active"] for x in views[action-1]["energy_changes"]}=={(13,4):active,(0,5):active,(1,5):active,(2,5):active,(3,5):active}
+        final=evidence["final_state"];assert [m["id"] for m in final["monsters"] if m["alive"]]==[1,6]
+        assert final["monsters"][1]["position"]==[1,0] and final["pressure"]["purple_01"] and final["player"]==[2,7]
+        assert evidence["initial_state"]["pressure"]["purple_01"]
+
+
 def check_media(item, evidence):
     path = ROOT / item["file"]
     data = path.read_bytes()
