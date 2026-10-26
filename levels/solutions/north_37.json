@@ -1,0 +1,20 @@
+{
+  "level_id": "north_hero_37",
+  "path": "LLLLDDDRRRDDDRRRUURULLLLDDLLLUUURRRDRRRRRRR",
+  "moves": 43,
+  "directions": 43,
+  "input_events": 43,
+  "selection_events": 0,
+  "pushes": 10,
+  "pulls": 0,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "monster_death_actions": [
+    5,
+    6,
+    30
+  ],
+  "all_monsters_dead_action": 30,
+  "gate_traversal_action": 41,
+  "note": "用户确认12×7，右室下补64–66，其余原编号不变。独立稳定身份逐方向重放，混合链推/共同状态攻击/全怪死亡红门沿用既有规则，不宣称最短方向路线。"
+}

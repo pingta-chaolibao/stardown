@@ -910,3 +910,12 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 实际Godot：[初始](docs/screenshots/level_36_initial.png) · [哥布林压板](docs/screenshots/level_36_action_18.png) · [送入能量格](docs/screenshots/level_36_action_20.png) · [能量再现清怪](docs/screenshots/level_36_clear_open.png) · [撤销复活](docs/screenshots/level_36_undo_revived.png) · [胜利](docs/screenshots/level_36_completed.png) · [小窗口](docs/screenshots/level_36_compact.png)。[验证范围](docs/verification/north_36_scope.json)。
 
 [第三十六关正式通关视频](video/chapter_01/level_36.mp4)：20.6秒、26行动8交换。实现提交后用实际Godot视口与合法WASD录制，活哥布林压板与两个水晶维持三板AND；21步离板后黄能量恢复杀哥布林，红屏障同一步消失，24过门、26存活通关。八次交换都有闪光换位，没有穿过中间格；没有攻击目标的回合不播攻击。[哥布林压板](docs/screenshots/level_36_goblin_plate.png) · [交换入能量格](docs/screenshots/level_36_energy_exchange.png) · [能量再现](docs/screenshots/level_36_energy_death.png) · [胜利帧](docs/screenshots/level_36_victory.png)。
+
+
+## 第三十七关：混合连推与清怪屏障
+
+用户确认12×7：主场8×7，右室3×3，补行64–66在37–39下方；经(8,3)红色清怪能量连接。红英雄(4,0)，向右火龙(0,1)，哥布林(4,2)/(3,3)/(5,3)，水晶(2,4)/(6,5)，目标(10,3)。[关卡](levels/north_37.json) · [原编号映射](levels/mappings/north_37_markers.json)。没有新机制；公共规则、表现与输入实现均保持原样，只追加选关数据。
+
+独立重放及实际Godot验证路线 `LLLLDDDRRRDDDRRRUURULLLLDDLLLUUURRRDRRRRRRR`：43行动、10推动，无切换。5、6步下推火龙分别消灭首个哥布林；7步固定水晶遮挡火焰。21–24步推动水晶与哥布林混合链；30步上推火龙，与最后哥布林同快照互杀，红屏障同一步消失；41步过门，43步存活通关。两颗水晶保留，不宣称最短路线。
+
+实际Godot：[初始](docs/screenshots/level_37_initial.png) · [水晶挡火](docs/screenshots/level_37_action_07.png) · [混合连推](docs/screenshots/level_37_action_24.png) · [清怪开门](docs/screenshots/level_37_clear_open.png) · [撤销复活](docs/screenshots/level_37_undo_revived.png) · [通关](docs/screenshots/level_37_completed.png) · [小窗口](docs/screenshots/level_37_compact.png)。[验证与复用范围](docs/verification/north_37_scope.json)。
