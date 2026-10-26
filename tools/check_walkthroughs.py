@@ -190,7 +190,8 @@ def check_replay(item, directory, require_rendered=True):
                 for cell in link.get("plates", [link["plate"]] if "plate" in link else []):
                     plate = tuple(cell)
                     expected_plates[(link["id"], plate)] = (("hero" in link["pressure_sources"] and plate in heroes)
-                        or ("crystal" in link["pressure_sources"] and plate in crystals))
+                        or ("crystal" in link["pressure_sources"] and plate in crystals)
+                        or (plate in monster_cells() and monster_kinds[monster_cells()[plate]]=="goblin"))
             assert actual_plates == expected_plates
         if level.get("energy_links") or "pressure" in state:
             assert state["pressure"] == pressure

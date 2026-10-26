@@ -81,6 +81,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第三十三关 | [观看 / 下载 MP4](video/chapter_01/level_33.mp4) | 45.8 秒 |
 | 第三十四关 | [观看 / 下载 MP4](video/chapter_01/level_34.mp4) | 24.8 秒 |
 | 第三十五关 | [观看 / 下载 MP4](video/chapter_01/level_35.mp4) | 35.0 秒 |
+| 第三十六关 | [观看 / 下载 MP4](video/chapter_01/level_36.mp4) | 20.6 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -907,3 +908,5 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 实际验证路线 `LRRLDRDUULLDDRRRUUUDRUURRR`，26行动8交换。16步英雄与两晶开黄门；17步哥布林接替压板；19步英雄进入能量格；20步交换哥布林到能量格；21步离板令黄能量恢复、杀哥布林，同时红屏障消失；24步过门，26步通关。两个水晶保留，不宣称最短方向路线。
 
 实际Godot：[初始](docs/screenshots/level_36_initial.png) · [哥布林压板](docs/screenshots/level_36_action_18.png) · [送入能量格](docs/screenshots/level_36_action_20.png) · [能量再现清怪](docs/screenshots/level_36_clear_open.png) · [撤销复活](docs/screenshots/level_36_undo_revived.png) · [胜利](docs/screenshots/level_36_completed.png) · [小窗口](docs/screenshots/level_36_compact.png)。[验证范围](docs/verification/north_36_scope.json)。
+
+[第三十六关正式通关视频](video/chapter_01/level_36.mp4)：20.6秒、26行动8交换。实现提交后用实际Godot视口与合法WASD录制，活哥布林压板与两个水晶维持三板AND；21步离板后黄能量恢复杀哥布林，红屏障同一步消失，24过门、26存活通关。八次交换都有闪光换位，没有穿过中间格；没有攻击目标的回合不播攻击。[哥布林压板](docs/screenshots/level_36_goblin_plate.png) · [交换入能量格](docs/screenshots/level_36_energy_exchange.png) · [能量再现](docs/screenshots/level_36_energy_death.png) · [胜利帧](docs/screenshots/level_36_victory.png)。

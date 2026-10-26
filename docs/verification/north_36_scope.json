@@ -2776,5 +2776,45 @@
     "FireDragon or future monster pressure remains undefined and guarded",
     "Undefined fire/fence interactions remain guarded"
   ],
-  "CI": "Queried separately after finalpush;local verification is not CI."
+  "CI": "Queried separately after finalpush;local verification is not CI.",
+  "media": {
+    "implementation_commit": "7699172674c0fdd74a26dc99fc55412a40104914",
+    "recording_after_implementation": true,
+    "path": "video/chapter_01/level_36.mp4",
+    "duration_seconds": 20.6,
+    "frames": 618,
+    "bytes": 415008,
+    "sha256": "fe47f99525e6aa290f92754ad6a27ef50e5ea95bf9b208f8b5dac7fb6492c4f7",
+    "actions": 26,
+    "swaps": 8,
+    "all26_input_states_and8_exchange_processes_reviewed": true,
+    "encoded_review_frame_count": 48,
+    "sampled_5fps_frames": 103,
+    "distinct_sampled_frames": 103,
+    "all36_full_decode_and_independent_replay_freshly_executed": true,
+    "current_source_fingerprints_verified": 227,
+    "unchanged_gameplay_and_other_sources_after_recording": 226,
+    "verification_only_tool_fix": {
+      "file": "tools/check_walkthroughs.py",
+      "old_sha256": "18d85e90bca6bd1f5fd4c0a22a821ef590891b834253406baaa35f81127370e5",
+      "new_sha256": "6082239c1ffde727b7a9f49a2361634e8dfaaabb75302c8a7108d5ab521fe1a7",
+      "assertion_preserved": true,
+      "fix": "Per-cellplate evidence must include living Goblin,matching independently recomputed pressure and user-confirmed globalrule.",
+      "gameplay_core_view_input_level_and_recorder_unchanged": true,
+      "unchanged_other_source_fingerprints": 226,
+      "no_video_or_replay_changed": true,
+      "normal_matrix_runtime_results_unaffected": true,
+      "initial_video_validator_failure_log": "artifacts/task36/implementation/all36_first_video_validator_failure.log",
+      "fresh_all36_video_checks_required": true
+    },
+    "unchanged_old_delivery_files": 151,
+    "unchanged_old_manifest_entries": 35,
+    "fire_attack_actions": [],
+    "goblin_attack_actions": [],
+    "yellow_energy_opens": 16,
+    "energy_kills_goblin_and_red_opens": 21,
+    "gate_cross": 24,
+    "living_victory": 26,
+    "time_utc": "2026-10-26T07:52:13.173932+00:00"
+  }
 }
