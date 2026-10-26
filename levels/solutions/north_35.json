@@ -1,0 +1,14 @@
+{
+  "level_id": "north_hero_35",
+  "path": "DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR",
+  "moves": 50,
+  "directions": 50,
+  "input_events": 50,
+  "selection_events": 0,
+  "pushes": 16,
+  "pulls": 0,
+  "swaps": 0,
+  "destroyed_crystals": 0,
+  "monster_death_action": 38,
+  "note": "用户补全顶行59–66后确认12×7；原1–58统一下移，未改规则。独立逐输入身份回放复核红人搬运水晶/怪物与同快照龙/哥布林互杀，清怪门同一步消失，不宣称最短方向路线。"
+}

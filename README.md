@@ -875,3 +875,19 @@ URRUULLDRDDLULURRLURRRDLDLDRURRRR
 实际Godot画面：[初始](docs/screenshots/level_34_initial.png) · [水晶遮挡](docs/screenshots/level_34_action_26.png) · [清怪开门](docs/screenshots/level_34_clear_open.png) · [撤销复活](docs/screenshots/level_34_undo_revived.png) · [通关](docs/screenshots/level_34_completed.png) · [小窗口](docs/screenshots/level_34_compact.png)。[执行范围及复用证明](docs/verification/north_34_scope.json)。
 
 [第三十四关正式通关视频](video/chapter_01/level_34.mp4)：24.8秒、33行动18拉动（10龙8晶）。实现提交后实际Godot视口使用合法WASD录制，保持两龙朝向；27步拉走遮挡水晶，两龙同步互杀，清怪能量随即消失；31步过门、33步存活到终点。仅27步有两次有效喷火，其他输入没有空攻击动画。[水晶遮挡](docs/screenshots/level_34_shield.png) · [互杀喷火](docs/screenshots/level_34_mutual_attack.png) · [胜利帧](docs/screenshots/level_34_victory.png)。
+
+
+## 第三十五关（顶部补全后的确认布局）
+
+最终12×7主场8×7地板，右室为x9..11/y2..4共3×3，仅经(8,2)红色清怪能量相连。用户确认顶部漏了一整行：原1–58编号保留并统一下移，新增59–66全部可走。红英雄(2,5)、水晶(2,1)/(3,5)、朝右火龙(0,2)、哥布林(5,4)、目标(10,3)。[关卡](levels/north_35.json) · [完整编号映射](levels/mappings/north_35_markers.json)。旧12×6诊断已被本确认覆盖。
+
+独立逐输入身份回放验证的构造路线（不声称最短）：
+
+```text
+DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
+```
+
+50次实际行动、16次推动。9–11步使用新增顶行，38步火龙与哥布林在同一快照互相击杀，红色能量同时消失；47步过门、50步存活到达目标。两晶保留，规则和已批准动画不变；死亡只可撤销恢复。
+
+
+实际Godot画面：[初始](docs/screenshots/level_35_initial.png) · [使用新增顶行](docs/screenshots/level_35_action_09.png) · [清怪开门](docs/screenshots/level_35_clear_open.png) · [撤销复活](docs/screenshots/level_35_undo_revived.png) · [通关](docs/screenshots/level_35_completed.png) · [小窗口](docs/screenshots/level_35_compact.png)。[执行范围及复用证明](docs/verification/north_35_scope.json)。

@@ -1,0 +1,4223 @@
+{
+  "base": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "passed": true,
+  "time_utc": "2026-10-26T04:31:00.257162+00:00",
+  "matrix_stages": 257,
+  "fresh_stages": 74,
+  "reused_syntax_stages": 98,
+  "reused_unaffected_runtime_stages": 85,
+  "retained_current_task_passed_stages": 26,
+  "affected_checks_fresh": true,
+  "new35_model_input_X11_fresh": true,
+  "not_a_fresh_full_rerun": true,
+  "scope": {
+    "base": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+    "fresh_stages": 74,
+    "reused_syntax_stages": 98,
+    "reused_unaffected_runtime_stages": 85,
+    "affected_checks_fresh": true,
+    "new35_model_input_X11_fresh": true,
+    "all_python_independent_replays_fresh": true,
+    "all35_feedback_campaign_fresh": true,
+    "baseline_runtime_reuse_disclosed": true,
+    "retained_current_task_passed_stages": 26,
+    "mapping_type_test_only_correction": true,
+    "gameplay_view_input_rules_unchanged": true,
+    "catalog_tail_only": true,
+    "previous34_delivery_files_unchanged": true,
+    "reuse_proof": "artifacts/task35/implementation/reuse_proof.json",
+    "retained_passed_matrix_records_from_checkpoint": 139,
+    "retained_baseline_records_from_checkpoint": 113,
+    "executed_after_test_only_fix": 48
+  },
+  "dependency_and_catalog_tail_proof": {
+    "base": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+    "baseline_passed": true,
+    "baseline_engine": "4.6.3.stable.official.7d41c59c4",
+    "authorization_scope": "Current task permits evidence-backed reuse of unchanged unaffected validation;affected checks always fresh.",
+    "runtime_sources_unchanged": {
+      "scripts/core/bush_obstacle.gd": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+      "scripts/core/energy_rules.gd": "ef4b82341c52d67abb333d88790b9dc584607f97f921defdcb6679f2bde8796f",
+      "scripts/core/fence_edges.gd": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+      "scripts/core/fire_rules.gd": "2710bdffe3b25ddbde4109cf590b7376d85796f7372af6ff9945a472953caaa0",
+      "scripts/core/grid_state.gd": "ca7152d608495a3847a38c7a6c9b9366b9d643cb1be6d9a2a1e2824971afc16b",
+      "scripts/core/hero_rules.gd": "a4839e71c09cf4023d537f12a5d5948a0f91ced1d3dac6d61208d59ac3dbeae7",
+      "scripts/core/level_data.gd": "5be09b36bd43efbdfa1cdd9dec22d8f07d66318cd66412d636a4d423f46666b1",
+      "scripts/core/monster_rules.gd": "d66fe58d580f74d1f4d766fbda8b5a69d8271da8cfa5f0560c84b1625b4808ab",
+      "scripts/core/swap_rules.gd": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+      "scripts/input/step_input.gd": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a",
+      "scripts/view/board_view.gd": "c4e34fa28fb7885df2ad388e10415d5558413d85abcde81fc5cb73908c78ffd0",
+      "scripts/view/feedback_events.gd": "520d04b8cff9e99dbcd9b9c495304f72c6258cc7c6cf0534c2abac2a8b9d3677",
+      "scripts/view/feedback_timeline.gd": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+      "scripts/view/level_card.gd": "60c52071c130a40ab1fe5a6894e8e5909c4f13fa4ac6a1146837097bb1a88b6a",
+      "scripts/view/level_menu.gd": "f7ba0588a971b3b200fa32320ca6efbcc51a0def4d87c331860cb66b347df2c7",
+      "scripts/view/virtual_level_strip.gd": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d"
+    },
+    "resources_unchanged": {
+      "assets/fonts/NotoSansCJKsc-Regular.otf": "03e51f1609b359cdaaaa71095656b831a60d5b9e1758dd53fa92297315cd6718",
+      "assets/fonts/NotoSansCJKsc-Regular.otf.import": "3cf4f095620cb7e146b886f27083381e81c2fd74df60e80fddcd121b36d83a76",
+      "assets/fonts/OFL.txt": "1f88ebababe6b6a4133167000f0e69c0e5f1a2822c05c89ee1e87f9f3e316345",
+      "assets/icon.svg": "f0f457210eedc479fea5e5ef64ac8facd2d7884146d9a1772870c4082c62c848",
+      "assets/icon.svg.import": "88c5071a24d3a1e939afdaacf95d95a278866b7459d797defba7773b359b37ae",
+      "project.godot": "30637fde9975ecd6aa976e37c36bbd484c7f3930e2572ee67f787d57855f4383",
+      "scenes/main.tscn": "149210911c5a29607743254fcd05b93780edf29c57ceeb323395e64539a146c4"
+    },
+    "main_normalized_sha256": "6203c6c399c2f6eeadc125a17a60c5c1060ac2c7eb13062e65505c11a9e68abc",
+    "catalog_tail_proof": {
+      "LEVEL_PATHS": {
+        "old_prefix_unchanged": true,
+        "old_count": 34,
+        "new_count": 35,
+        "appended": "res://levels/north_35.json"
+      },
+      "LEVEL_TITLES": {
+        "old_prefix_unchanged": true,
+        "old_count": 34,
+        "new_count": 35,
+        "appended": "第三十五关"
+      }
+    },
+    "old_delivery_files_preserved": 146,
+    "checks": [
+      {
+        "name": "02_parse_00_bush_obstacle",
+        "category": "syntax",
+        "source": "scripts/core/bush_obstacle.gd",
+        "sha256": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830"
+      },
+      {
+        "name": "02_parse_01_energy_rules",
+        "category": "syntax",
+        "source": "scripts/core/energy_rules.gd",
+        "sha256": "ef4b82341c52d67abb333d88790b9dc584607f97f921defdcb6679f2bde8796f"
+      },
+      {
+        "name": "02_parse_02_fence_edges",
+        "category": "syntax",
+        "source": "scripts/core/fence_edges.gd",
+        "sha256": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f"
+      },
+      {
+        "name": "02_parse_03_fire_rules",
+        "category": "syntax",
+        "source": "scripts/core/fire_rules.gd",
+        "sha256": "2710bdffe3b25ddbde4109cf590b7376d85796f7372af6ff9945a472953caaa0"
+      },
+      {
+        "name": "02_parse_04_grid_state",
+        "category": "syntax",
+        "source": "scripts/core/grid_state.gd",
+        "sha256": "ca7152d608495a3847a38c7a6c9b9366b9d643cb1be6d9a2a1e2824971afc16b"
+      },
+      {
+        "name": "02_parse_05_hero_rules",
+        "category": "syntax",
+        "source": "scripts/core/hero_rules.gd",
+        "sha256": "a4839e71c09cf4023d537f12a5d5948a0f91ced1d3dac6d61208d59ac3dbeae7"
+      },
+      {
+        "name": "02_parse_06_level_data",
+        "category": "syntax",
+        "source": "scripts/core/level_data.gd",
+        "sha256": "5be09b36bd43efbdfa1cdd9dec22d8f07d66318cd66412d636a4d423f46666b1"
+      },
+      {
+        "name": "02_parse_07_monster_rules",
+        "category": "syntax",
+        "source": "scripts/core/monster_rules.gd",
+        "sha256": "d66fe58d580f74d1f4d766fbda8b5a69d8271da8cfa5f0560c84b1625b4808ab"
+      },
+      {
+        "name": "02_parse_08_swap_rules",
+        "category": "syntax",
+        "source": "scripts/core/swap_rules.gd",
+        "sha256": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461"
+      },
+      {
+        "name": "02_parse_09_step_input",
+        "category": "syntax",
+        "source": "scripts/input/step_input.gd",
+        "sha256": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a"
+      },
+      {
+        "name": "02_parse_11_board_view",
+        "category": "syntax",
+        "source": "scripts/view/board_view.gd",
+        "sha256": "c4e34fa28fb7885df2ad388e10415d5558413d85abcde81fc5cb73908c78ffd0"
+      },
+      {
+        "name": "02_parse_12_feedback_events",
+        "category": "syntax",
+        "source": "scripts/view/feedback_events.gd",
+        "sha256": "520d04b8cff9e99dbcd9b9c495304f72c6258cc7c6cf0534c2abac2a8b9d3677"
+      },
+      {
+        "name": "02_parse_13_feedback_timeline",
+        "category": "syntax",
+        "source": "scripts/view/feedback_timeline.gd",
+        "sha256": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67"
+      },
+      {
+        "name": "02_parse_14_level_card",
+        "category": "syntax",
+        "source": "scripts/view/level_card.gd",
+        "sha256": "60c52071c130a40ab1fe5a6894e8e5909c4f13fa4ac6a1146837097bb1a88b6a"
+      },
+      {
+        "name": "02_parse_15_level_menu",
+        "category": "syntax",
+        "source": "scripts/view/level_menu.gd",
+        "sha256": "f7ba0588a971b3b200fa32320ca6efbcc51a0def4d87c331860cb66b347df2c7"
+      },
+      {
+        "name": "02_parse_16_virtual_level_strip",
+        "category": "syntax",
+        "source": "scripts/view/virtual_level_strip.gd",
+        "sha256": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d"
+      },
+      {
+        "name": "02_parse_17_blue_swap_regression",
+        "category": "syntax",
+        "source": "tests/blue_swap_regression.gd",
+        "sha256": "b18dfbee6e1047eda61398af9832b4f4759bfb2c14cbfe3d0aa335d5398be30e"
+      },
+      {
+        "name": "02_parse_18_bush_and_group_regression",
+        "category": "syntax",
+        "source": "tests/bush_and_group_regression.gd",
+        "sha256": "c69f97de7adc2971bdbd46b4ea1acbada842a01c3c3f3b722d182a848f8db4fd"
+      },
+      {
+        "name": "02_parse_19_chain_push_regression",
+        "category": "syntax",
+        "source": "tests/chain_push_regression.gd",
+        "sha256": "bda55346b683a4394c81fc2d55b0e17b78aa96daa2286430cf17d192d82a49ff"
+      },
+      {
+        "name": "02_parse_20_energy_destruction_regression",
+        "category": "syntax",
+        "source": "tests/energy_destruction_regression.gd",
+        "sha256": "891bedcaa43282849b7132faab6b5edd21c956818e3997cc3bc0214de9dbce88"
+      },
+      {
+        "name": "02_parse_21_energy_regression",
+        "category": "syntax",
+        "source": "tests/energy_regression.gd",
+        "sha256": "fcc21de4fa9a3527dbfaaa0385a581ae26bf151fa3caca1ef946135f59a7871c"
+      },
+      {
+        "name": "02_parse_22_energy_visibility_scene",
+        "category": "syntax",
+        "source": "tests/energy_visibility_scene.gd",
+        "sha256": "c41260762ec85d7c61857006321affc49c320755a297620e9a6cdfc262abd8f0"
+      },
+      {
+        "name": "02_parse_23_feedback_cases",
+        "category": "syntax",
+        "source": "tests/feedback_cases.gd",
+        "sha256": "7f1eadc4e925a03928ccaed1864ccb6d240321bc281f3f9a6a1f106187ea485e"
+      },
+      {
+        "name": "02_parse_25_feedback_scene",
+        "category": "syntax",
+        "source": "tests/feedback_scene.gd",
+        "sha256": "6aaad87e24d60b5e57b6d331387cdff43cad91445b440715baf55dc701d6e512"
+      },
+      {
+        "name": "02_parse_26_fence_regression",
+        "category": "syntax",
+        "source": "tests/fence_regression.gd",
+        "sha256": "03817daaf19990eda6890b586b5bff025633dd7cf3127ece7d4ff12d724fa835"
+      },
+      {
+        "name": "02_parse_27_fire_dragon_regression",
+        "category": "syntax",
+        "source": "tests/fire_dragon_regression.gd",
+        "sha256": "a7d48ecea00aa2c22d6429054e05fb32c3f2b8001b7067814d578e6035f721a5"
+      },
+      {
+        "name": "02_parse_28_global_energy_regression",
+        "category": "syntax",
+        "source": "tests/global_energy_regression.gd",
+        "sha256": "1d3c29499d55da6f6e8d9ebe1262216201f987c44a44286a9e3a5715a9dde8f7"
+      },
+      {
+        "name": "02_parse_29_green_dragon_pull_regression",
+        "category": "syntax",
+        "source": "tests/green_dragon_pull_regression.gd",
+        "sha256": "8e70f8bb878c35f7e32ae9b19616d7971fde3c4b72c5b6199dc92893050687a9"
+      },
+      {
+        "name": "02_parse_30_green_dragon_pull_scene",
+        "category": "syntax",
+        "source": "tests/green_dragon_pull_scene.gd",
+        "sha256": "c5d435c0a45f3e305b03552e927d3580d4ba3e840f4eb28c2dc6c172922484cc"
+      },
+      {
+        "name": "02_parse_31_green_pull_regression",
+        "category": "syntax",
+        "source": "tests/green_pull_regression.gd",
+        "sha256": "2874ef517921cb0d4f6a343af3e9350751a6e3b909df1b267bb63ba8711abbb9"
+      },
+      {
+        "name": "02_parse_32_monster_clear_energy_regression",
+        "category": "syntax",
+        "source": "tests/monster_clear_energy_regression.gd",
+        "sha256": "531a94ead198117ac1061d0330cc6d5996b39d4b9ece4dad0bc2f236f559e711"
+      },
+      {
+        "name": "02_parse_33_monster_clear_energy_scene",
+        "category": "syntax",
+        "source": "tests/monster_clear_energy_scene.gd",
+        "sha256": "0a70e7f6aa2db9201c06489151910f981ffb6c4354e93cd04da8f33f9ba779e3"
+      },
+      {
+        "name": "02_parse_34_monster_regression",
+        "category": "syntax",
+        "source": "tests/monster_regression.gd",
+        "sha256": "912cf9d7695362803822c599ca9896b9c514be2396d4ea76bd289d895c7c77e6"
+      },
+      {
+        "name": "02_parse_35_multi_hero_regression",
+        "category": "syntax",
+        "source": "tests/multi_hero_regression.gd",
+        "sha256": "0331b230cb99dc2bd347abaf20e666e42d1920ae20aef7f49192ee5453221899"
+      },
+      {
+        "name": "02_parse_36_navigation_scene",
+        "category": "syntax",
+        "source": "tests/navigation_scene.gd",
+        "sha256": "d9d6e910eaa881feb46f4692cee1eb7f635cf16bb63f6784daf007012ca967f5"
+      },
+      {
+        "name": "02_parse_37_north_01_regression",
+        "category": "syntax",
+        "source": "tests/north_01_regression.gd",
+        "sha256": "1efc64ab42eae4b03806b5c929c886265279bd635b5ffba798e47a27a8f74e07"
+      },
+      {
+        "name": "02_parse_38_north_02_regression",
+        "category": "syntax",
+        "source": "tests/north_02_regression.gd",
+        "sha256": "bf0ea1099dfa9d5f80de4118d7ae932e7698c021b51523065f29a3f59e8c7d1a"
+      },
+      {
+        "name": "02_parse_39_north_02_scene",
+        "category": "syntax",
+        "source": "tests/north_02_scene.gd",
+        "sha256": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3"
+      },
+      {
+        "name": "02_parse_40_north_03_regression",
+        "category": "syntax",
+        "source": "tests/north_03_regression.gd",
+        "sha256": "3320cbf2b9818271f9922635a9be6f25ab40bff7a107cb918f43fb314dd518cd"
+      },
+      {
+        "name": "02_parse_41_north_03_scene",
+        "category": "syntax",
+        "source": "tests/north_03_scene.gd",
+        "sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0"
+      },
+      {
+        "name": "02_parse_42_north_04_regression",
+        "category": "syntax",
+        "source": "tests/north_04_regression.gd",
+        "sha256": "7b975d0e605420f2fa3fabed79e9a761ce8bb56a8d3bbf710935add9bc248a02"
+      },
+      {
+        "name": "02_parse_43_north_04_scene",
+        "category": "syntax",
+        "source": "tests/north_04_scene.gd",
+        "sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4"
+      },
+      {
+        "name": "02_parse_44_north_05_regression",
+        "category": "syntax",
+        "source": "tests/north_05_regression.gd",
+        "sha256": "1a8fb647e50b4334be3c748f33393d431a3abe1cc4e7165f96effa0466b7cc24"
+      },
+      {
+        "name": "02_parse_45_north_05_scene",
+        "category": "syntax",
+        "source": "tests/north_05_scene.gd",
+        "sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45"
+      },
+      {
+        "name": "02_parse_46_north_06_regression",
+        "category": "syntax",
+        "source": "tests/north_06_regression.gd",
+        "sha256": "c53a922d497450e1774a97e80d378e299b3ee510ce0ce6dfbb9e749452756d1d"
+      },
+      {
+        "name": "02_parse_47_north_06_scene",
+        "category": "syntax",
+        "source": "tests/north_06_scene.gd",
+        "sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a"
+      },
+      {
+        "name": "02_parse_48_north_07_regression",
+        "category": "syntax",
+        "source": "tests/north_07_regression.gd",
+        "sha256": "9b438a03f5403ba0c858733fd24a92e6f3e0eea946168c23bb634f610dbb5db5"
+      },
+      {
+        "name": "02_parse_49_north_07_scene",
+        "category": "syntax",
+        "source": "tests/north_07_scene.gd",
+        "sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f"
+      },
+      {
+        "name": "02_parse_50_north_08_regression",
+        "category": "syntax",
+        "source": "tests/north_08_regression.gd",
+        "sha256": "3a9a02f8c3af160cee0c21ac32c1b72914e53ef8676d72eb8b3da022a15dfe02"
+      },
+      {
+        "name": "02_parse_51_north_08_scene",
+        "category": "syntax",
+        "source": "tests/north_08_scene.gd",
+        "sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767"
+      },
+      {
+        "name": "02_parse_52_north_09_regression",
+        "category": "syntax",
+        "source": "tests/north_09_regression.gd",
+        "sha256": "a7a1ba0deec8aa131206588a2e2bbabad7b24d5f7335bd7520e1f30e84889444"
+      },
+      {
+        "name": "02_parse_53_north_09_scene",
+        "category": "syntax",
+        "source": "tests/north_09_scene.gd",
+        "sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653"
+      },
+      {
+        "name": "02_parse_54_north_10_regression",
+        "category": "syntax",
+        "source": "tests/north_10_regression.gd",
+        "sha256": "d833cff22eed25743fbd2ae7f511a091c1020ca7282b801210f313945ff15790"
+      },
+      {
+        "name": "02_parse_55_north_10_scene",
+        "category": "syntax",
+        "source": "tests/north_10_scene.gd",
+        "sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d"
+      },
+      {
+        "name": "02_parse_56_north_11_regression",
+        "category": "syntax",
+        "source": "tests/north_11_regression.gd",
+        "sha256": "57905bb30107af41064cb444fa68558e9b74209d72e7ffd7e70ad591a28f73c7"
+      },
+      {
+        "name": "02_parse_57_north_11_scene",
+        "category": "syntax",
+        "source": "tests/north_11_scene.gd",
+        "sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117"
+      },
+      {
+        "name": "02_parse_58_north_12_regression",
+        "category": "syntax",
+        "source": "tests/north_12_regression.gd",
+        "sha256": "ff1b4d812d34418ef731cc3305c9e0705017124ad19a1c215b20c60fc515d40c"
+      },
+      {
+        "name": "02_parse_59_north_12_scene",
+        "category": "syntax",
+        "source": "tests/north_12_scene.gd",
+        "sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c"
+      },
+      {
+        "name": "02_parse_60_north_13_regression",
+        "category": "syntax",
+        "source": "tests/north_13_regression.gd",
+        "sha256": "578968e74a77d92feaa6a5aa4e16904760b9f2a6fc7bf410cddd0c6c403450a4"
+      },
+      {
+        "name": "02_parse_61_north_13_scene",
+        "category": "syntax",
+        "source": "tests/north_13_scene.gd",
+        "sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a"
+      },
+      {
+        "name": "02_parse_62_north_14_regression",
+        "category": "syntax",
+        "source": "tests/north_14_regression.gd",
+        "sha256": "74da5e6158136ae3e94e86c337bfe97d8045439c961ae1a605b6f4bf210e1654"
+      },
+      {
+        "name": "02_parse_63_north_14_scene",
+        "category": "syntax",
+        "source": "tests/north_14_scene.gd",
+        "sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b"
+      },
+      {
+        "name": "02_parse_64_north_15_regression",
+        "category": "syntax",
+        "source": "tests/north_15_regression.gd",
+        "sha256": "f5b104a3d965c60bba273472d492c379ece91d3530f1c31088877d0299415b1e"
+      },
+      {
+        "name": "02_parse_65_north_15_scene",
+        "category": "syntax",
+        "source": "tests/north_15_scene.gd",
+        "sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb"
+      },
+      {
+        "name": "02_parse_66_north_16_regression",
+        "category": "syntax",
+        "source": "tests/north_16_regression.gd",
+        "sha256": "5b373eaef6e742aec472dc452499b84661cd4d842e3bc94874e1694e5541efa7"
+      },
+      {
+        "name": "02_parse_67_north_16_scene",
+        "category": "syntax",
+        "source": "tests/north_16_scene.gd",
+        "sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba"
+      },
+      {
+        "name": "02_parse_68_north_17_regression",
+        "category": "syntax",
+        "source": "tests/north_17_regression.gd",
+        "sha256": "36eca8d1f3d739d87f45948b30aca88b740b2412cf651b6612bcf29f9df5bf99"
+      },
+      {
+        "name": "02_parse_69_north_17_scene",
+        "category": "syntax",
+        "source": "tests/north_17_scene.gd",
+        "sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191"
+      },
+      {
+        "name": "02_parse_70_north_18_regression",
+        "category": "syntax",
+        "source": "tests/north_18_regression.gd",
+        "sha256": "01cb8d689606e6094abd7214fa52cf4a66f2f14d64c3d54436bf317fd71fd716"
+      },
+      {
+        "name": "02_parse_71_north_18_scene",
+        "category": "syntax",
+        "source": "tests/north_18_scene.gd",
+        "sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb"
+      },
+      {
+        "name": "02_parse_72_north_19_regression",
+        "category": "syntax",
+        "source": "tests/north_19_regression.gd",
+        "sha256": "2c8938dfd6c627780d945ad547a77ede6dd5de5e63451e0d468faaf100ab45e2"
+      },
+      {
+        "name": "02_parse_73_north_19_scene",
+        "category": "syntax",
+        "source": "tests/north_19_scene.gd",
+        "sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6"
+      },
+      {
+        "name": "02_parse_74_north_20_regression",
+        "category": "syntax",
+        "source": "tests/north_20_regression.gd",
+        "sha256": "e569073b093749e4c12dae9dbec6a2b6059fb6f09018c69ccd711345b38a7f2f"
+      },
+      {
+        "name": "02_parse_75_north_20_scene",
+        "category": "syntax",
+        "source": "tests/north_20_scene.gd",
+        "sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255"
+      },
+      {
+        "name": "02_parse_76_north_21_regression",
+        "category": "syntax",
+        "source": "tests/north_21_regression.gd",
+        "sha256": "8473a6213c52c724d564aa4c80c8e83514f9c3482795dd98551811d715765cac"
+      },
+      {
+        "name": "02_parse_77_north_21_scene",
+        "category": "syntax",
+        "source": "tests/north_21_scene.gd",
+        "sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a"
+      },
+      {
+        "name": "02_parse_78_north_22_regression",
+        "category": "syntax",
+        "source": "tests/north_22_regression.gd",
+        "sha256": "823531af34fb05aba87a62bea3e261c3c719d062e06eb36a1c770793b60443be"
+      },
+      {
+        "name": "02_parse_79_north_22_scene",
+        "category": "syntax",
+        "source": "tests/north_22_scene.gd",
+        "sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780"
+      },
+      {
+        "name": "02_parse_80_north_23_regression",
+        "category": "syntax",
+        "source": "tests/north_23_regression.gd",
+        "sha256": "85d2e5228f668490cabdedeb1f04b57916280fa1e0897ae0af3295c1d2c3158a"
+      },
+      {
+        "name": "02_parse_81_north_23_scene",
+        "category": "syntax",
+        "source": "tests/north_23_scene.gd",
+        "sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657"
+      },
+      {
+        "name": "02_parse_82_north_24_regression",
+        "category": "syntax",
+        "source": "tests/north_24_regression.gd",
+        "sha256": "5ea464c53f54c2f285cd9ea00fde39330cc7ded2b6bc119b30999b27bf3ea1c9"
+      },
+      {
+        "name": "02_parse_83_north_24_scene",
+        "category": "syntax",
+        "source": "tests/north_24_scene.gd",
+        "sha256": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809"
+      },
+      {
+        "name": "02_parse_84_north_25_regression",
+        "category": "syntax",
+        "source": "tests/north_25_regression.gd",
+        "sha256": "a55c9716a1789d16ba9cf07803a610c16a8ed50f1afd86d23183a6994b690884"
+      },
+      {
+        "name": "02_parse_85_north_25_scene",
+        "category": "syntax",
+        "source": "tests/north_25_scene.gd",
+        "sha256": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab"
+      },
+      {
+        "name": "02_parse_86_north_26_regression",
+        "category": "syntax",
+        "source": "tests/north_26_regression.gd",
+        "sha256": "c1960ff743bdac1248a45f745bf65bdf031d24924350563f08d77a58db86a15e"
+      },
+      {
+        "name": "02_parse_87_north_26_scene",
+        "category": "syntax",
+        "source": "tests/north_26_scene.gd",
+        "sha256": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c"
+      },
+      {
+        "name": "02_parse_88_north_27_regression",
+        "category": "syntax",
+        "source": "tests/north_27_regression.gd",
+        "sha256": "01cb00fe04fea707443bcd54b19c6f7c4e37c2493c3e6224ac1a7c47b579b49b"
+      },
+      {
+        "name": "02_parse_89_north_27_scene",
+        "category": "syntax",
+        "source": "tests/north_27_scene.gd",
+        "sha256": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3"
+      },
+      {
+        "name": "02_parse_90_north_28_regression",
+        "category": "syntax",
+        "source": "tests/north_28_regression.gd",
+        "sha256": "5364bd271076f2f86810671fb6947f91aa612069f759bfa3f0599175a5c27288"
+      },
+      {
+        "name": "02_parse_91_north_28_scene",
+        "category": "syntax",
+        "source": "tests/north_28_scene.gd",
+        "sha256": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf"
+      },
+      {
+        "name": "02_parse_92_north_29_regression",
+        "category": "syntax",
+        "source": "tests/north_29_regression.gd",
+        "sha256": "e12e3f227584d6a343eb7807997615aa83c9deb3efb0cf369d704c4a392b2f5b"
+      },
+      {
+        "name": "02_parse_94_north_30_regression",
+        "category": "syntax",
+        "source": "tests/north_30_regression.gd",
+        "sha256": "3bddf7dbf2137e4963605ac5e5f841c34c88df61a29e64b6cd9109a4ace95116"
+      },
+      {
+        "name": "02_parse_96_north_31_regression",
+        "category": "syntax",
+        "source": "tests/north_31_regression.gd",
+        "sha256": "b1cf2f26d454fc465298870e063a3a86e424e1b7e99fa2da53298894cfecbc13"
+      },
+      {
+        "name": "02_parse_98_north_32_regression",
+        "category": "syntax",
+        "source": "tests/north_32_regression.gd",
+        "sha256": "0d8a8a0fe04d58e98530ac934b081baa3803a364bad53414f8c0316b06d66ace"
+      },
+      {
+        "name": "02_parse_100_north_33_regression",
+        "category": "syntax",
+        "source": "tests/north_33_regression.gd",
+        "sha256": "b80b000499a845c08a3f3d9494c231a8d7d229675e56f0c247e09706b5c45d5e"
+      },
+      {
+        "name": "02_parse_102_north_34_regression",
+        "category": "syntax",
+        "source": "tests/north_34_regression.gd",
+        "sha256": "b2ee833fdb7d0105219397c888614d8aec4b7818e7f399cdb55b39185a2f0b97"
+      },
+      {
+        "name": "02_parse_106_run_tests",
+        "category": "syntax",
+        "source": "tests/run_tests.gd",
+        "sha256": "4d1a1dcbb4e576c5555e115855c547205cfb1deb93deef99ef5ed07d60ad5d6f"
+      },
+      {
+        "name": "02_parse_107_scene_smoke",
+        "category": "syntax",
+        "source": "tests/scene_smoke.gd",
+        "sha256": "72fb4ec6c0e8002db315754429287ebb7d0c05c24cc055e808014cb725773a60"
+      },
+      {
+        "name": "03_logic",
+        "category": "unaffected_runtime",
+        "source": "tests/run_tests.gd",
+        "sha256": "4d1a1dcbb4e576c5555e115855c547205cfb1deb93deef99ef5ed07d60ad5d6f",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_chain_push",
+        "category": "unaffected_runtime",
+        "source": "tests/chain_push_regression.gd",
+        "sha256": "bda55346b683a4394c81fc2d55b0e17b78aa96daa2286430cf17d192d82a49ff",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_bush_group",
+        "category": "unaffected_runtime",
+        "source": "tests/bush_and_group_regression.gd",
+        "sha256": "c69f97de7adc2971bdbd46b4ea1acbada842a01c3c3f3b722d182a848f8db4fd",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_blue_swap",
+        "category": "unaffected_runtime",
+        "source": "tests/blue_swap_regression.gd",
+        "sha256": "b18dfbee6e1047eda61398af9832b4f4759bfb2c14cbfe3d0aa335d5398be30e",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_multi_hero",
+        "category": "unaffected_runtime",
+        "source": "tests/multi_hero_regression.gd",
+        "sha256": "0331b230cb99dc2bd347abaf20e666e42d1920ae20aef7f49192ee5453221899",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_13",
+        "category": "unaffected_runtime",
+        "source": "tests/north_13_regression.gd",
+        "sha256": "578968e74a77d92feaa6a5aa4e16904760b9f2a6fc7bf410cddd0c6c403450a4",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_14",
+        "category": "unaffected_runtime",
+        "source": "tests/north_14_regression.gd",
+        "sha256": "74da5e6158136ae3e94e86c337bfe97d8045439c961ae1a605b6f4bf210e1654",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_15",
+        "category": "unaffected_runtime",
+        "source": "tests/north_15_regression.gd",
+        "sha256": "f5b104a3d965c60bba273472d492c379ece91d3530f1c31088877d0299415b1e",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_16",
+        "category": "unaffected_runtime",
+        "source": "tests/north_16_regression.gd",
+        "sha256": "5b373eaef6e742aec472dc452499b84661cd4d842e3bc94874e1694e5541efa7",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_17",
+        "category": "unaffected_runtime",
+        "source": "tests/north_17_regression.gd",
+        "sha256": "36eca8d1f3d739d87f45948b30aca88b740b2412cf651b6612bcf29f9df5bf99",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_18",
+        "category": "unaffected_runtime",
+        "source": "tests/north_18_regression.gd",
+        "sha256": "01cb8d689606e6094abd7214fa52cf4a66f2f14d64c3d54436bf317fd71fd716",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_19",
+        "category": "unaffected_runtime",
+        "source": "tests/north_19_regression.gd",
+        "sha256": "2c8938dfd6c627780d945ad547a77ede6dd5de5e63451e0d468faaf100ab45e2",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_fences",
+        "category": "unaffected_runtime",
+        "source": "tests/fence_regression.gd",
+        "sha256": "03817daaf19990eda6890b586b5bff025633dd7cf3127ece7d4ff12d724fa835",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_20",
+        "category": "unaffected_runtime",
+        "source": "tests/north_20_regression.gd",
+        "sha256": "e569073b093749e4c12dae9dbec6a2b6059fb6f09018c69ccd711345b38a7f2f",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_21",
+        "category": "unaffected_runtime",
+        "source": "tests/north_21_regression.gd",
+        "sha256": "8473a6213c52c724d564aa4c80c8e83514f9c3482795dd98551811d715765cac",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_25",
+        "category": "unaffected_runtime",
+        "source": "tests/north_25_regression.gd",
+        "sha256": "a55c9716a1789d16ba9cf07803a610c16a8ed50f1afd86d23183a6994b690884",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_24",
+        "category": "unaffected_runtime",
+        "source": "tests/north_24_regression.gd",
+        "sha256": "5ea464c53f54c2f285cd9ea00fde39330cc7ded2b6bc119b30999b27bf3ea1c9",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_23",
+        "category": "unaffected_runtime",
+        "source": "tests/north_23_regression.gd",
+        "sha256": "85d2e5228f668490cabdedeb1f04b57916280fa1e0897ae0af3295c1d2c3158a",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_22",
+        "category": "unaffected_runtime",
+        "source": "tests/north_22_regression.gd",
+        "sha256": "823531af34fb05aba87a62bea3e261c3c719d062e06eb36a1c770793b60443be",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_01",
+        "category": "unaffected_runtime",
+        "source": "tests/north_01_regression.gd",
+        "sha256": "1efc64ab42eae4b03806b5c929c886265279bd635b5ffba798e47a27a8f74e07",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_02",
+        "category": "unaffected_runtime",
+        "source": "tests/north_02_regression.gd",
+        "sha256": "bf0ea1099dfa9d5f80de4118d7ae932e7698c021b51523065f29a3f59e8c7d1a",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_03",
+        "category": "unaffected_runtime",
+        "source": "tests/north_03_regression.gd",
+        "sha256": "3320cbf2b9818271f9922635a9be6f25ab40bff7a107cb918f43fb314dd518cd",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_04",
+        "category": "unaffected_runtime",
+        "source": "tests/north_04_regression.gd",
+        "sha256": "7b975d0e605420f2fa3fabed79e9a761ce8bb56a8d3bbf710935add9bc248a02",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_05",
+        "category": "unaffected_runtime",
+        "source": "tests/north_05_regression.gd",
+        "sha256": "1a8fb647e50b4334be3c748f33393d431a3abe1cc4e7165f96effa0466b7cc24",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_06",
+        "category": "unaffected_runtime",
+        "source": "tests/north_06_regression.gd",
+        "sha256": "c53a922d497450e1774a97e80d378e299b3ee510ce0ce6dfbb9e749452756d1d",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_07",
+        "category": "unaffected_runtime",
+        "source": "tests/north_07_regression.gd",
+        "sha256": "9b438a03f5403ba0c858733fd24a92e6f3e0eea946168c23bb634f610dbb5db5",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_08",
+        "category": "unaffected_runtime",
+        "source": "tests/north_08_regression.gd",
+        "sha256": "3a9a02f8c3af160cee0c21ac32c1b72914e53ef8676d72eb8b3da022a15dfe02",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_09",
+        "category": "unaffected_runtime",
+        "source": "tests/north_09_regression.gd",
+        "sha256": "a7a1ba0deec8aa131206588a2e2bbabad7b24d5f7335bd7520e1f30e84889444",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_10",
+        "category": "unaffected_runtime",
+        "source": "tests/north_10_regression.gd",
+        "sha256": "d833cff22eed25743fbd2ae7f511a091c1020ca7282b801210f313945ff15790",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_11",
+        "category": "unaffected_runtime",
+        "source": "tests/north_11_regression.gd",
+        "sha256": "57905bb30107af41064cb444fa68558e9b74209d72e7ffd7e70ad591a28f73c7",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "03_north_12",
+        "category": "unaffected_runtime",
+        "source": "tests/north_12_regression.gd",
+        "sha256": "ff1b4d812d34418ef731cc3305c9e0705017124ad19a1c215b20c60fc515d40c",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": false
+      },
+      {
+        "name": "05_north_02_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_02_scene.gd",
+        "sha256": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_03_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_03_scene.gd",
+        "sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_04_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_04_scene.gd",
+        "sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_05_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_05_scene.gd",
+        "sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_06_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_06_scene.gd",
+        "sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_07_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_07_scene.gd",
+        "sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_08_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_08_scene.gd",
+        "sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_09_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_09_scene.gd",
+        "sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_10_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_10_scene.gd",
+        "sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_11_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_11_scene.gd",
+        "sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_12_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_12_scene.gd",
+        "sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_13_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_13_scene.gd",
+        "sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_14_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_14_scene.gd",
+        "sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_15_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_15_scene.gd",
+        "sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_16_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_16_scene.gd",
+        "sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_17_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_17_scene.gd",
+        "sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_18_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_18_scene.gd",
+        "sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_19_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_19_scene.gd",
+        "sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_20_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_20_scene.gd",
+        "sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_21_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_21_scene.gd",
+        "sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_28_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_28_scene.gd",
+        "sha256": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_27_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_27_scene.gd",
+        "sha256": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_26_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_26_scene.gd",
+        "sha256": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_25_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_25_scene.gd",
+        "sha256": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_24_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_24_scene.gd",
+        "sha256": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_23_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_23_scene.gd",
+        "sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "05_north_22_scene",
+        "category": "unaffected_runtime",
+        "source": "tests/north_22_scene.gd",
+        "sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_02",
+        "category": "unaffected_runtime",
+        "source": "tests/north_02_scene.gd",
+        "sha256": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_03",
+        "category": "unaffected_runtime",
+        "source": "tests/north_03_scene.gd",
+        "sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_04",
+        "category": "unaffected_runtime",
+        "source": "tests/north_04_scene.gd",
+        "sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_05",
+        "category": "unaffected_runtime",
+        "source": "tests/north_05_scene.gd",
+        "sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_06",
+        "category": "unaffected_runtime",
+        "source": "tests/north_06_scene.gd",
+        "sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_07",
+        "category": "unaffected_runtime",
+        "source": "tests/north_07_scene.gd",
+        "sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_08",
+        "category": "unaffected_runtime",
+        "source": "tests/north_08_scene.gd",
+        "sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_09",
+        "category": "unaffected_runtime",
+        "source": "tests/north_09_scene.gd",
+        "sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_10",
+        "category": "unaffected_runtime",
+        "source": "tests/north_10_scene.gd",
+        "sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_11",
+        "category": "unaffected_runtime",
+        "source": "tests/north_11_scene.gd",
+        "sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_12",
+        "category": "unaffected_runtime",
+        "source": "tests/north_12_scene.gd",
+        "sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_13",
+        "category": "unaffected_runtime",
+        "source": "tests/north_13_scene.gd",
+        "sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_14",
+        "category": "unaffected_runtime",
+        "source": "tests/north_14_scene.gd",
+        "sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_15",
+        "category": "unaffected_runtime",
+        "source": "tests/north_15_scene.gd",
+        "sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_16",
+        "category": "unaffected_runtime",
+        "source": "tests/north_16_scene.gd",
+        "sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_17",
+        "category": "unaffected_runtime",
+        "source": "tests/north_17_scene.gd",
+        "sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_18",
+        "category": "unaffected_runtime",
+        "source": "tests/north_18_scene.gd",
+        "sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_19",
+        "category": "unaffected_runtime",
+        "source": "tests/north_19_scene.gd",
+        "sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_20",
+        "category": "unaffected_runtime",
+        "source": "tests/north_20_scene.gd",
+        "sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_21",
+        "category": "unaffected_runtime",
+        "source": "tests/north_21_scene.gd",
+        "sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_22",
+        "category": "unaffected_runtime",
+        "source": "tests/north_22_scene.gd",
+        "sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_23",
+        "category": "unaffected_runtime",
+        "source": "tests/north_23_scene.gd",
+        "sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_24",
+        "category": "unaffected_runtime",
+        "source": "tests/north_24_scene.gd",
+        "sha256": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_25",
+        "category": "unaffected_runtime",
+        "source": "tests/north_25_scene.gd",
+        "sha256": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_26",
+        "category": "unaffected_runtime",
+        "source": "tests/north_26_scene.gd",
+        "sha256": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_27",
+        "category": "unaffected_runtime",
+        "source": "tests/north_27_scene.gd",
+        "sha256": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      },
+      {
+        "name": "06_render_north_28",
+        "category": "unaffected_runtime",
+        "source": "tests/north_28_scene.gd",
+        "sha256": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf",
+        "core_resources_and_old_maps_equal": true,
+        "catalog_tail_exemption": true
+      }
+    ],
+    "fresh_required": [
+      "03_energy",
+      "03_energy_destruction",
+      "03_feedback",
+      "03_fire_dragon",
+      "03_global_energy",
+      "03_green_dragon_pull",
+      "03_green_pull",
+      "03_monster_clear_energy",
+      "03_monsters",
+      "03_north_26",
+      "03_north_27",
+      "03_north_28",
+      "03_north_29",
+      "03_north_30",
+      "03_north_31",
+      "03_north_32",
+      "03_north_33",
+      "03_north_34",
+      "03_north_35",
+      "05_energy_visibility",
+      "05_feedback",
+      "05_green_dragon_pull",
+      "05_monster_clear_energy",
+      "05_navigation",
+      "05_north_29_scene",
+      "05_north_30_scene",
+      "05_north_31_scene",
+      "05_north_32_scene",
+      "05_north_33_scene",
+      "05_north_34_scene",
+      "05_north_35_scene",
+      "05_scene_input",
+      "06_energy_visibility",
+      "06_feedback",
+      "06_green_dragon_pull",
+      "06_monster_clear_energy",
+      "06_navigation",
+      "06_render",
+      "06_render_north_29",
+      "06_render_north_30",
+      "06_render_north_31",
+      "06_render_north_32",
+      "06_render_north_33",
+      "06_render_north_34",
+      "06_render_north_35"
+    ],
+    "display_recovery": {
+      "same_selected_cloud": true,
+      "restarted_dummy_X11_98_MIT_SHM_disabled": true,
+      "actual_Godot_renderer_smoke_passed": true,
+      "same_baseline_OpenGL_backend": "OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)",
+      "fresh_fixed_viewports": [
+        [
+          1280,
+          820
+        ],
+        [
+          960,
+          615
+        ]
+      ]
+    }
+  },
+  "matrix_rows": [
+    {
+      "name": "00_version",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.019,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "01_import",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 6.737,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_00_bush_obstacle",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/bush_obstacle.gd",
+      "source_sha256": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_01_energy_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/energy_rules.gd",
+      "source_sha256": "ef4b82341c52d67abb333d88790b9dc584607f97f921defdcb6679f2bde8796f",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_02_fence_edges",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/fence_edges.gd",
+      "source_sha256": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_03_fire_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/fire_rules.gd",
+      "source_sha256": "2710bdffe3b25ddbde4109cf590b7376d85796f7372af6ff9945a472953caaa0",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_04_grid_state",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/grid_state.gd",
+      "source_sha256": "ca7152d608495a3847a38c7a6c9b9366b9d643cb1be6d9a2a1e2824971afc16b",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_05_hero_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/hero_rules.gd",
+      "source_sha256": "a4839e71c09cf4023d537f12a5d5948a0f91ced1d3dac6d61208d59ac3dbeae7",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_06_level_data",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.159,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/level_data.gd",
+      "source_sha256": "5be09b36bd43efbdfa1cdd9dec22d8f07d66318cd66412d636a4d423f46666b1",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_07_monster_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/monster_rules.gd",
+      "source_sha256": "d66fe58d580f74d1f4d766fbda8b5a69d8271da8cfa5f0560c84b1625b4808ab",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_08_swap_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/swap_rules.gd",
+      "source_sha256": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_09_step_input",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/input/step_input.gd",
+      "source_sha256": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_10_main",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_11_board_view",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.246,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/view/board_view.gd",
+      "source_sha256": "c4e34fa28fb7885df2ad388e10415d5558413d85abcde81fc5cb73908c78ffd0",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_12_feedback_events",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/view/feedback_events.gd",
+      "source_sha256": "520d04b8cff9e99dbcd9b9c495304f72c6258cc7c6cf0534c2abac2a8b9d3677",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_13_feedback_timeline",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/view/feedback_timeline.gd",
+      "source_sha256": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_14_level_card",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/view/level_card.gd",
+      "source_sha256": "60c52071c130a40ab1fe5a6894e8e5909c4f13fa4ac6a1146837097bb1a88b6a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_15_level_menu",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.176,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/view/level_menu.gd",
+      "source_sha256": "f7ba0588a971b3b200fa32320ca6efbcc51a0def4d87c331860cb66b347df2c7",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_16_virtual_level_strip",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/view/virtual_level_strip.gd",
+      "source_sha256": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_17_blue_swap_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/blue_swap_regression.gd",
+      "source_sha256": "b18dfbee6e1047eda61398af9832b4f4759bfb2c14cbfe3d0aa335d5398be30e",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_18_bush_and_group_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/bush_and_group_regression.gd",
+      "source_sha256": "c69f97de7adc2971bdbd46b4ea1acbada842a01c3c3f3b722d182a848f8db4fd",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_19_chain_push_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/chain_push_regression.gd",
+      "source_sha256": "bda55346b683a4394c81fc2d55b0e17b78aa96daa2286430cf17d192d82a49ff",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_20_energy_destruction_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/energy_destruction_regression.gd",
+      "source_sha256": "891bedcaa43282849b7132faab6b5edd21c956818e3997cc3bc0214de9dbce88",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_21_energy_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/energy_regression.gd",
+      "source_sha256": "fcc21de4fa9a3527dbfaaa0385a581ae26bf151fa3caca1ef946135f59a7871c",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_22_energy_visibility_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/energy_visibility_scene.gd",
+      "source_sha256": "c41260762ec85d7c61857006321affc49c320755a297620e9a6cdfc262abd8f0",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_23_feedback_cases",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/feedback_cases.gd",
+      "source_sha256": "7f1eadc4e925a03928ccaed1864ccb6d240321bc281f3f9a6a1f106187ea485e",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_24_feedback_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.151,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_25_feedback_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/feedback_scene.gd",
+      "source_sha256": "6aaad87e24d60b5e57b6d331387cdff43cad91445b440715baf55dc701d6e512",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_26_fence_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/fence_regression.gd",
+      "source_sha256": "03817daaf19990eda6890b586b5bff025633dd7cf3127ece7d4ff12d724fa835",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_27_fire_dragon_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/fire_dragon_regression.gd",
+      "source_sha256": "a7d48ecea00aa2c22d6429054e05fb32c3f2b8001b7067814d578e6035f721a5",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_28_global_energy_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.151,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/global_energy_regression.gd",
+      "source_sha256": "1d3c29499d55da6f6e8d9ebe1262216201f987c44a44286a9e3a5715a9dde8f7",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_29_green_dragon_pull_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/green_dragon_pull_regression.gd",
+      "source_sha256": "8e70f8bb878c35f7e32ae9b19616d7971fde3c4b72c5b6199dc92893050687a9",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_30_green_dragon_pull_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/green_dragon_pull_scene.gd",
+      "source_sha256": "c5d435c0a45f3e305b03552e927d3580d4ba3e840f4eb28c2dc6c172922484cc",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_31_green_pull_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/green_pull_regression.gd",
+      "source_sha256": "2874ef517921cb0d4f6a343af3e9350751a6e3b909df1b267bb63ba8711abbb9",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_32_monster_clear_energy_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/monster_clear_energy_regression.gd",
+      "source_sha256": "531a94ead198117ac1061d0330cc6d5996b39d4b9ece4dad0bc2f236f559e711",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_33_monster_clear_energy_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/monster_clear_energy_scene.gd",
+      "source_sha256": "0a70e7f6aa2db9201c06489151910f981ffb6c4354e93cd04da8f33f9ba779e3",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_34_monster_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/monster_regression.gd",
+      "source_sha256": "912cf9d7695362803822c599ca9896b9c514be2396d4ea76bd289d895c7c77e6",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_35_multi_hero_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/multi_hero_regression.gd",
+      "source_sha256": "0331b230cb99dc2bd347abaf20e666e42d1920ae20aef7f49192ee5453221899",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_36_navigation_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.249,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/navigation_scene.gd",
+      "source_sha256": "d9d6e910eaa881feb46f4692cee1eb7f635cf16bb63f6784daf007012ca967f5",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_37_north_01_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_01_regression.gd",
+      "source_sha256": "1efc64ab42eae4b03806b5c929c886265279bd635b5ffba798e47a27a8f74e07",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_38_north_02_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_02_regression.gd",
+      "source_sha256": "bf0ea1099dfa9d5f80de4118d7ae932e7698c021b51523065f29a3f59e8c7d1a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_39_north_02_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_02_scene.gd",
+      "source_sha256": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_40_north_03_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_03_regression.gd",
+      "source_sha256": "3320cbf2b9818271f9922635a9be6f25ab40bff7a107cb918f43fb314dd518cd",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_41_north_03_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_03_scene.gd",
+      "source_sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_42_north_04_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_04_regression.gd",
+      "source_sha256": "7b975d0e605420f2fa3fabed79e9a761ce8bb56a8d3bbf710935add9bc248a02",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_43_north_04_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_04_scene.gd",
+      "source_sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_44_north_05_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.151,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_05_regression.gd",
+      "source_sha256": "1a8fb647e50b4334be3c748f33393d431a3abe1cc4e7165f96effa0466b7cc24",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_45_north_05_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_05_scene.gd",
+      "source_sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_46_north_06_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_06_regression.gd",
+      "source_sha256": "c53a922d497450e1774a97e80d378e299b3ee510ce0ce6dfbb9e749452756d1d",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_47_north_06_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_06_scene.gd",
+      "source_sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_48_north_07_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_07_regression.gd",
+      "source_sha256": "9b438a03f5403ba0c858733fd24a92e6f3e0eea946168c23bb634f610dbb5db5",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_49_north_07_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_07_scene.gd",
+      "source_sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_50_north_08_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_08_regression.gd",
+      "source_sha256": "3a9a02f8c3af160cee0c21ac32c1b72914e53ef8676d72eb8b3da022a15dfe02",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_51_north_08_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.235,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_08_scene.gd",
+      "source_sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_52_north_09_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_09_regression.gd",
+      "source_sha256": "a7a1ba0deec8aa131206588a2e2bbabad7b24d5f7335bd7520e1f30e84889444",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_53_north_09_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_09_scene.gd",
+      "source_sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_54_north_10_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_10_regression.gd",
+      "source_sha256": "d833cff22eed25743fbd2ae7f511a091c1020ca7282b801210f313945ff15790",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_55_north_10_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_10_scene.gd",
+      "source_sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_56_north_11_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.152,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_11_regression.gd",
+      "source_sha256": "57905bb30107af41064cb444fa68558e9b74209d72e7ffd7e70ad591a28f73c7",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_57_north_11_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_11_scene.gd",
+      "source_sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_58_north_12_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_12_regression.gd",
+      "source_sha256": "ff1b4d812d34418ef731cc3305c9e0705017124ad19a1c215b20c60fc515d40c",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_59_north_12_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.245,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_12_scene.gd",
+      "source_sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_60_north_13_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_13_regression.gd",
+      "source_sha256": "578968e74a77d92feaa6a5aa4e16904760b9f2a6fc7bf410cddd0c6c403450a4",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_61_north_13_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_13_scene.gd",
+      "source_sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_62_north_14_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_14_regression.gd",
+      "source_sha256": "74da5e6158136ae3e94e86c337bfe97d8045439c961ae1a605b6f4bf210e1654",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_63_north_14_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_14_scene.gd",
+      "source_sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_64_north_15_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_15_regression.gd",
+      "source_sha256": "f5b104a3d965c60bba273472d492c379ece91d3530f1c31088877d0299415b1e",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_65_north_15_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_15_scene.gd",
+      "source_sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_66_north_16_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_16_regression.gd",
+      "source_sha256": "5b373eaef6e742aec472dc452499b84661cd4d842e3bc94874e1694e5541efa7",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_67_north_16_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.247,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_16_scene.gd",
+      "source_sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_68_north_17_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_17_regression.gd",
+      "source_sha256": "36eca8d1f3d739d87f45948b30aca88b740b2412cf651b6612bcf29f9df5bf99",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_69_north_17_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_17_scene.gd",
+      "source_sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_70_north_18_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_18_regression.gd",
+      "source_sha256": "01cb8d689606e6094abd7214fa52cf4a66f2f14d64c3d54436bf317fd71fd716",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_71_north_18_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_18_scene.gd",
+      "source_sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_72_north_19_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_19_regression.gd",
+      "source_sha256": "2c8938dfd6c627780d945ad547a77ede6dd5de5e63451e0d468faaf100ab45e2",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_73_north_19_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_19_scene.gd",
+      "source_sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_74_north_20_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_20_regression.gd",
+      "source_sha256": "e569073b093749e4c12dae9dbec6a2b6059fb6f09018c69ccd711345b38a7f2f",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_75_north_20_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_20_scene.gd",
+      "source_sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_76_north_21_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_21_regression.gd",
+      "source_sha256": "8473a6213c52c724d564aa4c80c8e83514f9c3482795dd98551811d715765cac",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_77_north_21_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_21_scene.gd",
+      "source_sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_78_north_22_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_22_regression.gd",
+      "source_sha256": "823531af34fb05aba87a62bea3e261c3c719d062e06eb36a1c770793b60443be",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_79_north_22_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_22_scene.gd",
+      "source_sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_80_north_23_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_23_regression.gd",
+      "source_sha256": "85d2e5228f668490cabdedeb1f04b57916280fa1e0897ae0af3295c1d2c3158a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_81_north_23_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_23_scene.gd",
+      "source_sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_82_north_24_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_24_regression.gd",
+      "source_sha256": "5ea464c53f54c2f285cd9ea00fde39330cc7ded2b6bc119b30999b27bf3ea1c9",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_83_north_24_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_24_scene.gd",
+      "source_sha256": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_84_north_25_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_25_regression.gd",
+      "source_sha256": "a55c9716a1789d16ba9cf07803a610c16a8ed50f1afd86d23183a6994b690884",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_85_north_25_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_25_scene.gd",
+      "source_sha256": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_86_north_26_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_26_regression.gd",
+      "source_sha256": "c1960ff743bdac1248a45f745bf65bdf031d24924350563f08d77a58db86a15e",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_87_north_26_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_26_scene.gd",
+      "source_sha256": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_88_north_27_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_27_regression.gd",
+      "source_sha256": "01cb00fe04fea707443bcd54b19c6f7c4e37c2493c3e6224ac1a7c47b579b49b",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_89_north_27_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_27_scene.gd",
+      "source_sha256": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_90_north_28_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_28_regression.gd",
+      "source_sha256": "5364bd271076f2f86810671fb6947f91aa612069f759bfa3f0599175a5c27288",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_91_north_28_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_28_scene.gd",
+      "source_sha256": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_92_north_29_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.153,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_29_regression.gd",
+      "source_sha256": "e12e3f227584d6a343eb7807997615aa83c9deb3efb0cf369d704c4a392b2f5b",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_93_north_29_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_94_north_30_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.244,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_30_regression.gd",
+      "source_sha256": "3bddf7dbf2137e4963605ac5e5f841c34c88df61a29e64b6cd9109a4ace95116",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_95_north_30_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_96_north_31_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_31_regression.gd",
+      "source_sha256": "b1cf2f26d454fc465298870e063a3a86e424e1b7e99fa2da53298894cfecbc13",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_97_north_31_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_98_north_32_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_32_regression.gd",
+      "source_sha256": "0d8a8a0fe04d58e98530ac934b081baa3803a364bad53414f8c0316b06d66ace",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_99_north_32_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.244,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_100_north_33_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_33_regression.gd",
+      "source_sha256": "b80b000499a845c08a3f3d9494c231a8d7d229675e56f0c247e09706b5c45d5e",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_101_north_33_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.262,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_102_north_34_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_34_regression.gd",
+      "source_sha256": "b2ee833fdb7d0105219397c888614d8aec4b7818e7f399cdb55b39185a2f0b97",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_103_north_34_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_104_north_35_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.254
+    },
+    {
+      "name": "02_parse_105_north_35_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_106_run_tests",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/run_tests.gd",
+      "source_sha256": "4d1a1dcbb4e576c5555e115855c547205cfb1deb93deef99ef5ed07d60ad5d6f",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_parse_107_scene_smoke",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/scene_smoke.gd",
+      "source_sha256": "72fb4ec6c0e8002db315754429287ebb7d0c05c24cc055e808014cb725773a60",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_record_visual_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.141,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "02_record_playthrough",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.434,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_monster_clear_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_logic",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/run_tests.gd",
+      "source_sha256": "4d1a1dcbb4e576c5555e115855c547205cfb1deb93deef99ef5ed07d60ad5d6f",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_chain_push",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.246,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/chain_push_regression.gd",
+      "source_sha256": "bda55346b683a4394c81fc2d55b0e17b78aa96daa2286430cf17d192d82a49ff",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_global_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_bush_group",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/bush_and_group_regression.gd",
+      "source_sha256": "c69f97de7adc2971bdbd46b4ea1acbada842a01c3c3f3b722d182a848f8db4fd",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_green_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.246,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_blue_swap",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/blue_swap_regression.gd",
+      "source_sha256": "b18dfbee6e1047eda61398af9832b4f4759bfb2c14cbfe3d0aa335d5398be30e",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_multi_hero",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.152,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/multi_hero_regression.gd",
+      "source_sha256": "0331b230cb99dc2bd347abaf20e666e42d1920ae20aef7f49192ee5453221899",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_13",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_13_regression.gd",
+      "source_sha256": "578968e74a77d92feaa6a5aa4e16904760b9f2a6fc7bf410cddd0c6c403450a4",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_14",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_14_regression.gd",
+      "source_sha256": "74da5e6158136ae3e94e86c337bfe97d8045439c961ae1a605b6f4bf210e1654",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_15",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_15_regression.gd",
+      "source_sha256": "f5b104a3d965c60bba273472d492c379ece91d3530f1c31088877d0299415b1e",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_16",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_16_regression.gd",
+      "source_sha256": "5b373eaef6e742aec472dc452499b84661cd4d842e3bc94874e1694e5541efa7",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_energy_destruction",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_17",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.154,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_17_regression.gd",
+      "source_sha256": "36eca8d1f3d739d87f45948b30aca88b740b2412cf651b6612bcf29f9df5bf99",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_18",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.244,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_18_regression.gd",
+      "source_sha256": "01cb8d689606e6094abd7214fa52cf4a66f2f14d64c3d54436bf317fd71fd716",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_19",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_19_regression.gd",
+      "source_sha256": "2c8938dfd6c627780d945ad547a77ede6dd5de5e63451e0d468faaf100ab45e2",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_fences",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/fence_regression.gd",
+      "source_sha256": "03817daaf19990eda6890b586b5bff025633dd7cf3127ece7d4ff12d724fa835",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_20",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_20_regression.gd",
+      "source_sha256": "e569073b093749e4c12dae9dbec6a2b6059fb6f09018c69ccd711345b38a7f2f",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_21",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_21_regression.gd",
+      "source_sha256": "8473a6213c52c724d564aa4c80c8e83514f9c3482795dd98551811d715765cac",
+      "catalog_tail_exemption": false,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_29_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.024,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_29",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.246,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_30_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.018,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_30",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.242,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_31_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.019,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_31",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_35_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.024,
+      "retained_current_task_success": true
+    },
+    {
+      "name": "03_north_35",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237
+    },
+    {
+      "name": "03_north_34_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.028
+    },
+    {
+      "name": "03_north_34",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.255
+    },
+    {
+      "name": "03_north_33_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.019
+    },
+    {
+      "name": "03_north_33",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.243
+    },
+    {
+      "name": "03_north_32_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.018
+    },
+    {
+      "name": "03_north_32",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_north_28_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.021
+    },
+    {
+      "name": "03_north_28",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_green_dragon_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_north_27_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.021
+    },
+    {
+      "name": "03_north_27",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239
+    },
+    {
+      "name": "03_fire_dragon",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_north_26_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.017
+    },
+    {
+      "name": "03_north_26",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_monsters",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238
+    },
+    {
+      "name": "03_monster_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.03
+    },
+    {
+      "name": "03_north_25_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.029
+    },
+    {
+      "name": "03_north_25",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_25_regression.gd",
+      "source_sha256": "a55c9716a1789d16ba9cf07803a610c16a8ed50f1afd86d23183a6994b690884",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_24_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.023
+    },
+    {
+      "name": "03_north_24",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.235,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_24_regression.gd",
+      "source_sha256": "5ea464c53f54c2f285cd9ea00fde39330cc7ded2b6bc119b30999b27bf3ea1c9",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_23_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.02
+    },
+    {
+      "name": "03_north_23",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_23_regression.gd",
+      "source_sha256": "85d2e5228f668490cabdedeb1f04b57916280fa1e0897ae0af3295c1d2c3158a",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_22",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_22_regression.gd",
+      "source_sha256": "823531af34fb05aba87a62bea3e261c3c719d062e06eb36a1c770793b60443be",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_01",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_01_regression.gd",
+      "source_sha256": "1efc64ab42eae4b03806b5c929c886265279bd635b5ffba798e47a27a8f74e07",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_02",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_02_regression.gd",
+      "source_sha256": "bf0ea1099dfa9d5f80de4118d7ae932e7698c021b51523065f29a3f59e8c7d1a",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_03",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_03_regression.gd",
+      "source_sha256": "3320cbf2b9818271f9922635a9be6f25ab40bff7a107cb918f43fb314dd518cd",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_04",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_04_regression.gd",
+      "source_sha256": "7b975d0e605420f2fa3fabed79e9a761ce8bb56a8d3bbf710935add9bc248a02",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_05_regression.gd",
+      "source_sha256": "1a8fb647e50b4334be3c748f33393d431a3abe1cc4e7165f96effa0466b7cc24",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_06",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_06_regression.gd",
+      "source_sha256": "c53a922d497450e1774a97e80d378e299b3ee510ce0ce6dfbb9e749452756d1d",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_07",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_07_regression.gd",
+      "source_sha256": "9b438a03f5403ba0c858733fd24a92e6f3e0eea946168c23bb634f610dbb5db5",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_08",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_08_regression.gd",
+      "source_sha256": "3a9a02f8c3af160cee0c21ac32c1b72914e53ef8676d72eb8b3da022a15dfe02",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_09",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_09_regression.gd",
+      "source_sha256": "a7a1ba0deec8aa131206588a2e2bbabad7b24d5f7335bd7520e1f30e84889444",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_10",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_10_regression.gd",
+      "source_sha256": "d833cff22eed25743fbd2ae7f511a091c1020ca7282b801210f313945ff15790",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_11",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.243,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_11_regression.gd",
+      "source_sha256": "57905bb30107af41064cb444fa68558e9b74209d72e7ffd7e70ad591a28f73c7",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "03_north_12",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_12_regression.gd",
+      "source_sha256": "ff1b4d812d34418ef731cc3305c9e0705017124ad19a1c215b20c60fc515d40c",
+      "catalog_tail_exemption": false
+    },
+    {
+      "name": "04_main_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.518
+    },
+    {
+      "name": "05_north_35_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 19.05
+    },
+    {
+      "name": "05_north_34_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.193
+    },
+    {
+      "name": "05_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.574
+    },
+    {
+      "name": "05_monster_clear_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.572
+    },
+    {
+      "name": "05_scene_input",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.576
+    },
+    {
+      "name": "05_north_02_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.449,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_02_scene.gd",
+      "source_sha256": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_03_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.661,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_03_scene.gd",
+      "source_sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_04_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.446,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_04_scene.gd",
+      "source_sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_05_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 10.863,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_05_scene.gd",
+      "source_sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_06_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 19.047,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_06_scene.gd",
+      "source_sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_07_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 36.074,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_07_scene.gd",
+      "source_sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_08_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.301,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_08_scene.gd",
+      "source_sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_09_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.85,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_09_scene.gd",
+      "source_sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_10_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 25.849,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_10_scene.gd",
+      "source_sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_11_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.08,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_11_scene.gd",
+      "source_sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_12_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 24.911,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_12_scene.gd",
+      "source_sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_13_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.729,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_13_scene.gd",
+      "source_sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_14_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.262,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_14_scene.gd",
+      "source_sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_15_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.179,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_15_scene.gd",
+      "source_sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_16_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.658,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_16_scene.gd",
+      "source_sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_17_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 27.044,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_17_scene.gd",
+      "source_sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_18_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.461,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_18_scene.gd",
+      "source_sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_19_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.647,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_19_scene.gd",
+      "source_sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_20_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 13.936,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_20_scene.gd",
+      "source_sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_21_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 42.299,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_21_scene.gd",
+      "source_sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_29_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.379
+    },
+    {
+      "name": "05_north_30_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 15.327
+    },
+    {
+      "name": "05_north_31_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 29.458
+    },
+    {
+      "name": "05_north_33_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.926
+    },
+    {
+      "name": "05_north_32_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.904
+    },
+    {
+      "name": "05_north_28_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 15.888,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_28_scene.gd",
+      "source_sha256": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_green_dragon_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 4.257
+    },
+    {
+      "name": "05_north_27_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.16,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_27_scene.gd",
+      "source_sha256": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_26_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.819,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_26_scene.gd",
+      "source_sha256": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_25_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 14.302,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_25_scene.gd",
+      "source_sha256": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_24_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.58,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_24_scene.gd",
+      "source_sha256": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_23_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.726,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_23_scene.gd",
+      "source_sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_north_22_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 8.913,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_22_scene.gd",
+      "source_sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "05_navigation",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 23.884
+    },
+    {
+      "name": "05_energy_visibility",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.449
+    },
+    {
+      "name": "06_render_north_35",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 32.568
+    },
+    {
+      "name": "06_render_north_34",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 29.633
+    },
+    {
+      "name": "06_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.331
+    },
+    {
+      "name": "06_monster_clear_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.185
+    },
+    {
+      "name": "06_render",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.243
+    },
+    {
+      "name": "06_render_north_02",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.984,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_02_scene.gd",
+      "source_sha256": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_03",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.457,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_03_scene.gd",
+      "source_sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_04",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.156,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_04_scene.gd",
+      "source_sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 18.753,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_05_scene.gd",
+      "source_sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_06",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 29.655,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_06_scene.gd",
+      "source_sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_07",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 57.135,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_07_scene.gd",
+      "source_sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_08",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.747,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_08_scene.gd",
+      "source_sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_09",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.539,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_09_scene.gd",
+      "source_sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_10",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 36.882,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_10_scene.gd",
+      "source_sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_11",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 25.577,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_11_scene.gd",
+      "source_sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_12",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 34.872,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_12_scene.gd",
+      "source_sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_13",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 22.63,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_13_scene.gd",
+      "source_sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_14",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.41,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_14_scene.gd",
+      "source_sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_15",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 51.79,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_15_scene.gd",
+      "source_sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_16",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 30.647,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_16_scene.gd",
+      "source_sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_17",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 41.126,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_17_scene.gd",
+      "source_sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_18",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 54.904,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_18_scene.gd",
+      "source_sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_19",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 54.017,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_19_scene.gd",
+      "source_sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_20",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 23.88,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_20_scene.gd",
+      "source_sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_21",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 68.744,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_21_scene.gd",
+      "source_sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_22",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.506,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_22_scene.gd",
+      "source_sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_23",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 23.092,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_23_scene.gd",
+      "source_sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_24",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 44.049,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_24_scene.gd",
+      "source_sha256": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_25",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 28.478,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_25_scene.gd",
+      "source_sha256": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_26",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.821,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_26_scene.gd",
+      "source_sha256": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_green_dragon_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.166
+    },
+    {
+      "name": "06_render_north_27",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 31.067,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_27_scene.gd",
+      "source_sha256": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_render_north_29",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.522
+    },
+    {
+      "name": "06_render_north_30",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 25.752
+    },
+    {
+      "name": "06_render_north_31",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 41.843
+    },
+    {
+      "name": "06_render_north_33",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 32.795
+    },
+    {
+      "name": "06_render_north_32",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.613
+    },
+    {
+      "name": "06_render_north_28",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 25.071,
+      "reused_successful_evidence": true,
+      "reuse_category": "unaffected_runtime",
+      "baseline_commit": "210cda0b1fbebc0e04ba48b89d7b69a664b9cf4b",
+      "baseline_source_file": "tests/north_28_scene.gd",
+      "source_sha256": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf",
+      "catalog_tail_exemption": true
+    },
+    {
+      "name": "06_navigation",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 39.825
+    },
+    {
+      "name": "06_energy_visibility",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 22.085
+    }
+  ],
+  "preserved_old_delivery_files": 146,
+  "old_media_entries_preserved": 34,
+  "route": {
+    "actions": 50,
+    "pushes": 16,
+    "pulls": 0,
+    "swaps": 0,
+    "selection_events": 0,
+    "shared_snapshot_fire_goblin_deaths_gate_action": 38,
+    "gate_cross": 47,
+    "living_victory": 50,
+    "new_top_row_actions": [
+      9,
+      10,
+      11
+    ],
+    "shortest_claim": false
+  },
+  "model_checks": 576,
+  "headless_UI_checks": 356,
+  "X11_checks": 380,
+  "display": "X11:98,MIT-SHM disabled,Mesa llvmpipe",
+  "test_only_mapping_type_correction": "Compare GodotJSON numeric coordinates through Vector2i;12 floatarray/intarray assertions corrected,no data/rule changes;unaffected current-task successes retained with unchanged hashes.",
+  "not_tested": [
+    "Physical GPU/mobile devices",
+    "Undefined monster-pressure/fire-fence combinations remain guarded"
+  ],
+  "CI": "Queried separately after finalpush;local verification is not CI."
+}

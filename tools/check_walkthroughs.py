@@ -359,6 +359,17 @@ def check_visual_feedback(item, evidence):
         assert views[26]["energy_changes"] == [{"cell":[5,2],"active":False}]
         assert all(not m["alive"] for m in evidence["final_state"]["monsters"])
 
+    if item["level"] == 35:
+        assert [v["event_index"] for v in views if v["locked_fire"]] == [38]
+        assert [v["event_index"] for v in views if v["locked_goblin"]] == [38]
+        assert len(views[37]["locked_fire"]) == len(views[37]["locked_goblin"]) == 1
+        ray=views[37]["locked_fire"][0]
+        assert ray["dragon"]==0 and ray["from"]==[0,4] and ray["facing"]==[1,0] and ray["cells"]==[[1,4]] and ray["target"]=={"kind":"monster","id":1}
+        assert views[37]["locked_goblin"]==[{"from":[1,4],"to":[0,4]}]
+        assert set(views[37]["death_keys"])=={"m:0","m:1"}
+        assert [v["event_index"] for v in views if v["energy_changes"]]==[38] and views[37]["energy_changes"]==[{"cell":[8,2],"active":False}]
+        assert all(not m["alive"] for m in evidence["final_state"]["monsters"])
+
 
 def check_media(item, evidence):
     path = ROOT / item["file"]
