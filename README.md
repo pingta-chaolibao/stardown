@@ -84,6 +84,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第三十六关 | [观看 / 下载 MP4](video/chapter_01/level_36.mp4) | 20.6 秒 |
 | 第三十七关 | [观看 / 下载 MP4](video/chapter_01/level_37.mp4) | 30.8 秒 |
 | 第三十八关 | [观看 / 下载 MP4](video/chapter_01/level_38.mp4) | 26.6 秒 |
+| 第三十九关 | [观看 / 下载 MP4](video/chapter_01/level_39.mp4) | 55.4 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -945,3 +946,5 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 独立身份重放与Godot验证73次实际行动、11次免费C切换，7推8拉（7次水晶、1次火龙）。17步利用新增34从上推龙；22步拉开水晶，让火龙只击杀首个哥布林，23步混合推链立即恢复遮挡；29步红人压蓝板，34步绿人把龙拉回原通道且保持朝左；56步蓝门独立恢复，62步水晶接力压蓝板，73步两英雄分别到达终点。黄板一直由存活哥布林压住；结尾哥布林和火龙仍存活，不是清怪能量关，不宣称最短解。
 
 实际Godot：[初始双色](docs/screenshots/level_39_initial.png) · [拉龙](docs/screenshots/level_39_action_34.png) · [仅蓝门恢复](docs/screenshots/level_39_action_56.png) · [水晶接力](docs/screenshots/level_39_action_62.png) · [双英雄胜利](docs/screenshots/level_39_completed.png) · [小窗口](docs/screenshots/level_39_compact_green.png)。[测试证据与范围](docs/verification/north_39_scope.json)。
+
+[第三十九关正式通关视频](video/chapter_01/level_39.mp4)：55.4秒、73行动与11次免费切换，7推8拉（1龙7晶）。真实Godot正常WASD/C录制，17推龙、22首目标喷火、34拉龙复位，蓝门29开/56恢复/62水晶接力重开；黄门独立保持开放。两个英雄分别到达目标，哥布林和火龙仍存活。[双色能量](docs/screenshots/level_39_blue_restored.png) · [水晶接力](docs/screenshots/level_39_crystal_handoff.png) · [双英雄胜利](docs/screenshots/level_39_victory.png)。

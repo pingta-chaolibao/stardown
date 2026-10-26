@@ -3637,5 +3637,47 @@
     "Physical GPU and mobile devices",
     "Unconfirmed future fire/fence or other monster-pressure behavior"
   ],
-  "CI": "Queried separately after final push; local verification is not CI."
+  "CI": "Queried separately after final push; local verification is not CI.",
+  "media": {
+    "implementation_commit": "89b33e8719f963567e46708ea84da5ff08b6a53e",
+    "recording_after_implementation": true,
+    "path": "video/chapter_01/level_39.mp4",
+    "duration_seconds": 55.4,
+    "frames": 1662,
+    "bytes": 1066972,
+    "sha256": "ec4c688ea1cfb1130fb35c2b46458f00f59ef57b34784a1008b0ed21d348420a",
+    "actions": 73,
+    "selection_events": 11,
+    "pushes": 7,
+    "pulls": 8,
+    "dragon_pulls": 1,
+    "crystal_pulls": 7,
+    "swaps": 0,
+    "all84_input_states_and11_free_C_highlights_reviewed": true,
+    "all7_push_and8_pull_processes_reviewed": true,
+    "encoded_review_frame_count": 149,
+    "contact_pages_reviewed": 19,
+    "sampled_5fps_frames": 277,
+    "distinct_sampled_frames": 277,
+    "all39_full_decode_and_independent_replay_freshly_executed": true,
+    "unchanged_source_fingerprints": 246,
+    "unchanged_old_delivery_files": 166,
+    "unchanged_old_manifest_entries": 38,
+    "fire_attack_actions": [
+      22
+    ],
+    "fire_attack_events": [
+      28
+    ],
+    "goblin_attack_actions": [],
+    "blue_energy_change_actions": [
+      29,
+      56,
+      62
+    ],
+    "yellow_always_open": true,
+    "surviving_monsters": 2,
+    "two_goal_victory": true,
+    "time_utc": "2026-10-26T11:13:13.557107+00:00"
+  }
 }
