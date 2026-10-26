@@ -60,7 +60,7 @@ func _run() -> void:
 	await _click("SwitchHero"); _check(game.model.active_hero_id() == "green" and game.model.moves == 0,"small-window screen selection green retains distinct hue")
 	_check_layout(game); await _capture("north_30_compact_green.png")
 	await _click("BackToLevels")
-	_check(game.menu.strip.item_count == 39 and game.menu.strip.pool.size() <= game.menu.strip.capacity_bound(),"37reallevels use bounded persistent pool")
+	_check(game.menu.strip.item_count == 40 and game.menu.strip.pool.size() <= game.menu.strip.capacity_bound(),"37reallevels use bounded persistent pool")
 	await _capture("north_30_navigation.png")
 	await _click("Level29"); _check(game.model.level.id == "north_hero_29" and game.model.monsters().size() == 4,"fixed29 preserved")
 	await _click("Level30"); _check(game.model.snapshot() == initial and game.model.active_hero_id() == "blue","30 history cannot leak across menu or previous level")

@@ -30,7 +30,7 @@ func _run()->void:
 	_check(game.model.is_complete() and game.moves_label.text=="50" and game.model.pushes==16 and game.model.crates().size()==2,"50/16livingvictory")
 	await _capture("north_35_completed.png");await _click("Undo");_check(game.model.snapshot()==history[-1] and not game.model.is_complete(),"victoryUndo")
 	await _click("Restart");root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_35_compact.png")
-	await _click("BackToLevels");_check(game.menu.strip.item_count == 39 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"37entriesremainpooled")
+	await _click("BackToLevels");_check(game.menu.strip.item_count == 40 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"37entriesremainpooled")
 	await _capture("north_35_navigation.png");await _click("Level34");await _click("Level35");_check(game.model.snapshot()==initial and game.model.history_size()==0,"34/35UIisolation")
 	print("NORTH35 SCENE RESULT: %d checks,%d failures;display=%s" % [checks,failures,DisplayServer.get_name()]);quit(0 if failures==0 else 1)
 func _cell(a:Array)->Vector2i:return Vector2i(a[0],a[1])

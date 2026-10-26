@@ -5,6 +5,7 @@ extends RefCounted
 const Fire = preload("res://scripts/core/fire_rules.gd")
 const Monsters = preload("res://scripts/core/monster_rules.gd")
 const Energy = preload("res://scripts/core/energy_rules.gd")
+const Protection = preload("res://scripts/core/protection_rules.gd")
 
 static func capture(model: RefCounted) -> Dictionary:
 	var entities: Dictionary = {}
@@ -31,7 +32,7 @@ static func action(before: Dictionary, model: RefCounted, direction: Vector2i) -
 	if after["world"]["moves"] != before["world"]["moves"] + 1:
 		return {} # Failed input/selection/undo never creates an attack round.
 	var plan: Dictionary = {"before":before["entities"],"after":after["entities"].duplicate(true),
-		"motion":{},"energy":[],"plates":[],"deaths":[],"sight":[],"fire":[],"goblin":[],
+		"motion":{},"energy":[],"plates":[],"deaths":[],"sight":[],"fire":[],"goblin":[],"shields":[],
 		"swap":after["world"]["swaps"]>before["world"]["swaps"],
 		"contact":after["world"]["pushes"]>before["world"]["pushes"] or after["world"]["pulls"]>before["world"]["pulls"],
 		"victory":after["complete"] and not before["complete"]}
@@ -101,6 +102,10 @@ static func _sample_attacks(plan: Dictionary, before: Dictionary, after: Diction
 		hero_lives.assign(phase["hero_alive"])
 		monster_lives.assign(phase["monster_alive"])
 		crystals=phase["crystals"].duplicate()
+	var hero_kinds:PackedStringArray=[]
+	for hero in model.heroes():hero_kinds.append(hero["kind"])
+	var protected_heroes:Array[bool]=Protection.covered(hero_kinds,hero_positions,hero_lives)
+	if phase.has("protected_heroes"):protected_heroes.assign(phase["protected_heroes"])
 	# Reconstruct the locked attack phase, not the final cleared-gate state.
 	# A last-monster death may open a gate only AFTER targets were sampled.
 	var attack_barriers: Dictionary = phase.get("barriers",after["barriers"]).duplicate()
@@ -108,7 +113,7 @@ static func _sample_attacks(plan: Dictionary, before: Dictionary, after: Diction
 	var attack_blocks: Callable = func(cell: Vector2i) -> bool:
 		return not model.level.is_floor(cell) or model.level.bush_at(cell) != null or attack_barriers.get(cell,false)
 	var rays := Fire.plan(model.level.monster_kinds,monster_positions,monster_lives,facings,hero_positions,hero_lives,crystals,
-		Rect2i(Vector2i.ZERO,Vector2i(model.level.width,model.level.height)),attack_blocks,model.level.has_fence)
+		Rect2i(Vector2i.ZERO,Vector2i(model.level.width,model.level.height)),attack_blocks,model.level.has_fence,protected_heroes)
 	for ray in rays["rays"]:
 		var event: Dictionary = ray.duplicate(true)
 		event["from"] = monster_positions[ray["dragon"]]
@@ -116,13 +121,17 @@ static func _sample_attacks(plan: Dictionary, before: Dictionary, after: Diction
 		# Preserve every locked sight ray for the existing danger overlay.
 		# Only an actual target contributes an attack or its waiting stage.
 		plan["sight"].append(event)
+		if ray.has("shielded_hero"):
+			var h:int=ray["shielded_hero"]
+			plan["shields"].append({"hero":h,"position":hero_positions[h],"source":"fire"})
 		if ray["target"].is_empty(): continue
 		plan["fire"].append(event)
 	for i in monster_positions.size():
 		if not monster_lives[i] or model.level.monster_kinds[i] != "goblin": continue
 		for h in hero_positions.size():
 			if hero_lives[h] and Monsters.threatens("goblin",monster_positions[i],hero_positions[h]):
-				plan["goblin"].append({"from":monster_positions[i],"to":hero_positions[h]})
+				if protected_heroes[h]:plan["shields"].append({"hero":h,"position":hero_positions[h],"source":"goblin"})
+				else:plan["goblin"].append({"from":monster_positions[i],"to":hero_positions[h]})
 		for m in monster_positions.size():
 			if m != i and monster_lives[m] and Monsters.can_attack_monster("goblin",model.level.monster_kinds[m]) and Monsters.threatens("goblin",monster_positions[i],monster_positions[m]):
 				plan["goblin"].append({"from":monster_positions[i],"to":monster_positions[m]})

@@ -26,8 +26,8 @@ func _init() -> void:
 
 
 func _run() -> void:
-	if level_number<1 or level_number>39 or report_path.is_empty():
-		_fail("Pass --level=1 through 39 and an absolute --report path.")
+	if level_number<1 or level_number>40 or report_path.is_empty():
+		_fail("Pass --level=1 through 40 and an absolute --report path.")
 		return
 	if DisplayServer.get_name() == "headless" or Engine.get_write_movie_path().is_empty():
 		_fail("Recording requires a real renderer and --write-movie.")
@@ -164,9 +164,13 @@ func _visual_sample(index: int, symbol: String) -> Dictionary:
 	var energy: Array[Dictionary] = []
 	for event in clock.plan.get("energy",[]):
 		energy.append({"cell":[event["cell"].x,event["cell"].y],"active":event["active"]})
-	return {"event_index":index+1,"input":symbol,"start_frame":INITIAL_FRAMES+index*STEP_FRAMES,
+	var shields:Array=[]
+	for event in clock.plan.get("shields",[]):shields.append({"hero":event["hero"],"position":[event["position"].x,event["position"].y],"source":event["source"]})
+	var result:Dictionary={"event_index":index+1,"input":symbol,"start_frame":INITIAL_FRAMES+index*STEP_FRAMES,
 		"sample_age_seconds":clock.age,"swap":clock.plan.get("swap",false),"motions":motions,
 		"locked_fire":rays,"locked_goblin":strikes,"energy_changes":energy,"death_keys":deaths}
+	if game.model.protected_heroes().has(true):result["shield_blocks"]=shields
+	return result
 
 
 func _state() -> Dictionary:
@@ -212,6 +216,7 @@ func _state() -> Dictionary:
 		var edges:Array=[]
 		for edge in game.model.level.fence_edges:edges.append([[edge["a"].x,edge["a"].y],[edge["b"].x,edge["b"].y]])
 		result["fences"]=edges
+	if game.model.level.hero_definitions.any(func(h:Dictionary)->bool:return h["kind"]=="yellow"):result["protected_heroes"]=game.model.protected_heroes()
 	return result
 
 

@@ -34,6 +34,6 @@ func _run()->void:
 	_check(game.model.is_complete() and game.moves_label.text=="26" and game.swaps_label.text=="08" and game.model.crates().size()==2,"26/8livingvictory")
 	await _capture("north_36_completed.png");await _click("Undo");_check(game.model.snapshot()==history[-1] and not game.model.is_complete(),"victoryUndo")
 	await _click("Restart");root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_36_compact.png")
-	await _click("BackToLevels");_check(game.menu.strip.item_count == 39 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"39realentriesboundedpool")
+	await _click("BackToLevels");_check(game.menu.strip.item_count == 40 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"39realentriesboundedpool")
 	await _capture("north_36_navigation.png");await _click("Level35");_check(game.model.active_kind()=="red" and game.model.level.swap_hero_color=="blue","olddefaultpresentationuntouched");await _click("Level09");_check(game.menu.strip.card_for_index(8)._role_color("blue")==game.board.HERO_BLUE,"oldbluecardremainsblue");await _click("Level36");_check(game.model.snapshot()==initial and game.model.history_size()==0,"35/09/36historyisolation")
 	print("NORTH36 SCENE RESULT: %d checks,%d failures;display=%s" % [checks,failures,DisplayServer.get_name()]);quit(0 if failures==0 else 1)

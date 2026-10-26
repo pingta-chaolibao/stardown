@@ -4,7 +4,7 @@ const FONT = preload("res://assets/fonts/NotoSansCJKsc-Regular.otf")
 const GOLD = Color("dfbb78")
 const INK = Color("e3e9e6")
 const MINT = Color("8ebbb9")
-const ROLES = {"red":Color("f5787b"),"green":Color("72ce95"),"blue":Color("78aff0")}
+const ROLES = {"red":Color("f5787b"),"green":Color("72ce95"),"blue":Color("78aff0"),"yellow":Color("f2d26c")}
 var bound_index := -1
 var entry: Dictionary = {}
 var selected := false
@@ -50,7 +50,7 @@ func _draw() -> void:
 	_preview(Rect2(18, 78 + lift, size.x - 36, 126))
 	_text(entry.get("title", "关卡"), Vector2(21, 238 + lift), 23, INK, size.x - 40)
 	var kinds: Array = entry.get("kinds", [])
-	var labels := {"red":"推", "green":"拉", "blue":"换位"}
+	var labels := {"red":"推", "green":"拉", "blue":"换位", "yellow":"保护"}
 	var x := 24.0
 	for kind in kinds:
 		draw_circle(Vector2(x, 258 + lift), 3.5, _role_color(kind))

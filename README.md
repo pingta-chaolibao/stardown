@@ -948,3 +948,14 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 实际Godot：[初始双色](docs/screenshots/level_39_initial.png) · [拉龙](docs/screenshots/level_39_action_34.png) · [仅蓝门恢复](docs/screenshots/level_39_action_56.png) · [水晶接力](docs/screenshots/level_39_action_62.png) · [双英雄胜利](docs/screenshots/level_39_completed.png) · [小窗口](docs/screenshots/level_39_compact_green.png)。[测试证据与范围](docs/verification/north_39_scope.json)。
 
 [第三十九关正式通关视频](video/chapter_01/level_39.mp4)：55.4秒、73行动与11次免费切换，7推8拉（1龙7晶）。真实Godot正常WASD/C录制，17推龙、22首目标喷火、34拉龙复位，蓝门29开/56恢复/62水晶接力重开；黄门独立保持开放。两个英雄分别到达目标，哥布林和火龙仍存活。[双色能量](docs/screenshots/level_39_blue_restored.png) · [水晶接力](docs/screenshots/level_39_crystal_handoff.png) · [双英雄胜利](docs/screenshots/level_39_victory.png)。
+
+
+## 第四十关：黄色保护英雄
+
+用户确认9×5、编号1–45含墙。11=(1,1)黄色英雄，30=(2,3)目标；六只哥布林和(0,4)朝右火龙，五颗普通水晶，无机关。[关卡](levels/north_40.json) · [编号映射](levels/mappings/north_40_markers.json)。
+
+`hero_kind=yellow`只走动与保护，不能推、拉、交换。存活黄人保护自身和上下左右相邻英雄，不含斜角和距离2；与当前选择无关。保护仅针对哥布林与火龙，能量再现仍致死。火龙遇到受保护英雄时停住，不穿透找后方目标。保护按共同攻击快照计算，已有同步死亡和原子撤销不变。阻挡反馈是柔和盾牌，不播放空攻击或增加等待。范围只标四向地板，角色保留原色。
+
+独立回放、Godot模型和真实键鼠/屏幕输入验证 `RRRRRRRDDDLLLLLLU`，17次普通移动：2–8步挡住哥布林邻接威胁，10–16步以自身挡住火龙射线，从右侧绕到底排，17步到终点。没有实际攻击、死亡、推动、拉动或交换，五晶和七怪全部保持原位存活，不宣称最短路线。
+
+实际Godot：[初始范围](docs/screenshots/level_40_initial.png) · [挡住火线](docs/screenshots/level_40_action_13.png) · [通关](docs/screenshots/level_40_completed.png) · [小窗口](docs/screenshots/level_40_compact.png) · [独立邻保测试](docs/screenshots/level_40_fixture_ally.png)。独立测试截图不是正式通关情节。[测试证据与范围](docs/verification/north_40_scope.json)。

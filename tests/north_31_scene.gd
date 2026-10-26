@@ -39,7 +39,7 @@ func _run() -> void:
 	await _capture("north_31_completed.png");await _click("Undo")
 	_check(game.model.snapshot()==history[-1] and not game.model.is_complete(),"victoryUndo restoreslastactualaction")
 	await _click("Restart");root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_31_compact.png")
-	await _click("BackToLevels");_check(game.menu.strip.item_count == 39 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"37entry preservesboundedpoolednavigation")
+	await _click("BackToLevels");_check(game.menu.strip.item_count == 40 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"37entry preservesboundedpoolednavigation")
 	await _capture("north_31_navigation.png");await _click("Level30");await _click("Level31")
 	_check(game.model.snapshot()==initial and game.model.history_size()==0 and game.model.barrier_is_active(Vector2i(9,4)),"30/31UIhistory/life/clearstates isolated")
 	print("NORTH31 SCENE RESULT: %d checks,%d failures;display=%s" % [checks,failures,DisplayServer.get_name()]);quit(0 if failures==0 else 1)

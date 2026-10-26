@@ -4,7 +4,7 @@ extends RefCounted
 
 
 static func is_supported(kind: Variant) -> bool:
-	return kind in ["red", "green", "blue"]
+	return kind in ["red", "green", "blue", "yellow"]
 
 
 static func can_push(kind: String) -> bool:

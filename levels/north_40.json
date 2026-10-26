@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "id": "north_hero_40",
+  "title": "北部英雄 · 第四十关",
+  "is_temporary": false,
+  "source_note": "用户确认9×5含墙编号1–45；11黄色保护英雄，5/7/9/22/24/26哥布林，37向右火龙；19/21/29/31/35普通水晶；30目标。黄色自身及正交相邻英雄免受哥布林/火龙，不能推拉，保护英雄挡火。",
+  "terrain": [
+    "...#.#.#.",
+    ".........",
+    "....#.#..",
+    "....###..",
+    "........."
+  ],
+  "player": [
+    1,
+    1
+  ],
+  "hero_kind": "yellow",
+  "crates": [
+    [
+      0,
+      2
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      7,
+      3
+    ]
+  ],
+  "crystal_colors": [
+    "purple",
+    "blue_purple",
+    "purple",
+    "purple_pink",
+    "purple"
+  ],
+  "targets": [],
+  "exit": [
+    2,
+    3
+  ],
+  "exit_color": "green",
+  "objective": "player_on_exit",
+  "monsters": [
+    {
+      "kind": "goblin",
+      "position": [
+        4,
+        0
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        6,
+        0
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        8,
+        0
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        3,
+        2
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        5,
+        2
+      ]
+    },
+    {
+      "kind": "goblin",
+      "position": [
+        7,
+        2
+      ]
+    },
+    {
+      "kind": "fire_dragon",
+      "position": [
+        0,
+        4
+      ],
+      "facing": "right"
+    }
+  ]
+}

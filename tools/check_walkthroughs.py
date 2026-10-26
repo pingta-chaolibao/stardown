@@ -20,7 +20,7 @@ def check_replay(item, directory, require_rendered=True):
     definitions = level.get("heroes", [{"id": "hero_01", "kind": level.get("hero_kind", "red"), "position": level.get("player")}])
     heroes = [tuple(hero["position"]) for hero in definitions]
     selected = next((i for i, hero in enumerate(definitions) if hero["id"] == level.get("active_hero")), 0)
-    assert all(hero["kind"] in ("red", "green", "blue") for hero in definitions)
+    assert all(hero["kind"] in ("red", "green", "blue", "yellow") for hero in definitions)
     multi = len(heroes) > 1
     crystals = {tuple(cell): identity for identity, cell in enumerate(level["crates"])}
     monster_kinds = [entry["kind"] for entry in level.get("monsters", [])]
@@ -95,10 +95,11 @@ def check_replay(item, directory, require_rendered=True):
                 assert cell in previous_barriers and not previous_barriers[cell], "Monster cannot start in solid energy"
                 monster_living[i] = False
         # Sample all attacks from the common state, before attack deaths.
+        protected = [living[h] and any(definitions[y]["kind"]=="yellow" and living[y] and abs(cell[0]-heroes[y][0])+abs(cell[1]-heroes[y][1])<=1 for y in range(len(heroes))) for h,cell in enumerate(heroes)]
         goblin_heroes = []
         for h,cell in enumerate(heroes):
             for i,monster in enumerate(monster_positions):
-                if living[h] and monster_living[i] and monster_kinds[i]=="goblin" and abs(cell[0]-monster[0])+abs(cell[1]-monster[1])==1:
+                if living[h] and not protected[h] and monster_living[i] and monster_kinds[i]=="goblin" and abs(cell[0]-monster[0])+abs(cell[1]-monster[1])==1:
                     assert not edge_blocked(cell,monster), "Goblin/fence attack is undefined"
                     goblin_heroes.append(h)
         targets = {}
@@ -109,7 +110,9 @@ def check_replay(item, directory, require_rendered=True):
                 cell = plus(origin,facings[i]);previous = origin
                 while floor(cell) and cell not in bushes and not barriers.get(cell,False) and cell not in crystals:
                     assert not edge_blocked(previous,cell), "Fire/fence interaction is unconfirmed"
-                    if cell in heroes and living[heroes.index(cell)]:targets[i] = ("hero",heroes.index(cell));break
+                    if cell in heroes and living[heroes.index(cell)]:
+                        if not protected[heroes.index(cell)]:targets[i] = ("hero",heroes.index(cell))
+                        break
                     if cell in monster_cells():targets[i] = ("monster",monster_cells()[cell]);break
                     previous = cell;cell = plus(cell,facings[i])
             for i,goblin in enumerate(monster_positions):
@@ -437,6 +440,20 @@ def check_visual_feedback(item, evidence):
         assert final["crystals"][0]["position"]==[5,0] and [m["id"] for m in final["monsters"] if m["alive"]]==[0,2]
         assert final["pressure"]["blue_01"] and final["pressure"]["yellow_01"] and evidence["selection_events"]==11
         assert final["monsters"][2]["position"]==[9,3] and final["monsters"][2]["facing"]==[-1,0]
+
+
+    if item["level"]==40:
+        assert evidence["initial_state"]["hero_kind"]=="yellow" and all(v["protected_heroes"]==[True] for v in [evidence["initial_state"]]+evidence["trace"])
+        assert not any(v["locked_fire"] or v["locked_goblin"] or v["death_keys"] or v["energy_changes"] for v in views)
+        for n,view in enumerate(views,1):
+            source="goblin" if n in range(2,9) else "fire" if n in range(10,17) else None
+            expected=[] if source is None else [{"hero":0,"position":evidence["trace"][n-1]["player"],"source":source}]
+            assert view["shield_blocks"]==expected
+        final=evidence["final_state"]
+        assert final["player"]==[2,3] and (final["moves"],final["pushes"],final["pulls"],final["swaps"])==(17,0,0,0)
+        assert all(m["alive"] for m in final["monsters"]) and final["monsters"]==evidence["initial_state"]["monsters"]
+        assert final["crystals"]==evidence["initial_state"]["crystals"] and len(final["crystals"])==5
+        assert final["monsters"][6]["facing"]==[1,0] and final["barriers"]==[]
 
 
 def check_media(item, evidence):

@@ -11,6 +11,7 @@ const CORAL := Color("f5787b")
 const HERO_GREEN := Color("72ce95")
 const HERO_BLUE := Color("78aff0")
 const HERO_PURPLE := Color("bd9bf0")
+const HERO_YELLOW := Color("f2d26c")
 const MECHANISM_GREEN := Color("78d799")
 const MECHANISM_BLUE := Color("7dbce9")
 const MECHANISM_PURPLE := Color("bc9af3")
@@ -96,6 +97,7 @@ func _draw() -> void:
 	for ray in rays:
 		for cell in ray["cells"]:
 			_fire_danger(origin+(Vector2(cell)+Vector2.ONE*0.5)*tile,tile,model.monsters()[ray["dragon"]]["facing"])
+	_draw_protection(origin,tile)
 	var entities: Dictionary = Events.capture(model)["entities"]
 	for key: String in feedback.plan.get("after",{}):
 		if not entities.has(key): entities[key] = feedback.plan["after"][key]
@@ -110,6 +112,24 @@ func _draw() -> void:
 		if not model.barrier_is_active(cell):
 			_inactive_energy_border(origin + (Vector2(cell) + Vector2.ONE * 0.5) * tile, tile,cell in level.monster_clear_barriers,cell)
 
+
+func _draw_protection(origin:Vector2,tile:float) -> void:
+	for hero in model.heroes():
+		if hero["kind"]!="yellow" or not hero["alive"]:continue
+		var at:Vector2=feedback.position("h:"+str(hero["id"]),Vector2(hero["position"]))
+		for delta in [Vector2i.ZERO,Vector2i.UP,Vector2i.DOWN,Vector2i.LEFT,Vector2i.RIGHT]:
+			if not model.level.is_floor(hero["position"]+delta):continue
+			var center:Vector2=origin+(at+Vector2(delta)+Vector2.ONE*0.5)*tile
+			draw_circle(center,tile*0.30,Color(HERO_YELLOW,0.045))
+			draw_arc(center,tile*0.32,0,TAU,28,Color(HERO_YELLOW,0.32),1.0,true)
+
+func _shield_glyph(center:Vector2,tile:float,alpha:float=1.0) -> void:
+	var shape:=PackedVector2Array([Vector2(-0.10,-0.12),Vector2(0.10,-0.12),Vector2(0.09,0.04),Vector2(0,0.13),Vector2(-0.09,0.04)])
+	for i in shape.size():shape[i]=center+shape[i]*tile
+	_actor_polygon(shape,Color("7e6934",alpha*0.9))
+	shape.append(shape[0])
+	_actor_polyline(shape,Color(HERO_YELLOW,alpha),1.5,true)
+	_actor_line(center+Vector2(0,-0.07)*tile,center+Vector2(0,0.06)*tile,Color("fff1ba",alpha),1.3,true)
 
 func _danger(center:Vector2,tile:float) -> void:
 	var r:=Rect2(center-Vector2.ONE*tile*0.43,Vector2.ONE*tile*0.86)
@@ -331,6 +351,9 @@ func _hero(center: Vector2, tile: float, kind: String, selected: bool) -> void:
 	if kind=="blue":
 		tint=HERO_PURPLE if model.level.swap_hero_color=="purple" else HERO_BLUE
 		shade=Color("7652a8") if model.level.swap_hero_color=="purple" else Color("416fae")
+	elif kind=="yellow":
+		tint=HERO_YELLOW
+		shade=Color("ac853d")
 	var multi:=model.hero_count()>1
 	if multi and not selected:
 		tint=tint.darkened(0.35)
@@ -438,7 +461,9 @@ func _draw_entity(key: String, entity: Dictionary, origin: Vector2, tile: float)
 				center += Vector2(strike["to"]-strike["from"])*tile*0.055*sin(PI*feedback.fraction(feedback.attack_start(),Timeline.ATTACK_SECONDS))
 	draw_set_transform(center,rotation,scale_factor)
 	match entity["role"]:
-		"hero": _hero(Vector2.ZERO,tile,entity["kind"],entity.get("selected",false))
+		"hero":
+			_hero(Vector2.ZERO,tile,entity["kind"],entity.get("selected",false))
+			if entity["alive"] and model.protection_covers(entity["position"]):_shield_glyph(Vector2(0.22,0.02)*tile,tile)
 		"crystal": _crystal(Vector2.ZERO,tile,entity["color"])
 		"monster":
 			if entity["kind"] == "goblin": _goblin(Vector2.ZERO,tile,true)
@@ -493,6 +518,12 @@ func _draw_feedback(origin: Vector2, tile: float) -> void:
 		var t := feedback.fraction(0.06,0.18)
 		var center: Vector2 = origin+(Vector2(event["cell"])+Vector2.ONE*0.5)*tile
 		draw_arc(center,tile*(0.22+0.17*t),0,TAU,32,Color(_mechanism_tint(false,event["cell"]),0.38*sin(PI*t)),1.4,true)
+	var shield_cells:Dictionary={}
+	for shield in plan.get("shields",[]):shield_cells[shield["position"]]=true
+	for cell:Vector2i in shield_cells:
+		var t:float=feedback.fraction(0.02,0.16)
+		var center:Vector2=origin+(Vector2(cell)+Vector2.ONE*0.5)*tile
+		draw_arc(center,tile*(0.30+0.10*t),0,TAU,32,Color(HERO_YELLOW,0.38*sin(PI*t)),1.5,true)
 	var attack_t := feedback.fraction(feedback.attack_start(),Timeline.ATTACK_SECONDS)
 	if attack_t > 0.0 and attack_t < 1.0:
 		for ray in plan.get("fire",[]): _draw_flame(ray,attack_t,origin,tile)

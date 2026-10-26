@@ -1,0 +1,3622 @@
+{
+  "base": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+  "passed": true,
+  "time_utc": "2026-10-26T12:09:23.941524+00:00",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "matrix_stages": 294,
+  "scope": {
+    "base": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+    "fresh_task_stage_records": 198,
+    "retained_current_task_runtime_records": 4,
+    "reused_syntax_stages": 96,
+    "reused_baseline_runtime_stages": 0,
+    "new40_model_input_X11_passed": true,
+    "yellow_protection_checks_passed": true,
+    "all_runtime_checked_this_task": true,
+    "physical_devices_tested": false,
+    "UI_layout_checked": true
+  },
+  "all_runtime_checked_this_task": true,
+  "baseline_runtime_reuse": false,
+  "source_and_reuse_proof": {
+    "base": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+    "engine": "4.6.3.stable.official.7d41c59c4",
+    "syntax_only": [
+      {
+        "stage": "02_parse_00_bush_obstacle",
+        "file": "scripts/core/bush_obstacle.gd",
+        "sha256": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830"
+      },
+      {
+        "stage": "02_parse_01_energy_rules",
+        "file": "scripts/core/energy_rules.gd",
+        "sha256": "3a449a5436871358c37eae881cb78849e6b9d7a1d230504abede35bbbae27a44"
+      },
+      {
+        "stage": "02_parse_02_fence_edges",
+        "file": "scripts/core/fence_edges.gd",
+        "sha256": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f"
+      },
+      {
+        "stage": "02_parse_09_swap_rules",
+        "file": "scripts/core/swap_rules.gd",
+        "sha256": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461"
+      },
+      {
+        "stage": "02_parse_10_step_input",
+        "file": "scripts/input/step_input.gd",
+        "sha256": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a"
+      },
+      {
+        "stage": "02_parse_14_feedback_timeline",
+        "file": "scripts/view/feedback_timeline.gd",
+        "sha256": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67"
+      },
+      {
+        "stage": "02_parse_17_virtual_level_strip",
+        "file": "scripts/view/virtual_level_strip.gd",
+        "sha256": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d"
+      },
+      {
+        "stage": "02_parse_18_blue_swap_regression",
+        "file": "tests/blue_swap_regression.gd",
+        "sha256": "b18dfbee6e1047eda61398af9832b4f4759bfb2c14cbfe3d0aa335d5398be30e"
+      },
+      {
+        "stage": "02_parse_19_bush_and_group_regression",
+        "file": "tests/bush_and_group_regression.gd",
+        "sha256": "c69f97de7adc2971bdbd46b4ea1acbada842a01c3c3f3b722d182a848f8db4fd"
+      },
+      {
+        "stage": "02_parse_20_chain_push_regression",
+        "file": "tests/chain_push_regression.gd",
+        "sha256": "bda55346b683a4394c81fc2d55b0e17b78aa96daa2286430cf17d192d82a49ff"
+      },
+      {
+        "stage": "02_parse_21_colored_energy_regression",
+        "file": "tests/colored_energy_regression.gd",
+        "sha256": "30302a11a25a17a56f597c50c96d08f0cc1ef6dae080a0cf1e0ad32f72459259"
+      },
+      {
+        "stage": "02_parse_22_energy_destruction_regression",
+        "file": "tests/energy_destruction_regression.gd",
+        "sha256": "891bedcaa43282849b7132faab6b5edd21c956818e3997cc3bc0214de9dbce88"
+      },
+      {
+        "stage": "02_parse_23_energy_regression",
+        "file": "tests/energy_regression.gd",
+        "sha256": "fcc21de4fa9a3527dbfaaa0385a581ae26bf151fa3caca1ef946135f59a7871c"
+      },
+      {
+        "stage": "02_parse_24_energy_visibility_scene",
+        "file": "tests/energy_visibility_scene.gd",
+        "sha256": "c41260762ec85d7c61857006321affc49c320755a297620e9a6cdfc262abd8f0"
+      },
+      {
+        "stage": "02_parse_25_feedback_cases",
+        "file": "tests/feedback_cases.gd",
+        "sha256": "7f1eadc4e925a03928ccaed1864ccb6d240321bc281f3f9a6a1f106187ea485e"
+      },
+      {
+        "stage": "02_parse_27_feedback_scene",
+        "file": "tests/feedback_scene.gd",
+        "sha256": "6aaad87e24d60b5e57b6d331387cdff43cad91445b440715baf55dc701d6e512"
+      },
+      {
+        "stage": "02_parse_28_fence_regression",
+        "file": "tests/fence_regression.gd",
+        "sha256": "03817daaf19990eda6890b586b5bff025633dd7cf3127ece7d4ff12d724fa835"
+      },
+      {
+        "stage": "02_parse_29_fire_dragon_regression",
+        "file": "tests/fire_dragon_regression.gd",
+        "sha256": "a7d48ecea00aa2c22d6429054e05fb32c3f2b8001b7067814d578e6035f721a5"
+      },
+      {
+        "stage": "02_parse_30_global_energy_regression",
+        "file": "tests/global_energy_regression.gd",
+        "sha256": "1d3c29499d55da6f6e8d9ebe1262216201f987c44a44286a9e3a5715a9dde8f7"
+      },
+      {
+        "stage": "02_parse_31_goblin_pressure_regression",
+        "file": "tests/goblin_pressure_regression.gd",
+        "sha256": "102cee45713710e548c2f7500828ad8e62459fd48726c14456ac40d098d996ba"
+      },
+      {
+        "stage": "02_parse_32_green_dragon_pull_regression",
+        "file": "tests/green_dragon_pull_regression.gd",
+        "sha256": "8e70f8bb878c35f7e32ae9b19616d7971fde3c4b72c5b6199dc92893050687a9"
+      },
+      {
+        "stage": "02_parse_33_green_dragon_pull_scene",
+        "file": "tests/green_dragon_pull_scene.gd",
+        "sha256": "c5d435c0a45f3e305b03552e927d3580d4ba3e840f4eb28c2dc6c172922484cc"
+      },
+      {
+        "stage": "02_parse_34_green_pull_regression",
+        "file": "tests/green_pull_regression.gd",
+        "sha256": "2874ef517921cb0d4f6a343af3e9350751a6e3b909df1b267bb63ba8711abbb9"
+      },
+      {
+        "stage": "02_parse_35_monster_clear_energy_regression",
+        "file": "tests/monster_clear_energy_regression.gd",
+        "sha256": "531a94ead198117ac1061d0330cc6d5996b39d4b9ece4dad0bc2f236f559e711"
+      },
+      {
+        "stage": "02_parse_36_monster_clear_energy_scene",
+        "file": "tests/monster_clear_energy_scene.gd",
+        "sha256": "0a70e7f6aa2db9201c06489151910f981ffb6c4354e93cd04da8f33f9ba779e3"
+      },
+      {
+        "stage": "02_parse_37_monster_regression",
+        "file": "tests/monster_regression.gd",
+        "sha256": "912cf9d7695362803822c599ca9896b9c514be2396d4ea76bd289d895c7c77e6"
+      },
+      {
+        "stage": "02_parse_38_multi_hero_regression",
+        "file": "tests/multi_hero_regression.gd",
+        "sha256": "0331b230cb99dc2bd347abaf20e666e42d1920ae20aef7f49192ee5453221899"
+      },
+      {
+        "stage": "02_parse_39_navigation_scene",
+        "file": "tests/navigation_scene.gd",
+        "sha256": "d9d6e910eaa881feb46f4692cee1eb7f635cf16bb63f6784daf007012ca967f5"
+      },
+      {
+        "stage": "02_parse_40_north_01_regression",
+        "file": "tests/north_01_regression.gd",
+        "sha256": "1efc64ab42eae4b03806b5c929c886265279bd635b5ffba798e47a27a8f74e07"
+      },
+      {
+        "stage": "02_parse_41_north_02_regression",
+        "file": "tests/north_02_regression.gd",
+        "sha256": "bf0ea1099dfa9d5f80de4118d7ae932e7698c021b51523065f29a3f59e8c7d1a"
+      },
+      {
+        "stage": "02_parse_42_north_02_scene",
+        "file": "tests/north_02_scene.gd",
+        "sha256": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3"
+      },
+      {
+        "stage": "02_parse_43_north_03_regression",
+        "file": "tests/north_03_regression.gd",
+        "sha256": "3320cbf2b9818271f9922635a9be6f25ab40bff7a107cb918f43fb314dd518cd"
+      },
+      {
+        "stage": "02_parse_44_north_03_scene",
+        "file": "tests/north_03_scene.gd",
+        "sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0"
+      },
+      {
+        "stage": "02_parse_45_north_04_regression",
+        "file": "tests/north_04_regression.gd",
+        "sha256": "7b975d0e605420f2fa3fabed79e9a761ce8bb56a8d3bbf710935add9bc248a02"
+      },
+      {
+        "stage": "02_parse_46_north_04_scene",
+        "file": "tests/north_04_scene.gd",
+        "sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4"
+      },
+      {
+        "stage": "02_parse_47_north_05_regression",
+        "file": "tests/north_05_regression.gd",
+        "sha256": "1a8fb647e50b4334be3c748f33393d431a3abe1cc4e7165f96effa0466b7cc24"
+      },
+      {
+        "stage": "02_parse_48_north_05_scene",
+        "file": "tests/north_05_scene.gd",
+        "sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45"
+      },
+      {
+        "stage": "02_parse_49_north_06_regression",
+        "file": "tests/north_06_regression.gd",
+        "sha256": "c53a922d497450e1774a97e80d378e299b3ee510ce0ce6dfbb9e749452756d1d"
+      },
+      {
+        "stage": "02_parse_50_north_06_scene",
+        "file": "tests/north_06_scene.gd",
+        "sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a"
+      },
+      {
+        "stage": "02_parse_51_north_07_regression",
+        "file": "tests/north_07_regression.gd",
+        "sha256": "9b438a03f5403ba0c858733fd24a92e6f3e0eea946168c23bb634f610dbb5db5"
+      },
+      {
+        "stage": "02_parse_52_north_07_scene",
+        "file": "tests/north_07_scene.gd",
+        "sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f"
+      },
+      {
+        "stage": "02_parse_53_north_08_regression",
+        "file": "tests/north_08_regression.gd",
+        "sha256": "3a9a02f8c3af160cee0c21ac32c1b72914e53ef8676d72eb8b3da022a15dfe02"
+      },
+      {
+        "stage": "02_parse_54_north_08_scene",
+        "file": "tests/north_08_scene.gd",
+        "sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767"
+      },
+      {
+        "stage": "02_parse_55_north_09_regression",
+        "file": "tests/north_09_regression.gd",
+        "sha256": "a7a1ba0deec8aa131206588a2e2bbabad7b24d5f7335bd7520e1f30e84889444"
+      },
+      {
+        "stage": "02_parse_56_north_09_scene",
+        "file": "tests/north_09_scene.gd",
+        "sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653"
+      },
+      {
+        "stage": "02_parse_57_north_10_regression",
+        "file": "tests/north_10_regression.gd",
+        "sha256": "d833cff22eed25743fbd2ae7f511a091c1020ca7282b801210f313945ff15790"
+      },
+      {
+        "stage": "02_parse_58_north_10_scene",
+        "file": "tests/north_10_scene.gd",
+        "sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d"
+      },
+      {
+        "stage": "02_parse_59_north_11_regression",
+        "file": "tests/north_11_regression.gd",
+        "sha256": "57905bb30107af41064cb444fa68558e9b74209d72e7ffd7e70ad591a28f73c7"
+      },
+      {
+        "stage": "02_parse_60_north_11_scene",
+        "file": "tests/north_11_scene.gd",
+        "sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117"
+      },
+      {
+        "stage": "02_parse_61_north_12_regression",
+        "file": "tests/north_12_regression.gd",
+        "sha256": "ff1b4d812d34418ef731cc3305c9e0705017124ad19a1c215b20c60fc515d40c"
+      },
+      {
+        "stage": "02_parse_62_north_12_scene",
+        "file": "tests/north_12_scene.gd",
+        "sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c"
+      },
+      {
+        "stage": "02_parse_63_north_13_regression",
+        "file": "tests/north_13_regression.gd",
+        "sha256": "578968e74a77d92feaa6a5aa4e16904760b9f2a6fc7bf410cddd0c6c403450a4"
+      },
+      {
+        "stage": "02_parse_64_north_13_scene",
+        "file": "tests/north_13_scene.gd",
+        "sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a"
+      },
+      {
+        "stage": "02_parse_65_north_14_regression",
+        "file": "tests/north_14_regression.gd",
+        "sha256": "74da5e6158136ae3e94e86c337bfe97d8045439c961ae1a605b6f4bf210e1654"
+      },
+      {
+        "stage": "02_parse_66_north_14_scene",
+        "file": "tests/north_14_scene.gd",
+        "sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b"
+      },
+      {
+        "stage": "02_parse_67_north_15_regression",
+        "file": "tests/north_15_regression.gd",
+        "sha256": "f5b104a3d965c60bba273472d492c379ece91d3530f1c31088877d0299415b1e"
+      },
+      {
+        "stage": "02_parse_68_north_15_scene",
+        "file": "tests/north_15_scene.gd",
+        "sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb"
+      },
+      {
+        "stage": "02_parse_69_north_16_regression",
+        "file": "tests/north_16_regression.gd",
+        "sha256": "5b373eaef6e742aec472dc452499b84661cd4d842e3bc94874e1694e5541efa7"
+      },
+      {
+        "stage": "02_parse_70_north_16_scene",
+        "file": "tests/north_16_scene.gd",
+        "sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba"
+      },
+      {
+        "stage": "02_parse_71_north_17_regression",
+        "file": "tests/north_17_regression.gd",
+        "sha256": "36eca8d1f3d739d87f45948b30aca88b740b2412cf651b6612bcf29f9df5bf99"
+      },
+      {
+        "stage": "02_parse_72_north_17_scene",
+        "file": "tests/north_17_scene.gd",
+        "sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191"
+      },
+      {
+        "stage": "02_parse_73_north_18_regression",
+        "file": "tests/north_18_regression.gd",
+        "sha256": "01cb8d689606e6094abd7214fa52cf4a66f2f14d64c3d54436bf317fd71fd716"
+      },
+      {
+        "stage": "02_parse_74_north_18_scene",
+        "file": "tests/north_18_scene.gd",
+        "sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb"
+      },
+      {
+        "stage": "02_parse_75_north_19_regression",
+        "file": "tests/north_19_regression.gd",
+        "sha256": "2c8938dfd6c627780d945ad547a77ede6dd5de5e63451e0d468faaf100ab45e2"
+      },
+      {
+        "stage": "02_parse_76_north_19_scene",
+        "file": "tests/north_19_scene.gd",
+        "sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6"
+      },
+      {
+        "stage": "02_parse_77_north_20_regression",
+        "file": "tests/north_20_regression.gd",
+        "sha256": "e569073b093749e4c12dae9dbec6a2b6059fb6f09018c69ccd711345b38a7f2f"
+      },
+      {
+        "stage": "02_parse_78_north_20_scene",
+        "file": "tests/north_20_scene.gd",
+        "sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255"
+      },
+      {
+        "stage": "02_parse_79_north_21_regression",
+        "file": "tests/north_21_regression.gd",
+        "sha256": "8473a6213c52c724d564aa4c80c8e83514f9c3482795dd98551811d715765cac"
+      },
+      {
+        "stage": "02_parse_80_north_21_scene",
+        "file": "tests/north_21_scene.gd",
+        "sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a"
+      },
+      {
+        "stage": "02_parse_81_north_22_regression",
+        "file": "tests/north_22_regression.gd",
+        "sha256": "823531af34fb05aba87a62bea3e261c3c719d062e06eb36a1c770793b60443be"
+      },
+      {
+        "stage": "02_parse_82_north_22_scene",
+        "file": "tests/north_22_scene.gd",
+        "sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780"
+      },
+      {
+        "stage": "02_parse_83_north_23_regression",
+        "file": "tests/north_23_regression.gd",
+        "sha256": "85d2e5228f668490cabdedeb1f04b57916280fa1e0897ae0af3295c1d2c3158a"
+      },
+      {
+        "stage": "02_parse_84_north_23_scene",
+        "file": "tests/north_23_scene.gd",
+        "sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657"
+      },
+      {
+        "stage": "02_parse_85_north_24_regression",
+        "file": "tests/north_24_regression.gd",
+        "sha256": "5ea464c53f54c2f285cd9ea00fde39330cc7ded2b6bc119b30999b27bf3ea1c9"
+      },
+      {
+        "stage": "02_parse_86_north_24_scene",
+        "file": "tests/north_24_scene.gd",
+        "sha256": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809"
+      },
+      {
+        "stage": "02_parse_87_north_25_regression",
+        "file": "tests/north_25_regression.gd",
+        "sha256": "a55c9716a1789d16ba9cf07803a610c16a8ed50f1afd86d23183a6994b690884"
+      },
+      {
+        "stage": "02_parse_88_north_25_scene",
+        "file": "tests/north_25_scene.gd",
+        "sha256": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab"
+      },
+      {
+        "stage": "02_parse_89_north_26_regression",
+        "file": "tests/north_26_regression.gd",
+        "sha256": "c1960ff743bdac1248a45f745bf65bdf031d24924350563f08d77a58db86a15e"
+      },
+      {
+        "stage": "02_parse_90_north_26_scene",
+        "file": "tests/north_26_scene.gd",
+        "sha256": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c"
+      },
+      {
+        "stage": "02_parse_91_north_27_regression",
+        "file": "tests/north_27_regression.gd",
+        "sha256": "01cb00fe04fea707443bcd54b19c6f7c4e37c2493c3e6224ac1a7c47b579b49b"
+      },
+      {
+        "stage": "02_parse_92_north_27_scene",
+        "file": "tests/north_27_scene.gd",
+        "sha256": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3"
+      },
+      {
+        "stage": "02_parse_93_north_28_regression",
+        "file": "tests/north_28_regression.gd",
+        "sha256": "5364bd271076f2f86810671fb6947f91aa612069f759bfa3f0599175a5c27288"
+      },
+      {
+        "stage": "02_parse_94_north_28_scene",
+        "file": "tests/north_28_scene.gd",
+        "sha256": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf"
+      },
+      {
+        "stage": "02_parse_95_north_29_regression",
+        "file": "tests/north_29_regression.gd",
+        "sha256": "e12e3f227584d6a343eb7807997615aa83c9deb3efb0cf369d704c4a392b2f5b"
+      },
+      {
+        "stage": "02_parse_97_north_30_regression",
+        "file": "tests/north_30_regression.gd",
+        "sha256": "3bddf7dbf2137e4963605ac5e5f841c34c88df61a29e64b6cd9109a4ace95116"
+      },
+      {
+        "stage": "02_parse_99_north_31_regression",
+        "file": "tests/north_31_regression.gd",
+        "sha256": "b1cf2f26d454fc465298870e063a3a86e424e1b7e99fa2da53298894cfecbc13"
+      },
+      {
+        "stage": "02_parse_101_north_32_regression",
+        "file": "tests/north_32_regression.gd",
+        "sha256": "0d8a8a0fe04d58e98530ac934b081baa3803a364bad53414f8c0316b06d66ace"
+      },
+      {
+        "stage": "02_parse_103_north_33_regression",
+        "file": "tests/north_33_regression.gd",
+        "sha256": "b80b000499a845c08a3f3d9494c231a8d7d229675e56f0c247e09706b5c45d5e"
+      },
+      {
+        "stage": "02_parse_105_north_34_regression",
+        "file": "tests/north_34_regression.gd",
+        "sha256": "b2ee833fdb7d0105219397c888614d8aec4b7818e7f399cdb55b39185a2f0b97"
+      },
+      {
+        "stage": "02_parse_107_north_35_regression",
+        "file": "tests/north_35_regression.gd",
+        "sha256": "b688d810aad60a1ce1a17a7611cdb60f95375ec17c3e5f63f4e6ddd4dc9f595f"
+      },
+      {
+        "stage": "02_parse_109_north_36_regression",
+        "file": "tests/north_36_regression.gd",
+        "sha256": "88e69f0c637b307a8fb509b47069ec1702a7b8ed12cd7ad2f8b9bf1e3b351373"
+      },
+      {
+        "stage": "02_parse_111_north_37_regression",
+        "file": "tests/north_37_regression.gd",
+        "sha256": "939fcf0eaa8196dbea867f0b61a4c7ed85d31c6d9be499da65483e9ed47b6fa5"
+      },
+      {
+        "stage": "02_parse_113_north_38_regression",
+        "file": "tests/north_38_regression.gd",
+        "sha256": "0ca6518be0d3c36809939608ed68bb0f95249d4a38813b59213d9c4c07e8e04b"
+      },
+      {
+        "stage": "02_parse_115_north_39_regression",
+        "file": "tests/north_39_regression.gd",
+        "sha256": "461a1648d54b282433498932c6eefdd8d26a54541e2a7e472d2b7bbd033e5c38"
+      },
+      {
+        "stage": "02_parse_119_run_tests",
+        "file": "tests/run_tests.gd",
+        "sha256": "4d1a1dcbb4e576c5555e115855c547205cfb1deb93deef99ef5ed07d60ad5d6f"
+      },
+      {
+        "stage": "02_parse_120_scene_smoke",
+        "file": "tests/scene_smoke.gd",
+        "sha256": "72fb4ec6c0e8002db315754429287ebb7d0c05c24cc055e808014cb725773a60"
+      }
+    ],
+    "baseline_runtime_reuse": false,
+    "changed_core_requires_fresh_runtime": true,
+    "current_task_passes_retained": {
+      "03_yellow_protection": {
+        "name": "03_yellow_protection",
+        "passed": true,
+        "exit_code": 0,
+        "seconds": null,
+        "retained_current_task_success": true,
+        "actual_log": "artifacts/task40/implementation/yellow_protection.log",
+        "checks": 66
+      },
+      "03_north_40": {
+        "name": "03_north_40",
+        "passed": true,
+        "exit_code": 0,
+        "seconds": null,
+        "retained_current_task_success": true,
+        "actual_log": "artifacts/task40/implementation/model40.log",
+        "checks": 248
+      },
+      "05_north_40_scene": {
+        "name": "05_north_40_scene",
+        "passed": true,
+        "exit_code": 0,
+        "seconds": null,
+        "retained_current_task_success": true,
+        "actual_log": "artifacts/task40/implementation/scene40_headless.log",
+        "checks": 355
+      },
+      "06_render_north_40": {
+        "name": "06_render_north_40",
+        "passed": true,
+        "exit_code": 0,
+        "seconds": null,
+        "retained_current_task_success": true,
+        "actual_log": "artifacts/task40/implementation/scene40_X11.log",
+        "checks": 381
+      }
+    },
+    "retained_runtime_dependency_hashes": {
+      "03_yellow_protection": {
+        "scripts/core/level_data.gd": "26867c7005bd11eaf8ddce1f09286ee83965944cbe74674893472c35d56b650b",
+        "scripts/core/energy_rules.gd": "3a449a5436871358c37eae881cb78849e6b9d7a1d230504abede35bbbae27a44",
+        "scripts/core/grid_state.gd": "e41b36a93c8e9c6ab4c87aa60c94f23f30353d7e1d23499c296e824295b31d7f",
+        "scripts/core/fire_rules.gd": "5b08c53feea5858aec62a7e05cd442f971c54c2fd45f3b560246f6229d789355",
+        "scripts/core/hero_rules.gd": "4ad32b5f2da35159adc0634690af91d651991a0d0ae999eb2e18580f545ba920",
+        "scripts/core/swap_rules.gd": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+        "scripts/core/protection_rules.gd": "f03a5ebfbeac1674b103c7c4d0595e127d2072c39cf17b0e96e431dcfb739ca0",
+        "scripts/core/fence_edges.gd": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+        "scripts/core/monster_rules.gd": "96576b3d52145e6f043a6e21431b334d16969654efbd900b9538fbfce11fae78",
+        "scripts/core/bush_obstacle.gd": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+        "scripts/view/feedback_events.gd": "7299616e16a1394b9ec69ddaf4de13041c0c6462b809f1244931f2e02297d91a",
+        "scripts/view/feedback_timeline.gd": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+        "tests/yellow_protection_regression.gd": "747b7c09b453bd280b4f25215420d82da4104f43a98c38e323e1bbeb18c97495"
+      },
+      "03_north_40": {
+        "scripts/core/level_data.gd": "26867c7005bd11eaf8ddce1f09286ee83965944cbe74674893472c35d56b650b",
+        "scripts/core/energy_rules.gd": "3a449a5436871358c37eae881cb78849e6b9d7a1d230504abede35bbbae27a44",
+        "scripts/core/grid_state.gd": "e41b36a93c8e9c6ab4c87aa60c94f23f30353d7e1d23499c296e824295b31d7f",
+        "scripts/core/fire_rules.gd": "5b08c53feea5858aec62a7e05cd442f971c54c2fd45f3b560246f6229d789355",
+        "scripts/core/hero_rules.gd": "4ad32b5f2da35159adc0634690af91d651991a0d0ae999eb2e18580f545ba920",
+        "scripts/core/swap_rules.gd": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+        "scripts/core/protection_rules.gd": "f03a5ebfbeac1674b103c7c4d0595e127d2072c39cf17b0e96e431dcfb739ca0",
+        "scripts/core/fence_edges.gd": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+        "scripts/core/monster_rules.gd": "96576b3d52145e6f043a6e21431b334d16969654efbd900b9538fbfce11fae78",
+        "scripts/core/bush_obstacle.gd": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+        "scripts/view/feedback_events.gd": "7299616e16a1394b9ec69ddaf4de13041c0c6462b809f1244931f2e02297d91a",
+        "scripts/view/feedback_timeline.gd": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+        "levels/north_40.json": "aab274bf1876dd9e5c7f27ab8837de5f3b741b8459af6cc246110e1b4bab5da9",
+        "levels/mappings/north_40_markers.json": "59e47de019438fcf47b76db2f94cfa9cd0bf21d24c08cc3f1b570996feb2d03c",
+        "levels/solutions/north_40.json": "89f345b7ac928ace8ff522f0986adf32dfa688d448e40c9e672189c6256869ed",
+        "artifacts/verification/north_40_route.json": "4c02b194983bde7630ccb23d154478ae8d06cdce0d349998757d3d09fb9a1ccb",
+        "tests/north_40_regression.gd": "b2d08247e8fa776addf5b08c58dad4af0ffe38e6eb979829014b6e8d47c86ede"
+      },
+      "05_north_40_scene": {
+        "scripts/main.gd": "24d7aac5572e430fcad6006449a53fd2fa77b37230fde2dd06030fde51b45cfc",
+        "scripts/core/level_data.gd": "26867c7005bd11eaf8ddce1f09286ee83965944cbe74674893472c35d56b650b",
+        "scripts/core/energy_rules.gd": "3a449a5436871358c37eae881cb78849e6b9d7a1d230504abede35bbbae27a44",
+        "scripts/core/grid_state.gd": "e41b36a93c8e9c6ab4c87aa60c94f23f30353d7e1d23499c296e824295b31d7f",
+        "scripts/core/fire_rules.gd": "5b08c53feea5858aec62a7e05cd442f971c54c2fd45f3b560246f6229d789355",
+        "scripts/core/hero_rules.gd": "4ad32b5f2da35159adc0634690af91d651991a0d0ae999eb2e18580f545ba920",
+        "scripts/core/swap_rules.gd": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+        "scripts/core/protection_rules.gd": "f03a5ebfbeac1674b103c7c4d0595e127d2072c39cf17b0e96e431dcfb739ca0",
+        "scripts/core/fence_edges.gd": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+        "scripts/core/monster_rules.gd": "96576b3d52145e6f043a6e21431b334d16969654efbd900b9538fbfce11fae78",
+        "scripts/core/bush_obstacle.gd": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+        "scripts/input/step_input.gd": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a",
+        "scripts/view/virtual_level_strip.gd": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d",
+        "scripts/view/level_menu.gd": "f4ea67cab06588e0a31929d98b5d04a76a60c0a432c6a2c2bdf8b7c1a6bedfdb",
+        "scripts/view/level_card.gd": "eb2492eb52da9ee703e39bfdbaa626fe83f74044bc5bd65e41190c2fffbf0621",
+        "scripts/view/feedback_events.gd": "7299616e16a1394b9ec69ddaf4de13041c0c6462b809f1244931f2e02297d91a",
+        "scripts/view/board_view.gd": "6f6b48daf0b600faf802bd965898738f63b804000b861dd83c898a3403cca564",
+        "scripts/view/feedback_timeline.gd": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+        "levels/north_05.json": "4b112934f4872c7db841425a2d8c8757e82cfb58317c37ae361f7fe1cbc75b5f",
+        "levels/north_31.json": "b8ddd96dcc4ce29e2ea0b7b56faec89309796d98fc3030a06e82ec106370d3e8",
+        "levels/north_34.json": "76509e4816d3989d2125ff24ea0c2be3ceaa39f9c58fa4c2fb38644f2eb5f926",
+        "levels/north_03.json": "2b5b3e1f1dd384fbd28826394c60d8f17b8d8441151d32313bd26c0a9222114c",
+        "levels/north_29.json": "8baa7030b730b7ccc3996e2fde2b154f7bd75eeef23ac28787b0cb9705121aaa",
+        "levels/north_02.json": "8cb130ecef2a83557ceef02399d688390188a7dd665587302cd509b55d162f4f",
+        "levels/north_39.json": "e803b615a8371a9798edcb6f479a7420ae91dd8be3fcba0e77d5f1f8cb2131f0",
+        "levels/north_26.json": "acc2f8154e20c332e701f3b2e4ab41a4922b5a9876dcb82eb30e6a1b61f1cffa",
+        "levels/north_09.json": "adebc84be096e0229a75d7f87e00d22c6089208d9dc8c461369f7e7064d03fd2",
+        "levels/north_27.json": "a0e9b4292ef06d658566897544ff92cdccdd95d0bd659624cada6533fff616ff",
+        "levels/north_36.json": "d95b382f1e16a1bca42c046c3b964b7f2188e25da5f6df52f11f12dcb8c87683",
+        "levels/north_15.json": "23bbb1726e455c0e3e3b3724f74c6974e3adfe2b3a33376a50bdc3bca0900ea5",
+        "levels/north_30.json": "242c24cac0ba213d1e341c77882c9e27eaac4de2d4e56693befed11fb7cb7eb8",
+        "levels/north_38.json": "d688b70ea80bd0c050cfbca0d927e6169176b83fd0aa36aa7f2e04dbb9043964",
+        "levels/north_14.json": "f9c2fb501c2e9ab74ae6470e136acc5badbee537a7f7e2014aebb9a791ec99a6",
+        "levels/north_11.json": "64da72c3df1d30458f0e9571c0793756601871159f7a0863342859840c057eba",
+        "levels/north_07.json": "318b92c535deeb38abdc8903ce3f9142be690fa5c4958ce0444511639a43fb67",
+        "levels/north_25.json": "0a5c4831b8a34aff57ece6eb118996030f57ec527c403f324e16323eb5f1a072",
+        "levels/north_16.json": "b2aa0a0ddf35587352f1ea467537728682e702a602812bc543de628781728441",
+        "levels/north_06.json": "c1587bb9497b7627462f9ee5d6756a0335c210cad8b645508d98d6185c5b4fc3",
+        "levels/north_18.json": "fd18bd381a23060605ad7a59b6b4aa20e6fc20e3b2fb921a3792adce7418a583",
+        "levels/north_23.json": "e3997b7ad4b569d95bd52f3ea00bd385e9a6580ac7f6202d571afada429dc6f9",
+        "levels/north_24.json": "729646560471e9a5384c5872f406df6c660aca6f6eb42dd17fe85eb736ddd693",
+        "levels/north_12.json": "ea5ace23428f061d5e76aaa81df6e820a0a95972e6625e379255ab20dc0c52c9",
+        "levels/north_17.json": "8a3a68f8d529a54cebe0d5d87506357a5598d0f59ef71838fcbdea2c7c25ca95",
+        "levels/north_19.json": "cb4d88302d15b6fecc47bae53447e3196388ab9d6c03db5bc19770bd7c45e2a3",
+        "levels/north_10.json": "85e23a355130d3032397b428039c47b3382427fa34512251087f5287282d36ec",
+        "levels/north_20.json": "9991217f26568ad1f5e7a623563bdc98fac4cde7406a307e8cbd277284d88889",
+        "levels/north_21.json": "16f5fce03e0eaa8ce42b92ff67ff5334ed99c923dfc45f6c8cdf75c4e1262e54",
+        "levels/north_37.json": "39b2e51d234746762c9063ee2532aa7c93cb016ee1e936939f121f4d9a546eff",
+        "levels/north_33.json": "1d270d41941d58d13d798a0630f3b146388914281600fa19b4f8c0bcf93c521e",
+        "levels/north_01.json": "17a29d0e73951b7f0d6f5c7d6df775969d721f6732e27f26c2f0248f4e1880d9",
+        "levels/north_04.json": "01761d10577b3455cb6e98681199971af7e87f5de68b355b0ee78715d4c10116",
+        "levels/north_28.json": "0c31714d93be0a7d97f1deaf2ab48909eeff67c4043150a46679759c80701681",
+        "levels/north_08.json": "03c2dd041136f8eb2fbae87d576bb3ba9797463f0d86b929acd827b5d36c5d88",
+        "levels/north_32.json": "6ce0786d137dfd63389a97c8cba0a3456d615f0942a07c50e08f15e64e1f0342",
+        "levels/north_13.json": "827af82774bc42c878fef5a5a94e11a6606cfd3b8107f15a0f45a0e58ac76dc1",
+        "levels/north_22.json": "5ae88685eac8383f7bb12c8deae5ea054bd06399c91d406c2e013bdfaae62261",
+        "levels/north_40.json": "aab274bf1876dd9e5c7f27ab8837de5f3b741b8459af6cc246110e1b4bab5da9",
+        "levels/north_35.json": "eb416bfe9e5c530e8825a44da6410ce8b93cea7cb51ae53f6a07d308c8ed7a87",
+        "levels/mappings/north_37_markers.json": "69954385d030467b8e68e3fcfbbaf354599baa4f3c015db76fb37d66d3d791bb",
+        "levels/mappings/north_35_markers.json": "370b251d4e04ad8327746af7d2a20ceededfc7bf13b0b49b94eca79a2623ca05",
+        "levels/mappings/north_36_markers.json": "4a3690dc8a7dca69cea4917a459ece09e9b7e719e911e359b2af419732d17ed7",
+        "levels/mappings/north_31_markers.json": "7a34e9693ec5f57b50f52e23405c9193430534fc8b9c5710b920ccb1e55ef999",
+        "levels/mappings/north_38_markers.json": "00a0de1cb9417c76793f4e6ef97dc5787577d8b0dcca392fa5782294fafbc280",
+        "levels/mappings/north_27_markers.json": "a766f8a995ece6b8bebc3dba1c82d7387f9d696867272b2f618d7e859015d440",
+        "levels/mappings/north_40_markers.json": "59e47de019438fcf47b76db2f94cfa9cd0bf21d24c08cc3f1b570996feb2d03c",
+        "levels/mappings/north_39_markers.json": "b8ad523a072ba56d07acd1544570829fc5e204a32fe2097ef3db1b9739656cc4",
+        "levels/solutions/north_05.json": "310445b7b9f294935c9e287fc83a899308e026ba323384c110804ca092ca0e5b",
+        "levels/solutions/north_31.json": "f9b0643205bb721fd9277eb8b79fafb5e36827f63300f004d675408659db8424",
+        "levels/solutions/north_34.json": "301d082114a843926aa4461eff63e09cac14c421d5bd7601bc4b8f5ef9ad5fd2",
+        "levels/solutions/north_03.json": "e674ade0117e33dba91e73275fb135a5ce2caed9ae320051fd97a89d33b0335e",
+        "levels/solutions/north_29.json": "db0acc8cb0d2cbfe29279d766aed919c78bd5c28f81b18027fb49f0c406be698",
+        "levels/solutions/north_02.json": "b8dcaa9629058a9911744dda4847e83e110451915f4f4b714054b31adbe35c11",
+        "levels/solutions/north_39.json": "21a50d58ad07e6a405adf7d9b1a51439e5b64c846925d818bfc2765a6a301705",
+        "levels/solutions/north_26.json": "169244ee11ec147a8d22452d8bf6125eaaef2ff01f9f0dcc62b9d26adea3192d",
+        "levels/solutions/north_09.json": "8e3215929eaf7b7a53bbef821616986c00d0d821b642f83614c22ae7d4e601f6",
+        "levels/solutions/north_27.json": "49e45e88135979b23f2626681f12b0970172a929a0937225fc8c056fc2b202bf",
+        "levels/solutions/north_36.json": "ce5f22238d31ef52aa213693b319ef1d4b258e3ae0c12f2551e622d3588dab24",
+        "levels/solutions/north_15.json": "b3334ed96890917c4fcb49e1acde98a84c669e4f2d40c49ef78e84c0f05bdaa8",
+        "levels/solutions/north_30.json": "3353abed77bb0aa3d0107d2752e7bc47fddf87e46441a9c85bf625dcc967c430",
+        "levels/solutions/north_38.json": "bb6bd3f77fa0bd891faae3c8ab4bfcca8bbe18bd3a09e8a718a9a5e99581c8ac",
+        "levels/solutions/north_14.json": "b4e2ecb836b1d5db3150d23c95504c66ade74e1f0faead60ff2dcaec0aa275ff",
+        "levels/solutions/north_11.json": "2414ea27995c405e9643d1fd02fbe74be41ff35e19df468a424fa7102955fe3a",
+        "levels/solutions/north_07.json": "54749c7054dfd2aa174d910235c674550b56a48831feaac47bdc6f8a9d558f23",
+        "levels/solutions/north_25.json": "4a0007eb3d4c65ff057973a129bb7ab1df3c6578a4c8a05efad444d575ce1fcd",
+        "levels/solutions/north_16.json": "fb3edc09d21e4864121516d22a2dd7f5fef1eacc2d45bec7428ed3e693a14304",
+        "levels/solutions/north_06.json": "8cafd9098cc0871a48012c6616b72280897bb0fe785e9cc610f55a751c809473",
+        "levels/solutions/north_18.json": "f8f86704a397c8b8823fb8107ce6bb918d85f1c5d093a8722255f376a16d0316",
+        "levels/solutions/north_23.json": "3fd88c02dfe4ecfa8b484a72bb472ead604aaa7455f6e876516d85b310a96686",
+        "levels/solutions/north_24.json": "43ed3fc76ed331d35fd800ec828de692a6c89f76d72199b49ebc54e32e3a8895",
+        "levels/solutions/north_12.json": "452b8085c8231836ad0cb61136d27ac7166c279576db9f0ae3e609443c07de33",
+        "levels/solutions/north_17.json": "737d6489e00031a10509985109fd76f8eae10e27d17081c906e255f0dbafa381",
+        "levels/solutions/north_19.json": "02b187cee7fb7f4e85d24ab517f38722f947d07e06c13e2ddfa59a01906d1f6d",
+        "levels/solutions/north_10.json": "da4da316359be9c574f05230d3af637a4523c12abc8ea7406bf541f3212cff28",
+        "levels/solutions/north_20.json": "2169932eb56e2cc00e6b1339f043e5ca8104281db47366afdf8d24bf2f2f192f",
+        "levels/solutions/north_21.json": "90e28b57fba18c5c0a148c769fb2f2aecd99f8807aae50b23ff5f86cc592763a",
+        "levels/solutions/north_37.json": "ff9c6b5cb69705d8913f516095999b149cfd091199db763c31436fe78c6e8683",
+        "levels/solutions/north_33.json": "2535cb1b5ea75046619ac1dd6598541b19d246cd57f1726129621ffa8d001dfc",
+        "levels/solutions/north_01.json": "15e2e6472c8f1972de875ec90927a6e95b6fb79f33bf3879eab7b9d1daf68a7f",
+        "levels/solutions/north_04.json": "1f3a3e8007daedb9d6d5dc9abd4cbb808d8564d02cb4b39cddf2c87dbb4060ca",
+        "levels/solutions/north_28.json": "e50bda574bd2d791f91f71a295281d73ddac930e40009cc214a541a26d3c4a31",
+        "levels/solutions/north_08.json": "f647a87e00f353b1a73c0012a020a80d2b368355ed25f179d7519a929a5a3efc",
+        "levels/solutions/north_32.json": "2789f255b728c097842631833a8aaca422928853697e3050b5cbab57043751ab",
+        "levels/solutions/north_13.json": "39ad6cfed2d9531812908365013d94f5735709984ed8327809034ae890f0cfdb",
+        "levels/solutions/north_22.json": "c33e231545fde1e909c51feac4f1336628f95ecf0ebb82577fc18a9010624a50",
+        "levels/solutions/north_40.json": "89f345b7ac928ace8ff522f0986adf32dfa688d448e40c9e672189c6256869ed",
+        "levels/solutions/north_35.json": "f4acb40ca9daaa65b0f198f70de5241a6e0dce20e229598c9dd9671691fd9757",
+        "tests/north_40_scene.gd": "6426c788d77c627e01bfb2409e104b95130e94a101390f6fa6396ff5ba15c360",
+        "tests/north_02_scene.gd": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+        "tests/fixtures/yellow_protection.json": "37423374b3b646b780708067dc864006ea373b67377a77b79b75fce9571fc969",
+        "artifacts/verification/north_40_route.json": "4c02b194983bde7630ccb23d154478ae8d06cdce0d349998757d3d09fb9a1ccb",
+        "project.godot": "30637fde9975ecd6aa976e37c36bbd484c7f3930e2572ee67f787d57855f4383",
+        "assets/icon.svg": "f0f457210eedc479fea5e5ef64ac8facd2d7884146d9a1772870c4082c62c848",
+        "assets/icon.svg.import": "88c5071a24d3a1e939afdaacf95d95a278866b7459d797defba7773b359b37ae",
+        "assets/fonts/NotoSansCJKsc-Regular.otf.import": "3cf4f095620cb7e146b886f27083381e81c2fd74df60e80fddcd121b36d83a76",
+        "assets/fonts/OFL.txt": "1f88ebababe6b6a4133167000f0e69c0e5f1a2822c05c89ee1e87f9f3e316345",
+        "assets/fonts/NotoSansCJKsc-Regular.otf": "03e51f1609b359cdaaaa71095656b831a60d5b9e1758dd53fa92297315cd6718",
+        "scenes/main.tscn": "149210911c5a29607743254fcd05b93780edf29c57ceeb323395e64539a146c4"
+      },
+      "06_render_north_40": {
+        "scripts/main.gd": "24d7aac5572e430fcad6006449a53fd2fa77b37230fde2dd06030fde51b45cfc",
+        "scripts/core/level_data.gd": "26867c7005bd11eaf8ddce1f09286ee83965944cbe74674893472c35d56b650b",
+        "scripts/core/energy_rules.gd": "3a449a5436871358c37eae881cb78849e6b9d7a1d230504abede35bbbae27a44",
+        "scripts/core/grid_state.gd": "e41b36a93c8e9c6ab4c87aa60c94f23f30353d7e1d23499c296e824295b31d7f",
+        "scripts/core/fire_rules.gd": "5b08c53feea5858aec62a7e05cd442f971c54c2fd45f3b560246f6229d789355",
+        "scripts/core/hero_rules.gd": "4ad32b5f2da35159adc0634690af91d651991a0d0ae999eb2e18580f545ba920",
+        "scripts/core/swap_rules.gd": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+        "scripts/core/protection_rules.gd": "f03a5ebfbeac1674b103c7c4d0595e127d2072c39cf17b0e96e431dcfb739ca0",
+        "scripts/core/fence_edges.gd": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+        "scripts/core/monster_rules.gd": "96576b3d52145e6f043a6e21431b334d16969654efbd900b9538fbfce11fae78",
+        "scripts/core/bush_obstacle.gd": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+        "scripts/input/step_input.gd": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a",
+        "scripts/view/virtual_level_strip.gd": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d",
+        "scripts/view/level_menu.gd": "f4ea67cab06588e0a31929d98b5d04a76a60c0a432c6a2c2bdf8b7c1a6bedfdb",
+        "scripts/view/level_card.gd": "eb2492eb52da9ee703e39bfdbaa626fe83f74044bc5bd65e41190c2fffbf0621",
+        "scripts/view/feedback_events.gd": "7299616e16a1394b9ec69ddaf4de13041c0c6462b809f1244931f2e02297d91a",
+        "scripts/view/board_view.gd": "6f6b48daf0b600faf802bd965898738f63b804000b861dd83c898a3403cca564",
+        "scripts/view/feedback_timeline.gd": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+        "levels/north_05.json": "4b112934f4872c7db841425a2d8c8757e82cfb58317c37ae361f7fe1cbc75b5f",
+        "levels/north_31.json": "b8ddd96dcc4ce29e2ea0b7b56faec89309796d98fc3030a06e82ec106370d3e8",
+        "levels/north_34.json": "76509e4816d3989d2125ff24ea0c2be3ceaa39f9c58fa4c2fb38644f2eb5f926",
+        "levels/north_03.json": "2b5b3e1f1dd384fbd28826394c60d8f17b8d8441151d32313bd26c0a9222114c",
+        "levels/north_29.json": "8baa7030b730b7ccc3996e2fde2b154f7bd75eeef23ac28787b0cb9705121aaa",
+        "levels/north_02.json": "8cb130ecef2a83557ceef02399d688390188a7dd665587302cd509b55d162f4f",
+        "levels/north_39.json": "e803b615a8371a9798edcb6f479a7420ae91dd8be3fcba0e77d5f1f8cb2131f0",
+        "levels/north_26.json": "acc2f8154e20c332e701f3b2e4ab41a4922b5a9876dcb82eb30e6a1b61f1cffa",
+        "levels/north_09.json": "adebc84be096e0229a75d7f87e00d22c6089208d9dc8c461369f7e7064d03fd2",
+        "levels/north_27.json": "a0e9b4292ef06d658566897544ff92cdccdd95d0bd659624cada6533fff616ff",
+        "levels/north_36.json": "d95b382f1e16a1bca42c046c3b964b7f2188e25da5f6df52f11f12dcb8c87683",
+        "levels/north_15.json": "23bbb1726e455c0e3e3b3724f74c6974e3adfe2b3a33376a50bdc3bca0900ea5",
+        "levels/north_30.json": "242c24cac0ba213d1e341c77882c9e27eaac4de2d4e56693befed11fb7cb7eb8",
+        "levels/north_38.json": "d688b70ea80bd0c050cfbca0d927e6169176b83fd0aa36aa7f2e04dbb9043964",
+        "levels/north_14.json": "f9c2fb501c2e9ab74ae6470e136acc5badbee537a7f7e2014aebb9a791ec99a6",
+        "levels/north_11.json": "64da72c3df1d30458f0e9571c0793756601871159f7a0863342859840c057eba",
+        "levels/north_07.json": "318b92c535deeb38abdc8903ce3f9142be690fa5c4958ce0444511639a43fb67",
+        "levels/north_25.json": "0a5c4831b8a34aff57ece6eb118996030f57ec527c403f324e16323eb5f1a072",
+        "levels/north_16.json": "b2aa0a0ddf35587352f1ea467537728682e702a602812bc543de628781728441",
+        "levels/north_06.json": "c1587bb9497b7627462f9ee5d6756a0335c210cad8b645508d98d6185c5b4fc3",
+        "levels/north_18.json": "fd18bd381a23060605ad7a59b6b4aa20e6fc20e3b2fb921a3792adce7418a583",
+        "levels/north_23.json": "e3997b7ad4b569d95bd52f3ea00bd385e9a6580ac7f6202d571afada429dc6f9",
+        "levels/north_24.json": "729646560471e9a5384c5872f406df6c660aca6f6eb42dd17fe85eb736ddd693",
+        "levels/north_12.json": "ea5ace23428f061d5e76aaa81df6e820a0a95972e6625e379255ab20dc0c52c9",
+        "levels/north_17.json": "8a3a68f8d529a54cebe0d5d87506357a5598d0f59ef71838fcbdea2c7c25ca95",
+        "levels/north_19.json": "cb4d88302d15b6fecc47bae53447e3196388ab9d6c03db5bc19770bd7c45e2a3",
+        "levels/north_10.json": "85e23a355130d3032397b428039c47b3382427fa34512251087f5287282d36ec",
+        "levels/north_20.json": "9991217f26568ad1f5e7a623563bdc98fac4cde7406a307e8cbd277284d88889",
+        "levels/north_21.json": "16f5fce03e0eaa8ce42b92ff67ff5334ed99c923dfc45f6c8cdf75c4e1262e54",
+        "levels/north_37.json": "39b2e51d234746762c9063ee2532aa7c93cb016ee1e936939f121f4d9a546eff",
+        "levels/north_33.json": "1d270d41941d58d13d798a0630f3b146388914281600fa19b4f8c0bcf93c521e",
+        "levels/north_01.json": "17a29d0e73951b7f0d6f5c7d6df775969d721f6732e27f26c2f0248f4e1880d9",
+        "levels/north_04.json": "01761d10577b3455cb6e98681199971af7e87f5de68b355b0ee78715d4c10116",
+        "levels/north_28.json": "0c31714d93be0a7d97f1deaf2ab48909eeff67c4043150a46679759c80701681",
+        "levels/north_08.json": "03c2dd041136f8eb2fbae87d576bb3ba9797463f0d86b929acd827b5d36c5d88",
+        "levels/north_32.json": "6ce0786d137dfd63389a97c8cba0a3456d615f0942a07c50e08f15e64e1f0342",
+        "levels/north_13.json": "827af82774bc42c878fef5a5a94e11a6606cfd3b8107f15a0f45a0e58ac76dc1",
+        "levels/north_22.json": "5ae88685eac8383f7bb12c8deae5ea054bd06399c91d406c2e013bdfaae62261",
+        "levels/north_40.json": "aab274bf1876dd9e5c7f27ab8837de5f3b741b8459af6cc246110e1b4bab5da9",
+        "levels/north_35.json": "eb416bfe9e5c530e8825a44da6410ce8b93cea7cb51ae53f6a07d308c8ed7a87",
+        "levels/mappings/north_37_markers.json": "69954385d030467b8e68e3fcfbbaf354599baa4f3c015db76fb37d66d3d791bb",
+        "levels/mappings/north_35_markers.json": "370b251d4e04ad8327746af7d2a20ceededfc7bf13b0b49b94eca79a2623ca05",
+        "levels/mappings/north_36_markers.json": "4a3690dc8a7dca69cea4917a459ece09e9b7e719e911e359b2af419732d17ed7",
+        "levels/mappings/north_31_markers.json": "7a34e9693ec5f57b50f52e23405c9193430534fc8b9c5710b920ccb1e55ef999",
+        "levels/mappings/north_38_markers.json": "00a0de1cb9417c76793f4e6ef97dc5787577d8b0dcca392fa5782294fafbc280",
+        "levels/mappings/north_27_markers.json": "a766f8a995ece6b8bebc3dba1c82d7387f9d696867272b2f618d7e859015d440",
+        "levels/mappings/north_40_markers.json": "59e47de019438fcf47b76db2f94cfa9cd0bf21d24c08cc3f1b570996feb2d03c",
+        "levels/mappings/north_39_markers.json": "b8ad523a072ba56d07acd1544570829fc5e204a32fe2097ef3db1b9739656cc4",
+        "levels/solutions/north_05.json": "310445b7b9f294935c9e287fc83a899308e026ba323384c110804ca092ca0e5b",
+        "levels/solutions/north_31.json": "f9b0643205bb721fd9277eb8b79fafb5e36827f63300f004d675408659db8424",
+        "levels/solutions/north_34.json": "301d082114a843926aa4461eff63e09cac14c421d5bd7601bc4b8f5ef9ad5fd2",
+        "levels/solutions/north_03.json": "e674ade0117e33dba91e73275fb135a5ce2caed9ae320051fd97a89d33b0335e",
+        "levels/solutions/north_29.json": "db0acc8cb0d2cbfe29279d766aed919c78bd5c28f81b18027fb49f0c406be698",
+        "levels/solutions/north_02.json": "b8dcaa9629058a9911744dda4847e83e110451915f4f4b714054b31adbe35c11",
+        "levels/solutions/north_39.json": "21a50d58ad07e6a405adf7d9b1a51439e5b64c846925d818bfc2765a6a301705",
+        "levels/solutions/north_26.json": "169244ee11ec147a8d22452d8bf6125eaaef2ff01f9f0dcc62b9d26adea3192d",
+        "levels/solutions/north_09.json": "8e3215929eaf7b7a53bbef821616986c00d0d821b642f83614c22ae7d4e601f6",
+        "levels/solutions/north_27.json": "49e45e88135979b23f2626681f12b0970172a929a0937225fc8c056fc2b202bf",
+        "levels/solutions/north_36.json": "ce5f22238d31ef52aa213693b319ef1d4b258e3ae0c12f2551e622d3588dab24",
+        "levels/solutions/north_15.json": "b3334ed96890917c4fcb49e1acde98a84c669e4f2d40c49ef78e84c0f05bdaa8",
+        "levels/solutions/north_30.json": "3353abed77bb0aa3d0107d2752e7bc47fddf87e46441a9c85bf625dcc967c430",
+        "levels/solutions/north_38.json": "bb6bd3f77fa0bd891faae3c8ab4bfcca8bbe18bd3a09e8a718a9a5e99581c8ac",
+        "levels/solutions/north_14.json": "b4e2ecb836b1d5db3150d23c95504c66ade74e1f0faead60ff2dcaec0aa275ff",
+        "levels/solutions/north_11.json": "2414ea27995c405e9643d1fd02fbe74be41ff35e19df468a424fa7102955fe3a",
+        "levels/solutions/north_07.json": "54749c7054dfd2aa174d910235c674550b56a48831feaac47bdc6f8a9d558f23",
+        "levels/solutions/north_25.json": "4a0007eb3d4c65ff057973a129bb7ab1df3c6578a4c8a05efad444d575ce1fcd",
+        "levels/solutions/north_16.json": "fb3edc09d21e4864121516d22a2dd7f5fef1eacc2d45bec7428ed3e693a14304",
+        "levels/solutions/north_06.json": "8cafd9098cc0871a48012c6616b72280897bb0fe785e9cc610f55a751c809473",
+        "levels/solutions/north_18.json": "f8f86704a397c8b8823fb8107ce6bb918d85f1c5d093a8722255f376a16d0316",
+        "levels/solutions/north_23.json": "3fd88c02dfe4ecfa8b484a72bb472ead604aaa7455f6e876516d85b310a96686",
+        "levels/solutions/north_24.json": "43ed3fc76ed331d35fd800ec828de692a6c89f76d72199b49ebc54e32e3a8895",
+        "levels/solutions/north_12.json": "452b8085c8231836ad0cb61136d27ac7166c279576db9f0ae3e609443c07de33",
+        "levels/solutions/north_17.json": "737d6489e00031a10509985109fd76f8eae10e27d17081c906e255f0dbafa381",
+        "levels/solutions/north_19.json": "02b187cee7fb7f4e85d24ab517f38722f947d07e06c13e2ddfa59a01906d1f6d",
+        "levels/solutions/north_10.json": "da4da316359be9c574f05230d3af637a4523c12abc8ea7406bf541f3212cff28",
+        "levels/solutions/north_20.json": "2169932eb56e2cc00e6b1339f043e5ca8104281db47366afdf8d24bf2f2f192f",
+        "levels/solutions/north_21.json": "90e28b57fba18c5c0a148c769fb2f2aecd99f8807aae50b23ff5f86cc592763a",
+        "levels/solutions/north_37.json": "ff9c6b5cb69705d8913f516095999b149cfd091199db763c31436fe78c6e8683",
+        "levels/solutions/north_33.json": "2535cb1b5ea75046619ac1dd6598541b19d246cd57f1726129621ffa8d001dfc",
+        "levels/solutions/north_01.json": "15e2e6472c8f1972de875ec90927a6e95b6fb79f33bf3879eab7b9d1daf68a7f",
+        "levels/solutions/north_04.json": "1f3a3e8007daedb9d6d5dc9abd4cbb808d8564d02cb4b39cddf2c87dbb4060ca",
+        "levels/solutions/north_28.json": "e50bda574bd2d791f91f71a295281d73ddac930e40009cc214a541a26d3c4a31",
+        "levels/solutions/north_08.json": "f647a87e00f353b1a73c0012a020a80d2b368355ed25f179d7519a929a5a3efc",
+        "levels/solutions/north_32.json": "2789f255b728c097842631833a8aaca422928853697e3050b5cbab57043751ab",
+        "levels/solutions/north_13.json": "39ad6cfed2d9531812908365013d94f5735709984ed8327809034ae890f0cfdb",
+        "levels/solutions/north_22.json": "c33e231545fde1e909c51feac4f1336628f95ecf0ebb82577fc18a9010624a50",
+        "levels/solutions/north_40.json": "89f345b7ac928ace8ff522f0986adf32dfa688d448e40c9e672189c6256869ed",
+        "levels/solutions/north_35.json": "f4acb40ca9daaa65b0f198f70de5241a6e0dce20e229598c9dd9671691fd9757",
+        "tests/north_40_scene.gd": "6426c788d77c627e01bfb2409e104b95130e94a101390f6fa6396ff5ba15c360",
+        "tests/north_02_scene.gd": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+        "tests/fixtures/yellow_protection.json": "37423374b3b646b780708067dc864006ea373b67377a77b79b75fce9571fc969",
+        "artifacts/verification/north_40_route.json": "4c02b194983bde7630ccb23d154478ae8d06cdce0d349998757d3d09fb9a1ccb",
+        "project.godot": "30637fde9975ecd6aa976e37c36bbd484c7f3930e2572ee67f787d57855f4383",
+        "assets/icon.svg": "f0f457210eedc479fea5e5ef64ac8facd2d7884146d9a1772870c4082c62c848",
+        "assets/icon.svg.import": "88c5071a24d3a1e939afdaacf95d95a278866b7459d797defba7773b359b37ae",
+        "assets/fonts/NotoSansCJKsc-Regular.otf.import": "3cf4f095620cb7e146b886f27083381e81c2fd74df60e80fddcd121b36d83a76",
+        "assets/fonts/OFL.txt": "1f88ebababe6b6a4133167000f0e69c0e5f1a2822c05c89ee1e87f9f3e316345",
+        "assets/fonts/NotoSansCJKsc-Regular.otf": "03e51f1609b359cdaaaa71095656b831a60d5b9e1758dd53fa92297315cd6718",
+        "scenes/main.tscn": "149210911c5a29607743254fcd05b93780edf29c57ceeb323395e64539a146c4"
+      }
+    },
+    "complete_current_source_fingerprints": {
+      "scripts/main.gd": "24d7aac5572e430fcad6006449a53fd2fa77b37230fde2dd06030fde51b45cfc",
+      "scripts/core/level_data.gd": "26867c7005bd11eaf8ddce1f09286ee83965944cbe74674893472c35d56b650b",
+      "scripts/core/energy_rules.gd": "3a449a5436871358c37eae881cb78849e6b9d7a1d230504abede35bbbae27a44",
+      "scripts/core/grid_state.gd": "e41b36a93c8e9c6ab4c87aa60c94f23f30353d7e1d23499c296e824295b31d7f",
+      "scripts/core/fire_rules.gd": "5b08c53feea5858aec62a7e05cd442f971c54c2fd45f3b560246f6229d789355",
+      "scripts/core/hero_rules.gd": "4ad32b5f2da35159adc0634690af91d651991a0d0ae999eb2e18580f545ba920",
+      "scripts/core/swap_rules.gd": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+      "scripts/core/protection_rules.gd": "f03a5ebfbeac1674b103c7c4d0595e127d2072c39cf17b0e96e431dcfb739ca0",
+      "scripts/core/fence_edges.gd": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+      "scripts/core/monster_rules.gd": "96576b3d52145e6f043a6e21431b334d16969654efbd900b9538fbfce11fae78",
+      "scripts/core/bush_obstacle.gd": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+      "scripts/input/step_input.gd": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a",
+      "scripts/view/virtual_level_strip.gd": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d",
+      "scripts/view/level_menu.gd": "f4ea67cab06588e0a31929d98b5d04a76a60c0a432c6a2c2bdf8b7c1a6bedfdb",
+      "scripts/view/level_card.gd": "eb2492eb52da9ee703e39bfdbaa626fe83f74044bc5bd65e41190c2fffbf0621",
+      "scripts/view/feedback_events.gd": "7299616e16a1394b9ec69ddaf4de13041c0c6462b809f1244931f2e02297d91a",
+      "scripts/view/board_view.gd": "6f6b48daf0b600faf802bd965898738f63b804000b861dd83c898a3403cca564",
+      "scripts/view/feedback_timeline.gd": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+      "tests/north_28_scene.gd": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf",
+      "tests/north_34_regression.gd": "b2ee833fdb7d0105219397c888614d8aec4b7818e7f399cdb55b39185a2f0b97",
+      "tests/north_09_scene.gd": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653",
+      "tests/north_08_regression.gd": "3a9a02f8c3af160cee0c21ac32c1b72914e53ef8676d72eb8b3da022a15dfe02",
+      "tests/north_39_regression.gd": "461a1648d54b282433498932c6eefdd8d26a54541e2a7e472d2b7bbd033e5c38",
+      "tests/colored_energy_regression.gd": "30302a11a25a17a56f597c50c96d08f0cc1ef6dae080a0cf1e0ad32f72459259",
+      "tests/north_24_regression.gd": "5ea464c53f54c2f285cd9ea00fde39330cc7ded2b6bc119b30999b27bf3ea1c9",
+      "tests/north_14_scene.gd": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b",
+      "tests/navigation_scene.gd": "d9d6e910eaa881feb46f4692cee1eb7f635cf16bb63f6784daf007012ca967f5",
+      "tests/north_33_scene.gd": "56dc47ffac47f551802f92ce6599acc590ed7b9404b5e3fa407e60cecf377091",
+      "tests/north_15_regression.gd": "f5b104a3d965c60bba273472d492c379ece91d3530f1c31088877d0299415b1e",
+      "tests/north_05_scene.gd": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45",
+      "tests/north_19_regression.gd": "2c8938dfd6c627780d945ad547a77ede6dd5de5e63451e0d468faaf100ab45e2",
+      "tests/green_dragon_pull_scene.gd": "c5d435c0a45f3e305b03552e927d3580d4ba3e840f4eb28c2dc6c172922484cc",
+      "tests/north_12_regression.gd": "ff1b4d812d34418ef731cc3305c9e0705017124ad19a1c215b20c60fc515d40c",
+      "tests/north_30_scene.gd": "c81f6157083bb242ab78fe0c1afebf76ae69456d5abbb54e516136e470cb989e",
+      "tests/north_21_scene.gd": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a",
+      "tests/bush_and_group_regression.gd": "c69f97de7adc2971bdbd46b4ea1acbada842a01c3c3f3b722d182a848f8db4fd",
+      "tests/north_17_scene.gd": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191",
+      "tests/north_27_regression.gd": "01cb00fe04fea707443bcd54b19c6f7c4e37c2493c3e6224ac1a7c47b579b49b",
+      "tests/north_01_regression.gd": "1efc64ab42eae4b03806b5c929c886265279bd635b5ffba798e47a27a8f74e07",
+      "tests/north_14_regression.gd": "74da5e6158136ae3e94e86c337bfe97d8045439c961ae1a605b6f4bf210e1654",
+      "tests/north_16_regression.gd": "5b373eaef6e742aec472dc452499b84661cd4d842e3bc94874e1694e5541efa7",
+      "tests/north_34_scene.gd": "67b97bd8d33eb824ca36e04110dbfb4f3a94c4c67e1c6874f669df54099ed09b",
+      "tests/global_energy_regression.gd": "1d3c29499d55da6f6e8d9ebe1262216201f987c44a44286a9e3a5715a9dde8f7",
+      "tests/north_20_scene.gd": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255",
+      "tests/fire_dragon_regression.gd": "a7d48ecea00aa2c22d6429054e05fb32c3f2b8001b7067814d578e6035f721a5",
+      "tests/fence_regression.gd": "03817daaf19990eda6890b586b5bff025633dd7cf3127ece7d4ff12d724fa835",
+      "tests/monster_clear_energy_scene.gd": "0a70e7f6aa2db9201c06489151910f981ffb6c4354e93cd04da8f33f9ba779e3",
+      "tests/north_29_regression.gd": "e12e3f227584d6a343eb7807997615aa83c9deb3efb0cf369d704c4a392b2f5b",
+      "tests/feedback_regression.gd": "df66d913f623b279da9b7fd45691f76040fbe3cd1af0a00a46bc9c6f0725fff4",
+      "tests/north_06_regression.gd": "c53a922d497450e1774a97e80d378e299b3ee510ce0ce6dfbb9e749452756d1d",
+      "tests/north_37_regression.gd": "939fcf0eaa8196dbea867f0b61a4c7ed85d31c6d9be499da65483e9ed47b6fa5",
+      "tests/north_30_regression.gd": "3bddf7dbf2137e4963605ac5e5f841c34c88df61a29e64b6cd9109a4ace95116",
+      "tests/north_32_scene.gd": "e55830984e70c779bf12c5fe8708b34adaa3504612f4698dcc13f0f617fbcdc1",
+      "tests/north_08_scene.gd": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767",
+      "tests/north_28_regression.gd": "5364bd271076f2f86810671fb6947f91aa612069f759bfa3f0599175a5c27288",
+      "tests/north_40_scene.gd": "6426c788d77c627e01bfb2409e104b95130e94a101390f6fa6396ff5ba15c360",
+      "tests/north_33_regression.gd": "b80b000499a845c08a3f3d9494c231a8d7d229675e56f0c247e09706b5c45d5e",
+      "tests/north_12_scene.gd": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c",
+      "tests/north_20_regression.gd": "e569073b093749e4c12dae9dbec6a2b6059fb6f09018c69ccd711345b38a7f2f",
+      "tests/north_15_scene.gd": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb",
+      "tests/energy_visibility_scene.gd": "c41260762ec85d7c61857006321affc49c320755a297620e9a6cdfc262abd8f0",
+      "tests/feedback_cases.gd": "7f1eadc4e925a03928ccaed1864ccb6d240321bc281f3f9a6a1f106187ea485e",
+      "tests/north_07_regression.gd": "9b438a03f5403ba0c858733fd24a92e6f3e0eea946168c23bb634f610dbb5db5",
+      "tests/north_27_scene.gd": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3",
+      "tests/yellow_protection_regression.gd": "747b7c09b453bd280b4f25215420d82da4104f43a98c38e323e1bbeb18c97495",
+      "tests/north_22_regression.gd": "823531af34fb05aba87a62bea3e261c3c719d062e06eb36a1c770793b60443be",
+      "tests/north_37_scene.gd": "b9f0330b894eb4a910bcb61d2f982a9ba68344d8b5bf3dc805b440dd2d65bea6",
+      "tests/north_10_regression.gd": "d833cff22eed25743fbd2ae7f511a091c1020ca7282b801210f313945ff15790",
+      "tests/north_05_regression.gd": "1a8fb647e50b4334be3c748f33393d431a3abe1cc4e7165f96effa0466b7cc24",
+      "tests/north_40_regression.gd": "b2d08247e8fa776addf5b08c58dad4af0ffe38e6eb979829014b6e8d47c86ede",
+      "tests/north_25_regression.gd": "a55c9716a1789d16ba9cf07803a610c16a8ed50f1afd86d23183a6994b690884",
+      "tests/goblin_pressure_regression.gd": "102cee45713710e548c2f7500828ad8e62459fd48726c14456ac40d098d996ba",
+      "tests/multi_hero_regression.gd": "0331b230cb99dc2bd347abaf20e666e42d1920ae20aef7f49192ee5453221899",
+      "tests/north_35_regression.gd": "b688d810aad60a1ce1a17a7611cdb60f95375ec17c3e5f63f4e6ddd4dc9f595f",
+      "tests/north_29_scene.gd": "aa757a8b75403d6feadef3f6c7be8c5211ad9f3883bf61fb65262a298502786e",
+      "tests/north_21_regression.gd": "8473a6213c52c724d564aa4c80c8e83514f9c3482795dd98551811d715765cac",
+      "tests/north_04_scene.gd": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4",
+      "tests/north_13_regression.gd": "578968e74a77d92feaa6a5aa4e16904760b9f2a6fc7bf410cddd0c6c403450a4",
+      "tests/north_31_regression.gd": "b1cf2f26d454fc465298870e063a3a86e424e1b7e99fa2da53298894cfecbc13",
+      "tests/north_36_scene.gd": "2066122415503113407b5c6c54a6b867d26ce778f0fe38fff521bff111700e03",
+      "tests/north_23_scene.gd": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657",
+      "tests/green_dragon_pull_regression.gd": "8e70f8bb878c35f7e32ae9b19616d7971fde3c4b72c5b6199dc92893050687a9",
+      "tests/north_02_regression.gd": "bf0ea1099dfa9d5f80de4118d7ae932e7698c021b51523065f29a3f59e8c7d1a",
+      "tests/chain_push_regression.gd": "bda55346b683a4394c81fc2d55b0e17b78aa96daa2286430cf17d192d82a49ff",
+      "tests/monster_clear_energy_regression.gd": "531a94ead198117ac1061d0330cc6d5996b39d4b9ece4dad0bc2f236f559e711",
+      "tests/north_35_scene.gd": "4a45e53469284a0a0248fd5d3931b8f90efc273c7df646a32f191126febe06fe",
+      "tests/north_18_scene.gd": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb",
+      "tests/north_24_scene.gd": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809",
+      "tests/north_06_scene.gd": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a",
+      "tests/feedback_scene.gd": "6aaad87e24d60b5e57b6d331387cdff43cad91445b440715baf55dc701d6e512",
+      "tests/north_26_regression.gd": "c1960ff743bdac1248a45f745bf65bdf031d24924350563f08d77a58db86a15e",
+      "tests/north_38_scene.gd": "514b65f7ee490863ec88b46b1b20e4f55e594131432d7372ce86d3540f35d42c",
+      "tests/north_09_regression.gd": "a7a1ba0deec8aa131206588a2e2bbabad7b24d5f7335bd7520e1f30e84889444",
+      "tests/north_18_regression.gd": "01cb8d689606e6094abd7214fa52cf4a66f2f14d64c3d54436bf317fd71fd716",
+      "tests/north_31_scene.gd": "4beadb178e5d33fc7c83968a0a7502f274bb46204210c305f4f2fc4dfe4c25ce",
+      "tests/north_23_regression.gd": "85d2e5228f668490cabdedeb1f04b57916280fa1e0897ae0af3295c1d2c3158a",
+      "tests/north_13_scene.gd": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a",
+      "tests/north_22_scene.gd": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780",
+      "tests/north_38_regression.gd": "0ca6518be0d3c36809939608ed68bb0f95249d4a38813b59213d9c4c07e8e04b",
+      "tests/north_25_scene.gd": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab",
+      "tests/north_17_regression.gd": "36eca8d1f3d739d87f45948b30aca88b740b2412cf651b6612bcf29f9df5bf99",
+      "tests/run_tests.gd": "4d1a1dcbb4e576c5555e115855c547205cfb1deb93deef99ef5ed07d60ad5d6f",
+      "tests/north_07_scene.gd": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f",
+      "tests/north_02_scene.gd": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+      "tests/north_11_regression.gd": "57905bb30107af41064cb444fa68558e9b74209d72e7ffd7e70ad591a28f73c7",
+      "tests/north_11_scene.gd": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117",
+      "tests/blue_swap_regression.gd": "b18dfbee6e1047eda61398af9832b4f4759bfb2c14cbfe3d0aa335d5398be30e",
+      "tests/north_26_scene.gd": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c",
+      "tests/energy_destruction_regression.gd": "891bedcaa43282849b7132faab6b5edd21c956818e3997cc3bc0214de9dbce88",
+      "tests/north_19_scene.gd": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6",
+      "tests/north_36_regression.gd": "88e69f0c637b307a8fb509b47069ec1702a7b8ed12cd7ad2f8b9bf1e3b351373",
+      "tests/north_32_regression.gd": "0d8a8a0fe04d58e98530ac934b081baa3803a364bad53414f8c0316b06d66ace",
+      "tests/scene_smoke.gd": "72fb4ec6c0e8002db315754429287ebb7d0c05c24cc055e808014cb725773a60",
+      "tests/north_10_scene.gd": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d",
+      "tests/green_pull_regression.gd": "2874ef517921cb0d4f6a343af3e9350751a6e3b909df1b267bb63ba8711abbb9",
+      "tests/monster_regression.gd": "912cf9d7695362803822c599ca9896b9c514be2396d4ea76bd289d895c7c77e6",
+      "tests/north_16_scene.gd": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba",
+      "tests/north_39_scene.gd": "b4b49b99801e0c35ead5270c7fdea4e2ce978370a0a9c4e9b338a0a551620e88",
+      "tests/north_04_regression.gd": "7b975d0e605420f2fa3fabed79e9a761ce8bb56a8d3bbf710935add9bc248a02",
+      "tests/north_03_scene.gd": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0",
+      "tests/energy_regression.gd": "fcc21de4fa9a3527dbfaaa0385a581ae26bf151fa3caca1ef946135f59a7871c",
+      "tests/north_03_regression.gd": "3320cbf2b9818271f9922635a9be6f25ab40bff7a107cb918f43fb314dd518cd",
+      "tools/search_north_16.py": "6aadae0f48aa2a3de6c9e5ea7432189b964cb9d9282bdfef826dffa0a4ea1663",
+      "tools/check_north_34.py": "4d5225737b91615a8802c50ee68aad00644b429c2400a3ccc583d1d683f77880",
+      "tools/search_north_09.py": "23135683cf0b900e468ffb95f25f9ee55d00bb2c43df321464f7313af5aa449c",
+      "tools/check_north_24.py": "087807962916d2ff8e598ca1fb50de9e6651e9d5e6c546b69dbdecf6518a991b",
+      "tools/search_north_04.py": "29f1b1c050086342b1fb9543c1b9d7f4486dfabeea59c4252e1fca112622eae8",
+      "tools/check_monster_replays.py": "a31e8859901747638c55ac32f0bd2bac544ab71de81a2bed75b8012df71492ab",
+      "tools/check_north_11.py": "e3196683bb21e4324a1142da9bc8ce1fdc68cbc639388d5dfe3e89bbf5a25246",
+      "tools/check_north_33.py": "7deb56d14be8d0c3ccaae8eb931aeb53a2d408d6aeb0b357b023e33bd62faa00",
+      "tools/check_north_23.py": "9a413ce8706cfae538f173f467eaf8966c6ea2f43c20f669f879b83568da1838",
+      "tools/search_north_14.py": "285c1b973e4a9275c230dc1efb8a85ba4e08e3cd1d1afcc284771a4f962fff45",
+      "tools/check_north_13.py": "af419e2a7d866a39a2e30d1844a368e7292e7e6c0d627d7a6fdd94fdc5be6e94",
+      "tools/check_north_32.py": "7762017fb9b1c51a4230babdb5d2052b81b088112e7b561f41232f2d24af8f96",
+      "tools/search_north_12.py": "bce7eddada63e868d7abc736391034e32df8c89bb45c5746427c8e953a148b3c",
+      "tools/check_north_35.py": "5a73dcf12324f73aedb541002f0a666f94a7f1547bb26f0cff0d835e2de5c29e",
+      "tools/check_north_39.py": "359322336b9fca2e23363cea0c9a88bb732da9a2a12cfa9ebfebb37d826e5f54",
+      "tools/check_north_36.py": "c3f4129e342de075022328580a1fa8edb36dd583071ba4a01c030c4e2032ab2e",
+      "tools/check_north_27.py": "7c4667afa2344884c01362ea685d52cb92843ba3ef85694419a01539badfe1b4",
+      "tools/check_north_26.py": "24b3e0ec2fcde3e8062062816d89a87842ab976dad1af79cf44702e0592d9628",
+      "tools/check_north_28.py": "6b3fcd43aa37fdd69235fc5dd890ccaafc5595e681fd8df9b5104b2834a3025f",
+      "tools/search_north_10.py": "2e1fba0172af88beef8499d1215be94d77d34879396f134fe6ac1f1f79f7c19b",
+      "tools/check_north_31.py": "267f7ea3ab7431dae4309de7de5b322b66d386df2b9d1681d01efb6a71e72d98",
+      "tools/search_north_18.py": "11c45c7402d12b5353eb0048da3fb9960cd982f59ea8be86e331358c0dd80a3e",
+      "tools/check_north_17.py": "a5d61a76ac4e87126618872f11d7e948063d8cb06b6a3f579c07dda404f1ebae",
+      "tools/check_walkthroughs.py": "ec8fab4d4333d83c61642004d3d34b1206a9bea455556f8924671bbf9c648e61",
+      "tools/verify.py": "803d7ab9dbd801e02c8463d4a7201901b274356a7456e6e32c5562fb070cdcc9",
+      "tools/check_north_21.py": "4e7af3d2b6b9b28fb09ab0d136a97905d52be6b57514e31d3b6551e70c98dea3",
+      "tools/check_north_37.py": "b8710503f10ae86b685f544e83a847fce7202b058a906c65aba027334ffc18d5",
+      "tools/check_north_25.py": "8bd82bc254b20a560d5abef61e65457560e56f9bac9b295f4e33f3ace4ef04ac",
+      "tools/search_north_19.py": "e70f8fb7000e9f24e5cd54ca8ea7587b147f4a8461c53e1eacafe9414a9e584d",
+      "tools/search_north_20.py": "4cdbf8a91cf091eabcf89091a24f29301f89df4b27693435fb13b577ee0854ef",
+      "tools/check_north_06.py": "9343796bcd3ea211fbcc5c70cd1732166f88027d4ae4a4e0af12c6b8344f1aa5",
+      "tools/search_north_05.py": "27beacf3fcbe8ff9cdcb402bdcd9b67ca0c91166b648a8e1c3ea7d0dc04c73ff",
+      "tools/check_north_30.py": "8458912be7e85ebed50ac6f0f0c8f59c99a37b90627cba96b41a80c21df64a1c",
+      "tools/search_north_15.py": "38d6b00a0e48a6e750b86c681b6af72e272d0fbc8b73eb376703b1727a06676d",
+      "tools/check_north_40.py": "17fc8a558aa38f55565a8d3b471c466bc526144adb42d3ab639e1df98601dd36",
+      "tools/search_north_07.py": "638ea8f8a717f7eef58c9a19bb558d0bbdf23dac7f911cbc9bfc385788f2ecc4",
+      "tools/search_north_08.py": "a31ea0e0fb2ad6c7640aa1e116b75cb9f50466b62bcb740f958576389b6a09c8",
+      "tools/check_north_22.py": "568ca3fbe9582d7d2ef5a667d445a733a7b7e26ffd959e8de92c85e6a0542b57",
+      "tools/check_north_29.py": "01e629add68db4d3f91066cb67f2e3e1e79800c927d4a50b5ddbab39bd3f820f",
+      "tools/check_north_38.py": "fc5a54de10b96edae77a95d0e588b8d2fd22e662849383f7b63bbbca3f7afda1",
+      "tools/record_navigation.gd": "ced748e4424f82970b00fe349a879b74feff818cec033f209722e87a38bb140b",
+      "tools/record_playthrough.gd": "b444ba7f41248f1596823f30ad10f6d75650c7cc73e4b1b73e0d1af3c56c5f8e",
+      "tools/record_energy_visibility.gd": "683767e6db37b4b0adcfd085bc7b7467752e12b2912f3dc2b80a63aed3a46e6f",
+      "tools/record_visual_feedback.gd": "1c2d6aa991271c551c90fbe5e244d3b71440a2db2b98131402ef0a637d99cd60",
+      "levels/north_05.json": "4b112934f4872c7db841425a2d8c8757e82cfb58317c37ae361f7fe1cbc75b5f",
+      "levels/north_31.json": "b8ddd96dcc4ce29e2ea0b7b56faec89309796d98fc3030a06e82ec106370d3e8",
+      "levels/north_34.json": "76509e4816d3989d2125ff24ea0c2be3ceaa39f9c58fa4c2fb38644f2eb5f926",
+      "levels/north_03.json": "2b5b3e1f1dd384fbd28826394c60d8f17b8d8441151d32313bd26c0a9222114c",
+      "levels/north_29.json": "8baa7030b730b7ccc3996e2fde2b154f7bd75eeef23ac28787b0cb9705121aaa",
+      "levels/north_02.json": "8cb130ecef2a83557ceef02399d688390188a7dd665587302cd509b55d162f4f",
+      "levels/north_39.json": "e803b615a8371a9798edcb6f479a7420ae91dd8be3fcba0e77d5f1f8cb2131f0",
+      "levels/north_26.json": "acc2f8154e20c332e701f3b2e4ab41a4922b5a9876dcb82eb30e6a1b61f1cffa",
+      "levels/north_09.json": "adebc84be096e0229a75d7f87e00d22c6089208d9dc8c461369f7e7064d03fd2",
+      "levels/north_27.json": "a0e9b4292ef06d658566897544ff92cdccdd95d0bd659624cada6533fff616ff",
+      "levels/north_36.json": "d95b382f1e16a1bca42c046c3b964b7f2188e25da5f6df52f11f12dcb8c87683",
+      "levels/north_15.json": "23bbb1726e455c0e3e3b3724f74c6974e3adfe2b3a33376a50bdc3bca0900ea5",
+      "levels/north_30.json": "242c24cac0ba213d1e341c77882c9e27eaac4de2d4e56693befed11fb7cb7eb8",
+      "levels/north_38.json": "d688b70ea80bd0c050cfbca0d927e6169176b83fd0aa36aa7f2e04dbb9043964",
+      "levels/north_14.json": "f9c2fb501c2e9ab74ae6470e136acc5badbee537a7f7e2014aebb9a791ec99a6",
+      "levels/north_11.json": "64da72c3df1d30458f0e9571c0793756601871159f7a0863342859840c057eba",
+      "levels/north_07.json": "318b92c535deeb38abdc8903ce3f9142be690fa5c4958ce0444511639a43fb67",
+      "levels/north_25.json": "0a5c4831b8a34aff57ece6eb118996030f57ec527c403f324e16323eb5f1a072",
+      "levels/north_16.json": "b2aa0a0ddf35587352f1ea467537728682e702a602812bc543de628781728441",
+      "levels/north_06.json": "c1587bb9497b7627462f9ee5d6756a0335c210cad8b645508d98d6185c5b4fc3",
+      "levels/north_18.json": "fd18bd381a23060605ad7a59b6b4aa20e6fc20e3b2fb921a3792adce7418a583",
+      "levels/north_23.json": "e3997b7ad4b569d95bd52f3ea00bd385e9a6580ac7f6202d571afada429dc6f9",
+      "levels/north_24.json": "729646560471e9a5384c5872f406df6c660aca6f6eb42dd17fe85eb736ddd693",
+      "levels/north_12.json": "ea5ace23428f061d5e76aaa81df6e820a0a95972e6625e379255ab20dc0c52c9",
+      "levels/north_17.json": "8a3a68f8d529a54cebe0d5d87506357a5598d0f59ef71838fcbdea2c7c25ca95",
+      "levels/north_19.json": "cb4d88302d15b6fecc47bae53447e3196388ab9d6c03db5bc19770bd7c45e2a3",
+      "levels/north_10.json": "85e23a355130d3032397b428039c47b3382427fa34512251087f5287282d36ec",
+      "levels/north_20.json": "9991217f26568ad1f5e7a623563bdc98fac4cde7406a307e8cbd277284d88889",
+      "levels/north_21.json": "16f5fce03e0eaa8ce42b92ff67ff5334ed99c923dfc45f6c8cdf75c4e1262e54",
+      "levels/north_37.json": "39b2e51d234746762c9063ee2532aa7c93cb016ee1e936939f121f4d9a546eff",
+      "levels/north_33.json": "1d270d41941d58d13d798a0630f3b146388914281600fa19b4f8c0bcf93c521e",
+      "levels/north_01.json": "17a29d0e73951b7f0d6f5c7d6df775969d721f6732e27f26c2f0248f4e1880d9",
+      "levels/north_04.json": "01761d10577b3455cb6e98681199971af7e87f5de68b355b0ee78715d4c10116",
+      "levels/north_28.json": "0c31714d93be0a7d97f1deaf2ab48909eeff67c4043150a46679759c80701681",
+      "levels/north_08.json": "03c2dd041136f8eb2fbae87d576bb3ba9797463f0d86b929acd827b5d36c5d88",
+      "levels/north_32.json": "6ce0786d137dfd63389a97c8cba0a3456d615f0942a07c50e08f15e64e1f0342",
+      "levels/north_13.json": "827af82774bc42c878fef5a5a94e11a6606cfd3b8107f15a0f45a0e58ac76dc1",
+      "levels/north_22.json": "5ae88685eac8383f7bb12c8deae5ea054bd06399c91d406c2e013bdfaae62261",
+      "levels/north_40.json": "aab274bf1876dd9e5c7f27ab8837de5f3b741b8459af6cc246110e1b4bab5da9",
+      "levels/north_35.json": "eb416bfe9e5c530e8825a44da6410ce8b93cea7cb51ae53f6a07d308c8ed7a87",
+      "levels/mappings/north_37_markers.json": "69954385d030467b8e68e3fcfbbaf354599baa4f3c015db76fb37d66d3d791bb",
+      "levels/mappings/north_35_markers.json": "370b251d4e04ad8327746af7d2a20ceededfc7bf13b0b49b94eca79a2623ca05",
+      "levels/mappings/north_36_markers.json": "4a3690dc8a7dca69cea4917a459ece09e9b7e719e911e359b2af419732d17ed7",
+      "levels/mappings/north_31_markers.json": "7a34e9693ec5f57b50f52e23405c9193430534fc8b9c5710b920ccb1e55ef999",
+      "levels/mappings/north_38_markers.json": "00a0de1cb9417c76793f4e6ef97dc5787577d8b0dcca392fa5782294fafbc280",
+      "levels/mappings/north_27_markers.json": "a766f8a995ece6b8bebc3dba1c82d7387f9d696867272b2f618d7e859015d440",
+      "levels/mappings/north_40_markers.json": "59e47de019438fcf47b76db2f94cfa9cd0bf21d24c08cc3f1b570996feb2d03c",
+      "levels/mappings/north_39_markers.json": "b8ad523a072ba56d07acd1544570829fc5e204a32fe2097ef3db1b9739656cc4",
+      "levels/solutions/north_05.json": "310445b7b9f294935c9e287fc83a899308e026ba323384c110804ca092ca0e5b",
+      "levels/solutions/north_31.json": "f9b0643205bb721fd9277eb8b79fafb5e36827f63300f004d675408659db8424",
+      "levels/solutions/north_34.json": "301d082114a843926aa4461eff63e09cac14c421d5bd7601bc4b8f5ef9ad5fd2",
+      "levels/solutions/north_03.json": "e674ade0117e33dba91e73275fb135a5ce2caed9ae320051fd97a89d33b0335e",
+      "levels/solutions/north_29.json": "db0acc8cb0d2cbfe29279d766aed919c78bd5c28f81b18027fb49f0c406be698",
+      "levels/solutions/north_02.json": "b8dcaa9629058a9911744dda4847e83e110451915f4f4b714054b31adbe35c11",
+      "levels/solutions/north_39.json": "21a50d58ad07e6a405adf7d9b1a51439e5b64c846925d818bfc2765a6a301705",
+      "levels/solutions/north_26.json": "169244ee11ec147a8d22452d8bf6125eaaef2ff01f9f0dcc62b9d26adea3192d",
+      "levels/solutions/north_09.json": "8e3215929eaf7b7a53bbef821616986c00d0d821b642f83614c22ae7d4e601f6",
+      "levels/solutions/north_27.json": "49e45e88135979b23f2626681f12b0970172a929a0937225fc8c056fc2b202bf",
+      "levels/solutions/north_36.json": "ce5f22238d31ef52aa213693b319ef1d4b258e3ae0c12f2551e622d3588dab24",
+      "levels/solutions/north_15.json": "b3334ed96890917c4fcb49e1acde98a84c669e4f2d40c49ef78e84c0f05bdaa8",
+      "levels/solutions/north_30.json": "3353abed77bb0aa3d0107d2752e7bc47fddf87e46441a9c85bf625dcc967c430",
+      "levels/solutions/north_38.json": "bb6bd3f77fa0bd891faae3c8ab4bfcca8bbe18bd3a09e8a718a9a5e99581c8ac",
+      "levels/solutions/north_14.json": "b4e2ecb836b1d5db3150d23c95504c66ade74e1f0faead60ff2dcaec0aa275ff",
+      "levels/solutions/north_11.json": "2414ea27995c405e9643d1fd02fbe74be41ff35e19df468a424fa7102955fe3a",
+      "levels/solutions/north_07.json": "54749c7054dfd2aa174d910235c674550b56a48831feaac47bdc6f8a9d558f23",
+      "levels/solutions/north_25.json": "4a0007eb3d4c65ff057973a129bb7ab1df3c6578a4c8a05efad444d575ce1fcd",
+      "levels/solutions/north_16.json": "fb3edc09d21e4864121516d22a2dd7f5fef1eacc2d45bec7428ed3e693a14304",
+      "levels/solutions/north_06.json": "8cafd9098cc0871a48012c6616b72280897bb0fe785e9cc610f55a751c809473",
+      "levels/solutions/north_18.json": "f8f86704a397c8b8823fb8107ce6bb918d85f1c5d093a8722255f376a16d0316",
+      "levels/solutions/north_23.json": "3fd88c02dfe4ecfa8b484a72bb472ead604aaa7455f6e876516d85b310a96686",
+      "levels/solutions/north_24.json": "43ed3fc76ed331d35fd800ec828de692a6c89f76d72199b49ebc54e32e3a8895",
+      "levels/solutions/north_12.json": "452b8085c8231836ad0cb61136d27ac7166c279576db9f0ae3e609443c07de33",
+      "levels/solutions/north_17.json": "737d6489e00031a10509985109fd76f8eae10e27d17081c906e255f0dbafa381",
+      "levels/solutions/north_19.json": "02b187cee7fb7f4e85d24ab517f38722f947d07e06c13e2ddfa59a01906d1f6d",
+      "levels/solutions/north_10.json": "da4da316359be9c574f05230d3af637a4523c12abc8ea7406bf541f3212cff28",
+      "levels/solutions/north_20.json": "2169932eb56e2cc00e6b1339f043e5ca8104281db47366afdf8d24bf2f2f192f",
+      "levels/solutions/north_21.json": "90e28b57fba18c5c0a148c769fb2f2aecd99f8807aae50b23ff5f86cc592763a",
+      "levels/solutions/north_37.json": "ff9c6b5cb69705d8913f516095999b149cfd091199db763c31436fe78c6e8683",
+      "levels/solutions/north_33.json": "2535cb1b5ea75046619ac1dd6598541b19d246cd57f1726129621ffa8d001dfc",
+      "levels/solutions/north_01.json": "15e2e6472c8f1972de875ec90927a6e95b6fb79f33bf3879eab7b9d1daf68a7f",
+      "levels/solutions/north_04.json": "1f3a3e8007daedb9d6d5dc9abd4cbb808d8564d02cb4b39cddf2c87dbb4060ca",
+      "levels/solutions/north_28.json": "e50bda574bd2d791f91f71a295281d73ddac930e40009cc214a541a26d3c4a31",
+      "levels/solutions/north_08.json": "f647a87e00f353b1a73c0012a020a80d2b368355ed25f179d7519a929a5a3efc",
+      "levels/solutions/north_32.json": "2789f255b728c097842631833a8aaca422928853697e3050b5cbab57043751ab",
+      "levels/solutions/north_13.json": "39ad6cfed2d9531812908365013d94f5735709984ed8327809034ae890f0cfdb",
+      "levels/solutions/north_22.json": "c33e231545fde1e909c51feac4f1336628f95ecf0ebb82577fc18a9010624a50",
+      "levels/solutions/north_40.json": "89f345b7ac928ace8ff522f0986adf32dfa688d448e40c9e672189c6256869ed",
+      "levels/solutions/north_35.json": "f4acb40ca9daaa65b0f198f70de5241a6e0dce20e229598c9dd9671691fd9757",
+      "tests/fixtures/temporary_test.json": "08f68d4770800f4f6f8dc259c450502ac219ead3d7b426f01226e01a36d96fa1",
+      "tests/fixtures/yellow_protection.json": "37423374b3b646b780708067dc864006ea373b67377a77b79b75fce9571fc969"
+    }
+  },
+  "matrix_rows": [
+    {
+      "name": "00_version",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.016
+    },
+    {
+      "name": "01_import",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 6.738
+    },
+    {
+      "name": "02_parse_00_bush_obstacle",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/bush_obstacle.gd",
+      "source_sha256": "a1cbd1803bd95fc900ba5e8125b8ba7808212b6a3df13d50bfbc7bd6ccba2830",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "scripts/core/bush_obstacle.gd"
+    },
+    {
+      "name": "02_parse_01_energy_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_sha256": "3a449a5436871358c37eae881cb78849e6b9d7a1d230504abede35bbbae27a44",
+      "source_file": "scripts/core/energy_rules.gd"
+    },
+    {
+      "name": "02_parse_02_fence_edges",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/fence_edges.gd",
+      "source_sha256": "8df097b5655aac98b73ae36afcd1e0d5234cfdcbebde49202d7a00f0f331077f",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "scripts/core/fence_edges.gd"
+    },
+    {
+      "name": "02_parse_03_fire_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_parse_04_grid_state",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "02_parse_05_hero_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "02_parse_06_level_data",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.141
+    },
+    {
+      "name": "02_parse_07_monster_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.141
+    },
+    {
+      "name": "02_parse_08_protection_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_09_swap_rules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/core/swap_rules.gd",
+      "source_sha256": "4ae2a5854a5a3369877cf820ad5d1af6a7de0a1d94601bbc19e4ff32e4d4f461",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "scripts/core/swap_rules.gd"
+    },
+    {
+      "name": "02_parse_10_step_input",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/input/step_input.gd",
+      "source_sha256": "1a9f180c9062a6ed3a71479d50e3e59c07b21d554dbce004fcd72f453b80ac1a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "scripts/input/step_input.gd"
+    },
+    {
+      "name": "02_parse_11_main",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237
+    },
+    {
+      "name": "02_parse_12_board_view",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239
+    },
+    {
+      "name": "02_parse_13_feedback_events",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "02_parse_14_feedback_timeline",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/view/feedback_timeline.gd",
+      "source_sha256": "e55ab78742fed7e16c5991b77ffe13ed500a76ec224efce1fdddc2cc90a1fe67",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "scripts/view/feedback_timeline.gd"
+    },
+    {
+      "name": "02_parse_15_level_card",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "02_parse_16_level_menu",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "02_parse_17_virtual_level_strip",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "scripts/view/virtual_level_strip.gd",
+      "source_sha256": "24f02a4da9b532c7b0157230b75fbfdf9041a75a2229b3a7f6da7aca834f0a5d",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "scripts/view/virtual_level_strip.gd"
+    },
+    {
+      "name": "02_parse_18_blue_swap_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/blue_swap_regression.gd",
+      "source_sha256": "b18dfbee6e1047eda61398af9832b4f4759bfb2c14cbfe3d0aa335d5398be30e",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/blue_swap_regression.gd"
+    },
+    {
+      "name": "02_parse_19_bush_and_group_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/bush_and_group_regression.gd",
+      "source_sha256": "c69f97de7adc2971bdbd46b4ea1acbada842a01c3c3f3b722d182a848f8db4fd",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/bush_and_group_regression.gd"
+    },
+    {
+      "name": "02_parse_20_chain_push_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/chain_push_regression.gd",
+      "source_sha256": "bda55346b683a4394c81fc2d55b0e17b78aa96daa2286430cf17d192d82a49ff",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/chain_push_regression.gd"
+    },
+    {
+      "name": "02_parse_21_colored_energy_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_sha256": "30302a11a25a17a56f597c50c96d08f0cc1ef6dae080a0cf1e0ad32f72459259",
+      "source_file": "tests/colored_energy_regression.gd"
+    },
+    {
+      "name": "02_parse_22_energy_destruction_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/energy_destruction_regression.gd",
+      "source_sha256": "891bedcaa43282849b7132faab6b5edd21c956818e3997cc3bc0214de9dbce88",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/energy_destruction_regression.gd"
+    },
+    {
+      "name": "02_parse_23_energy_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/energy_regression.gd",
+      "source_sha256": "fcc21de4fa9a3527dbfaaa0385a581ae26bf151fa3caca1ef946135f59a7871c",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/energy_regression.gd"
+    },
+    {
+      "name": "02_parse_24_energy_visibility_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/energy_visibility_scene.gd",
+      "source_sha256": "c41260762ec85d7c61857006321affc49c320755a297620e9a6cdfc262abd8f0",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/energy_visibility_scene.gd"
+    },
+    {
+      "name": "02_parse_25_feedback_cases",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/feedback_cases.gd",
+      "source_sha256": "7f1eadc4e925a03928ccaed1864ccb6d240321bc281f3f9a6a1f106187ea485e",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/feedback_cases.gd"
+    },
+    {
+      "name": "02_parse_26_feedback_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241
+    },
+    {
+      "name": "02_parse_27_feedback_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/feedback_scene.gd",
+      "source_sha256": "6aaad87e24d60b5e57b6d331387cdff43cad91445b440715baf55dc701d6e512",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/feedback_scene.gd"
+    },
+    {
+      "name": "02_parse_28_fence_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/fence_regression.gd",
+      "source_sha256": "03817daaf19990eda6890b586b5bff025633dd7cf3127ece7d4ff12d724fa835",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/fence_regression.gd"
+    },
+    {
+      "name": "02_parse_29_fire_dragon_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/fire_dragon_regression.gd",
+      "source_sha256": "a7d48ecea00aa2c22d6429054e05fb32c3f2b8001b7067814d578e6035f721a5",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/fire_dragon_regression.gd"
+    },
+    {
+      "name": "02_parse_30_global_energy_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.151,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/global_energy_regression.gd",
+      "source_sha256": "1d3c29499d55da6f6e8d9ebe1262216201f987c44a44286a9e3a5715a9dde8f7",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/global_energy_regression.gd"
+    },
+    {
+      "name": "02_parse_31_goblin_pressure_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/goblin_pressure_regression.gd",
+      "source_sha256": "102cee45713710e548c2f7500828ad8e62459fd48726c14456ac40d098d996ba"
+    },
+    {
+      "name": "02_parse_32_green_dragon_pull_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/green_dragon_pull_regression.gd",
+      "source_sha256": "8e70f8bb878c35f7e32ae9b19616d7971fde3c4b72c5b6199dc92893050687a9",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/green_dragon_pull_regression.gd"
+    },
+    {
+      "name": "02_parse_33_green_dragon_pull_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/green_dragon_pull_scene.gd",
+      "source_sha256": "c5d435c0a45f3e305b03552e927d3580d4ba3e840f4eb28c2dc6c172922484cc",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/green_dragon_pull_scene.gd"
+    },
+    {
+      "name": "02_parse_34_green_pull_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/green_pull_regression.gd",
+      "source_sha256": "2874ef517921cb0d4f6a343af3e9350751a6e3b909df1b267bb63ba8711abbb9",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/green_pull_regression.gd"
+    },
+    {
+      "name": "02_parse_35_monster_clear_energy_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/monster_clear_energy_regression.gd",
+      "source_sha256": "531a94ead198117ac1061d0330cc6d5996b39d4b9ece4dad0bc2f236f559e711",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/monster_clear_energy_regression.gd"
+    },
+    {
+      "name": "02_parse_36_monster_clear_energy_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/monster_clear_energy_scene.gd",
+      "source_sha256": "0a70e7f6aa2db9201c06489151910f981ffb6c4354e93cd04da8f33f9ba779e3",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/monster_clear_energy_scene.gd"
+    },
+    {
+      "name": "02_parse_37_monster_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/monster_regression.gd",
+      "source_sha256": "912cf9d7695362803822c599ca9896b9c514be2396d4ea76bd289d895c7c77e6",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/monster_regression.gd"
+    },
+    {
+      "name": "02_parse_38_multi_hero_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/multi_hero_regression.gd",
+      "source_sha256": "0331b230cb99dc2bd347abaf20e666e42d1920ae20aef7f49192ee5453221899",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/multi_hero_regression.gd"
+    },
+    {
+      "name": "02_parse_39_navigation_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.249,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/navigation_scene.gd",
+      "source_sha256": "d9d6e910eaa881feb46f4692cee1eb7f635cf16bb63f6784daf007012ca967f5",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/navigation_scene.gd"
+    },
+    {
+      "name": "02_parse_40_north_01_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_01_regression.gd",
+      "source_sha256": "1efc64ab42eae4b03806b5c929c886265279bd635b5ffba798e47a27a8f74e07",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_01_regression.gd"
+    },
+    {
+      "name": "02_parse_41_north_02_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_02_regression.gd",
+      "source_sha256": "bf0ea1099dfa9d5f80de4118d7ae932e7698c021b51523065f29a3f59e8c7d1a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_02_regression.gd"
+    },
+    {
+      "name": "02_parse_42_north_02_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_02_scene.gd",
+      "source_sha256": "b2e3fd97428adff7a94197635c8de0d85643554ec8c633c36aea35f09bc5f0b3",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_02_scene.gd"
+    },
+    {
+      "name": "02_parse_43_north_03_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_03_regression.gd",
+      "source_sha256": "3320cbf2b9818271f9922635a9be6f25ab40bff7a107cb918f43fb314dd518cd",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_03_regression.gd"
+    },
+    {
+      "name": "02_parse_44_north_03_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_03_scene.gd",
+      "source_sha256": "5bd151593f6c6f97898c0bd3748f91f0d4816d8e4b50f60a2c498733d993a5c0",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_03_scene.gd"
+    },
+    {
+      "name": "02_parse_45_north_04_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_04_regression.gd",
+      "source_sha256": "7b975d0e605420f2fa3fabed79e9a761ce8bb56a8d3bbf710935add9bc248a02",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_04_regression.gd"
+    },
+    {
+      "name": "02_parse_46_north_04_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_04_scene.gd",
+      "source_sha256": "34ed1e829358dff3b30dcd42a79fa17893a639f1d8b8625ebc82e87fec143df4",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_04_scene.gd"
+    },
+    {
+      "name": "02_parse_47_north_05_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.151,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_05_regression.gd",
+      "source_sha256": "1a8fb647e50b4334be3c748f33393d431a3abe1cc4e7165f96effa0466b7cc24",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_05_regression.gd"
+    },
+    {
+      "name": "02_parse_48_north_05_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_05_scene.gd",
+      "source_sha256": "f357fe2ef943104b96550476b09535feb719cdf390df1ccac4cbcc52e3f25d45",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_05_scene.gd"
+    },
+    {
+      "name": "02_parse_49_north_06_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_06_regression.gd",
+      "source_sha256": "c53a922d497450e1774a97e80d378e299b3ee510ce0ce6dfbb9e749452756d1d",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_06_regression.gd"
+    },
+    {
+      "name": "02_parse_50_north_06_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_06_scene.gd",
+      "source_sha256": "9204e47254415262d970bbb5f843f5fd048443f93bd1008d8e6675ba6785219a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_06_scene.gd"
+    },
+    {
+      "name": "02_parse_51_north_07_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_07_regression.gd",
+      "source_sha256": "9b438a03f5403ba0c858733fd24a92e6f3e0eea946168c23bb634f610dbb5db5",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_07_regression.gd"
+    },
+    {
+      "name": "02_parse_52_north_07_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_07_scene.gd",
+      "source_sha256": "b36694a481bb5231f935d906153870bf6f8a57771b0c04ed19ee5454b64c570f",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_07_scene.gd"
+    },
+    {
+      "name": "02_parse_53_north_08_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_08_regression.gd",
+      "source_sha256": "3a9a02f8c3af160cee0c21ac32c1b72914e53ef8676d72eb8b3da022a15dfe02",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_08_regression.gd"
+    },
+    {
+      "name": "02_parse_54_north_08_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.235,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_08_scene.gd",
+      "source_sha256": "2b0c00bec6df29d0addb6c0d1572fb68a485968151d94bb3716d55e1b6f2e767",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_08_scene.gd"
+    },
+    {
+      "name": "02_parse_55_north_09_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_09_regression.gd",
+      "source_sha256": "a7a1ba0deec8aa131206588a2e2bbabad7b24d5f7335bd7520e1f30e84889444",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_09_regression.gd"
+    },
+    {
+      "name": "02_parse_56_north_09_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_09_scene.gd",
+      "source_sha256": "669d1d3390d6ee2a417d276bcbc80af350d48825fdf19707610dafaf59eda653",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_09_scene.gd"
+    },
+    {
+      "name": "02_parse_57_north_10_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_10_regression.gd",
+      "source_sha256": "d833cff22eed25743fbd2ae7f511a091c1020ca7282b801210f313945ff15790",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_10_regression.gd"
+    },
+    {
+      "name": "02_parse_58_north_10_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_10_scene.gd",
+      "source_sha256": "4e7daa7a96ad525d75bb7c825a4358603e5c0bc709f706b1d0e7115f4411c50d",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_10_scene.gd"
+    },
+    {
+      "name": "02_parse_59_north_11_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.152,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_11_regression.gd",
+      "source_sha256": "57905bb30107af41064cb444fa68558e9b74209d72e7ffd7e70ad591a28f73c7",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_11_regression.gd"
+    },
+    {
+      "name": "02_parse_60_north_11_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_11_scene.gd",
+      "source_sha256": "048dd00dea6bd7dc03a724e06e509766637157120e3f2c2b9c61e533904bd117",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_11_scene.gd"
+    },
+    {
+      "name": "02_parse_61_north_12_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_12_regression.gd",
+      "source_sha256": "ff1b4d812d34418ef731cc3305c9e0705017124ad19a1c215b20c60fc515d40c",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_12_regression.gd"
+    },
+    {
+      "name": "02_parse_62_north_12_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.245,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_12_scene.gd",
+      "source_sha256": "4c1f1bdd1df6522205ad1f26c865cf1ae32cbf362896d24ba388e1dc0ed0f90c",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_12_scene.gd"
+    },
+    {
+      "name": "02_parse_63_north_13_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_13_regression.gd",
+      "source_sha256": "578968e74a77d92feaa6a5aa4e16904760b9f2a6fc7bf410cddd0c6c403450a4",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_13_regression.gd"
+    },
+    {
+      "name": "02_parse_64_north_13_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_13_scene.gd",
+      "source_sha256": "22956f46e2a8d100d67d5d65e20aeca26f35e6f138284a25f9cea0baee12845a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_13_scene.gd"
+    },
+    {
+      "name": "02_parse_65_north_14_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_14_regression.gd",
+      "source_sha256": "74da5e6158136ae3e94e86c337bfe97d8045439c961ae1a605b6f4bf210e1654",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_14_regression.gd"
+    },
+    {
+      "name": "02_parse_66_north_14_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_14_scene.gd",
+      "source_sha256": "cb0a3f02194f0ee72380a59927192e2c786916ea04a5b5a999a1c62376c6ae2b",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_14_scene.gd"
+    },
+    {
+      "name": "02_parse_67_north_15_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_15_regression.gd",
+      "source_sha256": "f5b104a3d965c60bba273472d492c379ece91d3530f1c31088877d0299415b1e",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_15_regression.gd"
+    },
+    {
+      "name": "02_parse_68_north_15_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_15_scene.gd",
+      "source_sha256": "0bd06e23a1bde766c07f884c27a979c3e05277110fa8bc6c064c77cbf50228fb",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_15_scene.gd"
+    },
+    {
+      "name": "02_parse_69_north_16_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_16_regression.gd",
+      "source_sha256": "5b373eaef6e742aec472dc452499b84661cd4d842e3bc94874e1694e5541efa7",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_16_regression.gd"
+    },
+    {
+      "name": "02_parse_70_north_16_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.247,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_16_scene.gd",
+      "source_sha256": "259754d2211988e6c56f6eb7ff04d7397a86b10e4638b65c49c0a6ccfc9a12ba",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_16_scene.gd"
+    },
+    {
+      "name": "02_parse_71_north_17_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_17_regression.gd",
+      "source_sha256": "36eca8d1f3d739d87f45948b30aca88b740b2412cf651b6612bcf29f9df5bf99",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_17_regression.gd"
+    },
+    {
+      "name": "02_parse_72_north_17_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_17_scene.gd",
+      "source_sha256": "2dbcb002d7feb33733f9a0dce523698db39a279527a3c3541c903a08c2950191",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_17_scene.gd"
+    },
+    {
+      "name": "02_parse_73_north_18_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_18_regression.gd",
+      "source_sha256": "01cb8d689606e6094abd7214fa52cf4a66f2f14d64c3d54436bf317fd71fd716",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_18_regression.gd"
+    },
+    {
+      "name": "02_parse_74_north_18_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_18_scene.gd",
+      "source_sha256": "7676bafbe1d70b0d6b2452ccb6d8bc19be2ea3f5e55f7946bf63e8dc8a8556eb",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_18_scene.gd"
+    },
+    {
+      "name": "02_parse_75_north_19_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_19_regression.gd",
+      "source_sha256": "2c8938dfd6c627780d945ad547a77ede6dd5de5e63451e0d468faaf100ab45e2",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_19_regression.gd"
+    },
+    {
+      "name": "02_parse_76_north_19_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_19_scene.gd",
+      "source_sha256": "7899b519fa457b37511a0ba4222223e9331483098bea193a6d702d7c2e8dfdc6",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_19_scene.gd"
+    },
+    {
+      "name": "02_parse_77_north_20_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_20_regression.gd",
+      "source_sha256": "e569073b093749e4c12dae9dbec6a2b6059fb6f09018c69ccd711345b38a7f2f",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_20_regression.gd"
+    },
+    {
+      "name": "02_parse_78_north_20_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_20_scene.gd",
+      "source_sha256": "d58da7eb618ea9958867f5cadaf9bb2b11c8ef880230c087eee592c597e6b255",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_20_scene.gd"
+    },
+    {
+      "name": "02_parse_79_north_21_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_21_regression.gd",
+      "source_sha256": "8473a6213c52c724d564aa4c80c8e83514f9c3482795dd98551811d715765cac",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_21_regression.gd"
+    },
+    {
+      "name": "02_parse_80_north_21_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_21_scene.gd",
+      "source_sha256": "f102310e041fde1193e45635bee5c8c5124b5210db183ab3f19ab67e1e83861a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_21_scene.gd"
+    },
+    {
+      "name": "02_parse_81_north_22_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_22_regression.gd",
+      "source_sha256": "823531af34fb05aba87a62bea3e261c3c719d062e06eb36a1c770793b60443be",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_22_regression.gd"
+    },
+    {
+      "name": "02_parse_82_north_22_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_22_scene.gd",
+      "source_sha256": "35bd8ac3cd8ae7ca1a6b21ce2989abbe0c828fbe68df05e2320c350cb4cd9780",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_22_scene.gd"
+    },
+    {
+      "name": "02_parse_83_north_23_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_23_regression.gd",
+      "source_sha256": "85d2e5228f668490cabdedeb1f04b57916280fa1e0897ae0af3295c1d2c3158a",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_23_regression.gd"
+    },
+    {
+      "name": "02_parse_84_north_23_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_23_scene.gd",
+      "source_sha256": "f4f1dcda8f426bee726ee39f513def1601fd94364b4bc558b3f1f6f4a394b657",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_23_scene.gd"
+    },
+    {
+      "name": "02_parse_85_north_24_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_24_regression.gd",
+      "source_sha256": "5ea464c53f54c2f285cd9ea00fde39330cc7ded2b6bc119b30999b27bf3ea1c9",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_24_regression.gd"
+    },
+    {
+      "name": "02_parse_86_north_24_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_24_scene.gd",
+      "source_sha256": "b35dafa693f538a08eabc729c140061b6c64c900b2e665dd1f6b11b66d976809",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_24_scene.gd"
+    },
+    {
+      "name": "02_parse_87_north_25_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_25_regression.gd",
+      "source_sha256": "a55c9716a1789d16ba9cf07803a610c16a8ed50f1afd86d23183a6994b690884",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_25_regression.gd"
+    },
+    {
+      "name": "02_parse_88_north_25_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_25_scene.gd",
+      "source_sha256": "3b8394340c4b2e43e6b7fbc68247ccce5f2f7f371d92cdb7695645bf67e38bab",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_25_scene.gd"
+    },
+    {
+      "name": "02_parse_89_north_26_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_26_regression.gd",
+      "source_sha256": "c1960ff743bdac1248a45f745bf65bdf031d24924350563f08d77a58db86a15e",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_26_regression.gd"
+    },
+    {
+      "name": "02_parse_90_north_26_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_26_scene.gd",
+      "source_sha256": "ef2e8cde5cb5d3f83c0e002accaae15fd7b114a83be369228b264df3be41703c",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_26_scene.gd"
+    },
+    {
+      "name": "02_parse_91_north_27_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.148,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_27_regression.gd",
+      "source_sha256": "01cb00fe04fea707443bcd54b19c6f7c4e37c2493c3e6224ac1a7c47b579b49b",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_27_regression.gd"
+    },
+    {
+      "name": "02_parse_92_north_27_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.237,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_27_scene.gd",
+      "source_sha256": "ec2395e758cf27d409d43bb10a8c91311c3169958fa035ca593517d6f03d47a3",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_27_scene.gd"
+    },
+    {
+      "name": "02_parse_93_north_28_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_28_regression.gd",
+      "source_sha256": "5364bd271076f2f86810671fb6947f91aa612069f759bfa3f0599175a5c27288",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_28_regression.gd"
+    },
+    {
+      "name": "02_parse_94_north_28_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_28_scene.gd",
+      "source_sha256": "52ad37a18bbba4b29dc274873f2cff51dbb13077a498add828f46019e474bfaf",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_28_scene.gd"
+    },
+    {
+      "name": "02_parse_95_north_29_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.153,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_29_regression.gd",
+      "source_sha256": "e12e3f227584d6a343eb7807997615aa83c9deb3efb0cf369d704c4a392b2f5b",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_29_regression.gd"
+    },
+    {
+      "name": "02_parse_96_north_29_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.244
+    },
+    {
+      "name": "02_parse_97_north_30_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.244,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_30_regression.gd",
+      "source_sha256": "3bddf7dbf2137e4963605ac5e5f841c34c88df61a29e64b6cd9109a4ace95116",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_30_regression.gd"
+    },
+    {
+      "name": "02_parse_98_north_30_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_parse_99_north_31_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_31_regression.gd",
+      "source_sha256": "b1cf2f26d454fc465298870e063a3a86e424e1b7e99fa2da53298894cfecbc13",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_31_regression.gd"
+    },
+    {
+      "name": "02_parse_100_north_31_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_101_north_32_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/north_32_regression.gd",
+      "source_sha256": "0d8a8a0fe04d58e98530ac934b081baa3803a364bad53414f8c0316b06d66ace",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_32_regression.gd"
+    },
+    {
+      "name": "02_parse_102_north_32_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_103_north_33_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "baseline_source_file": "tests/north_33_regression.gd",
+      "source_sha256": "b80b000499a845c08a3f3d9494c231a8d7d229675e56f0c247e09706b5c45d5e",
+      "source_file": "tests/north_33_regression.gd"
+    },
+    {
+      "name": "02_parse_104_north_33_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.245
+    },
+    {
+      "name": "02_parse_105_north_34_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "baseline_source_file": "tests/north_34_regression.gd",
+      "source_sha256": "b2ee833fdb7d0105219397c888614d8aec4b7818e7f399cdb55b39185a2f0b97",
+      "source_file": "tests/north_34_regression.gd"
+    },
+    {
+      "name": "02_parse_106_north_34_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.156
+    },
+    {
+      "name": "02_parse_107_north_35_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.254,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_sha256": "b688d810aad60a1ce1a17a7611cdb60f95375ec17c3e5f63f4e6ddd4dc9f595f",
+      "source_file": "tests/north_35_regression.gd"
+    },
+    {
+      "name": "02_parse_108_north_35_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_parse_109_north_36_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_36_regression.gd",
+      "source_sha256": "88e69f0c637b307a8fb509b47069ec1702a7b8ed12cd7ad2f8b9bf1e3b351373"
+    },
+    {
+      "name": "02_parse_110_north_36_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_111_north_37_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/north_37_regression.gd",
+      "source_sha256": "939fcf0eaa8196dbea867f0b61a4c7ed85d31c6d9be499da65483e9ed47b6fa5"
+    },
+    {
+      "name": "02_parse_112_north_37_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "02_parse_113_north_38_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_sha256": "0ca6518be0d3c36809939608ed68bb0f95249d4a38813b59213d9c4c07e8e04b",
+      "source_file": "tests/north_38_regression.gd"
+    },
+    {
+      "name": "02_parse_114_north_38_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_115_north_39_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.162,
+      "reused_successful_evidence": true,
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_sha256": "461a1648d54b282433498932c6eefdd8d26a54541e2a7e472d2b7bbd033e5c38",
+      "source_file": "tests/north_39_regression.gd"
+    },
+    {
+      "name": "02_parse_116_north_39_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "02_parse_117_north_40_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_parse_118_north_40_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236
+    },
+    {
+      "name": "02_parse_119_run_tests",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/run_tests.gd",
+      "source_sha256": "4d1a1dcbb4e576c5555e115855c547205cfb1deb93deef99ef5ed07d60ad5d6f",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/run_tests.gd"
+    },
+    {
+      "name": "02_parse_120_scene_smoke",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241,
+      "reused_successful_evidence": true,
+      "baseline_source_file": "tests/scene_smoke.gd",
+      "source_sha256": "72fb4ec6c0e8002db315754429287ebb7d0c05c24cc055e808014cb725773a60",
+      "source_verification": "syntax-only byte-identical to a923ffd4d30b54f78a209167b01e974dfa6ea281",
+      "reuse_category": "syntax",
+      "baseline_commit": "1ba4c1c601b6b1cfbd6db832c0c19d839cf0820c",
+      "source_file": "tests/scene_smoke.gd"
+    },
+    {
+      "name": "02_parse_121_yellow_protection_regression",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "02_record_visual_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "02_record_playthrough",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.423
+    },
+    {
+      "name": "03_monster_clear_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "03_logic",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24
+    },
+    {
+      "name": "03_chain_push",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238
+    },
+    {
+      "name": "03_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_global_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_bush_group",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_green_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239
+    },
+    {
+      "name": "03_blue_swap",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_multi_hero",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.145
+    },
+    {
+      "name": "03_north_13",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_14",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239
+    },
+    {
+      "name": "03_north_15",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_north_16",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239
+    },
+    {
+      "name": "03_energy_destruction",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.242
+    },
+    {
+      "name": "03_north_17",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_18",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.246
+    },
+    {
+      "name": "03_north_19",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.242
+    },
+    {
+      "name": "03_fences",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_20",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.244
+    },
+    {
+      "name": "03_north_21",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.243
+    },
+    {
+      "name": "03_north_29_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.02
+    },
+    {
+      "name": "03_north_29",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.245
+    },
+    {
+      "name": "03_north_30_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.019
+    },
+    {
+      "name": "03_north_30",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24
+    },
+    {
+      "name": "03_north_31_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.018
+    },
+    {
+      "name": "03_north_31",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.243
+    },
+    {
+      "name": "03_colored_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.143
+    },
+    {
+      "name": "03_north_40_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.017
+    },
+    {
+      "name": "03_yellow_protection",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": null,
+      "retained_current_task_success": true,
+      "actual_log": "artifacts/task40/implementation/yellow_protection.log",
+      "checks": 66
+    },
+    {
+      "name": "03_north_40",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": null,
+      "retained_current_task_success": true,
+      "actual_log": "artifacts/task40/implementation/model40.log",
+      "checks": 248
+    },
+    {
+      "name": "03_north_39_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.028
+    },
+    {
+      "name": "03_north_39",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.235
+    },
+    {
+      "name": "03_north_38_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.024
+    },
+    {
+      "name": "03_north_38",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.243
+    },
+    {
+      "name": "03_north_37_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.025
+    },
+    {
+      "name": "03_north_37",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24
+    },
+    {
+      "name": "03_north_36_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.02
+    },
+    {
+      "name": "03_goblin_pressure",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.245
+    },
+    {
+      "name": "03_north_36",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.244
+    },
+    {
+      "name": "03_north_35_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.022
+    },
+    {
+      "name": "03_north_35",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236
+    },
+    {
+      "name": "03_north_34_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.021
+    },
+    {
+      "name": "03_north_34",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.236
+    },
+    {
+      "name": "03_north_33_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.018
+    },
+    {
+      "name": "03_north_33",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.235
+    },
+    {
+      "name": "03_north_32_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.017
+    },
+    {
+      "name": "03_north_32",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.242
+    },
+    {
+      "name": "03_north_28_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.022
+    },
+    {
+      "name": "03_north_28",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241
+    },
+    {
+      "name": "03_green_dragon_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.152
+    },
+    {
+      "name": "03_north_27_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.024
+    },
+    {
+      "name": "03_north_27",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.25
+    },
+    {
+      "name": "03_fire_dragon",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.153
+    },
+    {
+      "name": "03_north_26_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.016
+    },
+    {
+      "name": "03_north_26",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.142
+    },
+    {
+      "name": "03_monsters",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.24
+    },
+    {
+      "name": "03_monster_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.033
+    },
+    {
+      "name": "03_north_25_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.024
+    },
+    {
+      "name": "03_north_25",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.241
+    },
+    {
+      "name": "03_north_24_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.026
+    },
+    {
+      "name": "03_north_24",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.244
+    },
+    {
+      "name": "03_north_23_independent",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.023
+    },
+    {
+      "name": "03_north_23",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.245
+    },
+    {
+      "name": "03_north_22",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_01",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.238
+    },
+    {
+      "name": "03_north_02",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.144
+    },
+    {
+      "name": "03_north_03",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239
+    },
+    {
+      "name": "03_north_04",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "03_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.147
+    },
+    {
+      "name": "03_north_06",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.248
+    },
+    {
+      "name": "03_north_07",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.239
+    },
+    {
+      "name": "03_north_08",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.246
+    },
+    {
+      "name": "03_north_09",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.149
+    },
+    {
+      "name": "03_north_10",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.15
+    },
+    {
+      "name": "03_north_11",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "03_north_12",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.146
+    },
+    {
+      "name": "04_main_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.434
+    },
+    {
+      "name": "05_north_40_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": null,
+      "retained_current_task_success": true,
+      "actual_log": "artifacts/task40/implementation/scene40_headless.log",
+      "checks": 355
+    },
+    {
+      "name": "05_north_39_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 49.733
+    },
+    {
+      "name": "05_north_38_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.742
+    },
+    {
+      "name": "05_north_37_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 22.951
+    },
+    {
+      "name": "05_north_36_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.075
+    },
+    {
+      "name": "05_north_35_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 18.956
+    },
+    {
+      "name": "05_north_34_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.28
+    },
+    {
+      "name": "05_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.563
+    },
+    {
+      "name": "05_monster_clear_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.561
+    },
+    {
+      "name": "05_scene_input",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.569
+    },
+    {
+      "name": "05_north_02_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.45
+    },
+    {
+      "name": "05_north_03_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.659
+    },
+    {
+      "name": "05_north_04_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.451
+    },
+    {
+      "name": "05_north_05_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 10.87
+    },
+    {
+      "name": "05_north_06_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 19.073
+    },
+    {
+      "name": "05_north_07_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 36.066
+    },
+    {
+      "name": "05_north_08_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.287
+    },
+    {
+      "name": "05_north_09_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 9.749
+    },
+    {
+      "name": "05_north_10_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 25.84
+    },
+    {
+      "name": "05_north_11_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.07
+    },
+    {
+      "name": "05_north_12_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 24.999
+    },
+    {
+      "name": "05_north_13_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.635
+    },
+    {
+      "name": "05_north_14_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.254
+    },
+    {
+      "name": "05_north_15_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.278
+    },
+    {
+      "name": "05_north_16_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.652
+    },
+    {
+      "name": "05_north_17_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 27.039
+    },
+    {
+      "name": "05_north_18_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.552
+    },
+    {
+      "name": "05_north_19_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.836
+    },
+    {
+      "name": "05_north_20_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 14.045
+    },
+    {
+      "name": "05_north_21_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 42.388
+    },
+    {
+      "name": "05_north_29_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.369
+    },
+    {
+      "name": "05_north_30_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 15.335
+    },
+    {
+      "name": "05_north_31_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 29.549
+    },
+    {
+      "name": "05_north_33_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.926
+    },
+    {
+      "name": "05_north_32_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.907
+    },
+    {
+      "name": "05_north_28_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 15.975
+    },
+    {
+      "name": "05_green_dragon_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 4.258
+    },
+    {
+      "name": "05_north_27_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.155
+    },
+    {
+      "name": "05_north_26_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.814
+    },
+    {
+      "name": "05_north_25_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 14.304
+    },
+    {
+      "name": "05_north_24_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.481
+    },
+    {
+      "name": "05_north_23_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.726
+    },
+    {
+      "name": "05_north_22_scene",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 8.915
+    },
+    {
+      "name": "05_navigation",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 24.721
+    },
+    {
+      "name": "05_energy_visibility",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.444
+    },
+    {
+      "name": "06_render_north_40",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": null,
+      "retained_current_task_success": true,
+      "actual_log": "artifacts/task40/implementation/scene40_X11.log",
+      "checks": 381
+    },
+    {
+      "name": "06_render_north_39",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 65.807
+    },
+    {
+      "name": "06_render_north_38",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 32.686
+    },
+    {
+      "name": "06_render_north_37",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 33.667
+    },
+    {
+      "name": "06_render_north_36",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.346
+    },
+    {
+      "name": "06_render_north_35",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 29.099
+    },
+    {
+      "name": "06_render_north_34",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.102
+    },
+    {
+      "name": "06_feedback",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.277
+    },
+    {
+      "name": "06_monster_clear_energy",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.5
+    },
+    {
+      "name": "06_render",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.037
+    },
+    {
+      "name": "06_render_north_02",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.194
+    },
+    {
+      "name": "06_render_north_03",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.459
+    },
+    {
+      "name": "06_render_north_04",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.302
+    },
+    {
+      "name": "06_render_north_05",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 18.63
+    },
+    {
+      "name": "06_render_north_06",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 32.09
+    },
+    {
+      "name": "06_render_north_07",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 55.114
+    },
+    {
+      "name": "06_render_north_08",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.548
+    },
+    {
+      "name": "06_render_north_09",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.698
+    },
+    {
+      "name": "06_render_north_10",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 40.299
+    },
+    {
+      "name": "06_render_north_11",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 25.749
+    },
+    {
+      "name": "06_render_north_12",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 34.8
+    },
+    {
+      "name": "06_render_north_13",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 22.302
+    },
+    {
+      "name": "06_render_north_14",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 36.876
+    },
+    {
+      "name": "06_render_north_15",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 54.398
+    },
+    {
+      "name": "06_render_north_16",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 27.765
+    },
+    {
+      "name": "06_render_north_17",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 41.156
+    },
+    {
+      "name": "06_render_north_18",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 52.351
+    },
+    {
+      "name": "06_render_north_19",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 54.382
+    },
+    {
+      "name": "06_render_north_20",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 23.761
+    },
+    {
+      "name": "06_render_north_21",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 69.547
+    },
+    {
+      "name": "06_render_north_22",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.338
+    },
+    {
+      "name": "06_render_north_23",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 22.716
+    },
+    {
+      "name": "06_render_north_24",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 41.816
+    },
+    {
+      "name": "06_render_north_25",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 28.193
+    },
+    {
+      "name": "06_render_north_26",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.814
+    },
+    {
+      "name": "06_green_dragon_pull",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.173
+    },
+    {
+      "name": "06_render_north_27",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 30.591
+    },
+    {
+      "name": "06_render_north_29",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 32.816
+    },
+    {
+      "name": "06_render_north_30",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.315
+    },
+    {
+      "name": "06_render_north_31",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 41.743
+    },
+    {
+      "name": "06_render_north_33",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 32.762
+    },
+    {
+      "name": "06_render_north_32",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.8
+    },
+    {
+      "name": "06_render_north_28",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 28.48
+    },
+    {
+      "name": "06_navigation",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 41.714
+    },
+    {
+      "name": "06_energy_visibility",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.608
+    }
+  ],
+  "validated_source_fingerprints": 256,
+  "preserved_old_delivery_files": 171,
+  "old_media_entries_preserved": 39,
+  "solution": {
+    "level_id": "north_hero_40",
+    "path": "RRRRRRRDDDLLLLLLU",
+    "moves": 17,
+    "directions": 17,
+    "input_events": 17,
+    "selection_events": 0,
+    "pushes": 0,
+    "pulls": 0,
+    "swaps": 0,
+    "destroyed_crystals": 0,
+    "goblin_shield_actions": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "fire_shield_actions": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "surviving_monsters": 7,
+    "note": "用户确认9×5，黄色只能行走和保护；17步绕右侧到底排，保护挡住哥布林邻接和火龙首目标，五晶及七怪保留。不宣称最短路线。"
+  },
+  "yellow_protection_checks": 66,
+  "model_checks": 248,
+  "headless_UI_checks": 355,
+  "X11_checks": 381,
+  "actual_scene_review": {
+    "reviewed": true,
+    "time_utc": "2026-10-26T12:09:23.390816+00:00",
+    "actual_X11_checks": 381,
+    "sizes_reviewed": [
+      [
+        1280,
+        820
+      ],
+      [
+        960,
+        615
+      ]
+    ],
+    "actual_X11_pixels": {
+      "initial": {
+        "file": "artifacts/screenshots/north_40_initial.png",
+        "sha256": "9d461147989a87570b30bc1d8a6b282c8af8b21e16fb7e201c4791dd308a3261",
+        "notes": "Clear yellow hero plus self/fourcardinal circles,smallshield,9x5all45grid,onlyMovesstat,no push/pull UI,allcontrolsfit1280x820."
+      },
+      "compact": {
+        "file": "artifacts/screenshots/north_40_compact.png",
+        "sha256": "1b5c6c6a665d488afa441d41a04f96a0f3ac002b111b7aa57ae9698d11e99cb9",
+        "notes": "960x615readable,noclippedbuttons,newyellowroleandsixGoblins+Dragon/crystalsclear."
+      },
+      "fixture_ally": {
+        "file": "artifacts/screenshots/north_40_fixture_ally.png",
+        "sha256": "82cfdbb9590adf5018149dceb3a2f24113f63dea68cdfe33997fdea5bbe6abd5",
+        "notes": "Explicitindependenttemporaryfixture,inactiveyellowretainsgoldhue/protectsinactivered,greenunshieldedfaraway,firehintstopsatred."
+      },
+      "fixture_death": {
+        "file": "artifacts/screenshots/north_40_fixture_death.png",
+        "sha256": "5b5c1205a03c01c7e72a015a996d442f880945535a466699790bff73c9a5f2ec",
+        "notes": "Protectorleftmovesremoveredsdiagonalshield;onlyredfirsttargetdies,Greenbehindlives,Undoenabledandothercommandslock."
+      },
+      "action_13": {
+        "file": "artifacts/screenshots/north_40_action_13.png",
+        "sha256": "c40af1fa75faec55f50a10380c3dd59f4426a959d63a859bd88bd4c8e87f4875",
+        "notes": "Golden hero shields itself on the dragon row: static arrow ends at hero5,4, no fire beyond it, seven monsters alive and no actual flame."
+      },
+      "completed": {
+        "file": "artifacts/screenshots/north_40_completed.png",
+        "sha256": "4dc158a824a35ff88c6e725179956113f0e00bcc6aa9f18d1a60d4f0d530cc18",
+        "notes": "17walks,goal2,3 reached,allfivecrystals/sevenmonstersunchanged,yellowhue/shieldandcardinalfootprintclear."
+      },
+      "navigation": {
+        "file": "artifacts/screenshots/north_40_navigation.png",
+        "sha256": "e6502e964f3a49a9c36fa367c36079d3de886a9aca4b9781a73f18350ce179bb",
+        "notes": "40/40poolednavigation,yellowProtectrole/title/thumbnailcoloredcorrectly,old39blue-yellowpreviewunchanged."
+      },
+      "fixture_compact": {
+        "file": "artifacts/screenshots/north_40_fixture_compact.png",
+        "sha256": "fa608d8ade19dcc6aaa1ba2f320e565936dd30b5f5e6dc8e140d0c4da24cbda1",
+        "notes": "960x615afterUndo:yellowselected,redallyprotected,greenfarunprotected,firehintstopsatred,controlsfit."
+      }
+    }
+  },
+  "display": "X11:98,MIT-SHM disabled,Mesa llvmpipe",
+  "rule_boundaries": [
+    "Living yellow protects itself and cardinal adjacent heroes only,not diagonals or distance2.",
+    "Common attack snapshot;protected hero stops dragon before farther targets,without an attack or blank wait.",
+    "Yellow cannot push,pull or exchange;existing red push/blue exchange can move it and coverage follows.",
+    "Energy still kills yellow/other protected heroes;no immunity against unspecified hazards."
+  ],
+  "fixed_during_work": [
+    "Initial editor import exposed a draft assert parenthesis and non-writable default HOME cache; fixed syntax and used writable task XDG directories,then clean import and strict checks."
+  ],
+  "not_tested": [
+    "Physical GPU/mobile devices",
+    "Unconfirmed future monster/fence or immunity combinations"
+  ],
+  "CI": "Queried after final push;local verification is not CI."
+}

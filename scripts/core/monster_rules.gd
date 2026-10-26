@@ -2,6 +2,7 @@ class_name MonsterRules
 extends RefCounted
 ## Explicit type dispatch. Dead identities remain for Undo, not collision/attacks.
 const Fire=preload("res://scripts/core/fire_rules.gd")
+const Protection=preload("res://scripts/core/protection_rules.gd")
 
 static func is_supported(kind:Variant) -> bool:
 	return kind in ["goblin","fire_dragon"]
@@ -33,11 +34,12 @@ static func settle(kinds:PackedStringArray,positions:Array[Vector2i],living:Arra
 	# post-movement/post-mechanism state, before ANY attack deaths are applied.
 	var attack_monster_alive:Array[bool]=survivors.duplicate()
 	var attack_hero_alive:Array[bool]=lives.duplicate()
+	var protected_heroes:Array[bool]=Protection.covered(fire_context.get("hero_kinds",PackedStringArray()),heroes,attack_hero_alive)
 	var fire_targets:Array[Dictionary]=[]
 	var goblin_monster_victims:Array[int]=[]
 	if kinds.has("fire_dragon") and fire_context.get("advance",true):
 		if fire_context.is_empty():return {"error":"火龙结算缺少朝向或阻挡查询。"}
-		var plan:=Fire.plan(kinds,positions,survivors,fire_context["facings"],heroes,lives,fire_context["crystals"],fire_context["bounds"],fire_context["blocks"],has_fence)
+		var plan:=Fire.plan(kinds,positions,survivors,fire_context["facings"],heroes,lives,fire_context["crystals"],fire_context["bounds"],fire_context["blocks"],has_fence,protected_heroes)
 		if not plan["error"].is_empty():return plan
 		for ray in plan["rays"]:
 			if not ray["target"].is_empty():fire_targets.append(ray["target"])
@@ -55,6 +57,7 @@ static func settle(kinds:PackedStringArray,positions:Array[Vector2i],living:Arra
 		for m in positions.size():
 			if not survivors[m] or not threatens(kinds[m],heroes[h],positions[m]):continue
 			if has_fence.call(heroes[h],positions[m]):return {"error":"哥布林隔栅栏攻击尚未确认；该组合动作未提交。"}
+			if protected_heroes[h]:continue
 			attacked.append(h);break
 	# Apply once. A same-step victim's sampled attack is not canceled; a dead
 	# monster is absent from NEXT step's sample. Never rescan after a fire kill.
@@ -65,4 +68,4 @@ static func settle(kinds:PackedStringArray,positions:Array[Vector2i],living:Arra
 		else:survivors[target["id"]]=false
 	for victim in goblin_monster_victims:survivors[victim]=false
 	for h in attacked:lives[h]=false
-	return {"error":"","monster_alive":survivors,"hero_alive":lives,"alive":not lives.has(false),"attacked_heroes":attacked,"fire_heroes":fire_heroes,"attack_monster_alive":attack_monster_alive,"attack_hero_alive":attack_hero_alive}
+	return {"error":"","monster_alive":survivors,"hero_alive":lives,"alive":not lives.has(false),"attacked_heroes":attacked,"fire_heroes":fire_heroes,"attack_monster_alive":attack_monster_alive,"attack_hero_alive":attack_hero_alive,"protected_heroes":protected_heroes}

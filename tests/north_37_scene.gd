@@ -37,6 +37,6 @@ func _run()->void:
 	_check(game.model.is_complete() and game.moves_label.text=="43" and game.pushes_label.text=="10" and game.model.crates().size()==2,"43/10livingvictory")
 	await _capture("north_37_completed.png");await _click("Undo");_check(game.model.snapshot()==history[-1] and not game.model.is_complete(),"victoryUndo")
 	await _click("Restart");root.size=Vector2i(960,615);await _settle();_check_layout(game);await _capture("north_37_compact.png")
-	await _click("BackToLevels");_check(game.menu.strip.item_count==39 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"39realentriesboundedpool")
+	await _click("BackToLevels");_check(game.menu.strip.item_count==40 and game.menu.strip.pool.size()<=game.menu.strip.capacity_bound(),"39realentriesboundedpool")
 	await _capture("north_37_navigation.png");await _click("Level36");_check(game.model.active_kind()=="blue" and game.model.level.swap_hero_color=="purple","old36purplekept");await _click("Level37");_check(game.model.snapshot()==initial and game.model.history_size()==0,"36/37historyisolation")
 	print("NORTH37 SCENE RESULT: %d checks,%d failures;display=%s" % [checks,failures,DisplayServer.get_name()]);quit(0 if failures==0 else 1)

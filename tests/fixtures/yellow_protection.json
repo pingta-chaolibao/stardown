@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "id": "yellow_protection_fixture",
+  "title": "独立保护测试 · 非正式关卡",
+  "is_temporary": true,
+  "source_note": "Independent real-input rendering fixture for yellow protecting a non-selected ally and screening a farther hero; not campaign level40.",
+  "terrain": [".......", ".......", ".......", ".......", "......."],
+  "heroes": [
+    {"id":"yellow","kind":"yellow","position":[2,0]},
+    {"id":"red","kind":"red","position":[2,1]},
+    {"id":"green","kind":"green","position":[5,1]}
+  ],
+  "active_hero":"green",
+  "crates":[],
+  "targets":[],
+  "exits":[[0,4],[1,4],[2,4]],
+  "exit_color":"green",
+  "objective":"all_heroes_on_exits",
+  "monsters":[{"kind":"fire_dragon","position":[0,1],"facing":"right"}]
+}

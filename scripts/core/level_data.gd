@@ -95,7 +95,7 @@ static func from_dictionary(data: Variant) -> PuzzleLevel:
 	else:
 		var kind: Variant = data.get("hero_kind", "red")
 		if not Heroes.is_supported(kind):
-			return _invalid("hero_kind 只支持 red（推）、green（拉）或 blue（交换）。")
+			return _invalid("hero_kind 只支持 red（推）、green（拉）、blue（交换）或 yellow（保护）。")
 		var spawn: Variant = _parse_cell(data.get("player"))
 		if spawn == null or not level.is_floor(spawn):
 			return _invalid("player 必须是地图内可通行的整数坐标。")
@@ -209,7 +209,7 @@ func _read_heroes(value: Variant, selected: Variant) -> String:
 		if not entry is Dictionary or not entry.get("id") is String or entry["id"].is_empty() or ids.has(entry["id"]):
 			return "英雄需要唯一非空 id。"
 		if not Heroes.is_supported(entry.get("kind")):
-			return "英雄类型只支持 red、green、blue。"
+			return "英雄类型只支持 red、green、blue、yellow。"
 		var cell: Variant = _parse_cell(entry.get("position"))
 		if cell == null or not is_floor(cell) or occupied.has(cell):
 			return "英雄起点必须是独立可走的地图内坐标。"

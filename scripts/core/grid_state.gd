@@ -8,6 +8,7 @@ const Heroes = preload("res://scripts/core/hero_rules.gd")
 const Monsters = preload("res://scripts/core/monster_rules.gd")
 const Fire = preload("res://scripts/core/fire_rules.gd")
 const Swaps = preload("res://scripts/core/swap_rules.gd")
+const Protection = preload("res://scripts/core/protection_rules.gd")
 
 var level: Level
 var player: Vector2i:
@@ -234,9 +235,10 @@ func _settle_world(definition:Level,positions:Array[Vector2i],crystals:Dictionar
 			if monsters[i] in link["plates"]:return {"error":"怪物压板规则尚未确认；该组合动作未提交。"}
 	var settled:=Energy.settle(definition.energy_links,positions,crystals,previous,Energy.monster_clear_states(definition.monster_clear_barriers,living),_pressure_goblins(definition,monsters,living))
 	if not settled["error"].is_empty() or monsters.is_empty():return settled
-	var danger:=Monsters.settle(definition.monster_kinds,monsters,living,positions,settled["hero_alive"],previous,settled["barriers"],definition.has_fence,{"facings":definition.monster_facings,"crystals":settled["crystals"],"bounds":Rect2i(Vector2i.ZERO,Vector2i(definition.width,definition.height)),"blocks":func(c:Vector2i)->bool:return not definition.is_floor(c) or definition.bush_at(c)!=null or settled["barriers"].get(c,false),"advance":advance})
+	var danger:=Monsters.settle(definition.monster_kinds,monsters,living,positions,settled["hero_alive"],previous,settled["barriers"],definition.has_fence,{"hero_kinds":_hero_kinds(definition),"facings":definition.monster_facings,"crystals":settled["crystals"],"bounds":Rect2i(Vector2i.ZERO,Vector2i(definition.width,definition.height)),"blocks":func(c:Vector2i)->bool:return not definition.is_floor(c) or definition.bush_at(c)!=null or settled["barriers"].get(c,false),"advance":advance})
 	if not danger["error"].is_empty():return danger
 	var attack_phase:Dictionary={"monster_alive":danger["attack_monster_alive"].duplicate(),"hero_alive":danger["attack_hero_alive"].duplicate(),"barriers":settled["barriers"].duplicate(),"crystals":settled["crystals"].duplicate()}
+	if _hero_kinds(definition).has("yellow"):attack_phase["protected_heroes"]=danger["protected_heroes"].duplicate()
 	# Attack deaths release Goblin-held plates in this SAME atomic action.
 	# Recompute mechanisms and restoration victims, never another attack round.
 	var final_living:Array[bool]=danger["monster_alive"].duplicate()
@@ -260,6 +262,17 @@ static func _pressure_goblins(definition:Level,positions:Array[Vector2i],living:
 	for i in positions.size():
 		if living[i] and definition.monster_kinds[i]=="goblin":cells.append(positions[i])
 	return cells
+
+static func _hero_kinds(definition:Level) -> PackedStringArray:
+	var kinds:PackedStringArray=[]
+	for hero in definition.hero_definitions:kinds.append(hero["kind"])
+	return kinds
+
+func protected_heroes() -> Array[bool]:
+	return Protection.covered(_hero_kinds(level),_hero_positions,_hero_alive) if level!=null else []
+
+func protection_covers(cell:Vector2i) -> bool:
+	return level!=null and Protection.covers_cell(_hero_kinds(level),_hero_positions,_hero_alive,cell)
 
 func attack_phase() -> Dictionary:
 	return _last_attack_phase.duplicate(true)
@@ -292,7 +305,7 @@ func monster_danger_at(cell:Vector2i) -> bool:
 
 func fire_rays() -> Array[Dictionary]:
 	if level==null or not level.monster_kinds.has("fire_dragon"):return []
-	return Fire.plan(level.monster_kinds,_monster_positions,_monster_alive,_monster_facings,_hero_positions,_hero_alive,_crates,Rect2i(Vector2i.ZERO,Vector2i(level.width,level.height)),blocks_sight,level.has_fence)["rays"]
+	return Fire.plan(level.monster_kinds,_monster_positions,_monster_alive,_monster_facings,_hero_positions,_hero_alive,_crates,Rect2i(Vector2i.ZERO,Vector2i(level.width,level.height)),blocks_sight,level.has_fence,protected_heroes())["rays"]
 
 
 func fire_danger_at(cell:Vector2i) -> bool:
