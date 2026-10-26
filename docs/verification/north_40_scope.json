@@ -4525,5 +4525,52 @@
     },
     "full_matrix_rerun_after_view_fix": false,
     "time_utc": "2026-10-26T13:03:34.548884+00:00"
+  },
+  "media": {
+    "implementation_commit": "d338d72f5d19fbdad21e196fff25925496ffdbd2",
+    "recording_after_implementation": true,
+    "path": "video/chapter_01/level_40.mp4",
+    "duration_seconds": 15.2,
+    "frames": 456,
+    "bytes": 340399,
+    "sha256": "7a56d13d49bbbd1fc97fdeec47bdd804f8eacdc049f4af898dd2ae74c1564fbd",
+    "actions": 17,
+    "selection_events": 0,
+    "pushes": 0,
+    "pulls": 0,
+    "swaps": 0,
+    "all17_input_states_and_movements_reviewed": true,
+    "all14_shield_blocks_reviewed": true,
+    "encoded_review_frame_count": 70,
+    "contact_pages_reviewed": 9,
+    "sampled_5fps_frames": 76,
+    "distinct_sampled_frames": 76,
+    "all40_full_decode_and_independent_replay_freshly_executed": true,
+    "unchanged_source_fingerprints": 256,
+    "unchanged_old_delivery_files": 171,
+    "unchanged_old_manifest_entries": 39,
+    "goblin_shield_actions": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "fire_shield_actions": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "actual_fire_attacks": 0,
+    "actual_goblin_attacks": 0,
+    "surviving_monsters": 7,
+    "preserved_crystals": 5,
+    "time_utc": "2026-10-26T13:08:03.190938+00:00"
   }
 }

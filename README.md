@@ -85,6 +85,7 @@ XDG_CONFIG_HOME=/tmp/stardown-config XDG_CACHE_HOME=/tmp/stardown-cache XDG_DATA
 | 第三十七关 | [观看 / 下载 MP4](video/chapter_01/level_37.mp4) | 30.8 秒 |
 | 第三十八关 | [观看 / 下载 MP4](video/chapter_01/level_38.mp4) | 26.6 秒 |
 | 第三十九关 | [观看 / 下载 MP4](video/chapter_01/level_39.mp4) | 55.4 秒 |
+| 第四十关 | [观看 / 下载 MP4](video/chapter_01/level_40.mp4) | 15.2 秒 |
 
 视频从正确初始状态到明确胜利，由 Godot 实际渲染与合法键盘回放录制；1280 × 820、30 fps、H.264 / yuv420p，已完整解码并查看首尾。详情、回放证据和重录命令见 [video/README.md](video/README.md)。
 
@@ -959,3 +960,5 @@ DRUUURUUULLDLLDURRDRRRURDDRDLLLLUULLLDURRRRRRRRRDR
 独立回放、Godot模型和真实键鼠/屏幕输入验证 `RRRRRRRDDDLLLLLLU`，17次普通移动：2–8步挡住哥布林邻接威胁，10–16步以自身挡住火龙射线，从右侧绕到底排，17步到终点。没有实际攻击、死亡、推动、拉动或交换，五晶和七怪全部保持原位存活，不宣称最短路线。
 
 实际Godot：[初始范围](docs/screenshots/level_40_initial.png) · [挡住火线](docs/screenshots/level_40_action_13.png) · [通关](docs/screenshots/level_40_completed.png) · [小窗口](docs/screenshots/level_40_compact.png) · [独立邻保测试](docs/screenshots/level_40_fixture_ally.png)。独立测试截图不是正式通关情节。[测试证据与范围](docs/verification/north_40_scope.json)。
+
+[第四十关正式通关视频](video/chapter_01/level_40.mp4)：15.2秒、17次普通移动。黄色英雄不能推拉；2–8步自身免受哥布林，10–16步挡住火线；五晶、七怪全部保持原位存活，没有实际攻击或死亡。正常Godot/WASD录制，保护范围与盾牌可见。[哥布林保护](docs/screenshots/level_40_goblin_shield.png) · [挡住火线](docs/screenshots/level_40_fire_shield.png) · [胜利](docs/screenshots/level_40_victory.png)。

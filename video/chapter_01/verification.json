@@ -6873,6 +6873,286 @@
       "fixed_dragon_facings_preserved": true,
       "static_danger_hints_preserved": true,
       "two_heroes_on_distinct_goals": true
+    },
+    {
+      "file": "video/chapter_01/level_40.mp4",
+      "level": 40,
+      "bytes": 340399,
+      "sha256": "7a56d13d49bbbd1fc97fdeec47bdd804f8eacdc049f4af898dd2ae74c1564fbd",
+      "codec": "h264",
+      "profile": "High",
+      "pixel_format": "yuv420p",
+      "dimensions": [
+        1280,
+        820
+      ],
+      "fps": 30,
+      "frames": 456,
+      "duration_seconds": 15.2,
+      "moves": 17,
+      "directions": 17,
+      "input_events": 17,
+      "selection_events": 0,
+      "pushes": 0,
+      "pulls": 0,
+      "swaps": 0,
+      "destroyed_crystals": 0,
+      "game_implementation_commit": "d338d72f5d19fbdad21e196fff25925496ffdbd2",
+      "replay_report": "level_40_replay.json",
+      "level_file": "levels/north_40.json",
+      "solution_file": "levels/solutions/north_40.json",
+      "full_decode_passed": true,
+      "legal_input_trace_verified": true,
+      "mp4_fast_start": true,
+      "initial_and_final_frames_reviewed": true,
+      "all17_input_states_and_movement_reviewed": true,
+      "all14_shield_blocks_reviewed": true,
+      "reviewed_encoded_frames": [
+        0,
+        61,
+        63,
+        65,
+        77,
+        79,
+        81,
+        83,
+        95,
+        97,
+        99,
+        101,
+        113,
+        115,
+        117,
+        119,
+        131,
+        133,
+        135,
+        137,
+        149,
+        151,
+        153,
+        155,
+        167,
+        169,
+        171,
+        173,
+        185,
+        187,
+        189,
+        191,
+        203,
+        205,
+        207,
+        209,
+        221,
+        223,
+        225,
+        227,
+        239,
+        241,
+        243,
+        245,
+        257,
+        259,
+        261,
+        263,
+        275,
+        277,
+        279,
+        281,
+        293,
+        295,
+        297,
+        299,
+        311,
+        313,
+        315,
+        317,
+        329,
+        331,
+        333,
+        335,
+        347,
+        349,
+        351,
+        353,
+        365,
+        455
+      ],
+      "implementation_committed_before_recording": true,
+      "gameplay_sources_unchanged_after_recording": true,
+      "initial_monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            4,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            6,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            3,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 6,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            4
+          ]
+        }
+      ],
+      "final_monsters": [
+        {
+          "alive": true,
+          "id": 0,
+          "kind": "goblin",
+          "position": [
+            4,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 1,
+          "kind": "goblin",
+          "position": [
+            6,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 2,
+          "kind": "goblin",
+          "position": [
+            8,
+            0
+          ]
+        },
+        {
+          "alive": true,
+          "id": 3,
+          "kind": "goblin",
+          "position": [
+            3,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 4,
+          "kind": "goblin",
+          "position": [
+            5,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "id": 5,
+          "kind": "goblin",
+          "position": [
+            7,
+            2
+          ]
+        },
+        {
+          "alive": true,
+          "facing": [
+            1,
+            0
+          ],
+          "id": 6,
+          "kind": "fire_dragon",
+          "position": [
+            0,
+            4
+          ]
+        }
+      ],
+      "all_monsters_dead": false,
+      "surviving_monsters": 7,
+      "preserved_crystals": 5,
+      "hero_mechanical_kind": "yellow",
+      "protection": "Self+cardinal adjacent heroes;Goblin/Dragon attacks only;protected hero stops fire",
+      "goblin_shield_actions": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "fire_shield_actions": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "sampled_5fps_frames": 76,
+      "distinct_sampled_frames": 76,
+      "visual_feedback_enabled": true,
+      "all17_feedback_intervals_settled": true,
+      "animation_world_unchanged": true,
+      "attack_feedback_requires_target": true,
+      "fire_attack_count": 0,
+      "fire_attack_actions": [],
+      "goblin_strikes": 0,
+      "fixed_dragon_facings_preserved": true,
+      "static_danger_hints_preserved": true
     }
   ],
   "game_implementation_commits": {
@@ -6914,6 +7194,7 @@
     "level_36": "7699172674c0fdd74a26dc99fc55412a40104914",
     "level_37": "d155ae5914a64436aaca865d655d3868f44e4d69",
     "level_38": "4bd6e772d647ee0679d021f3039a217d04a70aa1",
-    "level_39": "89b33e8719f963567e46708ea84da5ff08b6a53e"
+    "level_39": "89b33e8719f963567e46708ea84da5ff08b6a53e",
+    "level_40": "d338d72f5d19fbdad21e196fff25925496ffdbd2"
   }
 }
