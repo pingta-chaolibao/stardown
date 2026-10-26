@@ -116,7 +116,7 @@ func _draw() -> void:
 func _draw_protection(origin:Vector2,tile:float) -> void:
 	for hero in model.heroes():
 		if hero["kind"]!="yellow" or not hero["alive"]:continue
-		var at:Vector2=feedback.position("h:"+str(hero["id"]),Vector2(hero["position"]))
+		var at:Vector2=Vector2(hero["position"]) # Range marks committed cells; only actors interpolate.
 		for delta in [Vector2i.ZERO,Vector2i.UP,Vector2i.DOWN,Vector2i.LEFT,Vector2i.RIGHT]:
 			if not model.level.is_floor(hero["position"]+delta):continue
 			var center:Vector2=origin+(at+Vector2(delta)+Vector2.ONE*0.5)*tile
